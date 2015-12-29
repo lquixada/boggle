@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Boggle</title>
+  <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.js"></script>
+  <script>
+  $(function () {
+    var source   = $("#entry-template").html();
+    var template = Handlebars.compile(source);
+    var a = 'abcdefghijklmnopqrstuvwxyz';
+    var size = 4;
+    var board = [];
+
+    function getRandomIntInclusive(min, max) {
+      return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+
+    for (var i=0; i<size; i++) {
+      board[i] = [];
+      for (var j=0; j<size; j++) {
+        randomIndex = getRandomIntInclusive(0, a.length-1);
+        board[i][j] = a[randomIndex].toUpperCase();
+      }
+    }
+
+    $("#test").html(template({board: board}));
+  });
+  </script>
+</head>
+
+<body>
+
+  <div id="test"></div>
+
+  <script id="entry-template" type="text/x-handlebars-template">
+    <table>
+      {{#each board}}
+      <tr>
+        {{#each this}}
+          <td>{{ this }}</td>
+        {{/each}}
+      </tr>
+      {{/each}}
+    </table>
+  </script>
+
+</body>
+
+</html>
