@@ -48,7 +48,7 @@ Board.prototype = {
   }
 }
 
-var dices = [
+dice = [
   new Die('AOBBOJ'),
   new Die('WHGEEN'),
   new Die('NRNZHL'),
@@ -66,20 +66,27 @@ var dices = [
   new Die('IOTMUC'),
   new Die('EHWVTR'),
 ];
-var board = new Board(dices);
+
+board = new Board(dice);
+board.start();
+
+function App() {
+  this.templateId = '#template';
+  this.boardId = '#board';
+}
+
+App.prototype = {
+  render: function (board) {
+    var source   = $(this.templateId).html();
+    // TODO: use underscore template engine
+    var template = Handlebars.compile(source);
+    var html = template({board: board.matrix});
+    $(this.boardId).html(html);
+  }
+}
+
+app = new App();
 
 $(function () {
-  var html;
-
-  function renderBoard(board) {
-    var source   = $('#entry-template').html();
-    var template = Handlebars.compile(source);
-    return template({board: board.matrix});
-  }
-
-  board.start();
-
-  var html = renderBoard(board);
-
-  $('#test').html(html);
+  app.render(board);
 });
