@@ -14,6 +14,12 @@
     return Math.floor(Math.random() * (max - min)) + min;
   }
 
+  function check(word, cb) {
+    $.getJSON('https://en.wiktionary.org/w/api.php?action=query&titles='+word+'&format=json&callback=?', function (data) {
+      cb(!data.query.pages[-1]);
+    });
+  }
+
   function Board() {
     this.letters = 'abcdefghijklmnopqrstuvwxyz';
     this.matrix = [];
@@ -54,6 +60,7 @@
 
 <body>
 
+  <input type="text" onkeyup="arguments[0].which===13 && check(this.value, function (isValid) { console.log(isValid)})" />
   <div id="test"></div>
 
   <script id="entry-template" type="text/x-handlebars-template">
