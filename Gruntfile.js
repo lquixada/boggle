@@ -1,8 +1,4 @@
 module.exports = function(grunt) {
-  var livereload = {
-    port: 1338
-  };
-
   // Project configuration.
   grunt.initConfig({
     connect: {
@@ -15,6 +11,15 @@ module.exports = function(grunt) {
           livereload: 1338
         }
       }
+    },
+
+    watch: {
+      js: {
+        files: '**/*.js',
+        options: {
+          livereload: 1338,
+        },
+      },
     }
   });
 
