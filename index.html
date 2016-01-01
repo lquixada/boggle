@@ -9,58 +9,12 @@
   <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.js"></script>
-  <script>
-  function getRandomInt(min, max) {
-    return Math.floor(Math.random() * (max - min)) + min;
-  }
-
-  function check(word, cb) {
-    $.getJSON('https://en.wiktionary.org/w/api.php?action=query&titles='+word+'&format=json&callback=?', function (data) {
-      cb(!data.query.pages[-1]);
-    });
-  }
-
-  function Board() {
-    this.letters = 'abcdefghijklmnopqrstuvwxyz';
-    this.matrix = [];
-
-    this._fillMatrix(4);
-  }
-
-  Board.prototype = {
-    _fillMatrix: function (size) {
-      var matrix = this.matrix;
-      var letters = this.letters;
-
-      _(size).times(function (i) {
-        matrix[i] = [];
-
-        _(size).times(function (j) {
-          var idx = getRandomInt(0, letters.length);
-          matrix[i][j] = letters[idx].toUpperCase();
-        });
-      });
-    }
-  }
-
-  $(function () {
-    function renderBoard(board) {
-      var source   = $('#entry-template').html();
-      var template = Handlebars.compile(source);
-      return template({board: board.matrix});
-    }
-
-    var board = new Board();
-    var html = renderBoard(board);
-
-    $('#test').html(html);
-  });
-  </script>
+  <script src="index.js"></script>
 </head>
 
 <body>
 
-  <input type="text" onkeyup="arguments[0].which===13 && check(this.value, function (isValid) { console.log(isValid)})" />
+  <input type="text" onkeyup="checkOnEnter(event)" />
   <div id="test"></div>
 
   <script id="entry-template" type="text/x-handlebars-template">
