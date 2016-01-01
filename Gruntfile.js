@@ -1,6 +1,13 @@
 module.exports = function(grunt) {
   // Project configuration.
   grunt.initConfig({
+    concurrent: {
+      options:{
+        logConcurrentOutput: true
+      },
+      work: ['server', 'watch']
+    },
+
     connect: {
       server: {
         options: {
@@ -27,6 +34,7 @@ module.exports = function(grunt) {
    * Defining aliases
    */
   grunt.registerTask('server', ['connect']);
+  grunt.registerTask('work', ['concurrent']);
 
   /**
    * Loading tasks
