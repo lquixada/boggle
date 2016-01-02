@@ -19,11 +19,8 @@ Board.prototype = {
     if (i<0 || j<0 || i>=this.size || j>=this.size) {
       return '*';
     }
-    try {
-      return this.matrix[i][j];
-    } catch (e) {
-      console.log(i, j);
-    }
+
+    return this.matrix[i][j];
   },
 
   place: function (drawn) {
@@ -54,14 +51,14 @@ Board.prototype = {
 
     // Find the first letter
     for (var i=0; i<this.size; i++) {
-        for (var j=0; j<this.size; j++) {
-            if (this.get(i, j) === word.charAt(0)) {
-                // From there, find the sequence, letter by letter
-                if (this.findSequence(word, i, j)) {
-                  return true;
-                }
-            }
+      for (var j=0; j<this.size; j++) {
+        if (this.get(i, j) === word.charAt(0)) {
+          // From there, find the sequence, letter by letter
+          if (this.findSequence(word, i, j)) {
+            return true;
+          }
         }
+      }
     }
 
     return false;
@@ -78,30 +75,18 @@ Board.prototype = {
     this.matrix[i][j] = ' ';
 
     for (var u=-1; u<=1; u++) {
-     for (var v=-1; v<=1; v++) {
-      if (this.get(i+u, j+v) === seq.charAt(1)) {
-       if (this.findSequence(seq.substr(1), i+u, j+v)) {
-        this.matrix[i][j] = found;
-        return true;
-       }
+      for (var v=-1; v<=1; v++) {
+        if (this.get(i+u, j+v) === seq.charAt(1)) {
+          if (this.findSequence(seq.substr(1), i+u, j+v)) {
+            this.matrix[i][j] = found;
+            return true;
+          }
+        }
       }
-     }
     }
 
     this.matrix[i][j] = found;
     return false;
-  },
-
-  _clone: function () {
-    var tmp = _.map(this.matrix, _.clone);
-
-    return tmp;
-  },
-
-  _empty: function () {
-    return _.map(this.matrix, function () {
-      return [];
-    });
   }
 }
 
