@@ -8,7 +8,6 @@
   <title>Boggle</title>
   <script src="js/jquery-2.1.4.min.js"></script>
   <script src="js/underscore-min.js"></script>
-  <script src="js/handlebars.js"></script>
   <script src="js/index.js"></script>
   <script>
   $(function () {
@@ -19,8 +18,19 @@
 
 <body>
 
-  <input type="text" onkeyup="app.checkOnEnter(event)" />
-  <div id="board"></div>
+  <main>
+    <header>
+      <h1>Boggle</h1>
+    </header>
+
+    <section>
+      <input type="text" onkeyup="app.checkOnEnter(event)" />
+      <div id="board"></div>
+      <ul id="scores"></ul>
+      <span id="counter"></span>
+      <button onclick="app.start();">start</button>
+    </section>
+  </main>
 
   <script id="template" type="text/x-template">
     <table>
