@@ -1,17 +1,3 @@
-function checkOnEnter(e) {
-  if (e.which===13) {
-    check(e.target.value, function (isValid) {
-      console.log(isValid);
-    })
-  }
-}
-
-function check(word, cb) {
-  $.getJSON('https://en.wiktionary.org/w/api.php?action=query&titles='+word+'&format=json&callback=?', function (data) {
-    cb(!data.query.pages[-1]);
-  });
-}
-
 function Die(letters) {
   this.sides = letters.split('');
 }
@@ -82,6 +68,20 @@ App.prototype = {
     var template = Handlebars.compile(source);
     var html = template({board: board.matrix});
     $(this.boardId).html(html);
+  },
+
+  checkOnEnter(e) {
+    if (e.which===13) {
+      this.check(e.target.value, function (isValid) {
+        console.log(isValid);
+      })
+    }
+  },
+
+  check(word, cb) {
+    $.getJSON('https://en.wiktionary.org/w/api.php?action=query&titles='+word+'&format=json&callback=?', function (data) {
+      cb(!data.query.pages[-1]);
+    });
   }
 }
 
