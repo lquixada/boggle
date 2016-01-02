@@ -13,11 +13,15 @@ describe('Board', function () {
     });
 
     it('should respect the minimum length', function () {
-        expect(this.board.check('ab')).toBeFalsy();
+        expect(this.board.check('or')).toBeFalsy();
     });
 
     it('should find word "socks"', function () {
         expect(this.board.check('socks')).toBeTruthy();
+    });
+
+    it('should find word "liv"', function () {
+        expect(this.board.check('liv')).toBeTruthy();
     });
 
     it('should not find word "sucks"', function () {
