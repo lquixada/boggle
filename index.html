@@ -22,15 +22,15 @@
   <input type="text" onkeyup="app.checkOnEnter(event)" />
   <div id="board"></div>
 
-  <script id="template" type="text/x-handlebars-template">
+  <script id="template" type="text/x-template">
     <table>
-      {{#each board}}
+      <% _.forEach(board, function (row) { %>
       <tr>
-        {{#each this}}
-          <td>{{ this }}</td>
-        {{/each}}
+        <% _.forEach(row, function (cell) { %>
+          <td><%=cell%></td>
+        <% }); %>
       </tr>
-      {{/each}}
+      <% }); %>
     </table>
   </script>
 

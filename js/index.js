@@ -71,8 +71,8 @@ function App() {
 App.prototype = {
   render: function (board) {
     var source   = $(this.templateId).html();
-    var template = Handlebars.compile(source);
-    var html = template({board: board.matrix});
+    var compiled = _.template(source);
+    var html = compiled({board: board.matrix});
     $(this.boardId).html(html);
   },
 
