@@ -10,6 +10,7 @@ Die.prototype = {
 
 function Board(dice) {
   this.size =  4;
+  this.minLength = 3;
   this.dice = dice;
 }
 
@@ -31,6 +32,12 @@ Board.prototype = {
   start: function () {
     var drawn = this.shake();
     this.matrix = this.place(drawn);
+  },
+
+  check: function (word) {
+    if (word.length<=this.minLength) {
+      return false;
+    }
   }
 }
 
@@ -69,7 +76,7 @@ App.prototype = {
     $(this.boardId).html(html);
   },
 
-  checkOnEnter(e) {
+  checkOnEnter: function (e) {
     if (e.which===13) {
       this.check(e.target.value, function (isValid) {
         console.log(isValid);
@@ -77,7 +84,7 @@ App.prototype = {
     }
   },
 
-  check(word, cb) {
+  check: function (word, cb) {
     $.getJSON('https://en.wiktionary.org/w/api.php?action=query&titles='+word+'&format=json&callback=?', function (data) {
       cb(!data.query.pages[-1]);
     });
@@ -85,7 +92,3 @@ App.prototype = {
 }
 
 app = new App();
-
-$(function () {
-  app.render(board);
-});
