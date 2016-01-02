@@ -1,3 +1,11 @@
+_.mixin({
+  render: function (templateId, context) {
+    var source   = $(templateId).html();
+    var compiled = _.template(source);
+    return compiled(context);
+  }
+})
+
 /*
  * Die
  */
@@ -151,7 +159,7 @@ board.start();
  }
 
  Timer.prototype = {
-   start: function () {
+   start: function (options) {
      var that = this;
      var start = _.now()/1000;
 
@@ -159,8 +167,12 @@ board.start();
        var end = _.now()/1000;
        var delta = (end - start).toFixed(2);
        if (that.frame - delta === 0) {
-          console.log('cabou!');
           clearInterval(that.timer);
+
+          if (options.onStop) {
+            options.onStop();
+          }
+
        } else {
          console.log(that.frame - delta);
        }
@@ -182,15 +194,17 @@ function App() {
 
 App.prototype = {
   render: function (board) {
-    var source   = $(this.templateId).html();
-    var compiled = _.template(source);
-    var html = compiled({board: board.matrix});
+    var html = _.render(this.templateId, {board: board.matrix});
     $(this.boardId).html(html);
   },
 
   start: function () {
     board.start();
-    timer.start();
+    timer.start({
+      onStop: function () {
+        console.log('cabou');
+      }
+    });
   },
 
   checkOnEnter: function (e) {
