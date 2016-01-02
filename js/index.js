@@ -1,3 +1,7 @@
+/*
+ * Die
+ */
+
 function Die(letters) {
   this.sides = letters.split('');
 }
@@ -7,6 +11,31 @@ Die.prototype = {
     return _.sample(this.sides);
   }
 };
+
+
+/*
+ * Dictionary
+ */
+
+function Dictionary() {
+}
+
+Dictionary.prototype = {
+  check: function (word, cb) {
+    var url = 'https://en.wiktionary.org/w/api.php?action=query&format=json&callback=?&titles=';
+
+    return $.getJSON(url+word, function (data) {
+      cb(!data.query.pages[-1]);
+    });
+  }
+};
+
+dictionary = new Dictionary();
+
+
+/*
+ * Board
+ */
 
 function Board(dice) {
   this.dim =  4;
@@ -72,6 +101,8 @@ Board.prototype = {
     }
 
     found = this.matrix[i][j];
+
+    // Mark temporarily in order to not traverse the same cell twice
     this.matrix[i][j] = ' ';
 
     for (var u=-1; u<=1; u++) {
@@ -88,7 +119,7 @@ Board.prototype = {
     this.matrix[i][j] = found;
     return false;
   }
-}
+};
 
 dice = [
   new Die('AOBBOJ'),
@@ -112,6 +143,38 @@ dice = [
 board = new Board(dice);
 board.start();
 
+/*
+ * Timer
+ */
+ function Timer() {
+   this.frame = 60;
+ }
+
+ Timer.prototype = {
+   start: function () {
+     var that = this;
+     var start = _.now()/1000;
+
+     this.timer = setInterval(function () {
+       var end = _.now()/1000;
+       var delta = (end - start).toFixed(2);
+       if (that.frame - delta === 0) {
+          console.log('cabou!');
+          clearInterval(that.timer);
+       } else {
+         console.log(that.frame - delta);
+       }
+     }, 1000);
+   }
+ };
+
+ timer = new Timer();
+
+
+
+/*
+ * App
+ */
 function App() {
   this.templateId = '#template';
   this.boardId = '#board';
@@ -125,19 +188,39 @@ App.prototype = {
     $(this.boardId).html(html);
   },
 
+  start: function () {
+    board.start();
+    timer.start();
+  },
+
   checkOnEnter: function (e) {
     if (e.which===13) {
-      this.check(e.target.value, function (isValid) {
-        console.log(isValid);
-      })
+      this.check(e.target.value);
     }
   },
 
-  check: function (word, cb) {
-    $.getJSON('https://en.wiktionary.org/w/api.php?action=query&titles='+word+'&format=json&callback=?', function (data) {
-      cb(!data.query.pages[-1]);
-    });
-  }
+  check: function (word) {
+    console.log('checking "'+word+'":');
+    if (this.checkBoard(word)) {
+      console.log('✔ board');
+
+      this.checkDictionary(word, function (isValid) {
+        var result = (isValid? '✔' : '✘');
+        console.log(result+' dictionary');
+        console.log('---')
+      })
+    } else {
+      console.log('✘ board');
+    }
+  },
+
+  checkBoard: function (word) {
+    return board.check(word);
+  },
+
+  checkDictionary: function (word, cb) {
+    return dictionary.check(word, cb);
+  },
 }
 
 app = new App();
