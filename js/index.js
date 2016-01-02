@@ -16,11 +16,14 @@ function Board(dice) {
 
 Board.prototype = {
   get: function (i, j) {
-    if (i<0 || j<0 || i>this.size || j>this.size) {
+    if (i<0 || j<0 || i>=this.size || j>=this.size) {
       return '*';
     }
-
-    return this.matrix[i][j];
+    try {
+      return this.matrix[i][j];
+    } catch (e) {
+      console.log(i, j);
+    }
   },
 
   place: function (drawn) {

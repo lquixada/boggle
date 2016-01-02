@@ -5,10 +5,10 @@ describe('Board', function () {
       this.board = new Board(dice);
       // Mocking the matrix since it's random
       this.board.matrix = [
-          ['O', 'T', 'T', 'S'],
-          ['W', 'S', 'O', 'K'],
-          ['H', 'T', 'V', 'C'],
-          ['E', 'M', 'I', 'H']
+          ['O', 'S', 'O', 'K'],
+          ['W', 'A', 'S', 'C'],
+          ['L', 'I', 'V', 'C'],
+          ['S', 'O', 'R', 'A']
       ];
     });
 
@@ -22,5 +22,13 @@ describe('Board', function () {
 
     it('should not find word "sucks"', function () {
         expect(this.board.check('sucks')).toBeFalsy();
+    });
+
+    it('should not find word "soils"', function () {
+        expect(this.board.check('soils')).toBeFalsy();
+    });
+
+    it('should not find word "soar"', function () {
+        expect(this.board.check('soar')).toBeFalsy();
     });
 });
