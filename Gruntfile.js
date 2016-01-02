@@ -20,6 +20,23 @@ module.exports = function(grunt) {
       }
     },
 
+    karma: {
+        options: {
+            frameworks: ['jasmine'],
+            browsers: ['PhantomJS'],
+            reporters: 'dots',
+            files: [
+                'js/underscore-min.js',
+                'js/index.js',
+                'js/index.spec.js'
+            ]
+        },
+
+        dist: {
+          singleRun: false
+        }
+    },
+
     watch: {
       js: {
         files: '**/*.js',
