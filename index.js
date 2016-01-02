@@ -64,7 +64,6 @@ function App() {
 App.prototype = {
   render: function (board) {
     var source   = $(this.templateId).html();
-    // TODO: use underscore template engine
     var template = Handlebars.compile(source);
     var html = template({board: board.matrix});
     $(this.boardId).html(html);
