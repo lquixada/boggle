@@ -15,11 +15,12 @@
   <script src="app/helper.js"></script>
   <script src="app/dictionary.js"></script>
   <script src="app/board.js"></script>
+  <script src="app/attempt.js"></script>
   <script src="app/score.js"></script>
   <script src="app/timer.js"></script>
   <script src="app/app.js"></script>
 
-  <!-- init -->
+  <!-- init game -->
   <script>
   $(function () {
     app = new App();
@@ -30,20 +31,22 @@
 
 <body>
 
+  <!-- app -->
   <main>
     <header>
       <h1>Boggle</h1>
     </header>
 
     <section>
-      <input type="text" onkeyup="app.checkOnEnter(event)" />
+      <div id="attempt"></div>
       <div id="board"></div>
       <div id="score"></div>
-      <span id="clock"></span>
+      <div id="clock"></div>
       <button onclick="app.start();">start</button>
     </section>
   </main>
 
+  <!-- templates -->
   <div id="templates">
     <script id="board-template" type="text/x-template">
       <table>
@@ -76,7 +79,11 @@
     </script>
 
     <script id="clock-template" type="text/x-template">
-      00:<%=(secs<10?'0'+secs:secs)%>
+      <span>00:<%=(secs<10?'0'+secs:secs)%></span>
+    </script>
+
+    <script id="attempt-template" type="text/x-template">
+      <input type="text" onkeyup="app.checkOnEnter(event)" <%= (started ? '' : 'disabled') %> />
     </script>
   </div>
 

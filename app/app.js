@@ -4,6 +4,7 @@
 
 function App() {
   this.board = new BoardView();
+  this.attempt = new AttemptView();
   this.dictionary = new Dictionary();
   this.score = new ScoreView();
   this.timer = new TimerView();
@@ -12,12 +13,14 @@ function App() {
 App.prototype = {
   render: function () {
     this.board.render();
+    this.attempt.render();
     this.score.render();
     this.timer.render();
   },
 
   start: function () {
     this.board.start();
+    this.attempt.start();
     this.score.start();
     this.timer.start();
   },
@@ -33,10 +36,6 @@ App.prototype = {
 
     if (this.checkBoard(word)) {
       this.checkDictionary(word, function (isValid) {
-        var result = (isValid ? '✔' : '✘');
-        console.log(result+' dictionary');
-        console.log('---');
-
         that.score.add({
           word: word,
           scored: isValid
