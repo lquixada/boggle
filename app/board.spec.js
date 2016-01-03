@@ -2,7 +2,7 @@ describe('Board', function () {
     'use strict';
 
     beforeEach(function () {
-      this.board = new Board(dice);
+      this.board = new Board();
       // Mocking the matrix since it's random
       this.board.matrix = [
           ['O', 'S', 'O', 'K'],

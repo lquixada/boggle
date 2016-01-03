@@ -6,12 +6,22 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Boggle</title>
-  <script src="js/jquery-2.1.4.min.js"></script>
-  <script src="js/underscore-min.js"></script>
-  <script src="js/index.js"></script>
+
+  <!-- vendors -->
+  <script src="vendor/jquery-2.1.4.min.js"></script>
+  <script src="vendor/underscore-min.js"></script>
+
+  <!-- app -->
+  <script src="app/helper.js"></script>
+  <script src="app/dictionary.js"></script>
+  <script src="app/board.js"></script>
+  <script src="app/timer.js"></script>
+  <script src="app/app.js"></script>
+
+  <!-- init -->
   <script>
   $(function () {
-    app.render(board);
+    app.render();
   });
   </script>
 </head>
@@ -27,22 +37,28 @@
       <input type="text" onkeyup="app.checkOnEnter(event)" />
       <div id="board"></div>
       <ul id="scores"></ul>
-      <span id="counter"></span>
+      <span id="clock"></span>
       <button onclick="app.start();">start</button>
     </section>
   </main>
 
-  <script id="template" type="text/x-template">
-    <table>
-      <% _.forEach(board, function (row) { %>
-      <tr>
-        <% _.forEach(row, function (cell) { %>
-          <td><%=cell%></td>
+  <div id="templates">
+    <script id="board-template" type="text/x-template">
+      <table>
+        <% _.forEach(board, function (row) { %>
+        <tr>
+          <% _.forEach(row, function (cell) { %>
+            <td><%=cell%></td>
+          <% }); %>
+        </tr>
         <% }); %>
-      </tr>
-      <% }); %>
-    </table>
-  </script>
+      </table>
+    </script>
+
+    <script id="clock-template" type="text/x-template">
+      00:<%=(secs<10?'0'+secs:secs)%>
+    </script>
+  </div>
 
 </body>
 

@@ -26,9 +26,9 @@ module.exports = function(grunt) {
             browsers: ['PhantomJS'],
             reporters: 'dots',
             files: [
-                'js/underscore-min.js',
-                'js/index.js',
-                'js/index.spec.js'
+                'vendors/underscore-min.js',
+                'app/board.js',
+                'app/board.spec.js'
             ]
         },
 
