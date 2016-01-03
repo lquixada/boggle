@@ -1,3 +1,7 @@
+/*
+ * Score
+ */
+
 function ScoreView() {
   this.elementId = '#score';
   this.reset();

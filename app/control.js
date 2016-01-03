@@ -1,3 +1,7 @@
+/*
+ * Control
+ */
+
 function ControlView() {
   this.elementId = '#control';
   this.started = false;

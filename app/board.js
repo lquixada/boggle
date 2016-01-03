@@ -1,20 +1,32 @@
 /*
- * Die
+ * Board
  */
 
-function Die(letters) {
-  this.sides = letters.split('');
+function BoardView() {
+  this.elementId = '#board';
+  this.board = new Board();
 }
 
-Die.prototype = {
-  roll: function () {
-    return _.sample(this.sides);
+BoardView.prototype = {
+  check: function (word) {
+    return this.board.check(word);
+  },
+
+  render: function (board) {
+    _.render(this.elementId, {board: this.board.matrix});
+  },
+
+  start: function () {
+    this.board.start();
+    this.render();
+  },
+
+  stop: function () {
+    this.board.stop();
+    this.render();
   }
 };
 
-/*
- * Board
- */
 function Board() {
   this.dim =  4;
   this.minLength = 3;
@@ -130,27 +142,16 @@ Board.prototype = {
   }
 };
 
-function BoardView() {
-  this.elementId = '#board';
-  this.board = new Board();
+/*
+ * Die
+ */
+
+function Die(letters) {
+  this.sides = letters.split('');
 }
 
-BoardView.prototype = {
-  check: function (word) {
-    return this.board.check(word);
-  },
-
-  render: function (board) {
-    _.render(this.elementId, {board: this.board.matrix});
-  },
-
-  start: function () {
-    this.board.start();
-    this.render();
-  },
-
-  stop: function () {
-    this.board.stop();
-    this.render();
+Die.prototype = {
+  roll: function () {
+    return _.sample(this.sides);
   }
 };

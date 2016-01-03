@@ -2,6 +2,28 @@
  * Timer
  */
 
+function TimerView() {
+  this.elementId = '#clock';
+  this.timer = new Timer();
+}
+
+TimerView.prototype = {
+  render: function () {
+    _.render(this.elementId, {secs: this.timer.remaining});
+  },
+
+  start: function () {
+    this.timer.start({
+      onTick: _.bind(this.render, this)
+    });
+  },
+
+  stop: function () {
+    this.timer.stop();
+    this.render();
+  }
+};
+
 function Timer(options) {
   var opt = options || {};
 
@@ -27,27 +49,5 @@ Timer.prototype = {
   stop: function () {
     this.remaining = this.frame;
     clearInterval(this.timer);
-  }
-};
-
-function TimerView() {
-  this.elementId = '#clock';
-  this.timer = new Timer();
-}
-
-TimerView.prototype = {
-  render: function () {
-    _.render(this.elementId, {secs: this.timer.remaining});
-  },
-
-  start: function () {
-    this.timer.start({
-      onTick: _.bind(this.render, this)
-    });
-  },
-
-  stop: function () {
-    this.timer.stop();
-    this.render();
   }
 };

@@ -1,3 +1,7 @@
+/*
+ * Attempt
+ */
+
 function AttemptView() {
   this.elementId = '#attempt';
   this.started = false;
