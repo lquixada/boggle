@@ -16,11 +16,11 @@ module.exports = function(grunt) {
       options:{
         logConcurrentOutput: true
       },
-      work: ['server', 'watch']
+      dist: ['server', 'watch']
     },
 
     connect: {
-      server: {
+      dist: {
         options: {
           port: 8300,
           hostname: '*',
@@ -32,23 +32,18 @@ module.exports = function(grunt) {
     },
 
     karma: {
-      options: {
+      dist: {
         frameworks: ['jasmine'],
         browsers: ['PhantomJS'],
         reporters: 'dots',
-        files: [
-          'vendors/underscore-min.js',
-          'app/board.js',
-          'app/board.spec.js'
-        ]
-      },
-
-      dist: {
-        singleRun: true
-      },
-
-      dev: {
-        singleRun: false
+        singleRun: true,
+        options: {
+          files: [
+            'vendor/underscore-min.js',
+            'app/board.js',
+            'app/board.spec.js'
+          ]
+        }
       }
     },
 
@@ -89,10 +84,10 @@ module.exports = function(grunt) {
   /**
    * Defining aliases
    */
-  grunt.registerTask('spec', ['karma:dev']);
+  grunt.registerTask('spec', ['karma']);
   grunt.registerTask('server', ['connect']);
   grunt.registerTask('work', ['concurrent']);
-  grunt.registerTask('default', ['jshint', 'jscs', 'karma:dist', 'notify']);
+  grunt.registerTask('default', ['jshint', 'jscs', 'karma', 'notify']);
 
   /**
    * Loading tasks
