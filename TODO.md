@@ -1,8 +1,15 @@
 # TODO
 
-* Use require.js
 * "Qu" scenario
+* What to do with big words? maxLength?
+* Loading?
+* View specs
+* Button for solving?
+* README
+
 * Host on Github Pages
 * Test on IE10
-* What happens when time runs out?
-* View specs
+
+* Get theme inspiration on other Boggle games
+* Use require.js
+* Install pattern lock? (http://ignitersworld.com/lab/patternLock.html)
