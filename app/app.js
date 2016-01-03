@@ -51,13 +51,17 @@ App.prototype = {
         that.score.add({
           word: word,
           scored: isValid
-        })
+        });
+        that.attempt.clear();
+        that.attempt.focus();
       });
     } else {
       this.score.add({
         word: word,
         scored: false
-      })
+      });
+      this.attempt.clear();
+      this.attempt.focus();
     }
   },
 

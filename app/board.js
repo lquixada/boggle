@@ -69,9 +69,7 @@ Board.prototype = {
   },
 
   shake: function () {
-    return _.map(this.dice, function (die) {
-      return die.roll();
-    });
+    return _.invoke(this.dice, 'roll');
   },
 
   start: function () {

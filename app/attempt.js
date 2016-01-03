@@ -15,6 +15,7 @@ AttemptView.prototype = {
   start: function () {
     this.started = true;
     this.render();
+    this.focus();
   },
 
   stop: function () {
@@ -25,5 +26,13 @@ AttemptView.prototype = {
   reset: function () {
     this.started = false;
     this.render();
+  },
+
+  clear: function () {
+    this.render();
+  },
+
+  focus: function () {
+    $(this.elementId).find(':input').focus();
   }
 };
