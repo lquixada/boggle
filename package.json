@@ -10,6 +10,7 @@
     "grunt-contrib-watch": "^0.6.1",
     "grunt-jscs": "^2.5.0",
     "grunt-karma": "^0.12.1",
+    "grunt-notify": "^0.4.3",
     "jasmine-core": "^2.4.1",
     "karma": "^0.13.16",
     "karma-jasmine": "^0.3.6",

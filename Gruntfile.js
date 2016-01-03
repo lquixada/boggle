@@ -66,10 +66,20 @@ module.exports = function(grunt) {
       }
     },
 
-    watch: {
-      js: {
-        files: 'app/**/*.js',
+    notify: {
+      dist: {
         options: {
+          message: 'Everything\'s alright!'
+        }
+      }
+    },
+
+    watch: {
+      dist: {
+        files: 'app/**/*.js',
+        tasks: ['default'],
+        options: {
+          atBegin: true,
           livereload: 1338
         }
       }
@@ -82,7 +92,7 @@ module.exports = function(grunt) {
   grunt.registerTask('spec', ['karma:dev']);
   grunt.registerTask('server', ['connect']);
   grunt.registerTask('work', ['concurrent']);
-  grunt.registerTask('default', ['jshint', 'jscs', 'karma:dist']);
+  grunt.registerTask('default', ['jshint', 'jscs', 'karma:dist', 'notify']);
 
   /**
    * Loading tasks
