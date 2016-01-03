@@ -28,9 +28,9 @@
     "strict"        : false,    // true: Requires all functions run in ES5 Strict Mode
     "trailing"      : true,     // true: Prohibit trailing whitespaces
     "maxparams"     : false,    // {int} Max number of formal params allowed per function
-    "maxdepth"      : false,    // {int} Max depth of nested blocks (within functions)
-    "maxstatements" : false,    // {int} Max number statements per function
-    "maxcomplexity" : false,    // {int} Max cyclomatic complexity per function
+    "maxdepth"      : 4,        // {int} Max depth of nested blocks (within functions)
+    "maxstatements" : 13,       // {int} Max number statements per function
+    "maxcomplexity" : 6,        // {int} Max cyclomatic complexity per function
     "maxlen"        : false,    // {int} Max number of characters per line
 
     // Relaxing
@@ -44,7 +44,7 @@
                                 // (ex: `for each`, multiple try/catch, function expression…)
     "evil"          : false,    // true: Tolerate use of `eval` and `new Function()`
     "expr"          : false,    // true: Tolerate `ExpressionStatement` as Programs
-    "funcscope"     : false,    // true: Tolerate defining variables inside control statements"
+    "funcscope"     : false,    // true: Tolerate defining variables inside control statements
     "globalstrict"  : false,    // true: Allow global "use strict" (also enables 'strict')
     "iterator"      : false,    // true: Tolerate using the `__iterator__` property
     "lastsemic"     : true,     // true: Tolerate omitting a semicolon for the last statement of a 1-line block

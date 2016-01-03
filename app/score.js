@@ -29,7 +29,7 @@ ScoreView.prototype = {
   },
 
   check: function (word) {
-    var found = _.findWhere(this.attempts, {word: word})
+    var found = _.findWhere(this.attempts, {word: word});
     return !Boolean(found);
   },
 

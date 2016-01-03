@@ -12,4 +12,6 @@
 
 * Get theme inspiration on other Boggle games
 * Use require.js
-* Install pattern lock? (http://ignitersworld.com/lab/patternLock.html)
+* Interface
+  * Timer: Progress Circle
+  * Board: Pattern Lock (http://ignitersworld.com/lab/patternLock.html)
