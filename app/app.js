@@ -46,14 +46,14 @@ App.prototype = {
 
   checkOnEnter: function (e) {
     if (e.which === 13) {
-      this.check(e.target.value);
+      this.check(e.target.value.toUpperCase());
     }
   },
 
   check: function (word) {
     var that = this;
 
-    if (this.checkBoard(word)) {
+    if (this.checkScore(word) && this.checkBoard(word)) {
       this.checkDictionary(word, function (isValid) {
         that.commit(word, isValid);
       });
@@ -68,6 +68,10 @@ App.prototype = {
 
   checkDictionary: function (word, cb) {
     return this.dictionary.check(word, cb);
+  },
+
+  checkScore: function (word, cb) {
+    return this.score.check(word);
   },
 
   commit: function (word, scored) {

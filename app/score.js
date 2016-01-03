@@ -14,7 +14,7 @@ ScoreView.prototype = {
     }
 
     this.attempts.push({
-      word: attempt.word.toUpperCase(),
+      word: attempt.word,
       score: (attempt.scored ? attempt.word.length : '✘')
     });
 
@@ -26,6 +26,11 @@ ScoreView.prototype = {
       counter: this.counter,
       attempts: this.attempts
     });
+  },
+
+  check: function (word) {
+    var found = _.findWhere(this.attempts, {word: word})
+    return !Boolean(found);
   },
 
   start: function () {
