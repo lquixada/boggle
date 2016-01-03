@@ -43,6 +43,7 @@
       <div id="score"></div>
       <div id="clock"></div>
       <button onclick="app.start();">start</button>
+      <button onclick="app.stop();">stop</button>
     </section>
   </main>
 
@@ -62,7 +63,7 @@
 
     <script id="score-template" type="text/x-template">
       <header>
-        <h2>Score <%=counter%></h2>
+        <h2>Score: <%=counter%></h2>
       </header>
       <section>
         <table>
@@ -74,8 +75,6 @@
         <% }); %>
         </table>
       </section>
-      <footer>
-      </footer>
     </script>
 
     <script id="clock-template" type="text/x-template">

@@ -36,12 +36,7 @@ function Board() {
     new Die('IOTMUC'),
     new Die('EHWVTR')
   ];
-  this.matrix = [
-    ['*', '*', '*', '*'],
-    ['*', '*', '*', '*'],
-    ['*', '*', '*', '*'],
-    ['*', '*', '*', '*']
-  ];
+  this.reset();
 }
 
 Board.prototype = {
@@ -70,6 +65,19 @@ Board.prototype = {
   start: function () {
     var drawn = this.shake();
     this.matrix = this.place(drawn);
+  },
+
+  stop: function () {
+    this.reset();
+  },
+
+  reset: function () {
+    this.matrix = [
+      ['*', '*', '*', '*'],
+      ['*', '*', '*', '*'],
+      ['*', '*', '*', '*'],
+      ['*', '*', '*', '*']
+    ];
   },
 
   check: function (word) {
@@ -138,6 +146,11 @@ BoardView.prototype = {
 
   start: function () {
     this.board.start();
+    this.render();
+  },
+
+  stop: function () {
+    this.board.stop();
     this.render();
   }
 };

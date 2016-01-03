@@ -5,9 +5,10 @@
 function App() {
   this.board = new BoardView();
   this.attempt = new AttemptView();
-  this.dictionary = new Dictionary();
   this.score = new ScoreView();
   this.timer = new TimerView();
+
+  this.dictionary = new Dictionary();
 }
 
 App.prototype = {
@@ -23,6 +24,13 @@ App.prototype = {
     this.attempt.start();
     this.score.start();
     this.timer.start();
+  },
+
+  stop: function () {
+    this.board.stop();
+    this.attempt.stop();
+    this.score.stop();
+    this.timer.stop();
   },
 
   checkOnEnter: function (e) {

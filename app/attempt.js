@@ -13,6 +13,11 @@ AttemptView.prototype = {
     this.render();
   },
 
+  stop: function () {
+    this.started = false;
+    this.render();
+  },
+
   reset: function () {
     this.started = false;
     this.render();

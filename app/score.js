@@ -29,6 +29,11 @@ ScoreView.prototype = {
     this.render();
   },
 
+  stop: function () {
+    this.reset();
+    this.render();
+  },
+
   reset: function () {
     this.counter = 0;
     this.attempts = [];

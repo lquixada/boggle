@@ -44,5 +44,10 @@ TimerView.prototype = {
 
   start: function () {
     this.timer.start();
+  },
+
+  stop: function () {
+    this.timer.stop();
+    this.render();
   }
 };
