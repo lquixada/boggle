@@ -4,12 +4,14 @@
 * What to do with big words? maxLength?
 * Loading?
 * View specs
-* Button for solving?
 * README
+* Persist on localStorage?
+
 
 * Host on Github Pages
 * Test on IE10
 
+* Implement event bus
 * Get theme inspiration on other Boggle games
 * Use require.js
 * Interface
