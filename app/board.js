@@ -34,14 +34,14 @@ function Board() {
     new Die('IENSUE'),
     new Die('SFFKAP'),
     new Die('IOTMUC'),
-    new Die('EHWVTR'),
+    new Die('EHWVTR')
   ];
   this.matrix = [
     ['*', '*', '*', '*'],
     ['*', '*', '*', '*'],
     ['*', '*', '*', '*'],
     ['*', '*', '*', '*']
-  ]
+  ];
 }
 
 Board.prototype = {
@@ -121,7 +121,6 @@ Board.prototype = {
     return false;
   }
 };
-
 
 function BoardView() {
   this.elementId = '#board';

@@ -39,10 +39,10 @@ App.prototype = {
       console.log('✔ board');
 
       this.checkDictionary(word, function (isValid) {
-        var result = (isValid? '✔' : '✘');
+        var result = (isValid ? '✔' : '✘');
         console.log(result+' dictionary');
         console.log('---');
-      })
+      });
     } else {
       console.log('✘ board');
     }
@@ -54,7 +54,7 @@ App.prototype = {
 
   checkDictionary: function (word, cb) {
     return this.dictionary.check(word, cb);
-  },
-}
+  }
+};
 
 app = new App();

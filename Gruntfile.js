@@ -1,4 +1,15 @@
 module.exports = function(grunt) {
+  var readJSON = function (filePath) {
+    // Read the JSON file as a regular file
+    var str = grunt.file.read(filePath);
+
+    // Remove comments
+    str = str.replace(/\/\/.*/mg, '');
+
+    // Returns a valid JSON
+    return JSON.parse(str);
+  };
+
   // Project configuration.
   grunt.initConfig({
     concurrent: {
@@ -21,37 +32,57 @@ module.exports = function(grunt) {
     },
 
     karma: {
-        options: {
-            frameworks: ['jasmine'],
-            browsers: ['PhantomJS'],
-            reporters: 'dots',
-            files: [
-                'vendors/underscore-min.js',
-                'app/board.js',
-                'app/board.spec.js'
-            ]
-        },
+      options: {
+        frameworks: ['jasmine'],
+        browsers: ['PhantomJS'],
+        reporters: 'dots',
+        files: [
+          'vendors/underscore-min.js',
+          'app/board.js',
+          'app/board.spec.js'
+        ]
+      },
 
-        dist: {
-          singleRun: false
-        }
+      dist: {
+        singleRun: true
+      },
+
+      dev: {
+        singleRun: false
+      }
+    },
+
+    jshint: {
+      dist: {
+        src: 'app/**/*.js',
+        options: readJSON('.jshintrc')
+      }
+    },
+
+    jscs: {
+      dist: {
+        src: 'app/**/*.js',
+        options: readJSON('.jscsrc')
+      }
     },
 
     watch: {
       js: {
-        files: '**/*.js',
+        files: 'app/**/*.js',
         options: {
-          livereload: 1338,
-        },
-      },
+          livereload: 1338
+        }
+      }
     }
   });
 
   /**
    * Defining aliases
    */
+  grunt.registerTask('spec', ['karma:dev']);
   grunt.registerTask('server', ['connect']);
   grunt.registerTask('work', ['concurrent']);
+  grunt.registerTask('default', ['jshint', 'jscs', 'karma:dist']);
 
   /**
    * Loading tasks
