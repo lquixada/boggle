@@ -22,11 +22,18 @@ App.prototype = {
   },
 
   start: function () {
+    var that = this;
+
     this.board.start();
     this.control.start();
     this.attempt.start();
     this.score.start();
-    this.timer.start();
+    this.timer.start({
+      onStop: function () {
+        that.stop();
+        alert('Game over!');
+      }
+    });
   },
 
   stop: function () {
@@ -68,6 +75,7 @@ App.prototype = {
       word: word,
       scored: scored
     });
+
     this.attempt.clear();
     this.attempt.focus();
   }

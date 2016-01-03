@@ -12,9 +12,18 @@ TimerView.prototype = {
     _.render(this.elementId, {secs: this.timer.remaining});
   },
 
-  start: function () {
+  start: function (options) {
+    var that = this;
+    var opt = options || {};
+
     this.timer.start({
-      onTick: _.bind(this.render, this)
+      onTick: function () {
+        that.render();
+
+        if (that.timer.remaining === 0 && _.isFunction(opt.onStop)) {
+          opt.onStop();
+        }
+      }
     });
   },
 
