@@ -26,7 +26,8 @@ module.exports = function(grunt) {
           hostname: '*',
           useAvailablePort: true,
           keepalive: true,
-          livereload: 1338
+          livereload: 1338,
+          open: 'http://localhost:8300/'
         }
       }
     },
