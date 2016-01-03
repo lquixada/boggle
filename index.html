@@ -86,8 +86,11 @@
     </script>
 
     <script id="control-template" type="text/x-template">
-      <button onclick="app.start();">start</button>
-      <button onclick="app.stop();">stop</button>
+      <% if (started) { %>
+        <button onclick="app.stop();">stop</button>
+      <% } else { %>
+        <button onclick="app.start();">start</button>
+      <% } %>
     </script>
   </div>
 

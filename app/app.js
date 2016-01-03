@@ -23,6 +23,7 @@ App.prototype = {
 
   start: function () {
     this.board.start();
+    this.control.start();
     this.attempt.start();
     this.score.start();
     this.timer.start();
@@ -30,13 +31,14 @@ App.prototype = {
 
   stop: function () {
     this.board.stop();
+    this.control.stop();
     this.attempt.stop();
     this.score.stop();
     this.timer.stop();
   },
 
   checkOnEnter: function (e) {
-    if (e.which===13) {
+    if (e.which === 13) {
       this.check(e.target.value);
     }
   },
