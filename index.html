@@ -15,12 +15,14 @@
   <script src="app/helper.js"></script>
   <script src="app/dictionary.js"></script>
   <script src="app/board.js"></script>
+  <script src="app/score.js"></script>
   <script src="app/timer.js"></script>
   <script src="app/app.js"></script>
 
   <!-- init -->
   <script>
   $(function () {
+    app = new App();
     app.render();
   });
   </script>
@@ -36,7 +38,7 @@
     <section>
       <input type="text" onkeyup="app.checkOnEnter(event)" />
       <div id="board"></div>
-      <ul id="scores"></ul>
+      <div id="score"></div>
       <span id="clock"></span>
       <button onclick="app.start();">start</button>
     </section>
@@ -53,6 +55,24 @@
         </tr>
         <% }); %>
       </table>
+    </script>
+
+    <script id="score-template" type="text/x-template">
+      <header>
+        <h2>Score <%=counter%></h2>
+      </header>
+      <section>
+        <table>
+        <% _.forEach(attempts, function (attempt) { %>
+          <tr>
+            <td><%=attempt.word%></td>
+            <td><%=attempt.score%></td>
+          </tr>
+        <% }); %>
+        </table>
+      </section>
+      <footer>
+      </footer>
     </script>
 
     <script id="clock-template" type="text/x-template">

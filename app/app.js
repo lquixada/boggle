@@ -3,27 +3,22 @@
  */
 
 function App() {
+  this.board = new BoardView();
   this.dictionary = new Dictionary();
+  this.score = new ScoreView();
+  this.timer = new TimerView();
 }
 
 App.prototype = {
   render: function () {
-    this.renderBoard();
-    this.renderTimer();
-  },
-
-  renderBoard: function () {
-    this.board = new BoardView();
     this.board.render();
-  },
-
-  renderTimer: function () {
-    this.timer = new TimerView();
+    this.score.render();
     this.timer.render();
   },
 
   start: function () {
     this.board.start();
+    this.score.start();
     this.timer.start();
   },
 
@@ -34,17 +29,24 @@ App.prototype = {
   },
 
   check: function (word) {
-    console.log('checking "'+word+'":');
-    if (this.checkBoard(word)) {
-      console.log('✔ board');
+    var that = this;
 
+    if (this.checkBoard(word)) {
       this.checkDictionary(word, function (isValid) {
         var result = (isValid ? '✔' : '✘');
         console.log(result+' dictionary');
         console.log('---');
+
+        that.score.add({
+          word: word,
+          scored: isValid
+        })
       });
     } else {
-      console.log('✘ board');
+      this.score.add({
+        word: word,
+        scored: false
+      })
     }
   },
 
@@ -56,5 +58,3 @@ App.prototype = {
     return this.dictionary.check(word, cb);
   }
 };
-
-app = new App();
