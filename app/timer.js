@@ -7,13 +7,13 @@ function Timer(options) {
 
   this.frame = opt.frame || 60;
   this.remaining = this.frame;
-  this.onTick = opt.onTick || _.noop;
 }
 
 Timer.prototype = {
   start: function (options) {
     var that = this;
 
+    this.onTick = options.onTick || _.noop;
     this.timer = setInterval(function () {
       that.remaining--;
       that.onTick();
@@ -32,9 +32,7 @@ Timer.prototype = {
 
 function TimerView() {
   this.elementId = '#clock';
-  this.timer = new Timer({
-    onTick: _.bind(this.render, this)
-  });
+  this.timer = new Timer();
 }
 
 TimerView.prototype = {
@@ -43,7 +41,9 @@ TimerView.prototype = {
   },
 
   start: function () {
-    this.timer.start();
+    this.timer.start({
+      onTick: _.bind(this.render, this)
+    });
   },
 
   stop: function () {
