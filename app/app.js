@@ -4,6 +4,7 @@
 
 function App() {
   this.board = new BoardView();
+  this.control = new ControlView();
   this.attempt = new AttemptView();
   this.score = new ScoreView();
   this.timer = new TimerView();
@@ -14,6 +15,7 @@ function App() {
 App.prototype = {
   render: function () {
     this.board.render();
+    this.control.render();
     this.attempt.render();
     this.score.render();
     this.timer.render();

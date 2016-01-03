@@ -16,6 +16,7 @@
   <script src="app/dictionary.js"></script>
   <script src="app/board.js"></script>
   <script src="app/attempt.js"></script>
+  <script src="app/control.js"></script>
   <script src="app/score.js"></script>
   <script src="app/timer.js"></script>
   <script src="app/app.js"></script>
@@ -42,8 +43,7 @@
       <div id="board"></div>
       <div id="score"></div>
       <div id="clock"></div>
-      <button onclick="app.start();">start</button>
-      <button onclick="app.stop();">stop</button>
+      <div id="control"></div>
     </section>
   </main>
 
@@ -83,6 +83,11 @@
 
     <script id="attempt-template" type="text/x-template">
       <input type="text" onkeyup="app.checkOnEnter(event)" <%= (started ? '' : 'disabled') %> />
+    </script>
+
+    <script id="control-template" type="text/x-template">
+      <button onclick="app.start();">start</button>
+      <button onclick="app.stop();">stop</button>
     </script>
   </div>
 
