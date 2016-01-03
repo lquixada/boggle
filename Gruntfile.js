@@ -62,6 +62,20 @@ module.exports = function(grunt) {
       }
     },
 
+    less: {
+      dist: {
+        files: [
+            {
+                expand: true,
+                cwd: './',
+                src: ['app/**/*.less'],
+                dest: './',
+                ext: '.css'
+            }
+        ]
+      }
+    },
+
     notify: {
       dist: {
         options: {
@@ -88,7 +102,7 @@ module.exports = function(grunt) {
   grunt.registerTask('spec', ['karma']);
   grunt.registerTask('server', ['connect']);
   grunt.registerTask('work', ['concurrent']);
-  grunt.registerTask('default', ['jshint', 'jscs', 'karma', 'notify']);
+  grunt.registerTask('default', ['less', 'jshint', 'jscs', 'karma', 'notify']);
 
   /**
    * Loading tasks

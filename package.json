@@ -7,6 +7,7 @@
     "grunt-concurrent": "^2.1.0",
     "grunt-contrib-connect": "^0.11.2",
     "grunt-contrib-jshint": "^0.11.3",
+    "grunt-contrib-less": "^1.1.0",
     "grunt-contrib-watch": "^0.6.1",
     "grunt-jscs": "^2.5.0",
     "grunt-karma": "^0.12.1",
