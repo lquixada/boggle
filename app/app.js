@@ -48,20 +48,10 @@ App.prototype = {
 
     if (this.checkBoard(word)) {
       this.checkDictionary(word, function (isValid) {
-        that.score.add({
-          word: word,
-          scored: isValid
-        });
-        that.attempt.clear();
-        that.attempt.focus();
+        that.commit(word, isValid);
       });
     } else {
-      this.score.add({
-        word: word,
-        scored: false
-      });
-      this.attempt.clear();
-      this.attempt.focus();
+      this.commit(word, false);
     }
   },
 
@@ -71,5 +61,14 @@ App.prototype = {
 
   checkDictionary: function (word, cb) {
     return this.dictionary.check(word, cb);
+  },
+
+  commit: function (word, scored) {
+    this.score.add({
+      word: word,
+      scored: scored
+    });
+    this.attempt.clear();
+    this.attempt.focus();
   }
 };
