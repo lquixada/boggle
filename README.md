@@ -54,9 +54,9 @@ When you develop a few things happens in the background:
 
 * "Qu" scenario
 * What to do with big words? maxLength?
-* Centralize
-* Loading?
-* View specs
+* View specs / TravisCI
+* Game over alert
+* Zero second
 * Persist on localStorage?
 * Test on IE10
 * Boggle logo
