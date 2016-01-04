@@ -29,7 +29,7 @@ BoardView.prototype = {
 
 function Board() {
   this.dim =  4;
-  this.minLength = 3;
+  this.minLength = 2;
   this.dice = [
     new Die('AOBBOJ'),
     new Die('WHGEEN'),
