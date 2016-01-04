@@ -104,7 +104,8 @@
     </script>
 
     <script id="attempt-template" type="text/x-template">
-      <input type="text" class="box" placeholder="Type and hit 'Enter'" onkeyup="app.checkOnEnter(event)" <%= (started ? '' : 'disabled') %> />
+      <input type="text" class="box" onkeyup="app.checkOnEnter(event)" <%= (started ? '' : 'disabled') %>
+       placeholder="<%= (started ? 'Type the word and hit Enter' : 'Press start to begin...') %>"/>
     </script>
 
     <script id="control-template" type="text/x-template">
