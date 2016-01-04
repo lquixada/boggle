@@ -24,7 +24,7 @@ body {
 /* Components */
 .box {
   background-color: #404040;
-  border: 1px solid;
+  border: .1rem solid;
   border-radius: .5rem;
   border-color: #303030 #505050 #505050 #303030;
 }

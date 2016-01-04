@@ -12,8 +12,8 @@ main > header h1 {
   display: inline-flex;
   color: #fff;
   font-size: 3rem;
-  letter-spacing: -1px;
-  text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.3);
+  letter-spacing: -0.1rem;
+  text-shadow: 0.2rem 0.4rem 0.3rem rgba(0, 0, 0, 0.3);
   vertical-align: middle;
 }
 main > section {
