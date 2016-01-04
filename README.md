@@ -54,13 +54,12 @@ When you develop a few things happens in the background:
 
 * "Qu" scenario
 * What to do with big words? maxLength?
+* Centralize
 * Loading?
 * View specs
-* README
 * Persist on localStorage?
-
 * Test on IE10
-
+* Boggle logo
 * Implement event bus
 * Use require.js
 * Interface
