@@ -1,12 +1,17 @@
 #attempt {
   display: inline-flex;
-  margin-right: 1rem;
+  margin-right: 2rem;
   vertical-align: middle;
 
   input {
+    width: 25rem;
     padding: 1rem;
+    color: #fff;
     font-size: 2rem;
-    text-transform: uppercase;
     border-radius: .4rem;
+
+    &:disabled {
+      opacity: .5;
+    }
   }
 }

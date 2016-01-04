@@ -28,7 +28,7 @@ main > header {
 }
 main > header h1 {
   display: inline-flex;
-  margin-right: 1rem;
+  margin-right: 2rem;
   color: #fff;
   font-size: 3rem;
   letter-spacing: -1px;
