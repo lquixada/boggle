@@ -49,3 +49,19 @@ When you develop a few things happens in the background:
 * Browser is reloaded
 * Specs are run
 * Notify is something went wrong
+
+## TODO
+
+* "Qu" scenario
+* What to do with big words? maxLength?
+* Loading?
+* View specs
+* README
+* Persist on localStorage?
+
+* Test on IE10
+
+* Implement event bus
+* Use require.js
+* Interface
+  * Board: Pattern Lock (http://ignitersworld.com/lab/patternLock.html)
