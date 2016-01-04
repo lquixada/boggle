@@ -1,0 +1,8 @@
+#control {
+  display: inline-flex;
+  vertical-align: middle;
+}
+#control button {
+  padding: 1rem;
+  font-size: 2rem;
+}

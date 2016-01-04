@@ -16,7 +16,7 @@ module.exports = function(grunt) {
       options:{
         logConcurrentOutput: true
       },
-      dist: ['server', 'watch']
+      dist: ['server', 'watch:build', 'watch:dev']
     },
 
     connect: {
@@ -85,9 +85,17 @@ module.exports = function(grunt) {
     },
 
     watch: {
-      dist: {
-        files: 'app/**/*.js',
+      dev: {
+        files: ['app/**/*.js'],
         tasks: ['default'],
+        options: {
+          atBegin: true
+        }
+      },
+
+      build: {
+        files: ['app/**/*.less', 'app/**/*.js'],
+        tasks: ['less'],
         options: {
           atBegin: true,
           livereload: 1338
@@ -102,7 +110,7 @@ module.exports = function(grunt) {
   grunt.registerTask('spec', ['karma']);
   grunt.registerTask('server', ['connect']);
   grunt.registerTask('work', ['concurrent']);
-  grunt.registerTask('default', ['less', 'jshint', 'jscs', 'karma', 'notify']);
+  grunt.registerTask('default', ['jshint', 'jscs', 'karma', 'notify']);
 
   /**
    * Loading tasks

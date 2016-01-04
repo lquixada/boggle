@@ -4,7 +4,9 @@
 }
 
 html {
+  color: #fff;
   font-size: 10px;
+  font-family: Helvetica, Arial, sans-serif;
 }
 
 html, body {
@@ -12,14 +14,48 @@ html, body {
   height: 100%;
 }
 
-main > header {
-  padding: 2rem;
-  text-align: center;
-  background-color: #565656;
+.container {
+  margin: auto;
+  width: 76.8rem;
 }
 
-h1 {
-  display: inline-flex;
-  color: #cacaca;
-  font-size: 3rem;
+main {
+  height: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+
+  > header {
+    margin-bottom: 2rem;
+    padding: 2rem;
+    background-color: #565656;
+
+    h1 {
+      display: inline-flex;
+      margin-right: 1rem;
+      color: #fff;
+      font-size: 3rem;
+      letter-spacing: -1px;
+      text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
+      vertical-align: middle;
+    }
+  }
+
+  > section {
+    margin-bottom: 2rem;
+    flex-grow: 1;
+  }
+
+  > footer {
+    padding: 2rem;
+    color: #999;
+    font-size: 1.2rem;
+    background-color: #565656;
+  }
+}
+
+.box {
+  background-color: #404040;
+  border: 1px solid;
+  border-radius: .5rem;
+  border-color: #303030 #505050 #505050 #303030;
 }

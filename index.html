@@ -7,20 +7,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Boggle</title>
 
+  <link href="app/board/board.css" rel="stylesheet">
+  <link href="app/attempt/attempt.css" rel="stylesheet">
+  <link href="app/control/control.css" rel="stylesheet">
+  <link href="app/score/score.css" rel="stylesheet">
+  <link href="app/timer/timer.css" rel="stylesheet">
   <link href="app/app.css" rel="stylesheet">
 
   <!-- vendors -->
   <script src="node_modules/jquery/dist/jquery.min.js"></script>
+  <script src="node_modules/jquery-knob/js/jquery.knob.js"></script>
   <script src="node_modules/underscore/underscore-min.js"></script>
 
   <!-- app -->
   <script src="app/helper.js"></script>
   <script src="app/dictionary.js"></script>
-  <script src="app/board.js"></script>
-  <script src="app/attempt.js"></script>
-  <script src="app/control.js"></script>
-  <script src="app/score.js"></script>
-  <script src="app/timer.js"></script>
+  <script src="app/board/board.js"></script>
+  <script src="app/attempt/attempt.js"></script>
+  <script src="app/control/control.js"></script>
+  <script src="app/score/score.js"></script>
+  <script src="app/timer/timer.js"></script>
   <script src="app/app.js"></script>
 
   <!-- init game -->
@@ -38,16 +44,30 @@
   <!-- app -->
   <main>
     <header>
-      <h1>Boggle</h1>
+      <div class="container">
+        <h1>BOGGLE</h1>
+        <div id="attempt"></div>
+        <div id="control"></div>
+      </div>
     </header>
 
     <section>
-      <div id="attempt"></div>
-      <div id="board"></div>
-      <div id="score"></div>
-      <div id="clock"></div>
-      <div id="control"></div>
+      <div class="container" style="display: flex; flex:column nowrap;">
+        <div style="width:15%; margin-right: 5%;">
+          <div id="clock"></div>
+          <div id="score"></div>
+        </div>
+        <div style="width:80%;">
+          <div id="board" class="box"></div>
+        </div>
+      </div>
     </section>
+
+    <footer>
+      <div class="container">
+        &copy; Copyright 2016 Leonardo Quixadá. All rights reserved.
+      </div>
+    </footer>
   </main>
 
   <!-- templates -->
@@ -68,7 +88,7 @@
       <header>
         <h2>Score: <%=counter%></h2>
       </header>
-      <section>
+      <section class="box">
         <table>
         <% _.forEach(attempts, function (attempt) { %>
           <tr>
@@ -81,7 +101,7 @@
     </script>
 
     <script id="clock-template" type="text/x-template">
-      <span>00:<%=(secs<10?'0'+secs:secs)%></span>
+      <input value="<%=secs%>">
     </script>
 
     <script id="attempt-template" type="text/x-template">

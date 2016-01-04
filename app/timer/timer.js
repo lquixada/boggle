@@ -10,6 +10,22 @@ function TimerView() {
 TimerView.prototype = {
   render: function () {
     _.render(this.elementId, {secs: this.timer.remaining});
+    this.renderDial();
+  },
+
+  renderDial: function () {
+    $(this.elementId).find('input').knob({
+      readOnly: true,
+      width: 100,
+      height: 100,
+      min: 0,
+      max: 60,
+      inputColor: '#fff',
+      bgColor: '#6c6',
+      fgColor: '#666',
+      thickness: '.30',
+      rotation: 'anticlockwise'
+    });
   },
 
   start: function (options) {

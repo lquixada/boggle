@@ -1,0 +1,11 @@
+#attempt {
+  display: inline-flex;
+  margin-right: 1rem;
+  vertical-align: middle;
+}
+#attempt input {
+  padding: 1rem;
+  font-size: 2rem;
+  text-transform: uppercase;
+  border-radius: .4rem;
+}
