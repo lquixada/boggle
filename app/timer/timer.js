@@ -3,7 +3,7 @@
  */
 
 function TimerView() {
-  this.elementId = '#clock';
+  this.elementId = '#timer';
   this.timer = new Timer();
 }
 
@@ -16,8 +16,8 @@ TimerView.prototype = {
   renderDial: function () {
     $(this.elementId).find('input').knob({
       readOnly: true,
-      width: 100,
-      height: 100,
+      width: 120,
+      height: 120,
       min: 0,
       max: 60,
       inputColor: '#fff',

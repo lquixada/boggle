@@ -6,9 +6,9 @@
 }
 #score > section {
   width: 100%;
-  min-height: 20rem;
+  height: 22rem;
   overflow-x: hidden;
-  overflow-y: auto;
+  overflow-y: visible;
 }
 #score > section table {
   margin: 1rem auto;
