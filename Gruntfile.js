@@ -40,8 +40,8 @@ module.exports = function(grunt) {
         singleRun: false,
         options: {
           files: [
-            'app/board/board.spec.js',
-            'config.spec.js'
+            'app/board/view.spec.js',
+            'app/init.spec.js'
           ]
         }
       }

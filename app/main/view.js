@@ -3,15 +3,15 @@
  */
 
 define([
-  'app/attempt/attempt',
-  'app/board/board',
-  'app/control/control',
-  'app/score/score',
-  'app/timer/timer',
+  'app/attempt/view',
+  'app/board/view',
+  'app/control/view',
+  'app/score/view',
+  'app/timer/view',
   'app/dictionary'
 ], function (AttemptView, BoardView, ControlView, ScoreView, TimerView, Dictionary) {
   'use strict';
-  
+
   function App() {
     this.board = new BoardView();
     this.control = new ControlView();

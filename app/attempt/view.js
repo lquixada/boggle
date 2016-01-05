@@ -3,7 +3,8 @@
  */
 
 define(['jquery', 'underscore'], function ($, _) {
-  
+  'use strict';
+
   function AttemptView() {
     this.elementId = '#attempt';
     this.started = false;

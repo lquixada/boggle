@@ -1,4 +1,5 @@
 requirejs.config({
+  baseUrl: '..',
   paths: {
     'jquery': 'vendor/jquery-2.1.4.min',
     'jquery.knob': 'vendor/jquery.knob.min',
@@ -9,7 +10,7 @@ requirejs.config({
 require([
   'jquery',
   'underscore',
-  'app/app',
+  'app/main/view',
   'app/helper',
   'jquery.knob'
 ], function ($, _, App) {
