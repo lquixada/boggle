@@ -1,5 +1,6 @@
 #attempt {
-  display: inline-flex;
+  display: inline-block;
+  margin-right: 1.2rem;
   vertical-align: middle;
 }
 #attempt input {

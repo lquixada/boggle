@@ -1,5 +1,6 @@
 #board {
   display: inline-block;
+  vertical-align: top;
   padding: 1rem;
 }
 #board td {

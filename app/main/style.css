@@ -9,7 +9,8 @@ main > header {
   background-color: #565656;
 }
 main > header h1 {
-  display: inline-flex;
+  display: inline-block;
+  margin-right: 1.2rem;
   color: #fff;
   font-size: 3rem;
   letter-spacing: -0.1rem;
@@ -21,7 +22,9 @@ main > section {
   flex-grow: 1;
 }
 main > section aside {
-  display: flex;
+  display: inline-block;
+  margin-right: 2rem;
+  vertical-align: top;
   flex-flow: column nowrap;
   justify-content: space-between;
 }
