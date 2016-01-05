@@ -53,14 +53,15 @@ When you develop a few things happens in the background:
 
 ## TODO
 
-* use Chrome for karma
+* Test on IE10
+* Simulate mobile devices
 * "Qu" scenario
 * What to do with big words? maxLength?
 * View specs / TravisCI
 * Game over alert
 * Zero second
-* Test on IE10
 * Boggle logo
+* Present tech stack
 
 
 ## Pending Improvements
