@@ -6,7 +6,13 @@ More info on https://en.wikipedia.org/wiki/Boggle
 
 ## Installation
 
-Go to the project root directory and run the following steps.
+Go to the install folder and run the following steps.
+
+### Project
+
+```
+$ git clone https://github.com/lquixada/boggle.git
+```
 
 ### Node.js
 
@@ -19,6 +25,7 @@ $ nvm use 0.12
 ### App
 
 ```
+$ cd boggle
 $ npm install
 $ npm install -g grunt-cli
 ```
@@ -41,9 +48,15 @@ $ grunt work
 
 It will do two things:
 * Start the app on your browser
-* Run quality tools as you develop such as linting and testing.
+* Detect changes on less, js and html file to reload the browser
 
-When you develop a few things happens in the background:
+You may also run:
+
+```
+$ grunt watch:review
+```
+
+To check a few things during development:
 * Code is linted
 * Ciclomatic complexity is checked
 * Browser is reloaded
@@ -67,9 +80,3 @@ When you develop a few things happens in the background:
 * *Local Dictionary*: quicker feedback in a time-pressured game.
 * *Event Bus*: modules more decoupled.
 * *IntroJS*: a nice tour for beginners on Boggle rules.
-
-
-## TODO
-
-* Check grunt workflow
-* TravisCI

@@ -16,7 +16,7 @@ module.exports = function(grunt) {
       options:{
         logConcurrentOutput: true
       },
-      dist: ['server', 'watch:build', 'watch:dev']
+      dist: ['server', 'watch:build']
     },
 
     connect: {
@@ -90,7 +90,7 @@ module.exports = function(grunt) {
     },
 
     watch: {
-      dev: {
+      review: {
         files: ['app/**/*.js'],
         tasks: ['default'],
         options: {
@@ -99,7 +99,7 @@ module.exports = function(grunt) {
       },
 
       build: {
-        files: ['app/**/*.less', 'app/**/*.js'],
+        files: ['app/**/*.less', 'app/**/*.js', 'index.html'],
         tasks: ['less'],
         options: {
           atBegin: true,
