@@ -50,6 +50,7 @@ When you develop a few things happens in the background:
 * Specs are run
 * Notify is something went wrong
 
+
 ## TODO
 
 * use Chrome for karma
@@ -58,10 +59,14 @@ When you develop a few things happens in the background:
 * View specs / TravisCI
 * Game over alert
 * Zero second
-* Persist on localStorage?
 * Test on IE10
 * Boggle logo
-* Implement event bus
-* Use require.js
-* Interface
-  * Board: Pattern Lock (http://ignitersworld.com/lab/patternLock.html)
+
+
+## Pending Improvements
+
+* *React*: templates joined with views, modules would be more decoupled.
+* *PatternLock*: find word using the mouse in a visually compelling way.
+* *Local Dictionary*: quicker feedback in a time-pressured game.
+* *Event Bus*: modules more decoupled.
+* *IntroJS*: a nice tour for beginners on Boggle rules.
