@@ -19,11 +19,18 @@ html, body {
 /* Grid */
 
 .container {
-  display: flex;
-  flex-flow: row nowrap;
   margin: auto;
   width: 54rem;
-  justify-content: space-between;
+}
+
+@media (max-width: 540px) {
+  .container {
+    width: 90%;
+  }
+
+  .ribbon {
+    display: none;
+  }
 }
 
 /* Components */

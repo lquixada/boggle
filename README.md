@@ -71,9 +71,5 @@ When you develop a few things happens in the background:
 
 ## TODO
 
-* Simulate mobile devices
 * Check grunt workflow
 * TravisCI
-* Game over alert
-* Zero second
-* Boggle logo

@@ -26,3 +26,8 @@
   padding-right: 1rem;
   text-align: right;
 }
+@media (max-width: 540px) {
+  #score section {
+    display: none;
+  }
+}

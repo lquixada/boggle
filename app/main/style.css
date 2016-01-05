@@ -35,3 +35,8 @@ main > footer {
   font-size: 1.2rem;
   background-color: #565656;
 }
+@media (max-width: 540px) {
+  main aside {
+    display: block;
+  }
+}

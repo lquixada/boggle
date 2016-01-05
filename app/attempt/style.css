@@ -4,7 +4,7 @@
   vertical-align: middle;
 }
 #attempt input {
-  width: 25rem;
+  width: 100%;
   padding: 1rem;
   color: #fff;
   font-size: 2rem;
@@ -12,4 +12,9 @@
 }
 #attempt input:disabled {
   opacity: .5;
+}
+@media (max-width: 540px) {
+  #attempt {
+    display: block;
+  }
 }
