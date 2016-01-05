@@ -56,14 +56,14 @@ module.exports = function(grunt) {
     jshint: {
       dist: {
         src: ['app/**/*.js'],
-        options: readJSON('.jshintrc')
+        options: readJSON('config/.jshintrc')
       }
     },
 
     jscs: {
       dist: {
         src: 'app/**/*.js',
-        options: readJSON('.jscsrc')
+        options: readJSON('config/.jscsrc')
       }
     },
 

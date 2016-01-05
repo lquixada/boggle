@@ -55,9 +55,11 @@ When you develop a few things happens in the background:
 
 * Test on IE10
 * Simulate mobile devices
+* Check grunt workflow
+* Comment on Dicitionary class
 * "Qu" scenario
 * What to do with big words? maxLength?
-* View specs / TravisCI
+* TravisCI
 * Game over alert
 * Zero second
 * Boggle logo
