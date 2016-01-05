@@ -51,18 +51,13 @@ When you develop a few things happens in the background:
 * Notify is something went wrong
 
 
-## TODO
+## Stack
 
-* Test on IE10
-* Simulate mobile devices
-* Check grunt workflow
-* "Qu" scenario
-* What to do with big words? maxLength?
-* TravisCI
-* Game over alert
-* Zero second
-* Boggle logo
-* Present tech stack
+* Grunt
+* Less
+* Underscore
+* jQuery
+* Require.js
 
 
 ## Pending Improvements
@@ -72,3 +67,13 @@ When you develop a few things happens in the background:
 * *Local Dictionary*: quicker feedback in a time-pressured game.
 * *Event Bus*: modules more decoupled.
 * *IntroJS*: a nice tour for beginners on Boggle rules.
+
+
+## TODO
+
+* Simulate mobile devices
+* Check grunt workflow
+* TravisCI
+* Game over alert
+* Zero second
+* Boggle logo
