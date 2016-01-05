@@ -19,6 +19,7 @@ define([
     this.score = new ScoreView();
     this.timer = new TimerView();
 
+    this.minLength = 2;
     this.dictionary = new Dictionary();
   }
 
@@ -62,6 +63,10 @@ define([
 
     check: function (word) {
       var that = this;
+
+      if (word.length < this.minLength) {
+        return;
+      }
 
       if (this.checkScore(word) && this.checkBoard(word)) {
         this.checkDictionary(word, function (isValid) {
