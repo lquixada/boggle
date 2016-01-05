@@ -2,7 +2,6 @@
  * Timer
  */
 
-
 define(['jquery', 'underscore'], function ($, _) {
   function TimerView() {
     this.elementId = '#timer';
