@@ -1,6 +1,10 @@
 define(['app/board/view'], function(BoardView) {
   'use strict';
 
+  beforeAll(function () {
+     _.render = jasmine.createSpy('_render');
+  });
+  
   describe('BoardView', function () {
     var board;
 

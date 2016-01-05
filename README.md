@@ -52,7 +52,7 @@ When you develop a few things happens in the background:
 
 ## TODO
 
-* use strict
+* use Chrome for karma
 * "Qu" scenario
 * What to do with big words? maxLength?
 * View specs / TravisCI
