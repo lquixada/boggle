@@ -4,7 +4,7 @@ define(['app/board/view'], function(BoardView) {
   beforeAll(function () {
      _.render = jasmine.createSpy('_render');
   });
-  
+
   describe('BoardView', function () {
     var board;
 
@@ -41,6 +41,11 @@ define(['app/board/view'], function(BoardView) {
 
     it('should not find word "soar"', function () {
       expect(board.check('soar')).toBeFalsy();
+    });
+
+    it('should initialize board on start', function () {
+      board.start();
+      expect(board.board.matrix[0][0]).not.toBe(' ');
     });
 
   });

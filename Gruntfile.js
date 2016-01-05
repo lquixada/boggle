@@ -45,6 +45,8 @@ module.exports = function(grunt) {
             {pattern: 'app/board/view.spec.js', included: false},
             {pattern: 'app/score/view.js', included: false},
             {pattern: 'app/score/view.spec.js', included: false},
+            {pattern: 'app/timer/view.js', included: false},
+            {pattern: 'app/timer/view.spec.js', included: false},
             'app/init.spec.js'
           ]
         }
