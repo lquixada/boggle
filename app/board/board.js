@@ -3,6 +3,8 @@
  */
 
 define(['jquery', 'underscore'], function ($, _) {
+  'use strict';
+  
   function BoardView() {
     this.elementId = '#board';
     this.board = new Board();

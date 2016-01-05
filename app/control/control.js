@@ -1,8 +1,10 @@
 /*
  * Control
  */
- 
+
 define(['jquery', 'underscore'], function ($, _) {
+  'use strict';
+  
   function ControlView() {
     this.elementId = '#control';
     this.started = false;

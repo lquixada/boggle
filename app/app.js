@@ -10,6 +10,8 @@ define([
   'app/timer/timer',
   'app/dictionary'
 ], function (AttemptView, BoardView, ControlView, ScoreView, TimerView, Dictionary) {
+  'use strict';
+  
   function App() {
     this.board = new BoardView();
     this.control = new ControlView();

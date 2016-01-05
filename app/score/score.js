@@ -3,6 +3,8 @@
  */
 
 define(['jquery', 'underscore'], function ($, _) {
+  'use strict';
+  
   function ScoreView() {
     this.elementId = '#score';
     this.reset();
