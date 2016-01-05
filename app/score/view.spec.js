@@ -1,15 +1,12 @@
-define(['underscore', 'app/score/view'], function(_, ScoreView) {
+define(['app/score/view'], function(ScoreView) {
   'use strict';
-
-  beforeAll(function () {
-     _.render = jasmine.createSpy('_render');
-  });
 
   describe('ScoreView', function () {
     var score;
 
     beforeEach(function () {
       score = new ScoreView();
+      score.render = jasmine.createSpy('render');
     });
 
     it('should allow new attempts', function () {

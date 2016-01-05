@@ -22,7 +22,7 @@ define(['underscore','app/timer/view'], function(_, TimerView) {
     });
 
     it('should do a countdown', function () {
-      var spy = jasmine.createSpy("spy");
+      var spy = jasmine.createSpy('spy');
 
       timer.start({
         onStop: function () {

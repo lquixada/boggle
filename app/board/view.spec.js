@@ -1,15 +1,12 @@
 define(['app/board/view'], function(BoardView) {
   'use strict';
 
-  beforeAll(function () {
-     _.render = jasmine.createSpy('_render');
-  });
-
   describe('BoardView', function () {
     var board;
 
     beforeEach(function () {
       board = new BoardView();
+      board.render = jasmine.createSpy('render');
       // Mocking the matrix since it's random
       board.board.matrix = [
         ['O', 'S', 'O', 'K'],
