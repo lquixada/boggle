@@ -37,10 +37,12 @@ module.exports = function(grunt) {
         frameworks: ['jasmine', 'requirejs'],
         browsers: ['PhantomJS'],
         reporters: 'dots',
-        singleRun: false,
+        singleRun: true,
         options: {
           files: [
-            'app/board/view.spec.js',
+            {pattern: 'vendor/*.js', included: false},
+            {pattern: 'app/board/view.js', included: false},
+            {pattern: 'app/board/view.spec.js', included: false},
             'app/init.spec.js'
           ]
         }

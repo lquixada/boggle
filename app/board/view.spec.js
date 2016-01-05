@@ -1,12 +1,13 @@
-define(['app/board/board'], function(Board) {
+define(['app/board/view'], function(BoardView) {
+  'use strict';
 
-  describe('Board', function () {
-    'use strict';
+  describe('BoardView', function () {
+    var board;
 
     beforeEach(function () {
-      this.board = new Board();
+      board = new BoardView();
       // Mocking the matrix since it's random
-      this.board.matrix = [
+      board.board.matrix = [
         ['O', 'S', 'O', 'K'],
         ['W', 'A', 'S', 'C'],
         ['L', 'I', 'V', 'C'],
@@ -14,29 +15,30 @@ define(['app/board/board'], function(Board) {
       ];
     });
 
-    it('should respect the minimum length', function () {
-      expect(this.board.check('or')).toBeFalsy();
+    it('should respect the minimum length (2)', function () {
+      expect(board.check('o')).toBeFalsy();
     });
 
     it('should find word "socks"', function () {
-      expect(this.board.check('socks')).toBeTruthy();
+      expect(board.check('socks')).toBeTruthy();
     });
 
     it('should find word "liv"', function () {
-      expect(this.board.check('liv')).toBeTruthy();
+      expect(board.check('liv')).toBeTruthy();
     });
 
     it('should not find word "sucks"', function () {
-      expect(this.board.check('sucks')).toBeFalsy();
+      expect(board.check('sucks')).toBeFalsy();
     });
 
     it('should not find word "soils"', function () {
-      expect(this.board.check('soils')).toBeFalsy();
+      expect(board.check('soils')).toBeFalsy();
     });
 
     it('should not find word "soar"', function () {
-      expect(this.board.check('soar')).toBeFalsy();
+      expect(board.check('soar')).toBeFalsy();
     });
+
   });
 
 });

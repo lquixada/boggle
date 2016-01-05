@@ -4,7 +4,7 @@
 
 define(['jquery', 'underscore'], function ($, _) {
   'use strict';
-  
+
   function BoardView() {
     this.elementId = '#board';
     this.board = new Board();
@@ -31,7 +31,7 @@ define(['jquery', 'underscore'], function ($, _) {
   };
 
   function Board() {
-    this.dim =  4;
+    this.dim = 4;
     this.minLength = 2;
     this.dice = [
       new Die('AOBBOJ'),
