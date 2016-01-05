@@ -15,29 +15,8 @@
   <link href="app/timer/timer.css" rel="stylesheet">
   <link href="app/app.css" rel="stylesheet">
 
-  <!-- vendors -->
-  <script src="vendor/jquery-2.1.4.min.js"></script>
-  <script src="vendor/jquery.knob.min.js"></script>
-  <script src="vendor/underscore-min.js"></script>
-
   <!-- app -->
-  <script src="app/helper.js"></script>
-  <script src="app/dictionary.js"></script>
-  <script src="app/board/board.js"></script>
-  <script src="app/attempt/attempt.js"></script>
-  <script src="app/control/control.js"></script>
-  <script src="app/score/score.js"></script>
-  <script src="app/timer/timer.js"></script>
-  <script src="app/app.js"></script>
-
-  <!-- init game -->
-  <script>
-  var app;
-  $(function () {
-    app = new App();
-    app.render();
-  });
-  </script>
+  <script data-main="init" src="vendor/require.js"></script>
 </head>
 
 <body>

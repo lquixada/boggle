@@ -34,15 +34,14 @@ module.exports = function(grunt) {
 
     karma: {
       dist: {
-        frameworks: ['jasmine'],
+        frameworks: ['jasmine', 'requirejs'],
         browsers: ['PhantomJS'],
         reporters: 'dots',
-        singleRun: true,
+        singleRun: false,
         options: {
           files: [
-            'vendor/underscore-min.js',
-            'app/board.js',
-            'app/board.spec.js'
+            'app/board/board.spec.js',
+            'config.spec.js'
           ]
         }
       }
