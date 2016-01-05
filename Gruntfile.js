@@ -35,7 +35,7 @@ module.exports = function(grunt) {
     karma: {
       dist: {
         frameworks: ['jasmine', 'requirejs'],
-        browsers: ['PhantomJS'],
+        browsers: ['Chrome'],
         reporters: 'dots',
         singleRun: true,
         options: {
@@ -43,6 +43,8 @@ module.exports = function(grunt) {
             {pattern: 'vendor/*.js', included: false},
             {pattern: 'app/board/view.js', included: false},
             {pattern: 'app/board/view.spec.js', included: false},
+            {pattern: 'app/score/view.js', included: false},
+            {pattern: 'app/score/view.spec.js', included: false},
             'app/init.spec.js'
           ]
         }
