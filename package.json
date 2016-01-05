@@ -21,6 +21,9 @@
     "phantomjs": "^1.9.19",
     "requirejs": "^2.1.22"
   },
+  "scripts": {
+    "test": "grunt spec"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/lquixada/boggle.git"
