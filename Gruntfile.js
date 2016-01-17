@@ -32,6 +32,16 @@ module.exports = function(grunt) {
       }
     },
 
+    copy: {
+      dist: {
+        // includes files within path and its sub-directories
+        files: [
+          {expand: true, src: ['app/**'], dest: 'build/app/'},
+          {expand: true, src: ['index.html'], dest: 'build/'}
+        ]
+      },
+    },
+
     karma: {
       dist: {
         frameworks: ['jasmine', 'requirejs'],
