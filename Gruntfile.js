@@ -44,6 +44,14 @@ module.exports = function(grunt) {
       },
     },
 
+    'gh-pages': {
+      options: {
+        base: 'build',
+        clone: '.tmp'
+      },
+      src: ['**']
+    },
+
     karma: {
       dist: {
         frameworks: ['jasmine', 'requirejs'],
@@ -125,6 +133,7 @@ module.exports = function(grunt) {
    * Defining aliases
    */
   grunt.registerTask('spec', ['karma']);
+  grunt.registerTask('publish', ['gh-pages']);
   grunt.registerTask('server', ['connect']);
   grunt.registerTask('work', ['concurrent']);
   grunt.registerTask('default', ['jshint', 'jscs', 'karma', 'notify']);
