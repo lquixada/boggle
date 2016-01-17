@@ -22,6 +22,7 @@ module.exports = function(grunt) {
     connect: {
       dist: {
         options: {
+          base: 'build',
           port: 8300,
           hostname: '*',
           useAvailablePort: true,
@@ -36,8 +37,9 @@ module.exports = function(grunt) {
       dist: {
         // includes files within path and its sub-directories
         files: [
-          {expand: true, src: ['app/**'], dest: 'build/app/'},
-          {expand: true, src: ['index.html'], dest: 'build/'}
+          {expand: true, src: ['index.html'], dest: 'build/'},
+          {expand: true, src: ['app/**'], dest: 'build/'},
+          {expand: true, src: ['vendor/**'], dest: 'build/'}
         ]
       },
     },
