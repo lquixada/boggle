@@ -96,7 +96,7 @@ module.exports = function(grunt) {
     notify: {
       dist: {
         options: {
-          message: 'Everything\'s alright!'
+          message: 'build successful!'
         }
       }
     },
@@ -112,7 +112,7 @@ module.exports = function(grunt) {
 
       build: {
         files: ['app/**/*.less', 'app/**/*.js', 'index.html'],
-        tasks: ['less'],
+        tasks: ['build'],
         options: {
           atBegin: true,
           livereload: 1338
@@ -128,6 +128,7 @@ module.exports = function(grunt) {
   grunt.registerTask('server', ['connect']);
   grunt.registerTask('work', ['concurrent']);
   grunt.registerTask('default', ['jshint', 'jscs', 'karma', 'notify']);
+  grunt.registerTask('build', ['less', 'copy', 'notify']);
 
   /**
    * Loading tasks
