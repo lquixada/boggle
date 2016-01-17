@@ -1,0 +1,22 @@
+#timer {
+  margin-bottom: 2rem;
+  height: 12rem;
+  text-align: center;
+}
+#timer .micro-counter {
+  display: none;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+@media (max-width: 540px) {
+  #timer {
+    margin-bottom: auto;
+    height: auto;
+  }
+  #timer div {
+    display: none !important;
+  }
+  #timer .micro-counter {
+    display: block;
+  }
+}

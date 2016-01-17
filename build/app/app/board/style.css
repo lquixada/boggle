@@ -1,0 +1,15 @@
+#board {
+  display: inline-block;
+  vertical-align: top;
+  padding: 1rem;
+}
+#board td {
+  width: 9rem;
+  height: 9rem;
+  color: #333;
+  font-size: 4rem;
+  background-color: #fff;
+  text-align: center;
+  text-transform: uppercase;
+  border-radius: .4rem;
+}

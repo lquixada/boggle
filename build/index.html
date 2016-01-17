@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Boggle</title>
+
+  <link href="app/global.css" rel="stylesheet">
+  <link href="app/board/style.css" rel="stylesheet">
+  <link href="app/attempt/style.css" rel="stylesheet">
+  <link href="app/control/style.css" rel="stylesheet">
+  <link href="app/score/style.css" rel="stylesheet">
+  <link href="app/timer/style.css" rel="stylesheet">
+  <link href="app/main/style.css" rel="stylesheet">
+
+  <!-- app -->
+  <script data-main="app/init" src="vendor/require.js"></script>
+</head>
+
+<body>
+
+  <!-- app -->
+  <main>
+    <header>
+      <div class="container">
+        <h1>BOGGLE</h1>
+        <div id="control"></div>
+        <div id="attempt"></div>
+      </div>
+    </header>
+
+    <section>
+      <div class="container">
+        <aside>
+          <div id="timer"></div>
+          <div id="score"></div>
+        </aside>
+        <div id="board" class="box"></div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        &copy; Copyright 2016 Leonardo Quixadá. All rights reserved.
+      </div>
+    </footer>
+  </main>
+
+  <!-- templates -->
+  <div id="templates">
+    <script id="board-template" type="text/x-template">
+      <table>
+        <% _.forEach(board, function (row) { %>
+        <tr>
+          <% _.forEach(row, function (cell) { %>
+            <td><%=cell%></td>
+          <% }); %>
+        </tr>
+        <% }); %>
+      </table>
+    </script>
+
+    <script id="score-template" type="text/x-template">
+      <header>
+        <h2>Score: <%=counter%></h2>
+      </header>
+      <section class="box">
+        <table>
+        <% _.forEach(attempts, function (attempt) { %>
+          <tr>
+            <td><%=attempt.word%></td>
+            <td><%=attempt.score%></td>
+          </tr>
+        <% }); %>
+        </table>
+      </section>
+    </script>
+
+    <script id="timer-template" type="text/x-template">
+      <input value="<%=secs%>">
+      <span class="micro-counter">Seconds left: <%=secs%></span>
+    </script>
+
+    <script id="attempt-template" type="text/x-template">
+      <input type="text" class="box" onkeyup="app.checkOnEnter(event)" <%= (started ? '' : 'disabled') %>
+       placeholder="<%= (started ? 'Type the word and hit Enter' : 'Press start to begin...') %>"/>
+    </script>
+
+    <script id="control-template" type="text/x-template">
+      <% if (started) { %>
+        <button type="button" onclick="app.stop();">stop!</button>
+      <% } else { %>
+        <button type="button" onclick="app.start();">start!</button>
+      <% } %>
+    </script>
+  </div>
+
+  <a class="ribbon" href="https://github.com/lquixada/boggle">
+    <img style="position: absolute; top: 0; right: 0; border: 0;" alt="Fork me on GitHub"
+    src="https://camo.githubusercontent.com/365986a132ccd6a44c23a9169022c0b5c890c387/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67"
+    data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" />
+  </a>
+</body>
+
+</html>
