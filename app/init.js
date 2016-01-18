@@ -10,11 +10,8 @@ requirejs.config({
 
 require([
   'jquery',
-  'underscore',
-  'app/main/view',
-  'app/helper',
-  'jquery.knob'
-], function ($, _, App) {
+  'app/main/view'
+], function ($, App) {
   $(function () {
     window.app = new App();
     window.app.render();

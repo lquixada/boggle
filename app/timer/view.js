@@ -2,7 +2,7 @@
  * Timer
  */
 
-define(['jquery', 'underscore', 'text!app/timer/template.tpl'], function ($, _, tpl) {
+define(['jquery', 'underscore', 'text!app/timer/template.tpl', 'jquery.knob'], function ($, _, tpl) {
   function TimerView() {
     this.elementId = '#timer';
     this.timer = new Timer();
