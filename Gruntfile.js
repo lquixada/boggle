@@ -142,7 +142,7 @@ module.exports = function(grunt) {
     watch: {
       review: {
         files: ['app/**/*.js'],
-        tasks: ['default'],
+        tasks: ['review', 'notify'],
         options: {
           atBegin: true
         }
@@ -150,7 +150,7 @@ module.exports = function(grunt) {
 
       build: {
         files: ['app/**/*.less', 'app/**/*.js', 'index.html'],
-        tasks: ['build'],
+        tasks: ['build', 'notify'],
         options: {
           atBegin: true,
           livereload: 1338
@@ -163,12 +163,15 @@ module.exports = function(grunt) {
    * Defining aliases
    */
   grunt.registerTask('spec', ['karma']);
+  grunt.registerTask('lint', ['jshint', 'jscs']);
   grunt.registerTask('publish', ['gh-pages']);
   grunt.registerTask('server', ['connect']);
   grunt.registerTask('work', ['concurrent']);
-  grunt.registerTask('default', ['jshint', 'jscs', 'karma', 'notify']);
-  grunt.registerTask('build', ['clean:build', 'less', 'copy', 'uglify', 'clean:files', 'notify']);
+  grunt.registerTask('review', ['lint', 'spec']);
+  grunt.registerTask('build', ['clean:build', 'less', 'copy', 'uglify', 'clean:files']);
   grunt.registerTask('deploy', ['build', 'publish']);
+
+  grunt.registerTask('default', ['review']);
 
   /**
    * Loading tasks

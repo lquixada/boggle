@@ -64,6 +64,19 @@ To check a few things during development:
 * Notify is something went wrong
 
 
+## Grunt tasks
+
+* grunt deploy: build + publish
+* grunt lint: lint files
+* grunt publish: publishes the build files on production
+* grunt review: run lint + spec
+* grunt server: start web server
+* grunt spec: test specs
+* grunt watch:build: monitor file changes and builds project
+* grunt watch:review: monitor file changes and check code
+* grunt work: run server + watch:build concurrently
+
+
 ## Stack
 
 * Grunt
