@@ -62,13 +62,13 @@ module.exports = function(grunt) {
     cssmin: {
       dist: {
         files: [
-            {
-                expand: true,
-                cwd: './',
-                src: ['build/app/**/*.css'],
-                dest: './',
-                ext: '.css'
-            }
+          {
+            expand: true,
+            cwd: './',
+            src: ['build/app/**/*.css'],
+            dest: './',
+            ext: '.css'
+          }
         ]
       }
     },
@@ -122,17 +122,17 @@ module.exports = function(grunt) {
     less: {
       dist: {
         files: [
-            {
-                expand: true,
-                cwd: './',
-                src: ['app/**/*.less'],
-                dest: './',
-                ext: '.css'
-            }
+          {
+            expand: true,
+            cwd: './',
+            src: ['app/**/*.less'],
+            dest: './',
+            ext: '.css'
+          }
         ]
       }
     },
-    
+
     notify: {
       dist: {
         options: {
@@ -144,13 +144,13 @@ module.exports = function(grunt) {
     uglify: {
       dist: {
         files: [
-            {
-                expand: true,
-                cwd: './',
-                src: ['build/app/**/*.js'],
-                dest: './',
-                ext: '.js'
-            }
+          {
+            expand: true,
+            cwd: './',
+            src: ['build/app/**/*.js'],
+            dest: './',
+            ext: '.js'
+          }
         ]
       }
     },
