@@ -81,6 +81,20 @@ module.exports = function(grunt) {
       src: ['**']
     },
 
+    jshint: {
+      dist: {
+        src: ['app/**/*.js'],
+        options: readJSON('config/.jshintrc')
+      }
+    },
+
+    jscs: {
+      dist: {
+        src: 'app/**/*.js',
+        options: readJSON('config/.jscsrc')
+      }
+    },
+
     karma: {
       dist: {
         frameworks: ['jasmine', 'requirejs'],
@@ -105,20 +119,6 @@ module.exports = function(grunt) {
       }
     },
 
-    jshint: {
-      dist: {
-        src: ['app/**/*.js'],
-        options: readJSON('config/.jshintrc')
-      }
-    },
-
-    jscs: {
-      dist: {
-        src: 'app/**/*.js',
-        options: readJSON('config/.jscsrc')
-      }
-    },
-
     less: {
       dist: {
         files: [
@@ -130,6 +130,14 @@ module.exports = function(grunt) {
                 ext: '.css'
             }
         ]
+      }
+    },
+    
+    notify: {
+      dist: {
+        options: {
+          message: 'build successful!'
+        }
       }
     },
 
@@ -144,14 +152,6 @@ module.exports = function(grunt) {
                 ext: '.js'
             }
         ]
-      }
-    },
-
-    notify: {
-      dist: {
-        options: {
-          message: 'build successful!'
-        }
       }
     },
 
