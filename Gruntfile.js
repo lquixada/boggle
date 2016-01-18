@@ -199,7 +199,7 @@ module.exports = function(grunt) {
   grunt.registerTask('work', ['concurrent']);
   grunt.registerTask('review', ['lint', 'spec']);
   grunt.registerTask('build', ['clean:build', 'less', 'copy', 'clean:files', 'uglify', 'cssmin']);
-  grunt.registerTask('deploy', ['build', 'publish']);
+  grunt.registerTask('deploy', ['build', 'review', 'publish']);
 
   grunt.registerTask('default', ['review']);
 
