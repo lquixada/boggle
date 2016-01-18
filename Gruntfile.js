@@ -12,6 +12,12 @@ module.exports = function(grunt) {
 
   // Project configuration.
   grunt.initConfig({
+    clean: {
+      build: {
+        src: ['build/**/*.less', 'build/**/*.spec.js']
+      }
+    },
+
     concurrent: {
       options:{
         logConcurrentOutput: true
@@ -137,7 +143,7 @@ module.exports = function(grunt) {
   grunt.registerTask('server', ['connect']);
   grunt.registerTask('work', ['concurrent']);
   grunt.registerTask('default', ['jshint', 'jscs', 'karma', 'notify']);
-  grunt.registerTask('build', ['less', 'copy', 'notify']);
+  grunt.registerTask('build', ['less', 'copy', 'clean', 'notify']);
   grunt.registerTask('deploy', ['build', 'publish']);
 
   /**
