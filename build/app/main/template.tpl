@@ -18,6 +18,6 @@
 
 <footer>
   <div class="container">
-    &copy; Copyright 2016 Leonardo Quixadá. All rights reserved.
+    &copy; Copyright 2016 Leonardo Quixadá. All rights reserved. <a href="https://github.com/lquixada/boggle">Github</a>
   </div>
 </footer>
