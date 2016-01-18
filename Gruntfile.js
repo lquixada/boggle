@@ -147,9 +147,21 @@ module.exports = function(grunt) {
     },
 
     notify: {
-      dist: {
+      build: {
         options: {
           message: 'build successful!'
+        }
+      },
+
+      deploy: {
+        options: {
+          message: 'deploy successful!'
+        }
+      },
+
+      review: {
+        options: {
+          message: 'code review successful!'
         }
       }
     },
@@ -171,7 +183,7 @@ module.exports = function(grunt) {
     watch: {
       review: {
         files: ['app/**/*.js'],
-        tasks: ['review', 'notify'],
+        tasks: ['review', 'notify:review'],
         options: {
           atBegin: true
         }
@@ -179,7 +191,7 @@ module.exports = function(grunt) {
 
       build: {
         files: ['app/**/*.less', 'app/**/*.js', 'index.html'],
-        tasks: ['build', 'notify'],
+        tasks: ['build', 'notify:build'],
         options: {
           atBegin: true,
           livereload: 1338
@@ -199,7 +211,7 @@ module.exports = function(grunt) {
   grunt.registerTask('work', ['concurrent']);
   grunt.registerTask('review', ['lint', 'spec']);
   grunt.registerTask('build', ['clean:build', 'less', 'copy', 'clean:files', 'uglify', 'cssmin']);
-  grunt.registerTask('deploy', ['build', 'review', 'publish']);
+  grunt.registerTask('deploy', ['build', 'review', 'publish', 'notify:deploy']);
 
   grunt.registerTask('default', ['review']);
 
