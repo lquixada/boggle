@@ -19,7 +19,7 @@ define([
 
   TimerView.prototype = _.extend(new BaseView(css, html), {
     render: function () {
-      this.renderTemplate({secs: this.timer.remaining});
+      this.renderTemplate({secs: this.getSecs()});
       this.renderDial();
     },
 
@@ -36,6 +36,12 @@ define([
         thickness: '.30',
         rotation: 'anticlockwise'
       });
+    },
+
+    getSecs: function () {
+      var secs = this.timer.remaining;
+
+      return (secs<10 ? '0'+secs : secs);
     },
 
     start: function (options) {

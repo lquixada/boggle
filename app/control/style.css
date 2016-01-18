@@ -5,6 +5,7 @@
 }
 #control button {
   display: inline-block;
+  margin-bottom: 1rem;
   padding: 1rem;
   min-width: 10rem;
   border: none;

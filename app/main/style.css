@@ -1,10 +1,10 @@
 main {
+  min-width: 35rem;
   height: 100%;
   display: flex;
   flex-flow: column nowrap;
 }
 main > header {
-  margin-bottom: 2rem;
   padding: 2rem;
   background-color: #565656;
 }
@@ -19,15 +19,13 @@ main > header h1 {
   vertical-align: middle;
 }
 main > section {
-  margin-bottom: 2rem;
+  padding: 2rem;
   flex-grow: 1;
 }
 main > section aside {
   display: inline-block;
   margin-right: 2rem;
   vertical-align: top;
-  flex-flow: column nowrap;
-  justify-content: space-between;
 }
 main > footer {
   padding: 2rem;
@@ -36,7 +34,8 @@ main > footer {
   background-color: #565656;
 }
 @media (max-width: 540px) {
-  main aside {
+  main > section aside {
     display: block;
+    margin: 0;
   }
 }

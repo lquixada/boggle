@@ -5,6 +5,7 @@
 }
 #attempt input {
   width: 100%;
+  min-width: 28rem;
   padding: 1rem;
   color: #fff;
   font-size: 2rem;
@@ -16,5 +17,6 @@
 @media (max-width: 540px) {
   #attempt {
     display: block;
+    margin: 0;
   }
 }

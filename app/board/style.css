@@ -13,3 +13,11 @@
   text-transform: uppercase;
   border-radius: .4rem;
 }
+@media (max-width: 540px) {
+  #board {
+    width: 100%;
+  }
+  #board table {
+    width: 100%;
+  }
+}

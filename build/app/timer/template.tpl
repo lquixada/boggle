@@ -1,2 +1,2 @@
 <input value="<%=secs%>">
-<span class="micro-counter">Seconds left: <%=secs%></span>
+<span class="micro-counter">Time left: 00:<%=secs%></span>

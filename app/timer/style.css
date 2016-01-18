@@ -12,6 +12,7 @@
   #timer {
     margin-bottom: auto;
     height: auto;
+    float: right;
   }
   #timer div {
     display: none !important;
