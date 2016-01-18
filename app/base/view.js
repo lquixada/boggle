@@ -36,7 +36,7 @@ define([
       throw 'not implemented';
     },
 
-    start: function () {
+    stop: function () {
       throw 'not implemented';
     }
   };
