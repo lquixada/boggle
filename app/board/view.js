@@ -2,16 +2,25 @@
  * Board
  */
 
-define(['jquery', 'underscore', 'text!app/board/template.tpl'], function ($, _, tpl) {
+define([
+  'jquery',
+  'underscore',
+  'text!app/board/style.css',
+  'text!app/board/template.tpl'
+], function ($, _, css, html) {
   'use strict';
 
   function BoardView() {
     this.elementId = '#board';
     this.board = new Board();
+    this.template = this.compile();
   }
 
   BoardView.prototype = {
-    template: _.template(tpl),
+    compile: function () {
+      var template = '<style>'+css+'</style>'+html;
+      return _.template(template);
+    },
 
     check: function (word) {
       return this.board.check(word);

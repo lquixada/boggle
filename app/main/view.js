@@ -8,8 +8,9 @@ define([
   'app/control/view',
   'app/score/view',
   'app/timer/view',
+  'text!app/main/style.css',
   'text!app/main/template.tpl'
-], function (AttemptView, BoardView, ControlView, ScoreView, TimerView, tpl) {
+], function (AttemptView, BoardView, ControlView, ScoreView, TimerView, css, html) {
   'use strict';
 
   function App() {
@@ -23,10 +24,15 @@ define([
 
     this.minLength = 2;
     this.dictionary = new Dictionary();
+
+    this.template = this.compile();
   }
 
   App.prototype = {
-    template: _.template(tpl),
+    compile: function () {
+      var template = '<style>'+css+'</style>'+html;
+      return _.template(template);
+    },
 
     render: function () {
       var html = this.template();

@@ -2,14 +2,24 @@
  * Timer
  */
 
-define(['jquery', 'underscore', 'text!app/timer/template.tpl', 'jquery.knob'], function ($, _, tpl) {
+define([
+  'jquery',
+  'underscore',
+  'text!app/timer/style.css',
+  'text!app/timer/template.tpl',
+  'jquery.knob'
+], function ($, _, css, html) {
   function TimerView() {
     this.elementId = '#timer';
     this.timer = new Timer();
+    this.template = this.compile();
   }
 
   TimerView.prototype = {
-    template: _.template(tpl),
+    compile: function () {
+      var template = '<style>'+css+'</style>'+html;
+      return _.template(template);
+    },
 
     render: function () {
       var html = this.template({secs: this.timer.remaining});

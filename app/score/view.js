@@ -2,16 +2,25 @@
  * Score
  */
 
-define(['jquery', 'underscore', 'text!app/score/template.tpl'], function ($, _, tpl) {
+define([
+  'jquery',
+  'underscore',
+  'text!app/score/style.css',
+  'text!app/score/template.tpl'
+], function ($, _, css, html) {
   'use strict';
 
   function ScoreView() {
     this.elementId = '#score';
+    this.template = this.compile();
     this.reset();
   }
 
   ScoreView.prototype = {
-    template: _.template(tpl),
+    compile: function () {
+      var template = '<style>'+css+'</style>'+html;
+      return _.template(template);
+    },
 
     add: function (attempt) {
       if (attempt.scored) {

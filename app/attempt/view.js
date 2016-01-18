@@ -2,16 +2,25 @@
  * Attempt
  */
 
-define(['jquery', 'underscore', 'text!app/attempt/template.tpl'], function ($, _, tpl) {
+define([
+  'jquery',
+  'underscore',
+  'text!app/attempt/style.css',
+  'text!app/attempt/template.tpl'
+], function ($, _, css, html) {
   'use strict';
-  
+
   function AttemptView() {
     this.elementId = '#attempt';
     this.started = false;
+    this.template = this.compile();
   }
 
   AttemptView.prototype = {
-    template: _.template(tpl),
+    compile: function () {
+      var template = '<style>'+css+'</style>'+html;
+      return _.template(template);
+    },
 
     render: function () {
       var html = this.template({started: this.started});
