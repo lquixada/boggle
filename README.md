@@ -63,6 +63,13 @@ To check a few things during development:
 * Specs are run
 * Notify is something went wrong
 
+If you prefer to review your code at every push, run:
+
+```
+$ grunt githooks
+```
+
+
 ## Deploy
 
 If you wish to put the code into production, just run
