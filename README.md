@@ -27,7 +27,7 @@ $ nvm use 0.12
 ```
 $ cd boggle
 $ npm install
-$ npm install -g grunt-cli
+$ npm install -g grunt-cli bower
 ```
 
 ## Getting Started
@@ -67,6 +67,8 @@ To check a few things during development:
 ## Stack
 
 * Grunt
+* NPM
+* Bower
 * Less
 * Underscore
 * jQuery
