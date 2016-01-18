@@ -59,6 +59,20 @@ module.exports = function(grunt) {
       },
     },
 
+    cssmin: {
+      dist: {
+        files: [
+            {
+                expand: true,
+                cwd: './',
+                src: ['build/app/**/*.css'],
+                dest: './',
+                ext: '.css'
+            }
+        ]
+      }
+    },
+
     'gh-pages': {
       options: {
         base: 'build',
@@ -107,9 +121,6 @@ module.exports = function(grunt) {
 
     less: {
       dist: {
-        options: {
-          compress: true,
-        },
         files: [
             {
                 expand: true,
@@ -174,7 +185,7 @@ module.exports = function(grunt) {
   grunt.registerTask('server:build', ['connect:build']);
   grunt.registerTask('work', ['concurrent']);
   grunt.registerTask('review', ['lint', 'spec']);
-  grunt.registerTask('build', ['clean:build', 'less', 'copy', 'uglify', 'clean:files']);
+  grunt.registerTask('build', ['clean:build', 'less', 'copy', 'uglify', 'cssmin', 'clean:files']);
   grunt.registerTask('deploy', ['build', 'publish']);
 
   grunt.registerTask('default', ['review']);

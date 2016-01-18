@@ -1,1 +1,42 @@
-main{height:100%;display:flex;flex-flow:column nowrap}main>header{margin-bottom:2rem;padding:2rem;background-color:#565656}main>header h1{display:inline-block;margin-right:1.2rem;color:#fff;font-size:3rem;letter-spacing:-0.1rem;line-height:1.5;text-shadow:.2rem .4rem .3rem rgba(0,0,0,0.3);vertical-align:middle}main>section{margin-bottom:2rem;flex-grow:1}main>section aside{display:inline-block;margin-right:2rem;vertical-align:top;flex-flow:column nowrap;justify-content:space-between}main>footer{padding:2rem;color:#999;font-size:1.2rem;background-color:#565656}@media (max-width:540px){main aside{display:block}}
+main {
+  height: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+}
+main > header {
+  margin-bottom: 2rem;
+  padding: 2rem;
+  background-color: #565656;
+}
+main > header h1 {
+  display: inline-block;
+  margin-right: 1.2rem;
+  color: #fff;
+  font-size: 3rem;
+  letter-spacing: -0.1rem;
+  line-height: 1.5;
+  text-shadow: 0.2rem 0.4rem 0.3rem rgba(0, 0, 0, 0.3);
+  vertical-align: middle;
+}
+main > section {
+  margin-bottom: 2rem;
+  flex-grow: 1;
+}
+main > section aside {
+  display: inline-block;
+  margin-right: 2rem;
+  vertical-align: top;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+}
+main > footer {
+  padding: 2rem;
+  color: #999;
+  font-size: 1.2rem;
+  background-color: #565656;
+}
+@media (max-width: 540px) {
+  main aside {
+    display: block;
+  }
+}
