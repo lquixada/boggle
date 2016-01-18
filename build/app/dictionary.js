@@ -1,1 +1,0 @@
-define(["jquery"],function(a){"use strict";function b(){}return b.prototype={check:function(b,c){var d="https://en.wiktionary.org/w/api.php?action=query&format=json&callback=?&titles=";return a.getJSON(d+b.toLowerCase(),function(a){c(!a.query.pages[-1])})}},b});
