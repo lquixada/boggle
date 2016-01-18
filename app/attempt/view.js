@@ -2,17 +2,20 @@
  * Attempt
  */
 
-define(['jquery', 'underscore'], function ($, _) {
+define(['jquery', 'underscore', 'text!app/attempt/template.tpl'], function ($, _, tpl) {
   'use strict';
-
+  
   function AttemptView() {
     this.elementId = '#attempt';
     this.started = false;
   }
 
   AttemptView.prototype = {
+    template: _.template(tpl),
+
     render: function () {
-      _.render(this.elementId, {started: this.started});
+      var html = this.template({started: this.started});
+      $(this.elementId).html(html);
     },
 
     start: function () {

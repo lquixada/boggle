@@ -2,7 +2,7 @@
  * Board
  */
 
-define(['jquery', 'underscore'], function ($, _) {
+define(['jquery', 'underscore', 'text!app/board/template.tpl'], function ($, _, tpl) {
   'use strict';
 
   function BoardView() {
@@ -11,12 +11,15 @@ define(['jquery', 'underscore'], function ($, _) {
   }
 
   BoardView.prototype = {
+    template: _.template(tpl),
+
     check: function (word) {
       return this.board.check(word);
     },
 
-    render: function (board) {
-      _.render(this.elementId, {board: this.board.matrix});
+    render: function () {
+      var html = this.template({board: this.board.matrix});
+      $(this.elementId).html(html);
     },
 
     start: function () {

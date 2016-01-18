@@ -2,15 +2,19 @@
  * Timer
  */
 
-define(['jquery', 'underscore'], function ($, _) {
+define(['jquery', 'underscore', 'text!app/timer/template.tpl'], function ($, _, tpl) {
   function TimerView() {
     this.elementId = '#timer';
     this.timer = new Timer();
   }
 
   TimerView.prototype = {
+    template: _.template(tpl),
+
     render: function () {
-      _.render(this.elementId, {secs: this.timer.remaining});
+      var html = this.template({secs: this.timer.remaining});
+      $(this.elementId).html(html);
+
       this.renderDial();
     },
 

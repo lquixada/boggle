@@ -4,7 +4,7 @@
 
 define(['underscore'], function (_) {
   'use strict';
-  
+
   _.mixin({
     render: function (elementId, context) {
       var source   = $(elementId+'-template').html();

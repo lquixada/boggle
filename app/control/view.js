@@ -2,19 +2,20 @@
  * Control
  */
 
-define(['jquery', 'underscore'], function ($, _) {
+define(['jquery', 'underscore', 'text!app/control/template.tpl'], function ($, _, tpl) {
   'use strict';
-  
+
   function ControlView() {
     this.elementId = '#control';
     this.started = false;
   }
 
   ControlView.prototype = {
+    template: _.template(tpl),
+
     render: function () {
-      _.render(this.elementId, {
-        started: this.started
-      });
+      var html = this.template({started: this.started});
+      $(this.elementId).html(html);
     },
 
     start: function () {

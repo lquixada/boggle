@@ -8,11 +8,14 @@ define([
   'app/control/view',
   'app/score/view',
   'app/timer/view',
-  'app/dictionary'
-], function (AttemptView, BoardView, ControlView, ScoreView, TimerView, Dictionary) {
+  'app/dictionary',
+  'text!app/main/template.tpl'
+], function (AttemptView, BoardView, ControlView, ScoreView, TimerView, Dictionary, tpl) {
   'use strict';
 
   function App() {
+    this.elementId = '#game';
+
     this.board = new BoardView();
     this.control = new ControlView();
     this.attempt = new AttemptView();
@@ -24,7 +27,12 @@ define([
   }
 
   App.prototype = {
+    template: _.template(tpl),
+
     render: function () {
+      var html = this.template();
+      $(this.elementId).html(html);
+
       this.board.render();
       this.control.render();
       this.attempt.render();

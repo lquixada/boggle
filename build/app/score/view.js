@@ -2,15 +2,17 @@
  * Score
  */
 
-define(['jquery', 'underscore'], function ($, _) {
+define(['jquery', 'underscore', 'text!app/score/template.tpl'], function ($, _, tpl) {
   'use strict';
-  
+
   function ScoreView() {
     this.elementId = '#score';
     this.reset();
   }
 
   ScoreView.prototype = {
+    template: _.template(tpl),
+
     add: function (attempt) {
       if (attempt.scored) {
         this.counter += attempt.word.length;
@@ -25,10 +27,11 @@ define(['jquery', 'underscore'], function ($, _) {
     },
 
     render: function () {
-      _.render(this.elementId, {
+      var html = this.template({
         counter: this.counter,
         attempts: this.attempts
       });
+      $(this.elementId).html(html);
     },
 
     check: function (word) {

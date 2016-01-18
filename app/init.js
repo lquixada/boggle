@@ -1,6 +1,7 @@
 requirejs.config({
   baseUrl: '..',
   paths: {
+    'text': 'vendor/text/text',
     'jquery': 'vendor/jquery/dist/jquery.min',
     'jquery.knob': 'vendor/jquery-knob/dist/jquery.knob.min',
     'underscore': 'vendor/underscore/underscore-min'
