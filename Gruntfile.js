@@ -26,20 +26,25 @@ module.exports = function(grunt) {
       options:{
         logConcurrentOutput: true
       },
-      dist: ['server', 'watch:build']
+      dist: ['server:dev', 'watch:build']
     },
 
     connect: {
-      dist: {
-        options: {
-          base: 'build',
-          port: 8300,
-          hostname: '*',
-          useAvailablePort: true,
-          keepalive: true,
-          livereload: 1338,
-          open: 'http://localhost:8300/'
-        }
+      options: {
+        port: 8300,
+        hostname: '*',
+        useAvailablePort: true,
+        keepalive: true,
+        livereload: 1338,
+        open: 'http://localhost:8300/'
+      },
+
+      dev: {
+        base: '.'
+      },
+
+      build: {
+        base: 'build/'
       }
     },
 
@@ -165,7 +170,8 @@ module.exports = function(grunt) {
   grunt.registerTask('spec', ['karma']);
   grunt.registerTask('lint', ['jshint', 'jscs']);
   grunt.registerTask('publish', ['gh-pages']);
-  grunt.registerTask('server', ['connect']);
+  grunt.registerTask('server:dev', ['connect:dev']);
+  grunt.registerTask('server:build', ['connect:build']);
   grunt.registerTask('work', ['concurrent']);
   grunt.registerTask('review', ['lint', 'spec']);
   grunt.registerTask('build', ['clean:build', 'less', 'copy', 'uglify', 'clean:files']);

@@ -70,11 +70,12 @@ To check a few things during development:
 * grunt lint: lint files
 * grunt publish: publishes the build files on production
 * grunt review: run lint + spec
-* grunt server: start web server
+* grunt server:build: start web server on production mode
+* grunt server:dev: start web server on development mode
 * grunt spec: test specs
 * grunt watch:build: monitor file changes and builds project
 * grunt watch:review: monitor file changes and check code
-* grunt work: run server + watch:build concurrently
+* grunt work: run server:dev + watch:build concurrently
 
 
 ## Stack
