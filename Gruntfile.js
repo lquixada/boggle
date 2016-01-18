@@ -66,7 +66,10 @@ module.exports = function(grunt) {
         singleRun: true,
         options: {
           files: [
-            {pattern: 'vendor/*.js', included: false},
+            {pattern: 'vendor/text/text.js', included: false},
+            {pattern: 'vendor/jquery/dist/jquery.min.js', included: false},
+            {pattern: 'vendor/jquery-knob/dist/jquery.knob.min.js', included: false},
+            {pattern: 'vendor/underscore/underscore-min.js', included: false},
             {pattern: 'app/board/view.js', included: false},
             {pattern: 'app/board/view.spec.js', included: false},
             {pattern: 'app/score/view.js', included: false},

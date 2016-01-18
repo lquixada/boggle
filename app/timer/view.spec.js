@@ -1,4 +1,4 @@
-define(['underscore','app/timer/view'], function(_, TimerView) {
+define(['underscore', 'app/timer/view'], function(_, TimerView) {
   'use strict';
 
   describe('TimerView', function () {
