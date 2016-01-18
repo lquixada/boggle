@@ -63,6 +63,13 @@ To check a few things during development:
 * Specs are run
 * Notify is something went wrong
 
+## Deploy
+
+If you wish to put the code into production, just run
+
+```
+$ grunt deploy
+```
 
 ## Grunt tasks
 
