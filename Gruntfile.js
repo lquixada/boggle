@@ -81,6 +81,12 @@ module.exports = function(grunt) {
       src: ['**']
     },
 
+    githooks: {
+      dist: {
+        'pre-push': 'review'
+      }
+    },
+
     jshint: {
       dist: {
         src: ['app/**/*.js'],
