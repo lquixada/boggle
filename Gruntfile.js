@@ -102,6 +102,9 @@ module.exports = function(grunt) {
 
     less: {
       dist: {
+        options: {
+          compress: true,
+        },
         files: [
             {
                 expand: true,
