@@ -1,9 +1,9 @@
 requirejs.config({
   baseUrl: '..',
   paths: {
-    'jquery': 'vendor/jquery-2.1.4.min',
-    'jquery.knob': 'vendor/jquery.knob.min',
-    'underscore': 'vendor/underscore-min'
+    'jquery': 'vendor/jquery/dist/jquery.min',
+    'jquery.knob': 'vendor/jquery-knob/dist/jquery.knob.min',
+    'underscore': 'vendor/underscore/underscore-min'
   }
 });
 
