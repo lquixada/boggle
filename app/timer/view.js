@@ -5,26 +5,21 @@
 define([
   'jquery',
   'underscore',
+  'app/base/view',
   'text!app/timer/style.css',
   'text!app/timer/template.tpl',
   'jquery.knob'
-], function ($, _, css, html) {
+], function ($, _, BaseView, css, html) {
+  'use strict';
+
   function TimerView() {
     this.elementId = '#timer';
     this.timer = new Timer();
-    this.template = this.compile();
   }
 
-  TimerView.prototype = {
-    compile: function () {
-      var template = '<style>'+css+'</style>'+html;
-      return _.template(template);
-    },
-
+  TimerView.prototype = _.extend(new BaseView(css, html), {
     render: function () {
-      var html = this.template({secs: this.timer.remaining});
-      $(this.elementId).html(html);
-
+      this.renderTemplate({secs: this.timer.remaining});
       this.renderDial();
     },
 
@@ -62,7 +57,7 @@ define([
       this.timer.stop();
       this.render();
     }
-  };
+  });
 
   function Timer(options) {
     var opt = options || {};

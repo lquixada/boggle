@@ -5,23 +5,18 @@
 define([
   'jquery',
   'underscore',
+  'app/base/view',
   'text!app/score/style.css',
   'text!app/score/template.tpl'
-], function ($, _, css, html) {
+], function ($, _, BaseView, css, html) {
   'use strict';
 
   function ScoreView() {
     this.elementId = '#score';
-    this.template = this.compile();
     this.reset();
   }
 
-  ScoreView.prototype = {
-    compile: function () {
-      var template = '<style>'+css+'</style>'+html;
-      return _.template(template);
-    },
-
+  ScoreView.prototype = _.extend(new BaseView(css, html), {
     add: function (attempt) {
       if (attempt.scored) {
         this.counter += attempt.word.length;
@@ -36,11 +31,10 @@ define([
     },
 
     render: function () {
-      var html = this.template({
+      this.renderTemplate({
         counter: this.counter,
         attempts: this.attempts
       });
-      $(this.elementId).html(html);
     },
 
     check: function (word) {
@@ -62,7 +56,7 @@ define([
       this.counter = 0;
       this.attempts = [];
     }
-  };
+  });
 
   return ScoreView;
 });

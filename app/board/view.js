@@ -5,30 +5,24 @@
 define([
   'jquery',
   'underscore',
+  'app/base/view',
   'text!app/board/style.css',
   'text!app/board/template.tpl'
-], function ($, _, css, html) {
+], function ($, _, BaseView, css, html) {
   'use strict';
 
   function BoardView() {
     this.elementId = '#board';
     this.board = new Board();
-    this.template = this.compile();
   }
 
-  BoardView.prototype = {
-    compile: function () {
-      var template = '<style>'+css+'</style>'+html;
-      return _.template(template);
-    },
-
+  BoardView.prototype = _.extend(new BaseView(css, html), {
     check: function (word) {
       return this.board.check(word);
     },
 
     render: function () {
-      var html = this.template({board: this.board.matrix});
-      $(this.elementId).html(html);
+      this.renderTemplate({board: this.board.matrix});
     },
 
     start: function () {
@@ -40,7 +34,7 @@ define([
       this.board.stop();
       this.render();
     }
-  };
+  });
 
   function Board() {
     this.dim = 4;

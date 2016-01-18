@@ -3,6 +3,7 @@
  */
 
 define([
+  'app/base/view',
   'app/attempt/view',
   'app/board/view',
   'app/control/view',
@@ -10,7 +11,7 @@ define([
   'app/timer/view',
   'text!app/main/style.css',
   'text!app/main/template.tpl'
-], function (AttemptView, BoardView, ControlView, ScoreView, TimerView, css, html) {
+], function (BaseView, AttemptView, BoardView, ControlView, ScoreView, TimerView, css, html) {
   'use strict';
 
   function App() {
@@ -24,19 +25,11 @@ define([
 
     this.minLength = 2;
     this.dictionary = new Dictionary();
-
-    this.template = this.compile();
   }
 
-  App.prototype = {
-    compile: function () {
-      var template = '<style>'+css+'</style>'+html;
-      return _.template(template);
-    },
-
+  App.prototype = _.extend(new BaseView(css, html), {
     render: function () {
-      var html = this.template();
-      $(this.elementId).html(html);
+      this.renderTemplate();
 
       this.board.render();
       this.control.render();
@@ -111,7 +104,7 @@ define([
       this.attempt.clear();
       this.attempt.focus();
     }
-  };
+  });
 
   /*
    * Dictionary

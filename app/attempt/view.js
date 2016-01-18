@@ -5,26 +5,20 @@
 define([
   'jquery',
   'underscore',
+  'app/base/view',
   'text!app/attempt/style.css',
   'text!app/attempt/template.tpl'
-], function ($, _, css, html) {
+], function ($, _, BaseView, css, html) {
   'use strict';
 
   function AttemptView() {
     this.elementId = '#attempt';
     this.started = false;
-    this.template = this.compile();
   }
 
-  AttemptView.prototype = {
-    compile: function () {
-      var template = '<style>'+css+'</style>'+html;
-      return _.template(template);
-    },
-
+  AttemptView.prototype = _.extend(new BaseView(css, html), {
     render: function () {
-      var html = this.template({started: this.started});
-      $(this.elementId).html(html);
+      this.renderTemplate({started: this.started});
     },
 
     start: function () {
@@ -50,7 +44,7 @@ define([
     focus: function () {
       $(this.elementId).find(':input').focus();
     }
-  };
+  });
 
   return AttemptView;
 });
