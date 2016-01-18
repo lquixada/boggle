@@ -14,6 +14,10 @@ module.exports = function(grunt) {
   grunt.initConfig({
     clean: {
       build: {
+        src: ['build/']
+      },
+
+      files: {
         src: ['build/**/*.less', 'build/**/*.spec.js']
       }
     },
@@ -146,7 +150,7 @@ module.exports = function(grunt) {
   grunt.registerTask('server', ['connect']);
   grunt.registerTask('work', ['concurrent']);
   grunt.registerTask('default', ['jshint', 'jscs', 'karma', 'notify']);
-  grunt.registerTask('build', ['less', 'copy', 'clean', 'notify']);
+  grunt.registerTask('build', ['clean:build', 'less', 'copy', 'clean:files', 'notify']);
   grunt.registerTask('deploy', ['build', 'publish']);
 
   /**
