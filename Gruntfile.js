@@ -104,7 +104,7 @@ module.exports = function(grunt) {
     karma: {
       dist: {
         frameworks: ['jasmine', 'requirejs'],
-        browsers: ['PhantomJS'],
+        browsers: ['Chrome'],
         reporters: 'dots',
         singleRun: true,
         options: {
@@ -113,6 +113,7 @@ module.exports = function(grunt) {
             {pattern: 'vendor/jquery/dist/jquery.min.js', included: false},
             {pattern: 'vendor/jquery-knob/dist/jquery.knob.min.js', included: false},
             {pattern: 'vendor/underscore/underscore-min.js', included: false},
+            {pattern: 'app/base/view.js', included: false},
             {pattern: 'app/board/view.js', included: false},
             {pattern: 'app/board/view.spec.js', included: false},
             {pattern: 'app/board/style.css', included: false},
