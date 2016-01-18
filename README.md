@@ -73,16 +73,16 @@ $ grunt deploy
 
 ## Grunt tasks
 
-* grunt deploy: build + publish
-* grunt lint: lint files
-* grunt publish: publishes the build files on production
-* grunt review: run lint + spec
-* grunt server:build: start web server on production mode
-* grunt server:dev: start web server on development mode
-* grunt spec: test specs
-* grunt watch:build: monitor file changes and builds project
-* grunt watch:review: monitor file changes and check code
-* grunt work: run server:dev + watch:build concurrently
+* *grunt deploy*: build + publish
+* *grunt lint*: lint files
+* *grunt publish*: publishes the build files on production
+* *grunt review*: run lint + spec
+* *grunt server:build*: start web server on production mode
+* *grunt server:dev*: start web server on development mode
+* *grunt spec*: test specs
+* *grunt watch:build*: monitor file changes and builds project
+* *grunt watch:review*: monitor file changes and check code
+* *grunt work*: run server:dev + watch:build concurrently
 
 
 ## Stack
