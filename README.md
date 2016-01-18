@@ -1,4 +1,4 @@
-# Boggle Game
+# Boggle Game [![Build Status](https://travis-ci.org/lquixada/boggle.svg?branch=master)](https://travis-ci.org/lquixada/boggle)
 
 A web-based implementation of the Boggle game.
 
@@ -94,6 +94,7 @@ $ grunt deploy
 * Underscore
 * jQuery
 * Require.js
+* [TravisCI](https://travis-ci.org/lquixada/boggle)
 
 
 ## Pending Improvements
