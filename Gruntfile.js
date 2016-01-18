@@ -117,6 +117,20 @@ module.exports = function(grunt) {
       }
     },
 
+    uglify: {
+      dist: {
+        files: [
+            {
+                expand: true,
+                cwd: './',
+                src: ['build/app/**/*.js'],
+                dest: './',
+                ext: '.js'
+            }
+        ]
+      }
+    },
+
     notify: {
       dist: {
         options: {
@@ -153,7 +167,7 @@ module.exports = function(grunt) {
   grunt.registerTask('server', ['connect']);
   grunt.registerTask('work', ['concurrent']);
   grunt.registerTask('default', ['jshint', 'jscs', 'karma', 'notify']);
-  grunt.registerTask('build', ['clean:build', 'less', 'copy', 'clean:files', 'notify']);
+  grunt.registerTask('build', ['clean:build', 'less', 'copy', 'uglify', 'clean:files', 'notify']);
   grunt.registerTask('deploy', ['build', 'publish']);
 
   /**
