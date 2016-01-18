@@ -109,10 +109,13 @@ module.exports = function(grunt) {
             {pattern: 'vendor/underscore/underscore-min.js', included: false},
             {pattern: 'app/board/view.js', included: false},
             {pattern: 'app/board/view.spec.js', included: false},
+            {pattern: 'app/board/template.tpl', included: false},
             {pattern: 'app/score/view.js', included: false},
             {pattern: 'app/score/view.spec.js', included: false},
+            {pattern: 'app/score/template.tpl', included: false},
             {pattern: 'app/timer/view.js', included: false},
             {pattern: 'app/timer/view.spec.js', included: false},
+            {pattern: 'app/timer/template.tpl', included: false},
             'app/init.spec.js'
           ]
         }
