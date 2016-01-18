@@ -1,5 +1,5 @@
 requirejs.config({
-  baseUrl: '..',
+  baseUrl: location.href,
   paths: {
     'text': 'vendor/text/text',
     'jquery': 'vendor/jquery/dist/jquery.min',
