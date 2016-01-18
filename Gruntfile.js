@@ -138,6 +138,7 @@ module.exports = function(grunt) {
   grunt.registerTask('work', ['concurrent']);
   grunt.registerTask('default', ['jshint', 'jscs', 'karma', 'notify']);
   grunt.registerTask('build', ['less', 'copy', 'notify']);
+  grunt.registerTask('deploy', ['build', 'publish']);
 
   /**
    * Loading tasks
