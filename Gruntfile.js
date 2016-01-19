@@ -40,11 +40,15 @@ module.exports = function(grunt) {
       },
 
       dev: {
-        base: '.'
+        options: {
+          base: '.'
+        }
       },
 
       build: {
-        base: 'build/'
+        options: {
+          base: 'build'
+        }
       }
     },
 
