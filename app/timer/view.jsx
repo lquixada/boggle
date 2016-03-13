@@ -2,12 +2,17 @@
  * Timer
  */
 
-define(['react', 'react-dom', 'jquery', 'underscore', 'text!app/timer/style.css', 'jquery.knob'], function (React, ReactDOM, $, _, css) {
+define([
+  'react',
+  'react-dom',
+  'jquery',
+  'underscore',
+  'text!app/timer/style.css',
+  'jquery.knob'
+], function (React, ReactDOM, $, _, css) {
   'use strict';
 
   var TimerView = React.createClass({
-    displayName: 'TimerView',
-
     getInitialState: function () {
       return {
         timer: new Timer()
@@ -18,7 +23,7 @@ define(['react', 'react-dom', 'jquery', 'underscore', 'text!app/timer/style.css'
       var that = this;
       var opt = options || {};
 
-      this.timer.start({
+      this.state.timer.start({
         onTick: function () {
           that.forceUpdate();
 
@@ -37,7 +42,7 @@ define(['react', 'react-dom', 'jquery', 'underscore', 'text!app/timer/style.css'
     getSecs: function () {
       var secs = this.state.timer.remaining;
 
-      return secs < 10 ? '0' + secs : secs;
+      return (secs<10 ? '0'+secs : secs);
     },
 
     componentDidMount: function () {
@@ -62,21 +67,12 @@ define(['react', 'react-dom', 'jquery', 'underscore', 'text!app/timer/style.css'
     },
 
     render: function () {
-      return React.createElement(
-        'div',
-        null,
-        React.createElement(
-          'style',
-          { type: 'text/css' },
-          css
-        ),
-        React.createElement('input', { ref: 'clock', value: this.getSecs() }),
-        React.createElement(
-          'span',
-          { className: 'micro-counter' },
-          'Time left: 00:',
-          this.getSecs()
-        )
+      return (
+        <div>
+          <style type="text/css">{css}</style>
+          <input ref="clock" value={this.getSecs()} />
+          <span className="micro-counter">Time left: 00:{this.getSecs()}</span>
+        </div>
       );
     }
   });

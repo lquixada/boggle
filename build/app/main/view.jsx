@@ -18,9 +18,6 @@ define([
 
   function App() {
     this.elementId = '#game';
-
-    this.timer = new TimerView();
-
     this.minLength = 2;
     this.dictionary = new Dictionary();
   }
@@ -33,7 +30,7 @@ define([
       this.board = ReactDOM.render(<BoardView />, document.getElementById('board'));
       this.control = ReactDOM.render(<ControlView />, document.getElementById('control'));
       this.score = ReactDOM.render(<ScoreView />, document.getElementById('score'));
-      this.timer.render();
+      this.timer = ReactDOM.render(<TimerView />, document.getElementById('timer'));
     },
 
     start: function () {

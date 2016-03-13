@@ -7,9 +7,6 @@ define(['react', 'react-dom', 'app/base/view', 'app/attempt/view', 'app/board/vi
 
   function App() {
     this.elementId = '#game';
-
-    this.timer = new TimerView();
-
     this.minLength = 2;
     this.dictionary = new Dictionary();
   }
@@ -22,7 +19,7 @@ define(['react', 'react-dom', 'app/base/view', 'app/attempt/view', 'app/board/vi
       this.board = ReactDOM.render(React.createElement(BoardView, null), document.getElementById('board'));
       this.control = ReactDOM.render(React.createElement(ControlView, null), document.getElementById('control'));
       this.score = ReactDOM.render(React.createElement(ScoreView, null), document.getElementById('score'));
-      this.timer.render();
+      this.timer = ReactDOM.render(React.createElement(TimerView, null), document.getElementById('timer'));
     },
 
     start: function () {
