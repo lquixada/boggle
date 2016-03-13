@@ -2,59 +2,110 @@
  * Score
  */
 
-define([
-  'jquery',
-  'underscore',
-  'app/base/view',
-  'text!app/score/style.css',
-  'text!app/score/template.tpl'
-], function ($, _, BaseView, css, html) {
+define(['react', 'underscore', 'text!app/score/style.css'], function (React, _, css) {
   'use strict';
 
-  function ScoreView() {
-    this.elementId = '#score';
-    this.reset();
-  }
+  var ScoreView = React.createClass({
+    displayName: 'ScoreView',
 
-  ScoreView.prototype = _.extend(new BaseView(css, html), {
-    add: function (attempt) {
-      if (attempt.scored) {
-        this.counter += attempt.word.length;
-      }
-
-      this.attempts.push({
-        word: attempt.word,
-        score: (attempt.scored ? attempt.word.length : '✘')
-      });
-
-      this.render();
+    getInitialState: function () {
+      return {
+        counter: 0,
+        attempts: []
+      };
     },
 
-    render: function () {
-      this.renderTemplate({
-        counter: this.counter,
-        attempts: this.attempts
+    add: function (attempt) {
+      var attempts = this.state.attempts;
+      var counter = this.state.counter;
+
+      if (attempt.scored) {
+        counter += attempt.word.length;
+      }
+
+      attempts = attempts.concat([{
+        word: attempt.word,
+        score: attempt.scored ? attempt.word.length : '✘'
+      }]);
+
+      this.setState({
+        counter: counter,
+        attempts: attempts
       });
     },
 
     check: function (word) {
-      var found = _.findWhere(this.attempts, {word: word});
+      var found = _.findWhere(this.state.attempts, { word: word });
       return !Boolean(found);
     },
 
     start: function () {
       this.reset();
-      this.render();
     },
 
     stop: function () {
       this.reset();
-      this.render();
     },
 
     reset: function () {
-      this.counter = 0;
-      this.attempts = [];
+      this.setState({
+        counter: 0,
+        attempts: []
+      });
+    },
+
+    getItems: function () {
+      return this.state.attempts.map(function (attempt) {
+        return React.createElement(
+          'tr',
+          null,
+          React.createElement(
+            'td',
+            null,
+            attempt.word
+          ),
+          React.createElement(
+            'td',
+            null,
+            attempt.score
+          )
+        );
+      });
+    },
+
+    render: function () {
+      return React.createElement(
+        'div',
+        null,
+        React.createElement(
+          'style',
+          { type: 'text/css' },
+          css
+        ),
+        React.createElement(
+          'header',
+          null,
+          React.createElement(
+            'h2',
+            null,
+            'Score: ',
+            this.state.counter
+          )
+        ),
+        React.createElement(
+          'section',
+          { className: 'box' },
+          React.createElement(
+            'table',
+            null,
+            React.createElement(
+              'tbody',
+              null,
+              this.getItems()
+            )
+          )
+        )
+      );
     }
   });
 

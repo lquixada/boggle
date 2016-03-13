@@ -19,7 +19,6 @@ define([
   function App() {
     this.elementId = '#game';
 
-    this.score = new ScoreView();
     this.timer = new TimerView();
 
     this.minLength = 2;
@@ -33,7 +32,7 @@ define([
       this.attempt = ReactDOM.render(<AttemptView />, document.getElementById('attempt'));
       this.board = ReactDOM.render(<BoardView />, document.getElementById('board'));
       this.control = ReactDOM.render(<ControlView />, document.getElementById('control'));
-      this.score.render();
+      this.score = ReactDOM.render(<ScoreView />, document.getElementById('score'));
       this.timer.render();
     },
 

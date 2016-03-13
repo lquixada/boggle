@@ -8,7 +8,6 @@ define(['react', 'react-dom', 'app/base/view', 'app/attempt/view', 'app/board/vi
   function App() {
     this.elementId = '#game';
 
-    this.score = new ScoreView();
     this.timer = new TimerView();
 
     this.minLength = 2;
@@ -22,7 +21,7 @@ define(['react', 'react-dom', 'app/base/view', 'app/attempt/view', 'app/board/vi
       this.attempt = ReactDOM.render(React.createElement(AttemptView, null), document.getElementById('attempt'));
       this.board = ReactDOM.render(React.createElement(BoardView, null), document.getElementById('board'));
       this.control = ReactDOM.render(React.createElement(ControlView, null), document.getElementById('control'));
-      this.score.render();
+      this.score = ReactDOM.render(React.createElement(ScoreView, null), document.getElementById('score'));
       this.timer.render();
     },
 
