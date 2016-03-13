@@ -17,10 +17,11 @@ define(['react', 'react-dom', 'jquery', 'underscore', 'jquery.knob'], function (
     },
 
     componentWillReceiveProps: function (nextProps) {
+      var that = this;
+
       if (nextProps.started) {
         this.start({
           onStop: function () {
-            that.stop();
             that.props.onStop();
             alert('Game over!');
           }
@@ -61,15 +62,13 @@ define(['react', 'react-dom', 'jquery', 'underscore', 'jquery.knob'], function (
     },
 
     componentDidUpdate: function () {
-      this.renderDial();
+      this.updateDial();
     },
 
     renderDial: function () {
-      var clock = ReactDOM.findDOMNode(this.refs.clock);
+      var timer = ReactDOM.findDOMNode(this.refs.timer);
 
-      console.log(clock);
-
-      $(clock).knob({
+      $(timer).knob({
         readOnly: true,
         width: 120,
         height: 120,
@@ -83,11 +82,17 @@ define(['react', 'react-dom', 'jquery', 'underscore', 'jquery.knob'], function (
       });
     },
 
+    updateDial: function () {
+      var timer = ReactDOM.findDOMNode(this.refs.timer);
+
+      $(timer).trigger('change');
+    },
+
     render: function () {
       return React.createElement(
         'div',
         { id: 'clock' },
-        React.createElement('input', { ref: 'clock', value: this.getSecs(), readOnly: 'true' }),
+        React.createElement('input', { ref: 'timer', value: this.state.secs, readOnly: 'true' }),
         React.createElement(
           'span',
           { className: 'micro-counter' },

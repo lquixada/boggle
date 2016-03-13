@@ -21,10 +21,11 @@ define([
     },
 
     componentWillReceiveProps: function (nextProps) {
+      var that = this;
+
       if (nextProps.started) {
         this.start({
           onStop: function () {
-            that.stop();
             that.props.onStop();
             alert('Game over!');
           }
@@ -65,15 +66,13 @@ define([
     },
 
     componentDidUpdate: function () {
-      this.renderDial();
+      this.updateDial();
     },
 
     renderDial: function () {
-      var clock = ReactDOM.findDOMNode(this.refs.clock);
+      var timer = ReactDOM.findDOMNode(this.refs.timer);
 
-      console.log(clock);
-
-      $(clock).knob({
+      $(timer).knob({
         readOnly: true,
         width: 120,
         height: 120,
@@ -87,10 +86,16 @@ define([
       });
     },
 
+    updateDial: function () {
+      var timer = ReactDOM.findDOMNode(this.refs.timer);
+      
+      $(timer).trigger('change');
+    },
+
     render: function () {
       return (
         <div id="clock">
-          <input ref="clock" value={this.getSecs()} readOnly="true" />
+          <input ref="timer" value={this.state.secs} readOnly="true" />
           <span className="micro-counter">Time left: 00:{this.getSecs()}</span>
         </div>
       );
