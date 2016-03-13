@@ -23,7 +23,7 @@ define(['react', 'text!app/control/style.css'], function (React, css) {
     },
 
     toggle: function () {
-      if (this.state.stated) {
+      if (this.state.started) {
         app.stop();
       } else {
         app.start();

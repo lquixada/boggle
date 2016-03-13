@@ -6,7 +6,7 @@ requirejs.config({
     'jquery.knob': 'vendor/jquery-knob/dist/jquery.knob.min',
     'underscore': 'vendor/underscore/underscore-min',
     'react': 'vendor/react/react',
-    'react-dom': 'vendor/react/react-dom',
+    'react-dom': 'vendor/react/react-dom'
   }
 });
 

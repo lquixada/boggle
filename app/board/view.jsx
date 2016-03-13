@@ -2,12 +2,14 @@
  * Board
  */
 
-define(['react', 'underscore', 'text!app/board/style.css'], function (React, _, css) {
+define([
+  'react',
+  'underscore',
+  'text!app/board/style.css'
+], function (React, _, css) {
   'use strict';
 
   var BoardView = React.createClass({
-    displayName: 'BoardView',
-
     getInitialState: function () {
       return {
         board: new Board()
@@ -30,42 +32,26 @@ define(['react', 'underscore', 'text!app/board/style.css'], function (React, _, 
 
     getRows: function (board) {
       return board.matrix.map(function (row, i) {
-        return React.createElement(
-          'tr',
-          { key: i },
-          this.getCells(row)
-        );
+        return <tr key={i}>{this.getCells(row)}</tr>;
       }, this);
     },
 
     getCells: function (row) {
       return row.map(function (cell, i) {
-        return React.createElement(
-          'td',
-          { key: i },
-          cell
-        );
+        return <td key={i}>{cell}</td>;
       });
     },
 
     render: function () {
-      return React.createElement(
-        'div',
-        null,
-        React.createElement(
-          'style',
-          { type: 'text/css' },
-          css
-        ),
-        React.createElement(
-          'table',
-          null,
-          React.createElement(
-            'tbody',
-            null,
-            this.getRows(this.state.board)
-          )
-        )
+      return (
+        <div>
+          <style type="text/css">{css}</style>
+          <table>
+            <tbody>
+              {this.getRows(this.state.board)}
+            </tbody>
+          </table>
+        </div>
       );
     }
   });
@@ -73,7 +59,24 @@ define(['react', 'underscore', 'text!app/board/style.css'], function (React, _, 
   function Board() {
     this.dim = 4;
     this.minLength = 2;
-    this.dice = [new Die('AOBBOJ'), new Die('WHGEEN'), new Die('NRNZHL'), new Die('NAEAGE'), new Die('DIYSTT'), new Die('IESTSO'), new Die('AOTTWO'), new Die('HQUMNI'), new Die('RYTLTE'), new Die('POHCSA'), new Die('LREVYD'), new Die('EXLDIR'), new Die('IENSUE'), new Die('SFFKAP'), new Die('IOTMUC'), new Die('EHWVTR')];
+    this.dice = [
+      new Die('AOBBOJ'),
+      new Die('WHGEEN'),
+      new Die('NRNZHL'),
+      new Die('NAEAGE'),
+      new Die('DIYSTT'),
+      new Die('IESTSO'),
+      new Die('AOTTWO'),
+      new Die('HQUMNI'),
+      new Die('RYTLTE'),
+      new Die('POHCSA'),
+      new Die('LREVYD'),
+      new Die('EXLDIR'),
+      new Die('IENSUE'),
+      new Die('SFFKAP'),
+      new Die('IOTMUC'),
+      new Die('EHWVTR')
+    ];
     this.reset();
   }
 
@@ -81,14 +84,14 @@ define(['react', 'underscore', 'text!app/board/style.css'], function (React, _, 
     get: function (i, j) {
       try {
         return this.matrix[i][j];
-      } catch (e) {
+      } catch(e) {
         return '*';
       }
     },
 
     place: function (drawn) {
-      var grouped = _.groupBy(drawn, function (letter, i) {
-        return i % this.dim;
+      var grouped = _.groupBy(drawn, function(letter, i) {
+        return (i%this.dim);
       }, this);
 
       return _.toArray(grouped);
@@ -108,7 +111,12 @@ define(['react', 'underscore', 'text!app/board/style.css'], function (React, _, 
     },
 
     reset: function () {
-      this.matrix = [[' ', ' ', ' ', ' '], [' ', ' ', ' ', ' '], [' ', ' ', ' ', ' '], [' ', ' ', ' ', ' ']];
+      this.matrix = [
+        [' ', ' ', ' ', ' '],
+        [' ', ' ', ' ', ' '],
+        [' ', ' ', ' ', ' '],
+        [' ', ' ', ' ', ' ']
+      ];
     },
 
     check: function (word) {
@@ -119,8 +127,8 @@ define(['react', 'underscore', 'text!app/board/style.css'], function (React, _, 
       word = word.toUpperCase();
 
       // Find the first letter
-      for (var i = 0; i < this.dim; i++) {
-        for (var j = 0; j < this.dim; j++) {
+      for (var i=0; i<this.dim; i++) {
+        for (var j=0; j<this.dim; j++) {
           if (this.get(i, j) === word.charAt(0)) {
             // From there, find the sequence, letter by letter
             if (this.findSequence(word, i, j)) {
@@ -136,7 +144,7 @@ define(['react', 'underscore', 'text!app/board/style.css'], function (React, _, 
     findSequence: function (seq, i, j) {
       var found;
 
-      if (seq.length <= 1) {
+      if (seq.length<=1) {
         return true;
       }
 
@@ -145,10 +153,10 @@ define(['react', 'underscore', 'text!app/board/style.css'], function (React, _, 
       // Mark temporarily in order to not traverse the same cell twice
       this.matrix[i][j] = ' ';
 
-      for (var u = -1; u <= 1; u++) {
-        for (var v = -1; v <= 1; v++) {
-          if (this.get(i + u, j + v) === seq.charAt(1)) {
-            if (this.findSequence(seq.substr(1), i + u, j + v)) {
+      for (var u=-1; u<=1; u++) {
+        for (var v=-1; v<=1; v++) {
+          if (this.get(i+u, j+v) === seq.charAt(1)) {
+            if (this.findSequence(seq.substr(1), i+u, j+v)) {
               this.matrix[i][j] = found;
               return true;
             }

@@ -19,7 +19,6 @@ define([
   function App() {
     this.elementId = '#game';
 
-    this.board = new BoardView();
     this.score = new ScoreView();
     this.timer = new TimerView();
 
@@ -32,7 +31,7 @@ define([
       this.renderTemplate();
 
       this.attempt = ReactDOM.render(<AttemptView />, document.getElementById('attempt'));
-      this.board.render();
+      this.board = ReactDOM.render(<BoardView />, document.getElementById('board'));
       this.control = ReactDOM.render(<ControlView />, document.getElementById('control'));
       this.score.render();
       this.timer.render();

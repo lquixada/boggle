@@ -24,7 +24,7 @@ define([
     },
 
     toggle: function () {
-      if (this.state.stated) {
+      if (this.state.started) {
         app.stop();
       } else {
         app.start();
