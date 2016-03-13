@@ -20,7 +20,6 @@ define([
     this.elementId = '#game';
 
     this.board = new BoardView();
-    this.control = new ControlView();
     this.score = new ScoreView();
     this.timer = new TimerView();
 
@@ -34,7 +33,7 @@ define([
 
       this.attempt = ReactDOM.render(<AttemptView />, document.getElementById('attempt'));
       this.board.render();
-      this.control.render();
+      this.control = ReactDOM.render(<ControlView />, document.getElementById('control'));
       this.score.render();
       this.timer.render();
     },

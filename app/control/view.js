@@ -2,33 +2,49 @@
  * Control
  */
 
-define([
-  'jquery',
-  'underscore',
-  'app/base/view',
-  'text!app/control/style.css',
-  'text!app/control/template.tpl'
-], function ($, _, BaseView, css, html) {
+define(['react', 'text!app/control/style.css'], function (React, css) {
   'use strict';
 
-  function ControlView() {
-    this.elementId = '#control';
-    this.started = false;
-  }
+  var ControlView = React.createClass({
+    displayName: 'ControlView',
 
-  ControlView.prototype = _.extend(new BaseView(css, html), {
-    render: function () {
-      this.renderTemplate({started: this.started});
+    getInitialState: function () {
+      return {
+        started: false
+      };
     },
 
     start: function () {
-      this.started = true;
-      this.render();
+      this.setState({ started: true });
     },
 
     stop: function () {
-      this.started = false;
-      this.render();
+      this.setState({ started: false });
+    },
+
+    toggle: function () {
+      if (this.state.stated) {
+        app.stop();
+      } else {
+        app.start();
+      }
+    },
+
+    render: function () {
+      return React.createElement(
+        'div',
+        null,
+        React.createElement(
+          'style',
+          { type: 'text/css' },
+          css
+        ),
+        React.createElement(
+          'button',
+          { type: 'button', onClick: this.toggle },
+          this.state.started ? 'stop!' : 'start!'
+        )
+      );
     }
   });
 
