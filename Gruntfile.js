@@ -184,6 +184,24 @@ module.exports = function(grunt) {
       }
     },
 
+    babel: {
+        options: {
+            presets: ['react']
+        },
+
+        dist: {
+            files: [
+              {
+                expand: true,
+                cwd: './',
+                src: ['app/**/*.jsx'],
+                dest: './',
+                ext: '.js'
+              }
+            ]
+        }
+    },
+
     watch: {
       review: {
         files: ['app/**/*.js'],
@@ -194,7 +212,7 @@ module.exports = function(grunt) {
       },
 
       build: {
-        files: ['app/**/*.less', 'app/**/*.js', 'index.html'],
+        files: ['app/**/*.less', 'app/**/*.jsx', 'app/**/*.js', 'index.html'],
         tasks: ['build', 'notify:build'],
         options: {
           atBegin: true,
@@ -207,6 +225,7 @@ module.exports = function(grunt) {
   /**
    * Defining aliases
    */
+  grunt.registerTask('react', ['babel']);
   grunt.registerTask('spec', ['karma']);
   grunt.registerTask('lint', ['jshint', 'jscs']);
   grunt.registerTask('publish', ['gh-pages']);
@@ -214,7 +233,7 @@ module.exports = function(grunt) {
   grunt.registerTask('server:build', ['connect:build']);
   grunt.registerTask('work', ['concurrent']);
   grunt.registerTask('review', ['lint', 'spec']);
-  grunt.registerTask('build', ['clean:build', 'less', 'copy', 'clean:files', 'uglify', 'cssmin']);
+  grunt.registerTask('build', ['clean:build', 'less', 'react', 'copy', 'clean:files', 'uglify', 'cssmin']);
   grunt.registerTask('deploy', ['build', 'review', 'publish', 'notify:deploy']);
 
   grunt.registerTask('default', ['review']);

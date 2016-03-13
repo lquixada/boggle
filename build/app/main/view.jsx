@@ -2,7 +2,18 @@
  * App
  */
 
-define(['react', 'react-dom', 'app/base/view', 'app/attempt/view', 'app/board/view', 'app/control/view', 'app/score/view', 'app/timer/view', 'text!app/main/style.css', 'text!app/main/template.tpl'], function (React, ReactDOM, BaseView, AttemptView, BoardView, ControlView, ScoreView, TimerView, css, html) {
+define([
+  'react',
+  'react-dom',
+  'app/base/view',
+  'app/attempt/view',
+  'app/board/view',
+  'app/control/view',
+  'app/score/view',
+  'app/timer/view',
+  'text!app/main/style.css',
+  'text!app/main/template.tpl'
+], function (React, ReactDOM, BaseView, AttemptView, BoardView, ControlView, ScoreView, TimerView, css, html) {
   'use strict';
 
   function App() {
@@ -21,7 +32,7 @@ define(['react', 'react-dom', 'app/base/view', 'app/attempt/view', 'app/board/vi
     render: function () {
       this.renderTemplate();
 
-      this.attempt = ReactDOM.render(React.createElement(AttemptView, null), document.getElementById('attempt'));
+      this.attempt = ReactDOM.render(<AttemptView />, document.getElementById('attempt'));
       this.board.render();
       this.control.render();
       this.score.render();
@@ -103,13 +114,15 @@ define(['react', 'react-dom', 'app/base/view', 'app/attempt/view', 'app/board/vi
    * it could be local (a huge word array downloaded to the browser) or any web dictionary
    * with an api such as Wiktionary.
    */
-  function Dictionary() {}
+  function Dictionary() {
+
+  }
 
   Dictionary.prototype = {
     check: function (word, cb) {
       var url = 'https://en.wiktionary.org/w/api.php?action=query&format=json&callback=?&titles=';
 
-      return $.getJSON(url + word.toLowerCase(), function (data) {
+      return $.getJSON(url+word.toLowerCase(), function (data) {
         cb(!data.query.pages[-1]);
       });
     }

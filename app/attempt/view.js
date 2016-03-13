@@ -2,39 +2,29 @@
  * Attempt
  */
 
-define([
-  'jquery',
-  'underscore',
-  'app/base/view',
-  'text!app/attempt/style.css',
-  'text!app/attempt/template.tpl'
-], function ($, _, BaseView, css, html) {
+define(['react', 'react-dom', 'text!app/attempt/style.css'], function (React, ReactDOM, css) {
   'use strict';
 
-  function AttemptView() {
-    this.elementId = '#attempt';
-    this.started = false;
-  }
+  var AttemptView = React.createClass({
+    displayName: 'AttemptView',
 
-  AttemptView.prototype = _.extend(new BaseView(css, html), {
-    render: function () {
-      this.renderTemplate({started: this.started});
+    getInitialState: function () {
+      return {
+        started: false
+      };
     },
 
     start: function () {
-      this.started = true;
-      this.render();
+      this.setState({ started: true });
       this.focus();
     },
 
     stop: function () {
-      this.started = false;
-      this.render();
+      this.setState({ started: false });
     },
 
     reset: function () {
-      this.started = false;
-      this.render();
+      this.setState({ started: false });
     },
 
     clear: function () {
@@ -42,7 +32,25 @@ define([
     },
 
     focus: function () {
-      $(this.elementId).find(':input').focus();
+      ReactDOM.findDOMNode(this.refs.attempt).focus();
+    },
+
+    checkOnEnter: function (evt) {
+      app.checkOnEnter(evt);
+    },
+
+    render: function () {
+      return React.createElement(
+        'div',
+        null,
+        React.createElement(
+          'style',
+          { type: 'text/css' },
+          css
+        ),
+        React.createElement('input', { type: 'text', ref: 'attempt', className: 'box', onKeyUp: this.checkOnEnter, disabled: !this.state.started,
+          placeholder: this.state.started ? 'Type the word and hit Enter' : 'Press start to begin...' })
+      );
     }
   });
 
