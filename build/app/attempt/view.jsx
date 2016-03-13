@@ -9,8 +9,16 @@ define([
   'use strict';
 
   var Attempt = React.createClass({
-    componentDidMount: function () {
-      this.focus();
+    getInitialState: function () {
+      return {
+        value: ''
+      }
+    },
+
+    componentWillReceiveProps: function (nextProps) {
+      if (!nextProps.started) {
+        this.clear();
+      }
     },
 
     componentDidUpdate: function () {
@@ -18,24 +26,37 @@ define([
     },
 
     clear: function () {
-      this.forceUpdate();
+      this.setValue('');
     },
 
     focus: function () {
-      ReactDOM.findDOMNode(this.refs.attempt).focus();
+      var attempt = ReactDOM.findDOMNode(this.refs.attempt);
+
+      attempt.focus();
     },
 
     onEnter: function (evt) {
       if (evt.which === 13) {
         this.props.onEnter(evt);
+        this.clear();
       }
+    },
+
+    updateValue: function (evt) {
+      this.setValue(evt.target.value);
+    },
+
+    setValue: function (val) {
+      this.setState({value: val});
     },
 
     render: function () {
       return (
         <div id="attempt">
-          <input type="text" ref="attempt" className="box" onKeyUp={this.props.onEnter} disabled={!this.props.started}
-           placeholder={this.props.started? 'Type the word and hit Enter' : 'Press start to begin...'} />
+          <input type="text" ref="attempt" value={this.state.value} onChange={this.updateValue} onKeyUp={this.onEnter}
+            className="box"
+            disabled={!this.props.started}
+            placeholder={this.props.started? 'Type the word and hit Enter' : 'Press start to begin...'} />
         </div>
       );
     }

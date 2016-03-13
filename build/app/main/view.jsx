@@ -16,6 +16,7 @@ define([
   var App = React.createClass({
     getInitialState: function () {
       return {
+        dictionary: new Dictionary(),
         minLength: 2,
         started: false
       };
@@ -39,25 +40,25 @@ define([
     },
 
     checkBoard: function (word) {
-      return this.board.check(word);
+      return this.refs.board.check(word);
     },
 
     checkDictionary: function (word, cb) {
-      return this.dictionary.check(word, cb);
+      return this.state.dictionary.check(word, cb);
     },
 
-    checkScore: function (word, cb) {
-      return this.score.check(word);
+    checkScore: function (word) {
+      return this.refs.score.check(word);
     },
 
     commit: function (word, scored) {
-      this.score.add({
+      this.refs.score.add({
         word: word,
         scored: scored
       });
 
-      this.attempt.clear();
-      this.attempt.focus();
+      this.refs.attempt.clear();
+      this.refs.attempt.focus();
     },
 
     toggle: function () {
@@ -74,18 +75,18 @@ define([
           <header>
             <div className="container">
               <h1>BOGGLE</h1>
-              <Button started={this.state.started} onClick={this.toggle}  />
-              <Attempt started={this.state.started} onEnter={this.check} />
+              <Button ref="button" started={this.state.started} onClick={this.toggle}  />
+              <Attempt ref="attempt" started={this.state.started} onEnter={this.check} />
             </div>
           </header>
 
           <section>
             <div className="container">
               <aside>
-                <Clock started={this.state.started} onStop={this.reset} />
-                <Score started={this.state.started} />
+                <Clock ref="clock" started={this.state.started} onStop={this.reset} />
+                <Score ref="score" started={this.state.started} />
               </aside>
-              <Board started={this.state.started} />
+              <Board ref="board" started={this.state.started} />
             </div>
           </section>
 

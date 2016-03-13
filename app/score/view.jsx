@@ -41,9 +41,9 @@ define([
     },
 
     getItems: function () {
-      return this.state.attempts.map(function (attempt) {
+      return this.state.attempts.map(function (attempt, i) {
         return (
-          <tr>
+          <tr key={i}>
             <td>{attempt.word}</td>
             <td>{attempt.score}</td>
           </tr>

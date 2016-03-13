@@ -10,6 +10,7 @@ define(['react', 'react-dom', 'app/attempt/view', 'app/board/view', 'app/button/
 
     getInitialState: function () {
       return {
+        dictionary: new Dictionary(),
         minLength: 2,
         started: false
       };
@@ -33,25 +34,25 @@ define(['react', 'react-dom', 'app/attempt/view', 'app/board/view', 'app/button/
     },
 
     checkBoard: function (word) {
-      return this.board.check(word);
+      return this.refs.board.check(word);
     },
 
     checkDictionary: function (word, cb) {
-      return this.dictionary.check(word, cb);
+      return this.state.dictionary.check(word, cb);
     },
 
-    checkScore: function (word, cb) {
-      return this.score.check(word);
+    checkScore: function (word) {
+      return this.refs.score.check(word);
     },
 
     commit: function (word, scored) {
-      this.score.add({
+      this.refs.score.add({
         word: word,
         scored: scored
       });
 
-      this.attempt.clear();
-      this.attempt.focus();
+      this.refs.attempt.clear();
+      this.refs.attempt.focus();
     },
 
     toggle: function () {
@@ -77,8 +78,8 @@ define(['react', 'react-dom', 'app/attempt/view', 'app/board/view', 'app/button/
               null,
               'BOGGLE'
             ),
-            React.createElement(Button, { started: this.state.started, onClick: this.toggle }),
-            React.createElement(Attempt, { started: this.state.started, onEnter: this.check })
+            React.createElement(Button, { ref: 'button', started: this.state.started, onClick: this.toggle }),
+            React.createElement(Attempt, { ref: 'attempt', started: this.state.started, onEnter: this.check })
           )
         ),
         React.createElement(
@@ -90,10 +91,10 @@ define(['react', 'react-dom', 'app/attempt/view', 'app/board/view', 'app/button/
             React.createElement(
               'aside',
               null,
-              React.createElement(Clock, { started: this.state.started, onStop: this.reset }),
-              React.createElement(Score, { started: this.state.started })
+              React.createElement(Clock, { ref: 'clock', started: this.state.started, onStop: this.reset }),
+              React.createElement(Score, { ref: 'score', started: this.state.started })
             ),
-            React.createElement(Board, { started: this.state.started })
+            React.createElement(Board, { ref: 'board', started: this.state.started })
           )
         ),
         React.createElement(

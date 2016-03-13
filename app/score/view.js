@@ -40,10 +40,10 @@ define(['react', 'underscore'], function (React, _) {
     },
 
     getItems: function () {
-      return this.state.attempts.map(function (attempt) {
+      return this.state.attempts.map(function (attempt, i) {
         return React.createElement(
           'tr',
-          null,
+          { key: i },
           React.createElement(
             'td',
             null,
