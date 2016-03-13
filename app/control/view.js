@@ -19,7 +19,7 @@ define(['react', 'text!app/control/style.css'], function (React, css) {
         ),
         React.createElement(
           'button',
-          { type: 'button', onClick: this.props.onButtonClick },
+          { type: 'button', onClick: this.props.onClick },
           this.props.started ? 'stop!' : 'start!'
         )
       );

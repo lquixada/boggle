@@ -13,7 +13,7 @@ define([
       return (
         <div>
           <style type="text/css">{css}</style>
-          <button type="button" onClick={this.props.onButtonClick}>{this.props.started?'stop!':'start!'}</button>
+          <button type="button" onClick={this.props.onClick}>{this.props.started?'stop!':'start!'}</button>
         </div>
       );
     }

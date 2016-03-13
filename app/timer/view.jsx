@@ -14,9 +14,25 @@ define([
 
   var TimerView = React.createClass({
     getInitialState: function () {
+      var timer = new Timer();
       return {
-        timer: new Timer()
+        secs: timer.remaining,
+        timer: timer
       };
+    },
+
+    componentWillReceiveProps: function (nextProps) {
+      if (nextProps.started) {
+        this.start({
+          onStop: function () {
+            that.stop();
+            that.props.onStop();
+            alert('Game over!');
+          }
+        });
+      } else {
+        this.stop();
+      }
     },
 
     start: function (options) {
@@ -25,9 +41,9 @@ define([
 
       this.state.timer.start({
         onTick: function () {
-          that.forceUpdate();
+          that.setState({secs: that.state.timer.remaining});
 
-          if (that.state.timer.remaining === 0 && _.isFunction(opt.onStop)) {
+          if (that.state.secs === 0 && _.isFunction(opt.onStop)) {
             opt.onStop();
           }
         }
@@ -36,11 +52,11 @@ define([
 
     stop: function () {
       this.state.timer.stop();
-      this.forceUpdate();
+      this.setState({secs: this.state.timer.remaining});
     },
 
     getSecs: function () {
-      var secs = this.state.timer.remaining;
+      var secs = this.state.secs;
 
       return (secs<10 ? '0'+secs : secs);
     },
@@ -70,7 +86,7 @@ define([
       return (
         <div>
           <style type="text/css">{css}</style>
-          <input ref="clock" value={this.getSecs()} />
+          <input ref="clock" value={this.getSecs()} readOnly="true" />
           <span className="micro-counter">Time left: 00:{this.getSecs()}</span>
         </div>
       );

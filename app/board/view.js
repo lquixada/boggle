@@ -18,14 +18,12 @@ define(['react', 'underscore', 'text!app/board/style.css'], function (React, _, 
       return this.state.board.check(word);
     },
 
-    start: function () {
-      this.state.board.start();
-      this.forceUpdate();
-    },
-
-    stop: function () {
-      this.state.board.stop();
-      this.forceUpdate();
+    componentWillUpdate: function () {
+      if (this.props.started) {
+        this.state.board.stop();
+      } else {
+        this.state.board.start();
+      }
     },
 
     getRows: function (board) {

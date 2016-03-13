@@ -22,29 +22,6 @@ define([
       };
     },
 
-    start: function () {
-      var that = this;
-
-      this.board.start();
-      this.control.start();
-      this.attempt.start();
-      this.score.start();
-      this.timer.start({
-        onStop: function () {
-          that.stop();
-          alert('Game over!');
-        }
-      });
-    },
-
-    stop: function () {
-      this.board.stop();
-      this.control.stop();
-      this.attempt.stop();
-      this.score.stop();
-      this.timer.stop();
-    },
-
     checkOnEnter: function (e) {
       if (e.which === 13) {
         this.check(e.target.value.toUpperCase());
@@ -93,6 +70,10 @@ define([
       this.setState({started: !this.state.started});
     },
 
+    reset: function () {
+      this.setState({started: false});
+    },
+
     render: function () {
       return (
         <div>
@@ -101,7 +82,7 @@ define([
             <header>
               <div className="container">
                 <h1>BOGGLE</h1>
-                <ControlView started={this.state.started} onButtonClick={this.toggle}  />
+                <ControlView started={this.state.started} onClick={this.toggle}  />
                 <AttemptView started={this.state.started} onEnter={this.checkOnEnter} />
               </div>
             </header>
@@ -109,7 +90,7 @@ define([
             <section>
               <div className="container">
                 <aside>
-                  <TimerView started={this.state.started} />
+                  <TimerView started={this.state.started} onStop={this.reset} />
                   <ScoreView started={this.state.started} />
                 </aside>
                 <BoardView started={this.state.started} />

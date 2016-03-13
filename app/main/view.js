@@ -15,29 +15,6 @@ define(['react', 'react-dom', 'app/attempt/view', 'app/board/view', 'app/control
       };
     },
 
-    start: function () {
-      var that = this;
-
-      this.board.start();
-      this.control.start();
-      this.attempt.start();
-      this.score.start();
-      this.timer.start({
-        onStop: function () {
-          that.stop();
-          alert('Game over!');
-        }
-      });
-    },
-
-    stop: function () {
-      this.board.stop();
-      this.control.stop();
-      this.attempt.stop();
-      this.score.stop();
-      this.timer.stop();
-    },
-
     checkOnEnter: function (e) {
       if (e.which === 13) {
         this.check(e.target.value.toUpperCase());
@@ -86,6 +63,10 @@ define(['react', 'react-dom', 'app/attempt/view', 'app/board/view', 'app/control
       this.setState({ started: !this.state.started });
     },
 
+    reset: function () {
+      this.setState({ started: false });
+    },
+
     render: function () {
       return React.createElement(
         'div',
@@ -109,7 +90,7 @@ define(['react', 'react-dom', 'app/attempt/view', 'app/board/view', 'app/control
                 null,
                 'BOGGLE'
               ),
-              React.createElement(ControlView, { started: this.state.started, onButtonClick: this.toggle }),
+              React.createElement(ControlView, { started: this.state.started, onClick: this.toggle }),
               React.createElement(AttemptView, { started: this.state.started, onEnter: this.checkOnEnter })
             )
           ),
@@ -122,7 +103,7 @@ define(['react', 'react-dom', 'app/attempt/view', 'app/board/view', 'app/control
               React.createElement(
                 'aside',
                 null,
-                React.createElement(TimerView, { started: this.state.started }),
+                React.createElement(TimerView, { started: this.state.started, onStop: this.reset }),
                 React.createElement(ScoreView, { started: this.state.started })
               ),
               React.createElement(BoardView, { started: this.state.started })

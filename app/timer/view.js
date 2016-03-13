@@ -9,9 +9,25 @@ define(['react', 'react-dom', 'jquery', 'underscore', 'text!app/timer/style.css'
     displayName: 'TimerView',
 
     getInitialState: function () {
+      var timer = new Timer();
       return {
-        timer: new Timer()
+        secs: timer.remaining,
+        timer: timer
       };
+    },
+
+    componentWillReceiveProps: function (nextProps) {
+      if (nextProps.started) {
+        this.start({
+          onStop: function () {
+            that.stop();
+            that.props.onStop();
+            alert('Game over!');
+          }
+        });
+      } else {
+        this.stop();
+      }
     },
 
     start: function (options) {
@@ -20,9 +36,9 @@ define(['react', 'react-dom', 'jquery', 'underscore', 'text!app/timer/style.css'
 
       this.state.timer.start({
         onTick: function () {
-          that.forceUpdate();
+          that.setState({ secs: that.state.timer.remaining });
 
-          if (that.state.timer.remaining === 0 && _.isFunction(opt.onStop)) {
+          if (that.state.secs === 0 && _.isFunction(opt.onStop)) {
             opt.onStop();
           }
         }
@@ -31,11 +47,11 @@ define(['react', 'react-dom', 'jquery', 'underscore', 'text!app/timer/style.css'
 
     stop: function () {
       this.state.timer.stop();
-      this.forceUpdate();
+      this.setState({ secs: this.state.timer.remaining });
     },
 
     getSecs: function () {
-      var secs = this.state.timer.remaining;
+      var secs = this.state.secs;
 
       return secs < 10 ? '0' + secs : secs;
     },
@@ -70,7 +86,7 @@ define(['react', 'react-dom', 'jquery', 'underscore', 'text!app/timer/style.css'
           { type: 'text/css' },
           css
         ),
-        React.createElement('input', { ref: 'clock', value: this.getSecs() }),
+        React.createElement('input', { ref: 'clock', value: this.getSecs(), readOnly: 'true' }),
         React.createElement(
           'span',
           { className: 'micro-counter' },

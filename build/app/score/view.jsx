@@ -41,21 +41,6 @@ define([
       return !Boolean(found);
     },
 
-    start: function () {
-      this.reset();
-    },
-
-    stop: function () {
-      this.reset();
-    },
-
-    reset: function () {
-      this.setState({
-        counter: 0,
-        attempts: []
-      });
-    },
-
     getItems: function () {
       return this.state.attempts.map(function (attempt) {
         return (
