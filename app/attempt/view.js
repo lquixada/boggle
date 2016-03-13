@@ -24,6 +24,12 @@ define(['react', 'react-dom'], function (React, ReactDOM) {
       ReactDOM.findDOMNode(this.refs.attempt).focus();
     },
 
+    onEnter: function (evt) {
+      if (evt.which === 13) {
+        this.props.onEnter(evt);
+      }
+    },
+
     render: function () {
       return React.createElement(
         'div',

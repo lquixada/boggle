@@ -21,14 +21,9 @@ define([
       };
     },
 
-    checkOnEnter: function (e) {
-      if (e.which === 13) {
-        this.check(e.target.value.toUpperCase());
-      }
-    },
-
-    check: function (word) {
+    check: function (evt) {
       var that = this;
+      var word = evt.target.value.toUpperCase();
 
       if (word.length < this.state.minLength) {
         return;
@@ -80,7 +75,7 @@ define([
             <div className="container">
               <h1>BOGGLE</h1>
               <Control started={this.state.started} onClick={this.toggle}  />
-              <Attempt started={this.state.started} onEnter={this.checkOnEnter} />
+              <Attempt started={this.state.started} onEnter={this.check} />
             </div>
           </header>
 

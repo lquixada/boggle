@@ -25,6 +25,12 @@ define([
       ReactDOM.findDOMNode(this.refs.attempt).focus();
     },
 
+    onEnter: function (evt) {
+      if (evt.which === 13) {
+        this.props.onEnter(evt);
+      }
+    },
+
     render: function () {
       return (
         <div id="attempt">

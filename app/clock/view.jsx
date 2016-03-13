@@ -64,8 +64,14 @@ define([
       this.renderDial();
     },
 
+    componentDidUpdate: function () {
+      this.renderDial();
+    },
+
     renderDial: function () {
       var clock = ReactDOM.findDOMNode(this.refs.clock);
+
+      console.log(clock);
 
       $(clock).knob({
         readOnly: true,
