@@ -3,16 +3,14 @@
  */
 
 define([
-  'react',
-  'text!app/control/style.css'
+  'react'
 ], function (React, css) {
   'use strict';
 
   var ControlView = React.createClass({
     render: function () {
       return (
-        <div>
-          <style type="text/css">{css}</style>
+        <div id="control">
           <button type="button" onClick={this.props.onClick}>{this.props.started?'stop!':'start!'}</button>
         </div>
       );

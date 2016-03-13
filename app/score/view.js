@@ -2,7 +2,7 @@
  * Score
  */
 
-define(['react', 'underscore', 'text!app/score/style.css'], function (React, _, css) {
+define(['react', 'underscore'], function (React, _) {
   'use strict';
 
   var ScoreView = React.createClass({
@@ -61,12 +61,7 @@ define(['react', 'underscore', 'text!app/score/style.css'], function (React, _, 
     render: function () {
       return React.createElement(
         'div',
-        null,
-        React.createElement(
-          'style',
-          { type: 'text/css' },
-          css
-        ),
+        { id: 'score' },
         React.createElement(
           'header',
           null,

@@ -4,9 +4,8 @@
 
 define([
   'react',
-  'react-dom',
-  'text!app/attempt/style.css'
-], function (React, ReactDOM, css) {
+  'react-dom'
+], function (React, ReactDOM) {
   'use strict';
 
   var AttemptView = React.createClass({
@@ -28,8 +27,7 @@ define([
 
     render: function () {
       return (
-        <div>
-          <style type="text/css">{css}</style>
+        <div id="attempt">
           <input type="text" ref="attempt" className="box" onKeyUp={this.props.onEnter} disabled={!this.props.started}
            placeholder={this.props.started? 'Type the word and hit Enter' : 'Press start to begin...'} />
         </div>

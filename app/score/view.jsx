@@ -4,9 +4,8 @@
 
 define([
   'react',
-  'underscore',
-  'text!app/score/style.css'
-], function (React, _, css) {
+  'underscore'
+], function (React, _) {
   'use strict';
 
   var ScoreView = React.createClass({
@@ -54,8 +53,7 @@ define([
 
     render: function () {
       return (
-        <div>
-          <style type="text/css">{css}</style>
+        <div id="score">
           <header>
             <h2>Score: {this.state.counter}</h2>
           </header>

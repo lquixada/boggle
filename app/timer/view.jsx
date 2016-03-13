@@ -7,9 +7,8 @@ define([
   'react-dom',
   'jquery',
   'underscore',
-  'text!app/timer/style.css',
   'jquery.knob'
-], function (React, ReactDOM, $, _, css) {
+], function (React, ReactDOM, $, _) {
   'use strict';
 
   var TimerView = React.createClass({
@@ -84,8 +83,7 @@ define([
 
     render: function () {
       return (
-        <div>
-          <style type="text/css">{css}</style>
+        <div id="timer">
           <input ref="clock" value={this.getSecs()} readOnly="true" />
           <span className="micro-counter">Time left: 00:{this.getSecs()}</span>
         </div>

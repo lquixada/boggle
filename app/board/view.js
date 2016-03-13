@@ -2,7 +2,7 @@
  * Board
  */
 
-define(['react', 'underscore', 'text!app/board/style.css'], function (React, _, css) {
+define(['react', 'underscore'], function (React, _) {
   'use strict';
 
   var BoardView = React.createClass({
@@ -49,12 +49,7 @@ define(['react', 'underscore', 'text!app/board/style.css'], function (React, _, 
     render: function () {
       return React.createElement(
         'div',
-        { className: 'box' },
-        React.createElement(
-          'style',
-          { type: 'text/css' },
-          css
-        ),
+        { id: 'board', className: 'box' },
         React.createElement(
           'table',
           null,

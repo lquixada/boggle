@@ -2,7 +2,7 @@
  * Attempt
  */
 
-define(['react', 'react-dom', 'text!app/attempt/style.css'], function (React, ReactDOM, css) {
+define(['react', 'react-dom'], function (React, ReactDOM) {
   'use strict';
 
   var AttemptView = React.createClass({
@@ -27,12 +27,7 @@ define(['react', 'react-dom', 'text!app/attempt/style.css'], function (React, Re
     render: function () {
       return React.createElement(
         'div',
-        null,
-        React.createElement(
-          'style',
-          { type: 'text/css' },
-          css
-        ),
+        { id: 'attempt' },
         React.createElement('input', { type: 'text', ref: 'attempt', className: 'box', onKeyUp: this.props.onEnter, disabled: !this.props.started,
           placeholder: this.props.started ? 'Type the word and hit Enter' : 'Press start to begin...' })
       );

@@ -2,7 +2,7 @@
  * Timer
  */
 
-define(['react', 'react-dom', 'jquery', 'underscore', 'text!app/timer/style.css', 'jquery.knob'], function (React, ReactDOM, $, _, css) {
+define(['react', 'react-dom', 'jquery', 'underscore', 'jquery.knob'], function (React, ReactDOM, $, _) {
   'use strict';
 
   var TimerView = React.createClass({
@@ -80,12 +80,7 @@ define(['react', 'react-dom', 'jquery', 'underscore', 'text!app/timer/style.css'
     render: function () {
       return React.createElement(
         'div',
-        null,
-        React.createElement(
-          'style',
-          { type: 'text/css' },
-          css
-        ),
+        { id: 'timer' },
         React.createElement('input', { ref: 'clock', value: this.getSecs(), readOnly: 'true' }),
         React.createElement(
           'span',

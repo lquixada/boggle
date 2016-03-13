@@ -4,9 +4,8 @@
 
 define([
   'react',
-  'underscore',
-  'text!app/board/style.css'
-], function (React, _, css) {
+  'underscore'
+], function (React, _) {
   'use strict';
 
   var BoardView = React.createClass({
@@ -42,8 +41,7 @@ define([
 
     render: function () {
       return (
-        <div className="box">
-          <style type="text/css">{css}</style>
+        <div id="board" className="box">
           <table>
             <tbody>
               {this.getRows(this.state.board)}
