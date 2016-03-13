@@ -7,10 +7,10 @@ define([
   'react-dom',
   'app/attempt/view',
   'app/board/view',
-  'app/control/view',
+  'app/button/view',
   'app/score/view',
   'app/clock/view'
-], function (React, ReactDOM, Attempt, Board, Control, Score, Clock) {
+], function (React, ReactDOM, Attempt, Board, Button, Score, Clock) {
   'use strict';
 
   var App = React.createClass({
@@ -74,7 +74,7 @@ define([
           <header>
             <div className="container">
               <h1>BOGGLE</h1>
-              <Control started={this.state.started} onClick={this.toggle}  />
+              <Button started={this.state.started} onClick={this.toggle}  />
               <Attempt started={this.state.started} onEnter={this.check} />
             </div>
           </header>

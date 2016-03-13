@@ -7,7 +7,7 @@ define([
 ], function (React, css) {
   'use strict';
 
-  var ControlView = React.createClass({
+  var Button = React.createClass({
     render: function () {
       return (
         <div id="control">
@@ -17,5 +17,5 @@ define([
     }
   });
 
-  return ControlView;
+  return Button;
 });

@@ -8,7 +8,7 @@ define([
 ], function (React, ReactDOM) {
   'use strict';
 
-  var AttemptView = React.createClass({
+  var Attempt = React.createClass({
     componentDidMount: function () {
       this.focus();
     },
@@ -41,5 +41,5 @@ define([
     }
   });
 
-  return AttemptView;
+  return Attempt;
 });

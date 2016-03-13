@@ -5,8 +5,8 @@
 define(['react', 'react-dom'], function (React, ReactDOM) {
   'use strict';
 
-  var AttemptView = React.createClass({
-    displayName: 'AttemptView',
+  var Attempt = React.createClass({
+    displayName: 'Attempt',
 
     componentDidMount: function () {
       this.focus();
@@ -40,5 +40,5 @@ define(['react', 'react-dom'], function (React, ReactDOM) {
     }
   });
 
-  return AttemptView;
+  return Attempt;
 });

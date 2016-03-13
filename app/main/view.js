@@ -2,7 +2,7 @@
  * App
  */
 
-define(['react', 'react-dom', 'app/attempt/view', 'app/board/view', 'app/control/view', 'app/score/view', 'app/clock/view'], function (React, ReactDOM, Attempt, Board, Control, Score, Clock) {
+define(['react', 'react-dom', 'app/attempt/view', 'app/board/view', 'app/button/view', 'app/score/view', 'app/clock/view'], function (React, ReactDOM, Attempt, Board, Button, Score, Clock) {
   'use strict';
 
   var App = React.createClass({
@@ -77,7 +77,7 @@ define(['react', 'react-dom', 'app/attempt/view', 'app/board/view', 'app/control
               null,
               'BOGGLE'
             ),
-            React.createElement(Control, { started: this.state.started, onClick: this.toggle }),
+            React.createElement(Button, { started: this.state.started, onClick: this.toggle }),
             React.createElement(Attempt, { started: this.state.started, onEnter: this.check })
           )
         ),
