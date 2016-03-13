@@ -2,7 +2,7 @@
  * App
  */
 
-define(['react', 'react-dom', 'app/attempt/view', 'app/board/view', 'app/control/view', 'app/score/view', 'app/timer/view', 'text!app/main/style.css'], function (React, ReactDOM, AttemptView, BoardView, ControlView, ScoreView, TimerView, css) {
+define(['react', 'react-dom', 'app/attempt/view', 'app/board/view', 'app/control/view', 'app/score/view', 'app/clock/view'], function (React, ReactDOM, Attempt, Board, Control, Score, Clock) {
   'use strict';
 
   var App = React.createClass({
@@ -69,58 +69,49 @@ define(['react', 'react-dom', 'app/attempt/view', 'app/board/view', 'app/control
 
     render: function () {
       return React.createElement(
-        'div',
+        'main',
         null,
         React.createElement(
-          'style',
-          { type: 'text/css' },
-          css
-        ),
-        React.createElement(
-          'main',
+          'header',
           null,
           React.createElement(
-            'header',
-            null,
+            'div',
+            { className: 'container' },
             React.createElement(
-              'div',
-              { className: 'container' },
-              React.createElement(
-                'h1',
-                null,
-                'BOGGLE'
-              ),
-              React.createElement(ControlView, { started: this.state.started, onClick: this.toggle }),
-              React.createElement(AttemptView, { started: this.state.started, onEnter: this.checkOnEnter })
-            )
-          ),
+              'h1',
+              null,
+              'BOGGLE'
+            ),
+            React.createElement(Control, { started: this.state.started, onClick: this.toggle }),
+            React.createElement(Attempt, { started: this.state.started, onEnter: this.checkOnEnter })
+          )
+        ),
+        React.createElement(
+          'section',
+          null,
           React.createElement(
-            'section',
-            null,
+            'div',
+            { className: 'container' },
             React.createElement(
-              'div',
-              { className: 'container' },
-              React.createElement(
-                'aside',
-                null,
-                React.createElement(TimerView, { started: this.state.started, onStop: this.reset }),
-                React.createElement(ScoreView, { started: this.state.started })
-              ),
-              React.createElement(BoardView, { started: this.state.started })
-            )
-          ),
+              'aside',
+              null,
+              React.createElement(Clock, { started: this.state.started, onStop: this.reset }),
+              React.createElement(Score, { started: this.state.started })
+            ),
+            React.createElement(Board, { started: this.state.started })
+          )
+        ),
+        React.createElement(
+          'footer',
+          null,
           React.createElement(
-            'footer',
-            null,
+            'div',
+            { className: 'container' },
+            '© Copyright 2016 Leonardo Quixadá. All rights reserved. ',
             React.createElement(
-              'div',
-              { className: 'container' },
-              '© Copyright 2016 Leonardo Quixadá. All rights reserved. ',
-              React.createElement(
-                'a',
-                { href: 'https://github.com/lquixada/boggle' },
-                'Github'
-              )
+              'a',
+              { href: 'https://github.com/lquixada/boggle' },
+              'Github'
             )
           )
         )

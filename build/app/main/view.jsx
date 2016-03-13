@@ -9,9 +9,8 @@ define([
   'app/board/view',
   'app/control/view',
   'app/score/view',
-  'app/timer/view',
-  'text!app/main/style.css'
-], function (React, ReactDOM, AttemptView, BoardView, ControlView, ScoreView, TimerView, css) {
+  'app/clock/view'
+], function (React, ReactDOM, Attempt, Board, Control, Score, Clock) {
   'use strict';
 
   var App = React.createClass({
@@ -76,34 +75,31 @@ define([
 
     render: function () {
       return (
-        <div>
-          <style type="text/css">{css}</style>
-          <main>
-            <header>
-              <div className="container">
-                <h1>BOGGLE</h1>
-                <ControlView started={this.state.started} onClick={this.toggle}  />
-                <AttemptView started={this.state.started} onEnter={this.checkOnEnter} />
-              </div>
-            </header>
+        <main>
+          <header>
+            <div className="container">
+              <h1>BOGGLE</h1>
+              <Control started={this.state.started} onClick={this.toggle}  />
+              <Attempt started={this.state.started} onEnter={this.checkOnEnter} />
+            </div>
+          </header>
 
-            <section>
-              <div className="container">
-                <aside>
-                  <TimerView started={this.state.started} onStop={this.reset} />
-                  <ScoreView started={this.state.started} />
-                </aside>
-                <BoardView started={this.state.started} />
-              </div>
-            </section>
+          <section>
+            <div className="container">
+              <aside>
+                <Clock started={this.state.started} onStop={this.reset} />
+                <Score started={this.state.started} />
+              </aside>
+              <Board started={this.state.started} />
+            </div>
+          </section>
 
-            <footer>
-              <div className="container">
-                &copy; Copyright 2016 Leonardo Quixadá. All rights reserved. <a href="https://github.com/lquixada/boggle">Github</a>
-              </div>
-            </footer>
-          </main>
-        </div>
+          <footer>
+            <div className="container">
+              &copy; Copyright 2016 Leonardo Quixadá. All rights reserved. <a href="https://github.com/lquixada/boggle">Github</a>
+            </div>
+          </footer>
+        </main>
       );
     }
   });

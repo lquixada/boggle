@@ -11,7 +11,7 @@ define([
 ], function (React, ReactDOM, $, _) {
   'use strict';
 
-  var TimerView = React.createClass({
+  var ClockView = React.createClass({
     getInitialState: function () {
       var timer = new Timer();
       return {
@@ -83,7 +83,7 @@ define([
 
     render: function () {
       return (
-        <div id="timer">
+        <div id="clock">
           <input ref="clock" value={this.getSecs()} readOnly="true" />
           <span className="micro-counter">Time left: 00:{this.getSecs()}</span>
         </div>
@@ -119,5 +119,5 @@ define([
     }
   };
 
-  return TimerView;
+  return ClockView;
 });

@@ -5,8 +5,8 @@
 define(['react', 'react-dom', 'jquery', 'underscore', 'jquery.knob'], function (React, ReactDOM, $, _) {
   'use strict';
 
-  var TimerView = React.createClass({
-    displayName: 'TimerView',
+  var ClockView = React.createClass({
+    displayName: 'ClockView',
 
     getInitialState: function () {
       var timer = new Timer();
@@ -80,7 +80,7 @@ define(['react', 'react-dom', 'jquery', 'underscore', 'jquery.knob'], function (
     render: function () {
       return React.createElement(
         'div',
-        { id: 'timer' },
+        { id: 'clock' },
         React.createElement('input', { ref: 'clock', value: this.getSecs(), readOnly: 'true' }),
         React.createElement(
           'span',
@@ -120,5 +120,5 @@ define(['react', 'react-dom', 'jquery', 'underscore', 'jquery.knob'], function (
     }
   };
 
-  return TimerView;
+  return ClockView;
 });
