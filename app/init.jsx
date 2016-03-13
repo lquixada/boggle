@@ -10,8 +10,12 @@ requirejs.config({
   }
 });
 
-require(['react', 'react-dom', 'app/main/view'], function (React, ReactDOM, App) {
+require([
+  'react',
+  'react-dom',
+  'app/main/view'
+], function (React, ReactDOM, App) {
   $(function () {
-    window.app = ReactDOM.render(React.createElement(App, null), document.getElementById('game'));
+    window.app = ReactDOM.render(<App />, document.getElementById('game'));
   });
 });

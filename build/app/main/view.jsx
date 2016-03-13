@@ -5,32 +5,21 @@
 define([
   'react',
   'react-dom',
-  'app/base/view',
   'app/attempt/view',
   'app/board/view',
   'app/control/view',
   'app/score/view',
   'app/timer/view',
-  'text!app/main/style.css',
-  'text!app/main/template.tpl'
-], function (React, ReactDOM, BaseView, AttemptView, BoardView, ControlView, ScoreView, TimerView, css, html) {
+  'text!app/main/style.css'
+], function (React, ReactDOM, AttemptView, BoardView, ControlView, ScoreView, TimerView, css) {
   'use strict';
 
-  function App() {
-    this.elementId = '#game';
-    this.minLength = 2;
-    this.dictionary = new Dictionary();
-  }
-
-  App.prototype = _.extend(new BaseView(css, html), {
-    render: function () {
-      this.renderTemplate();
-
-      this.attempt = ReactDOM.render(<AttemptView />, document.getElementById('attempt'));
-      this.board = ReactDOM.render(<BoardView />, document.getElementById('board'));
-      this.control = ReactDOM.render(<ControlView />, document.getElementById('control'));
-      this.score = ReactDOM.render(<ScoreView />, document.getElementById('score'));
-      this.timer = ReactDOM.render(<TimerView />, document.getElementById('timer'));
+  var App = React.createClass({
+    getInitialState: function () {
+      return {
+        minLength: 2,
+        started: false
+      };
     },
 
     start: function () {
@@ -65,7 +54,7 @@ define([
     check: function (word) {
       var that = this;
 
-      if (word.length < this.minLength) {
+      if (word.length < this.state.minLength) {
         return;
       }
 
@@ -98,6 +87,43 @@ define([
 
       this.attempt.clear();
       this.attempt.focus();
+    },
+
+    toggle: function () {
+      this.setState({started: !this.state.started});
+    },
+
+    render: function () {
+      return (
+        <div>
+          <style type="text/css">{css}</style>
+          <main>
+            <header>
+              <div className="container">
+                <h1>BOGGLE</h1>
+                <ControlView started={this.state.started} onButtonClick={this.toggle}  />
+                <AttemptView started={this.state.started} onEnter={this.checkOnEnter} />
+              </div>
+            </header>
+
+            <section>
+              <div className="container">
+                <aside>
+                  <TimerView started={this.state.started} />
+                  <ScoreView started={this.state.started} />
+                </aside>
+                <BoardView started={this.state.started} />
+              </div>
+            </section>
+
+            <footer>
+              <div className="container">
+                &copy; Copyright 2016 Leonardo Quixadá. All rights reserved. <a href="https://github.com/lquixada/boggle">Github</a>
+              </div>
+            </footer>
+          </main>
+        </div>
+      );
     }
   });
 

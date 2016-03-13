@@ -51,7 +51,7 @@ define(['react', 'underscore', 'text!app/board/style.css'], function (React, _, 
     render: function () {
       return React.createElement(
         'div',
-        null,
+        { className: 'box' },
         React.createElement(
           'style',
           { type: 'text/css' },

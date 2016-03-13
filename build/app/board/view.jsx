@@ -44,7 +44,7 @@ define([
 
     render: function () {
       return (
-        <div>
+        <div className="box">
           <style type="text/css">{css}</style>
           <table>
             <tbody>

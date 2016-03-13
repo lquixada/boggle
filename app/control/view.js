@@ -8,28 +8,6 @@ define(['react', 'text!app/control/style.css'], function (React, css) {
   var ControlView = React.createClass({
     displayName: 'ControlView',
 
-    getInitialState: function () {
-      return {
-        started: false
-      };
-    },
-
-    start: function () {
-      this.setState({ started: true });
-    },
-
-    stop: function () {
-      this.setState({ started: false });
-    },
-
-    toggle: function () {
-      if (this.state.started) {
-        app.stop();
-      } else {
-        app.start();
-      }
-    },
-
     render: function () {
       return React.createElement(
         'div',
@@ -41,8 +19,8 @@ define(['react', 'text!app/control/style.css'], function (React, css) {
         ),
         React.createElement(
           'button',
-          { type: 'button', onClick: this.toggle },
-          this.state.started ? 'stop!' : 'start!'
+          { type: 'button', onClick: this.props.onButtonClick },
+          this.props.started ? 'stop!' : 'start!'
         )
       );
     }

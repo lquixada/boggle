@@ -2,24 +2,17 @@
  * App
  */
 
-define(['react', 'react-dom', 'app/base/view', 'app/attempt/view', 'app/board/view', 'app/control/view', 'app/score/view', 'app/timer/view', 'text!app/main/style.css', 'text!app/main/template.tpl'], function (React, ReactDOM, BaseView, AttemptView, BoardView, ControlView, ScoreView, TimerView, css, html) {
+define(['react', 'react-dom', 'app/attempt/view', 'app/board/view', 'app/control/view', 'app/score/view', 'app/timer/view', 'text!app/main/style.css'], function (React, ReactDOM, AttemptView, BoardView, ControlView, ScoreView, TimerView, css) {
   'use strict';
 
-  function App() {
-    this.elementId = '#game';
-    this.minLength = 2;
-    this.dictionary = new Dictionary();
-  }
+  var App = React.createClass({
+    displayName: 'App',
 
-  App.prototype = _.extend(new BaseView(css, html), {
-    render: function () {
-      this.renderTemplate();
-
-      this.attempt = ReactDOM.render(React.createElement(AttemptView, null), document.getElementById('attempt'));
-      this.board = ReactDOM.render(React.createElement(BoardView, null), document.getElementById('board'));
-      this.control = ReactDOM.render(React.createElement(ControlView, null), document.getElementById('control'));
-      this.score = ReactDOM.render(React.createElement(ScoreView, null), document.getElementById('score'));
-      this.timer = ReactDOM.render(React.createElement(TimerView, null), document.getElementById('timer'));
+    getInitialState: function () {
+      return {
+        minLength: 2,
+        started: false
+      };
     },
 
     start: function () {
@@ -54,7 +47,7 @@ define(['react', 'react-dom', 'app/base/view', 'app/attempt/view', 'app/board/vi
     check: function (word) {
       var that = this;
 
-      if (word.length < this.minLength) {
+      if (word.length < this.state.minLength) {
         return;
       }
 
@@ -87,6 +80,70 @@ define(['react', 'react-dom', 'app/base/view', 'app/attempt/view', 'app/board/vi
 
       this.attempt.clear();
       this.attempt.focus();
+    },
+
+    toggle: function () {
+      this.setState({ started: !this.state.started });
+    },
+
+    render: function () {
+      return React.createElement(
+        'div',
+        null,
+        React.createElement(
+          'style',
+          { type: 'text/css' },
+          css
+        ),
+        React.createElement(
+          'main',
+          null,
+          React.createElement(
+            'header',
+            null,
+            React.createElement(
+              'div',
+              { className: 'container' },
+              React.createElement(
+                'h1',
+                null,
+                'BOGGLE'
+              ),
+              React.createElement(ControlView, { started: this.state.started, onButtonClick: this.toggle }),
+              React.createElement(AttemptView, { started: this.state.started, onEnter: this.checkOnEnter })
+            )
+          ),
+          React.createElement(
+            'section',
+            null,
+            React.createElement(
+              'div',
+              { className: 'container' },
+              React.createElement(
+                'aside',
+                null,
+                React.createElement(TimerView, { started: this.state.started }),
+                React.createElement(ScoreView, { started: this.state.started })
+              ),
+              React.createElement(BoardView, { started: this.state.started })
+            )
+          ),
+          React.createElement(
+            'footer',
+            null,
+            React.createElement(
+              'div',
+              { className: 'container' },
+              '© Copyright 2016 Leonardo Quixadá. All rights reserved. ',
+              React.createElement(
+                'a',
+                { href: 'https://github.com/lquixada/boggle' },
+                'Github'
+              )
+            )
+          )
+        )
+      );
     }
   });
 

@@ -18,7 +18,7 @@ define(['react', 'react-dom', 'jquery', 'underscore', 'text!app/timer/style.css'
       var that = this;
       var opt = options || {};
 
-      this.timer.start({
+      this.state.timer.start({
         onTick: function () {
           that.forceUpdate();
 
