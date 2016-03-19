@@ -12,12 +12,6 @@ module.exports = function(grunt) {
 
   // Project configuration.
   grunt.initConfig({
-    clean: {
-      build: {
-        src: ['build/']
-      }
-    },
-
     concurrent: {
       options:{
         logConcurrentOutput: true
@@ -46,17 +40,6 @@ module.exports = function(grunt) {
           base: 'build'
         }
       }
-    },
-
-    copy: {
-      dist: {
-        // includes files within path and its sub-directories
-        files: [
-          {expand: true, src: ['index.html'], dest: 'build/'},
-          {expand: true, src: ['bundle.js'], dest: 'build/'},
-          {expand: true, src: ['1.bundle.js'], dest: 'build/'}
-        ]
-      },
     },
 
     'gh-pages': {
@@ -168,8 +151,7 @@ module.exports = function(grunt) {
   grunt.registerTask('server:build', ['connect:build']);
   grunt.registerTask('work', ['concurrent']);
   grunt.registerTask('review', ['lint', 'spec']);
-  grunt.registerTask('build', ['clean:build', 'copy']);
-  grunt.registerTask('deploy', ['build', 'review', 'publish', 'notify:deploy']);
+  grunt.registerTask('deploy', ['review', 'publish', 'notify:deploy']);
 
   grunt.registerTask('default', ['review']);
 
