@@ -1,5 +1,6 @@
 module.exports = {
   entry: './app/init.jsx',
+  devtool: 'source-map',
   module: {
     loaders: [
       {
