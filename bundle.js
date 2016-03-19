@@ -95,10 +95,8 @@
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__.e/* require */(1, function(__webpack_require__) { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(1), __webpack_require__(2), __webpack_require__(159), __webpack_require__(160), __webpack_require__(182)]; (function ($, React, ReactDOM, App) {
-	  $(function () {
-	    window.app = ReactDOM.render(React.createElement(App, null), document.getElementById('game'));
-	  });
+	__webpack_require__.e/* require */(1, function(__webpack_require__) { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(1), __webpack_require__(158), __webpack_require__(159), __webpack_require__(182)]; (function (React, ReactDOM, App) {
+	  ReactDOM.render(React.createElement(App, null), document.getElementById('game'));
 	}.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));});
 
 /***/ }
