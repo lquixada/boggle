@@ -7,7 +7,8 @@ define([
   'react-dom',
   'jquery',
   'underscore',
-  'jquery.knob'
+  'jquery-knob',
+  './style.less'
 ], function (React, ReactDOM, $, _) {
   'use strict';
 
@@ -88,7 +89,7 @@ define([
 
     updateDial: function () {
       var timer = ReactDOM.findDOMNode(this.refs.timer);
-      
+
       $(timer).trigger('change');
     },
 

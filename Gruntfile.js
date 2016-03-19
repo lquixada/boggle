@@ -15,10 +15,6 @@ module.exports = function(grunt) {
     clean: {
       build: {
         src: ['build/']
-      },
-
-      files: {
-        src: ['build/**/*.less', 'build/**/*.spec.js']
       }
     },
 
@@ -57,8 +53,8 @@ module.exports = function(grunt) {
         // includes files within path and its sub-directories
         files: [
           {expand: true, src: ['index.html'], dest: 'build/'},
-          {expand: true, src: ['app/**'], dest: 'build/'},
-          {expand: true, src: ['vendor/**'], dest: 'build/'}
+          {expand: true, src: ['bundle.js'], dest: 'build/'},
+          {expand: true, src: ['1.bundle.js'], dest: 'build/'}
         ]
       },
     },
@@ -233,7 +229,7 @@ module.exports = function(grunt) {
   grunt.registerTask('server:build', ['connect:build']);
   grunt.registerTask('work', ['concurrent']);
   grunt.registerTask('review', ['lint', 'spec']);
-  grunt.registerTask('build', ['clean:build', 'less', 'react', 'copy', 'clean:files', 'uglify', 'cssmin']);
+  grunt.registerTask('build', ['clean:build', 'copy']);
   grunt.registerTask('deploy', ['build', 'review', 'publish', 'notify:deploy']);
 
   grunt.registerTask('default', ['review']);

@@ -4,7 +4,8 @@
 
 define([
   'react',
-  'underscore'
+  'underscore',
+  './style.less'
 ], function (React, _) {
   'use strict';
 

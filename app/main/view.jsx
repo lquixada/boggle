@@ -5,11 +5,12 @@
 define([
   'react',
   'react-dom',
-  'app/attempt/view',
-  'app/board/view',
-  'app/button/view',
-  'app/score/view',
-  'app/clock/view'
+  '../attempt/view.jsx',
+  '../board/view.jsx',
+  '../button/view.jsx',
+  '../score/view.jsx',
+  '../clock/view.jsx',
+  './style.less'
 ], function (React, ReactDOM, Attempt, Board, Button, Score, Clock) {
   'use strict';
 

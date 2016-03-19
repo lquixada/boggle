@@ -3,8 +3,9 @@
  */
 
 define([
-  'react'
-], function (React, css) {
+  'react',
+  './style.less'
+], function (React) {
   'use strict';
 
   var Button = React.createClass({

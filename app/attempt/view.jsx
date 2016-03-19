@@ -4,7 +4,8 @@
 
 define([
   'react',
-  'react-dom'
+  'react-dom',
+  './style.less'
 ], function (React, ReactDOM) {
   'use strict';
 
