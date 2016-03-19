@@ -42,14 +42,6 @@ module.exports = function(grunt) {
       }
     },
 
-    'gh-pages': {
-      options: {
-        base: 'build',
-        clone: '.tmp'
-      },
-      src: ['**']
-    },
-
     githooks: {
       dist: {
         'pre-push': 'review'
@@ -146,12 +138,10 @@ module.exports = function(grunt) {
    */
   grunt.registerTask('spec', ['karma']);
   grunt.registerTask('lint', ['jshint', 'jscs']);
-  grunt.registerTask('publish', ['gh-pages']);
   grunt.registerTask('server:dev', ['connect:dev']);
   grunt.registerTask('server:build', ['connect:build']);
   grunt.registerTask('work', ['concurrent']);
   grunt.registerTask('review', ['lint', 'spec']);
-  grunt.registerTask('deploy', ['review', 'publish', 'notify:deploy']);
 
   grunt.registerTask('default', ['review']);
 
