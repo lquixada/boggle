@@ -1,14 +1,3 @@
-requirejs.config({
-  baseUrl: location.href,
-  paths: {
-    'jquery': 'vendor/jquery/dist/jquery.min',
-    'jquery.knob': 'vendor/jquery-knob/dist/jquery.knob.min',
-    'underscore': 'vendor/underscore/underscore-min',
-    'react': 'vendor/react/react',
-    'react-dom': 'vendor/react/react-dom'
-  }
-});
-
 require([
   'jquery',
   'react',
