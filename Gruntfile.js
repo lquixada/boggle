@@ -16,29 +16,18 @@ module.exports = function(grunt) {
       options:{
         logConcurrentOutput: true
       },
-      dist: ['server:dev', 'watch:build']
+      dist: ['server:dev', 'watch:review']
     },
 
     connect: {
-      options: {
+      dist: {
         port: 8300,
+        base: '.',
         hostname: '*',
         useAvailablePort: true,
         keepalive: true,
         livereload: 1338,
         open: 'http://localhost:8300/'
-      },
-
-      dev: {
-        options: {
-          base: '.'
-        }
-      },
-
-      build: {
-        options: {
-          base: 'build'
-        }
       }
     },
 
@@ -94,18 +83,6 @@ module.exports = function(grunt) {
     },
 
     notify: {
-      build: {
-        options: {
-          message: 'build successful!'
-        }
-      },
-
-      deploy: {
-        options: {
-          message: 'deploy successful!'
-        }
-      },
-
       review: {
         options: {
           message: 'code review successful!'
@@ -120,15 +97,6 @@ module.exports = function(grunt) {
         options: {
           atBegin: true
         }
-      },
-
-      build: {
-        files: ['app/**/*.less', 'app/**/*.jsx', 'app/**/*.js', 'index.html'],
-        tasks: ['build', 'notify:build'],
-        options: {
-          atBegin: true,
-          livereload: 1338
-        }
       }
     }
   });
@@ -139,7 +107,6 @@ module.exports = function(grunt) {
   grunt.registerTask('spec', ['karma']);
   grunt.registerTask('lint', ['jshint', 'jscs']);
   grunt.registerTask('server:dev', ['connect:dev']);
-  grunt.registerTask('server:build', ['connect:build']);
   grunt.registerTask('work', ['concurrent']);
   grunt.registerTask('review', ['lint', 'spec']);
 
