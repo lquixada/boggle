@@ -59,20 +59,6 @@ module.exports = function(grunt) {
       },
     },
 
-    cssmin: {
-      dist: {
-        files: [
-          {
-            expand: true,
-            cwd: './',
-            src: ['build/app/**/*.css'],
-            dest: './',
-            ext: '.css'
-          }
-        ]
-      }
-    },
-
     'gh-pages': {
       options: {
         base: 'build',
@@ -132,20 +118,6 @@ module.exports = function(grunt) {
       }
     },
 
-    less: {
-      dist: {
-        files: [
-          {
-            expand: true,
-            cwd: './',
-            src: ['app/**/*.less'],
-            dest: './',
-            ext: '.css'
-          }
-        ]
-      }
-    },
-
     notify: {
       build: {
         options: {
@@ -164,38 +136,6 @@ module.exports = function(grunt) {
           message: 'code review successful!'
         }
       }
-    },
-
-    uglify: {
-      dist: {
-        files: [
-          {
-            expand: true,
-            cwd: './',
-            src: ['build/app/**/*.js'],
-            dest: './',
-            ext: '.js'
-          }
-        ]
-      }
-    },
-
-    babel: {
-        options: {
-            presets: ['react']
-        },
-
-        dist: {
-            files: [
-              {
-                expand: true,
-                cwd: './',
-                src: ['app/**/*.jsx'],
-                dest: './',
-                ext: '.js'
-              }
-            ]
-        }
     },
 
     watch: {
@@ -221,7 +161,6 @@ module.exports = function(grunt) {
   /**
    * Defining aliases
    */
-  grunt.registerTask('react', ['babel']);
   grunt.registerTask('spec', ['karma']);
   grunt.registerTask('lint', ['jshint', 'jscs']);
   grunt.registerTask('publish', ['gh-pages']);
