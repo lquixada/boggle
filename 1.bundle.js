@@ -19758,7 +19758,6 @@ webpackJsonp([1],[
 	    displayName: 'Attempt',
 	
 	    getInitialState: function () {
-	      debugger;
 	      return {
 	        value: ''
 	      };
