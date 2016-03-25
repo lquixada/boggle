@@ -1,5 +1,8 @@
 module.exports = {
-  entry: './app/button/view.spec.jsx',
+  entry: {
+    button: './app/button/view.spec.jsx',
+    empty: './app/empty.spec.jsx'
+  },
   module: {
     loaders: [
       {
@@ -17,10 +20,11 @@ module.exports = {
   },
   output: {
     libraryTarget: 'umd',
-    filename: 'bundle.spec.js'
+    path: './.specs',
+    filename: '[name].spec.js'
   },
   externals: {
-    "enzyme": "enzyme",
-    "sinon": "sinon"
+    'enzyme': 'enzyme',
+    'sinon': 'sinon'
   }
 };
