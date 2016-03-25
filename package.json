@@ -36,7 +36,8 @@
   },
   "scripts": {
     "test": "grunt review",
-    "server": "webpack-dev-server"
+    "server": "webpack-dev-server",
+    "build": "webpack"
   },
   "repository": {
     "type": "git",
