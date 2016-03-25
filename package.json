@@ -32,10 +32,13 @@
     "react-dom": "^0.14.7",
     "requirejs": "^2.1.22",
     "style-loader": "^0.13.0",
-    "underscore": "^1.8.3"
+    "underscore": "^1.8.3",
+    "webpack": "^1.12.14",
+    "webpack-dev-server": "^1.14.1"
   },
   "scripts": {
-    "test": "grunt review"
+    "test": "grunt review",
+    "server": "webpack-dev-server"
   },
   "repository": {
     "type": "git",
