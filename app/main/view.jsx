@@ -3,6 +3,7 @@
  */
 
 define([
+  'jquery',
   'react',
   'react-dom',
   '../attempt/view.jsx',
@@ -11,7 +12,7 @@ define([
   '../score/view.jsx',
   '../clock/view.jsx',
   './style.less'
-], function (React, ReactDOM, Attempt, Board, Button, Score, Clock) {
+], function ($, React, ReactDOM, Attempt, Board, Button, Score, Clock) {
   'use strict';
 
   var App = React.createClass({
