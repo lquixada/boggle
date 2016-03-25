@@ -30,66 +30,13 @@ module.exports = function(grunt) {
         src: 'app/**/*.js',
         options: readJSON('config/.jscsrc')
       }
-    },
-
-    karma: {
-      dist: {
-        frameworks: ['jasmine', 'requirejs'],
-        browsers: ['Chrome'],
-        reporters: 'dots',
-        singleRun: true,
-        options: {
-          files: [
-            {pattern: 'vendor/text/text.js', included: false},
-            {pattern: 'vendor/jquery/dist/jquery.min.js', included: false},
-            {pattern: 'vendor/jquery-knob/dist/jquery.knob.min.js', included: false},
-            {pattern: 'vendor/underscore/underscore-min.js', included: false},
-            {pattern: 'app/base/view.js', included: false},
-            {pattern: 'app/board/view.js', included: false},
-            {pattern: 'app/board/view.spec.js', included: false},
-            {pattern: 'app/board/style.css', included: false},
-            {pattern: 'app/board/template.tpl', included: false},
-            {pattern: 'app/score/view.js', included: false},
-            {pattern: 'app/score/view.spec.js', included: false},
-            {pattern: 'app/score/style.css', included: false},
-            {pattern: 'app/score/template.tpl', included: false},
-            {pattern: 'app/timer/view.js', included: false},
-            {pattern: 'app/timer/view.spec.js', included: false},
-            {pattern: 'app/timer/style.css', included: false},
-            {pattern: 'app/timer/template.tpl', included: false},
-            'app/init.spec.js'
-          ]
-        }
-      }
-    },
-
-    notify: {
-      review: {
-        options: {
-          message: 'code review successful!'
-        }
-      }
-    },
-
-    watch: {
-      review: {
-        files: ['app/**/*.js'],
-        tasks: ['review', 'notify:review'],
-        options: {
-          atBegin: true
-        }
-      }
     }
   });
 
   /**
    * Defining aliases
    */
-  grunt.registerTask('spec', ['karma']);
   grunt.registerTask('lint', ['jshint', 'jscs']);
-  grunt.registerTask('review', ['lint', 'spec']);
-
-  grunt.registerTask('default', ['review']);
 
   /**
    * Loading tasks
