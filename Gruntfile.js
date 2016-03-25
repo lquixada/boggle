@@ -12,25 +12,6 @@ module.exports = function(grunt) {
 
   // Project configuration.
   grunt.initConfig({
-    concurrent: {
-      options:{
-        logConcurrentOutput: true
-      },
-      dist: ['server:dev', 'watch:review']
-    },
-
-    connect: {
-      dist: {
-        port: 8300,
-        base: '.',
-        hostname: '*',
-        useAvailablePort: true,
-        keepalive: true,
-        livereload: 1338,
-        open: 'http://localhost:8300/'
-      }
-    },
-
     githooks: {
       dist: {
         'pre-push': 'review'
@@ -106,8 +87,6 @@ module.exports = function(grunt) {
    */
   grunt.registerTask('spec', ['karma']);
   grunt.registerTask('lint', ['jshint', 'jscs']);
-  grunt.registerTask('server:dev', ['connect:dev']);
-  grunt.registerTask('work', ['concurrent']);
   grunt.registerTask('review', ['lint', 'spec']);
 
   grunt.registerTask('default', ['review']);
