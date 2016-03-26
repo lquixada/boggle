@@ -1,24 +1,20 @@
-define([
-  'react',
-  'react-dom',
-  'enzyme',
-  'sinon',
-  'expect',
-  './view.jsx'
-], function (React, ReactDOM, enzyme, sinon, expect, Button) {
-  var shallow = enzyme.shallow;
+var React = require('react');
+var ReactDOM = require('react-dom');
+var shallow = require('enzyme').shallow;
+var sinon = require('sinon');
+var expect = require('expect');
+var Button = require('./view.jsx');
 
-  describe('<Button />', function () {
 
-    it('simulates click events', function () {
-      var onButtonClick = sinon.spy();
-      var wrapper = shallow(<Button started="true" onClick={onButtonClick} />);
+describe('<Button />', function () {
 
-      wrapper.find('button').simulate('click');
+  it('simulates click events', function () {
+    var onButtonClick = sinon.spy();
+    var wrapper = shallow(<Button started="true" onClick={onButtonClick} />);
 
-      expect(onButtonClick.calledOnce).toEqual(true);
-    });
+    wrapper.find('button').simulate('click');
 
+    expect(onButtonClick.calledOnce).toEqual(true);
   });
 
 });

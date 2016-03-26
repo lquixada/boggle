@@ -55,15 +55,14 @@ return /******/ (function(modules) { // webpackBootstrap
 /***/ 0:
 /***/ function(module, exports, __webpack_require__) {
 
-	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(161)], __WEBPACK_AMD_DEFINE_RESULT__ = function (expect) {
+	var expect = __webpack_require__(161);
 
-	  describe('empty', function () {
+	describe('empty', function () {
 
-	    it('should work', function () {
-	      expect(true).toEqual(true);
-	    });
+	  it('should work', function () {
+	    expect(true).toEqual(true);
 	  });
-	}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+	});
 
 /***/ },
 

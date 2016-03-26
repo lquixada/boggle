@@ -54,21 +54,24 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(1), __webpack_require__(158), __webpack_require__(159), __webpack_require__(160), __webpack_require__(161), __webpack_require__(184)], __WEBPACK_AMD_DEFINE_RESULT__ = function (React, ReactDOM, enzyme, sinon, expect, Button) {
-	  var shallow = enzyme.shallow;
+	var React = __webpack_require__(1);
+	var ReactDOM = __webpack_require__(158);
+	var shallow = __webpack_require__(159).shallow;
+	var sinon = __webpack_require__(160);
+	var expect = __webpack_require__(161);
+	var Button = __webpack_require__(184);
 
-	  describe('<Button />', function () {
+	describe('<Button />', function () {
 
-	    it('simulates click events', function () {
-	      var onButtonClick = sinon.spy();
-	      var wrapper = shallow(React.createElement(Button, { started: 'true', onClick: onButtonClick }));
+	  it('simulates click events', function () {
+	    var onButtonClick = sinon.spy();
+	    var wrapper = shallow(React.createElement(Button, { started: 'true', onClick: onButtonClick }));
 
-	      wrapper.find('button').simulate('click');
+	    wrapper.find('button').simulate('click');
 
-	      expect(onButtonClick.calledOnce).toEqual(true);
-	    });
+	    expect(onButtonClick.calledOnce).toEqual(true);
 	  });
-	}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+	});
 
 /***/ },
 /* 1 */
@@ -21225,31 +21228,29 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 184 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*
+	/*
 	 * Control
 	 */
+	var React = __webpack_require__(1);
+	var style = __webpack_require__(185);
 
-	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(1), __webpack_require__(185)], __WEBPACK_AMD_DEFINE_RESULT__ = function (React) {
-	  'use strict';
+	var Button = React.createClass({
+	  displayName: 'Button',
 
-	  var Button = React.createClass({
-	    displayName: 'Button',
+	  render: function () {
+	    return React.createElement(
+	      'div',
+	      { id: 'control' },
+	      React.createElement(
+	        'button',
+	        { type: 'button', onClick: this.props.onClick },
+	        this.props.started ? 'stop!' : 'start!'
+	      )
+	    );
+	  }
+	});
 
-	    render: function () {
-	      return React.createElement(
-	        'div',
-	        { id: 'control' },
-	        React.createElement(
-	          'button',
-	          { type: 'button', onClick: this.props.onClick },
-	          this.props.started ? 'stop!' : 'start!'
-	        )
-	      );
-	    }
-	  });
-
-	  return Button;
-	}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+	module.exports = Button;
 
 /***/ },
 /* 185 */
