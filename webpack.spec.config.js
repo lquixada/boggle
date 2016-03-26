@@ -20,7 +20,7 @@ module.exports = {
   },
   output: {
     libraryTarget: 'umd',
-    path: './.specs',
+    path: './.tmp',
     filename: '[name].spec.js'
   },
   externals: {
