@@ -27,7 +27,7 @@ $ nvm use 0.12
 ```
 $ cd boggle
 $ npm install
-$ npm install -g grunt-cli bower
+$ npm install -g grunt-cli
 ```
 
 ## Getting Started
@@ -35,25 +35,13 @@ $ npm install -g grunt-cli bower
 To run the app locally, just run:
 
 ```
-$ grunt server
+$ npm run server
 ```
-
-## Development
-
-If you wish to contribute to the project, I suggest using:
-
-```
-$ grunt work
-```
-
-It will do two things:
-* Start the app on your browser
-* Detect changes on less, js and html file to reload the browser
 
 You may also run:
 
 ```
-$ grunt watch:review
+$ grunt review
 ```
 
 To check a few things during development:
@@ -70,37 +58,20 @@ $ grunt githooks
 ```
 
 
-## Deploy
-
-If you wish to put the code into production, just run
-
-```
-$ grunt deploy
-```
-
 ## Grunt tasks
 
-* *grunt deploy*: build + publish
 * *grunt lint*: lint files
-* *grunt publish*: publishes the build files on production
 * *grunt review*: run lint + spec
-* *grunt server:build*: start web server on production mode
-* *grunt server:dev*: start web server on development mode
-* *grunt spec*: test specs
-* *grunt watch:build*: monitor file changes and builds project
-* *grunt watch:review*: monitor file changes and check code
-* *grunt work*: run server:dev + watch:build concurrently
 
 
 ## Stack
 
+* Webpack
 * Grunt
 * NPM
-* Bower
 * Less
 * Underscore
 * jQuery
-* Require.js
 * [TravisCI](https://travis-ci.org/lquixada/boggle)
 
 
