@@ -3,7 +3,7 @@
  */
 var React = require('react');
 var _ = require('underscore');
-var style = require('./style.less');
+var style = require('./index.less');
 
 
 var BoardView = React.createClass({

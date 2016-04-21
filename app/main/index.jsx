@@ -4,7 +4,7 @@
 var React = require('react');
 var _ = require('underscore');
 var $ = require('jquery');
-var style = require('./style.less');
+var style = require('./index.less');
 
 var Attempt = require('../attempt');
 var Board = require('../board');

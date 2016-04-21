@@ -5,7 +5,7 @@ var React = require('react');
 var ReactDOM = require('react-dom');
 var _ = require('underscore');
 var $ = require('jquery');
-var style = require('./style.less');
+var style = require('./index.less');
 var knob = require('jquery-knob');
 
 var ClockView = React.createClass({

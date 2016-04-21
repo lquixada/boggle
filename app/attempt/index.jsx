@@ -2,7 +2,7 @@
  * Attempt
  */
 var React = require('react');
-var style = require('./style.less');
+var style = require('./index.less');
 
 var Attempt = React.createClass({
   getInitialState: function () {
