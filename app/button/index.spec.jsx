@@ -3,7 +3,7 @@ var ReactDOM = require('react-dom');
 var shallow = require('enzyme').shallow;
 var sinon = require('sinon');
 var expect = require('expect');
-var Button = require('.');
+var Button = require('./index.jsx');
 
 
 describe('<Button />', function () {

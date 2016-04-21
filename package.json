@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "Boggle Game",
   "scripts": {
-    "specs": "mocha .specs/*.spec.js",
+    "specs": "mocha .tmp/*.spec.js",
     "prespecs": "webpack --config webpack.spec.config.js",
     "server": "webpack-dev-server",
     "build": "webpack"
