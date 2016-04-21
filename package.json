@@ -5,7 +5,7 @@
   "scripts": {
     "specs": "mocha .tmp/*.spec.js",
     "prespecs": "webpack --config webpack.spec.config.js",
-    "server": "webpack-dev-server",
+    "start": "webpack-dev-server",
     "build": "webpack"
   },
   "devDependencies": {
