@@ -1,5 +1,5 @@
 module.exports = {
-  entry: './app/init.jsx',
+  entry: './app/index.jsx',
   devtool: 'source-map',
   module: {
     loaders: [
@@ -19,5 +19,9 @@ module.exports = {
   output: {
     path: __dirname,
     filename: 'bundle.js'
+  },
+
+  resolve: {
+    extensions: ['', '.js', '.jsx']
   }
 };

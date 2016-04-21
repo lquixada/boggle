@@ -1,6 +1,6 @@
 module.exports = {
   entry: {
-    button: './app/button/view.spec.jsx',
+    button: './app/button/index.spec.jsx',
     empty: './app/empty.spec.jsx'
   },
   module: {

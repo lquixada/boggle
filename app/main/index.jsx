@@ -6,11 +6,11 @@ var _ = require('underscore');
 var $ = require('jquery');
 var style = require('./style.less');
 
-var Attempt = require('../attempt/view.jsx');
-var Board = require('../board/view.jsx');
-var Button = require('../button/view.jsx');
-var Clock = require('../clock/view.jsx');
-var Score = require('../score/view.jsx');
+var Attempt = require('../attempt');
+var Board = require('../board');
+var Button = require('../button');
+var Clock = require('../clock');
+var Score = require('../score');
 
 
 var Main = React.createClass({
