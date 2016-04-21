@@ -67,9 +67,7 @@ var ClockView = React.createClass({
   },
 
   renderDial: function () {
-    var timer = ReactDOM.findDOMNode(this.refs.timer);
-
-    $(timer).knob({
+    $(this.refs.timer).knob({
       readOnly: true,
       width: 120,
       height: 120,

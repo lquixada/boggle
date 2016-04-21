@@ -26,9 +26,7 @@ var Attempt = React.createClass({
   },
 
   focus: function () {
-    var attempt = ReactDOM.findDOMNode(this.refs.attempt);
-
-    attempt.focus();
+    this.refs.attempt.focus();
   },
 
   onEnter: function (evt) {

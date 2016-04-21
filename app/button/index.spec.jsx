@@ -1,5 +1,4 @@
 var React = require('react');
-var ReactDOM = require('react-dom');
 var shallow = require('enzyme').shallow;
 var sinon = require('sinon');
 var expect = require('expect');
