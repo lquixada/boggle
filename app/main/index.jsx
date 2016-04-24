@@ -1,28 +1,30 @@
 /*
  * Main
  */
-var React = require('react');
-var _ = require('underscore');
-var $ = require('jquery');
-var style = require('./index.less');
 
-var Attempt = require('../attempt');
-var Board = require('../board');
-var Button = require('../button');
-var Clock = require('../clock');
-var Score = require('../score');
+import React from 'react';
+import _ from 'underscore';
+import $ from 'jquery';
+import style from './index.less';
+
+import Attempt from '../attempt';
+import Board from '../board';
+import Button from '../button';
+import Clock from '../clock';
+import Score from '../score';
 
 
-var Main = React.createClass({
-  getInitialState: function () {
-    return {
+export default class Main extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
       dictionary: new Dictionary(),
       minLength: 2,
       started: false
     };
-  },
+  }
 
-  check: function (evt) {
+  check(evt) {
     var that = this;
     var word = evt.target.value.toUpperCase();
 
@@ -37,21 +39,21 @@ var Main = React.createClass({
     } else {
       this.commit(word, false);
     }
-  },
+  }
 
-  checkBoard: function (word) {
+  checkBoard(word) {
     return this.refs.board.check(word);
-  },
+  }
 
-  checkDictionary: function (word, cb) {
+  checkDictionary(word, cb) {
     return this.state.dictionary.check(word, cb);
-  },
+  }
 
-  checkScore: function (word) {
+  checkScore(word) {
     return this.refs.score.check(word);
-  },
+  }
 
-  commit: function (word, scored) {
+  commit(word, scored) {
     this.refs.score.add({
       word: word,
       scored: scored
@@ -59,31 +61,31 @@ var Main = React.createClass({
 
     this.refs.attempt.clear();
     this.refs.attempt.focus();
-  },
+  }
 
-  toggle: function () {
+  toggle() {
     this.setState({started: !this.state.started});
-  },
+  }
 
-  reset: function () {
+  reset() {
     this.setState({started: false});
-  },
+  }
 
-  render: function () {
+  render() {
     return (
       <main>
         <header>
           <div className="container">
             <h1>BOGGLE</h1>
-            <Button ref="button" started={this.state.started} onClick={this.toggle}  />
-            <Attempt ref="attempt" started={this.state.started} onEnter={this.check} />
+            <Button ref="button" started={this.state.started} onClick={this.toggle.bind(this)}  />
+            <Attempt ref="attempt" started={this.state.started} onEnter={this.check.bind(this)} />
           </div>
         </header>
 
         <section>
           <div className="container">
             <aside>
-              <Clock ref="clock" started={this.state.started} onStop={this.reset} />
+              <Clock ref="clock" started={this.state.started} onStop={this.reset.bind(this)} />
               <Score ref="score" started={this.state.started} />
             </aside>
             <Board ref="board" started={this.state.started} />
@@ -98,7 +100,7 @@ var Main = React.createClass({
       </main>
     );
   }
-});
+}
 
 /*
  * Dictionary
@@ -107,18 +109,12 @@ var Main = React.createClass({
  * it could be local (a huge word array downloaded to the browser) or any web dictionary
  * with an api such as Wiktionary.
  */
-function Dictionary() {
-
-}
-
-Dictionary.prototype = {
-  check: function (word, cb) {
+class Dictionary {
+  check(word, cb) {
     var url = 'https://en.wiktionary.org/w/api.php?action=query&format=json&callback=?&titles=';
 
     return $.getJSON(url+word.toLowerCase(), function (data) {
       cb(!data.query.pages[-1]);
     });
   }
-};
-
-module.exports = Main;
+}

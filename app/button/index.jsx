@@ -1,18 +1,15 @@
 /*
  * Control
  */
-var React = require('react');
-var style = require('./index.less');
+import React from 'react';
+import style from './index.less';
 
-
-var Button = React.createClass({
-  render: function () {
+export default class Button extends React.Component {
+  render() {
     return (
       <div id="control">
         <button type="button" onClick={this.props.onClick}>{this.props.started?'stop!':'start!'}</button>
       </div>
     );
   }
-});
-
-module.exports = Button;
+}

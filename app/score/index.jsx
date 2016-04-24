@@ -1,21 +1,21 @@
 /*
  * Score
  */
-var React = require('react');
-var _ = require('underscore');
-var $ = require('jquery');
-var style = require('./index.less');
+import _ from 'underscore';
+import $ from 'jquery';
+import React from 'react';
+import style from './index.less';
 
-
-var ScoreView = React.createClass({
-  getInitialState: function () {
-    return {
+export default class Score extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
       counter: 0,
       attempts: []
     };
-  },
+  }
 
-  add: function (attempt) {
+  add(attempt) {
     var attempts = this.state.attempts;
     var counter = this.state.counter;
 
@@ -32,14 +32,14 @@ var ScoreView = React.createClass({
       counter: counter,
       attempts: attempts
     })
-  },
+  }
 
-  check: function (word) {
+  check(word) {
     var found = _.findWhere(this.state.attempts, {word: word});
     return !Boolean(found);
-  },
+  }
 
-  getItems: function () {
+  getItems() {
     return this.state.attempts.map(function (attempt, i) {
       return (
         <tr key={i}>
@@ -48,9 +48,9 @@ var ScoreView = React.createClass({
         </tr>
       );
     });
-  },
+  }
 
-  render: function () {
+  render() {
     return (
       <div id="score">
         <header>
@@ -66,6 +66,4 @@ var ScoreView = React.createClass({
       </div>
     );
   }
-});
-
-module.exports = ScoreView;
+}

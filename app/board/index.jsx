@@ -1,43 +1,44 @@
 /*
  * Board
  */
-var React = require('react');
-var _ = require('underscore');
-var style = require('./index.less');
+import _ from 'underscore';
+import React from 'react';
+import style from './index.less';
 
 
-var BoardView = React.createClass({
-  getInitialState: function () {
-    return {
+export default class BoardView extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
       board: new Board()
     };
-  },
+  }
 
-  check: function (word) {
+  check(word) {
     return this.state.board.check(word);
-  },
+  }
 
-  componentWillUpdate: function () {
+  componentWillUpdate() {
     if (this.props.started) {
       this.state.board.stop();
     } else {
       this.state.board.start();
     }
-  },
+  }
 
-  getRows: function (board) {
+  getRows(board) {
     return board.matrix.map(function (row, i) {
       return <tr key={i}>{this.getCells(row)}</tr>;
     }, this);
-  },
+  }
 
-  getCells: function (row) {
+  getCells(row) {
     return row.map(function (cell, i) {
       return <td key={i}>{cell}</td>;
     });
-  },
+  }
 
-  render: function () {
+  render() {
     return (
       <div id="board" className="box">
         <table>
@@ -48,72 +49,72 @@ var BoardView = React.createClass({
       </div>
     );
   }
-});
-
-function Board() {
-  this.dim = 4;
-  this.minLength = 2;
-  this.dice = [
-    new Die('AOBBOJ'),
-    new Die('WHGEEN'),
-    new Die('NRNZHL'),
-    new Die('NAEAGE'),
-    new Die('DIYSTT'),
-    new Die('IESTSO'),
-    new Die('AOTTWO'),
-    new Die('HQUMNI'),
-    new Die('RYTLTE'),
-    new Die('POHCSA'),
-    new Die('LREVYD'),
-    new Die('EXLDIR'),
-    new Die('IENSUE'),
-    new Die('SFFKAP'),
-    new Die('IOTMUC'),
-    new Die('EHWVTR')
-  ];
-  this.reset();
 }
 
-Board.prototype = {
-  get: function (i, j) {
+class Board {
+  constructor() {
+    this.dim = 4;
+    this.minLength = 2;
+    this.dice = [
+      new Die('AOBBOJ'),
+      new Die('WHGEEN'),
+      new Die('NRNZHL'),
+      new Die('NAEAGE'),
+      new Die('DIYSTT'),
+      new Die('IESTSO'),
+      new Die('AOTTWO'),
+      new Die('HQUMNI'),
+      new Die('RYTLTE'),
+      new Die('POHCSA'),
+      new Die('LREVYD'),
+      new Die('EXLDIR'),
+      new Die('IENSUE'),
+      new Die('SFFKAP'),
+      new Die('IOTMUC'),
+      new Die('EHWVTR')
+    ];
+    this.reset();
+  }
+
+  get(i, j) {
     try {
       return this.matrix[i][j];
     } catch(e) {
       return '*';
     }
-  },
+  }
 
-  place: function (drawn) {
+  place(drawn) {
     var grouped = _.groupBy(drawn, function(letter, i) {
       return (i%this.dim);
     }, this);
 
     return _.toArray(grouped);
-  },
+  }
 
-  shake: function () {
+  shake() {
     return _.invoke(this.dice, 'roll');
-  },
+  }
 
-  start: function () {
+  start() {
     var drawn = this.shake();
     this.matrix = this.place(drawn);
-  },
+  }
 
-  stop: function () {
+  stop() {
     this.reset();
-  },
+  }
 
-  reset: function () {
+  reset() {
     this.matrix = [
       [' ', ' ', ' ', ' '],
       [' ', ' ', ' ', ' '],
       [' ', ' ', ' ', ' '],
       [' ', ' ', ' ', ' ']
     ];
-  },
+  }
 
-  check: function (word) {
+  check(word) {
     if (word.length < this.minLength) {
       return false;
     }
@@ -133,9 +134,9 @@ Board.prototype = {
     }
 
     return false;
-  },
+  }
 
-  findSequence: function (seq, i, j) {
+  findSequence(seq, i, j) {
     var found;
 
     if (seq.length<=1) {
@@ -161,20 +162,18 @@ Board.prototype = {
     this.matrix[i][j] = found;
     return false;
   }
-};
+}
 
 /*
  * Die
  */
 
-function Die(letters) {
-  this.sides = letters.split('');
-}
+class Die {
+  constructor(letters) {
+    this.sides = letters.split('');
+  }
 
-Die.prototype = {
-  roll: function () {
+  roll() {
     return _.sample(this.sides);
   }
-};
-
-module.exports = BoardView;
+}

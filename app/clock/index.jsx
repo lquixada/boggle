@@ -1,28 +1,30 @@
 /*
  * Timer
  */
-var React = require('react');
-var ReactDOM = require('react-dom');
-var _ = require('underscore');
-var $ = require('jquery');
-var style = require('./index.less');
-var knob = require('jquery-knob');
+import _ from 'underscore';
+import $ from 'jquery';
+import knob from 'jquery-knob';
+import React from 'react';
+import style from './index.less';
 
-var ClockView = React.createClass({
-  getInitialState: function () {
+
+export default class Clock extends React.Component {
+  constructor(props) {
     var timer = new Timer();
-    return {
+    super(props);
+
+    this.state = {
       secs: timer.remaining,
       timer: timer
     };
-  },
+  }
 
-  componentWillReceiveProps: function (nextProps) {
+  componentWillReceiveProps(nextProps) {
     var that = this;
 
     if (nextProps.started) {
       this.start({
-        onStop: function () {
+        onStop() {
           that.props.onStop();
           alert('Game over!');
         }
@@ -30,14 +32,14 @@ var ClockView = React.createClass({
     } else {
       this.stop();
     }
-  },
+  }
 
-  start: function (options) {
+  start(options) {
     var that = this;
     var opt = options || {};
 
     this.state.timer.start({
-      onTick: function () {
+      onTick() {
         that.setState({secs: that.state.timer.remaining});
 
         if (that.state.secs === 0 && _.isFunction(opt.onStop)) {
@@ -45,28 +47,28 @@ var ClockView = React.createClass({
         }
       }
     });
-  },
+  }
 
-  stop: function () {
+  stop() {
     this.state.timer.stop();
     this.setState({secs: this.state.timer.remaining});
-  },
+  }
 
-  getSecs: function () {
+  getSecs() {
     var secs = this.state.secs;
 
     return (secs<10 ? '0'+secs : secs);
-  },
+  }
 
-  componentDidMount: function () {
+  componentDidMount() {
     this.renderDial();
-  },
+  }
 
-  componentDidUpdate: function () {
+  componentDidUpdate() {
     this.updateDial();
-  },
+  }
 
-  renderDial: function () {
+  renderDial() {
     $(this.refs.timer).knob({
       readOnly: true,
       width: 120,
@@ -79,15 +81,13 @@ var ClockView = React.createClass({
       thickness: '.30',
       rotation: 'anticlockwise'
     });
-  },
+  }
 
-  updateDial: function () {
-    var timer = ReactDOM.findDOMNode(this.refs.timer);
+  updateDial() {
+    $(this.refs.timer).trigger('change');
+  }
 
-    $(timer).trigger('change');
-  },
-
-  render: function () {
+  render() {
     return (
       <div id="clock">
         <input ref="timer" value={this.state.secs} readOnly="true" />
@@ -95,17 +95,17 @@ var ClockView = React.createClass({
       </div>
     );
   }
-});
-
-function Timer(options) {
-  var opt = options || {};
-
-  this.frame = opt.frame || 60;
-  this.remaining = this.frame;
 }
 
-Timer.prototype = {
-  start: function (options) {
+class Timer {
+  constructor(options) {
+    var opt = options || {};
+
+    this.frame = opt.frame || 60;
+    this.remaining = this.frame;
+  }
+
+  start(options) {
     var that = this;
 
     this.onTick = options.onTick || _.noop;
@@ -117,12 +117,10 @@ Timer.prototype = {
         that.stop();
       }
     }, 1000);
-  },
+  }
 
-  stop: function () {
+  stop() {
     this.remaining = this.frame;
     clearInterval(this.timer);
   }
-};
-
-module.exports = ClockView;
+}

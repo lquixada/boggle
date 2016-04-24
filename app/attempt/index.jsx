@@ -1,59 +1,60 @@
 /*
  * Attempt
  */
-var React = require('react');
-var style = require('./index.less');
+import React from 'react';
+import style from './index.less';
 
-var Attempt = React.createClass({
-  getInitialState: function () {
-    return {
+export default class Attempt extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
       value: ''
-    }
-  },
+    };
+  }
 
-  componentWillReceiveProps: function (nextProps) {
+  componentWillReceiveProps(nextProps) {
     if (!nextProps.started) {
       this.clear();
     }
-  },
+  }
 
-  componentDidUpdate: function () {
+  componentDidUpdate() {
     this.focus();
-  },
+  }
 
-  clear: function () {
+  clear() {
     this.setValue('');
-  },
+  }
 
-  focus: function () {
+  focus() {
     this.refs.attempt.focus();
-  },
+  }
 
-  onEnter: function (evt) {
+  onEnter(evt) {
     if (evt.which === 13) {
       this.props.onEnter(evt);
       this.clear();
     }
-  },
+  }
 
-  updateValue: function (evt) {
+  updateValue(evt) {
     this.setValue(evt.target.value);
-  },
+  }
 
-  setValue: function (val) {
+  setValue(val) {
     this.setState({value: val});
-  },
+  }
 
-  render: function () {
+  render() {
     return (
       <div id="attempt">
-        <input type="text" ref="attempt" value={this.state.value} onChange={this.updateValue} onKeyUp={this.onEnter}
+        <input type="text" ref="attempt" value={this.state.value}
+          onChange={this.updateValue.bind(this)}
+          onKeyUp={this.onEnter.bind(this)}
           className="box"
           disabled={!this.props.started}
           placeholder={this.props.started? 'Type the word and hit Enter' : 'Press start to begin...'} />
       </div>
     );
   }
-});
-
-module.exports = Attempt;
+}
