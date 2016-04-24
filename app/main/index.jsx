@@ -25,7 +25,6 @@ export default class Main extends React.Component {
   }
 
   check(evt) {
-    var that = this;
     var word = evt.target.value.toUpperCase();
 
     if (word.length < this.state.minLength) {
@@ -33,8 +32,8 @@ export default class Main extends React.Component {
     }
 
     if (this.checkScore(word) && this.checkBoard(word)) {
-      this.checkDictionary(word, function (isValid) {
-        that.commit(word, isValid);
+      this.checkDictionary(word, (isValid) => {
+        this.commit(word, isValid);
       });
     } else {
       this.commit(word, false);

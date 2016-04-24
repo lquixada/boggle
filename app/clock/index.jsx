@@ -20,12 +20,10 @@ export default class Clock extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    var that = this;
-
     if (nextProps.started) {
       this.start({
-        onStop() {
-          that.props.onStop();
+        onStop: () => {
+          this.props.onStop();
           alert('Game over!');
         }
       });
@@ -35,14 +33,13 @@ export default class Clock extends React.Component {
   }
 
   start(options) {
-    var that = this;
     var opt = options || {};
 
     this.state.timer.start({
-      onTick() {
-        that.setState({secs: that.state.timer.remaining});
+      onTick: () => {
+        this.setState({secs: this.state.timer.remaining});
 
-        if (that.state.secs === 0 && _.isFunction(opt.onStop)) {
+        if (this.state.secs === 0 && _.isFunction(opt.onStop)) {
           opt.onStop();
         }
       }
@@ -106,15 +103,13 @@ class Timer {
   }
 
   start(options) {
-    var that = this;
-
     this.onTick = options.onTick || _.noop;
-    this.timer = setInterval(function () {
-      that.remaining--;
-      that.onTick();
+    this.timer = setInterval(() => {
+      this.remaining--;
+      this.onTick();
 
-      if (!that.remaining) {
-        that.stop();
+      if (!this.remaining) {
+        this.stop();
       }
     }, 1000);
   }
