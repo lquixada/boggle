@@ -46,15 +46,29 @@
 
 	'use strict';
 	
+	var _react = __webpack_require__(1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _reactDom = __webpack_require__(32);
+	
+	var _reactDom2 = _interopRequireDefault(_reactDom);
+	
+	var _main = __webpack_require__(166);
+	
+	var _main2 = _interopRequireDefault(_main);
+	
+	var _index = __webpack_require__(189);
+	
+	var _index2 = _interopRequireDefault(_index);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
 	/*
 	 * App
 	 */
-	var React = __webpack_require__(1);
-	var ReactDOM = __webpack_require__(32);
-	var Main = __webpack_require__(166);
-	var style = __webpack_require__(189);
 	
-	ReactDOM.render(React.createElement(Main, null), document.getElementById('game'));
+	_reactDom2.default.render(_react2.default.createElement(_main2.default, null), document.getElementById('game'));
 
 /***/ },
 /* 1 */
@@ -20017,129 +20031,185 @@
 
 	'use strict';
 	
-	/*
-	 * Main
-	 */
-	var React = __webpack_require__(1);
-	var _ = __webpack_require__(167);
-	var $ = __webpack_require__(168);
-	var style = __webpack_require__(169);
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
 	
-	var Attempt = __webpack_require__(173);
-	var Board = __webpack_require__(176);
-	var Button = __webpack_require__(179);
-	var Clock = __webpack_require__(182);
-	var Score = __webpack_require__(186);
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 	
-	var Main = React.createClass({
-	  displayName: 'Main',
+	var _react = __webpack_require__(1);
 	
-	  getInitialState: function getInitialState() {
-	    return {
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _underscore = __webpack_require__(167);
+	
+	var _underscore2 = _interopRequireDefault(_underscore);
+	
+	var _jquery = __webpack_require__(168);
+	
+	var _jquery2 = _interopRequireDefault(_jquery);
+	
+	var _index = __webpack_require__(169);
+	
+	var _index2 = _interopRequireDefault(_index);
+	
+	var _attempt = __webpack_require__(173);
+	
+	var _attempt2 = _interopRequireDefault(_attempt);
+	
+	var _board = __webpack_require__(176);
+	
+	var _board2 = _interopRequireDefault(_board);
+	
+	var _button = __webpack_require__(179);
+	
+	var _button2 = _interopRequireDefault(_button);
+	
+	var _clock = __webpack_require__(182);
+	
+	var _clock2 = _interopRequireDefault(_clock);
+	
+	var _score = __webpack_require__(186);
+	
+	var _score2 = _interopRequireDefault(_score);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } /*
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * Main
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                */
+	
+	var Main = function (_React$Component) {
+	  _inherits(Main, _React$Component);
+	
+	  function Main(props) {
+	    _classCallCheck(this, Main);
+	
+	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Main).call(this, props));
+	
+	    _this.state = {
 	      dictionary: new Dictionary(),
 	      minLength: 2,
 	      started: false
 	    };
-	  },
+	    return _this;
+	  }
 	
-	  check: function check(evt) {
-	    var that = this;
-	    var word = evt.target.value.toUpperCase();
+	  _createClass(Main, [{
+	    key: 'check',
+	    value: function check(evt) {
+	      var _this2 = this;
 	
-	    if (word.length < this.state.minLength) {
-	      return;
+	      var word = evt.target.value.toUpperCase();
+	
+	      if (word.length < this.state.minLength) {
+	        return;
+	      }
+	
+	      if (this.checkScore(word) && this.checkBoard(word)) {
+	        this.checkDictionary(word, function (isValid) {
+	          _this2.commit(word, isValid);
+	        });
+	      } else {
+	        this.commit(word, false);
+	      }
 	    }
-	
-	    if (this.checkScore(word) && this.checkBoard(word)) {
-	      this.checkDictionary(word, function (isValid) {
-	        that.commit(word, isValid);
+	  }, {
+	    key: 'checkBoard',
+	    value: function checkBoard(word) {
+	      return this.refs.board.check(word);
+	    }
+	  }, {
+	    key: 'checkDictionary',
+	    value: function checkDictionary(word, cb) {
+	      return this.state.dictionary.check(word, cb);
+	    }
+	  }, {
+	    key: 'checkScore',
+	    value: function checkScore(word) {
+	      return this.refs.score.check(word);
+	    }
+	  }, {
+	    key: 'commit',
+	    value: function commit(word, scored) {
+	      this.refs.score.add({
+	        word: word,
+	        scored: scored
 	      });
-	    } else {
-	      this.commit(word, false);
+	
+	      this.refs.attempt.clear();
+	      this.refs.attempt.focus();
 	    }
-	  },
-	
-	  checkBoard: function checkBoard(word) {
-	    return this.refs.board.check(word);
-	  },
-	
-	  checkDictionary: function checkDictionary(word, cb) {
-	    return this.state.dictionary.check(word, cb);
-	  },
-	
-	  checkScore: function checkScore(word) {
-	    return this.refs.score.check(word);
-	  },
-	
-	  commit: function commit(word, scored) {
-	    this.refs.score.add({
-	      word: word,
-	      scored: scored
-	    });
-	
-	    this.refs.attempt.clear();
-	    this.refs.attempt.focus();
-	  },
-	
-	  toggle: function toggle() {
-	    this.setState({ started: !this.state.started });
-	  },
-	
-	  reset: function reset() {
-	    this.setState({ started: false });
-	  },
-	
-	  render: function render() {
-	    return React.createElement(
-	      'main',
-	      null,
-	      React.createElement(
-	        'header',
+	  }, {
+	    key: 'toggle',
+	    value: function toggle() {
+	      this.setState({ started: !this.state.started });
+	    }
+	  }, {
+	    key: 'reset',
+	    value: function reset() {
+	      this.setState({ started: false });
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      return _react2.default.createElement(
+	        'main',
 	        null,
-	        React.createElement(
-	          'div',
-	          { className: 'container' },
-	          React.createElement(
-	            'h1',
-	            null,
-	            'BOGGLE'
-	          ),
-	          React.createElement(Button, { ref: 'button', started: this.state.started, onClick: this.toggle }),
-	          React.createElement(Attempt, { ref: 'attempt', started: this.state.started, onEnter: this.check })
-	        )
-	      ),
-	      React.createElement(
-	        'section',
-	        null,
-	        React.createElement(
-	          'div',
-	          { className: 'container' },
-	          React.createElement(
-	            'aside',
-	            null,
-	            React.createElement(Clock, { ref: 'clock', started: this.state.started, onStop: this.reset }),
-	            React.createElement(Score, { ref: 'score', started: this.state.started })
-	          ),
-	          React.createElement(Board, { ref: 'board', started: this.state.started })
-	        )
-	      ),
-	      React.createElement(
-	        'footer',
-	        null,
-	        React.createElement(
-	          'div',
-	          { className: 'container' },
-	          '© Copyright 2016 Leonardo Quixadá. All rights reserved. ',
-	          React.createElement(
-	            'a',
-	            { href: 'https://github.com/lquixada/boggle' },
-	            'Github'
+	        _react2.default.createElement(
+	          'header',
+	          null,
+	          _react2.default.createElement(
+	            'div',
+	            { className: 'container' },
+	            _react2.default.createElement(
+	              'h1',
+	              null,
+	              'BOGGLE'
+	            ),
+	            _react2.default.createElement(_button2.default, { ref: 'button', started: this.state.started, onClick: this.toggle.bind(this) }),
+	            _react2.default.createElement(_attempt2.default, { ref: 'attempt', started: this.state.started, onEnter: this.check.bind(this) })
+	          )
+	        ),
+	        _react2.default.createElement(
+	          'section',
+	          null,
+	          _react2.default.createElement(
+	            'div',
+	            { className: 'container' },
+	            _react2.default.createElement(
+	              'aside',
+	              null,
+	              _react2.default.createElement(_clock2.default, { ref: 'clock', started: this.state.started, onStop: this.reset.bind(this) }),
+	              _react2.default.createElement(_score2.default, { ref: 'score', started: this.state.started })
+	            ),
+	            _react2.default.createElement(_board2.default, { ref: 'board', started: this.state.started })
+	          )
+	        ),
+	        _react2.default.createElement(
+	          'footer',
+	          null,
+	          _react2.default.createElement(
+	            'div',
+	            { className: 'container' },
+	            '© Copyright 2016 Leonardo Quixadá. All rights reserved. ',
+	            _react2.default.createElement(
+	              'a',
+	              { href: 'https://github.com/lquixada/boggle' },
+	              'Github'
+	            )
 	          )
 	        )
-	      )
-	    );
-	  }
-	});
+	      );
+	    }
+	  }]);
+	
+	  return Main;
+	}(_react2.default.Component);
 	
 	/*
 	 * Dictionary
@@ -20148,19 +20218,28 @@
 	 * it could be local (a huge word array downloaded to the browser) or any web dictionary
 	 * with an api such as Wiktionary.
 	 */
-	function Dictionary() {}
 	
-	Dictionary.prototype = {
-	  check: function check(word, cb) {
-	    var url = 'https://en.wiktionary.org/w/api.php?action=query&format=json&callback=?&titles=';
 	
-	    return $.getJSON(url + word.toLowerCase(), function (data) {
-	      cb(!data.query.pages[-1]);
-	    });
+	exports.default = Main;
+	
+	var Dictionary = function () {
+	  function Dictionary() {
+	    _classCallCheck(this, Dictionary);
 	  }
-	};
 	
-	module.exports = Main;
+	  _createClass(Dictionary, [{
+	    key: 'check',
+	    value: function check(word, cb) {
+	      var url = 'https://en.wiktionary.org/w/api.php?action=query&format=json&callback=?&titles=';
+	
+	      return _jquery2.default.getJSON(url + word.toLowerCase(), function (data) {
+	        cb(!data.query.pages[-1]);
+	      });
+	    }
+	  }]);
+	
+	  return Dictionary;
+	}();
 
 /***/ },
 /* 167 */
@@ -31924,17 +32003,24 @@
 	
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 	
+	var _react = __webpack_require__(1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _index = __webpack_require__(174);
+	
+	var _index2 = _interopRequireDefault(_index);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 	
 	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 	
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } /*
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * Attempt
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                */
 	
-	/*
-	 * Attempt
-	 */
-	var React = __webpack_require__(1);
-	var style = __webpack_require__(174);
 	
 	var Attempt = function (_React$Component) {
 	  _inherits(Attempt, _React$Component);
@@ -31993,10 +32079,10 @@
 	  }, {
 	    key: 'render',
 	    value: function render() {
-	      return React.createElement(
+	      return _react2.default.createElement(
 	        'div',
 	        { id: 'attempt' },
-	        React.createElement('input', { type: 'text', ref: 'attempt', value: this.state.value,
+	        _react2.default.createElement('input', { type: 'text', ref: 'attempt', value: this.state.value,
 	          onChange: this.updateValue.bind(this),
 	          onKeyUp: this.onEnter.bind(this),
 	          className: 'box',
@@ -32007,7 +32093,7 @@
 	  }]);
 	
 	  return Attempt;
-	}(React.Component);
+	}(_react2.default.Component);
 	
 	exports.default = Attempt;
 
@@ -32057,177 +32143,234 @@
 
 	'use strict';
 	
-	/*
-	 * Board
-	 */
-	var React = __webpack_require__(1);
-	var _ = __webpack_require__(167);
-	var style = __webpack_require__(177);
-	
-	var BoardView = React.createClass({
-	  displayName: 'BoardView',
-	
-	  getInitialState: function getInitialState() {
-	    return {
-	      board: new Board()
-	    };
-	  },
-	
-	  check: function check(word) {
-	    return this.state.board.check(word);
-	  },
-	
-	  componentWillUpdate: function componentWillUpdate() {
-	    if (this.props.started) {
-	      this.state.board.stop();
-	    } else {
-	      this.state.board.start();
-	    }
-	  },
-	
-	  getRows: function getRows(board) {
-	    return board.matrix.map(function (row, i) {
-	      return React.createElement(
-	        'tr',
-	        { key: i },
-	        this.getCells(row)
-	      );
-	    }, this);
-	  },
-	
-	  getCells: function getCells(row) {
-	    return row.map(function (cell, i) {
-	      return React.createElement(
-	        'td',
-	        { key: i },
-	        cell
-	      );
-	    });
-	  },
-	
-	  render: function render() {
-	    return React.createElement(
-	      'div',
-	      { id: 'board', className: 'box' },
-	      React.createElement(
-	        'table',
-	        null,
-	        React.createElement(
-	          'tbody',
-	          null,
-	          this.getRows(this.state.board)
-	        )
-	      )
-	    );
-	  }
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
 	});
 	
-	function Board() {
-	  this.dim = 4;
-	  this.minLength = 2;
-	  this.dice = [new Die('AOBBOJ'), new Die('WHGEEN'), new Die('NRNZHL'), new Die('NAEAGE'), new Die('DIYSTT'), new Die('IESTSO'), new Die('AOTTWO'), new Die('HQUMNI'), new Die('RYTLTE'), new Die('POHCSA'), new Die('LREVYD'), new Die('EXLDIR'), new Die('IENSUE'), new Die('SFFKAP'), new Die('IOTMUC'), new Die('EHWVTR')];
-	  this.reset();
-	}
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 	
-	Board.prototype = {
-	  get: function get(i, j) {
-	    try {
-	      return this.matrix[i][j];
-	    } catch (e) {
-	      return '*';
+	var _underscore = __webpack_require__(167);
+	
+	var _underscore2 = _interopRequireDefault(_underscore);
+	
+	var _react = __webpack_require__(1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _index = __webpack_require__(177);
+	
+	var _index2 = _interopRequireDefault(_index);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } /*
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * Board
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                */
+	
+	
+	var BoardView = function (_React$Component) {
+	  _inherits(BoardView, _React$Component);
+	
+	  function BoardView(props) {
+	    _classCallCheck(this, BoardView);
+	
+	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(BoardView).call(this, props));
+	
+	    _this.state = {
+	      board: new Board()
+	    };
+	    return _this;
+	  }
+	
+	  _createClass(BoardView, [{
+	    key: 'check',
+	    value: function check(word) {
+	      return this.state.board.check(word);
 	    }
-	  },
+	  }, {
+	    key: 'componentWillUpdate',
+	    value: function componentWillUpdate() {
+	      if (this.props.started) {
+	        this.state.board.stop();
+	      } else {
+	        this.state.board.start();
+	      }
+	    }
+	  }, {
+	    key: 'getRows',
+	    value: function getRows(board) {
+	      return board.matrix.map(function (row, i) {
+	        return _react2.default.createElement(
+	          'tr',
+	          { key: i },
+	          this.getCells(row)
+	        );
+	      }, this);
+	    }
+	  }, {
+	    key: 'getCells',
+	    value: function getCells(row) {
+	      return row.map(function (cell, i) {
+	        return _react2.default.createElement(
+	          'td',
+	          { key: i },
+	          cell
+	        );
+	      });
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      return _react2.default.createElement(
+	        'div',
+	        { id: 'board', className: 'box' },
+	        _react2.default.createElement(
+	          'table',
+	          null,
+	          _react2.default.createElement(
+	            'tbody',
+	            null,
+	            this.getRows(this.state.board)
+	          )
+	        )
+	      );
+	    }
+	  }]);
 	
-	  place: function place(drawn) {
-	    var grouped = _.groupBy(drawn, function (letter, i) {
-	      return i % this.dim;
-	    }, this);
+	  return BoardView;
+	}(_react2.default.Component);
 	
-	    return _.toArray(grouped);
-	  },
+	exports.default = BoardView;
 	
-	  shake: function shake() {
-	    return _.invoke(this.dice, 'roll');
-	  },
+	var Board = function () {
+	  function Board() {
+	    _classCallCheck(this, Board);
 	
-	  start: function start() {
-	    var drawn = this.shake();
-	    this.matrix = this.place(drawn);
-	  },
-	
-	  stop: function stop() {
+	    this.dim = 4;
+	    this.minLength = 2;
+	    this.dice = [new Die('AOBBOJ'), new Die('WHGEEN'), new Die('NRNZHL'), new Die('NAEAGE'), new Die('DIYSTT'), new Die('IESTSO'), new Die('AOTTWO'), new Die('HQUMNI'), new Die('RYTLTE'), new Die('POHCSA'), new Die('LREVYD'), new Die('EXLDIR'), new Die('IENSUE'), new Die('SFFKAP'), new Die('IOTMUC'), new Die('EHWVTR')];
 	    this.reset();
-	  },
+	  }
 	
-	  reset: function reset() {
-	    this.matrix = [[' ', ' ', ' ', ' '], [' ', ' ', ' ', ' '], [' ', ' ', ' ', ' '], [' ', ' ', ' ', ' ']];
-	  },
+	  _createClass(Board, [{
+	    key: 'get',
+	    value: function get(i, j) {
+	      try {
+	        return this.matrix[i][j];
+	      } catch (e) {
+	        return '*';
+	      }
+	    }
+	  }, {
+	    key: 'place',
+	    value: function place(drawn) {
+	      var grouped = _underscore2.default.groupBy(drawn, function (letter, i) {
+	        return i % this.dim;
+	      }, this);
 	
-	  check: function check(word) {
-	    if (word.length < this.minLength) {
+	      return _underscore2.default.toArray(grouped);
+	    }
+	  }, {
+	    key: 'shake',
+	    value: function shake() {
+	      return _underscore2.default.invoke(this.dice, 'roll');
+	    }
+	  }, {
+	    key: 'start',
+	    value: function start() {
+	      var drawn = this.shake();
+	      this.matrix = this.place(drawn);
+	    }
+	  }, {
+	    key: 'stop',
+	    value: function stop() {
+	      this.reset();
+	    }
+	  }, {
+	    key: 'reset',
+	    value: function reset() {
+	      this.matrix = [[' ', ' ', ' ', ' '], [' ', ' ', ' ', ' '], [' ', ' ', ' ', ' '], [' ', ' ', ' ', ' ']];
+	    }
+	  }, {
+	    key: 'check',
+	    value: function check(word) {
+	      if (word.length < this.minLength) {
+	        return false;
+	      }
+	
+	      word = word.toUpperCase();
+	
+	      // Find the first letter
+	      for (var i = 0; i < this.dim; i++) {
+	        for (var j = 0; j < this.dim; j++) {
+	          if (this.get(i, j) === word.charAt(0)) {
+	            // From there, find the sequence, letter by letter
+	            if (this.findSequence(word, i, j)) {
+	              return true;
+	            }
+	          }
+	        }
+	      }
+	
 	      return false;
 	    }
+	  }, {
+	    key: 'findSequence',
+	    value: function findSequence(seq, i, j) {
+	      var found;
 	
-	    word = word.toUpperCase();
+	      if (seq.length <= 1) {
+	        return true;
+	      }
 	
-	    // Find the first letter
-	    for (var i = 0; i < this.dim; i++) {
-	      for (var j = 0; j < this.dim; j++) {
-	        if (this.get(i, j) === word.charAt(0)) {
-	          // From there, find the sequence, letter by letter
-	          if (this.findSequence(word, i, j)) {
-	            return true;
+	      found = this.matrix[i][j];
+	
+	      // Mark temporarily in order to not traverse the same cell twice
+	      this.matrix[i][j] = ' ';
+	
+	      for (var u = -1; u <= 1; u++) {
+	        for (var v = -1; v <= 1; v++) {
+	          if (this.get(i + u, j + v) === seq.charAt(1)) {
+	            if (this.findSequence(seq.substr(1), i + u, j + v)) {
+	              this.matrix[i][j] = found;
+	              return true;
+	            }
 	          }
 	        }
 	      }
+	
+	      this.matrix[i][j] = found;
+	      return false;
 	    }
+	  }]);
 	
-	    return false;
-	  },
-	
-	  findSequence: function findSequence(seq, i, j) {
-	    var found;
-	
-	    if (seq.length <= 1) {
-	      return true;
-	    }
-	
-	    found = this.matrix[i][j];
-	
-	    // Mark temporarily in order to not traverse the same cell twice
-	    this.matrix[i][j] = ' ';
-	
-	    for (var u = -1; u <= 1; u++) {
-	      for (var v = -1; v <= 1; v++) {
-	        if (this.get(i + u, j + v) === seq.charAt(1)) {
-	          if (this.findSequence(seq.substr(1), i + u, j + v)) {
-	            this.matrix[i][j] = found;
-	            return true;
-	          }
-	        }
-	      }
-	    }
-	
-	    this.matrix[i][j] = found;
-	    return false;
-	  }
-	};
+	  return Board;
+	}();
 	
 	/*
 	 * Die
 	 */
 	
-	function Die(letters) {
-	  this.sides = letters.split('');
-	}
+	var Die = function () {
+	  function Die(letters) {
+	    _classCallCheck(this, Die);
 	
-	Die.prototype = {
-	  roll: function roll() {
-	    return _.sample(this.sides);
+	    this.sides = letters.split('');
 	  }
-	};
 	
-	module.exports = BoardView;
+	  _createClass(Die, [{
+	    key: 'roll',
+	    value: function roll() {
+	      return _underscore2.default.sample(this.sides);
+	    }
+	  }]);
+	
+	  return Die;
+	}();
 
 /***/ },
 /* 177 */
@@ -32275,29 +32418,59 @@
 
 	'use strict';
 	
-	/*
-	 * Control
-	 */
-	var React = __webpack_require__(1);
-	var style = __webpack_require__(180);
-	
-	var Button = React.createClass({
-	  displayName: 'Button',
-	
-	  render: function render() {
-	    return React.createElement(
-	      'div',
-	      { id: 'control' },
-	      React.createElement(
-	        'button',
-	        { type: 'button', onClick: this.props.onClick },
-	        this.props.started ? 'stop!' : 'start!'
-	      )
-	    );
-	  }
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
 	});
 	
-	module.exports = Button;
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _index = __webpack_require__(180);
+	
+	var _index2 = _interopRequireDefault(_index);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } /*
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * Control
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                */
+	
+	
+	var Button = function (_React$Component) {
+	  _inherits(Button, _React$Component);
+	
+	  function Button() {
+	    _classCallCheck(this, Button);
+	
+	    return _possibleConstructorReturn(this, Object.getPrototypeOf(Button).apply(this, arguments));
+	  }
+	
+	  _createClass(Button, [{
+	    key: 'render',
+	    value: function render() {
+	      return _react2.default.createElement(
+	        'div',
+	        { id: 'control' },
+	        _react2.default.createElement(
+	          'button',
+	          { type: 'button', onClick: this.props.onClick },
+	          this.props.started ? 'stop!' : 'start!'
+	        )
+	      );
+	    }
+	  }]);
+	
+	  return Button;
+	}(_react2.default.Component);
+	
+	exports.default = Button;
 
 /***/ },
 /* 180 */
@@ -32345,150 +32518,209 @@
 
 	'use strict';
 	
-	/*
-	 * Timer
-	 */
-	var React = __webpack_require__(1);
-	var ReactDOM = __webpack_require__(32);
-	var _ = __webpack_require__(167);
-	var $ = __webpack_require__(168);
-	var style = __webpack_require__(183);
-	var knob = __webpack_require__(185);
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
 	
-	var ClockView = React.createClass({
-	  displayName: 'ClockView',
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 	
-	  getInitialState: function getInitialState() {
+	var _underscore = __webpack_require__(167);
+	
+	var _underscore2 = _interopRequireDefault(_underscore);
+	
+	var _jquery = __webpack_require__(168);
+	
+	var _jquery2 = _interopRequireDefault(_jquery);
+	
+	var _jqueryKnob = __webpack_require__(183);
+	
+	var _jqueryKnob2 = _interopRequireDefault(_jqueryKnob);
+	
+	var _react = __webpack_require__(1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _index = __webpack_require__(184);
+	
+	var _index2 = _interopRequireDefault(_index);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } /*
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * Timer
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                */
+	
+	
+	var Clock = function (_React$Component) {
+	  _inherits(Clock, _React$Component);
+	
+	  function Clock(props) {
+	    _classCallCheck(this, Clock);
+	
 	    var timer = new Timer();
-	    return {
+	
+	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Clock).call(this, props));
+	
+	    _this.state = {
 	      secs: timer.remaining,
 	      timer: timer
 	    };
-	  },
+	    return _this;
+	  }
 	
-	  componentWillReceiveProps: function componentWillReceiveProps(nextProps) {
-	    var that = this;
+	  _createClass(Clock, [{
+	    key: 'componentWillReceiveProps',
+	    value: function componentWillReceiveProps(nextProps) {
+	      var _this2 = this;
 	
-	    if (nextProps.started) {
-	      this.start({
-	        onStop: function onStop() {
-	          that.props.onStop();
-	          alert('Game over!');
+	      if (nextProps.started) {
+	        this.start({
+	          onStop: function onStop() {
+	            _this2.props.onStop();
+	            alert('Game over!');
+	          }
+	        });
+	      } else {
+	        this.stop();
+	      }
+	    }
+	  }, {
+	    key: 'start',
+	    value: function start(options) {
+	      var _this3 = this;
+	
+	      var opt = options || {};
+	
+	      this.state.timer.start({
+	        onTick: function onTick() {
+	          _this3.setState({ secs: _this3.state.timer.remaining });
+	
+	          if (_this3.state.secs === 0 && _underscore2.default.isFunction(opt.onStop)) {
+	            opt.onStop();
+	          }
 	        }
 	      });
-	    } else {
-	      this.stop();
 	    }
-	  },
+	  }, {
+	    key: 'stop',
+	    value: function stop() {
+	      this.state.timer.stop();
+	      this.setState({ secs: this.state.timer.remaining });
+	    }
+	  }, {
+	    key: 'getSecs',
+	    value: function getSecs() {
+	      var secs = this.state.secs;
 	
-	  start: function start(options) {
-	    var that = this;
+	      return secs < 10 ? '0' + secs : secs;
+	    }
+	  }, {
+	    key: 'componentDidMount',
+	    value: function componentDidMount() {
+	      this.renderDial();
+	    }
+	  }, {
+	    key: 'componentDidUpdate',
+	    value: function componentDidUpdate() {
+	      this.updateDial();
+	    }
+	  }, {
+	    key: 'renderDial',
+	    value: function renderDial() {
+	      (0, _jquery2.default)(this.refs.timer).knob({
+	        readOnly: true,
+	        width: 120,
+	        height: 120,
+	        min: 0,
+	        max: 60,
+	        inputColor: '#fff',
+	        bgColor: '#6c6',
+	        fgColor: '#666',
+	        thickness: '.30',
+	        rotation: 'anticlockwise'
+	      });
+	    }
+	  }, {
+	    key: 'updateDial',
+	    value: function updateDial() {
+	      (0, _jquery2.default)(this.refs.timer).trigger('change');
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      return _react2.default.createElement(
+	        'div',
+	        { id: 'clock' },
+	        _react2.default.createElement('input', { ref: 'timer', value: this.state.secs, readOnly: 'true' }),
+	        _react2.default.createElement(
+	          'span',
+	          { className: 'micro-counter' },
+	          'Time left: 00:',
+	          this.getSecs()
+	        )
+	      );
+	    }
+	  }]);
+	
+	  return Clock;
+	}(_react2.default.Component);
+	
+	exports.default = Clock;
+	
+	var Timer = function () {
+	  function Timer(options) {
+	    _classCallCheck(this, Timer);
+	
 	    var opt = options || {};
 	
-	    this.state.timer.start({
-	      onTick: function onTick() {
-	        that.setState({ secs: that.state.timer.remaining });
-	
-	        if (that.state.secs === 0 && _.isFunction(opt.onStop)) {
-	          opt.onStop();
-	        }
-	      }
-	    });
-	  },
-	
-	  stop: function stop() {
-	    this.state.timer.stop();
-	    this.setState({ secs: this.state.timer.remaining });
-	  },
-	
-	  getSecs: function getSecs() {
-	    var secs = this.state.secs;
-	
-	    return secs < 10 ? '0' + secs : secs;
-	  },
-	
-	  componentDidMount: function componentDidMount() {
-	    this.renderDial();
-	  },
-	
-	  componentDidUpdate: function componentDidUpdate() {
-	    this.updateDial();
-	  },
-	
-	  renderDial: function renderDial() {
-	    $(this.refs.timer).knob({
-	      readOnly: true,
-	      width: 120,
-	      height: 120,
-	      min: 0,
-	      max: 60,
-	      inputColor: '#fff',
-	      bgColor: '#6c6',
-	      fgColor: '#666',
-	      thickness: '.30',
-	      rotation: 'anticlockwise'
-	    });
-	  },
-	
-	  updateDial: function updateDial() {
-	    var timer = ReactDOM.findDOMNode(this.refs.timer);
-	
-	    $(timer).trigger('change');
-	  },
-	
-	  render: function render() {
-	    return React.createElement(
-	      'div',
-	      { id: 'clock' },
-	      React.createElement('input', { ref: 'timer', value: this.state.secs, readOnly: 'true' }),
-	      React.createElement(
-	        'span',
-	        { className: 'micro-counter' },
-	        'Time left: 00:',
-	        this.getSecs()
-	      )
-	    );
-	  }
-	});
-	
-	function Timer(options) {
-	  var opt = options || {};
-	
-	  this.frame = opt.frame || 60;
-	  this.remaining = this.frame;
-	}
-	
-	Timer.prototype = {
-	  start: function start(options) {
-	    var that = this;
-	
-	    this.onTick = options.onTick || _.noop;
-	    this.timer = setInterval(function () {
-	      that.remaining--;
-	      that.onTick();
-	
-	      if (!that.remaining) {
-	        that.stop();
-	      }
-	    }, 1000);
-	  },
-	
-	  stop: function stop() {
+	    this.frame = opt.frame || 60;
 	    this.remaining = this.frame;
-	    clearInterval(this.timer);
 	  }
-	};
 	
-	module.exports = ClockView;
+	  _createClass(Timer, [{
+	    key: 'start',
+	    value: function start(options) {
+	      var _this4 = this;
+	
+	      this.onTick = options.onTick || _underscore2.default.noop;
+	      this.timer = setInterval(function () {
+	        _this4.remaining--;
+	        _this4.onTick();
+	
+	        if (!_this4.remaining) {
+	          _this4.stop();
+	        }
+	      }, 1000);
+	    }
+	  }, {
+	    key: 'stop',
+	    value: function stop() {
+	      this.remaining = this.frame;
+	      clearInterval(this.timer);
+	    }
+	  }]);
+	
+	  return Timer;
+	}();
 
 /***/ },
 /* 183 */
 /***/ function(module, exports, __webpack_require__) {
 
+	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;(function(e){if(true){!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(168)], __WEBPACK_AMD_DEFINE_FACTORY__ = (e), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__))}else{e(jQuery)}})(function(e){"use strict";var t={},n=Math.max,r=Math.min;t.c={};t.c.d=e(document);t.c.t=function(e){return e.originalEvent.touches.length-1};t.o=function(){var n=this;this.o=null;this.$=null;this.i=null;this.g=null;this.v=null;this.cv=null;this.x=0;this.y=0;this.w=0;this.h=0;this.$c=null;this.c=null;this.t=0;this.isInit=false;this.fgColor=null;this.pColor=null;this.dH=null;this.cH=null;this.eH=null;this.rH=null;this.scale=1;this.relative=false;this.relativeWidth=false;this.relativeHeight=false;this.$div=null;this.run=function(){var t=function(e,t){var r;for(r in t){n.o[r]=t[r]}n._carve().init();n._configure()._draw()};if(this.$.data("kontroled"))return;this.$.data("kontroled",true);this.extend();this.o=e.extend({min:this.$.data("min")!==undefined?this.$.data("min"):0,max:this.$.data("max")!==undefined?this.$.data("max"):100,stopper:true,readOnly:this.$.data("readonly")||this.$.attr("readonly")==="readonly",cursor:this.$.data("cursor")===true&&30||this.$.data("cursor")||0,thickness:this.$.data("thickness")&&Math.max(Math.min(this.$.data("thickness"),1),.01)||.35,lineCap:this.$.data("linecap")||"butt",width:this.$.data("width")||200,height:this.$.data("height")||200,displayInput:this.$.data("displayinput")==null||this.$.data("displayinput"),displayPrevious:this.$.data("displayprevious"),fgColor:this.$.data("fgcolor")||"#87CEEB",inputColor:this.$.data("inputcolor"),font:this.$.data("font")||"Arial",fontWeight:this.$.data("font-weight")||"bold",inline:false,step:this.$.data("step")||1,rotation:this.$.data("rotation"),draw:null,change:null,cancel:null,release:null,format:function(e){return e},parse:function(e){return parseFloat(e)}},this.o);this.o.flip=this.o.rotation==="anticlockwise"||this.o.rotation==="acw";if(!this.o.inputColor){this.o.inputColor=this.o.fgColor}if(this.$.is("fieldset")){this.v={};this.i=this.$.find("input");this.i.each(function(t){var r=e(this);n.i[t]=r;n.v[t]=n.o.parse(r.val());r.bind("change blur",function(){var e={};e[t]=r.val();n.val(n._validate(e))})});this.$.find("legend").remove()}else{this.i=this.$;this.v=this.o.parse(this.$.val());this.v===""&&(this.v=this.o.min);this.$.bind("change blur",function(){n.val(n._validate(n.o.parse(n.$.val())))})}!this.o.displayInput&&this.$.hide();this.$c=e(document.createElement("canvas")).attr({width:this.o.width,height:this.o.height});this.$div=e('<div style="'+(this.o.inline?"display:inline;":"")+"width:"+this.o.width+"px;height:"+this.o.height+"px;"+'"></div>');this.$.wrap(this.$div).before(this.$c);this.$div=this.$.parent();if(typeof G_vmlCanvasManager!=="undefined"){G_vmlCanvasManager.initElement(this.$c[0])}this.c=this.$c[0].getContext?this.$c[0].getContext("2d"):null;if(!this.c){throw{name:"CanvasNotSupportedException",message:"Canvas not supported. Please use excanvas on IE8.0.",toString:function(){return this.name+": "+this.message}}}this.scale=(window.devicePixelRatio||1)/(this.c.webkitBackingStorePixelRatio||this.c.mozBackingStorePixelRatio||this.c.msBackingStorePixelRatio||this.c.oBackingStorePixelRatio||this.c.backingStorePixelRatio||1);this.relativeWidth=this.o.width%1!==0&&this.o.width.indexOf("%");this.relativeHeight=this.o.height%1!==0&&this.o.height.indexOf("%");this.relative=this.relativeWidth||this.relativeHeight;this._carve();if(this.v instanceof Object){this.cv={};this.copy(this.v,this.cv)}else{this.cv=this.v}this.$.bind("configure",t).parent().bind("configure",t);this._listen()._configure()._xy().init();this.isInit=true;this.$.val(this.o.format(this.v));this._draw();return this};this._carve=function(){if(this.relative){var e=this.relativeWidth?this.$div.parent().width()*parseInt(this.o.width)/100:this.$div.parent().width(),t=this.relativeHeight?this.$div.parent().height()*parseInt(this.o.height)/100:this.$div.parent().height();this.w=this.h=Math.min(e,t)}else{this.w=this.o.width;this.h=this.o.height}this.$div.css({width:this.w+"px",height:this.h+"px"});this.$c.attr({width:this.w,height:this.h});if(this.scale!==1){this.$c[0].width=this.$c[0].width*this.scale;this.$c[0].height=this.$c[0].height*this.scale;this.$c.width(this.w);this.$c.height(this.h)}return this};this._draw=function(){var e=true;n.g=n.c;n.clear();n.dH&&(e=n.dH());e!==false&&n.draw()};this._touch=function(e){var r=function(e){var t=n.xy2val(e.originalEvent.touches[n.t].pageX,e.originalEvent.touches[n.t].pageY);if(t==n.cv)return;if(n.cH&&n.cH(t)===false)return;n.change(n._validate(t));n._draw()};this.t=t.c.t(e);r(e);t.c.d.bind("touchmove.k",r).bind("touchend.k",function(){t.c.d.unbind("touchmove.k touchend.k");n.val(n.cv)});return this};this._mouse=function(e){var r=function(e){var t=n.xy2val(e.pageX,e.pageY);if(t==n.cv)return;if(n.cH&&n.cH(t)===false)return;n.change(n._validate(t));n._draw()};r(e);t.c.d.bind("mousemove.k",r).bind("keyup.k",function(e){if(e.keyCode===27){t.c.d.unbind("mouseup.k mousemove.k keyup.k");if(n.eH&&n.eH()===false)return;n.cancel()}}).bind("mouseup.k",function(e){t.c.d.unbind("mousemove.k mouseup.k keyup.k");n.val(n.cv)});return this};this._xy=function(){var e=this.$c.offset();this.x=e.left;this.y=e.top;return this};this._listen=function(){if(!this.o.readOnly){this.$c.bind("mousedown",function(e){e.preventDefault();n._xy()._mouse(e)}).bind("touchstart",function(e){e.preventDefault();n._xy()._touch(e)});this.listen()}else{this.$.attr("readonly","readonly")}if(this.relative){e(window).resize(function(){n._carve().init();n._draw()})}return this};this._configure=function(){if(this.o.draw)this.dH=this.o.draw;if(this.o.change)this.cH=this.o.change;if(this.o.cancel)this.eH=this.o.cancel;if(this.o.release)this.rH=this.o.release;if(this.o.displayPrevious){this.pColor=this.h2rgba(this.o.fgColor,"0.4");this.fgColor=this.h2rgba(this.o.fgColor,"0.6")}else{this.fgColor=this.o.fgColor}return this};this._clear=function(){this.$c[0].width=this.$c[0].width};this._validate=function(e){var t=~~((e<0?-.5:.5)+e/this.o.step)*this.o.step;return Math.round(t*100)/100};this.listen=function(){};this.extend=function(){};this.init=function(){};this.change=function(e){};this.val=function(e){};this.xy2val=function(e,t){};this.draw=function(){};this.clear=function(){this._clear()};this.h2rgba=function(e,t){var n;e=e.substring(1,7);n=[parseInt(e.substring(0,2),16),parseInt(e.substring(2,4),16),parseInt(e.substring(4,6),16)];return"rgba("+n[0]+","+n[1]+","+n[2]+","+t+")"};this.copy=function(e,t){for(var n in e){t[n]=e[n]}}};t.Dial=function(){t.o.call(this);this.startAngle=null;this.xy=null;this.radius=null;this.lineWidth=null;this.cursorExt=null;this.w2=null;this.PI2=2*Math.PI;this.extend=function(){this.o=e.extend({bgColor:this.$.data("bgcolor")||"#EEEEEE",angleOffset:this.$.data("angleoffset")||0,angleArc:this.$.data("anglearc")||360,inline:true},this.o)};this.val=function(e,t){if(null!=e){e=this.o.parse(e);if(t!==false&&e!=this.v&&this.rH&&this.rH(e)===false){return}this.cv=this.o.stopper?n(r(e,this.o.max),this.o.min):e;this.v=this.cv;this.$.val(this.o.format(this.v));this._draw()}else{return this.v}};this.xy2val=function(e,t){var i,s;i=Math.atan2(e-(this.x+this.w2),-(t-this.y-this.w2))-this.angleOffset;if(this.o.flip){i=this.angleArc-i-this.PI2}if(this.angleArc!=this.PI2&&i<0&&i>-.5){i=0}else if(i<0){i+=this.PI2}s=i*(this.o.max-this.o.min)/this.angleArc+this.o.min;this.o.stopper&&(s=n(r(s,this.o.max),this.o.min));return s};this.listen=function(){var t=this,i,s,o=function(e){e.preventDefault();var o=e.originalEvent,u=o.detail||o.wheelDeltaX,a=o.detail||o.wheelDeltaY,f=t._validate(t.o.parse(t.$.val()))+(u>0||a>0?t.o.step:u<0||a<0?-t.o.step:0);f=n(r(f,t.o.max),t.o.min);t.val(f,false);if(t.rH){clearTimeout(i);i=setTimeout(function(){t.rH(f);i=null},100);if(!s){s=setTimeout(function(){if(i)t.rH(f);s=null},200)}}},u,a,f=1,l={37:-t.o.step,38:t.o.step,39:t.o.step,40:-t.o.step};this.$.bind("keydown",function(i){var s=i.keyCode;if(s>=96&&s<=105){s=i.keyCode=s-48}u=parseInt(String.fromCharCode(s));if(isNaN(u)){s!==13&&s!==8&&s!==9&&s!==189&&(s!==190||t.$.val().match(/\./))&&i.preventDefault();if(e.inArray(s,[37,38,39,40])>-1){i.preventDefault();var o=t.o.parse(t.$.val())+l[s]*f;t.o.stopper&&(o=n(r(o,t.o.max),t.o.min));t.change(t._validate(o));t._draw();a=window.setTimeout(function(){f*=2},30)}}}).bind("keyup",function(e){if(isNaN(u)){if(a){window.clearTimeout(a);a=null;f=1;t.val(t.$.val())}}else{t.$.val()>t.o.max&&t.$.val(t.o.max)||t.$.val()<t.o.min&&t.$.val(t.o.min)}});this.$c.bind("mousewheel DOMMouseScroll",o);this.$.bind("mousewheel DOMMouseScroll",o)};this.init=function(){if(this.v<this.o.min||this.v>this.o.max){this.v=this.o.min}this.$.val(this.v);this.w2=this.w/2;this.cursorExt=this.o.cursor/100;this.xy=this.w2*this.scale;this.lineWidth=this.xy*this.o.thickness;this.lineCap=this.o.lineCap;this.radius=this.xy-this.lineWidth/2;this.o.angleOffset&&(this.o.angleOffset=isNaN(this.o.angleOffset)?0:this.o.angleOffset);this.o.angleArc&&(this.o.angleArc=isNaN(this.o.angleArc)?this.PI2:this.o.angleArc);this.angleOffset=this.o.angleOffset*Math.PI/180;this.angleArc=this.o.angleArc*Math.PI/180;this.startAngle=1.5*Math.PI+this.angleOffset;this.endAngle=1.5*Math.PI+this.angleOffset+this.angleArc;var e=n(String(Math.abs(this.o.max)).length,String(Math.abs(this.o.min)).length,2)+2;this.o.displayInput&&this.i.css({width:(this.w/2+4>>0)+"px",height:(this.w/3>>0)+"px",position:"absolute","vertical-align":"middle","margin-top":(this.w/3>>0)+"px","margin-left":"-"+(this.w*3/4+2>>0)+"px",border:0,background:"none",font:this.o.fontWeight+" "+(this.w/e>>0)+"px "+this.o.font,"text-align":"center",color:this.o.inputColor||this.o.fgColor,padding:"0px","-webkit-appearance":"none"})||this.i.css({width:"0px",visibility:"hidden"})};this.change=function(e){this.cv=e;this.$.val(this.o.format(e))};this.angle=function(e){return(e-this.o.min)*this.angleArc/(this.o.max-this.o.min)};this.arc=function(e){var t,n;e=this.angle(e);if(this.o.flip){t=this.endAngle+1e-5;n=t-e-1e-5}else{t=this.startAngle-1e-5;n=t+e+1e-5}this.o.cursor&&(t=n-this.cursorExt)&&(n=n+this.cursorExt);return{s:t,e:n,d:this.o.flip&&!this.o.cursor}};this.draw=function(){var e=this.g,t=this.arc(this.cv),n,r=1;e.lineWidth=this.lineWidth;e.lineCap=this.lineCap;if(this.o.bgColor!=="none"){e.beginPath();e.strokeStyle=this.o.bgColor;e.arc(this.xy,this.xy,this.radius,this.endAngle-1e-5,this.startAngle+1e-5,true);e.stroke()}if(this.o.displayPrevious){n=this.arc(this.v);e.beginPath();e.strokeStyle=this.pColor;e.arc(this.xy,this.xy,this.radius,n.s,n.e,n.d);e.stroke();r=this.cv==this.v}e.beginPath();e.strokeStyle=r?this.o.fgColor:this.fgColor;e.arc(this.xy,this.xy,this.radius,t.s,t.e,t.d);e.stroke()};this.cancel=function(){this.val(this.v)}};e.fn.dial=e.fn.knob=function(n){return this.each(function(){var r=new t.Dial;r.o=n;r.$=e(this);r.run()}).parent()}})
+
+/***/ },
+/* 184 */
+/***/ function(module, exports, __webpack_require__) {
+
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(184);
+	var content = __webpack_require__(185);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(172)(content, {});
@@ -32508,7 +32740,7 @@
 	}
 
 /***/ },
-/* 184 */
+/* 185 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(171)();
@@ -32522,110 +32754,142 @@
 
 
 /***/ },
-/* 185 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;(function(e){if(true){!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(168)], __WEBPACK_AMD_DEFINE_FACTORY__ = (e), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__))}else{e(jQuery)}})(function(e){"use strict";var t={},n=Math.max,r=Math.min;t.c={};t.c.d=e(document);t.c.t=function(e){return e.originalEvent.touches.length-1};t.o=function(){var n=this;this.o=null;this.$=null;this.i=null;this.g=null;this.v=null;this.cv=null;this.x=0;this.y=0;this.w=0;this.h=0;this.$c=null;this.c=null;this.t=0;this.isInit=false;this.fgColor=null;this.pColor=null;this.dH=null;this.cH=null;this.eH=null;this.rH=null;this.scale=1;this.relative=false;this.relativeWidth=false;this.relativeHeight=false;this.$div=null;this.run=function(){var t=function(e,t){var r;for(r in t){n.o[r]=t[r]}n._carve().init();n._configure()._draw()};if(this.$.data("kontroled"))return;this.$.data("kontroled",true);this.extend();this.o=e.extend({min:this.$.data("min")!==undefined?this.$.data("min"):0,max:this.$.data("max")!==undefined?this.$.data("max"):100,stopper:true,readOnly:this.$.data("readonly")||this.$.attr("readonly")==="readonly",cursor:this.$.data("cursor")===true&&30||this.$.data("cursor")||0,thickness:this.$.data("thickness")&&Math.max(Math.min(this.$.data("thickness"),1),.01)||.35,lineCap:this.$.data("linecap")||"butt",width:this.$.data("width")||200,height:this.$.data("height")||200,displayInput:this.$.data("displayinput")==null||this.$.data("displayinput"),displayPrevious:this.$.data("displayprevious"),fgColor:this.$.data("fgcolor")||"#87CEEB",inputColor:this.$.data("inputcolor"),font:this.$.data("font")||"Arial",fontWeight:this.$.data("font-weight")||"bold",inline:false,step:this.$.data("step")||1,rotation:this.$.data("rotation"),draw:null,change:null,cancel:null,release:null,format:function(e){return e},parse:function(e){return parseFloat(e)}},this.o);this.o.flip=this.o.rotation==="anticlockwise"||this.o.rotation==="acw";if(!this.o.inputColor){this.o.inputColor=this.o.fgColor}if(this.$.is("fieldset")){this.v={};this.i=this.$.find("input");this.i.each(function(t){var r=e(this);n.i[t]=r;n.v[t]=n.o.parse(r.val());r.bind("change blur",function(){var e={};e[t]=r.val();n.val(n._validate(e))})});this.$.find("legend").remove()}else{this.i=this.$;this.v=this.o.parse(this.$.val());this.v===""&&(this.v=this.o.min);this.$.bind("change blur",function(){n.val(n._validate(n.o.parse(n.$.val())))})}!this.o.displayInput&&this.$.hide();this.$c=e(document.createElement("canvas")).attr({width:this.o.width,height:this.o.height});this.$div=e('<div style="'+(this.o.inline?"display:inline;":"")+"width:"+this.o.width+"px;height:"+this.o.height+"px;"+'"></div>');this.$.wrap(this.$div).before(this.$c);this.$div=this.$.parent();if(typeof G_vmlCanvasManager!=="undefined"){G_vmlCanvasManager.initElement(this.$c[0])}this.c=this.$c[0].getContext?this.$c[0].getContext("2d"):null;if(!this.c){throw{name:"CanvasNotSupportedException",message:"Canvas not supported. Please use excanvas on IE8.0.",toString:function(){return this.name+": "+this.message}}}this.scale=(window.devicePixelRatio||1)/(this.c.webkitBackingStorePixelRatio||this.c.mozBackingStorePixelRatio||this.c.msBackingStorePixelRatio||this.c.oBackingStorePixelRatio||this.c.backingStorePixelRatio||1);this.relativeWidth=this.o.width%1!==0&&this.o.width.indexOf("%");this.relativeHeight=this.o.height%1!==0&&this.o.height.indexOf("%");this.relative=this.relativeWidth||this.relativeHeight;this._carve();if(this.v instanceof Object){this.cv={};this.copy(this.v,this.cv)}else{this.cv=this.v}this.$.bind("configure",t).parent().bind("configure",t);this._listen()._configure()._xy().init();this.isInit=true;this.$.val(this.o.format(this.v));this._draw();return this};this._carve=function(){if(this.relative){var e=this.relativeWidth?this.$div.parent().width()*parseInt(this.o.width)/100:this.$div.parent().width(),t=this.relativeHeight?this.$div.parent().height()*parseInt(this.o.height)/100:this.$div.parent().height();this.w=this.h=Math.min(e,t)}else{this.w=this.o.width;this.h=this.o.height}this.$div.css({width:this.w+"px",height:this.h+"px"});this.$c.attr({width:this.w,height:this.h});if(this.scale!==1){this.$c[0].width=this.$c[0].width*this.scale;this.$c[0].height=this.$c[0].height*this.scale;this.$c.width(this.w);this.$c.height(this.h)}return this};this._draw=function(){var e=true;n.g=n.c;n.clear();n.dH&&(e=n.dH());e!==false&&n.draw()};this._touch=function(e){var r=function(e){var t=n.xy2val(e.originalEvent.touches[n.t].pageX,e.originalEvent.touches[n.t].pageY);if(t==n.cv)return;if(n.cH&&n.cH(t)===false)return;n.change(n._validate(t));n._draw()};this.t=t.c.t(e);r(e);t.c.d.bind("touchmove.k",r).bind("touchend.k",function(){t.c.d.unbind("touchmove.k touchend.k");n.val(n.cv)});return this};this._mouse=function(e){var r=function(e){var t=n.xy2val(e.pageX,e.pageY);if(t==n.cv)return;if(n.cH&&n.cH(t)===false)return;n.change(n._validate(t));n._draw()};r(e);t.c.d.bind("mousemove.k",r).bind("keyup.k",function(e){if(e.keyCode===27){t.c.d.unbind("mouseup.k mousemove.k keyup.k");if(n.eH&&n.eH()===false)return;n.cancel()}}).bind("mouseup.k",function(e){t.c.d.unbind("mousemove.k mouseup.k keyup.k");n.val(n.cv)});return this};this._xy=function(){var e=this.$c.offset();this.x=e.left;this.y=e.top;return this};this._listen=function(){if(!this.o.readOnly){this.$c.bind("mousedown",function(e){e.preventDefault();n._xy()._mouse(e)}).bind("touchstart",function(e){e.preventDefault();n._xy()._touch(e)});this.listen()}else{this.$.attr("readonly","readonly")}if(this.relative){e(window).resize(function(){n._carve().init();n._draw()})}return this};this._configure=function(){if(this.o.draw)this.dH=this.o.draw;if(this.o.change)this.cH=this.o.change;if(this.o.cancel)this.eH=this.o.cancel;if(this.o.release)this.rH=this.o.release;if(this.o.displayPrevious){this.pColor=this.h2rgba(this.o.fgColor,"0.4");this.fgColor=this.h2rgba(this.o.fgColor,"0.6")}else{this.fgColor=this.o.fgColor}return this};this._clear=function(){this.$c[0].width=this.$c[0].width};this._validate=function(e){var t=~~((e<0?-.5:.5)+e/this.o.step)*this.o.step;return Math.round(t*100)/100};this.listen=function(){};this.extend=function(){};this.init=function(){};this.change=function(e){};this.val=function(e){};this.xy2val=function(e,t){};this.draw=function(){};this.clear=function(){this._clear()};this.h2rgba=function(e,t){var n;e=e.substring(1,7);n=[parseInt(e.substring(0,2),16),parseInt(e.substring(2,4),16),parseInt(e.substring(4,6),16)];return"rgba("+n[0]+","+n[1]+","+n[2]+","+t+")"};this.copy=function(e,t){for(var n in e){t[n]=e[n]}}};t.Dial=function(){t.o.call(this);this.startAngle=null;this.xy=null;this.radius=null;this.lineWidth=null;this.cursorExt=null;this.w2=null;this.PI2=2*Math.PI;this.extend=function(){this.o=e.extend({bgColor:this.$.data("bgcolor")||"#EEEEEE",angleOffset:this.$.data("angleoffset")||0,angleArc:this.$.data("anglearc")||360,inline:true},this.o)};this.val=function(e,t){if(null!=e){e=this.o.parse(e);if(t!==false&&e!=this.v&&this.rH&&this.rH(e)===false){return}this.cv=this.o.stopper?n(r(e,this.o.max),this.o.min):e;this.v=this.cv;this.$.val(this.o.format(this.v));this._draw()}else{return this.v}};this.xy2val=function(e,t){var i,s;i=Math.atan2(e-(this.x+this.w2),-(t-this.y-this.w2))-this.angleOffset;if(this.o.flip){i=this.angleArc-i-this.PI2}if(this.angleArc!=this.PI2&&i<0&&i>-.5){i=0}else if(i<0){i+=this.PI2}s=i*(this.o.max-this.o.min)/this.angleArc+this.o.min;this.o.stopper&&(s=n(r(s,this.o.max),this.o.min));return s};this.listen=function(){var t=this,i,s,o=function(e){e.preventDefault();var o=e.originalEvent,u=o.detail||o.wheelDeltaX,a=o.detail||o.wheelDeltaY,f=t._validate(t.o.parse(t.$.val()))+(u>0||a>0?t.o.step:u<0||a<0?-t.o.step:0);f=n(r(f,t.o.max),t.o.min);t.val(f,false);if(t.rH){clearTimeout(i);i=setTimeout(function(){t.rH(f);i=null},100);if(!s){s=setTimeout(function(){if(i)t.rH(f);s=null},200)}}},u,a,f=1,l={37:-t.o.step,38:t.o.step,39:t.o.step,40:-t.o.step};this.$.bind("keydown",function(i){var s=i.keyCode;if(s>=96&&s<=105){s=i.keyCode=s-48}u=parseInt(String.fromCharCode(s));if(isNaN(u)){s!==13&&s!==8&&s!==9&&s!==189&&(s!==190||t.$.val().match(/\./))&&i.preventDefault();if(e.inArray(s,[37,38,39,40])>-1){i.preventDefault();var o=t.o.parse(t.$.val())+l[s]*f;t.o.stopper&&(o=n(r(o,t.o.max),t.o.min));t.change(t._validate(o));t._draw();a=window.setTimeout(function(){f*=2},30)}}}).bind("keyup",function(e){if(isNaN(u)){if(a){window.clearTimeout(a);a=null;f=1;t.val(t.$.val())}}else{t.$.val()>t.o.max&&t.$.val(t.o.max)||t.$.val()<t.o.min&&t.$.val(t.o.min)}});this.$c.bind("mousewheel DOMMouseScroll",o);this.$.bind("mousewheel DOMMouseScroll",o)};this.init=function(){if(this.v<this.o.min||this.v>this.o.max){this.v=this.o.min}this.$.val(this.v);this.w2=this.w/2;this.cursorExt=this.o.cursor/100;this.xy=this.w2*this.scale;this.lineWidth=this.xy*this.o.thickness;this.lineCap=this.o.lineCap;this.radius=this.xy-this.lineWidth/2;this.o.angleOffset&&(this.o.angleOffset=isNaN(this.o.angleOffset)?0:this.o.angleOffset);this.o.angleArc&&(this.o.angleArc=isNaN(this.o.angleArc)?this.PI2:this.o.angleArc);this.angleOffset=this.o.angleOffset*Math.PI/180;this.angleArc=this.o.angleArc*Math.PI/180;this.startAngle=1.5*Math.PI+this.angleOffset;this.endAngle=1.5*Math.PI+this.angleOffset+this.angleArc;var e=n(String(Math.abs(this.o.max)).length,String(Math.abs(this.o.min)).length,2)+2;this.o.displayInput&&this.i.css({width:(this.w/2+4>>0)+"px",height:(this.w/3>>0)+"px",position:"absolute","vertical-align":"middle","margin-top":(this.w/3>>0)+"px","margin-left":"-"+(this.w*3/4+2>>0)+"px",border:0,background:"none",font:this.o.fontWeight+" "+(this.w/e>>0)+"px "+this.o.font,"text-align":"center",color:this.o.inputColor||this.o.fgColor,padding:"0px","-webkit-appearance":"none"})||this.i.css({width:"0px",visibility:"hidden"})};this.change=function(e){this.cv=e;this.$.val(this.o.format(e))};this.angle=function(e){return(e-this.o.min)*this.angleArc/(this.o.max-this.o.min)};this.arc=function(e){var t,n;e=this.angle(e);if(this.o.flip){t=this.endAngle+1e-5;n=t-e-1e-5}else{t=this.startAngle-1e-5;n=t+e+1e-5}this.o.cursor&&(t=n-this.cursorExt)&&(n=n+this.cursorExt);return{s:t,e:n,d:this.o.flip&&!this.o.cursor}};this.draw=function(){var e=this.g,t=this.arc(this.cv),n,r=1;e.lineWidth=this.lineWidth;e.lineCap=this.lineCap;if(this.o.bgColor!=="none"){e.beginPath();e.strokeStyle=this.o.bgColor;e.arc(this.xy,this.xy,this.radius,this.endAngle-1e-5,this.startAngle+1e-5,true);e.stroke()}if(this.o.displayPrevious){n=this.arc(this.v);e.beginPath();e.strokeStyle=this.pColor;e.arc(this.xy,this.xy,this.radius,n.s,n.e,n.d);e.stroke();r=this.cv==this.v}e.beginPath();e.strokeStyle=r?this.o.fgColor:this.fgColor;e.arc(this.xy,this.xy,this.radius,t.s,t.e,t.d);e.stroke()};this.cancel=function(){this.val(this.v)}};e.fn.dial=e.fn.knob=function(n){return this.each(function(){var r=new t.Dial;r.o=n;r.$=e(this);r.run()}).parent()}})
-
-/***/ },
 /* 186 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	/*
-	 * Score
-	 */
-	var React = __webpack_require__(1);
-	var _ = __webpack_require__(167);
-	var $ = __webpack_require__(168);
-	var style = __webpack_require__(187);
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
 	
-	var ScoreView = React.createClass({
-	  displayName: 'ScoreView',
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 	
-	  getInitialState: function getInitialState() {
-	    return {
+	var _underscore = __webpack_require__(167);
+	
+	var _underscore2 = _interopRequireDefault(_underscore);
+	
+	var _jquery = __webpack_require__(168);
+	
+	var _jquery2 = _interopRequireDefault(_jquery);
+	
+	var _react = __webpack_require__(1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _index = __webpack_require__(187);
+	
+	var _index2 = _interopRequireDefault(_index);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } /*
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * Score
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                */
+	
+	
+	var Score = function (_React$Component) {
+	  _inherits(Score, _React$Component);
+	
+	  function Score(props) {
+	    _classCallCheck(this, Score);
+	
+	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Score).call(this, props));
+	
+	    _this.state = {
 	      counter: 0,
 	      attempts: []
 	    };
-	  },
+	    return _this;
+	  }
 	
-	  add: function add(attempt) {
-	    var attempts = this.state.attempts;
-	    var counter = this.state.counter;
+	  _createClass(Score, [{
+	    key: 'add',
+	    value: function add(attempt) {
+	      var attempts = this.state.attempts;
+	      var counter = this.state.counter;
 	
-	    if (attempt.scored) {
-	      counter += attempt.word.length;
+	      if (attempt.scored) {
+	        counter += attempt.word.length;
+	      }
+	
+	      attempts = attempts.concat([{
+	        word: attempt.word,
+	        score: attempt.scored ? attempt.word.length : '✘'
+	      }]);
+	
+	      this.setState({
+	        counter: counter,
+	        attempts: attempts
+	      });
 	    }
-	
-	    attempts = attempts.concat([{
-	      word: attempt.word,
-	      score: attempt.scored ? attempt.word.length : '✘'
-	    }]);
-	
-	    this.setState({
-	      counter: counter,
-	      attempts: attempts
-	    });
-	  },
-	
-	  check: function check(word) {
-	    var found = _.findWhere(this.state.attempts, { word: word });
-	    return !Boolean(found);
-	  },
-	
-	  getItems: function getItems() {
-	    return this.state.attempts.map(function (attempt, i) {
-	      return React.createElement(
-	        'tr',
-	        { key: i },
-	        React.createElement(
-	          'td',
-	          null,
-	          attempt.word
-	        ),
-	        React.createElement(
-	          'td',
-	          null,
-	          attempt.score
-	        )
-	      );
-	    });
-	  },
-	
-	  render: function render() {
-	    return React.createElement(
-	      'div',
-	      { id: 'score' },
-	      React.createElement(
-	        'header',
-	        null,
-	        React.createElement(
-	          'h2',
-	          null,
-	          'Score: ',
-	          this.state.counter
-	        )
-	      ),
-	      React.createElement(
-	        'section',
-	        { className: 'box' },
-	        React.createElement(
-	          'table',
-	          null,
-	          React.createElement(
-	            'tbody',
+	  }, {
+	    key: 'check',
+	    value: function check(word) {
+	      var found = _underscore2.default.findWhere(this.state.attempts, { word: word });
+	      return !Boolean(found);
+	    }
+	  }, {
+	    key: 'getItems',
+	    value: function getItems() {
+	      return this.state.attempts.map(function (attempt, i) {
+	        return _react2.default.createElement(
+	          'tr',
+	          { key: i },
+	          _react2.default.createElement(
+	            'td',
 	            null,
-	            this.getItems()
+	            attempt.word
+	          ),
+	          _react2.default.createElement(
+	            'td',
+	            null,
+	            attempt.score
+	          )
+	        );
+	      });
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      return _react2.default.createElement(
+	        'div',
+	        { id: 'score' },
+	        _react2.default.createElement(
+	          'header',
+	          null,
+	          _react2.default.createElement(
+	            'h2',
+	            null,
+	            'Score: ',
+	            this.state.counter
+	          )
+	        ),
+	        _react2.default.createElement(
+	          'section',
+	          { className: 'box' },
+	          _react2.default.createElement(
+	            'table',
+	            null,
+	            _react2.default.createElement(
+	              'tbody',
+	              null,
+	              this.getItems()
+	            )
 	          )
 	        )
-	      )
-	    );
-	  }
-	});
+	      );
+	    }
+	  }]);
 	
-	module.exports = ScoreView;
+	  return Score;
+	}(_react2.default.Component);
+	
+	exports.default = Score;
 
 /***/ },
 /* 187 */
