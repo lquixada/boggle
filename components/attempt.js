@@ -1,9 +1,10 @@
 /*
  * Attempt
  */
-import React from 'react';
+import React, { PropTypes } from 'react';
+import { connect } from 'react-redux';
 
-export default class Attempt extends React.Component {
+class Attempt extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -57,3 +58,13 @@ export default class Attempt extends React.Component {
     );
   }
 }
+
+Attempt.propTypes = {
+  started: PropTypes.bool.isRequired
+};
+
+const mapStateToProps = (state) => ({
+  started: state.started
+});
+
+export default connect(mapStateToProps)(Attempt);

@@ -1,8 +1,8 @@
 /*
  * Board
  */
-import _ from 'underscore';
-import React from 'react';
+import React, { PropTypes } from 'react';
+import { connect } from 'react-redux';
 import Board from '../utils/board';
 
 export default class BoardView extends React.Component {
@@ -49,3 +49,14 @@ export default class BoardView extends React.Component {
     );
   }
 }
+
+
+BoardView.propTypes = {
+  started: PropTypes.bool.isRequired
+};
+
+const mapStateToProps = (state) => ({
+  started: state.started
+});
+
+export default connect(mapStateToProps)(BoardView);

@@ -58,23 +58,23 @@
 	
 	var _reactRedux = __webpack_require__(186);
 	
-	var _index = __webpack_require__(199);
+	var _reducers = __webpack_require__(199);
 	
-	var _index2 = _interopRequireDefault(_index);
+	var _reducers2 = _interopRequireDefault(_reducers);
 	
-	var _main = __webpack_require__(202);
+	var _main = __webpack_require__(203);
 	
 	var _main2 = _interopRequireDefault(_main);
 	
-	var _index3 = __webpack_require__(213);
+	var _index = __webpack_require__(217);
 	
-	var _index4 = _interopRequireDefault(_index3);
+	var _index2 = _interopRequireDefault(_index);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	store = (0, _redux.createStore)(_index2.default); /*
-	                                                   * App
-	                                                   */
+	var store = (0, _redux.createStore)(_reducers2.default); /*
+	                                                          * App
+	                                                          */
 	
 	_reactDom2.default.render(_react2.default.createElement(
 	  _reactRedux.Provider,
@@ -21869,14 +21869,17 @@
 	
 	var _counter2 = _interopRequireDefault(_counter);
 	
+	var _started = __webpack_require__(202);
+	
+	var _started2 = _interopRequireDefault(_started);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	var app = (0, _redux.combineReducers)({
+	exports.default = (0, _redux.combineReducers)({
 	  attempts: _attempts2.default,
-	  counter: _counter2.default
+	  counter: _counter2.default,
+	  started: _started2.default
 	});
-	
-	exports.default = app;
 
 /***/ },
 /* 200 */
@@ -21914,7 +21917,7 @@
 	  }
 	};
 	
-	exports.default = todos;
+	exports.default = attempts;
 
 /***/ },
 /* 201 */
@@ -21942,6 +21945,30 @@
 
 /***/ },
 /* 202 */
+/***/ function(module, exports) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.default = started;
+	function started() {
+	  var state = arguments.length <= 0 || arguments[0] === undefined ? false : arguments[0];
+	  var action = arguments[1];
+	
+	  switch (action.type) {
+	    case 'START_GAME':
+	      return true;
+	    case 'STOP_GAME':
+	      return false;
+	    default:
+	      return state;
+	  }
+	}
+
+/***/ },
+/* 203 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -21956,33 +21983,39 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _underscore = __webpack_require__(203);
+	var _underscore = __webpack_require__(204);
 	
 	var _underscore2 = _interopRequireDefault(_underscore);
 	
-	var _jquery = __webpack_require__(204);
+	var _jquery = __webpack_require__(205);
 	
 	var _jquery2 = _interopRequireDefault(_jquery);
 	
-	var _index = __webpack_require__(206);
+	var _dictionary = __webpack_require__(207);
 	
-	var _attempt = __webpack_require__(207);
+	var _dictionary2 = _interopRequireDefault(_dictionary);
+	
+	var _actions = __webpack_require__(208);
+	
+	var _reactRedux = __webpack_require__(186);
+	
+	var _attempt = __webpack_require__(209);
 	
 	var _attempt2 = _interopRequireDefault(_attempt);
 	
-	var _board = __webpack_require__(208);
+	var _board = __webpack_require__(210);
 	
 	var _board2 = _interopRequireDefault(_board);
 	
-	var _button = __webpack_require__(209);
+	var _button = __webpack_require__(212);
 	
 	var _button2 = _interopRequireDefault(_button);
 	
-	var _clock = __webpack_require__(210);
+	var _clock = __webpack_require__(213);
 	
 	var _clock2 = _interopRequireDefault(_clock);
 	
-	var _score = __webpack_require__(212);
+	var _score = __webpack_require__(216);
 	
 	var _score2 = _interopRequireDefault(_score);
 	
@@ -22005,7 +22038,7 @@
 	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Main).call(this, props));
 	
 	    _this.state = {
-	      dictionary: new Dictionary(),
+	      dictionary: new _dictionary2.default(),
 	      minLength: 2,
 	      started: false
 	    };
@@ -22025,10 +22058,12 @@
 	
 	      if (this.checkScore(word) && this.checkBoard(word)) {
 	        this.checkDictionary(word, function (isValid) {
-	          _this2.commit(word, isValid);
+	          _this2.props.commit(word, isValid);
+	          _this2.resetAttempt();
 	        });
 	      } else {
-	        this.commit(word, false);
+	        this.props.commit(word, false);
+	        this.resetAttempt();
 	      }
 	    }
 	  }, {
@@ -22044,17 +22079,19 @@
 	  }, {
 	    key: 'checkScore',
 	    value: function checkScore(word) {
-	      return this.refs.score.check(word);
-	    }
-	  }, {
-	    key: 'toggle',
-	    value: function toggle() {
-	      this.setState({ started: !this.state.started });
+	      var found = _underscore2.default.findWhere(this.props.attempts, { word: word });
+	      return !Boolean(found);
 	    }
 	  }, {
 	    key: 'reset',
 	    value: function reset() {
 	      this.setState({ started: false });
+	    }
+	  }, {
+	    key: 'resetAttempt',
+	    value: function resetAttempt() {
+	      this.refs.attempt.clear();
+	      this.refs.attempt.focus();
 	    }
 	  }, {
 	    key: 'render',
@@ -22073,8 +22110,8 @@
 	              null,
 	              'BOGGLE'
 	            ),
-	            _react2.default.createElement(_button2.default, { ref: 'button', started: this.state.started, onClick: this.toggle.bind(this) }),
-	            _react2.default.createElement(_attempt2.default, { ref: 'attempt', started: this.state.started, onEnter: this.check.bind(this) })
+	            _react2.default.createElement(_button2.default, { ref: 'button' }),
+	            _react2.default.createElement(_attempt2.default, { ref: 'attempt', onEnter: this.check.bind(this) })
 	          )
 	        ),
 	        _react2.default.createElement(
@@ -22086,10 +22123,10 @@
 	            _react2.default.createElement(
 	              'aside',
 	              null,
-	              _react2.default.createElement(_clock2.default, { ref: 'clock', started: this.state.started, onStop: this.reset.bind(this) }),
-	              _react2.default.createElement(_score2.default, { ref: 'score', started: this.state.started })
+	              _react2.default.createElement(_clock2.default, { ref: 'clock', onStop: this.reset.bind(this) }),
+	              _react2.default.createElement(_score2.default, { ref: 'score' })
 	            ),
-	            _react2.default.createElement(_board2.default, { ref: 'board', started: this.state.started })
+	            _react2.default.createElement(_board2.default, { ref: 'board' })
 	          )
 	        ),
 	        _react2.default.createElement(
@@ -22113,54 +22150,37 @@
 	  return Main;
 	}(_react2.default.Component);
 	
-	/*
-	 * Dictionary
-	 *
-	 * NOTE: It is possible to install multiple or different dictionaries here,
-	 * it could be local (a huge word array downloaded to the browser) or any web dictionary
-	 * with an api such as Wiktionary.
-	 */
+	Main.propTypes = {
+	  attempts: _react.PropTypes.arrayOf(_react.PropTypes.shape({
+	    score: _react.PropTypes.string.isRequired,
+	    word: _react.PropTypes.string.isRequired
+	  }).isRequired).isRequired,
+	  started: _react.PropTypes.bool.isRequired
+	};
 	
-	
-	var Dictionary = function () {
-	  function Dictionary() {
-	    _classCallCheck(this, Dictionary);
-	  }
-	
-	  _createClass(Dictionary, [{
-	    key: 'check',
-	    value: function check(word, cb) {
-	      var url = 'https://en.wiktionary.org/w/api.php?action=query&format=json&callback=?&titles=';
-	
-	      return _jquery2.default.getJSON(url + word.toLowerCase(), function (data) {
-	        cb(!data.query.pages[-1]);
-	      });
-	    }
-	  }]);
-	
-	  return Dictionary;
-	}();
+	var mapStateToProps = function mapStateToProps(state) {
+	  return {
+	    attempts: state.attempts,
+	    started: state.started
+	  };
+	};
 	
 	var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 	  return {
 	    commit: function commit(word, scored) {
-	      dispatch((0, _index.addAttempt)({ word: word, scored: scored }));
+	      dispatch((0, _actions.addAttempt)(word, scored));
 	
 	      if (scored) {
-	        dispatch((0, _index.incrementCounter)());
+	        dispatch((0, _actions.incrementCounter)());
 	      }
-	
-	      undefined.refs.attempt.clear();
-	      undefined.refs.attempt.focus();
 	    }
 	  };
 	};
 	
-	exports.default = connect(null, mapDispatchToProps)(Main);
-	;
+	exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(Main);
 
 /***/ },
-/* 203 */
+/* 204 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;'use strict';
@@ -23737,7 +23757,7 @@
 	}).call(undefined);
 
 /***/ },
-/* 204 */
+/* 205 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/* WEBPACK VAR INJECTION */(function(module) {"use strict";var _typeof=typeof Symbol==="function"&&typeof Symbol.iterator==="symbol"?function(obj){return typeof obj;}:function(obj){return obj&&typeof Symbol==="function"&&obj.constructor===Symbol?"symbol":typeof obj;}; /*!
@@ -25332,10 +25352,10 @@
 	// (#7102#comment:10, https://github.com/jquery/jquery/pull/557)
 	// and CommonJS for browser emulators (#13566)
 	if(!noGlobal){window.jQuery=window.$=jQuery;}return jQuery;});
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(205)(module)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(206)(module)))
 
 /***/ },
-/* 205 */
+/* 206 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -25352,7 +25372,50 @@
 	};
 
 /***/ },
-/* 206 */
+/* 207 */
+/***/ function(module, exports) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	/*
+	 * Dictionary
+	 *
+	 * NOTE: It is possible to install multiple or different dictionaries here,
+	 * it could be local (a huge word array downloaded to the browser) or any web dictionary
+	 * with an api such as Wiktionary.
+	 */
+	
+	var Dictionary = function () {
+	  function Dictionary() {
+	    _classCallCheck(this, Dictionary);
+	  }
+	
+	  _createClass(Dictionary, [{
+	    key: 'check',
+	    value: function check(word, cb) {
+	      var url = 'https://en.wiktionary.org/w/api.php?action=query&format=json&callback=?&titles=';
+	
+	      return $.getJSON(url + word.toLowerCase(), function (data) {
+	        cb(!data.query.pages[-1]);
+	      });
+	    }
+	  }]);
+	
+	  return Dictionary;
+	}();
+	
+	exports.default = Dictionary;
+
+/***/ },
+/* 208 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -25373,9 +25436,21 @@
 	    type: 'INCREMENT_COUNTER'
 	  };
 	};
+	
+	var startGame = exports.startGame = function startGame() {
+	  return {
+	    type: 'START_GAME'
+	  };
+	};
+	
+	var stopGame = exports.stopGame = function stopGame() {
+	  return {
+	    type: 'STOP_GAME'
+	  };
+	};
 
 /***/ },
-/* 207 */
+/* 209 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -25389,6 +25464,8 @@
 	var _react = __webpack_require__(8);
 	
 	var _react2 = _interopRequireDefault(_react);
+	
+	var _reactRedux = __webpack_require__(186);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -25474,10 +25551,20 @@
 	  return Attempt;
 	}(_react2.default.Component);
 	
-	exports.default = Attempt;
+	Attempt.propTypes = {
+	  started: _react.PropTypes.bool.isRequired
+	};
+	
+	var mapStateToProps = function mapStateToProps(state) {
+	  return {
+	    started: state.started
+	  };
+	};
+	
+	exports.default = (0, _reactRedux.connect)(mapStateToProps)(Attempt);
 
 /***/ },
-/* 208 */
+/* 210 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -25488,13 +25575,15 @@
 	
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 	
-	var _underscore = __webpack_require__(203);
-	
-	var _underscore2 = _interopRequireDefault(_underscore);
-	
 	var _react = __webpack_require__(8);
 	
 	var _react2 = _interopRequireDefault(_react);
+	
+	var _reactRedux = __webpack_require__(186);
+	
+	var _board = __webpack_require__(211);
+	
+	var _board2 = _interopRequireDefault(_board);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -25516,7 +25605,7 @@
 	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(BoardView).call(this, props));
 	
 	    _this.state = {
-	      board: new Board()
+	      board: new _board2.default()
 	    };
 	    return _this;
 	  }
@@ -25580,6 +25669,39 @@
 	}(_react2.default.Component);
 	
 	exports.default = BoardView;
+	
+	
+	BoardView.propTypes = {
+	  started: _react.PropTypes.bool.isRequired
+	};
+	
+	var mapStateToProps = function mapStateToProps(state) {
+	  return {
+	    started: state.started
+	  };
+	};
+	
+	exports.default = (0, _reactRedux.connect)(mapStateToProps)(BoardView);
+
+/***/ },
+/* 211 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _underscore = __webpack_require__(204);
+	
+	var _underscore2 = _interopRequireDefault(_underscore);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 	
 	var Board = function () {
 	  function Board() {
@@ -25706,12 +25828,14 @@
 	
 	  return Die;
 	}();
+	
+	exports.default = Board;
 
 /***/ },
-/* 209 */
+/* 212 */
 /***/ function(module, exports, __webpack_require__) {
 
-	"use strict";
+	'use strict';
 	
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
@@ -25722,6 +25846,10 @@
 	var _react = __webpack_require__(8);
 	
 	var _react2 = _interopRequireDefault(_react);
+	
+	var _reactRedux = __webpack_require__(186);
+	
+	var _actions = __webpack_require__(208);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -25744,14 +25872,23 @@
 	  }
 	
 	  _createClass(Button, [{
-	    key: "render",
+	    key: 'handleClick',
+	    value: function handleClick() {
+	      if (this.props.started) {
+	        this.props.stop();
+	      } else {
+	        this.props.start();
+	      }
+	    }
+	  }, {
+	    key: 'render',
 	    value: function render() {
 	      return _react2.default.createElement(
-	        "div",
-	        { id: "control" },
+	        'div',
+	        { id: 'control' },
 	        _react2.default.createElement(
-	          "button",
-	          { type: "button", onClick: this.props.onClick },
+	          'button',
+	          { type: 'button', onClick: this.handleClick.bind(this) },
 	          this.props.started ? 'stop!' : 'start!'
 	        )
 	      );
@@ -25761,10 +25898,31 @@
 	  return Button;
 	}(_react2.default.Component);
 	
-	exports.default = Button;
+	Button.propTypes = {
+	  started: _react.PropTypes.bool.isRequired
+	};
+	
+	var mapStateToProps = function mapStateToProps(state) {
+	  return {
+	    started: state.started
+	  };
+	};
+	
+	var mapDispatchToProps = function mapDispatchToProps(dispatch) {
+	  return {
+	    start: function start() {
+	      dispatch((0, _actions.startGame)());
+	    },
+	    stop: function stop() {
+	      dispatch((0, _actions.stopGame)());
+	    }
+	  };
+	};
+	
+	exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(Button);
 
 /***/ },
-/* 210 */
+/* 213 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -25775,21 +25933,27 @@
 	
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 	
-	var _underscore = __webpack_require__(203);
+	var _underscore = __webpack_require__(204);
 	
 	var _underscore2 = _interopRequireDefault(_underscore);
 	
-	var _jquery = __webpack_require__(204);
+	var _jquery = __webpack_require__(205);
 	
 	var _jquery2 = _interopRequireDefault(_jquery);
 	
-	var _jqueryKnob = __webpack_require__(211);
+	var _jqueryKnob = __webpack_require__(214);
 	
 	var _jqueryKnob2 = _interopRequireDefault(_jqueryKnob);
 	
 	var _react = __webpack_require__(8);
 	
 	var _react2 = _interopRequireDefault(_react);
+	
+	var _reactRedux = __webpack_require__(186);
+	
+	var _timer = __webpack_require__(215);
+	
+	var _timer2 = _interopRequireDefault(_timer);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -25808,7 +25972,7 @@
 	  function Clock(props) {
 	    _classCallCheck(this, Clock);
 	
-	    var timer = new Timer();
+	    var timer = new _timer2.default();
 	
 	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Clock).call(this, props));
 	
@@ -25916,53 +26080,27 @@
 	  return Clock;
 	}(_react2.default.Component);
 	
-	exports.default = Clock;
+	Clock.propTypes = {
+	  started: _react.PropTypes.bool.isRequired
+	};
 	
-	var Timer = function () {
-	  function Timer(options) {
-	    _classCallCheck(this, Timer);
+	var mapStateToProps = function mapStateToProps(state) {
+	  return {
+	    started: state.started
+	  };
+	};
 	
-	    var opt = options || {};
-	
-	    this.frame = opt.frame || 60;
-	    this.remaining = this.frame;
-	  }
-	
-	  _createClass(Timer, [{
-	    key: 'start',
-	    value: function start(options) {
-	      var _this4 = this;
-	
-	      this.onTick = options.onTick || _underscore2.default.noop;
-	      this.timer = setInterval(function () {
-	        _this4.remaining--;
-	        _this4.onTick();
-	
-	        if (!_this4.remaining) {
-	          _this4.stop();
-	        }
-	      }, 1000);
-	    }
-	  }, {
-	    key: 'stop',
-	    value: function stop() {
-	      this.remaining = this.frame;
-	      clearInterval(this.timer);
-	    }
-	  }]);
-	
-	  return Timer;
-	}();
+	exports.default = (0, _reactRedux.connect)(mapStateToProps)(Clock);
 
 /***/ },
-/* 211 */
+/* 214 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;"use strict";
 	
 	(function (e) {
 	  if (true) {
-	    !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(204)], __WEBPACK_AMD_DEFINE_FACTORY__ = (e), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+	    !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(205)], __WEBPACK_AMD_DEFINE_FACTORY__ = (e), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
 	  } else {
 	    e(jQuery);
 	  }
@@ -26160,7 +26298,59 @@
 	});
 
 /***/ },
-/* 212 */
+/* 215 */
+/***/ function(module, exports) {
+
+	"use strict";
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	var Timer = function () {
+	  function Timer(options) {
+	    _classCallCheck(this, Timer);
+	
+	    var opt = options || {};
+	
+	    this.frame = opt.frame || 60;
+	    this.remaining = this.frame;
+	  }
+	
+	  _createClass(Timer, [{
+	    key: "start",
+	    value: function start(options) {
+	      var _this = this;
+	
+	      this.onTick = options.onTick || _.noop;
+	      this.timer = setInterval(function () {
+	        _this.remaining--;
+	        _this.onTick();
+	
+	        if (!_this.remaining) {
+	          _this.stop();
+	        }
+	      }, 1000);
+	    }
+	  }, {
+	    key: "stop",
+	    value: function stop() {
+	      this.remaining = this.frame;
+	      clearInterval(this.timer);
+	    }
+	  }]);
+	
+	  return Timer;
+	}();
+	
+	exports.default = Timer;
+
+/***/ },
+/* 216 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -26171,17 +26361,19 @@
 	
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 	
-	var _underscore = __webpack_require__(203);
+	var _underscore = __webpack_require__(204);
 	
 	var _underscore2 = _interopRequireDefault(_underscore);
 	
-	var _jquery = __webpack_require__(204);
+	var _jquery = __webpack_require__(205);
 	
 	var _jquery2 = _interopRequireDefault(_jquery);
 	
 	var _react = __webpack_require__(8);
 	
 	var _react2 = _interopRequireDefault(_react);
+	
+	var _reactRedux = __webpack_require__(186);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -26197,10 +26389,10 @@
 	var Score = function (_React$Component) {
 	  _inherits(Score, _React$Component);
 	
-	  function Score(props) {
+	  function Score() {
 	    _classCallCheck(this, Score);
 	
-	    return _possibleConstructorReturn(this, Object.getPrototypeOf(Score).call(this, props));
+	    return _possibleConstructorReturn(this, Object.getPrototypeOf(Score).apply(this, arguments));
 	  }
 	
 	  _createClass(Score, [{
@@ -26265,12 +26457,12 @@
 	  return Score;
 	}(_react2.default.Component);
 	
-	Store.propTypes = {
-	  attempts: PropTypes.arrayOf(PropTypes.shape({
-	    score: PropTypes.string.isRequired,
-	    word: PropTypes.string.isRequired
+	Score.propTypes = {
+	  attempts: _react.PropTypes.arrayOf(_react.PropTypes.shape({
+	    score: _react.PropTypes.string.isRequired,
+	    word: _react.PropTypes.string.isRequired
 	  }).isRequired).isRequired,
-	  counter: PropTypes.number.isRequired
+	  counter: _react.PropTypes.number.isRequired
 	};
 	
 	var mapStateToProps = function mapStateToProps(state) {
@@ -26280,19 +26472,19 @@
 	  };
 	};
 	
-	exports.default = connect(mapStateToProps)(Score);
+	exports.default = (0, _reactRedux.connect)(mapStateToProps)(Score);
 
 /***/ },
-/* 213 */
+/* 217 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(214);
+	var content = __webpack_require__(218);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(216)(content, {});
+	var update = __webpack_require__(220)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -26309,10 +26501,10 @@
 	}
 
 /***/ },
-/* 214 */
+/* 218 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(215)();
+	exports = module.exports = __webpack_require__(219)();
 	// imports
 	
 	
@@ -26323,7 +26515,7 @@
 
 
 /***/ },
-/* 215 */
+/* 219 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -26378,7 +26570,7 @@
 	};
 
 /***/ },
-/* 216 */
+/* 220 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/*

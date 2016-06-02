@@ -2,8 +2,7 @@
  * Main
  */
 
-import React from 'react';
-import { PropTypes } from 'react';
+import React, { PropTypes } from 'react';
 
 import _ from 'underscore';
 import $ from 'jquery';
@@ -24,8 +23,7 @@ class Main extends React.Component {
     super(props);
     this.state = {
       dictionary: new Dictionary(),
-      minLength: 2,
-      started: false
+      minLength: 2
     };
   }
 
@@ -60,14 +58,6 @@ class Main extends React.Component {
     return !Boolean(found);
   }
 
-  toggle() {
-    this.setState({started: !this.state.started});
-  }
-
-  reset() {
-    this.setState({started: false});
-  }
-
   resetAttempt() {
     this.refs.attempt.clear();
     this.refs.attempt.focus();
@@ -79,18 +69,18 @@ class Main extends React.Component {
         <header>
           <div className="container">
             <h1>BOGGLE</h1>
-            <Button ref="button" started={this.state.started} onClick={this.toggle.bind(this)}  />
-            <Attempt ref="attempt" started={this.state.started} onEnter={this.check.bind(this)} />
+            <Button ref="button" />
+            <Attempt ref="attempt" onEnter={this.check.bind(this)} />
           </div>
         </header>
 
         <section>
           <div className="container">
             <aside>
-              <Clock ref="clock" started={this.state.started} onStop={this.reset.bind(this)} />
-              <Score ref="score" started={this.state.started} />
+              <Clock ref="clock" />
+              <Score ref="score" />
             </aside>
-            <Board ref="board" started={this.state.started} />
+            <Board ref="board" />
           </div>
         </section>
 
@@ -111,22 +101,18 @@ Main.propTypes = {
   }).isRequired).isRequired
 };
 
-const mapStateToProps = (state) => {
-  return {
-    attempts: state.attempts
-  }
-}
+const mapStateToProps = (state) => ({
+  attempts: state.attempts
+});
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    commit: (word, scored) => {
-      dispatch(addAttempt(word, scored));
+const mapDispatchToProps = (dispatch) => ({
+  commit(word, scored) {
+    dispatch(addAttempt(word, scored));
 
-      if (scored) {
-        dispatch(incrementCounter());
-      }
+    if (scored) {
+      dispatch(incrementCounter());
     }
   }
-}
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(Main);

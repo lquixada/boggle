@@ -1,5 +1,5 @@
 module.exports = {
-  entry: './components/index.js',
+  entry: './components',
   devtool: 'source-map',
   module: {
     loaders: [

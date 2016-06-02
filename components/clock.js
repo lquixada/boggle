@@ -4,9 +4,14 @@
 import _ from 'underscore';
 import $ from 'jquery';
 import knob from 'jquery-knob';
-import React from 'react';
+import React, { PropTypes } from 'react';
+import { connect } from 'react-redux';
 
-export default class Clock extends React.Component {
+import { stopGame } from '../actions';
+import Timer from '../utils/timer.js';
+
+
+class Clock extends React.Component {
   constructor(props) {
     var timer = new Timer();
     super(props);
@@ -92,28 +97,18 @@ export default class Clock extends React.Component {
   }
 }
 
-class Timer {
-  constructor(options) {
-    var opt = options || {};
+Clock.propTypes = {
+  started: PropTypes.bool.isRequired
+};
 
-    this.frame = opt.frame || 60;
-    this.remaining = this.frame;
-  }
+const mapStateToProps = (state) => ({
+  started: state.started
+});
 
-  start(options) {
-    this.onTick = options.onTick || _.noop;
-    this.timer = setInterval(() => {
-      this.remaining--;
-      this.onTick();
-
-      if (!this.remaining) {
-        this.stop();
-      }
-    }, 1000);
-  }
-
+const mapDispatchToProps = (dispatch) => ({
   stop() {
-    this.remaining = this.frame;
-    clearInterval(this.timer);
+    dispatch(stopGame());
   }
-}
+});
+
+export default connect(mapStateToProps)(Clock);

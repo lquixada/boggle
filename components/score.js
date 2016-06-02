@@ -3,8 +3,7 @@
  */
 import _ from 'underscore';
 import $ from 'jquery';
-import React from 'react';
-import { PropTypes } from 'react';
+import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
 
 class Score extends React.Component {
@@ -50,11 +49,9 @@ Score.propTypes = {
   counter: PropTypes.number.isRequired
 }
 
-const mapStateToProps = (state) => {
-  return {
-    attempts: state.attempts,
-    counter: state.counter
-  }
-}
+const mapStateToProps = (state) => ({
+  attempts: state.attempts,
+  counter: state.counter
+});
 
 export default connect(mapStateToProps)(Score);
