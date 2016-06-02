@@ -4,7 +4,6 @@
 import _ from 'underscore';
 import $ from 'jquery';
 import React from 'react';
-import style from './index.less';
 
 export default class Score extends React.Component {
   constructor(props) {

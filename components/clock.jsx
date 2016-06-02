@@ -5,8 +5,6 @@ import _ from 'underscore';
 import $ from 'jquery';
 import knob from 'jquery-knob';
 import React from 'react';
-import style from './index.less';
-
 
 export default class Clock extends React.Component {
   constructor(props) {

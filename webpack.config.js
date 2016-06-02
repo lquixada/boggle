@@ -1,5 +1,5 @@
 module.exports = {
-  entry: './app/index.jsx',
+  entry: './components/index.jsx',
   devtool: 'source-map',
   module: {
     loaders: [

@@ -3,8 +3,6 @@
  */
 import _ from 'underscore';
 import React from 'react';
-import style from './index.less';
-
 
 export default class BoardView extends React.Component {
   constructor(props) {

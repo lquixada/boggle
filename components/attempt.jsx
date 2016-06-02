@@ -2,7 +2,6 @@
  * Attempt
  */
 import React from 'react';
-import style from './index.less';
 
 export default class Attempt extends React.Component {
   constructor(props) {

@@ -5,13 +5,12 @@
 import React from 'react';
 import _ from 'underscore';
 import $ from 'jquery';
-import style from './index.less';
 
-import Attempt from '../attempt';
-import Board from '../board';
-import Button from '../button';
-import Clock from '../clock';
-import Score from '../score';
+import Attempt from './attempt';
+import Board from './board';
+import Button from './button';
+import Clock from './clock';
+import Score from './score';
 
 
 export default class Main extends React.Component {
