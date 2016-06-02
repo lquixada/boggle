@@ -3,8 +3,14 @@
  */
 
 import React from 'react';
+import { PropTypes } from 'react';
+
 import _ from 'underscore';
 import $ from 'jquery';
+
+import Dictionary from '../utils/dictionary';
+import { addAttempt, incrementCounter } from '../actions';
+import { connect } from 'react-redux';
 
 import Attempt from './attempt';
 import Board from './board';
@@ -13,7 +19,7 @@ import Clock from './clock';
 import Score from './score';
 
 
-export default class Main extends React.Component {
+class Main extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -32,10 +38,12 @@ export default class Main extends React.Component {
 
     if (this.checkScore(word) && this.checkBoard(word)) {
       this.checkDictionary(word, (isValid) => {
-        this.commit(word, isValid);
+        this.props.commit(word, isValid);
+        this.resetAttempt();
       });
     } else {
-      this.commit(word, false);
+      this.props.commit(word, false);
+      this.resetAttempt();
     }
   }
 
@@ -48,17 +56,8 @@ export default class Main extends React.Component {
   }
 
   checkScore(word) {
-    return this.refs.score.check(word);
-  }
-
-  commit(word, scored) {
-    this.refs.score.add({
-      word: word,
-      scored: scored
-    });
-
-    this.refs.attempt.clear();
-    this.refs.attempt.focus();
+    var found = _.findWhere(this.props.attempts, {word: word});
+    return !Boolean(found);
   }
 
   toggle() {
@@ -67,6 +66,11 @@ export default class Main extends React.Component {
 
   reset() {
     this.setState({started: false});
+  }
+
+  resetAttempt() {
+    this.refs.attempt.clear();
+    this.refs.attempt.focus();
   }
 
   render() {
@@ -100,19 +104,29 @@ export default class Main extends React.Component {
   }
 }
 
-/*
- * Dictionary
- *
- * NOTE: It is possible to install multiple or different dictionaries here,
- * it could be local (a huge word array downloaded to the browser) or any web dictionary
- * with an api such as Wiktionary.
- */
-class Dictionary {
-  check(word, cb) {
-    var url = 'https://en.wiktionary.org/w/api.php?action=query&format=json&callback=?&titles=';
+Main.propTypes = {
+  attempts: PropTypes.arrayOf(PropTypes.shape({
+    score: PropTypes.string.isRequired,
+    word: PropTypes.string.isRequired
+  }).isRequired).isRequired
+};
 
-    return $.getJSON(url+word.toLowerCase(), function (data) {
-      cb(!data.query.pages[-1]);
-    });
+const mapStateToProps = (state) => {
+  return {
+    attempts: state.attempts
   }
 }
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    commit: (word, scored) => {
+      dispatch(addAttempt(word, scored));
+
+      if (scored) {
+        dispatch(incrementCounter());
+      }
+    }
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Main);

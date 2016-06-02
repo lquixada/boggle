@@ -1,27 +1,14 @@
 module.exports = {
-  entry: './components/index.jsx',
+  entry: './components/index.js',
   devtool: 'source-map',
   module: {
     loaders: [
-      {
-        test: /\.jsx$/,
-        loader: 'babel-loader',
-        query: {
-          presets: ['react', 'es2015']
-        }
-      },
-      {
-        test: /\.less$/,
-        loader: 'style!css!less'
-      }
+      { test: /\.js$/, loader: 'babel-loader' },
+      { test: /\.less$/, loader: 'style!css!less' }
     ]
   },
   output: {
     path: __dirname,
     filename: 'bundle.js'
-  },
-
-  resolve: {
-    extensions: ['', '.js', '.jsx']
   }
 };
