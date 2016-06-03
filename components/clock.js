@@ -26,7 +26,7 @@ class Clock extends React.Component {
     if (nextProps.started) {
       this.start({
         onStop: () => {
-          this.props.onStop();
+          this.props.stop();
           alert('Game over!');
         }
       });
@@ -111,4 +111,4 @@ const mapDispatchToProps = (dispatch) => ({
   }
 });
 
-export default connect(mapStateToProps)(Clock);
+export default connect(mapStateToProps, mapDispatchToProps)(Clock);

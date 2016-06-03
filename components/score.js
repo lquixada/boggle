@@ -43,7 +43,7 @@ class Score extends React.Component {
 
 Score.propTypes = {
   attempts: PropTypes.arrayOf(PropTypes.shape({
-    score: PropTypes.string.isRequired,
+    score: PropTypes.any.isRequired,
     word: PropTypes.string.isRequired
   }).isRequired).isRequired,
   counter: PropTypes.number.isRequired

@@ -1,15 +1,35 @@
 /*
  * Attempt
  */
+import _ from 'underscore';
 import React, { PropTypes } from 'react';
+import { addAttempt, incrementCounter } from '../actions';
 import { connect } from 'react-redux';
+
+import Board from '../utils/board.js'
+import Dictionary from '../utils/dictionary.js'
 
 class Attempt extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      value: ''
+      value: '',
+      minLength: 2
     };
+  }
+
+  check() {
+    const value = this.state.value.toUpperCase();
+
+    if (!this.hasBeenAttempted() && this.isOnBoard()) {
+      this.isValid((isValid) => {
+        this.props.commit(value, isValid);
+        this.reset();
+      });
+    } else {
+      this.props.commit(value, false);
+      this.reset();
+    }
   }
 
   componentWillReceiveProps(nextProps) {
@@ -31,18 +51,44 @@ class Attempt extends React.Component {
   }
 
   onEnter(evt) {
-    if (evt.which === 13) {
-      this.props.onEnter(evt);
-      this.clear();
+    if (this.state.value.length < this.state.minLength) {
+      return;
     }
+
+    if (evt.which === 13) {
+      this.check();
+    }
+  }
+
+  hasBeenAttempted() {
+    const value = this.state.value.toUpperCase();
+    const found = _.findWhere(this.props.attempts, {word: value});
+    return Boolean(found);
+  }
+
+  isOnBoard() {
+    const value = this.state.value.toUpperCase();
+    const board = new Board(this.props.matrix);
+    return board.hasWord(value);
+  }
+
+  isValid(cb) {
+    const value = this.state.value.toUpperCase();
+    const dictionary = new Dictionary();
+    return dictionary.check(value, cb);
   }
 
   updateValue(evt) {
     this.setValue(evt.target.value);
   }
 
-  setValue(val) {
-    this.setState({value: val});
+  setValue(value) {
+    this.setState({value: value.trim()});
+  }
+
+  reset() {
+    this.clear();
+    this.focus();
   }
 
   render() {
@@ -60,11 +106,28 @@ class Attempt extends React.Component {
 }
 
 Attempt.propTypes = {
+  attempts: PropTypes.arrayOf(PropTypes.shape({
+    score: PropTypes.any.isRequired,
+    word: PropTypes.string.isRequired
+  }).isRequired).isRequired,
+  matrix: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.string)).isRequired,
   started: PropTypes.bool.isRequired
 };
 
 const mapStateToProps = (state) => ({
+  attempts: state.attempts,
+  matrix: state.matrix,
   started: state.started
 });
 
-export default connect(mapStateToProps)(Attempt);
+const mapDispatchToProps = (dispatch) => ({
+  commit(word, scored) {
+    dispatch(addAttempt(word, scored));
+
+    if (scored) {
+      dispatch(incrementCounter());
+    }
+  }
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Attempt);

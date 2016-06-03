@@ -1,28 +1,9 @@
 import _ from 'underscore';
 
 class Board {
-  constructor() {
+  constructor(matrix) {
     this.dim = 4;
-    this.minLength = 2;
-    this.dice = [
-      new Die('AOBBOJ'),
-      new Die('WHGEEN'),
-      new Die('NRNZHL'),
-      new Die('NAEAGE'),
-      new Die('DIYSTT'),
-      new Die('IESTSO'),
-      new Die('AOTTWO'),
-      new Die('HQUMNI'),
-      new Die('RYTLTE'),
-      new Die('POHCSA'),
-      new Die('LREVYD'),
-      new Die('EXLDIR'),
-      new Die('IENSUE'),
-      new Die('SFFKAP'),
-      new Die('IOTMUC'),
-      new Die('EHWVTR')
-    ];
-    this.reset();
+    this.matrix = matrix;
   }
 
   get(i, j) {
@@ -33,37 +14,7 @@ class Board {
     }
   }
 
-  place(drawn) {
-    var grouped = _.groupBy(drawn, function(letter, i) {
-      return (i%this.dim);
-    }, this);
-
-    return _.toArray(grouped);
-  }
-
-  shake() {
-    return _.invoke(this.dice, 'roll');
-  }
-
-  start() {
-    var drawn = this.shake();
-    this.matrix = this.place(drawn);
-  }
-
-  stop() {
-    this.reset();
-  }
-
-  reset() {
-    this.matrix = [
-      [' ', ' ', ' ', ' '],
-      [' ', ' ', ' ', ' '],
-      [' ', ' ', ' ', ' '],
-      [' ', ' ', ' ', ' ']
-    ];
-  }
-
-  check(word) {
+  hasWord(word) {
     if (word.length < this.minLength) {
       return false;
     }
@@ -110,20 +61,6 @@ class Board {
 
     this.matrix[i][j] = found;
     return false;
-  }
-}
-
-/*
- * Die
- */
-
-class Die {
-  constructor(letters) {
-    this.sides = letters.split('');
-  }
-
-  roll() {
-    return _.sample(this.sides);
   }
 }
 

@@ -5,6 +5,9 @@
  * it could be local (a huge word array downloaded to the browser) or any web dictionary
  * with an api such as Wiktionary.
  */
+
+import $ from 'jquery';
+
 class Dictionary {
   check(word, cb) {
     var url = 'https://en.wiktionary.org/w/api.php?action=query&format=json&callback=?&titles=';

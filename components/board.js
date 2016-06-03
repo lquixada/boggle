@@ -6,33 +6,14 @@ import { connect } from 'react-redux';
 import Board from '../utils/board';
 
 export default class BoardView extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      board: new Board()
-    };
-  }
-
-  check(word) {
-    return this.state.board.check(word);
-  }
-
-  componentWillUpdate() {
-    if (this.props.started) {
-      this.state.board.stop();
-    } else {
-      this.state.board.start();
-    }
-  }
-
-  getRows(board) {
-    return board.matrix.map(function (row, i) {
+  getRows() {
+    return this.props.matrix.map((row, i) => {
       return <tr key={i}>{this.getCells(row)}</tr>;
-    }, this);
+    });
   }
 
   getCells(row) {
-    return row.map(function (cell, i) {
+    return row.map((cell, i) => {
       return <td key={i}>{cell}</td>;
     });
   }
@@ -42,7 +23,7 @@ export default class BoardView extends React.Component {
       <div id="board" className="box">
         <table>
           <tbody>
-            {this.getRows(this.state.board)}
+            {this.getRows()}
           </tbody>
         </table>
       </div>
@@ -50,13 +31,12 @@ export default class BoardView extends React.Component {
   }
 }
 
-
 BoardView.propTypes = {
-  started: PropTypes.bool.isRequired
+  matrix: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.string)).isRequired
 };
 
 const mapStateToProps = (state) => ({
-  started: state.started
+  matrix: state.matrix
 });
 
 export default connect(mapStateToProps)(BoardView);
