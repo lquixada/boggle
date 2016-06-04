@@ -1,6 +1,7 @@
 /*
  * Attempt
  */
+
 import _ from 'underscore';
 import React, { PropTypes } from 'react';
 import { addAttempt, incrementCounter } from '../actions';
@@ -8,6 +9,7 @@ import { connect } from 'react-redux';
 
 import Board from '../utils/board.js'
 import Dictionary from '../utils/dictionary.js'
+
 
 class Attempt extends React.Component {
   constructor(props) {
@@ -90,7 +92,7 @@ class Attempt extends React.Component {
   focus() {
     this.refs.attempt.focus();
   }
-  
+
   render() {
     return (
       <div id="attempt">

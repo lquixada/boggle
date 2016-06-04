@@ -1,5 +1,5 @@
 /*
- * Main
+ * App
  */
 
 import React, { PropTypes } from 'react';

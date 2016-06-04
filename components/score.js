@@ -1,10 +1,12 @@
 /*
  * Score
  */
+
 import _ from 'underscore';
 import $ from 'jquery';
 import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
+
 
 class Score extends React.Component {
   render() {

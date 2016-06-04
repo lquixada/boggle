@@ -1,6 +1,7 @@
 /*
- * Timer
+ * Clock
  */
+
 import _ from 'underscore';
 import $ from 'jquery';
 import knob from 'jquery-knob';

@@ -1,25 +1,27 @@
 /*
- * Control
+ * Button
  */
+
 import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { startGame, stopGame } from '../actions';
 
-class Button extends React.Component {
-  handleClick() {
-    if (this.props.started) {
-      this.props.stop();
-    } else {
-      this.props.start();
-    }
-  }
 
+class Button extends React.Component {
   render() {
     return (
-      <div id="control">
-        <button type="button" onClick={this.handleClick.bind(this)}>{this.props.started?'stop!':'start!'}</button>
+      <div id="button">
+        {this.renderButton()}
       </div>
     );
+  }
+
+  renderButton() {
+    if (this.props.started) {
+      return <button type="button" onClick={this.props.stop}>stop</button>;
+    } else {
+      return <button type="button" onClick={this.props.start}>start</button>;
+    }
   }
 }
 

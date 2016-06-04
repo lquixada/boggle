@@ -1,8 +1,10 @@
 /*
  * Board
  */
+
 import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
+
 
 export default class Board extends React.Component {
   render() {
