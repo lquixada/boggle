@@ -7,17 +7,6 @@ import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
 
 class Score extends React.Component {
-  getItems() {
-    return this.props.attempts.map(function (attempt, i) {
-      return (
-        <tr key={i}>
-          <td>{attempt.word}</td>
-          <td>{attempt.score}</td>
-        </tr>
-      );
-    });
-  }
-
   render() {
     return (
       <div id="score">
@@ -27,12 +16,23 @@ class Score extends React.Component {
         <section className="box">
           <table>
             <tbody>
-              {this.getItems()}
+              {this.renderRows()}
             </tbody>
           </table>
         </section>
       </div>
     );
+  }
+
+  renderRows() {
+    return this.props.attempts.map(function (attempt, i) {
+      return (
+        <tr key={i}>
+          <td>{attempt.word}</td>
+          <td>{attempt.score}</td>
+        </tr>
+      );
+    });
   }
 }
 

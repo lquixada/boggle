@@ -4,11 +4,11 @@ const attempt = (state, action) => {
       return {
         word: action.word,
         score: (action.scored ? action.word.length : '✘')
-      }
+      };
     default:
-      return state
+      return state;
   }
-}
+};
 
 const attempts = (state = [], action) => {
   switch (action.type) {
@@ -16,10 +16,12 @@ const attempts = (state = [], action) => {
       return [
         ...state,
         attempt(undefined, action)
-      ]
+      ];
+    case 'STOP_GAME':
+      return [];
     default:
-      return state
+      return state;
   }
-}
+};
 
 export default attempts;

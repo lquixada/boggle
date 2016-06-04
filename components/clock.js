@@ -22,6 +22,14 @@ class Clock extends React.Component {
     };
   }
 
+  componentDidMount() {
+    this.renderDial();
+  }
+
+  componentDidUpdate() {
+    this.updateDial();
+  }
+
   componentWillReceiveProps(nextProps) {
     if (nextProps.started) {
       this.start();
@@ -54,12 +62,17 @@ class Clock extends React.Component {
     return (secs<10 ? '0'+secs : secs);
   }
 
-  componentDidMount() {
-    this.renderDial();
+  updateDial() {
+    $(this.refs.timer).trigger('change');
   }
 
-  componentDidUpdate() {
-    this.updateDial();
+  render() {
+    return (
+      <div id="clock">
+        <input ref="timer" value={this.state.secs} readOnly="true" />
+        <span className="micro-counter">Time left: 00:{this.getSecs()}</span>
+      </div>
+    );
   }
 
   renderDial() {
@@ -75,19 +88,6 @@ class Clock extends React.Component {
       thickness: '.30',
       rotation: 'anticlockwise'
     });
-  }
-
-  updateDial() {
-    $(this.refs.timer).trigger('change');
-  }
-
-  render() {
-    return (
-      <div id="clock">
-        <input ref="timer" value={this.state.secs} readOnly="true" />
-        <span className="micro-counter">Time left: 00:{this.getSecs()}</span>
-      </div>
-    );
   }
 }
 

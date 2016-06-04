@@ -77,8 +77,6 @@ $ grunt githooks
 
 ## Pending Improvements
 
-* *React*: templates joined with views, modules would be more decoupled.
 * *PatternLock*: find word using the mouse in a visually compelling way.
 * *Local Dictionary*: quicker feedback in a time-pressured game.
-* *Event Bus*: modules more decoupled.
 * *IntroJS*: a nice tour for beginners on Boggle rules.
