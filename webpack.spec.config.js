@@ -5,11 +5,8 @@ module.exports = {
   module: {
     loaders: [
       {
-        test: /\.jsx$/,
-        loader: 'babel-loader',
-        query: {
-          presets: ['react']
-        }
+        test: /\.js$/,
+        loader: 'babel-loader'
       },
       {
         test: /\.less$/,

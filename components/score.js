@@ -44,7 +44,7 @@ Score.propTypes = {
     word: PropTypes.string.isRequired
   }).isRequired).isRequired,
   counter: PropTypes.number.isRequired
-}
+};
 
 const mapStateToProps = (state) => ({
   attempts: state.attempts,

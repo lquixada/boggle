@@ -7,8 +7,8 @@ import React, { PropTypes } from 'react';
 import { addAttempt, incrementCounter } from '../actions';
 import { connect } from 'react-redux';
 
-import Board from '../utils/board.js'
-import Dictionary from '../utils/dictionary.js'
+import Board from '../utils/board.js';
+import Dictionary from '../utils/dictionary.js';
 
 
 class Attempt extends React.Component {

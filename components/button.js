@@ -27,11 +27,11 @@ class Button extends React.Component {
 
 Button.propTypes = {
   started: PropTypes.bool.isRequired
-}
+};
 
 const mapStateToProps = (state) => ({
   started: state.started
-})
+});
 
 const mapDispatchToProps = (dispatch) => ({
   start() {

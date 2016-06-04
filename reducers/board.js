@@ -81,4 +81,4 @@ export default (state = board.getMatrix(), action) => {
     default:
       return state;
   }
-}
+};
