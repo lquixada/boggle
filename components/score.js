@@ -7,11 +7,6 @@ import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
 
 class Score extends React.Component {
-  check(word) {
-    var found = _.findWhere(this.props.attempts, {word: word});
-    return !Boolean(found);
-  }
-
   getItems() {
     return this.props.attempts.map(function (attempt, i) {
       return (

@@ -24,26 +24,20 @@ class Clock extends React.Component {
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.started) {
-      this.start({
-        onStop: () => {
-          this.props.stop();
-          alert('Game over!');
-        }
-      });
+      this.start();
     } else {
       this.stop();
     }
   }
 
-  start(options) {
-    var opt = options || {};
-
+  start() {
     this.state.timer.start({
       onTick: () => {
         this.setState({secs: this.state.timer.remaining});
 
-        if (this.state.secs === 0 && _.isFunction(opt.onStop)) {
-          opt.onStop();
+        if (this.state.secs === 0) {
+          this.props.stop();
+          alert('Game over!');
         }
       }
     });

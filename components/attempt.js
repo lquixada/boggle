@@ -18,6 +18,26 @@ class Attempt extends React.Component {
     };
   }
 
+  componentWillReceiveProps(nextProps) {
+    if (!nextProps.started) {
+      this.clear();
+    }
+  }
+
+  componentDidUpdate() {
+    this.focus();
+  }
+
+  onEnter(evt) {
+    if (this.state.value.length < this.state.minLength) {
+      return;
+    }
+
+    if (evt.which === 13) {
+      this.check();
+    }
+  }
+
   check() {
     const value = this.state.value.toUpperCase();
 
@@ -29,34 +49,6 @@ class Attempt extends React.Component {
     } else {
       this.props.commit(value, false);
       this.reset();
-    }
-  }
-
-  componentWillReceiveProps(nextProps) {
-    if (!nextProps.started) {
-      this.clear();
-    }
-  }
-
-  componentDidUpdate() {
-    this.focus();
-  }
-
-  clear() {
-    this.setValue('');
-  }
-
-  focus() {
-    this.refs.attempt.focus();
-  }
-
-  onEnter(evt) {
-    if (this.state.value.length < this.state.minLength) {
-      return;
-    }
-
-    if (evt.which === 13) {
-      this.check();
     }
   }
 
@@ -91,6 +83,14 @@ class Attempt extends React.Component {
     this.focus();
   }
 
+  clear() {
+    this.setValue('');
+  }
+
+  focus() {
+    this.refs.attempt.focus();
+  }
+  
   render() {
     return (
       <div id="attempt">

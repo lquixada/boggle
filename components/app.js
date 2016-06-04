@@ -11,25 +11,25 @@ import Clock from './clock';
 import Score from './score';
 
 
-class Main extends React.Component {
+class App extends React.Component {
   render() {
     return (
       <main>
         <header>
           <div className="container">
             <h1>BOGGLE</h1>
-            <Button ref="button" />
-            <Attempt ref="attempt" />
+            <Button />
+            <Attempt />
           </div>
         </header>
 
         <section>
           <div className="container">
             <aside>
-              <Clock ref="clock" />
-              <Score ref="score" />
+              <Clock />
+              <Score />
             </aside>
-            <Board ref="board" />
+            <Board />
           </div>
         </section>
 
@@ -43,4 +43,4 @@ class Main extends React.Component {
   }
 }
 
-export default Main;
+export default App;
