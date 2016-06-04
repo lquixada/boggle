@@ -3,10 +3,12 @@
   "version": "0.0.1",
   "description": "Boggle Game",
   "scripts": {
+    "deploy": "git push origin master:gh-pages",
     "test": "mocha .tmp/*.spec.js",
     "pretest": "webpack --config webpack.spec.config.js",
     "start": "webpack-dev-server",
-    "build": "webpack"
+    "build": "webpack",
+    "publish": "npm run build && npm run deploy"
   },
   "devDependencies": {
     "babel-core": "^6.7.7",
