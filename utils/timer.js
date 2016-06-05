@@ -1,17 +1,18 @@
+import _ from 'underscore';
+import events from 'events';
 
-class Timer {
-  constructor(options) {
-    var opt = options || {};
-
-    this.frame = opt.frame || 60;
-    this.remaining = this.frame;
+class Timer extends events.EventEmitter {
+  constructor() {
+    super();
+    this.frame = 60;
+    this.reset();
   }
 
   start(options) {
-    this.onTick = options.onTick || _.noop;
+    this.started = true;
     this.timer = setInterval(() => {
       this.remaining--;
-      this.onTick();
+      this.emit('tick');
 
       if (!this.remaining) {
         this.stop();
@@ -20,8 +21,14 @@ class Timer {
   }
 
   stop() {
-    this.remaining = this.frame;
+    this.reset();
     clearInterval(this.timer);
+    this.emit('stop');
+  }
+
+  reset() {
+    this.remaining = this.frame;
+    this.started = false;
   }
 }
 

@@ -6,7 +6,7 @@ import reducers from './reducers';
 import App from './components/app';
 import css from './index.less';
 
-const store = createStore(reducers);
+const store = createStore(reducers, {}, (window.devToolsExtension? window.devToolsExtension(): undefined));
 
 ReactDOM.render(<Provider store={store}>
   <App />

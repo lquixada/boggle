@@ -18,13 +18,28 @@ class Clock extends React.Component {
     super(props);
 
     this.state = {
-      secs: timer.remaining,
-      timer: timer
+      secs: timer.remaining
     };
+
+    this._onChange = this._onChange.bind(this);
   }
 
   componentDidMount() {
     this.renderDial();
+    timer.on('tick', this._onChange);
+  }
+
+  componentWillUnmount() {
+    timer.removeListener('tick', this._onChange);
+  }
+
+  _onChange() {
+    if (timer.remaining === 0) {
+      this.props.stop();
+      alert('Game over!');
+    }
+
+    this.setState({secs: timer.remaining});
   }
 
   componentDidUpdate() {
@@ -33,28 +48,23 @@ class Clock extends React.Component {
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.started) {
-      this.start();
+      // This if guarantees that React Hot Reloading doesn't affect the timer since
+      // it's going to pass here a lot of times
+      if (!timer.started) {
+        this.start();
+      }
     } else {
       this.stop();
     }
   }
 
   start() {
-    this.state.timer.start({
-      onTick: () => {
-        this.setState({secs: this.state.timer.remaining});
-
-        if (this.state.secs === 0) {
-          this.props.stop();
-          alert('Game over!');
-        }
-      }
-    });
+    timer.start();
   }
 
   stop() {
-    this.state.timer.stop();
-    this.setState({secs: this.state.timer.remaining});
+    timer.stop();
+    this.setState({secs: timer.frame});
   }
 
   getSecs() {
