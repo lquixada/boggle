@@ -1,8 +1,3 @@
-/*
- * Clock
- */
-
-import _ from 'underscore';
 import $ from 'jquery';
 import knob from 'jquery-knob';
 import React, { PropTypes } from 'react';
@@ -16,12 +11,10 @@ var timer = new Timer();
 class Clock extends React.Component {
   constructor(props) {
     super(props);
-
+    this._onChange = this._onChange.bind(this);
     this.state = {
       secs: timer.remaining
     };
-
-    this._onChange = this._onChange.bind(this);
   }
 
   componentDidMount() {
@@ -31,15 +24,6 @@ class Clock extends React.Component {
 
   componentWillUnmount() {
     timer.removeListener('tick', this._onChange);
-  }
-
-  _onChange() {
-    if (timer.remaining === 0) {
-      this.props.stop();
-      alert('Game over!');
-    }
-
-    this.setState({secs: timer.remaining});
   }
 
   componentDidUpdate() {
@@ -75,6 +59,15 @@ class Clock extends React.Component {
 
   updateDial() {
     $(this.refs.timer).trigger('change');
+  }
+
+  _onChange() {
+    if (timer.remaining === 0) {
+      this.props.stop();
+      alert('Game over!');
+    }
+
+    this.setState({secs: timer.remaining});
   }
 
   render() {

@@ -1,8 +1,4 @@
-/*
- * App
- */
-
-import React, { PropTypes } from 'react';
+import React from 'react';
 
 import Attempt from './attempt';
 import Board from './board';

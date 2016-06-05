@@ -1,7 +1,3 @@
-/*
- * Attempt
- */
-
 import _ from 'underscore';
 import React, { PropTypes } from 'react';
 import { addAttempt } from '../actions';

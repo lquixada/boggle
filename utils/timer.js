@@ -1,4 +1,3 @@
-import _ from 'underscore';
 import events from 'events';
 
 class Timer extends events.EventEmitter {
