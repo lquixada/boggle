@@ -21,11 +21,11 @@ class App extends React.Component {
 
         <section>
           <div className="container">
+            <Board />
             <aside>
               <Clock />
               <Score />
             </aside>
-            <Board />
           </div>
         </section>
 
