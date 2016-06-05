@@ -1,6 +1,6 @@
 module.exports = {
   entry: {
-    button: './app/button/index.spec.jsx'
+    button: './tests/button.spec.js'
   },
   module: {
     loaders: [
