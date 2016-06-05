@@ -8,7 +8,7 @@
     "pretest": "webpack --config webpack.spec.config.js",
     "start": "webpack-dev-server --hot",
     "build": "webpack",
-    "lint": "eslint **/*.js",
+    "lint": "eslint -c config/.eslintrc **/*.js",
     "publish": "npm run build && npm run deploy"
   },
   "devDependencies": {
@@ -21,9 +21,7 @@
     "eslint": "^2.11.1",
     "expect": "^1.18.0",
     "grunt": "^1.0.1",
-    "grunt-contrib-jshint": "^1.0.0",
     "grunt-githooks": "^0.6.0",
-    "grunt-jscs": "^2.8.0",
     "jquery": "^2.2.3",
     "jquery-knob": "^1.2.11",
     "less-loader": "^2.2.3",
