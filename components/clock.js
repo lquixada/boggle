@@ -11,10 +11,10 @@ import { connect } from 'react-redux';
 import { stopGame } from '../actions';
 import Timer from '../utils/timer.js';
 
+var timer = new Timer();
 
 class Clock extends React.Component {
   constructor(props) {
-    var timer = new Timer();
     super(props);
 
     this.state = {

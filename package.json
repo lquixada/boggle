@@ -6,8 +6,8 @@
     "deploy": "git push origin master:gh-pages",
     "test": "mocha .tmp/*.spec.js",
     "pretest": "webpack --config webpack.spec.config.js",
-    "start": "webpack-dev-server --hot",
-    "build": "webpack",
+    "start": "webpack-dev-server --config webpack.dev.config.js --hot",
+    "build": "webpack --config webpack.prod.config.js",
     "lint": "eslint -c config/.eslintrc **/*.js",
     "publish": "npm run build && npm run deploy"
   },
