@@ -4,7 +4,7 @@
 
 import _ from 'underscore';
 import React, { PropTypes } from 'react';
-import { addAttempt, incrementCounter } from '../actions';
+import { addAttempt } from '../actions';
 import { connect } from 'react-redux';
 
 import Board from '../utils/board.js';
@@ -43,8 +43,8 @@ class Attempt extends React.Component {
   check() {
     const value = this.state.value.toUpperCase();
 
-    if (!this.hasBeenAttempted() && this.isOnBoard()) {
-      this.isValid((isValid) => {
+    if (!this.hasBeenAttempted(value) && this.isOnBoard(value)) {
+      this.isValid(value, (isValid) => {
         this.props.commit(value, isValid);
         this.reset();
       });
@@ -54,20 +54,17 @@ class Attempt extends React.Component {
     }
   }
 
-  hasBeenAttempted() {
-    const value = this.state.value.toUpperCase();
+  hasBeenAttempted(value) {
     const found = _.findWhere(this.props.attempts, {word: value});
     return Boolean(found);
   }
 
-  isOnBoard() {
-    const value = this.state.value.toUpperCase();
+  isOnBoard(value) {
     const board = new Board(this.props.matrix);
     return board.hasWord(value);
   }
 
-  isValid(cb) {
-    const value = this.state.value.toUpperCase();
+  isValid(value, cb) {
     const dictionary = new Dictionary();
     return dictionary.check(value, cb);
   }
@@ -125,10 +122,6 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = (dispatch) => ({
   commit(word, scored) {
     dispatch(addAttempt(word, scored));
-
-    if (scored) {
-      dispatch(incrementCounter());
-    }
   }
 });
 

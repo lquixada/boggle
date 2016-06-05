@@ -4,10 +4,6 @@ export const addAttempt = (word, scored) => ({
   scored
 });
 
-export const incrementCounter = () => ({
-  type: 'INCREMENT_COUNTER'
-});
-
 export const startGame = () => ({
   type: 'START_GAME'
 });
