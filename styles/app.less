@@ -37,8 +37,38 @@ main {
     font-size: 1.2rem;
     background-color: #565656;
 
-    a {
-      color: #999;
+    .container {
+      display: flex;
+    }
+
+    .copyright {
+      line-height: 2rem;
+    }
+
+    .social {
+      flex: 1 0;
+
+      ul {
+        display: flex;
+        justify-content: flex-end;
+      }
+
+      li {
+        margin-left: 1rem;
+        list-style: none;
+      }
+
+      a {
+        display: inline-block;
+        color: #999;
+
+        img {
+          width: 2rem;
+          height: 2rem;
+          opacity: .3;
+          vertical-align: middle;
+        }
+      }
     }
   }
 }

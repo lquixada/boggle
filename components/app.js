@@ -31,7 +31,17 @@ class App extends React.Component {
 
         <footer>
           <div className="container">
-            &copy; Copyright 2016 Leonardo Quixadá. All rights reserved. <a href="https://github.com/lquixada/boggle">Github</a>
+            <div className="copyright">
+              &copy; Copyright 2016 Leonardo Quixadá. All rights reserved.
+            </div>
+
+            <div className="social">
+              <ul>
+                <li><a href="https://github.com/lquixada/"><img src="images/logo-github.png" /></a></li>
+                <li><a href="https://facebook.com/lquixada/"><img src="images/logo-facebook.png" /></a></li>
+                <li><a href="https://twitter.com/lquixada/"><img src="images/logo-twitter.png" /></a></li>
+              </ul>
+            </div>
           </div>
         </footer>
       </main>
