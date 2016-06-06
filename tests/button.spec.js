@@ -5,7 +5,7 @@ var expect = require('expect');
 var Button = require('../components/button.js');
 
 // Removes Connect wrapper
-Button = Button.default.WrappedComponent
+Button = Button.default.WrappedComponent;
 
 describe('<Button />', function () {
 

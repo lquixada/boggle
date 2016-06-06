@@ -43,6 +43,19 @@ main {
 
     .copyright {
       line-height: 2rem;
+
+      .build-status {
+        opacity: .5;
+        vertical-align: middle;
+        height: 1.8rem;
+        margin-left: .5rems;
+        -webkit-filter: grayscale(100%);
+
+        &:hover {
+          opacity: 1;
+          -webkit-filter: grayscale(0%);
+        }
+      }
     }
 
     .social {
@@ -67,6 +80,10 @@ main {
           height: 2rem;
           opacity: .3;
           vertical-align: middle;
+
+          &:hover {
+            opacity: .7;
+          }
         }
       }
     }
