@@ -2,11 +2,11 @@ module.exports = {
   entry: [
     './index.js'
   ],
-  devtool: 'eval',
+  devtool: 'source-map',
   module: {
     loaders: [
       { test: /\.js$/, exclude: /node_modules/, loaders: ['react-hot', 'babel-loader'] },
-      { test: /\.less$/, loader: 'style!css!less' }
+      { test: /\.less$/, loaders: ['style', 'css', 'less'] }
     ]
   },
   output: {

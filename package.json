@@ -5,8 +5,8 @@
   "scripts": {
     "deploy": "git push origin master:gh-pages",
     "test": "mocha tests/**/*.spec.js --compilers js:babel-core/register",
-    "start": "webpack-dev-server --config config/webpack.dev.config.js --hot",
-    "build": "webpack --config config/webpack.prod.config.js",
+    "start": "webpack-dev-server --config config/webpack.config.js --hot --inline",
+    "build": "webpack --config config/webpack.config.js",
     "lint": "eslint -c config/.eslintrc **/*.js",
     "publish": "npm run build && npm run deploy"
   },
