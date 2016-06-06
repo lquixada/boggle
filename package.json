@@ -4,8 +4,7 @@
   "description": "Boggle Game",
   "scripts": {
     "deploy": "git push origin master:gh-pages",
-    "test": "mocha .tmp/*.spec.js",
-    "pretest": "webpack --config config/webpack.spec.config.js",
+    "test": "mocha tests/**/*.spec.js --compilers js:babel-core/register",
     "start": "webpack-dev-server --config config/webpack.dev.config.js --hot",
     "build": "webpack --config config/webpack.prod.config.js",
     "lint": "eslint -c config/.eslintrc **/*.js",
