@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
-import { startGame, stopGame } from '../actions';
+import * as actions from '../actions';
 
 
 class Button extends React.Component {
@@ -14,9 +14,9 @@ class Button extends React.Component {
 
   renderButton() {
     if (this.props.started) {
-      return <button type="button" onClick={this.props.stop}>stop</button>;
+      return <button type="button" onClick={this.props.stopGame}>stop</button>;
     } else {
-      return <button type="button" onClick={this.props.start}>start</button>;
+      return <button type="button" onClick={this.props.startGame}>start</button>;
     }
   }
 }
@@ -29,14 +29,4 @@ const mapStateToProps = (state) => ({
   started: state.started
 });
 
-const mapDispatchToProps = (dispatch) => ({
-  start() {
-    dispatch(startGame());
-  },
-
-  stop() {
-    dispatch(stopGame());
-  }
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(Button);
+export default connect(mapStateToProps, actions)(Button);

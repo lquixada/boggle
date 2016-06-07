@@ -1,6 +1,6 @@
 import _ from 'underscore';
 import React, { PropTypes } from 'react';
-import { addAttempt } from '../actions';
+import * as actions from '../actions';
 import { connect } from 'react-redux';
 
 import Board from '../utils/board.js';
@@ -41,11 +41,11 @@ class Attempt extends React.Component {
 
     if (!this.hasBeenAttempted(value) && this.isOnBoard(value)) {
       this.isValid(value, (isValid) => {
-        this.props.commit(value, isValid);
+        this.props.addAttempt(value, isValid);
         this.reset();
       });
     } else {
-      this.props.commit(value, false);
+      this.props.addAttempt(value, false);
       this.reset();
     }
   }
@@ -115,10 +115,4 @@ const mapStateToProps = (state) => ({
   started: state.started
 });
 
-const mapDispatchToProps = (dispatch) => ({
-  commit(word, scored) {
-    dispatch(addAttempt(word, scored));
-  }
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(Attempt);
+export default connect(mapStateToProps, actions)(Attempt);

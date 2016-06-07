@@ -3,7 +3,7 @@ import knob from 'jquery-knob';
 import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
 
-import { stopGame } from '../actions';
+import * as actions from '../actions';
 import Timer from '../utils/timer.js';
 
 var timer = new Timer();
@@ -63,7 +63,7 @@ class Clock extends React.Component {
 
   _onChange() {
     if (timer.remaining === 0) {
-      this.props.stop();
+      this.props.stopGame();
       alert('Game over!');
     }
 
@@ -103,10 +103,4 @@ const mapStateToProps = (state) => ({
   started: state.started
 });
 
-const mapDispatchToProps = (dispatch) => ({
-  stop() {
-    dispatch(stopGame());
-  }
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(Clock);
+export default connect(mapStateToProps, actions)(Clock);
