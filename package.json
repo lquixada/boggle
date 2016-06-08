@@ -7,7 +7,7 @@
     "test": "mocha tests/**/*.spec.js --compilers js:babel-core/register",
     "test:debug": "mocha --debug-brk tests/**/*.spec.js --compilers js:babel-core/register",
     "start": "webpack-dev-server --config config/webpack.config.js --hot --inline",
-    "build": "webpack --config config/webpack.config.js",
+    "build": "webpack -p --config config/webpack.config.js",
     "lint": "eslint -c config/.eslintrc **/*.js",
     "publish": "npm run build && npm run deploy"
   },
