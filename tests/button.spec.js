@@ -1,24 +1,33 @@
-var React = require('react');
-var shallow = require('enzyme').shallow;
-var sinon = require('sinon');
-var expect = require('expect');
-var Button = require('../components/button.js');
+import './setup';
+import mountConnected from './helper';
+import React from 'react';
+import expect from 'expect';
+import store from '../store';
+import * as actions from '../actions';
+import Button from '../components/button.js';
 
-// Removes Connect wrapper
-Button = Button.default.WrappedComponent;
-
+// TODO: create store on beforeEach
 describe('<Button />', function () {
+  let component;
 
-  it('shows "start" when the game is stopped', function () {
-    var component = shallow(<Button started={false} />);
+  beforeEach(() => {
+    component = mountConnected(<Button />);
+  });
 
+  it('shows "start" by default', function () {
     expect(component.find('button').text()).toEqual('start');
   });
 
   it('shows "stop" when the game has started', function () {
-    var component = shallow(<Button started={true} />);
+    store.dispatch(actions.startGame());
 
     expect(component.find('button').text()).toEqual('stop');
+  });
+
+  it('shows "start" when the game has stopped', function () {
+    store.dispatch(actions.stopGame());
+
+    expect(component.find('button').text()).toEqual('start');
   });
 
 });

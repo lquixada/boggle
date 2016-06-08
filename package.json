@@ -5,6 +5,7 @@
   "scripts": {
     "deploy": "git push origin master:gh-pages",
     "test": "mocha tests/**/*.spec.js --compilers js:babel-core/register",
+    "test:debug": "mocha --debug-brk tests/**/*.spec.js --compilers js:babel-core/register",
     "start": "webpack-dev-server --config config/webpack.config.js --hot --inline",
     "build": "webpack --config config/webpack.config.js",
     "lint": "eslint -c config/.eslintrc **/*.js",
@@ -21,6 +22,7 @@
     "expect": "^1.18.0",
     "jquery": "^2.2.4",
     "jquery-knob": "^1.2.11",
+    "jsdom": "^9.2.1",
     "less-loader": "^2.2.3",
     "mocha": "^2.5.3",
     "null-loader": "^0.1.1",
