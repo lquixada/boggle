@@ -1,3 +1,5 @@
+var path = require('path');
+
 module.exports = {
   entry: [
     './index.js'
@@ -10,7 +12,7 @@ module.exports = {
     ]
   },
   output: {
-    path: __dirname,
+    path: path.join(__dirname, '..'),
     filename: 'bundle.js'
   }
 };
