@@ -8,8 +8,7 @@
     "test:debug": "mocha --debug-brk tests/**/*.spec.js --compilers js:babel-core/register",
     "start": "webpack-dev-server --config config/webpack.dev.config.js --hot --inline",
     "build": "webpack -p --config config/webpack.prod.config.js",
-    "lint": "eslint -c config/.eslintrc **/*.js",
-    "publish": "npm run build && npm run deploy"
+    "lint": "eslint -c config/.eslintrc **/*.js"
   },
   "devDependencies": {
     "babel-core": "^6.9.1",
