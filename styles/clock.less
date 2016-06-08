@@ -3,6 +3,36 @@
   height: 12rem;
   text-align: center;
 
+  .clock {
+    fill: transparent;
+    stroke-width: 20;
+
+    &.clock-gray {
+      stroke: #666;
+    }
+
+    &.clock-green {
+      stroke: #6c6;
+      transform: rotate(-90deg);
+      transform-origin: 50% 50%;
+      stroke-dasharray: 315;
+      stroke-dashoffset: 315;
+      transition: stroke-dashoffset 0s;
+
+      &.running {
+        stroke-dashoffset: 0;
+        transition: stroke-dashoffset 60s linear;
+      }
+    }
+  }
+
+  .counter {
+    fill: #fff;
+    font-family: Arial, sans-serif;
+    font-size: 3rem;
+    font-weight: bold;
+  }
+
   .micro-counter {
     display: none;
     font-size: 1.5rem;

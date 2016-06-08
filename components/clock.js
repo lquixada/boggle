@@ -1,5 +1,3 @@
-import $ from 'jquery';
-import knob from 'jquery-knob';
 import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
 
@@ -18,16 +16,11 @@ class Clock extends React.Component {
   }
 
   componentDidMount() {
-    this.renderDial();
     timer.on('tick', this._onChange);
   }
 
   componentWillUnmount() {
     timer.removeListener('tick', this._onChange);
-  }
-
-  componentDidUpdate() {
-    this.updateDial();
   }
 
   componentWillReceiveProps(nextProps) {
@@ -57,10 +50,6 @@ class Clock extends React.Component {
     return (secs<10 ? '0'+secs : secs);
   }
 
-  updateDial() {
-    $(this.refs.timer).trigger('change');
-  }
-
   _onChange() {
     if (timer.remaining === 0) {
       this.props.stopGame();
@@ -73,25 +62,16 @@ class Clock extends React.Component {
   render() {
     return (
       <div id="clock">
-        <input ref="timer" value={this.state.secs} readOnly="true" />
+        <svg width="120" height="120">
+          <circle r="50" cx="60" cy="60" className="clock clock-gray" />
+          <circle r="50" cx="60" cy="60" className={"clock clock-green "+(this.props.started? 'running': '')} />
+          <text x="60" y="70" className="counter" textAnchor="middle">
+            {this.state.secs}
+          </text>
+        </svg>
         <span className="micro-counter">Time left: 00:{this.getSecs()}</span>
       </div>
     );
-  }
-
-  renderDial() {
-    $(this.refs.timer).knob({
-      readOnly: true,
-      width: 120,
-      height: 120,
-      min: 0,
-      max: 60,
-      inputColor: '#fff',
-      bgColor: '#6c6',
-      fgColor: '#666',
-      thickness: '.30',
-      rotation: 'anticlockwise'
-    });
   }
 }
 
