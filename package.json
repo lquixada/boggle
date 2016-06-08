@@ -20,6 +20,7 @@
     "enzyme": "^2.3.0",
     "eslint": "^2.11.1",
     "expect": "^1.18.0",
+    "fetch-jsonp": "^1.0.0",
     "jquery": "^2.2.4",
     "jquery-knob": "^1.2.11",
     "jsdom": "^9.2.1",

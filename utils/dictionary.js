@@ -6,13 +6,15 @@
  * with an api such as Wiktionary.
  */
 
-import $ from 'jquery';
+import fetchJsonp from 'fetch-jsonp';
 
 class Dictionary {
   check(word, cb) {
     var url = 'https://en.wiktionary.org/w/api.php?action=query&format=json&callback=?&titles=';
 
-    return $.getJSON(url+word.toLowerCase(), function (data) {
+    return fetchJsonp(url+word.toLowerCase()).then((response) => {
+      return response.json();
+    }).then((data) => {
       cb(!data.query.pages[-1]);
     });
   }
