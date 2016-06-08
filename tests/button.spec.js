@@ -2,16 +2,20 @@ import './setup';
 import mountConnected from './helper';
 import React from 'react';
 import expect from 'expect';
-import store from '../store';
-import * as actions from '../actions';
+import { bindActionCreators } from 'redux'
+import configureStore from '../store';
+import * as actionCreators from '../actions';
 import Button from '../components/button.js';
 
-// TODO: create store on beforeEach
 describe('<Button />', function () {
+  let actions;
   let component;
+  let store;
 
   beforeEach(() => {
-    component = mountConnected(<Button />);
+    store = configureStore();
+    component = mountConnected(<Button />, store);
+    actions = bindActionCreators(actionCreators, store.dispatch);
   });
 
   it('shows "start" by default', function () {
@@ -19,13 +23,13 @@ describe('<Button />', function () {
   });
 
   it('shows "stop" when the game has started', function () {
-    store.dispatch(actions.startGame());
+    actions.startGame();
 
     expect(component.find('button').text()).toEqual('stop');
   });
 
   it('shows "start" when the game has stopped', function () {
-    store.dispatch(actions.stopGame());
+    actions.stopGame();
 
     expect(component.find('button').text()).toEqual('start');
   });
