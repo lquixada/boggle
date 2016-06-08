@@ -7,7 +7,7 @@ import configureStore from '../store';
 import * as actionCreators from '../actions';
 import Button from '../components/button.js';
 
-describe('<Button />', function () {
+describe('<Button />', () => {
   let actions;
   let component;
   let store;
@@ -18,17 +18,17 @@ describe('<Button />', function () {
     actions = bindActionCreators(actionCreators, store.dispatch);
   });
 
-  it('shows "start" by default', function () {
+  it('shows "start" by default', () => {
     expect(component.find('button').text()).toEqual('start');
   });
 
-  it('shows "stop" when the game has started', function () {
+  it('shows "stop" when the game has started', () => {
     actions.startGame();
 
     expect(component.find('button').text()).toEqual('stop');
   });
 
-  it('shows "start" when the game has stopped', function () {
+  it('shows "start" when the game has stopped', () => {
     actions.stopGame();
 
     expect(component.find('button').text()).toEqual('start');
