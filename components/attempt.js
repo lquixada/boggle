@@ -40,7 +40,7 @@ class Attempt extends React.Component {
     const value = this.state.value.toUpperCase();
 
     if (!this.hasBeenAttempted(value) && this.isOnBoard(value)) {
-      this.isValid(value, (isValid) => {
+      this.isValid(value).then((isValid) => {
         this.props.addAttempt(value, isValid);
         this.reset();
       });
@@ -60,9 +60,9 @@ class Attempt extends React.Component {
     return board.hasWord(value);
   }
 
-  isValid(value, cb) {
+  isValid(value) {
     const dictionary = new Dictionary();
-    return dictionary.check(value, cb);
+    return dictionary.check(value);
   }
 
   updateValue(evt) {
