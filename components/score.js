@@ -24,21 +24,13 @@ class Score extends React.Component {
     return this.props.attempts.map(function (attempt, i) {
       return (
         <tr key={i}>
-          <td>{attempt.word}</td>
-          <td>{attempt.score}</td>
+          <td>{attempt.get('word')}</td>
+          <td>{attempt.get('score')}</td>
         </tr>
       );
     });
   }
 }
-
-Score.propTypes = {
-  attempts: PropTypes.arrayOf(PropTypes.shape({
-    score: PropTypes.any.isRequired,
-    word: PropTypes.string.isRequired
-  }).isRequired).isRequired,
-  counter: PropTypes.number.isRequired
-};
 
 const mapStateToProps = (state) => ({
   attempts: state.attempts,

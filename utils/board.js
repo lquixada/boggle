@@ -8,7 +8,15 @@ class Board {
 
   get(i, j) {
     try {
-      return this.matrix[i][j];
+      return this.matrix.get(i).get(j);
+    } catch(e) {
+      return '*';
+    }
+  }
+
+  set(i, j, value) {
+    try {
+      return this.matrix.get(i).set(j, value);
     } catch(e) {
       return '*';
     }
@@ -43,23 +51,23 @@ class Board {
       return true;
     }
 
-    found = this.matrix[i][j];
+    found = this.get(i, j);
 
     // Mark temporarily in order to not traverse the same cell twice
-    this.matrix[i][j] = ' ';
+    this.set(i, j, ' ');
 
     for (var u=-1; u<=1; u++) {
       for (var v=-1; v<=1; v++) {
         if (this.get(i+u, j+v) === seq.charAt(1)) {
           if (this.findSequence(seq.substr(1), i+u, j+v)) {
-            this.matrix[i][j] = found;
+            this.set(i, j, found);
             return true;
           }
         }
       }
     }
 
-    this.matrix[i][j] = found;
+    this.set(i, j, found);
     return false;
   }
 }

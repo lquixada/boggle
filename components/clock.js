@@ -75,10 +75,6 @@ class Clock extends React.Component {
   }
 }
 
-Clock.propTypes = {
-  started: PropTypes.bool.isRequired
-};
-
 const mapStateToProps = (state) => ({
   started: state.started
 });

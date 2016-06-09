@@ -28,10 +28,6 @@ export default class Board extends React.Component {
   }
 }
 
-Board.propTypes = {
-  matrix: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.string)).isRequired
-};
-
 const mapStateToProps = (state) => ({
   matrix: state.matrix
 });

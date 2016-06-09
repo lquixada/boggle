@@ -1,4 +1,5 @@
 import _ from 'underscore';
+import { List } from 'immutable';
 
 class Board {
   constructor() {
@@ -24,11 +25,12 @@ class Board {
   }
 
   place(drawn) {
-    var grouped = _.groupBy(drawn, function(letter, i) {
+    var grouped = _.groupBy(drawn, (letter, i) => {
       return (i%this.dim);
-    }, this);
+    });
+    grouped = _.toArray(grouped);
 
-    return _.toArray(grouped);
+    return List(grouped.map(List));
   }
 
   shake() {
@@ -41,12 +43,12 @@ class Board {
   }
 
   clear() {
-    this._matrix = [
-      [' ', ' ', ' ', ' '],
-      [' ', ' ', ' ', ' '],
-      [' ', ' ', ' ', ' '],
-      [' ', ' ', ' ', ' ']
-    ];
+    this._matrix = List.of(
+      List([' ', ' ', ' ', ' ']),
+      List([' ', ' ', ' ', ' ']),
+      List([' ', ' ', ' ', ' ']),
+      List([' ', ' ', ' ', ' '])
+    );
   }
 
   getMatrix() {

@@ -100,15 +100,6 @@ class Attempt extends React.Component {
   }
 }
 
-Attempt.propTypes = {
-  attempts: PropTypes.arrayOf(PropTypes.shape({
-    score: PropTypes.any.isRequired,
-    word: PropTypes.string.isRequired
-  }).isRequired).isRequired,
-  matrix: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.string)).isRequired,
-  started: PropTypes.bool.isRequired
-};
-
 const mapStateToProps = (state) => ({
   attempts: state.attempts,
   matrix: state.matrix,
