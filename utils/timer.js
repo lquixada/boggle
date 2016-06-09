@@ -7,7 +7,7 @@ class Timer extends events.EventEmitter {
     this.reset();
   }
 
-  start(options) {
+  start() {
     this.started = true;
     this.timer = setInterval(() => {
       this.remaining--;
