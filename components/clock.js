@@ -64,7 +64,7 @@ class Clock extends React.Component {
       <div id="clock">
         <svg width="120" height="120">
           <circle r="50" cx="60" cy="60" className="clock clock-gray" />
-          <circle r="50" cx="60" cy="60" className={"clock clock-green "+(this.props.started? 'running': '')} />
+          <circle r="50" cx="60" cy="60" className={'clock clock-green '+(this.props.started? 'running': '')} />
           <text x="60" y="70" className="counter" textAnchor="middle">
             {this.state.secs}
           </text>
