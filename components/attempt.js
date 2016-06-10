@@ -1,5 +1,5 @@
 import _ from 'underscore';
-import React, { PropTypes } from 'react';
+import React from 'react';
 import * as actions from '../actions';
 import { connect } from 'react-redux';
 
