@@ -74,6 +74,13 @@ $ grunt githooks
 * jQuery
 * [TravisCI](https://travis-ci.org/lquixada/boggle)
 
+## TODO
+
+* Retest on every browser (including IE10+)
+* Update README
+* Add more specs
+* About page (to practice ReactRouter and code splitting)
+* Command to add npm test on git push hook
 
 ## Pending Improvements
 
