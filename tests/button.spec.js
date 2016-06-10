@@ -1,7 +1,5 @@
-import './setup';
 import mountConnected from './helper';
 import React from 'react';
-import { expect } from 'chai';
 import { bindActionCreators } from 'redux'
 import configureStore from '../store';
 import * as actionCreators from '../actions';

@@ -1,7 +1,4 @@
-import './setup';
 import React from 'react';
-import chai from 'chai';
-import chaiImmutable from 'chai-immutable';
 import mountConnected from './helper';
 import { List } from 'immutable';
 import { bindActionCreators } from 'redux'
@@ -9,9 +6,6 @@ import configureStore from '../store';
 import * as actionCreators from '../actions';
 import BoardChecker from '../utils/board-checker';
 import Board from '../components/board';
-
-chai.use(chaiImmutable);
-const expect = chai.expect;
 
 describe('<Board />', () => {
   let actions;
