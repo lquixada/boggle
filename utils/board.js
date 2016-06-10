@@ -17,16 +17,12 @@ class Board {
   set(i, j, value) {
     try {
       return this.matrix.get(i).set(j, value);
-    } catch(e) {
+    } catch (e) {
       return '*';
     }
   }
 
   hasWord(word) {
-    if (word.length < this.minLength) {
-      return false;
-    }
-
     word = word.toUpperCase();
 
     // Find the first letter
