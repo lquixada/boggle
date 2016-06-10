@@ -1,6 +1,6 @@
 import _ from 'underscore';
 
-class Board {
+class BoardChecker {
   constructor(matrix) {
     this.dim = 4;
     this.matrix = matrix;
@@ -68,4 +68,4 @@ class Board {
   }
 }
 
-export default Board;
+export default BoardChecker;

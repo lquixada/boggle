@@ -1,16 +1,50 @@
 import './setup';
+import React from 'react';
 import chai from 'chai';
 import chaiImmutable from 'chai-immutable';
+import mountConnected from './helper';
 import { List } from 'immutable';
 import { bindActionCreators } from 'redux'
 import configureStore from '../store';
 import * as actionCreators from '../actions';
-import Board from '../utils/Board';
+import BoardChecker from '../utils/board-checker';
+import Board from '../components/board';
 
 chai.use(chaiImmutable);
 const expect = chai.expect;
 
-describe('Board checker', () => {
+describe('<Board />', () => {
+  let actions;
+  let component;
+  let store;
+
+  beforeEach(() => {
+    store = configureStore();
+    component = mountConnected(<Board />, store);
+    actions = bindActionCreators(actionCreators, store.dispatch);
+  });
+
+  it('is empty by default', () => {
+    const text = component.find('table').text();
+    expect(text.trim()).to.be.empty;
+  });
+
+  it('is filled when the game has started', () => {
+    actions.startGame();
+    const text = component.find('table').text();
+    expect(text.trim()).to.not.be.empty;
+    expect(text.trim()).to.have.lengthOf(16);
+  });
+
+  it('is empty when the game has stopped', () => {
+    actions.stopGame();
+    const text = component.find('table').text();
+    expect(text.trim()).to.be.empty;
+  });
+
+});
+
+describe('BoardChecker', () => {
   let actions;
   let store;
   let state;
@@ -27,7 +61,7 @@ describe('Board checker', () => {
       List(['N', 'O', 'R', 'M']),
       List(['A', 'I', 'X', 'V'])
     ]);
-    const board = new Board(matrix);
+    const board = new BoardChecker(matrix);
 
     expect(board.hasWord('norm')).to.be.equal(true);
   });
@@ -39,7 +73,7 @@ describe('Board checker', () => {
       List(['M', 'R', 'O', 'N']),
       List(['A', 'I', 'X', 'V'])
     ]);
-    const board = new Board(matrix);
+    const board = new BoardChecker(matrix);
 
     expect(board.hasWord('norm')).to.be.equal(true);
   });
@@ -51,7 +85,7 @@ describe('Board checker', () => {
       List(['M', 'R', 'R', 'N']),
       List(['A', 'I', 'X', 'M'])
     ]);
-    const board = new Board(matrix);
+    const board = new BoardChecker(matrix);
 
     expect(board.hasWord('norm')).to.be.equal(true);
   });
@@ -63,7 +97,7 @@ describe('Board checker', () => {
       List(['T', 'R', 'R', 'N']),
       List(['M', 'I', 'X', 'M'])
     ]);
-    const board = new Board(matrix);
+    const board = new BoardChecker(matrix);
 
     expect(board.hasWord('norm')).to.be.equal(true);
   });
@@ -75,7 +109,7 @@ describe('Board checker', () => {
       List(['T', 'R', 'M', 'N']),
       List(['M', 'I', 'X', 'M'])
     ]);
-    const board = new Board(matrix);
+    const board = new BoardChecker(matrix);
 
     expect(board.hasWord('norm')).to.be.equal(true);
   });

@@ -3,8 +3,8 @@ import React, { PropTypes } from 'react';
 import * as actions from '../actions';
 import { connect } from 'react-redux';
 
-import Board from '../utils/board.js';
-import Dictionary from '../utils/dictionary.js';
+import BoardChecker from '../utils/board-checker';
+import Dictionary from '../utils/dictionary';
 
 
 class Attempt extends React.Component {
