@@ -2,6 +2,7 @@
 
 A web-based implementation of the Boggle game. More info on https://en.wikipedia.org/wiki/Boggle
 
+
 ## Installation
 
 ```
@@ -12,6 +13,7 @@ $ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.30.1/install.sh |
 $ nvm install 5.0
 $ nvm use 5.0
 ```
+
 
 ## Getting Started
 
@@ -65,9 +67,10 @@ $ npm run githooks
 
 * Fix mobile version
 * Retest on every browser (including IE10+)
-* Add more specs
 * About page (to practice ReactRouter and code splitting)
 * Command to add npm test on git push hook
+* Optimize word checking
+
 
 ## Pending Improvements
 
