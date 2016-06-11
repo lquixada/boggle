@@ -75,8 +75,6 @@ class Clock extends React.Component {
   }
 }
 
-const mapStateToProps = (state) => ({
-  started: state.started
-});
+const mapStateToProps = ({ started }) => ({ started });
 
 export default connect(mapStateToProps, actions)(Clock);

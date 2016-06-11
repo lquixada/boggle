@@ -100,10 +100,6 @@ class Attempt extends React.Component {
   }
 }
 
-const mapStateToProps = (state) => ({
-  attempts: state.attempts,
-  matrix: state.matrix,
-  started: state.started
-});
+const mapStateToProps = ({ attempts, matrix, started }) => ({ attempts, matrix, started });
 
 export default connect(mapStateToProps, actions)(Attempt);

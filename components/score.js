@@ -32,9 +32,6 @@ class Score extends React.Component {
   }
 }
 
-const mapStateToProps = (state) => ({
-  attempts: state.attempts,
-  counter: state.counter
-});
+const mapStateToProps = ({ attempts, counter }) => ({ attempts, counter });
 
 export default connect(mapStateToProps)(Score);

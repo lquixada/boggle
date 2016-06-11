@@ -28,8 +28,6 @@ export default class Board extends React.Component {
   }
 }
 
-const mapStateToProps = (state) => ({
-  matrix: state.matrix
-});
+const mapStateToProps = ({ matrix }) => ({ matrix });
 
 export default connect(mapStateToProps)(Board);
