@@ -3,9 +3,6 @@ import React from 'react';
 import * as actions from '../actions';
 import { connect } from 'react-redux';
 
-import BoardChecker from '../utils/board-checker';
-import Dictionary from '../utils/dictionary';
-
 
 class Attempt extends React.Component {
   constructor(props) {
@@ -32,37 +29,9 @@ class Attempt extends React.Component {
     }
 
     if (evt.which === 13) {
-      this.check();
-    }
-  }
-
-  check() {
-    const value = this.state.value.toUpperCase();
-
-    if (!this.hasBeenAttempted(value) && this.isOnBoard(value)) {
-      this.isValid(value).then((isValid) => {
-        this.props.addAttempt(value, isValid);
-        this.reset();
-      });
-    } else {
-      this.props.addAttempt(value, false);
+      this.props.addCheckedAttempt(this.state.value);
       this.reset();
     }
-  }
-
-  hasBeenAttempted(value) {
-    const found = _.findWhere(this.props.attempts, {word: value});
-    return Boolean(found);
-  }
-
-  isOnBoard(value) {
-    const board = new BoardChecker(this.props.matrix);
-    return board.hasWord(value);
-  }
-
-  isValid(value) {
-    const dictionary = new Dictionary();
-    return dictionary.check(value);
   }
 
   handleChange(evt) {
@@ -101,6 +70,6 @@ class Attempt extends React.Component {
   }
 }
 
-const mapStateToProps = ({ attempts, matrix, started }) => ({ attempts, matrix, started });
+const mapStateToProps = ({ attempts, started }) => ({ attempts, started });
 
 export default connect(mapStateToProps, actions)(Attempt);
