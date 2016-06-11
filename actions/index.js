@@ -1,6 +1,4 @@
-import _ from 'underscore';
-import BoardChecker from '../utils/board-checker';
-import Dictionary from '../utils/dictionary';
+import { isOnScoreList, isOnBoard, isOnDictionary } from '../utils/helper';
 
 export const addAttempt = (word, scored) => ({
   type: 'ADD_ATTEMPT',
@@ -15,21 +13,6 @@ export const startGame = () => ({
 export const stopGame = () => ({
   type: 'STOP_GAME'
 });
-
-const isOnScoreList = (attempts, word) => {
-  const found = _.findWhere(attempts, {word: word});
-  return Boolean(found);
-}
-
-const isOnBoard = (matrix, word) => {
-  const board = new BoardChecker(matrix);
-  return board.hasWord(word);
-}
-
-const isOnDictionary = (word) => {
-  const dictionary = new Dictionary();
-  return dictionary.check(word);
-}
 
 export const addCheckedAttempt = (word) => {
   word = word.toUpperCase();
