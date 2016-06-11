@@ -26,7 +26,7 @@ class Attempt extends React.Component {
     this.focus();
   }
 
-  onEnter(evt) {
+  handleEnter(evt) {
     if (this.state.value.length < this.state.minLength) {
       return;
     }
@@ -56,7 +56,7 @@ class Attempt extends React.Component {
   }
 
   isOnBoard(value) {
-    const board = new Board(this.props.matrix);
+    const board = new BoardChecker(this.props.matrix);
     return board.hasWord(value);
   }
 
@@ -65,7 +65,7 @@ class Attempt extends React.Component {
     return dictionary.check(value);
   }
 
-  updateValue(evt) {
+  handleChange(evt) {
     this.setValue(evt.target.value);
   }
 
@@ -89,9 +89,10 @@ class Attempt extends React.Component {
   render() {
     return (
       <div id="attempt">
-        <input type="text" ref="attempt" value={this.state.value}
-          onChange={this.updateValue.bind(this)}
-          onKeyUp={this.onEnter.bind(this)}
+        <input type="text" ref="attempt"
+          value={this.state.value}
+          onChange={this.handleChange.bind(this)}
+          onKeyUp={this.handleEnter.bind(this)}
           className="box"
           disabled={!this.props.started}
           placeholder={this.props.started? 'Type the word and hit Enter' : 'Press start to begin...'} />
