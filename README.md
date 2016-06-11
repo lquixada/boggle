@@ -63,6 +63,7 @@ $ npm run githooks
 
 ## TODO
 
+* Fix mobile version
 * Retest on every browser (including IE10+)
 * Add more specs
 * About page (to practice ReactRouter and code splitting)
