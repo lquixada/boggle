@@ -1,4 +1,3 @@
-import _ from 'underscore';
 import React from 'react';
 import * as actions from '../actions';
 import { connect } from 'react-redux';
@@ -13,14 +12,8 @@ class Attempt extends React.Component {
     };
   }
 
-  componentWillReceiveProps(nextProps) {
-    if (!nextProps.started) {
-      this.clear();
-    }
-  }
-
-  componentDidUpdate() {
-    this.focus();
+  handleChange(evt) {
+    this.setValue(evt.target.value);
   }
 
   handleEnter(evt) {
@@ -34,24 +27,12 @@ class Attempt extends React.Component {
     }
   }
 
-  handleChange(evt) {
-    this.setValue(evt.target.value);
-  }
-
   setValue(value) {
     this.setState({value: value.trim()});
   }
 
   reset() {
-    this.clear();
-    this.focus();
-  }
-
-  clear() {
     this.setValue('');
-  }
-
-  focus() {
     this.refs.attempt.focus();
   }
 
@@ -64,12 +45,12 @@ class Attempt extends React.Component {
           onKeyUp={this.handleEnter.bind(this)}
           className="box"
           disabled={!this.props.started}
-          placeholder={this.props.started? 'Type the word and hit Enter' : 'Press start to begin...'} />
+          placeholder={this.props.started? 'Type the word and hit Enter!' : 'Press start to begin...'} />
       </div>
     );
   }
 }
 
-const mapStateToProps = ({ attempts, started }) => ({ attempts, started });
+const mapStateToProps = ({ started }) => ({ started });
 
 export default connect(mapStateToProps, actions)(Attempt);
