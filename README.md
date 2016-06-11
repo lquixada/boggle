@@ -1,33 +1,16 @@
 # Boggle Game [![Build Status](https://travis-ci.org/lquixada/boggle.svg?branch=master)](https://travis-ci.org/lquixada/boggle)
 
-A web-based implementation of the Boggle game.
-
-More info on https://en.wikipedia.org/wiki/Boggle
+A web-based implementation of the Boggle game. More info on https://en.wikipedia.org/wiki/Boggle
 
 ## Installation
 
-Go to the install folder and run the following steps.
-
-### Project
-
 ```
 $ git clone https://github.com/lquixada/boggle.git
-```
-
-### Node.js
-
-```
-$ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.30.1/install.sh | bash
-$ nvm install 0.12
-$ nvm use 0.12
-```
-
-### App
-
-```
 $ cd boggle
 $ npm install
-$ npm install -g grunt-cli
+$ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.30.1/install.sh | bash
+$ nvm install 5.0
+$ nvm use 5.0
 ```
 
 ## Getting Started
@@ -35,49 +18,52 @@ $ npm install -g grunt-cli
 To run the app locally, just run:
 
 ```
-$ npm run server
+$ npm start
 ```
 
-You may also run:
+To run tests and lint, run:
 
 ```
-$ grunt review
+$ npm run all
 ```
 
 To check a few things during development:
-* Code is linted
-* Ciclomatic complexity is checked
-* Browser is reloaded
 * Specs are run
-* Notify is something went wrong
+* Code is linted
+* Ciclomatic complexity is checked [not implemented yet]
+* Notify is something went wrong [not implemented yet]
 
-If you prefer to review your code at every push, run:
+If you prefer to review your code at every push [not implemented yet], run:
 
 ```
-$ grunt githooks
+$ npm run githooks
 ```
 
 
-## Grunt tasks
+## Tasks
 
-* *grunt lint*: lint files
-* *grunt review*: run lint + spec
+* *npm start*: start application
+* *npm run build*: builds production bundle.js
+* *npm run deploy*: deploys master branch to gh-pages branch
+* *npm run lint*: lint files
+* *npm run test*: test files
+* *npm run test:watch*: test files on the fly
+* *npm run all*: lint and test files
 
 
 ## Stack
 
-* Webpack
-* Grunt
-* NPM
-* Less
-* Underscore
-* jQuery
+* App: react, redux, underscore
+* Style: less
+* Tests: mocha, chai, enzyme, sinon
+* Lint: eslint
+* Utils: npm, webpack, babel
 * [TravisCI](https://travis-ci.org/lquixada/boggle)
+
 
 ## TODO
 
 * Retest on every browser (including IE10+)
-* Update README
 * Add more specs
 * About page (to practice ReactRouter and code splitting)
 * Command to add npm test on git push hook
