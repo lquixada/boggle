@@ -9,7 +9,9 @@
     "test:watch": "npm test -- --watch --growl",
     "start": "webpack-dev-server --config config/webpack.dev.config.js --hot --inline",
     "build": "webpack -p --config config/webpack.prod.config.js",
-    "lint": "eslint -c config/.eslintrc **/*.js"
+    "lint": "eslint -c config/.eslintrc **/*.js",
+    "precommit": "npm run all",
+    "prepush": "npm run all"
   },
   "devDependencies": {
     "babel-core": "^6.9.1",
@@ -22,6 +24,7 @@
     "enzyme": "^2.3.0",
     "eslint": "^2.11.1",
     "fetch-jsonp": "^1.0.0",
+    "husky": "^0.11.4",
     "jsdom": "^9.2.1",
     "less": "^2.7.1",
     "less-loader": "^2.2.3",
