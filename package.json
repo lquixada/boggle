@@ -23,6 +23,7 @@
     "eslint": "^2.11.1",
     "fetch-jsonp": "^1.0.0",
     "jsdom": "^9.2.1",
+    "less": "^2.7.1",
     "less-loader": "^2.2.3",
     "mocha": "^2.5.3",
     "null-loader": "^0.1.1",
