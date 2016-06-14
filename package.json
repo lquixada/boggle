@@ -1,7 +1,7 @@
 {
   "name": "boggle",
   "version": "0.0.1",
-  "description": "Boggle Game",
+  "description": "A web-based implementation of the Boggle game for React study purposes.",
   "scripts": {
     "all": "npm run test && npm run lint",
     "deploy": "git push origin master:gh-pages",
