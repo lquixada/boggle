@@ -10,6 +10,9 @@ class Attempt extends React.Component {
       value: '',
       minLength: 2
     };
+
+    this.handleChange = this.handleChange.bind(this);
+    this.handleEnter = this.handleEnter.bind(this);
   }
 
   handleChange(evt) {
@@ -39,13 +42,15 @@ class Attempt extends React.Component {
   render() {
     return (
       <div id="attempt">
-        <input type="text" ref="attempt"
-          value={this.state.value}
-          onChange={this.handleChange.bind(this)}
-          onKeyUp={this.handleEnter.bind(this)}
+        <input
+          type="text"
           className="box"
+          ref="attempt"
+          value={this.state.value}
+          onChange={this.handleChange}
+          onKeyUp={this.handleEnter}
           disabled={!this.props.started}
-          placeholder={this.props.started? 'Type the word and hit Enter!' : 'Press start to begin...'} />
+          placeholder={this.props.started ? 'Type the word and hit Enter!' : 'Press start to begin...'} />
       </div>
     );
   }
