@@ -67,6 +67,7 @@ $ npm run githooks
 
 * Fix mobile version
 * Retest on every browser (including IE10+)
+* Use flexbox with support to IE10
 * About page (to practice ReactRouter and code splitting)
 * Command to add npm test on git push hook
 * Optimize word checking
