@@ -2,7 +2,10 @@ main {
   min-width: 35rem;
   height: 100%;
   display: flex;
+  display: -ms-flexbox;
   flex-flow: column nowrap;
+  -ms-flex-direction: column;
+  -ms-flex-wrap: none;
 
   > header {
     padding: 2rem;
@@ -22,7 +25,8 @@ main {
 
   > section {
     padding: 2rem;
-    flex-grow: 1;
+    flex: 1 0;
+    -ms-flex: 1 0;
 
     aside {
       display: inline-block;
@@ -39,9 +43,16 @@ main {
 
     .container {
       display: flex;
+      display: -ms-flexbox;
+    }
+
+    a {
+      display: inline-block;
     }
 
     .copyright {
+      flex: 3 0;
+      -ms-flex: 3 0;
       line-height: 2rem;
 
       .build-status {
@@ -60,10 +71,13 @@ main {
 
     .social {
       flex: 1 0;
+      -ms-flex: 1 0;
 
       ul {
         display: flex;
+        display: -ms-flexbox;
         justify-content: flex-end;
+        -ms-flex-pack: end;
       }
 
       li {
@@ -72,7 +86,6 @@ main {
       }
 
       a {
-        display: inline-block;
         color: #999;
 
         img {
