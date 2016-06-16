@@ -5,6 +5,7 @@
   "scripts": {
     "all": "npm run test && npm run lint",
     "deploy": "git push origin master:gh-pages",
+    "prepush": "npm run all",
     "test": "mocha tests/**/*.spec.js --compilers js:babel-core/register --require tests/setup.js",
     "test:watch": "npm test -- --watch --growl",
     "start": "webpack-dev-server --config config/webpack.dev.config.js --hot --inline",
@@ -22,6 +23,7 @@
     "enzyme": "^2.3.0",
     "eslint": "^2.11.1",
     "fetch-jsonp": "^1.0.0",
+    "husky": "^0.11.4",
     "jsdom": "^9.2.1",
     "less": "^2.7.1",
     "less-loader": "^2.2.3",

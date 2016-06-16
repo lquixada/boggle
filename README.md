@@ -35,12 +35,6 @@ To check a few things during development:
 * Ciclomatic complexity is checked [not implemented yet]
 * Notify is something went wrong [not implemented yet]
 
-If you prefer to review your code at every push [not implemented yet], run:
-
-```
-$ npm run githooks
-```
-
 
 ## Tasks
 
@@ -68,7 +62,6 @@ $ npm run githooks
 * Fix mobile version
 * Retest on every browser (including IE10+)
 * About page (to practice ReactRouter and code splitting)
-* Command to add npm test on git push hook
 * Optimize word checking
 
 
