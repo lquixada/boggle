@@ -1,4 +1,5 @@
 import React from 'react';
+import _ from 'underscore';
 import { connect } from 'react-redux';
 
 import * as actions from '../actions';
@@ -9,18 +10,19 @@ var timer = new Timer();
 class Clock extends React.Component {
   constructor(props) {
     super(props);
-    this._onChange = this._onChange.bind(this);
     this.state = {
       secs: timer.remaining
     };
+
+    _.bindAll(this, 'handleChange');
   }
 
   componentDidMount() {
-    timer.on('tick', this._onChange);
+    timer.on('tick', this.handleChange);
   }
 
   componentWillUnmount() {
-    timer.removeListener('tick', this._onChange);
+    timer.removeListener('tick', this.handleChange);
   }
 
   componentWillReceiveProps(nextProps) {
@@ -50,7 +52,7 @@ class Clock extends React.Component {
     return (secs<10 ? '0'+secs : secs);
   }
 
-  _onChange() {
+  handleChange() {
     if (timer.remaining === 0) {
       this.props.stopGame();
       alert('Game over!');
