@@ -1,6 +1,6 @@
 # Boggle Game [![Build Status](https://travis-ci.org/lquixada/boggle.svg?branch=master)](https://travis-ci.org/lquixada/boggle)
 
-A web-based implementation of the Boggle game. More info on https://en.wikipedia.org/wiki/Boggle
+A web-based implementation of the Boggle game for study purposes. More info on https://en.wikipedia.org/wiki/Boggle.
 
 
 ## Installation
@@ -10,30 +10,25 @@ $ git clone https://github.com/lquixada/boggle.git
 $ cd boggle
 $ npm install
 $ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.30.1/install.sh | bash
-$ nvm install 5.0
-$ nvm use 5.0
+$ nvm install
+$ nvm use
 ```
 
 
 ## Getting Started
 
-To run the app locally, just run:
+To run the app locally, run:
 
 ```
 $ npm start
 ```
 
-To run tests and lint, run:
+And go to [http://localhost:8080/].
+To run all tests and lints, run:
 
 ```
 $ npm run all
 ```
-
-To check a few things during development:
-* Specs are run
-* Code is linted
-* Ciclomatic complexity is checked [not implemented yet]
-* Notify is something went wrong [not implemented yet]
 
 
 ## Tasks
