@@ -8,6 +8,12 @@ main {
   -ms-flex-wrap: none;
 
   > header {
+    display: flex;
+    display: -ms-flexbox;
+    flex: none;
+    -ms-flex: none;
+    justify-content: center;
+    -ms-flex-pack: center;
     padding: 2rem;
     background-color: #565656;
 
@@ -22,9 +28,13 @@ main {
   }
 
   > section {
+    display: flex;
+    display: -ms-flexbox;
+    justify-content: center;
+    -ms-flex-pack: center;
     padding: 2rem;
-    flex: 1 0;
-    -ms-flex: 1 0;
+    flex: 1 0 auto;
+    -ms-flex: 1 0 auto;
 
     aside {
       vertical-align: top;
@@ -32,6 +42,12 @@ main {
   }
 
   > footer {
+    display: flex;
+    display: -ms-flexbox;
+    flex: none;
+    -ms-flex: none;
+    justify-content: center;
+    -ms-flex-pack: center;
     padding: 2rem;
     color: #999;
     font-size: 1.2rem;
@@ -96,10 +112,26 @@ main {
 
 @media (max-width: 540px) {
   main {
+    > header {
+      .container {
+        flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+      }
+    }
+
     > section {
+      .container {
+        flex-direction: column;
+        -ms-flex-direction: column;
+      }
+
       aside {
-        display: block;
+        display: flex;
+        display: -ms-flexbox;
+        justify-content: space-between;
+        -ms-flex-pack: justify;
         margin: 0;
+        width: 100%;
       }
     }
   }

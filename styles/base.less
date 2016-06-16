@@ -28,18 +28,14 @@ img {
 /* Grid */
 
 .container {
-  margin: auto;
-  width: 54rem;
+  max-width: 54rem;
+  width: 100%;
   display: flex;
   display: -ms-flexbox;
   justify-content: space-between;
   -ms-flex-pack: justify;
-}
-
-@media (max-width: 540px) {
-  .container {
-    width: 90%;
-  }
+  align-items: flex-start;
+  -ms-flex-align: start;
 }
 
 @media (max-width: 800px) {
