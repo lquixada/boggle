@@ -14,18 +14,18 @@ class App extends React.Component {
         <header>
           <div className="container">
             <h1>BOGGLE</h1>
-            <Button />
             <Attempt />
+            <Button />
           </div>
         </header>
 
         <section>
           <div className="container">
-            <Board />
             <aside>
               <Clock />
               <Score />
             </aside>
+            <Board />
           </div>
         </section>
 
