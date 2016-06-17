@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router';
 
 import Attempt from './attempt';
 import Board from './board';
@@ -13,7 +14,7 @@ class App extends React.Component {
       <main>
         <header>
           <div className="container">
-            <h1>BOGGLE</h1>
+            <h1><Link to="/">BOGGLE</Link></h1>
             <Attempt />
             <Button />
           </div>
@@ -32,7 +33,7 @@ class App extends React.Component {
         <footer>
           <div className="container">
             <div className="copyright">
-              &copy; Copyright 2016 Leonardo Quixadá. All rights reserved.
+              &copy; Copyright 2016 <Link to="/about">Leonardo Quixadá</Link>. All rights reserved.
               <a href="https://travis-ci.org/lquixada/boggle">
                 <img src="https://travis-ci.org/lquixada/boggle.svg?branch=master" className="build-status" />
               </a>
