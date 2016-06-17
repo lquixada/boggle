@@ -1,4 +1,5 @@
 var path = require('path');
+var webpack = require('webpack');
 
 module.exports = {
   entry: './index.js',
@@ -13,6 +14,9 @@ module.exports = {
     path: path.join(__dirname, '..'),
     filename: 'bundle.js'
   },
+  plugins: [
+    new webpack.HotModuleReplacementPlugin()
+  ],
   devServer: {
     // Enable special support for Hot Module Replacement
     // Page is no longer updated, but a "webpackHotUpdate" message is send to the content

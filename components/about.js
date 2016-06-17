@@ -3,6 +3,14 @@ import { Link } from 'react-router';
 
 
 class About extends React.Component {
+  handleClick() {
+    require.ensure(['../utils/alert'], (require) => {
+      const alert = require('../utils/alert');
+
+      alert('code-split example!');
+    });
+  }
+
   render() {
     return (
       <main>
@@ -19,7 +27,7 @@ class About extends React.Component {
                 <img src="https://s.gravatar.com/avatar/a0ac79788f87ca12cda519b3a1bb2a7c?s=100" />
               </span>
 
-              <h2>About me</h2>
+              <h2 onClick={this.handleClick.bind(this)}>About me</h2>
 
               <p>Loving Software, Delivering Product.</p>
 
