@@ -58,6 +58,7 @@ $ npm run all
 * Retest on every browser (including IE10+)
 * About page (to practice ReactRouter and code splitting)
 * Optimize word checking
+* use browserHistory on lquixada.github.io/boggle/
 
 
 ## Pending Improvements
