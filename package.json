@@ -10,7 +10,7 @@
     "test:watch": "npm test -- --watch --growl",
     "start": "webpack-dev-server --config config/webpack.dev.config.js",
     "build": "webpack -p --config config/webpack.prod.config.js",
-    "lint": "eslint -c config/.eslintrc **/*.js"
+    "lint": "eslint **/*.js"
   },
   "devDependencies": {
     "babel-core": "^6.9.1",
