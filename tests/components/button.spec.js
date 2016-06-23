@@ -1,9 +1,9 @@
 import mountConnected from '../helper';
 import React from 'react';
 import { bindActionCreators } from 'redux'
-import configureStore from '../../store';
-import * as actionCreators from '../../actions';
-import Button from '../../components/button.js';
+import configureStore from '../../src/store';
+import * as actionCreators from '../../src/actions';
+import Button from '../../src/components/button.js';
 
 describe('<Button />', () => {
   let actions;

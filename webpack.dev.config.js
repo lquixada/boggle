@@ -2,21 +2,26 @@ var path = require('path');
 var webpack = require('webpack');
 
 module.exports = {
-  entry: './index.js',
+  entry: './src/index.js',
+
   devtool: 'source-map',
+
   module: {
     loaders: [
       { test: /\.js$/, exclude: /node_modules/, loaders: ['react-hot', 'babel'] },
       { test: /\.less$/, loaders: ['style', 'css', 'less'] }
     ]
   },
+
   output: {
     path: path.join(__dirname, '..'),
     filename: 'bundle.js'
   },
+
   plugins: [
     new webpack.HotModuleReplacementPlugin()
   ],
+
   devServer: {
     // Enable special support for Hot Module Replacement
     // Page is no longer updated, but a "webpackHotUpdate" message is send to the content

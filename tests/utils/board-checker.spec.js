@@ -1,8 +1,8 @@
 import { List } from 'immutable';
 import { bindActionCreators } from 'redux'
-import configureStore from '../../store';
-import * as actionCreators from '../../actions';
-import BoardChecker from '../../utils/board-checker';
+import configureStore from '../../src/store';
+import * as actionCreators from '../../src/actions';
+import BoardChecker from '../../src/utils/board-checker';
 
 describe('BoardChecker', () => {
   let actions;

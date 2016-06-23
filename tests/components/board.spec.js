@@ -1,9 +1,9 @@
 import React from 'react';
 import mountConnected from '../helper';
 import { bindActionCreators } from 'redux'
-import configureStore from '../../store';
-import * as actionCreators from '../../actions';
-import Board from '../../components/board';
+import configureStore from '../../src/store';
+import * as actionCreators from '../../src/actions';
+import Board from '../../src/components/board';
 
 describe('<Board />', () => {
   let actions;
