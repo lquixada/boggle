@@ -54,6 +54,7 @@ $ npm run all
 
 ## TODO
 
+* dist/ folder
 * Fix mobile version
 * Retest on every browser (including IE10+)
 * About page (to practice ReactRouter and code splitting)
