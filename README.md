@@ -54,12 +54,15 @@ $ npm run all
 
 ## TODO
 
-* dist/ folder
+* Convert to isomorphic app
+* Find a free hosting service
+* Use browserHistory
+* Try webpack 2
 * Fix mobile version
 * Retest on every browser (including IE10+)
 * About page (to practice ReactRouter and code splitting)
 * Optimize word checking
-* use browserHistory on lquixada.github.io/boggle/
+* dist/ folder
 
 
 ## Pending Improvements
