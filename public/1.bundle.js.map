@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack:///./src/utils/alert.js"],"names":[],"mappings":";;;;;;;;;AAAA,QAAO,OAAP,GAAiB,UAAS,GAAT,EAAc;AAC7B,SAAM,GAAN;AACD,EAFD,C","file":"1.bundle.js","sourcesContent":["module.exports = function(msg) {\n  alert(msg);\n};\n\n\n\n/** WEBPACK FOOTER **\n ** ./src/utils/alert.js\n **/"],"sourceRoot":""}

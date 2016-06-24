@@ -2,19 +2,19 @@ var path = require('path');
 var webpack = require('webpack');
 
 module.exports = {
-  entry: './src/index.js',
+  entry: './client.js',
 
   devtool: 'source-map',
 
   module: {
     loaders: [
-      { test: /\.js$/, exclude: /node_modules/, loaders: ['babel'] },
-      { test: /\.less$/, loaders: ['style', 'css', 'less'] }
+      { test: /\.js$/, exclude: /node_modules/, loader: 'babel' }
     ]
   },
 
   output: {
     path: path.join(__dirname, '..'),
+    publicPath: '/public/',
     filename: 'bundle.js'
   },
 

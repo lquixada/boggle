@@ -2,7 +2,7 @@ var path = require('path');
 var webpack = require('webpack');
 
 module.exports = {
-  entry: './src/index.js',
+  entry: './client.js',
 
   devtool: 'source-map',
 
@@ -14,7 +14,8 @@ module.exports = {
   },
 
   output: {
-    path: path.join(__dirname, '..'),
+    path: path.join(__dirname, 'public'),
+    publicPath: '/public/',
     filename: 'bundle.js'
   },
 
@@ -49,7 +50,7 @@ module.exports = {
     // },
 
     // webpack-dev-middleware options
-    inline: true
+    inline: true,
     // quiet: false,
     // noInfo: false,
     // lazy: true,
@@ -58,7 +59,7 @@ module.exports = {
     //   aggregateTimeout: 300,
     //   poll: 1000
     // },
-    // publicPath: "/assets/",
+    publicPath: '/public/'
     // headers: { "X-Custom-Header": "yes" },
     // stats: { colors: true }
   }

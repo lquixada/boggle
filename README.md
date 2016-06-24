@@ -54,15 +54,16 @@ $ npm run all
 
 ## TODO
 
-* Convert to isomorphic app
+* Update history package
 * Find a free hosting service
 * Use browserHistory
 * Try webpack 2
+* Reactify github ribbon
 * Fix mobile version
 * Retest on every browser (including IE10+)
-* About page (to practice ReactRouter and code splitting)
 * Optimize word checking
-* dist/ folder
+* Better .gitignore
+* Update packages
 
 
 ## Pending Improvements
