@@ -9,7 +9,7 @@
     "test": "mocha tests/**/*.spec.js --compilers js:babel-core/register --require tests/setup.js",
     "test:watch": "npm test -- --watch --growl",
     "start": "webpack-dev-server --config webpack.dev.config.js",
-    "build": "webpack -p --config webpack.prod.config.js",
+    "build": "webpack -p --progress --config webpack.prod.config.js",
     "lint": "eslint **/*.js"
   },
   "devDependencies": {
