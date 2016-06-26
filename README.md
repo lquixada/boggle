@@ -78,7 +78,6 @@ $ npm run all
 * Fix mobile version
 * Retest on every browser (including IE10+)
 * Optimize word checking
-* Better .gitignore
 
 
 ## Pending Improvements
