@@ -17,25 +17,41 @@ $ nvm use
 
 ## Getting Started
 
-To run the app locally, run:
+To run the app in development mode, run:
 
 ```
-$ npm start
+$ npm run start:dev
 ```
 
 And go to [http://localhost:8080/].
+
+In order to run the isomorphic app in production:
+
+```
+$ npm run start:prod
+```
+
+And go to [http://localhost:9000/].
+
+> Note that npm run start:dev will will serve a static index file and generate a dynamic bundle whereas
+> npm run start:prod will do just the opposite, that is, generate a dynamic index file and serve a
+> static bundle.
+
 To run all tests and lints, run:
 
 ```
 $ npm run all
 ```
 
-
 ## Tasks
 
 * *npm start*: start application
-* *npm run build*: builds production bundle.js
+* *npm run start:dev*: start application in development mode
+* *npm run start:prod*: start application in production mode
+* *npm run build:dev*: builds development bundle.js
+* *npm run build:prod*: builds production bundle.js
 * *npm run deploy*: deploys master branch to gh-pages branch
+* *npm run less*: convert less files into css
 * *npm run lint*: lint files
 * *npm run test*: test files
 * *npm run test:watch*: test files on the fly
