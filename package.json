@@ -6,6 +6,7 @@
     "all": "npm-run-all test lint",
     "deploy": "git push origin master:gh-pages",
     "prepush": "npm run all",
+    "prestart:prod": "npm-run-all less build:prod",
     "test": "mocha tests/**/*.spec.js --compilers js:babel-core/register --require tests/setup.js",
     "test:watch": "npm test -- --watch --growl",
     "build": "npm-run-all build:dev less",
