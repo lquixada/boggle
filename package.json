@@ -3,14 +3,13 @@
   "version": "0.0.1",
   "description": "A web-based implementation of the Boggle game for React study purposes.",
   "scripts": {
-    "all": "npm run test && npm run lint",
+    "all": "npm-run-all test lint",
     "deploy": "git push origin master:gh-pages",
     "prepush": "npm run all",
-
     "test": "mocha tests/**/*.spec.js --compilers js:babel-core/register --require tests/setup.js",
     "test:watch": "npm test -- --watch --growl",
 
-    "build": "npm run build:dev && npm run less",
+    "build": "npm-run-all build:dev less",
     "build:dev": "webpack --progress --config webpack.dev.config.js",
     "build:prod": "webpack -p --progress --config webpack.prod.config.js",
 
@@ -19,7 +18,7 @@
     "start:prod": "NODE_ENV=production node server.js",
 
     "less": "lessc src/index.less public/bundle.css",
-    "lint": "eslint --ignore-pattern '/public/' **/*.js"
+    "lint": "eslint --ignore-pattern '/public/' --quiet **/*.js"
   },
   "devDependencies": {
     "babel-cli": "^6.10.1",
@@ -40,6 +39,7 @@
     "less": "^2.7.1",
     "less-loader": "^2.2.3",
     "mocha": "^2.5.3",
+    "npm-run-all": "^2.2.2",
     "null-loader": "^0.1.1",
     "react": "^15.1.0",
     "react-addons-test-utils": "^15.1.0",
