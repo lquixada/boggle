@@ -79,7 +79,6 @@ $ npm run all
 * Retest on every browser (including IE10+)
 * Optimize word checking
 * Better .gitignore
-* Update packages
 
 
 ## Pending Improvements
