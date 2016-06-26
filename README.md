@@ -70,6 +70,8 @@ $ npm run all
 
 ## TODO
 
+* Fix /about route
+* Do more studies on code splitting
 * Update history package
 * Find a free hosting service
 * Use browserHistory
