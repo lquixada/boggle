@@ -55,7 +55,7 @@ app.use((req, res) => {
         </head>
         <body>
           <div id="game">${html}</div>
-          <script src="/assets/bundle.js"></script>
+          <script src="/assets/scripts/bundle.js"></script>
 
           <a class="ribbon" href="https://github.com/lquixada/boggle">
             <img style="position: absolute; top: 0; right: 0; border: 0;" alt="Fork me on GitHub"

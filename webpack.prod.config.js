@@ -14,7 +14,7 @@ module.exports = {
   },
 
   output: {
-    path: path.join(__dirname, 'assets'),
+    path: path.join(__dirname, 'assets', 'scripts'),
     publicPath: '/assets/',
     filename: 'bundle.js'
   },
