@@ -20,6 +20,9 @@ img {
 #game {
   height: 100%;
 }
+#game > div {
+  height: 100%;
+}
 /* Grid */
 .container {
   max-width: 54rem;
