@@ -65,7 +65,8 @@ $ npm run all
 * Tests: mocha, chai, enzyme, sinon
 * Lint: eslint
 * Utils: npm, webpack, babel
-* [TravisCI](https://travis-ci.org/lquixada/boggle)
+* CI: [TravisCI](https://travis-ci.org/lquixada/boggle)
+* Hosting: [Heroku](https://bogglejs.herokuapp.com/)
 
 
 ## TODO
@@ -73,7 +74,6 @@ $ npm run all
 * Fix /about route
 * Do more studies on code splitting
 * Update history package
-* Find a free hosting service
 * Use browserHistory
 * Try webpack 2
 * Reactify github ribbon
