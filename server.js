@@ -4,11 +4,11 @@ const express = require('express');
 const path = require('path');
 const React = require('react');
 
-const renderToString = require('react-dom/server').renderToString;
-const match = require('react-router').match;
-const RoutingContext = require('react-router').RoutingContext;
-const Provider = require('react-redux').Provider;
-const createLocation = require('history').createLocation;
+const { renderToString } = require('react-dom/server');
+const { match } = require('react-router');
+const { RoutingContext } = require('react-router');
+const { Provider } = require('react-redux');
+const { createLocation } = require('history');
 
 const routes = require('./shared/routes').default;
 const configureStore = require('./shared/store').default;
