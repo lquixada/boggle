@@ -18,6 +18,9 @@
     "less": "lessc src/index.less public/bundle.css",
     "lint": "eslint --ignore-pattern '/public/' --quiet **/*.js"
   },
+  "engines": {
+    "node": "6.2.1"
+  },
   "devDependencies": {
     "babel-cli": "^6.10.1",
     "babel-core": "^6.10.4",
