@@ -15,7 +15,7 @@ module.exports = {
 
   output: {
     path: path.join(__dirname, 'assets', 'scripts'),
-    publicPath: '/assets/',
+    publicPath: '/assets/scripts/',
     filename: 'bundle.js'
   },
 
@@ -59,7 +59,7 @@ module.exports = {
     //   aggregateTimeout: 300,
     //   poll: 1000
     // },
-    publicPath: '/assets/'
+    publicPath: '/assets/scripts/'
     // headers: { "X-Custom-Header": "yes" },
     // stats: { colors: true }
   }
