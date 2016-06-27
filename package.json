@@ -4,7 +4,7 @@
   "description": "A web-based implementation of the Boggle game for React study purposes.",
   "scripts": {
     "all": "npm-run-all test lint",
-    "deploy": "git push origin master:gh-pages",
+    "deploy": "git push origin master:heroku",
     "prepush": "npm run all",
     "prestart:prod": "npm-run-all less build:prod",
     "test": "mocha tests/**/*.spec.js --compilers js:babel-core/register --require tests/setup.js",
