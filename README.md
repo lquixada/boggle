@@ -73,7 +73,6 @@ $ npm run all
 
 * Do more studies on code splitting
 * Update history package
-* Use browserHistory
 * Try webpack 2
 * Reactify github ribbon
 * Fix mobile version
