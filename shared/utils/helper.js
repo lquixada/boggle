@@ -1,5 +1,5 @@
 import _ from 'underscore';
-
+import { fromJS } from 'immutable';
 import BoardChecker from '../utils/board-checker';
 import Dictionary from '../utils/dictionary';
 
@@ -16,4 +16,18 @@ export const isOnBoard = (matrix, word) => {
 export const isOnDictionary = (word) => {
   const dictionary = new Dictionary();
   return dictionary.check(word);
+}
+
+// Abstraction to handle pre-composedstate received from server
+// (ie, leave top level keys untouched)
+export const immutifyState = (obj) => {
+  let objMut = _.extend({}, obj);
+
+  Object
+    .keys(objMut)
+    .forEach(key => {
+      objMut[key] = fromJS(objMut[key]);
+    });
+
+  return objMut;
 }
