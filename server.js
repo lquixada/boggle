@@ -12,10 +12,10 @@ const createLocation = require('history').createLocation;
 
 const routes = require('./src/routes').default;
 const configureStore = require('./src/store').default;
-const About = require('./src/components/about').default;
-const App = require('./src/components/app').default;
 
+const PORT = process.env.PORT || 9000;
 const app = express();
+
 app.use(express.static(__dirname, {
   // Ignore the static index.html and generate a dynamic one
   index: false
@@ -67,6 +67,6 @@ app.use((req, res) => {
   });
 });
 
-app.listen(9000, function () {
-  console.log('Server listening on: 9000');
+app.listen(PORT, function () {
+  console.log(`Server running on: http://localhost:${PORT}/`);
 });
