@@ -10,8 +10,8 @@ const RoutingContext = require('react-router').RoutingContext;
 const Provider = require('react-redux').Provider;
 const createLocation = require('history').createLocation;
 
-const routes = require('./src/routes').default;
-const configureStore = require('./src/store').default;
+const routes = require('./shared/routes').default;
+const configureStore = require('./shared/store').default;
 
 const PORT = process.env.PORT || 9000;
 const app = express();
@@ -20,6 +20,7 @@ app.use(express.static(__dirname, {
   // Ignore the static index.html and generate a dynamic one
   index: false
 }));
+
 app.use((req, res) => {
   const location = createLocation(req.url);
   const store = configureStore();
@@ -46,7 +47,7 @@ app.use((req, res) => {
           <meta name="viewport" content="width=device-width, initial-scale=1">
           <title>Boggle</title>
 
-          <link href="/public/bundle.css" rel="stylesheet" />
+          <link href="/assets/sheets/bundle.css" rel="stylesheet" />
 
           <script>
             window.__INITIAL_STATE__ = ${JSON.stringify(store.getState())};
@@ -54,7 +55,7 @@ app.use((req, res) => {
         </head>
         <body>
           <div id="game">${html}</div>
-          <script src="/public/bundle.js"></script>
+          <script src="/assets/bundle.js"></script>
 
           <a class="ribbon" href="https://github.com/lquixada/boggle">
             <img style="position: absolute; top: 0; right: 0; border: 0;" alt="Fork me on GitHub"

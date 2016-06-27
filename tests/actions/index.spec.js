@@ -1,9 +1,9 @@
 import sinon from 'sinon';
 import { List, Map } from 'immutable';
 import { bindActionCreators } from 'redux'
-import configureStore from '../../src/store';
-import * as actionCreators from '../../src/actions';
-import Dictionary from '../../src/utils/dictionary';
+import configureStore from '../../shared/store';
+import * as actionCreators from '../../shared/actions';
+import Dictionary from '../../shared/utils/dictionary';
 
 describe('addCheckedAttempt', () => {
   let actions;

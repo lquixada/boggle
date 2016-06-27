@@ -2,9 +2,9 @@ import mountConnected from '../helper';
 import React from 'react';
 import sinon from 'sinon';
 import { bindActionCreators } from 'redux'
-import configureStore from '../../src/store';
-import * as actionCreators from '../../src/actions';
-import Clock from '../../src/components/clock.js';
+import configureStore from '../../shared/store';
+import * as actionCreators from '../../shared/actions';
+import Clock from '../../shared/components/clock.js';
 
 describe('<Clock />', () => {
   let actions;
