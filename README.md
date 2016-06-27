@@ -23,7 +23,7 @@ To run the app in development mode, run:
 $ npm run start:dev
 ```
 
-And go to [http://localhost:8080/].
+And go to http://localhost:8080/.
 
 In order to run the isomorphic app in production:
 
@@ -31,7 +31,7 @@ In order to run the isomorphic app in production:
 $ npm run start:prod
 ```
 
-And go to [http://localhost:9000/].
+And go to http://localhost:9000/.
 
 > Note that npm run start:dev will will serve a static index file and generate a dynamic bundle whereas
 > npm run start:prod will do just the opposite, that is, generate a dynamic index file and serve a
