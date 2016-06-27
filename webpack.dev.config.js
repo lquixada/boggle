@@ -32,7 +32,7 @@ module.exports = {
 
     // Set this as true if you want to access dev server from arbitrary url.
     // This is handy if you are using a html5 router.
-    historyApiFallback: false,
+    historyApiFallback: true,
 
     // Set this if you want to enable gzip compression for assets
     // compress: true,
