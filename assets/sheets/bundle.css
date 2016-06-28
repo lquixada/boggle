@@ -192,6 +192,8 @@ main > footer .social a img:hover {
   main > section .container {
     flex-direction: column;
     -ms-flex-direction: column;
+    justify-content: flex-start;
+    -ms-flex-pack: start;
   }
   main > section aside {
     display: flex;

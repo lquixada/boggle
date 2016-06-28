@@ -51,6 +51,7 @@ module.exports = {
 
     // webpack-dev-middleware options
     inline: true,
+    host: '0.0.0.0',
     // quiet: false,
     // noInfo: false,
     // lazy: true,
