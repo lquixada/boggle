@@ -5,10 +5,8 @@ const path = require('path');
 const React = require('react');
 
 const { renderToString } = require('react-dom/server');
-const { match } = require('react-router');
-const { RouterContext } = require('react-router');
+const { match, RouterContext } = require('react-router');
 const { Provider } = require('react-redux');
-const { createLocation } = require('history');
 
 const routes = require('./shared/routes').default;
 const configureStore = require('./shared/store').default;
@@ -22,10 +20,9 @@ app.use(express.static(__dirname, {
 }));
 
 app.use((req, res) => {
-  const location = createLocation(req.url);
   const store = configureStore();
 
-  match({ routes, location }, (err, redirectLocation, renderProps) => {
+  match({ routes, location: req.url }, (err, redirectLocation, renderProps) => {
     if (err) {
       console.error(err);
       return res.status(500).end('Internal server error');

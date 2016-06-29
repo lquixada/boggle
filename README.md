@@ -72,7 +72,6 @@ $ npm run all
 ## TODO
 
 * Do more studies on code splitting
-* Update history package
 * Try webpack 2
 * Reactify github ribbon
 * Fix mobile version
