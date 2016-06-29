@@ -1,14 +1,15 @@
 const request = require('supertest');
+const { rerequire } = require('./helper');
 
 describe('Server rendering', () => {
   let server;
 
   beforeEach(() => {
-    server = require('../../server');
+    server = rerequire('../server');
   });
 
-  afterEach(() => {
-    server.close();
+  afterEach((done) => {
+    server.close(done);
   });
 
   it('responds to /', (done) => {
