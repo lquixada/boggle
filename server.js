@@ -6,7 +6,7 @@ const React = require('react');
 
 const { renderToString } = require('react-dom/server');
 const { match } = require('react-router');
-const { RoutingContext } = require('react-router');
+const { RouterContext } = require('react-router');
 const { Provider } = require('react-redux');
 const { createLocation } = require('history');
 
@@ -35,7 +35,7 @@ app.use((req, res) => {
       return res.status(404).end('Not found');
     }
 
-    const routing = React.createElement(RoutingContext, renderProps);
+    const routing = React.createElement(RouterContext, renderProps);
     const provider = React.createElement(Provider, {store: store}, routing);
     const html = renderToString(provider);
 
@@ -68,6 +68,8 @@ app.use((req, res) => {
   });
 });
 
-app.listen(PORT, function () {
+const server = app.listen(PORT, function () {
   console.log(`Server running on: http://localhost:${PORT}/`);
 });
+
+module.exports = server;
