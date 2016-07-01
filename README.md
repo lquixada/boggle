@@ -33,29 +33,31 @@ $ npm run start:prod
 
 (or just `npm start`) and go to http://localhost:9000/.
 
-> Note that npm run start:dev will will serve a static index file and generate a dynamic bundle whereas
-> npm run start:prod will do just the opposite, that is, generate a dynamic index file and serve a
-> static bundle.
+> Note that npm run start:dev will serve bundle.js from memory whereas
+> npm run start:prod will serve it from filesystem.
 
 To run all tests and lints, run:
 
 ```
-$ npm run all
+$ npm test
 ```
 
 ## Tasks
 
-* *npm start*: start application
-* *npm run start:dev*: start application in development mode
-* *npm run start:prod*: start application in production mode
-* *npm run build:dev*: builds development bundle.js
-* *npm run build:prod*: builds production bundle.js
+* *npm test*: runs all the tests
+* *npm run test:mocha*: tests files
+* *npm run test:lint*: lints files
+* *npm run test:watch*: runs all the tests everytime some file changes
+
+* *npm start*: starts application in production mode
+* *npm run start:dev*: starts application in development mode
+* *npm run start:prod*: starts application in production mode
+
+* *npm run build*: builds all the assets
+* *npm run build:less*: convert less files into css
+* *npm run build:webpack*: builds development bundle.js
+
 * *npm run deploy*: deploys master branch to gh-pages branch
-* *npm run less*: convert less files into css
-* *npm run lint*: lint files
-* *npm run test*: test files
-* *npm run test:watch*: test files on the fly
-* *npm run all*: lint and test files
 
 
 ## Stack
