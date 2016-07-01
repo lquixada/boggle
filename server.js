@@ -14,6 +14,23 @@ const configureStore = require('./shared/store').default;
 const PORT = process.env.PORT || 9000;
 const app = express();
 
+
+if (process.env.NODE_ENV === 'development') {
+  const webpack = require('webpack');
+  const config = require('./webpack.dev.config.js');
+  const compiler = webpack(config);
+
+  app.use(require('webpack-dev-middleware')(compiler, {
+      inline: true,
+      hot: true,
+      port: 8000,
+      historyApiFallback: true,
+      host: '0.0.0.0',
+      publicPath: '/assets/scripts/'
+  }));
+  app.use(require('webpack-hot-middleware')(compiler));
+}
+
 app.use(express.static(__dirname, {
   // Ignore the static index.html and generate a dynamic one
   index: false
