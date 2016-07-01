@@ -6,6 +6,7 @@ describe('Server rendering', () => {
 
   beforeEach(() => {
     server = rerequire('../server');
+    console.info = () => { /* SILENCE! I'LL KILL YA 💀 */ }
   });
 
   afterEach((done) => {

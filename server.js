@@ -61,8 +61,8 @@ app.use((req, res) => {
   });
 });
 
-const server = app.listen(PORT, function () {
-  console.log(`Server running on: http://localhost:${PORT}/`);
+const server = app.listen(PORT, () => {
+  console.info(`Server running on: http://localhost:${PORT}/`);
 });
 
 module.exports = server;
