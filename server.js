@@ -20,25 +20,20 @@ if (process.env.NODE_ENV === 'development') {
   const compiler = webpack(config);
 
   app.use(require('webpack-dev-middleware')(compiler, {
-      inline: true,
-      hot: true,
-      port: 8000,
-      historyApiFallback: true,
-      host: '0.0.0.0',
-      publicPath: '/assets/scripts/'
+    inline: true,
+    hot: true,
+    port: 8000,
+    historyApiFallback: true,
+    host: '0.0.0.0',
+    publicPath: '/assets/scripts/'
   }));
   app.use(require('webpack-hot-middleware')(compiler));
 }
 
 app.set('view engine', 'hbs');
 app.set('views', './shared');
-app.use(express.static(__dirname, {
-  // Ignore the static index.html and generate a dynamic one
-  index: false
-}));
-
+app.use(express.static(__dirname));
 app.use((req, res) => {
-
   match({ routes, location: req.url }, (err, redirectLocation, renderProps) => {
     if (err) {
       console.error(err);
