@@ -1,4 +1,4 @@
-import '../styles/clock.less';
+import '../styles/clock.scss';
 import React from 'react';
 import _ from 'underscore';
 import { connect } from 'react-redux';

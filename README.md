@@ -54,7 +54,6 @@ $ npm test
 * *npm run start:prod*: starts application in production mode
 
 * *npm run build*: builds all the assets
-* *npm run build:less*: convert less files into css
 * *npm run build:webpack*: builds development bundle.js
 
 * *npm run deploy*: deploys master branch to gh-pages branch
@@ -63,7 +62,7 @@ $ npm test
 ## Stack
 
 * App: react, redux, underscore
-* Style: less
+* Style: sass
 * Tests: mocha, chai, enzyme, sinon
 * Lint: eslint
 * Utils: npm, webpack, babel

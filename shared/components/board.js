@@ -1,4 +1,4 @@
-import '../styles/board.less';
+import '../styles/board.scss';
 import React from 'react';
 import { connect } from 'react-redux';
 

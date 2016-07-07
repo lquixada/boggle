@@ -1,4 +1,4 @@
-require.extensions['.less'] = function () {};
+require.extensions['.scss'] = function () {};
 
 import jsdom from 'jsdom';
 import chai, { expect } from 'chai';
