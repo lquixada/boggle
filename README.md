@@ -48,14 +48,10 @@ $ npm test
 * *npm run test:mocha*: tests files
 * *npm run test:lint*: lints files
 * *npm run test:watch*: runs all the tests everytime some file changes
-
-* *npm start*: starts application in production mode
+* *npm start*: alias for npm run start:prod
 * *npm run start:dev*: starts application in development mode
 * *npm run start:prod*: starts application in production mode
-
 * *npm run build*: builds all the assets
-* *npm run build:webpack*: builds development bundle.js
-
 * *npm run deploy*: deploys master branch to gh-pages branch
 
 
