@@ -1,4 +1,5 @@
 require('babel-core/register')({});
+require.extensions['.less'] = function () {};
 
 const express = require('express');
 const path = require('path');

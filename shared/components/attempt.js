@@ -1,3 +1,4 @@
+import '../styles/attempt.less';
 import React from 'react';
 import _ from 'underscore';
 import * as actions from '../actions';

@@ -1,3 +1,4 @@
+import '../styles/about.less';
 import React from 'react';
 import { Link } from 'react-router';
 import Copyright from './copyright';

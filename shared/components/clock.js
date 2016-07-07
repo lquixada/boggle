@@ -1,3 +1,4 @@
+import '../styles/clock.less';
 import React from 'react';
 import _ from 'underscore';
 import { connect } from 'react-redux';

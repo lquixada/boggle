@@ -10,9 +10,7 @@
     "test:mocha": "mocha 'tests/**/*.spec.js' --compilers js:babel-core/register --require tests/setup.js",
     "test:lint": "eslint --ignore-pattern '/assets/' --quiet **/*.js",
     "test:watch": "npm test -- --watch --growl",
-    "build": "npm-run-all --parallel build:less build:webpack",
-    "build:less": "lessc ./shared/index.less ./assets/sheets/bundle.css",
-    "build:webpack": "webpack -p --progress --config webpack.prod.config.js",
+    "build": "webpack -p --progress --config webpack.prod.config.js",
     "start": "npm run start:prod",
     "start:dev": "NODE_ENV=development node server.js",
     "start:prod": "NODE_ENV=production node server.js"
@@ -27,6 +25,7 @@
     "babel-preset-react": "^6.5.0",
     "css-loader": "^0.23.1",
     "express": "^4.14.0",
+    "extract-text-webpack-plugin": "^1.0.1",
     "fetch-jsonp": "^1.0.0",
     "hbs": "^4.0.0",
     "less": "^2.7.1",

@@ -1,3 +1,5 @@
+require.extensions['.less'] = function () {};
+
 import jsdom from 'jsdom';
 import chai, { expect } from 'chai';
 import chaiImmutable from 'chai-immutable';

@@ -1,5 +1,6 @@
 var path = require('path');
 var webpack = require('webpack');
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
   entry: './client.js',
@@ -9,7 +10,7 @@ module.exports = {
   module: {
     loaders: [
       { test: /\.js$/, exclude: /node_modules/, loader: 'babel' },
-      { test: /\.less$/, loaders: ['style', 'css', 'less'] }
+      { test: /\.less$/, loader: ExtractTextPlugin.extract('style', 'css!less') }
     ]
   },
 
@@ -22,6 +23,7 @@ module.exports = {
   plugins: [
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': '"production"'
-    })
+    }),
+    new ExtractTextPlugin('../sheets/bundle.css')
   ]
 };

@@ -1,3 +1,4 @@
+import '../styles/app.less';
 import React from 'react';
 
 class App extends React.Component {
