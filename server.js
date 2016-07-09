@@ -21,6 +21,7 @@ if (process.env.NODE_ENV === 'development') {
   app.use(require('./middlewares/webpack-dev').default);
   app.use(require('./middlewares/webpack-hot').default);
 }
+app.use(require('./middlewares/logger').default);
 app.use(require('./middlewares/static').default);
 
 app.use((req, res) => {
