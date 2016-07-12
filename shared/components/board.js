@@ -17,15 +17,15 @@ export default class Board extends React.Component {
   }
 
   renderRows() {
-    return this.props.matrix.map((row, i) => {
-      return <tr key={i}>{this.renderCells(row)}</tr>;
-    });
+    return this.props.matrix.map((row, i) =>
+      (<tr key={i}>{this.renderCells(row)}</tr>)
+    );
   }
 
   renderCells(row) {
-    return row.map((cell, i) => {
-      return <td key={i}>{cell}</td>;
-    });
+    return row.map((cell, i) =>
+      (<td key={i}>{cell}</td>)
+    );
   }
 }
 

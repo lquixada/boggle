@@ -22,14 +22,12 @@ class Score extends React.Component {
   }
 
   renderRows() {
-    return this.props.attempts.map(function (attempt, i) {
-      return (
-        <tr key={i}>
+    return this.props.attempts.map((attempt, i) =>
+      (<tr key={i}>
           <td>{attempt.get('word')}</td>
           <td>{attempt.get('score')}</td>
-        </tr>
-      );
-    });
+        </tr>)
+    );
   }
 }
 
