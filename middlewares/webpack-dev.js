@@ -10,5 +10,8 @@ export default middleware(compiler, {
   port: 8000,
   historyApiFallback: true,
   host: '0.0.0.0',
-  publicPath: '/assets/scripts/'
+  publicPath: '/assets/scripts/',
+  stats: {
+    colors: true
+  }
 });
