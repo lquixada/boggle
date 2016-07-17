@@ -8,6 +8,8 @@ export default middleware(compiler, {
   inline: true,
   hot: true,
   publicPath: '/',
+  host: '0.0.0.0',
+  port: 8000,
   stats: {
     colors: true
   }
