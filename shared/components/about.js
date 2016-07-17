@@ -1,4 +1,4 @@
-import '../styles/about.scss';
+import '../../styles/about.scss';
 import React from 'react';
 import { Link } from 'react-router';
 import Copyright from './copyright';

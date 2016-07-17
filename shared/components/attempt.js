@@ -1,4 +1,4 @@
-import '../styles/attempt.scss';
+import '../../styles/attempt.scss';
 import React from 'react';
 import _ from 'underscore';
 import * as actions from '../actions';

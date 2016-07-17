@@ -18,8 +18,8 @@ module.exports = {
   },
 
   output: {
-    path: path.join(__dirname, 'assets', 'scripts'),
-    publicPath: '/assets/scripts/',
+    path: path.join(__dirname, 'public', 'scripts'),
+    publicPath: '/public/scripts/',
     filename: 'bundle.js'
   },
 

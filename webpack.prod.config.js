@@ -1,6 +1,7 @@
 var path = require('path');
 var webpack = require('webpack');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   entry: './client',
@@ -15,8 +16,8 @@ module.exports = {
   },
 
   output: {
-    path: path.join(__dirname, 'assets', 'scripts'),
-    publicPath: '/assets/scripts/',
+    path: path.join(__dirname, 'public', 'scripts'),
+    publicPath: '/public/scripts/',
     filename: 'bundle.js'
   },
 
@@ -29,6 +30,10 @@ module.exports = {
         warnings: false
       }
     }),
-    new ExtractTextPlugin('../sheets/bundle.css')
+    new ExtractTextPlugin('../sheets/bundle.css'),
+    new CopyWebpackPlugin([{
+      from: path.join(__dirname, 'images'),
+      to: path.join(__dirname, 'public', 'images')
+    }])
   ]
 };

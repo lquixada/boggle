@@ -1,3 +1,6 @@
+public/*
+!public/.gitkeep
+
 *.orig
 *.swo
 *.swp
