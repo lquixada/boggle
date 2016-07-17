@@ -7,10 +7,7 @@ const compiler = webpack(config);
 export default middleware(compiler, {
   inline: true,
   hot: true,
-  port: 8000,
-  historyApiFallback: true,
-  host: '0.0.0.0',
-  publicPath: '/assets/scripts/',
+  publicPath: '/',
   stats: {
     colors: true
   }
