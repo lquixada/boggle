@@ -13,8 +13,8 @@
     "build": "webpack -p --progress --config webpack.prod.config.js",
     "start": "npm run start:prod",
     "start:debug": "NODE_ENV=development node-debug --save-live-edit --no-debug-brk server.js",
-    "start:dev": "NODE_ENV=development node server.js",
-    "start:prod": "NODE_ENV=production node server.js"
+    "start:dev": "NODE_ENV=development node server",
+    "start:prod": "NODE_ENV=production node server"
   },
   "engines": {
     "node": "6.2.1"

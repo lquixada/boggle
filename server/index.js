@@ -8,8 +8,8 @@ const { renderToString } = require('react-dom/server');
 const { match, RouterContext } = require('react-router');
 const { Provider } = require('react-redux');
 
-const routes = require('./shared/routes').default;
-const configureStore = require('./shared/store').default;
+const routes = require('../shared/routes').default;
+const configureStore = require('../shared/store').default;
 
 const PORT = process.env.PORT || 9000;
 const app = express();
