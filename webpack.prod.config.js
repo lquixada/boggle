@@ -30,7 +30,7 @@ module.exports = {
         warnings: false
       }
     }),
-    new ExtractTextPlugin('../sheets/bundle.css'),
+    new ExtractTextPlugin('./sheets/bundle.css'),
     new CopyWebpackPlugin([{
       from: path.join(__dirname, 'images'),
       to: path.join(__dirname, 'public', 'images')
