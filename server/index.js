@@ -15,7 +15,7 @@ const PORT = process.env.PORT || 9000;
 const app = express();
 
 app.set('view engine', 'hbs');
-app.set('views', './shared');
+app.set('views', './server/views');
 
 if (process.env.NODE_ENV === 'development') {
   app.use(require('./middlewares/webpack-dev').default);
