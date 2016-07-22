@@ -13,7 +13,7 @@
     "build": "webpack -p --progress --config webpack.prod.config.js",
     "start": "npm run start:prod",
     "start:debug": "NODE_ENV=development node-debug --save-live-edit --no-debug-brk server.js",
-    "start:dev": "NODE_ENV=development node server",
+    "start:dev": "NODE_ENV=development nodemon --watch ./server server",
     "start:prod": "NODE_ENV=production node server"
   },
   "engines": {
@@ -54,6 +54,7 @@
     "jsdom": "^9.2.1",
     "mocha": "^2.5.3",
     "node-inspector": "0.12.8",
+    "nodemon": "1.9.2",
     "npm-run-all": "^2.3.0",
     "react-addons-test-utils": "15.2.1",
     "react-hot-loader": "^1.3.0",
