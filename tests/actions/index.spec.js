@@ -24,7 +24,7 @@ describe('addCheckedAttempt', () => {
     ]);
     store = configureStore({ attempts, matrix });
     actions = bindActionCreators(actionCreators, store.dispatch);
-    check = sinon.stub(Dictionary.prototype, "check").returns(true);
+    check = sinon.stub(Dictionary.prototype, 'check').returns(true);
   });
 
   afterEach(() => {
