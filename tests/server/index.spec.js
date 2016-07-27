@@ -1,5 +1,5 @@
 const request = require('supertest');
-const { rerequire } = require('./helper');
+const { rerequire } = require('../helper');
 
 describe('Server rendering', () => {
   let server;
