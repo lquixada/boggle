@@ -1,5 +1,5 @@
 import { List } from 'immutable';
-import { bindActionCreators } from 'redux'
+import { bindActionCreators } from 'redux';
 import configureStore from '../../shared/store';
 import * as actionCreators from '../../shared/actions';
 import BoardChecker from '../../shared/utils/board-checker';

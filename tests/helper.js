@@ -7,10 +7,10 @@ import { mount } from 'enzyme';
 export const rerequire = (path) => {
   delete require.cache[require.resolve(path)];
   return require(path);
-}
+};
 
 export const mountConnected = (component, store) => {
   return mount(<Provider store={store}>
     {component}
   </Provider>);
-}
+};
