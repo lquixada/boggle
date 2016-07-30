@@ -33,6 +33,7 @@
     "complexity": ["error", 6],
     "max-len": "off",
     "semi": ["error", "always"],
+    "no-console": "off",
     "no-cond-assign": "off",
     "no-debugger": "off",
     "no-eq-null": "off",
