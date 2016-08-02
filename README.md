@@ -75,10 +75,3 @@ $ npm test
 * Optimize word checking
 * Put /shared on NODE_PATH?
 * Hashed file names
-
-
-## Pending Improvements
-
-* *PatternLock*: find word using the mouse in a visually compelling way.
-* *Local Dictionary*: quicker feedback in a time-pressured game.
-* *IntroJS*: a nice tour for beginners on Boggle rules.
