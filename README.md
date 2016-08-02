@@ -60,7 +60,7 @@ $ npm test
 * App: react, redux, underscore
 * Style: sass
 * Tests: mocha, chai, enzyme, sinon
-* Lint: eslint
+* Lint: eslint, sass-lint
 * Utils: npm, webpack, babel
 * CI: [TravisCI](https://travis-ci.org/lquixada/boggle)
 * Hosting: [Heroku](https://bogglejs.herokuapp.com/)

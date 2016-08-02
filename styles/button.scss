@@ -2,7 +2,7 @@
   button {
     padding: 1rem;
     min-width: 10rem;
-    border: none;
+    border: 0;
     cursor: pointer;
     color: #fff;
     font-size: 2rem;
@@ -21,9 +21,9 @@
 
     &:active {
       background-color: #286f23;
-      -webkit-box-shadow: inset 0 0.2rem 0.2rem rgba(0, 0, 0, 0.2);
-      -moz-box-shadow: inset 0 0.2rem 0.2rem rgba(0, 0, 0, 0.2);
-      box-shadow: inset 0 0.2rem 0.2rem rgba(0, 0, 0, 0.2);
+      -webkit-box-shadow: inset 0 .2rem .2rem rgba(0, 0, 0, .2);
+      -moz-box-shadow: inset 0 .2rem .2rem rgba(0, 0, 0, .2);
+      box-shadow: inset 0 .2rem .2rem rgba(0, 0, 0, .2);
     }
   }
 }
