@@ -21,7 +21,7 @@ module.exports = {
     path: path.join(__dirname, 'public'),
     // Hot reload needs this path in order to work
     publicPath: '/',
-    filename: './scripts/bundle.js'
+    filename: 'bundle.js'
   },
 
   plugins: [
