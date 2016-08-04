@@ -4,8 +4,8 @@ const attempt = (state = Map(), action) => {
   switch (action.type) {
     case 'ADD_ATTEMPT':
       return Map({
-        word: action.word,
-        score: (action.scored ? action.word.length : '✘')
+        word: action.payload.word,
+        score: (action.payload.scored ? action.payload.word.length : '✘')
       });
     default:
       return state;

@@ -1,9 +1,12 @@
+/* All actions must be FSA-compliant (https://github.com/acdlite/flux-standard-action). */
 import { isOnScoreList, isOnBoard, isOnDictionary } from '../utils/helper';
 
 export const addAttempt = (word, scored) => ({
   type: 'ADD_ATTEMPT',
-  word,
-  scored
+  payload: {
+    word,
+    scored
+  }
 });
 
 export const startGame = () => ({
