@@ -1,0 +1,60 @@
+@mixin flex-display {
+  display: flex;
+  display: -ms-flexbox;
+}
+
+@mixin flex-right {
+  justify-content: flex-start;
+  -ms-flex-pack: start;
+}
+
+@mixin flex-center {
+  justify-content: center;
+  -ms-flex-pack: center;
+}
+
+@mixin flex-left {
+  justify-content: flex-end;
+  -ms-flex-pack: end;
+}
+
+@mixin flex-justify {
+  justify-content: space-between;
+  -ms-flex-pack: justify;
+}
+
+@mixin flex-top {
+  align-items: flex-start;
+  -ms-flex-align: start;
+}
+
+@mixin flex-middle {
+  align-items: center;
+  -ms-flex-align: center;
+}
+
+@mixin flex-bottom {
+  align-items: flex-end;
+  -ms-flex-align: end;
+}
+
+@mixin flex($values) {
+  flex: $values;
+  -ms-flex: $values;
+}
+
+@mixin flex-dir($value) {
+  flex-direction: $value;
+  -ms-flex-direction: $value;
+}
+
+@mixin flex-wrap($value) {
+  flex-wrap: $value;
+  @if $value == nowrap { $value: none; }
+  -ms-flex-wrap: $value;
+}
+
+@mixin flex-flow($dir, $wrap) {
+  @include flex-dir($dir);
+  @include flex-wrap($wrap);
+}

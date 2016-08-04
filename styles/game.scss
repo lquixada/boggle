@@ -1,19 +1,15 @@
+@import '_mixins';
+
 main {
+  @include flex-display;
+  @include flex-flow(column, nowrap);
   min-width: 35rem;
   height: 100%;
-  display: flex;
-  display: -ms-flexbox;
-  flex-flow: column nowrap;
-  -ms-flex-direction: column;
-  -ms-flex-wrap: none;
 
   > header {
-    display: flex;
-    display: -ms-flexbox;
-    flex: none;
-    -ms-flex: none;
-    justify-content: center;
-    -ms-flex-pack: center;
+    @include flex-display;
+    @include flex-center;
+    @include flex(none);
     padding: 2rem;
     background-color: #565656;
 
@@ -33,13 +29,10 @@ main {
   }
 
   > section {
-    display: flex;
-    display: -ms-flexbox;
-    justify-content: center;
-    -ms-flex-pack: center;
+    @include flex-display;
+    @include flex-center;
+    @include flex(1 0 auto);
     padding: 2rem;
-    flex: 1 0 auto;
-    -ms-flex: 1 0 auto;
 
     aside {
       vertical-align: top;
@@ -47,12 +40,9 @@ main {
   }
 
   > footer {
-    display: flex;
-    display: -ms-flexbox;
-    flex: none;
-    -ms-flex: none;
-    justify-content: center;
-    -ms-flex-pack: center;
+    @include flex-display;
+    @include flex-center;
+    @include flex(none);
     padding: 2rem;
     color: #999;
     font-size: 1.2rem;
@@ -64,8 +54,7 @@ main {
     }
 
     .copyright {
-      flex: 3 0;
-      -ms-flex: 3 0;
+      @include flex(3 0);
       line-height: 2rem;
 
       .build-status {
@@ -83,14 +72,11 @@ main {
     }
 
     .social {
-      flex: 1 0;
-      -ms-flex: 1 0;
+      @include flex(1 0);
 
       ul {
-        display: flex;
-        display: -ms-flexbox;
-        justify-content: flex-end;
-        -ms-flex-pack: end;
+        @include flex-display;
+        @include flex-left;
       }
 
       li {
@@ -118,24 +104,19 @@ main {
   main {
     > header {
       .container {
-        flex-wrap: wrap;
-        -ms-flex-wrap: wrap;
+        @include flex-wrap(wrap);
       }
     }
 
     > section {
       .container {
-        flex-direction: column;
-        -ms-flex-direction: column;
-        justify-content: flex-start;
-        -ms-flex-pack: start;
+        @include flex-left;
+        @include flex-dir(column);
       }
 
       aside {
-        display: flex;
-        display: -ms-flexbox;
-        justify-content: space-between;
-        -ms-flex-pack: justify;
+        @include flex-display;
+        @include flex-justify;
         margin: 0;
         width: 100%;
       }

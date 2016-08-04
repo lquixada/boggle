@@ -1,4 +1,5 @@
 /* Reset */
+@import '_mixins';
 
 * {
   margin: 0;
@@ -33,14 +34,11 @@ img {
 /* Grid */
 
 .container {
+  @include flex-display;
+  @include flex-justify;
+  @include flex-top;
   max-width: 54rem;
   width: 100%;
-  display: flex;
-  display: -ms-flexbox;
-  justify-content: space-between;
-  -ms-flex-pack: justify;
-  align-items: flex-start;
-  -ms-flex-align: start;
 }
 
 @media (max-width: 800px) {
