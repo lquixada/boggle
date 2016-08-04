@@ -21,12 +21,18 @@ export const addCheckedAttempt = (word) => {
     const state = getState();
 
     return Promise.all([
-      !isOnScoreList(state.attempts, word),
       isOnBoard(state.matrix, word),
-      isOnDictionary(word)
-    ]).then((values) => {
-      const result = values.every(v => v);
-      return dispatch(addAttempt(word, result));
+      isOnScoreList(state.attempts, word)
+    ])
+    .then(([isOnBoard, isScoreList]) => {
+      if (isOnBoard && !isScoreList) {
+        return isOnDictionary(word);
+      }
+
+      return false;
+    })
+    .then(isOnDictionary => {
+      return dispatch(addAttempt(word, isOnDictionary));
     });
   };
 };

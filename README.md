@@ -70,6 +70,5 @@ $ npm test
 
 * Fix mobile version
 * Retest on every browser (including IE10+)
-* Optimize word checking
 * Put /shared on NODE_PATH?
 * Hashed file names
