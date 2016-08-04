@@ -68,7 +68,6 @@ $ npm test
 
 ## TODO
 
-* Reactify github ribbon
 * Fix mobile version
 * Retest on every browser (including IE10+)
 * Optimize word checking
