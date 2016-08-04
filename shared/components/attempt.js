@@ -1,6 +1,5 @@
 import '../../styles/attempt.scss';
 import React from 'react';
-import _ from 'underscore';
 import * as actions from '../actions';
 import { connect } from 'react-redux';
 
@@ -13,7 +12,8 @@ class Attempt extends React.Component {
       minLength: 2
     };
 
-    _.bindAll(this, 'handleChange', 'handleEnter');
+    this.handleChange = this.handleChange.bind(this);
+    this.handleEnter = this.handleEnter.bind(this);
   }
 
   handleChange(evt) {

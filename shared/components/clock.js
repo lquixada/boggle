@@ -1,6 +1,5 @@
 import '../../styles/clock.scss';
 import React from 'react';
-import _ from 'underscore';
 import { connect } from 'react-redux';
 
 import * as actions from '../actions';
@@ -15,7 +14,7 @@ class Clock extends React.Component {
       secs: timer.remaining
     };
 
-    _.bindAll(this, 'handleChange');
+    this.handleChange = this.handleChange.bind(this);
   }
 
   componentDidMount() {
