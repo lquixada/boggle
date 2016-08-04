@@ -68,7 +68,6 @@ $ npm test
 
 ## TODO
 
-* Try webpack 2
 * Reactify github ribbon
 * Fix mobile version
 * Retest on every browser (including IE10+)

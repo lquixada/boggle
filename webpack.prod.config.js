@@ -1,7 +1,7 @@
-var path = require('path');
-var webpack = require('webpack');
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
-var CopyWebpackPlugin = require('copy-webpack-plugin');
+const path = require('path');
+const webpack = require('webpack');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   entry: './client',
@@ -10,8 +10,15 @@ module.exports = {
 
   module: {
     loaders: [
-      { test: /\.js$/, exclude: /node_modules/, loader: 'babel' },
-      { test: /\.scss$/, loader: ExtractTextPlugin.extract('style', 'css!sass') }
+      {
+        test: /\.js$/, exclude: /node_modules/, loader: 'babel'
+      },
+      {
+        test: /\.scss$/, loader: ExtractTextPlugin.extract({
+          fallbackLoader: 'style',
+          loader: ['css', 'sass']
+        })
+      }
     ]
   },
 
@@ -22,14 +29,6 @@ module.exports = {
   },
 
   plugins: [
-    new webpack.DefinePlugin({
-      'process.env.NODE_ENV': '"production"'
-    }),
-    new webpack.optimize.UglifyJsPlugin({
-      compress: {
-        warnings: false
-      }
-    }),
     new ExtractTextPlugin('./sheets/bundle.css'),
     new CopyWebpackPlugin([{
       from: path.join(__dirname, 'images'),

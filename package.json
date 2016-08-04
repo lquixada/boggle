@@ -27,7 +27,7 @@
     "babel-preset-react": "6.11.1",
     "css-loader": "0.23.1",
     "express": "4.14.0",
-    "extract-text-webpack-plugin": "1.0.1",
+    "extract-text-webpack-plugin": "2.0.0-beta.3",
     "fetch-jsonp": "1.0.0",
     "hbs": "4.0.0",
     "morgan": "1.7.0",
@@ -42,7 +42,7 @@
     "sass-loader": "4.0.0",
     "style-loader": "0.13.1",
     "underscore": "1.8.3",
-    "webpack": "1.13.1",
+    "webpack": "2.1.0-beta.20",
     "winston": "2.2.0"
   },
   "devDependencies": {
@@ -61,7 +61,6 @@
     "sass-lint": "1.8.2",
     "sinon": "1.17.5",
     "supertest": "2.0.0",
-    "webpack": "1.13.1",
     "webpack-dev-middleware": "1.6.1",
     "webpack-hot-middleware": "2.12.2"
   },

@@ -8,10 +8,8 @@ import Title from './title';
 
 class About extends React.Component {
   handleClick() {
-    require.ensure(['../utils/alert'], (require) => {
-      const alert = require('../utils/alert');
-
-      alert('code-split example!');
+    System.import('../utils/alert').then(alert => {
+      alert('code-split example with System.import!');
     });
   }
 

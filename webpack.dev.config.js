@@ -1,6 +1,6 @@
-var path = require('path');
-var webpack = require('webpack');
-var CopyWebpackPlugin = require('copy-webpack-plugin');
+const path = require('path');
+const webpack = require('webpack');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   entry: [
@@ -12,8 +12,12 @@ module.exports = {
 
   module: {
     loaders: [
-      { test: /\.js$/, exclude: /node_modules/, loaders: ['react-hot', 'babel'] },
-      { test: /\.scss$/, loaders: ['style', 'css', 'sass'] }
+      {
+        test: /\.js$/, exclude: /node_modules/, loaders: ['react-hot', 'babel']
+      },
+      {
+        test: /\.scss$/, loaders: ['style', 'css', 'sass']
+      }
     ]
   },
 
