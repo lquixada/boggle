@@ -1,5 +1,3 @@
-import _ from 'underscore';
-
 class BoardChecker {
   constructor(matrix) {
     this.dim = 4;

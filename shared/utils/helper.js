@@ -4,7 +4,10 @@ import BoardChecker from '../utils/board-checker';
 import Dictionary from '../utils/dictionary';
 
 export const isOnScoreList = (attempts, word) => {
-  const found = _.findWhere(attempts, {word: word});
+  const found = attempts.find((attempt) => {
+    return attempt.get('word') === word;
+  });
+
   return Boolean(found);
 };
 
