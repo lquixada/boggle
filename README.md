@@ -57,7 +57,7 @@ $ npm test
 
 ## Stack
 
-* App: react, redux, underscore
+* App: react, redux, immutable.js
 * Style: sass
 * Tests: mocha, chai, enzyme, sinon
 * Lint: eslint, sass-lint

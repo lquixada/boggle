@@ -1,4 +1,3 @@
-import _ from 'underscore';
 import { fromJS } from 'immutable';
 import BoardChecker from '../utils/board-checker';
 import Dictionary from '../utils/dictionary';
@@ -21,16 +20,12 @@ export const isOnDictionary = (word) => {
   return dictionary.check(word);
 };
 
-// Abstraction to handle pre-composedstate received from server
+// Abstraction to handle pre-composed state received from server
 // (ie, leave top level keys untouched)
 export const immutifyState = (obj) => {
-  let objMut = _.extend({}, obj);
+  const objMut = {};
 
-  Object
-    .keys(objMut)
-    .forEach(key => {
-      objMut[key] = fromJS(objMut[key]);
-    });
+  fromJS(obj).forEach((v, k) => objMut[k] = v);
 
   return objMut;
 };
