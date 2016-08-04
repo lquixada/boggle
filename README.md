@@ -20,7 +20,7 @@ $ nvm use
 To run the app in development mode, run:
 
 ```
-$ npm run start:dev
+$ npm start
 ```
 
 And go to http://localhost:8080/.
@@ -28,13 +28,13 @@ And go to http://localhost:8080/.
 In order to run the isomorphic app in production:
 
 ```
-$ npm run start:prod
+$ NODE_ENV=production npm start
 ```
 
-(or just `npm start`) and go to http://localhost:9000/.
+And go to http://localhost:9000/.
 
-> Note that npm run start:dev will serve bundle.js from memory whereas
-> npm run start:prod will serve it from filesystem.
+> Note that in dev mode bundle.js will be served from memory whereas
+> in prod mode it will be served from disk.
 
 To run all tests and lints, run:
 
@@ -48,7 +48,7 @@ $ npm test
 * *npm run test:mocha*: tests files
 * *npm run test:lint*: lints files
 * *npm run test:watch*: runs all the tests everytime some file changes
-* *npm start*: alias for npm run start:prod
+* *npm start*: starts application depending on NODE_ENV var
 * *npm run start:dev*: starts application in development mode
 * *npm run start:prod*: starts application in production mode
 * *npm run build*: builds all the assets
