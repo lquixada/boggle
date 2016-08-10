@@ -14,7 +14,7 @@
     "build": "webpack -p --progress --config webpack.prod.config.js",
     "start": "[[ $NODE_ENV == 'production' ]] && npm run start:prod || npm run start:dev",
     "start:debug": "NODE_ENV=development node-debug --save-live-edit --no-debug-brk server.js",
-    "start:dev": "NODE_ENV=development nodemon --watch ./server server",
+    "start:dev": "NODE_ENV=development nodemon server",
     "start:prod": "NODE_ENV=production node server"
   },
   "engines": {
