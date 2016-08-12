@@ -1,3 +1,6 @@
+files:
+  include: 'styles/**/*.scss'
+  ignore: 'styles/_mixins.scss'
 rules:
   no-important: 0
   property-sort-order: 0
