@@ -69,5 +69,4 @@ $ npm test
 ## TODO
 
 * Retest on every browser (including IE10+)
-* Put /shared on NODE_PATH?
 * Hashed file names
