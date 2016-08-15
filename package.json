@@ -15,7 +15,9 @@
     "start": "[[ $NODE_ENV == 'production' ]] && npm run start:prod || npm run start:dev",
     "start:debug": "NODE_ENV=development node-debug server",
     "start:dev": "NODE_ENV=development nodemon server",
-    "start:prod": "NODE_ENV=production node server"
+    "start:prod": "NODE_ENV=production node server",
+    "outdated": "npm-check-updates",
+    "update": "npm-check-updates -u"
   },
   "engines": {
     "node": "6.2.1"
@@ -56,6 +58,7 @@
     "mocha": "3.0.2",
     "node-inspector": "0.12.8",
     "nodemon": "1.10.0",
+    "npm-check-updates": "2.8.0",
     "react-addons-test-utils": "15.3.0",
     "react-hot-loader": "1.3.0",
     "sass-lint": "1.8.2",
