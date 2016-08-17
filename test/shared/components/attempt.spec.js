@@ -17,19 +17,19 @@ describe('<Attempt />', () => {
   });
 
   it('is disabled by default', () => {
-    expect(component.find('input[disabled]')).to.have.lengthOf(1);
+    expect(component.find('input')).to.be.disabled();
   });
 
   it('is enabled when the game has started', () => {
     actions.startGame();
 
-    expect(component.find('input').props().disabled).to.be.equal(false);
+    expect(component.find('input')).to.not.be.disabled();
   });
 
   it('is disabled when the game has stopped', () => {
     actions.stopGame();
 
-    expect(component.find('input').props().disabled).to.be.equal(true);
+    expect(component.find('input')).to.be.disabled();
   });
 
 });

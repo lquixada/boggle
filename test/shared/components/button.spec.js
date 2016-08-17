@@ -17,19 +17,19 @@ describe('<Button />', () => {
   });
 
   it('shows "start" by default', () => {
-    expect(component.find('button').text()).to.be.equal('start');
+    expect(component.find('button')).to.have.text('start');
   });
 
   it('shows "stop" when the game has started', () => {
     actions.startGame();
 
-    expect(component.find('button').text()).to.equal('stop');
+    expect(component.find('button')).have.text('stop');
   });
 
   it('shows "start" when the game has stopped', () => {
     actions.stopGame();
 
-    expect(component.find('button').text()).to.equal('start');
+    expect(component.find('button')).to.have.text('start');
   });
 
 });

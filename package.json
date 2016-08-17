@@ -50,6 +50,7 @@
   },
   "devDependencies": {
     "chai": "3.5.0",
+    "chai-enzyme": "0.5.0",
     "chai-immutable": "1.6.0",
     "enzyme": "2.4.1",
     "eslint": "3.3.1",
