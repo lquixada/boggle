@@ -1,6 +1,7 @@
 public/*
 !public/images/
 !public/.gitkeep
+!public/service-worker.js
 
 *.orig
 *.swo

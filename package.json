@@ -12,7 +12,7 @@
     "test:lint:js": "eslint .",
     "test:lint:sass": "sass-lint --no-exit --verbose",
     "build": "webpack -p --progress --config webpack.prod.config.js",
-    "start": "[[ $NODE_ENV == 'production' ]] && npm run start:prod || npm run start:dev",
+    "start": "npm run start:prod",
     "start:debug": "NODE_ENV=development node-debug server",
     "start:dev": "NODE_ENV=development nodemon server",
     "start:prod": "NODE_ENV=production node server",

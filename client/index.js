@@ -11,3 +11,7 @@ const store = configureStore(window.__INITIAL_STATE__, devTools);
 ReactDOM.render(<Provider store={store}>
   <Router children={routes} history={browserHistory} />
 </Provider>, document.getElementById('game'));
+
+if (navigator.serviceWorker) {
+  navigator.serviceWorker.register('/service-worker.js');
+}
