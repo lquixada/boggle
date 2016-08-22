@@ -4,6 +4,7 @@ import { renderToString } from 'react-dom/server';
 import { match, RouterContext } from 'react-router';
 import { Provider } from 'react-redux';
 
+import template from '../template';
 import routes from '../../shared/routes';
 import configureStore from '../../shared/store';
 
@@ -22,9 +23,9 @@ export default (req, res) => {
     const routing = React.createElement(RouterContext, renderProps);
     const provider = React.createElement(Provider, {store: store}, routing);
 
-    res.render('index', {
-      data: JSON.stringify(store.getState()),
-      html: renderToString(provider)
-    });
+    res.send(template({
+      state: JSON.stringify(store.getState()),
+      content: renderToString(provider)
+    }));
   });
 };

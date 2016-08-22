@@ -5,10 +5,6 @@ const PORT = process.env.PORT || 9000;
 const express = require('express');
 const app = express();
 
-/* Setup */
-app.set('view engine', 'hbs');
-app.set('views', './server/views');
-
 /* Middlewares */
 if (process.env.NODE_ENV === 'development') {
   const webpack = require('webpack');
