@@ -5,6 +5,7 @@ describe('Server rendering', () => {
   let server;
 
   beforeEach(() => {
+    process.env.PORT = 8001;
     server = rerequire('../server');
   });
 

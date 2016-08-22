@@ -7,7 +7,7 @@
     "prepush": "npm test",
     "prestart:prod": "npm run build",
     "test": "npm-run-all --parallel test:mocha test:lint",
-    "test:mocha": "PORT=9001 mocha",
+    "test:mocha": "mocha",
     "test:lint": "npm-run-all --parallel test:lint:js test:lint:sass",
     "test:lint:js": "eslint .",
     "test:lint:sass": "sass-lint --no-exit --verbose",
