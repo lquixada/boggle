@@ -19,7 +19,7 @@ module.exports = {
     path: path.join(__dirname, 'public'),
     publicPath: '/',
     filename: './scripts/bundle.js',
-    chunkFilename: './scripts/[name].js'
+    chunkFilename: './scripts/[name].bundle.js'
   },
 
   plugins: [
