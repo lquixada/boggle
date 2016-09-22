@@ -3,7 +3,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 
-export default class Board extends React.Component {
+class Board extends React.Component {
   render() {
     return (
       <div id="board" className="box">
