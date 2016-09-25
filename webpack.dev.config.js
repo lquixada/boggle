@@ -1,4 +1,5 @@
 const path = require('path');
+const AssetsPlugin = require('assets-webpack-plugin');
 const webpack = require('webpack');
 
 module.exports = {
@@ -24,6 +25,7 @@ module.exports = {
   },
 
   plugins: [
-    new webpack.HotModuleReplacementPlugin()
+    new webpack.HotModuleReplacementPlugin(),
+    new AssetsPlugin({update: true, prettyPrint: true})
   ]
 };

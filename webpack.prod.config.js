@@ -1,4 +1,5 @@
 const path = require('path');
+const AssetsPlugin = require('assets-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
@@ -18,11 +19,12 @@ module.exports = {
   output: {
     path: path.join(__dirname, 'public'),
     publicPath: '/',
-    filename: './scripts/bundle.js',
-    chunkFilename: './scripts/[name].bundle.js'
+    filename: './scripts/bundle.[hash].js',
+    chunkFilename: './scripts/[id].[chunkhash].bundle.js'
   },
 
   plugins: [
-    new ExtractTextPlugin('./sheets/bundle.css')
+    new ExtractTextPlugin('./sheets/bundle.[contenthash].css'),
+    new AssetsPlugin({update: true, prettyPrint: true})
   ]
 };

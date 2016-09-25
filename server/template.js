@@ -1,3 +1,5 @@
+import assets from '../webpack-assets';
+
 export default ({state, content}) => (`
   <!DOCTYPE html>
 
@@ -8,7 +10,7 @@ export default ({state, content}) => (`
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <title>Boggle</title>
 
-      <link href="/sheets/bundle.css" rel="stylesheet" />
+      <link href="${assets.main.css}" rel="stylesheet" />
       <script>
         window.__INITIAL_STATE__ = ${state};
       </script>
@@ -16,7 +18,7 @@ export default ({state, content}) => (`
 
     <body>
       <div id="game">${content}</div>
-      <script src="/scripts/bundle.js"></script>
+      <script src="${assets.main.js}"></script>
     </body>
   </html>
 `);

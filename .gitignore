@@ -2,6 +2,7 @@ public/*
 !public/images/
 !public/.gitkeep
 !public/service-worker.js
+webpack-assets.json
 
 *.orig
 *.swo
