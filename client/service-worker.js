@@ -1,8 +1,10 @@
-var cacheKey = 'boggle-v1';
-var cacheAssets = [
+import assets from '../webpack-assets.json';
+
+const cacheKey = 'boggle-v1';
+const cacheAssets = [
   '/',
-  '/bundle.js',
-  '/sheets/bundle.css',
+  assets.bundle.js,
+  assets.bundle.css,
   '/images/logo-github.png',
   '/images/logo-twitter.png',
   '/images/logo-facebook.png'
@@ -15,10 +17,10 @@ var cacheAssets = [
 self.addEventListener('install', function (event) {
   console.log('Event: install');
 
-  var cached = caches.open(cacheKey).then(function (cache) {
+  const cached = caches.open(cacheKey).then(function (cache) {
     return cache.addAll(cacheAssets).then(function () {
       // Note: external assets need special request to be cached.
-      var request = new Request('https://travis-ci.org/lquixada/boggle.svg?branch=master');
+      const request = new Request('https://travis-ci.org/lquixada/boggle.svg?branch=master');
       
       return fetch(request, { mode: 'no-cors' }).then(function (response) {
         // Note: cache.put needs to receive "request.url" instead of "request"
@@ -38,12 +40,12 @@ self.addEventListener('install', function (event) {
 self.addEventListener('activate', function (event) {
   console.log('Event: activate');
 
-  var cleaned = caches.keys().then(function (keys) {
-    var promises = keys.filter((key) => {
+  const cleaned = caches.keys().then(function (keys) {
+    const promises = keys.filter((key) => {
       return key.startsWith('boggle-') && key !== cacheKey;
     }).map((key) => {
       return cache.delete(key);
-    })
+    });
 
     return Promise.all(promises);
   });
@@ -60,7 +62,7 @@ self.addEventListener('fetch', function (event) {
 
   // Note: caches.match needs to receive "request.url" instead of "request"
   // in order to properly cache external assets.
-  var fetched = caches.match(event.request.url).then(function (response) {
+  const fetched = caches.match(event.request.url).then(function (response) {
     if (response) {
       console.log('Cache', event.request.url);
       return response;

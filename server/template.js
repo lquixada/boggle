@@ -10,7 +10,7 @@ export default ({state, content}) => (`
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <title>Boggle</title>
 
-      <link href="${assets.main.css}" rel="stylesheet" />
+      <link href="${assets.bundle.css}" rel="stylesheet" />
       <script>
         window.__INITIAL_STATE__ = ${state};
       </script>
@@ -18,7 +18,7 @@ export default ({state, content}) => (`
 
     <body>
       <div id="game">${content}</div>
-      <script src="${assets.main.js}"></script>
+      <script src="${assets.bundle.js}"></script>
     </body>
   </html>
 `);

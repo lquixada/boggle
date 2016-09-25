@@ -56,6 +56,7 @@
     "eslint": "3.3.1",
     "husky": "0.11.6",
     "jsdom": "9.4.2",
+    "json-loader": "0.5.4",
     "mocha": "3.0.2",
     "node-inspector": "0.12.8",
     "nodemon": "1.10.2",
