@@ -1,6 +1,8 @@
 const path = require('path');
 const AssetsPlugin = require('assets-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
+
 
 module.exports = {
   entry: {
@@ -26,6 +28,11 @@ module.exports = {
   },
 
   plugins: [
+    new CleanWebpackPlugin(['./public/scripts', './public/sheets'], {
+      // Without `root` CleanWebpackPlugin won't point to our
+      // project and will fail to work.
+      root: process.cwd()
+    }),
     new ExtractTextPlugin('./sheets/bundle.[contenthash].css'),
     new AssetsPlugin({update: true, prettyPrint: true})
   ]
