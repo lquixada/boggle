@@ -23,8 +23,8 @@ module.exports = {
   output: {
     path: path.join(__dirname, 'public'),
     publicPath: '/',
-    filename: './scripts/[name].[hash].js',
-    chunkFilename: './scripts/[id].[chunkhash].[name].js'
+    filename: 'scripts/[name].[chunkhash].js',
+    chunkFilename: 'scripts/[id].[name].[chunkhash].js'
   },
 
   plugins: [
@@ -33,7 +33,7 @@ module.exports = {
       // project and will fail to work.
       root: process.cwd()
     }),
-    new ExtractTextPlugin('./sheets/bundle.[contenthash].css'),
-    new AssetsPlugin({update: true, prettyPrint: true})
+    new ExtractTextPlugin('sheets/bundle.[contenthash].css'),
+    new AssetsPlugin({prettyPrint: true})
   ]
 };

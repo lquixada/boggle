@@ -1,10 +1,6 @@
-import assets from '../webpack-assets.json';
-
 const cacheKey = 'boggle-v1';
 const cacheAssets = [
   '/',
-  assets.bundle.js,
-  assets.bundle.css,
   '/images/logo-github.png',
   '/images/logo-twitter.png',
   '/images/logo-facebook.png'
@@ -24,9 +20,8 @@ self.addEventListener('install', event => {
 
       // Note: cache.put needs to receive "request.url" instead of "request"
       // in order to properly cache external assets.      
-      return fetch(request, { mode: 'no-cors' }).then(response =>
-        cache.put(request.url, response)
-      );
+      return fetch(request, { mode: 'no-cors' })
+        .then(response => cache.put(request.url, response));
     })
   );
 

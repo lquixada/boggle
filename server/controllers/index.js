@@ -4,6 +4,7 @@ import { renderToString } from 'react-dom/server';
 import { match, RouterContext } from 'react-router';
 import { Provider } from 'react-redux';
 
+import assets from '../../webpack-assets';
 import template from '../template';
 import routes from '../../shared/routes';
 import configureStore from '../../shared/store';
@@ -24,8 +25,10 @@ export default (req, res) => {
     const provider = React.createElement(Provider, {store: store}, routing);
 
     res.send(template({
+      assets: JSON.stringify(assets),
       state: JSON.stringify(store.getState()),
-      content: renderToString(provider)
+      content: renderToString(provider),
+      bundle: assets.bundle
     }));
   });
 };
