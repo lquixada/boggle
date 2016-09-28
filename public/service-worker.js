@@ -1,11 +1,4 @@
 const cacheKey = 'boggle-v1';
-const cacheAssets = [
-  '/',
-  '/images/logo-github.png',
-  '/images/logo-twitter.png',
-  '/images/logo-facebook.png'
-];
-
 
 /*
  * Installation
@@ -14,15 +7,26 @@ self.addEventListener('install', event => {
   console.log('Event: install');
 
   const cached = caches.open(cacheKey).then(cache =>
-    cache.addAll(cacheAssets).then(() => {
-      // Note: external assets need special request to be cached.
-      const request = new Request('https://travis-ci.org/lquixada/boggle.svg?branch=master');
+    fetch('/assets.json')
+      .then(response => response.json())
+      .then(assets =>
+        cache.addAll([
+          '/',
+          assets.main.js,
+          '/images/logo-github.png',
+          '/images/logo-twitter.png',
+          '/images/logo-facebook.png'
+        ])
+        .then(() => {
+          // Note: external assets need special request to be cached.
+          const request = new Request('https://travis-ci.org/lquixada/boggle.svg?branch=master');
 
-      // Note: cache.put needs to receive "request.url" instead of "request"
-      // in order to properly cache external assets.      
-      return fetch(request, { mode: 'no-cors' })
-        .then(response => cache.put(request.url, response));
-    })
+          // Note: cache.put needs to receive "request.url" instead of "request"
+          // in order to properly cache external assets.      
+          return fetch(request, { mode: 'no-cors' })
+            .then(response => cache.put(request.url, response));
+        })
+      )
   );
 
   event.waitUntil(cached);

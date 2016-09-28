@@ -3,10 +3,10 @@ const AssetsPlugin = require('assets-webpack-plugin');
 const webpack = require('webpack');
 
 module.exports = {
-  entry: {
-    bundle: ['webpack-hot-middleware/client', './client/index'],
-    serviceWorker: ['./client/service-worker']
-  },
+  entry: [
+    'webpack-hot-middleware/client',
+    './client'
+  ],
 
   devtool: 'source-map',
 
@@ -21,12 +21,16 @@ module.exports = {
   output: {
     path: path.join(__dirname, 'public'),
     publicPath: '/',
-    filename: 'scripts/[name].js',
+    filename: 'scripts/bundle.js',
     chunkFilename: 'scripts/[id].[name].js'
   },
 
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
-    new AssetsPlugin({prettyPrint: true})
+    new AssetsPlugin({
+      filename: 'assets.json',
+      path: path.join(__dirname, 'public'),
+      prettyPrint: true
+    })
   ]
 };

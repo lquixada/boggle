@@ -5,10 +5,9 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 
 module.exports = {
-  entry: {
-    bundle: ['./client/index'],
-    serviceWorker: ['./client/service-worker']
-  },
+  entry: [
+    './client'
+  ],
 
   devtool: 'source-map',
 
@@ -23,7 +22,7 @@ module.exports = {
   output: {
     path: path.join(__dirname, 'public'),
     publicPath: '/',
-    filename: 'scripts/[name].[chunkhash].js',
+    filename: 'scripts/bundle.[hash].js',
     chunkFilename: 'scripts/[id].[name].[chunkhash].js'
   },
 
@@ -34,6 +33,10 @@ module.exports = {
       root: process.cwd()
     }),
     new ExtractTextPlugin('sheets/bundle.[contenthash].css'),
-    new AssetsPlugin({prettyPrint: true})
+    new AssetsPlugin({
+      filename: 'assets.json',
+      path: path.join(__dirname, 'public'),
+      prettyPrint: true
+    })
   ]
 };

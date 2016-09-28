@@ -8,16 +8,15 @@ export default ({state, content, assets, bundle}) => (`
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <title>Boggle</title>
 
-      <link href="${bundle.css}" rel="stylesheet" />
+      <link href="${assets.main.css}" rel="stylesheet" />
       <script>
-        window.__ASSETS__ = ${assets};
         window.__INITIAL_STATE__ = ${state};
       </script>
     </head>
 
     <body>
       <div id="game">${content}</div>
-      <script src="${bundle.js}"></script>
+      <script src="${assets.main.js}"></script>
     </body>
   </html>
 `);

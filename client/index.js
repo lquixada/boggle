@@ -5,7 +5,6 @@ import { Router, browserHistory } from 'react-router';
 import configureStore from '../shared/store';
 import routes from '../shared/routes';
 
-const assets = window.__ASSETS__;
 const devTools = (window.devToolsExtension? window.devToolsExtension(): f => f);
 const store = configureStore(window.__INITIAL_STATE__, devTools);
 
@@ -14,5 +13,5 @@ ReactDOM.render(<Provider store={store}>
 </Provider>, document.getElementById('game'));
 
 if (navigator.serviceWorker) {
-  navigator.serviceWorker.register(assets.serviceWorker.js);
+  navigator.serviceWorker.register('/service-worker.js');
 }
