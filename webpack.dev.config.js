@@ -1,6 +1,7 @@
 const path = require('path');
-const AssetsPlugin = require('assets-webpack-plugin');
 const webpack = require('webpack');
+const AssetsPlugin = require('assets-webpack-plugin');
+const SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin');
 
 module.exports = {
   entry: [
@@ -13,8 +14,7 @@ module.exports = {
   module: {
     loaders: [
       { test: /\.js$/, exclude: /node_modules/, loaders: ['react-hot', 'babel'] },
-      { test: /\.scss$/, loaders: ['style', 'css', 'sass'] },
-      { test: /\.json$/, loader: 'json'}
+      { test: /\.scss$/, loaders: ['style', 'css', 'sass'] }
     ]
   },
 
@@ -31,6 +31,16 @@ module.exports = {
       filename: 'assets.json',
       path: path.join(__dirname, 'public'),
       prettyPrint: true
+    }),
+    new SWPrecacheWebpackPlugin({
+      cacheId: 'boggle',
+      filename: 'service-worker.js',
+      staticFileGlobs: [
+        './public/images/**/*.{png,jpg,gif}',
+        './public/scripts/**/*.js',
+        './public/sheets/**/*.css'
+      ],
+      stripPrefix: './public/'
     })
   ]
 };
