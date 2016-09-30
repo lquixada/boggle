@@ -69,4 +69,3 @@ $ npm test
 ## TODO
 
 * Retest on every browser (including IE10+)
-* Hashed file names
