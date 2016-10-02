@@ -1,7 +1,6 @@
 import { jsdom } from 'jsdom';
-
-const request = require('supertest');
-const { createServer } = require('../helper');
+import request from 'supertest';
+import { createServer } from '../helper';
 
 describe('Server', () => {
   let server;
