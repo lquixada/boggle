@@ -1,0 +1,7 @@
+apps:
+  - name     : boggle
+    script   : app.js
+    instances: 4
+    exec_mode: cluster
+    env    :
+      NODE_ENV: production
