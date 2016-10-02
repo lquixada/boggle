@@ -7,14 +7,8 @@ const app = express();
 
 /* Middlewares */
 if (process.env.NODE_ENV === 'development') {
-  const webpack = require('webpack');
-  const config = require('../webpack.dev.config');
-  const compiler = webpack(config);
-  app.use(require('webpack-dev-middleware')(compiler, {
-    noInfo: true,
-    publicPath: config.output.publicPath
-  }));
-  app.use(require('webpack-hot-middleware')(compiler));
+  const webpackMiddlewares = require('./middlewares/webpack').default;
+  app.use(...webpackMiddlewares);
 }
 app.use(require('./middlewares/logger').default);
 app.use(require('./middlewares/static').default);
