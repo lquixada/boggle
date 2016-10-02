@@ -1,23 +1,20 @@
-require('babel-core/register');
-require.extensions['.scss'] = function () {};
+import express from 'express';
+import loggerMiddleware from './middlewares/logger';
+import staticMiddleware from './middlewares/static';
+import indexController from './controllers/index';
 
-const PORT = process.env.PORT || 9000;
-const express = require('express');
-const app = express();
+// For semantic purposes, app is equivalent to server.
+const server = express();
 
 /* Middlewares */
 if (process.env.NODE_ENV === 'development') {
   const webpackMiddlewares = require('./middlewares/webpack').default;
-  app.use(...webpackMiddlewares);
+  server.use(...webpackMiddlewares);
 }
-app.use(require('./middlewares/logger').default);
-app.use(require('./middlewares/static').default);
+server.use(loggerMiddleware);
+server.use(staticMiddleware);
 
 /* Controllers */
-app.use(require('./controllers/index').default);
+server.use(indexController);
 
-const server = app.listen(PORT, () => {
-  console.info(`Server running on: http://localhost:${PORT}/`);
-});
-
-module.exports = server;
+export default server;

@@ -1,12 +1,11 @@
 const request = require('supertest');
-const { rerequire } = require('../helper');
+const { createServer } = require('../helper');
 
 describe('Server rendering', () => {
   let server;
 
   beforeEach(() => {
-    process.env.PORT = 8001;
-    server = rerequire('../server');
+    server = createServer();
   });
 
   afterEach((done) => {

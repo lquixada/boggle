@@ -5,7 +5,7 @@
   "scripts": {
     "deploy": "git push origin master:heroku",
     "prepush": "npm test",
-    "prestart:dev": "npm run build:dev",
+    "restart:dev": "npm run build:dev",
     "prestart:prod": "npm run build:prod",
     "test": "npm-run-all --parallel test:mocha test:lint",
     "test:mocha": "mocha",
@@ -15,9 +15,9 @@
     "build:dev": "webpack --progress --config webpack.dev.config.js",
     "build:prod": "webpack -p --progress --config webpack.prod.config.js",
     "start": "npm run start:prod",
-    "start:debug": "NODE_ENV=development node-debug server",
-    "start:dev": "NODE_ENV=development nodemon server",
-    "start:prod": "NODE_ENV=production node server",
+    "start:debug": "NODE_ENV=development node-debug app.js",
+    "start:dev": "NODE_ENV=development nodemon app.js",
+    "start:prod": "NODE_ENV=production node app.js",
     "outdated": "npm-check-updates",
     "update": "npm-check-updates -u"
   },
