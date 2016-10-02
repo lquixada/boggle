@@ -1,8 +1,8 @@
 apps:
   - name     : boggle
     script   : app.js
-    watch    : true
-    instances: 0
+    watch    : ./server
+    instances: 1
     exec_mode: cluster
     env    :
       NODE_ENV: development
