@@ -1,7 +1,9 @@
+import { jsdom } from 'jsdom';
+
 const request = require('supertest');
 const { createServer } = require('../helper');
 
-describe('Server rendering', () => {
+describe('Server', () => {
   let server;
 
   beforeEach(() => {
@@ -12,15 +14,43 @@ describe('Server rendering', () => {
     server.close(done);
   });
 
-  it('responds to /', (done) => {
-    request(server)
-      .get('/')
-      .expect(200, done);
+  describe('/', () => {
+    it('is a valid path', (done) => {
+      request(server)
+        .get('/')
+        .expect(200, done);
+    });
+
+    it('renders the game page', (done) => {
+      request(server)
+        .get('/')
+        .expect(res => {
+          const doc = jsdom(res.text);
+          const board = doc.getElementById('board');
+
+          expect(board).to.be.an('object');;
+        })
+        .end(done);
+    });
   });
 
-  it('responds to /about', (done) => {
-    request(server)
-      .get('/about')
-      .expect(200, done);
+  describe('/about', () => {
+    it('is a valid path', (done) => {
+      request(server)
+        .get('/about')
+        .expect(200, done);
+    });
+
+    it('renders the "About me" page', (done) => {
+      request(server)
+        .get('/about')
+        .expect(res => {
+          const doc = jsdom(res.text);
+          const title = doc.getElementsByTagName('h2')[0];
+
+          expect(title.innerHTML).to.be.equal('About me');
+        })
+        .end(done);
+    });
   });
 });
