@@ -1,4 +1,5 @@
 import express from 'express';
+import helmet from 'helmet';
 import loggerMiddleware from './middlewares/logger';
 import staticMiddleware from './middlewares/static';
 import indexController from './controllers/index';
@@ -11,6 +12,7 @@ if (process.env.NODE_ENV === 'development') {
   const webpackMiddlewares = require('./middlewares/webpack').default;
   server.use(...webpackMiddlewares);
 }
+server.use(helmet());
 server.use(loggerMiddleware);
 server.use(staticMiddleware);
 
