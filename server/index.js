@@ -1,4 +1,5 @@
 import express from 'express';
+import compression from 'compression';
 import helmet from 'helmet';
 import loggerMiddleware from './middlewares/logger';
 import staticMiddleware from './middlewares/static';
@@ -12,6 +13,8 @@ if (process.env.NODE_ENV === 'development') {
   const webpackMiddlewares = require('./middlewares/webpack').default;
   server.use(...webpackMiddlewares);
 }
+
+server.use(compression());
 server.use(helmet());
 server.use(loggerMiddleware);
 server.use(staticMiddleware);
