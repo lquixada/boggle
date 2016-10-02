@@ -15,7 +15,6 @@
     "build:dev": "webpack --progress --config webpack.dev.config.js",
     "build:prod": "webpack -p --progress --config webpack.prod.config.js",
     "start": "npm run start:prod",
-    "start:debug": "NODE_ENV=development node-debug app.js",
     "start:dev": "pm2 start process.yml",
     "start:prod": "pm2 start process.yml --env production",
     "stop": "pm2 kill",
