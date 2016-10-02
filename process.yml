@@ -8,7 +8,7 @@ apps:
       NODE_ENV: development
   - name     : boggle-prod
     script   : app.js
-    instances: 4
+    instances: 0
     exec_mode: cluster
     env    :
       NODE_ENV: production
