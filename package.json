@@ -5,6 +5,7 @@
   "scripts": {
     "deploy": "git push origin master:heroku",
     "prepush": "npm test",
+    "pretest": "npm run build:dev",
     "prestart:dev": "npm run build:dev",
     "prestart:prod": "npm run build:prod",
     "test": "npm-run-all --parallel test:mocha test:lint",
