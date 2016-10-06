@@ -1,6 +1,7 @@
 public/*
-!public/images/
 !public/.gitkeep
+!public/images/
+
 
 *.orig
 *.swo
