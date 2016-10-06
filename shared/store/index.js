@@ -3,10 +3,11 @@ import thunkMiddleware from 'redux-thunk';
 import reducers from '../reducers';
 import { immutifyState } from '../utils/helper';
 
-const configureStore = (initialState = {}, devTools = f => f) => {
-  const state = immutifyState(initialState);
-  const middlewares = compose(applyMiddleware(thunkMiddleware), devTools);
-  return createStore(reducers, state, middlewares);
+const configureStore = (initialState = {}, middlewares = [], devTools = f => f) => {
+  initialState = immutifyState(initialState);
+  middlewares = middlewares.concat([thunkMiddleware]);
+  middlewares = compose(applyMiddleware(...middlewares), devTools);
+  return createStore(reducers, initialState, middlewares);
 };
 
 export default configureStore;
