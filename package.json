@@ -17,7 +17,7 @@
     "build:dev": "webpack --progress --config webpack.dev.config.js",
     "build:prod": "webpack -p --progress --config webpack.prod.config.js",
     "start": "npm run start:prod",
-    "start:dev": "pm2 start process.yml --only boggle-dev",
+    "start:dev": "pm2 start process.yml --only boggle-dev --no-daemon",
     "start:prod": "pm2 start process.yml --only boggle-prod --no-daemon",
     "stop": "pm2 kill",
     "outdated": "npm-check-updates",
