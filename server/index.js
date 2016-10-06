@@ -20,9 +20,6 @@ server.use(loggerMiddleware);
 server.use(staticMiddleware);
 
 /* Controllers */
-server.get('/.well-known/acme-challenge/rHXiP_Gx7XopJlxCUm29lfgBOkCiypV_QnwlegW1qrg', function (req, res) {
-  res.send('rHXiP_Gx7XopJlxCUm29lfgBOkCiypV_QnwlegW1qrg.69bCnYYsQZKoAqYIy7V97R4RAr6UpNwn5Yiu0po1I8g');
-});
 server.use(indexController);
 
 export default server;
