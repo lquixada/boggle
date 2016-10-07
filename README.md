@@ -51,8 +51,11 @@ $ npm test
 * *npm start*: starts application depending on NODE_ENV var
 * *npm run start:dev*: starts application in development mode
 * *npm run start:prod*: starts application in production mode
-* *npm run build*: builds all the assets
-* *npm run deploy*: deploys master branch to gh-pages branch
+* *npm run build:dev*: builds all development assets
+* *npm run build:prod*: builds all production assets
+* *npm run deploy*: deploys project to heroku
+* *npm run outdated*: lists all outdated packages
+* *npm run update*: updates all outadted packages
 
 
 ## Stack
@@ -69,4 +72,8 @@ $ npm test
 
 ## TODO
 
+* npm task for stress test
+* New Relic Lite
+* Progressive Web App Update Notification
+* HTTP/2
 * Retest on every browser (including IE10+)
