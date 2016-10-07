@@ -7,12 +7,6 @@ import Title from './title';
 
 
 class About extends React.Component {
-  handleClick() {
-    System.import('../utils/alert').then(alert => {
-      alert('code-split example with System.import!');
-    });
-  }
-
   render() {
     return (
       <main>
@@ -29,7 +23,7 @@ class About extends React.Component {
                 <img src="https://s.gravatar.com/avatar/a0ac79788f87ca12cda519b3a1bb2a7c?s=100" />
               </span>
 
-              <h2 onClick={this.handleClick.bind(this)}>About me</h2>
+              <h2>About me</h2>
 
               <p>Loving Software, Delivering Product.</p>
 
