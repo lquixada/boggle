@@ -64,6 +64,7 @@ $ npm test
 * Utils: npm, webpack, babel
 * CI: [TravisCI](https://travis-ci.org/lquixada/boggle)
 * Hosting: [Heroku](https://bogglejs.herokuapp.com/)
+* SSL: Let's Encrypt (https://letsencrypt.org/)
 
 
 ## TODO
