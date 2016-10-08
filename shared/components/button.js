@@ -1,27 +1,15 @@
 import '../../styles/button.scss';
-import React from 'react';
-import { connect } from 'react-redux';
-import * as actions from '../actions';
+import React, {PropTypes} from 'react';
 
+const Button = ({onClick, text}) => (
+  <div id="button">
+    <button type="button" onClick={onClick}>{text}</button>
+  </div>
+);
 
-class Button extends React.Component {
-  render() {
-    return (
-      <div id="button">
-        {this.renderButton()}
-      </div>
-    );
-  }
+Button.propTypes = {
+  onClick: PropTypes.func.isRequired,
+  text: PropTypes.string.isRequired
+};
 
-  renderButton() {
-    if (this.props.started) {
-      return <button type="button" onClick={this.props.stopGame}>stop</button>;
-    } else {
-      return <button type="button" onClick={this.props.startGame}>start</button>;
-    }
-  }
-}
-
-const mapStateToProps = ({ started }) => ({ started });
-
-export default connect(mapStateToProps, actions)(Button);
+export default Button;
