@@ -6,8 +6,13 @@ import {Router, browserHistory} from 'react-router';
 import configureStore from '../shared/store';
 import routes from '../shared/routes';
 
+const middlewares = [];
+
+if (process.env.NODE_ENV === 'production') {
+  middlewares.push(RavenMiddleware('https://f42a178848284bf4ab21149d98b3768b@sentry.io/104332'));
+}
+
 const devTools = (window.devToolsExtension? window.devToolsExtension(): f => f);
-const middlewares = [RavenMiddleware('https://f42a178848284bf4ab21149d98b3768b@sentry.io/104332')];
 const store = configureStore(window.__INITIAL_STATE__, middlewares, devTools);
 
 ReactDOM.render(<Provider store={store}>
