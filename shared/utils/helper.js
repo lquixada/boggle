@@ -1,4 +1,4 @@
-import { fromJS } from 'immutable';
+import {fromJS} from 'immutable';
 import BoardChecker from '../utils/board-checker';
 import Dictionary from '../utils/dictionary';
 

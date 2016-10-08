@@ -3,7 +3,6 @@ import Attempt from '../components/attempt';
 import * as actions from '../actions';
 import {connect} from 'react-redux';
 
-
 class AttemptContainer extends React.Component {
   constructor(props) {
     super(props);

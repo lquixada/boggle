@@ -1,4 +1,4 @@
-import { List } from 'immutable';
+import {List} from 'immutable';
 import BoardChecker from '../../../shared/utils/board-checker';
 
 describe('BoardChecker', () => {

@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import RavenMiddleware from 'redux-raven-middleware';
-import { Provider } from 'react-redux';
-import { Router, browserHistory } from 'react-router';
+import {Provider} from 'react-redux';
+import {Router, browserHistory} from 'react-router';
 import configureStore from '../shared/store';
 import routes from '../shared/routes';
 

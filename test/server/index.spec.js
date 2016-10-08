@@ -1,6 +1,6 @@
-import { jsdom } from 'jsdom';
+import {jsdom} from 'jsdom';
 import request from 'supertest';
-import { createServer } from '../helper';
+import {createServer} from '../helper';
 
 describe('Server', () => {
   let server;

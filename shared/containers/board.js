@@ -3,7 +3,6 @@ import Board from '../components/board';
 import * as actions from '../actions';
 import {connect} from 'react-redux';
 
-
 class BoardContainer extends React.Component {
   render() {
     return (

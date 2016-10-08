@@ -1,12 +1,8 @@
 import React from 'react';
-import { Link } from 'react-router';
+import {Link} from 'react-router';
 
-class Title extends React.Component {
-  render() {
-    return (
-      <h1><Link to="/">BOGGLE</Link></h1>
-    );
-  }
-}
+const Title = () => (
+  <h1><Link to="/">BOGGLE</Link></h1>
+);
 
 export default Title;

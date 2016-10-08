@@ -3,7 +3,6 @@ import Button from '../components/button';
 import {connect} from 'react-redux';
 import * as actions from '../actions';
 
-
 class ButtonContainer extends React.Component {
   getText() {
     if (this.props.started) {

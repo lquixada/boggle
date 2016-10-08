@@ -1,5 +1,5 @@
 import _ from 'underscore';
-import { List } from 'immutable';
+import {List} from 'immutable';
 
 class Board {
   constructor() {

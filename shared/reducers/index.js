@@ -1,4 +1,4 @@
-import { combineReducers } from 'redux';
+import {combineReducers} from 'redux';
 import attempts from './attempts';
 import matrix from './board';
 import counter from './counter';

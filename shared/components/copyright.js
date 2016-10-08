@@ -1,6 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router';
-
+import {Link} from 'react-router';
 
 class Copyright extends React.Component {
   render() {

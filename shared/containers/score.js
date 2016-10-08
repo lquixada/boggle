@@ -2,7 +2,6 @@ import React from 'react';
 import Score from '../components/score';
 import {connect} from 'react-redux';
 
-
 class ScoreContainer extends React.Component {
   render() {
     return (

@@ -1,7 +1,6 @@
 import '../../styles/clock.scss';
 import React, {PropTypes} from 'react';
 
-
 const Clock = ({secs, started}) => (
   <div id="clock">
     <svg width="120" height="120">
