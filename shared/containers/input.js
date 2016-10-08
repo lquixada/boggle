@@ -1,9 +1,9 @@
 import React from 'react';
-import Attempt from '../components/attempt';
+import Input from '../components/input';
 import * as actions from '../actions';
 import {connect} from 'react-redux';
 
-class AttemptContainer extends React.Component {
+class InputContainer extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -41,7 +41,7 @@ class AttemptContainer extends React.Component {
 
   render() {
     return (
-      <Attempt value={this.state.value}
+      <Input value={this.state.value}
         started={this.props.started}
         onChange={this.handleChange}
         onEnter={this.handleEnter} />
@@ -50,4 +50,4 @@ class AttemptContainer extends React.Component {
 }
 
 const mapStateToProps = ({ started }) => ({ started });
-export default connect(mapStateToProps, actions)(AttemptContainer);
+export default connect(mapStateToProps, actions)(InputContainer);

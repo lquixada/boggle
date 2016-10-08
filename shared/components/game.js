@@ -1,7 +1,7 @@
 import '../../styles/game.scss';
 import React from 'react';
 import {Link} from 'react-router';
-import AttemptContainer from '../containers/attempt';
+import InputContainer from '../containers/input';
 import BoardContainer from '../containers/board';
 import ButtonContainer from '../containers/button';
 import ClockContainer from '../containers/clock';
@@ -15,7 +15,7 @@ const Game = () => (
     <header>
       <div className="container">
         <Title />
-        <AttemptContainer />
+        <InputContainer />
         <ButtonContainer />
       </div>
     </header>

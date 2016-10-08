@@ -1,8 +1,8 @@
-import '../../styles/attempt.scss';
+import '../../styles/input.scss';
 import React, {PropTypes} from 'react';
 
-const Attempt = ({value, started, onChange, onEnter}) => (
-  <div id="attempt">
+const Input = ({value, started, onChange, onEnter}) => (
+  <div id="input">
     <input type="text"
       value={value}
       onChange={evt => onChange(evt)}
@@ -13,11 +13,11 @@ const Attempt = ({value, started, onChange, onEnter}) => (
   </div>
 );
 
-Attempt.propTypes = {
+Input.propTypes = {
   onChange: PropTypes.func.isRequired,
   onEnter: PropTypes.func.isRequired,
   started: PropTypes.bool.isRequired,
   value: PropTypes.string.isRequired
 };
 
-export default Attempt;
+export default Input;
