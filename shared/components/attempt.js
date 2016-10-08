@@ -1,60 +1,23 @@
 import '../../styles/attempt.scss';
-import React from 'react';
-import * as actions from '../actions';
-import { connect } from 'react-redux';
+import React, {PropTypes} from 'react';
 
+const Attempt = ({value, started, onChange, onEnter}) => (
+  <div id="attempt">
+    <input type="text"
+      value={value}
+      onChange={evt => onChange(evt)}
+      onKeyUp={evt => onEnter(evt)}
+      className="box"
+      disabled={!started}
+      placeholder={started? 'Type the word and hit Enter!' : 'Press start to begin...'} />
+  </div>
+);
 
-class Attempt extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      value: '',
-      minLength: 2
-    };
+Attempt.propTypes = {
+  onChange: PropTypes.func.isRequired,
+  onEnter: PropTypes.func.isRequired,
+  started: PropTypes.bool.isRequired,
+  value: PropTypes.string.isRequired
+};
 
-    this.handleChange = this.handleChange.bind(this);
-    this.handleEnter = this.handleEnter.bind(this);
-  }
-
-  handleChange(evt) {
-    this.setValue(evt.target.value);
-  }
-
-  handleEnter(evt) {
-    if (this.state.value.length < this.state.minLength) {
-      return;
-    }
-
-    if (evt.which === 13) {
-      this.props.addCheckedAttempt(this.state.value);
-      this.reset();
-    }
-  }
-
-  setValue(value) {
-    this.setState({value: value.trim()});
-  }
-
-  reset() {
-    this.setValue('');
-    this.refs.attempt.focus();
-  }
-
-  render() {
-    return (
-      <div id="attempt">
-        <input type="text" ref="attempt"
-          value={this.state.value}
-          onChange={this.handleChange}
-          onKeyUp={this.handleEnter}
-          className="box"
-          disabled={!this.props.started}
-          placeholder={this.props.started? 'Type the word and hit Enter!' : 'Press start to begin...'} />
-      </div>
-    );
-  }
-}
-
-const mapStateToProps = ({ started }) => ({ started });
-
-export default connect(mapStateToProps, actions)(Attempt);
+export default Attempt;

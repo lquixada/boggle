@@ -3,16 +3,16 @@ import { mountConnected } from '../../helper';
 import { bindActionCreators } from 'redux';
 import configureStore from '../../../shared/store';
 import * as actionCreators from '../../../shared/actions';
-import Attempt from '../../../shared/components/attempt';
+import AttemptContainer from '../../../shared/containers/attempt';
 
-describe('<Attempt />', () => {
+describe('<AttemptContainer />', () => {
   let actions;
   let component;
   let store;
 
   beforeEach(() => {
     store = configureStore();
-    component = mountConnected(<Attempt />, store);
+    component = mountConnected(<AttemptContainer />, store);
     actions = bindActionCreators(actionCreators, store.dispatch);
   });
 

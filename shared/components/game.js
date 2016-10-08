@@ -2,7 +2,7 @@ import '../../styles/game.scss';
 import React from 'react';
 import { Link } from 'react-router';
 
-import Attempt from './attempt';
+import AttemptContainer from '../containers/attempt';
 import Board from './board';
 import Button from './button';
 import Clock from './clock';
@@ -19,7 +19,7 @@ class Game extends React.Component {
         <header>
           <div className="container">
             <Title />
-            <Attempt />
+            <AttemptContainer />
             <Button />
           </div>
         </header>
