@@ -3,7 +3,7 @@ import React from 'react';
 import { Link } from 'react-router';
 
 import AttemptContainer from '../containers/attempt';
-import Board from './board';
+import BoardContainer from '../containers/board';
 import Button from './button';
 import Clock from './clock';
 import Copyright from './copyright';
@@ -30,7 +30,7 @@ class Game extends React.Component {
               <Clock />
               <Score />
             </aside>
-            <Board />
+            <BoardContainer />
           </div>
         </section>
 

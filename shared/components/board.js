@@ -1,34 +1,28 @@
 import '../../styles/board.scss';
 import React from 'react';
-import { connect } from 'react-redux';
 
+const Cell = ({letter}) => (
+  <td>{letter}</td>
+);
 
-class Board extends React.Component {
-  render() {
-    return (
-      <div id="board" className="box">
-        <table>
-          <tbody>
-            {this.renderRows()}
-          </tbody>
-        </table>
-      </div>
-    );
-  }
+const Row = ({letters}) => (
+  <tr>
+    {letters.map((letter, i) =>
+      <Cell key={i} letter={letter} />
+    )}
+  </tr>
+);
 
-  renderRows() {
-    return this.props.matrix.map((row, i) =>
-      (<tr key={i}>{this.renderCells(row)}</tr>)
-    );
-  }
+const Board = ({matrix}) => (
+  <div id="board" className="box">
+    <table>
+      <tbody>
+        {matrix.map((letters, i) => 
+          <Row key={i} letters={letters} />
+        )}
+      </tbody>
+    </table>
+  </div>
+);
 
-  renderCells(row) {
-    return row.map((cell, i) =>
-      (<td key={i}>{cell}</td>)
-    );
-  }
-}
-
-const mapStateToProps = ({ matrix }) => ({ matrix });
-
-export default connect(mapStateToProps)(Board);
+export default Board;

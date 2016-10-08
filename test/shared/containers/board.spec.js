@@ -3,16 +3,16 @@ import { mountConnected } from '../../helper';
 import { bindActionCreators } from 'redux';
 import configureStore from '../../../shared/store';
 import * as actionCreators from '../../../shared/actions';
-import Board from '../../../shared/components/board';
+import BoardContainer from '../../../shared/containers/board';
 
-describe('<Board />', () => {
+describe('<BoardContainer />', () => {
   let actions;
   let component;
   let store;
 
   beforeEach(() => {
     store = configureStore();
-    component = mountConnected(<Board />, store);
+    component = mountConnected(<BoardContainer />, store);
     actions = bindActionCreators(actionCreators, store.dispatch);
   });
 
