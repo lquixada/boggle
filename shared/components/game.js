@@ -8,7 +8,7 @@ import ButtonContainer from '../containers/button';
 import ClockContainer from '../containers/clock';
 import Copyright from './copyright';
 import Social from './social';
-import Score from './score';
+import ScoreContainer from '../containers/score';
 import Title from './title';
 
 
@@ -28,7 +28,7 @@ class Game extends React.Component {
           <div className="container">
             <aside>
               <ClockContainer />
-              <Score />
+              <ScoreContainer />
             </aside>
             <BoardContainer />
           </div>

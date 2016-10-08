@@ -3,16 +3,16 @@ import { mountConnected } from '../../helper';
 import { bindActionCreators } from 'redux';
 import configureStore from '../../../shared/store';
 import * as actionCreators from '../../../shared/actions';
-import Score from '../../../shared/components/score';
+import ScoreContainer from '../../../shared/containers/score';
 
-describe('<Score />', () => {
+describe('<ScoreContainer />', () => {
   let actions;
   let component;
   let store;
 
   beforeEach(() => {
     store = configureStore();
-    component = mountConnected(<Score />, store);
+    component = mountConnected(<ScoreContainer />, store);
     actions = bindActionCreators(actionCreators, store.dispatch);
   });
 
