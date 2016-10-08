@@ -17,8 +17,8 @@ const attempts = (state = List(), action) => {
     case 'ADD_ATTEMPT':
       return state.push(attempt(undefined, action));
     case 'STOP_GAME':
-      return [];
-    default:
+      return List();
+    default:  
       return state;
   }
 };
