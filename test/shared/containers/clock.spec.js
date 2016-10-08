@@ -4,9 +4,9 @@ import { mountConnected } from '../../helper';
 import { bindActionCreators } from 'redux';
 import configureStore from '../../../shared/store';
 import * as actionCreators from '../../../shared/actions';
-import Clock from '../../../shared/components/clock';
+import ClockContainer from '../../../shared/containers/clock';
 
-describe('<Clock />', () => {
+describe('<ClockContainer />', () => {
   let actions;
   let clock;
   let component;
@@ -15,7 +15,7 @@ describe('<Clock />', () => {
   beforeEach(() => {
     clock = sinon.useFakeTimers();
     store = configureStore();
-    component = mountConnected(<Clock />, store);
+    component = mountConnected(<ClockContainer />, store);
     actions = bindActionCreators(actionCreators, store.dispatch);
   });
 

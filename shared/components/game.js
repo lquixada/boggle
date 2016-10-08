@@ -5,7 +5,7 @@ import { Link } from 'react-router';
 import AttemptContainer from '../containers/attempt';
 import BoardContainer from '../containers/board';
 import ButtonContainer from '../containers/button';
-import Clock from './clock';
+import ClockContainer from '../containers/clock';
 import Copyright from './copyright';
 import Social from './social';
 import Score from './score';
@@ -27,7 +27,7 @@ class Game extends React.Component {
         <section>
           <div className="container">
             <aside>
-              <Clock />
+              <ClockContainer />
               <Score />
             </aside>
             <BoardContainer />
