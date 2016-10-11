@@ -2,6 +2,7 @@ import React from 'react';
 import Input from '../components/input';
 import * as actions from '../actions';
 import {connect} from 'react-redux';
+import shallowCompare from 'react-addons-shallow-compare';
 
 class InputContainer extends React.Component {
   constructor(props) {
@@ -13,6 +14,10 @@ class InputContainer extends React.Component {
 
     this.handleChange = this.handleChange.bind(this);
     this.handleEnter = this.handleEnter.bind(this);
+  }
+
+  shouldComponentUpdate(nextProps, nextState) {
+    return shallowCompare(this, nextProps, nextState);
   }
 
   handleChange({target}) {

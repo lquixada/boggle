@@ -40,6 +40,7 @@
     "npm-run-all": "3.1.0",
     "pm2": "2.0.18",
     "react": "15.3.2",
+    "react-addons-shallow-compare": "15.3.2",
     "react-dom": "15.3.2",
     "react-github-fork-ribbon": "0.4.4",
     "react-redux": "4.4.5",

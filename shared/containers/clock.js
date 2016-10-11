@@ -3,6 +3,7 @@ import Clock from '../components/clock';
 import {connect} from 'react-redux';
 import * as actions from '../actions';
 import Timer from '../utils/timer.js';
+import shallowCompare from 'react-addons-shallow-compare';
 
 const timer = new Timer();
 
@@ -14,6 +15,10 @@ class ClockContainer extends React.Component {
     };
 
     this.handleChange = this.handleChange.bind(this);
+  }
+
+  shouldComponentUpdate(nextProps, nextState) {
+    return shallowCompare(this, nextProps, nextState);
   }
 
   componentDidMount() {
