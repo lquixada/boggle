@@ -20,6 +20,12 @@ class InputContainer extends React.Component {
     return shallowCompare(this, nextProps, nextState);
   }
 
+  componentWillReceiveProps(nextProps) {
+    if (!nextProps.started) {
+      this.reset();
+    }
+  }
+
   handleChange({target}) {
     this.setValue(target.value);
   }
