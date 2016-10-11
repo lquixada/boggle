@@ -1,5 +1,8 @@
-import _ from 'lodash';
 import {List} from 'immutable';
+import groupBy from 'lodash/groupBy';
+import invokeMap from 'lodash/invokeMap';
+import toArray from 'lodash/toArray';
+import sample from 'lodash/sample';
 
 class Board {
   constructor() {
@@ -25,14 +28,15 @@ class Board {
   }
 
   place(drawn) {
-    let grouped = _.groupBy(drawn, (letter, i) => i % this.dim);
-    grouped = _.toArray(grouped);
+    let i = 0; // lodash's groupBy doesn't give us an index to the iteratee, so we've created one
+    let grouped = groupBy(drawn, () => ++i % this.dim);
+    grouped = toArray(grouped);
 
     return List(grouped.map(List));
   }
 
   shake() {
-    return _.invokeMap(this.dice, 'roll');
+    return invokeMap(this.dice, 'roll');
   }
 
   start() {
@@ -60,7 +64,7 @@ class Die {
   }
 
   roll() {
-    return _.sample(this.sides);
+    return sample(this.sides);
   }
 }
 
