@@ -52,4 +52,21 @@ describe('Server', () => {
         .end(done);
     });
   });
+
+  describe('/unknownpage', () => {
+    it('is not a valid page', (done) => {
+      request(server)
+        .get('/unknownpage')
+        .expect(404, done);
+    });
+
+    it('renders the "Not found" page', (done) => {
+      request(server)
+        .get('/unknownpage')
+        .expect(res => {
+          expect(res.text).to.be.equal('Not found');
+        })
+        .end(done);
+    });
+  });
 });
