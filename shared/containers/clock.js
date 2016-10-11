@@ -4,7 +4,7 @@ import {connect} from 'react-redux';
 import * as actions from '../actions';
 import Timer from '../utils/timer.js';
 
-var timer = new Timer();
+const timer = new Timer();
 
 class ClockContainer extends React.Component {
   constructor(props) {
@@ -61,5 +61,5 @@ class ClockContainer extends React.Component {
   }
 }
 
-const mapStateToProps = ({ started }) => ({ started });
+const mapStateToProps = ({started}) => ({started});
 export default connect(mapStateToProps, actions)(ClockContainer);

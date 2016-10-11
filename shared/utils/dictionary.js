@@ -2,13 +2,11 @@ import fetchJsonp from 'fetch-jsonp';
 
 class Dictionary {
   check(word) {
-    var url = 'https://en.wiktionary.org/w/api.php?action=query&format=json&callback=?&titles=';
+    const url = `https://en.wiktionary.org/w/api.php?action=query&format=json&callback=?&titles=${word.toLowerCase()}`;
 
-    return fetchJsonp(url+word.toLowerCase()).then((response) => {
-      return response.json();
-    }).then((data) => {
-      return !data.query.pages[-1];
-    });
+    return fetchJsonp(url)
+      .then(response => response.json())
+      .then(data => !data.query.pages[-1]);
   }
 }
 

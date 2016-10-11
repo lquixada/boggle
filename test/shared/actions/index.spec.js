@@ -23,7 +23,7 @@ describe('addCheckedAttempt', () => {
       ['A', 'I', 'X', 'V']
     ];
     
-    store = configureStore({ attempts, matrix });
+    store = configureStore({attempts, matrix});
     actions = bindActionCreators(actionCreators, store.dispatch);
     check = sinon.stub(Dictionary.prototype, 'check').returns(true);
   });
@@ -34,34 +34,33 @@ describe('addCheckedAttempt', () => {
 
   it('validates correct word', () => {
     return actions.addCheckedAttempt('norm').then(() => {
-      const { attempts } = store.getState();
+      const {attempts} = store.getState();
       expect(attempts).to.include(Map({word: 'NORM', score: 4}));
     });
   });
 
   it('invalidates word which is not on Board', () => {
     return actions.addCheckedAttempt('fake').then(() => {
-      const { attempts } = store.getState();
+      const {attempts} = store.getState();
       expect(attempts).to.include(Map({word: 'FAKE', score: '✘'}));
     });
   });
 
   it('invalidates word which is already on ScoreList', () => {
     return actions.addCheckedAttempt('hey').then(() => {
-      const { attempts } = store.getState();
+      const {attempts} = store.getState();
       expect(attempts).to.include(Map({word: 'HEY', score: '✘'}));
     });
   });
 
   it('invalidates word not on Dictionary', () => {
-    return actions.addCheckedAttempt('hey').then(() => {
-      check.returns(false);
-    }).then(() => {
-      return actions.addCheckedAttempt('smv');
-    }).then(() => {
-      const { attempts } = store.getState();
-      expect(attempts).to.include(Map({word: 'SMV', score: '✘'}));
-    });;
+    return actions.addCheckedAttempt('hey')
+      .then(() => check.returns(false))
+      .then(() => actions.addCheckedAttempt('smv'))
+      .then(() => {
+        const {attempts} = store.getState();
+        expect(attempts).to.include(Map({word: 'SMV', score: '✘'}));
+      });
   });
 
 });

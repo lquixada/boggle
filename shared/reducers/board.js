@@ -25,9 +25,7 @@ class Board {
   }
 
   place(drawn) {
-    var grouped = _.groupBy(drawn, (letter, i) => {
-      return (i%this.dim);
-    });
+    let grouped = _.groupBy(drawn, (letter, i) => i % this.dim);
     grouped = _.toArray(grouped);
 
     return List(grouped.map(List));
@@ -38,7 +36,7 @@ class Board {
   }
 
   start() {
-    var drawn = this.shake();
+    const drawn = this.shake();
     this._matrix = this.place(drawn);
   }
 
@@ -65,7 +63,6 @@ class Die {
     return _.sample(this.sides);
   }
 }
-
 
 let board = new Board();
 board.clear();

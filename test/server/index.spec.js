@@ -9,18 +9,18 @@ describe('Server', () => {
     server = createServer();
   });
 
-  afterEach((done) => {
+  afterEach(done => {
     server.close(done);
   });
 
   describe('/', () => {
-    it('is a valid path', (done) => {
+    it('is a valid path', done => {
       request(server)
         .get('/')
         .expect(200, done);
     });
 
-    it('renders the game page', (done) => {
+    it('renders the game page', done => {
       request(server)
         .get('/')
         .expect(res => {
@@ -34,13 +34,13 @@ describe('Server', () => {
   });
 
   describe('/about', () => {
-    it('is a valid path', (done) => {
+    it('is a valid path', done => {
       request(server)
         .get('/about')
         .expect(200, done);
     });
 
-    it('renders the "About me" page', (done) => {
+    it('renders the "About me" page', done => {
       request(server)
         .get('/about')
         .expect(res => {
@@ -54,13 +54,13 @@ describe('Server', () => {
   });
 
   describe('/unknownpage', () => {
-    it('is not a valid page', (done) => {
+    it('is not a valid page', done => {
       request(server)
         .get('/unknownpage')
         .expect(404, done);
     });
 
-    it('renders the "Not found" page', (done) => {
+    it('renders the "Not found" page', done => {
       request(server)
         .get('/unknownpage')
         .expect(res => {

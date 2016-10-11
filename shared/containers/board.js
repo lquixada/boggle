@@ -11,6 +11,5 @@ class BoardContainer extends React.Component {
   }
 }
 
-const mapStateToProps = ({ matrix }) => ({ matrix });
-
+const mapStateToProps = ({matrix}) => ({matrix});
 export default connect(mapStateToProps)(BoardContainer);

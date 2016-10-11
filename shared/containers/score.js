@@ -10,6 +10,6 @@ class ScoreContainer extends React.Component {
   }
 }
 
-const mapStateToProps = ({ attempts, counter }) => ({ attempts, counter });
+const mapStateToProps = ({attempts, counter}) => ({attempts, counter});
 
 export default connect(mapStateToProps)(ScoreContainer);

@@ -22,13 +22,11 @@ describe('<InputContainer />', () => {
 
   it('is enabled when the game has started', () => {
     actions.startGame();
-
     expect(component.find('input')).to.not.be.disabled();
   });
 
   it('is disabled when the game has stopped', () => {
     actions.stopGame();
-
     expect(component.find('input')).to.be.disabled();
   });
 

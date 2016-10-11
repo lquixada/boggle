@@ -2,7 +2,7 @@ import winston from 'winston';
 
 winston.emitErrs = true;
 
-var logger = new winston.Logger({
+const logger = new winston.Logger({
   transports: [
     new winston.transports.File({
       level: 'info',
