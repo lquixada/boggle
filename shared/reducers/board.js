@@ -1,4 +1,4 @@
-import _ from 'underscore';
+import _ from 'lodash';
 import {List} from 'immutable';
 
 class Board {
@@ -32,7 +32,7 @@ class Board {
   }
 
   shake() {
-    return _.invoke(this.dice, 'roll');
+    return _.invokeMap(this.dice, 'roll');
   }
 
   start() {
