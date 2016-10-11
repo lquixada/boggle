@@ -2,7 +2,6 @@ import {List} from 'immutable';
 import BoardChecker from '../../../shared/utils/board-checker';
 
 describe('BoardChecker', () => {
-
   it('finds regular word', () => {
     const matrix = List([
       List(['O', 'D', 'E', 'E']),
@@ -62,5 +61,4 @@ describe('BoardChecker', () => {
 
     expect(board.hasWord('norm')).to.be.equal(true);
   });
-
 });

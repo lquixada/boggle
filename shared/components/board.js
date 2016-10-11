@@ -1,5 +1,5 @@
-import '../../styles/board.scss';
 import React from 'react';
+import '../../styles/board.scss';
 
 const Cell = ({letter}) => (
   <td>{letter}</td>
@@ -17,7 +17,7 @@ const Board = ({matrix}) => (
   <div id="board" className="box">
     <table>
       <tbody>
-        {matrix.map((letters, i) => 
+        {matrix.map((letters, i) =>
           <Row key={i} letters={letters} />
         )}
       </tbody>

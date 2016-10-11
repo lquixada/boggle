@@ -11,7 +11,9 @@ const server = express();
 
 /* Middlewares */
 if (process.env.NODE_ENV === 'development') {
+  // eslint-disable-next-line global-require
   const webpackMiddlewares = require('./middlewares/webpack').default;
+
   server.use(...webpackMiddlewares);
 }
 

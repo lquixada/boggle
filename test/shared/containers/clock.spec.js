@@ -1,7 +1,7 @@
 import React from 'react';
 import sinon from 'sinon';
-import {mountConnected} from '../../helper';
 import {bindActionCreators} from 'redux';
+import {mountConnected} from '../../helper';
 import configureStore from '../../../shared/store';
 import * as actionCreators from '../../../shared/actions';
 import ClockContainer from '../../../shared/containers/clock';
@@ -19,7 +19,7 @@ describe('<ClockContainer />', () => {
     actions = bindActionCreators(actionCreators, store.dispatch);
   });
 
-  afterEach(function () {
+  afterEach(() => {
     clock.restore();
   });
 
@@ -49,5 +49,4 @@ describe('<ClockContainer />', () => {
   //
   //   expect(component.find('text')).to.have.text('60');
   // });
-
 });

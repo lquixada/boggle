@@ -1,6 +1,6 @@
 import React from 'react';
-import {mountConnected} from '../../helper';
 import {bindActionCreators} from 'redux';
+import {mountConnected} from '../../helper';
 import configureStore from '../../../shared/store';
 import * as actionCreators from '../../../shared/actions';
 import ButtonContainer from '../../../shared/containers/button';
@@ -29,5 +29,4 @@ describe('<ButtonContainer />', () => {
     actions.stopGame();
     expect(component.find('button')).to.have.text('start');
   });
-
 });

@@ -3,8 +3,6 @@ import logger from '../../logger';
 
 export default middleware('combined', {
   stream: {
-    write: function(message, encoding) {
-      logger.info(message);
-    }
+    write: (message, encoding) => logger.info(message)
   }
 });

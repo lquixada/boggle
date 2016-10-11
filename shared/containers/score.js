@@ -1,7 +1,7 @@
 import React from 'react';
-import Score from '../components/score';
 import {connect} from 'react-redux';
 import shallowCompare from 'react-addons-shallow-compare';
+import Score from '../components/score';
 
 class ScoreContainer extends React.Component {
   shouldComponentUpdate(nextProps, nextState) {

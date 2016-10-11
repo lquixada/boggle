@@ -1,8 +1,8 @@
-import '../../styles/about.scss';
 import React from 'react';
 import Copyright from './copyright';
 import Social from './social';
 import Title from './title';
+import '../../styles/about.scss';
 
 const About = () => (
   <main>

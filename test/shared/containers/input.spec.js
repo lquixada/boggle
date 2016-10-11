@@ -1,6 +1,6 @@
 import React from 'react';
-import {mountConnected} from '../../helper';
 import {bindActionCreators} from 'redux';
+import {mountConnected} from '../../helper';
 import configureStore from '../../../shared/store';
 import * as actionCreators from '../../../shared/actions';
 import InputContainer from '../../../shared/containers/input';
@@ -29,5 +29,4 @@ describe('<InputContainer />', () => {
     actions.stopGame();
     expect(component.find('input')).to.be.disabled();
   });
-
 });

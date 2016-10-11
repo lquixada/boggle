@@ -1,8 +1,9 @@
 import React from 'react';
-import Button from '../components/button';
 import {connect} from 'react-redux';
-import * as actions from '../actions';
 import shallowCompare from 'react-addons-shallow-compare';
+import Button from '../components/button';
+import * as actions from '../actions';
+
 
 class ButtonContainer extends React.Component {
   shouldComponentUpdate(nextProps, nextState) {
@@ -13,7 +14,7 @@ class ButtonContainer extends React.Component {
     if (this.props.started) {
       return 'stop';
     }
-    
+
     return 'start';
   }
 

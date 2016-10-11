@@ -1,6 +1,6 @@
 import {fromJS} from 'immutable';
+import fetchJsonp from 'fetch-jsonp';
 import BoardChecker from '../utils/board-checker';
-import Dictionary from '../utils/dictionary';
 
 export const isOnScoreList = (attempts, word) => {
   const found = attempts.find(attempt => attempt.get('word') === word);
@@ -14,8 +14,11 @@ export const isOnBoard = (matrix, word) => {
 };
 
 export const isOnDictionary = (word) => {
-  const dictionary = new Dictionary();
-  return dictionary.check(word);
+  const url = `https://en.wiktionary.org/w/api.php?action=query&format=json&callback=?&titles=${word.toLowerCase()}`;
+
+  return fetchJsonp(url)
+    .then(response => response.json())
+    .then(data => !data.query.pages[-1]);
 };
 
 // Abstraction to handle pre-composed state received from server
@@ -23,7 +26,7 @@ export const isOnDictionary = (word) => {
 export const immutifyState = (obj) => {
   const objMut = {};
 
-  fromJS(obj).forEach((v, k) => objMut[k] = v);
+  fromJS(obj).forEach((v, k) => { objMut[k] = v; });
 
   return objMut;
 };

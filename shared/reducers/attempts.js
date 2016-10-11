@@ -18,7 +18,7 @@ const attempts = (state = List(), action) => {
       return state.push(attempt(undefined, action));
     case 'STOP_GAME':
       return List();
-    default:  
+    default:
       return state;
   }
 };

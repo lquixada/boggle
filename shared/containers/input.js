@@ -1,8 +1,8 @@
 import React from 'react';
-import Input from '../components/input';
-import * as actions from '../actions';
 import {connect} from 'react-redux';
 import shallowCompare from 'react-addons-shallow-compare';
+import Input from '../components/input';
+import * as actions from '../actions';
 
 class InputContainer extends React.Component {
   constructor(props) {
@@ -29,7 +29,7 @@ class InputContainer extends React.Component {
   handleChange({target}) {
     this.setValue(target.value);
   }
-  
+
   handleEnter(evt) {
     if (this.state.value.length < this.state.minLength) {
       return;

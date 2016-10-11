@@ -1,6 +1,6 @@
 import React from 'react';
-import {mountConnected} from '../../helper';
 import {bindActionCreators} from 'redux';
+import {mountConnected} from '../../helper';
 import configureStore from '../../../shared/store';
 import * as actionCreators from '../../../shared/actions';
 import BoardContainer from '../../../shared/containers/board';
@@ -33,5 +33,4 @@ describe('<BoardContainer />', () => {
     const text = component.find('table').text();
     expect(text.trim()).to.be.empty;
   });
-
 });

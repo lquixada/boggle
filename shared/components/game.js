@@ -1,4 +1,3 @@
-import '../../styles/game.scss';
 import React from 'react';
 import {Link} from 'react-router';
 import InputContainer from '../containers/input';
@@ -9,6 +8,7 @@ import Copyright from './copyright';
 import Social from './social';
 import ScoreContainer from '../containers/score';
 import Title from './title';
+import '../../styles/game.scss';
 
 const Game = () => (
   <main>

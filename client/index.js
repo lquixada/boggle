@@ -12,7 +12,7 @@ if (process.env.NODE_ENV === 'production') {
   middlewares.push(RavenMiddleware('https://f42a178848284bf4ab21149d98b3768b@sentry.io/104332'));
 }
 
-const devTools = (window.devToolsExtension? window.devToolsExtension(): f => f);
+const devTools = (window.devToolsExtension ? window.devToolsExtension() : f => f);
 const store = configureStore(window.__INITIAL_STATE__, middlewares, devTools);
 
 ReactDOM.render(<Provider store={store}>

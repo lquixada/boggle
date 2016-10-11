@@ -1,5 +1,5 @@
-import '../../styles/input.scss';
 import React, {PropTypes} from 'react';
+import '../../styles/input.scss';
 
 const Input = ({value, started, onChange, onEnter}) => (
   <div id="input">
@@ -9,7 +9,7 @@ const Input = ({value, started, onChange, onEnter}) => (
       onKeyUp={evt => onEnter(evt)}
       className="box"
       disabled={!started}
-      placeholder={started? 'Type the word and hit Enter!' : 'Press start to begin...'} />
+      placeholder={started ? 'Type the word and hit Enter!' : 'Press start to begin...'} />
   </div>
 );
 

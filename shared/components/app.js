@@ -1,6 +1,6 @@
-import '../../styles/app.scss';
 import React from 'react';
 import GitHubForkRibbon from 'react-github-fork-ribbon';
+import '../../styles/app.scss';
 
 const App = ({children}) => (
   <div>

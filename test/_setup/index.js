@@ -1,5 +1,5 @@
-require.extensions['.scss'] = function () {};
-
 import './logger';
 import './jsdom';
 import './chai';
+
+require.extensions['.scss'] = () => {};

@@ -1,5 +1,5 @@
-import '../../styles/score.scss';
 import React from 'react';
+import '../../styles/score.scss';
 
 const Attempt = ({attempt}) => (
   <tr>

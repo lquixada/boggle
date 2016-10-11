@@ -1,9 +1,9 @@
 import React from 'react';
-import Clock from '../components/clock';
-import {connect} from 'react-redux';
-import * as actions from '../actions';
-import Timer from '../utils/timer.js';
 import shallowCompare from 'react-addons-shallow-compare';
+import {connect} from 'react-redux';
+import Clock from '../components/clock';
+import * as actions from '../actions';
+import Timer from '../utils/timer';
 
 const timer = new Timer();
 
@@ -41,6 +41,7 @@ class ClockContainer extends React.Component {
     }
   }
 
+  // eslint-disable-next-line class-methods-use-this
   start() {
     timer.start();
   }

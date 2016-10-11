@@ -20,5 +20,4 @@ describe('Helpers', () => {
       expect(isOnScoreList(attempts, 'word3')).to.be.not.ok;
     });
   });
-
 });
