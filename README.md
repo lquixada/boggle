@@ -9,7 +9,7 @@ A web-based implementation of the Boggle game for study purposes. More info on h
 $ git clone https://github.com/lquixada/boggle.git
 $ cd boggle
 $ npm install
-$ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.30.1/install.sh | bash
+$ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.32.0/install.sh | bash
 $ nvm install
 $ nvm use
 ```
@@ -20,15 +20,15 @@ $ nvm use
 To run the app in development mode, run:
 
 ```
+$ npm run start:dev
+```
+
+And go to http://localhost:9000/.
+
+In order to run in production mode, run:
+
+```
 $ npm start
-```
-
-And go to http://localhost:8080/.
-
-In order to run the isomorphic app in production:
-
-```
-$ NODE_ENV=production npm start
 ```
 
 And go to http://localhost:9000/.
@@ -42,20 +42,29 @@ To run all tests and lints, run:
 $ npm test
 ```
 
+
+## Features
+
+* Custom domain: www.bogglejs.com
+* Secure connection with HTTPS
+* Cache management with Service Worker
+* Isomorphic app (rendes on server and client)
+
+
 ## Tasks
 
 * *npm test*: runs all the tests
 * *npm run test:mocha*: tests files
 * *npm run test:lint*: lints files
-* *npm run test:watch*: runs all the tests everytime some file changes
-* *npm start*: starts application depending on NODE_ENV var
+* *npm start*: shortcut for *npm run start:prod*
 * *npm run start:dev*: starts application in development mode
 * *npm run start:prod*: starts application in production mode
+* *npm run build*: shortcut for *npm run build:prod*
 * *npm run build:dev*: builds all development assets
 * *npm run build:prod*: builds all production assets
-* *npm run deploy*: deploys project to heroku
+* *npm run deploy*: deploys project to Heroku
 * *npm run outdated*: lists all outdated packages
-* *npm run update*: updates all outadted packages
+* *npm run update*: updates all outdated packages
 
 
 ## Stack
@@ -72,8 +81,10 @@ $ npm test
 
 ## TODO
 
-* npm task for stress test
+* Npm task for stress test
 * New Relic Lite
-* Progressive Web App Update Notification
+* Docker image
+* Progressive web app: manifest
+* Progressive web app: update notification
 * HTTP/2
 * Retest on every browser (including IE10+)
