@@ -58,30 +58,30 @@ $ npm test
 
 ## Tasks
 
-* *npm test*: runs all the tests
-* *npm run test:mocha*: tests files
-* *npm run test:lint*: lints files
-* *npm start*: shortcut for *npm run start:prod*
-* *npm run start:dev*: starts application in development mode
-* *npm run start:prod*: starts application in production mode
-* *npm run build*: shortcut for *npm run build:prod*
-* *npm run build:dev*: builds all development assets
-* *npm run build:prod*: builds all production assets
-* *npm run deploy*: deploys project to Heroku
-* *npm run outdated*: lists all outdated packages
-* *npm run update*: updates all outdated packages
+* **npm test**: runs all the tests
+* **npm run test:mocha**: tests files
+* **npm run test:lint**: lints files
+* **npm start**: shortcut for *npm run start:prod*
+* **npm run start:dev**: starts application in development mode
+* **npm run start:prod**: starts application in production mode
+* **npm run build**: shortcut for *npm run build:prod*
+* **npm run build:dev**: builds all development assets
+* **npm run build:prod**: builds all production assets
+* **npm run deploy**: deploys project to Heroku
+* **npm run outdated**: lists all outdated packages
+* **npm run update**: updates all outdated packages
 
 
 ## Stack
 
-* App: react, redux, immutable.js
-* Style: sass
-* Tests: mocha, chai, enzyme, sinon
-* Lint: eslint, sass-lint
-* Utils: npm, webpack, babel
-* CI: [TravisCI](https://travis-ci.org/lquixada/boggle)
-* Hosting: [Heroku](https://bogglejs.herokuapp.com/)
-* SSL: Let's Encrypt (https://letsencrypt.org/)
+* **App**: react, redux, immutable.js
+* **Style**: sass
+* **Tests**: mocha, chai, enzyme, sinon
+* **Lint**: eslint, sass-lint
+* **Utils**: npm, webpack, babel
+* **CI**: [TravisCI](https://travis-ci.org/lquixada/boggle)
+* **Hosting**: [Heroku](https://bogglejs.herokuapp.com/)
+* **SSL**: [Let's Encrypt](https://letsencrypt.org/)
 
 
 ## TODO
