@@ -51,6 +51,12 @@ $ npm test
 * Isomorphic app (rendes on server and client)
 
 
+## Pages
+
+* **/**: that's where the game is.
+* **/about**: a little about my professional thinking (it can be also accessed throught the footer link)
+
+
 ## Architecture
 
 ![Architecture](./flowchart.png)
@@ -58,7 +64,7 @@ $ npm test
 
 ## Tasks
 
-* **npm test**: runs all the tests
+* **npm test**: runs all the tests (it is automatically triggered before any push to the repository)
 * **npm run test:mocha**: tests files
 * **npm run test:lint**: lints files
 * **npm start**: shortcut for *npm run start:prod*
