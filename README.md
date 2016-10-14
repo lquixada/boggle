@@ -45,10 +45,12 @@ $ npm test
 
 ## Features
 
-* Custom domain: www.bogglejs.com
+* Cross-browser (latest Firefox/Chrome and IE10)
+* Cross-device (from mobile to desktop)
+* Isomorphic, renders on server and client
 * Secure connection with HTTPS
+* Custom domain: www.bogglejs.com
 * Cache management with Service Worker
-* Isomorphic app (rendes on server and client)
 
 
 ## Pages
