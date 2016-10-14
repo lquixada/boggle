@@ -51,6 +51,11 @@ $ npm test
 * Isomorphic app (rendes on server and client)
 
 
+## Architecture
+
+![Architecture](./flowchart.png)
+
+
 ## Tasks
 
 * *npm test*: runs all the tests
