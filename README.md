@@ -1,4 +1,4 @@
-# Boggle Game [![Build Status](https://travis-ci.org/lquixada/boggle.svg?branch=master)](https://travis-ci.org/lquixada/boggle)
+# Boggle JS [![Build Status](https://travis-ci.org/lquixada/boggle.svg?branch=master)](https://travis-ci.org/lquixada/boggle)
 
 A web-based implementation of the Boggle game for study purposes. More info on https://en.wikipedia.org/wiki/Boggle.
 
