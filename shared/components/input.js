@@ -1,17 +1,28 @@
 import React, {PropTypes} from 'react';
 import '../../styles/input.scss';
 
-const Input = ({value, started, onChange, onEnter}) => (
-  <div id="input">
-    <input type="text"
-      value={value}
-      onChange={evt => onChange(evt)}
-      onKeyUp={evt => onEnter(evt)}
-      className="box"
-      disabled={!started}
-      placeholder={started ? 'Type the word and hit Enter!' : 'Press start to begin...'} />
-  </div>
-);
+class Input extends React.Component {
+  componentDidUpdate() {
+    if (this.props.started) {
+      this.refs.word.focus();
+    }
+  }
+
+  render() {
+    return (
+      <div id="input">
+        <input type="text"
+          ref="word"
+          value={this.props.value}
+          onChange={evt => this.props.onChange(evt)}
+          onKeyUp={evt => this.props.onEnter(evt)}
+          className="box"
+          disabled={!this.props.started}
+          placeholder={this.props.started ? 'Type the word and hit Enter!' : 'Press start to begin...'} />
+      </div>
+    );
+  }
+}
 
 Input.propTypes = {
   onChange: PropTypes.func.isRequired,
