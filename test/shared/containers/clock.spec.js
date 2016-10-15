@@ -29,24 +29,19 @@ describe('<ClockContainer />', () => {
 
   it('decrements when the game starts', () => {
     actions.startGame();
+    expect(component.find('.counter')).to.have.text('59');
 
-    clock.tick(1010);
-    expect(component.find('text')).to.have.text('59');
+    clock.tick(1000);
+    expect(component.find('.counter')).to.have.text('58');
 
-    clock.tick(1010);
-    expect(component.find('text')).to.have.text('58');
-  });
-
-  it('shows dial running when the game starts', () => {
-    actions.startGame();
-
-    expect(component.find('.running')).to.exist;
+    clock.tick(1000);
+    expect(component.find('.counter')).to.have.text('57');
   });
 
   // TODO: timer is not resetting
   // it('displays 60 when the game stops', () => {
   //   actions.stopGame();
   //
-  //   expect(component.find('text')).to.have.text('60');
+  //   expect(component.find('.counter')).to.have.text('60');
   // });
 });
