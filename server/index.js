@@ -19,10 +19,10 @@ if (process.env.NODE_ENV === 'development') {
 
 if (process.env.NODE_ENV === 'production') {
   server.use(secureMiddleware);
+  server.use(compression());
+  server.use(helmet());
 }
 
-server.use(compression());
-server.use(helmet());
 server.use(loggerMiddleware);
 server.use(staticMiddleware);
 
