@@ -9,9 +9,10 @@ class Timer extends events.EventEmitter {
 
   start() {
     this.started = true;
+    this.reset();
+    this.tick();
     this.timer = setInterval(() => {
-      this.remaining--;
-      this.emit('tick');
+      this.tick();
 
       if (!this.remaining) {
         this.stop();
@@ -20,14 +21,18 @@ class Timer extends events.EventEmitter {
   }
 
   stop() {
-    this.reset();
-    clearInterval(this.timer);
+    this.started = false;
     this.emit('stop');
+    clearInterval(this.timer);
   }
 
   reset() {
     this.remaining = this.frame;
-    this.started = false;
+  }
+
+  tick() {
+    this.remaining--;
+    this.emit('tick');
   }
 }
 

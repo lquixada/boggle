@@ -11,7 +11,8 @@ class ClockContainer extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      secs: timer.remaining
+      secs: timer.remaining,
+      frame: timer.frame
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -52,17 +53,21 @@ class ClockContainer extends React.Component {
   }
 
   handleChange() {
-    if (timer.remaining === 0) {
-      this.props.stopGame();
-      alert('Game over!');
-    }
-
-    this.setState({secs: timer.remaining});
+    this.setState({secs: timer.remaining}, () => {
+      if (this.state.secs === 0) {
+        // Give some time for React to render the 0-state clock
+        // and then stop the game.
+        setTimeout(() => {
+          this.props.stopGame();
+          alert('Game over!');
+        }, 100);
+      }
+    });
   }
 
   render() {
     return (
-      <Clock secs={this.state.secs} started={this.props.started} />
+      <Clock secs={this.state.secs} total={this.state.frame} />
     );
   }
 }
