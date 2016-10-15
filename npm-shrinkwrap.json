@@ -1454,7 +1454,7 @@
     },
     "es6-promise": {
       "version": "2.3.0",
-      "from": "es6-promise@>=2.3.0 <3.0.0",
+      "from": "https://registry.npmjs.org/es6-promise/-/es6-promise-2.3.0.tgz",
       "resolved": "https://registry.npmjs.org/es6-promise/-/es6-promise-2.3.0.tgz"
     },
     "es6-set": {
