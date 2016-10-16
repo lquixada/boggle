@@ -5,6 +5,10 @@
   margin-left: 2rem;
   padding: 1rem;
 
+  table {
+    width: 100%;
+  }
+
   td {
     width: 9rem;
     height: 9rem;
@@ -22,9 +26,5 @@
   #board {
     margin: 0;
     width: 100%;
-
-    table {
-      width: 100%;
-    }
   }
 }
