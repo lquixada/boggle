@@ -48,6 +48,11 @@
   -ms-flex-direction: $value;
 }
 
+@mixin flex-order($value) {
+  order: $value;
+  -ms-flex-order: $value;
+}
+
 @mixin flex-wrap($value) {
   flex-wrap: $value;
   @if $value == nowrap { $value: none; }

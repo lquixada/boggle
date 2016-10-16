@@ -1,7 +1,11 @@
+@import '_mixins';
+
 #input {
+  @include flex(1 1 auto);
+  margin-left: 2rem;
+
   input {
     width: 100%;
-    min-width: 28rem;
     padding: 1rem;
     color: #fff;
     font-size: 2rem;
@@ -15,10 +19,8 @@
 
 @media (max-width: 540px) {
   #input {
-    margin-top: 1rem;
-    flex-basis: 100%;
-    order: 2;
-    -ms-flex-order: 2;
-    -ms-flex-preferred-size: 100%;
+    @include flex(1 1 100%);
+    @include flex-order(2);
+    margin: 1rem 0 0;
   }
 }
