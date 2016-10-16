@@ -35,6 +35,7 @@ main {
     padding: 2rem;
 
     aside {
+      @include flex(1 1);
       vertical-align: top;
     }
   }

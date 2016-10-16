@@ -1,4 +1,7 @@
+@import '_mixins';
+
 #board {
+  @include flex(3.3);
   margin-left: 2rem;
   padding: 1rem;
 

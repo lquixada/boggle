@@ -3,7 +3,7 @@
 
   .clock {
     fill: transparent;
-    stroke-width: 20;
+    stroke-width: 15;
 
     &.clock-gray {
       stroke: #666;
@@ -11,14 +11,14 @@
 
     &.clock-green {
       stroke: #6c6;
-      stroke-dasharray: 315;
+      stroke-dasharray: 251;
     }
   }
 
   .counter {
     fill: #fff;
     font-family: Arial, sans-serif;
-    font-size: 3rem;
+    font-size: 2.5rem;
     font-weight: bold;
   }
 

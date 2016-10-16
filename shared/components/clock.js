@@ -2,16 +2,20 @@ import React, {PropTypes} from 'react';
 import '../../styles/clock.scss';
 
 const Clock = ({secs, total}) => {
-  const strokeDashoffset = ((secs / total) * 315);
+  const strokeDasharray = 251;
+  const strokeDashoffset = ((secs / total) * strokeDasharray);
+  const style = {strokeDashoffset, strokeDasharray};
 
   return (
     <div id="clock">
-      <svg width="120" height="120">
-        <circle r="50" cx="60" cy="60" className="clock clock-gray" />
-        <circle r="50" cx="60" cy="60" className="clock clock-green" style={{strokeDashoffset}} transform="rotate(-90 60 60)" />
-        <text x="60" y="70" className="counter" textAnchor="middle">
-          {secs}
-        </text>
+      <svg width="100%" viewBox="0 0 100 100">
+        <g>
+          <circle r="40" cx="50%" cy="50%" className="clock clock-gray" />
+          <circle r="40" cx="50%" cy="50%" className="clock clock-green" style={style} transform="rotate(-90 50 50)" />
+          <text x="50%" y="60%" className="counter" textAnchor="middle">
+            {secs}
+          </text>
+        </g>
       </svg>
       <span className="micro-counter">Time left: 00:{secs < 10 ? `0${secs}` : secs}</span>
     </div>
