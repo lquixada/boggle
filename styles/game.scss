@@ -35,7 +35,11 @@ main {
     padding: 2rem;
 
     aside {
-      @include flex(1 1);
+      @include flex-display;
+      @include flex-justify;
+      @include flex-flow(column, nowrap);
+      @include flex(1);
+      height: 40rem;
       vertical-align: top;
     }
   }
@@ -116,10 +120,10 @@ main {
       }
 
       aside {
-        @include flex-display;
-        @include flex-justify;
+        @include flex-dir(row);
         margin: 0;
         width: 100%;
+        height: auto;
       }
     }
   }
