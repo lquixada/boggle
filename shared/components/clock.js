@@ -8,14 +8,12 @@ const Clock = ({secs, total}) => {
 
   return (
     <div id="clock">
-      <svg width="100%" viewBox="0 0 100 100">
-        <g>
-          <circle r="40" cx="50%" cy="50%" className="clock clock-gray" />
-          <circle r="40" cx="50%" cy="50%" className="clock clock-green" style={style} transform="rotate(-90 50 50)" />
-          <text x="50%" y="60%" className="counter" textAnchor="middle">
-            {secs}
-          </text>
-        </g>
+      <svg viewBox="0 0 100 100">
+        <circle r="40" cx="50%" cy="50%" className="clock clock-gray" />
+        <circle r="40" cx="50%" cy="50%" className="clock clock-green" style={style} transform="rotate(-90 50 50)" />
+        <text x="50%" y="60%" className="counter" textAnchor="middle">
+          {secs}
+        </text>
       </svg>
       <span className="micro-counter">Time left: 00:{secs < 10 ? `0${secs}` : secs}</span>
     </div>
