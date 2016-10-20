@@ -81,7 +81,7 @@ main {
 
       ul {
         @include flex-display;
-        @include flex-left;
+        @include flex-right;
       }
 
       li {
@@ -121,7 +121,7 @@ main {
 
       aside {
         @include flex(none);
-        @include flex-dir(row);
+        @include flex-dir(row); 
         margin: 0;
         width: 100%;
         height: auto;

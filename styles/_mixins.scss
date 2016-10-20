@@ -3,7 +3,7 @@
   display: -ms-flexbox;
 }
 
-@mixin flex-right {
+@mixin flex-left {
   justify-content: flex-start;
   -ms-flex-pack: start;
 }
@@ -13,7 +13,7 @@
   -ms-flex-pack: center;
 }
 
-@mixin flex-left {
+@mixin flex-right {
   justify-content: flex-end;
   -ms-flex-pack: end;
 }
