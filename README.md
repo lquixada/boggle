@@ -100,4 +100,3 @@ $ npm test
 * Progressive web app: manifest
 * Progressive web app: update notification
 * HTTP/2
-* Retest on every browser (including IE10+)
