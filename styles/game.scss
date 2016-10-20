@@ -120,6 +120,7 @@ main {
       }
 
       aside {
+        @include flex(none);
         @include flex-dir(row);
         margin: 0;
         width: 100%;

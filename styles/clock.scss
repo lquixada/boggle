@@ -39,6 +39,7 @@
 
 @media (max-width: 540px) {
   #clock {
+    @include flex(none);
     margin-bottom: auto;
 
     svg {

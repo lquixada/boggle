@@ -47,6 +47,8 @@
 
 @media (max-width: 540px) {
   #score {
+    @include flex(none);
+
     section {
       display: none;
     }

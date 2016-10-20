@@ -25,6 +25,7 @@
 
 @media (max-width: 540px) {
   #board {
+    @include flex(none);
     margin: 0;
     width: 100%;
   }
