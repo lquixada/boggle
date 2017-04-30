@@ -28,6 +28,7 @@
     "babel-loader": "6.2.5",
     "babel-preset-es2015": "6.16.0",
     "babel-preset-react": "6.16.0",
+    "body-parser": "1.17.1",
     "clean-webpack-plugin": "0.1.11",
     "compression": "1.6.2",
     "css-loader": "0.25.0",

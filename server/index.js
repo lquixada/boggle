@@ -1,6 +1,7 @@
 import express from 'express';
 import compression from 'compression';
 import helmet from 'helmet';
+import bodyParser from 'body-parser';
 import secureMiddleware from './middlewares/secure';
 import loggerMiddleware from './middlewares/logger';
 import staticMiddleware from './middlewares/static';
@@ -26,6 +27,7 @@ if (process.env.NODE_ENV === 'production') {
 
 server.use(loggerMiddleware);
 server.use(staticMiddleware);
+server.use(bodyParser.urlencoded({extended: true}));
 
 /* Controllers */
 server.use('/.well-known/acme-challenge/', certbotController);
