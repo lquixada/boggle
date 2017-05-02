@@ -7,7 +7,7 @@
     "prepush": "npm test",
     "pretest": "npm run build:dev",
     "prestart:dev": "npm run build:dev",
-    "prestart:prod": "npm run build:prod",
+    "prestart:prod": "npm rebuild node-sass && npm run build:prod",
     "test": "npm-run-all --parallel test:mocha test:lint",
     "test:mocha": "nyc mocha",
     "test:lint": "npm-run-all --parallel test:lint:js test:lint:sass",
