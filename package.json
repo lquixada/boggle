@@ -15,7 +15,7 @@
     "test:lint:sass": "sass-lint --no-exit --verbose",
     "build": "npm run build:prod",
     "build:dev": "webpack --progress --config webpack.dev.config.js",
-    "build:prod": "webpack -p --progress --config webpack.prod.config.js",
+    "build:prod": "webpack -p --config webpack.prod.config.js",
     "start": "npm run start:prod",
     "start:dev": "pm2 start process.yml --only boggle-dev --no-daemon",
     "start:prod": "pm2 start process.yml --only boggle-prod --no-daemon",

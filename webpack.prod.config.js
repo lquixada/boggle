@@ -45,5 +45,9 @@ module.exports = {
       ],
       stripPrefix: './public/'
     })
-  ]
+  ],
+
+  stats: {
+    children: false
+  }
 };
