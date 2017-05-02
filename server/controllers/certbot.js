@@ -5,7 +5,7 @@ import path from 'path';
 const router = express.Router();
 const challenge = path.join(__dirname, 'challenge');
 
-router.get('/', (req, res) => {
+router.get('/*', (req, res) => {
   fs.readFile(challenge, (err, data) => {
     if (err) {
       throw err;
