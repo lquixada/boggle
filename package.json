@@ -18,9 +18,7 @@
     "build:prod": "webpack -p --config webpack.prod.config.js",
     "start": "npm run start:prod",
     "start:dev": "pm2 start process.yml --only boggle-dev --no-daemon",
-    "start:prod": "pm2 start process.yml --only boggle-prod --no-daemon",
-    "outdated": "npm-check-updates",
-    "update": "npm-check-updates -u && npm install"
+    "start:prod": "pm2 start process.yml --only boggle-prod --no-daemon"
   },
   "dependencies": {
     "assets-webpack-plugin": "3.4.0",
@@ -71,7 +69,6 @@
     "husky": "0.13.3",
     "jsdom": "10.1.0",
     "mocha": "3.3.0",
-    "npm-check-updates": "2.11.0",
     "nyc": "10.3.0",
     "react-addons-test-utils": "15.5.1",
     "react-hot-loader": "1.3.1",
