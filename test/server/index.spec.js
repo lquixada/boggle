@@ -1,4 +1,4 @@
-import {jsdom} from 'jsdom';
+import {JSDOM} from 'jsdom';
 import request from 'supertest';
 import {createServer} from '../helper';
 
@@ -24,10 +24,9 @@ describe('Server', () => {
       request(server)
         .get('/')
         .expect((res) => {
-          const doc = jsdom(res.text);
-          const board = doc.getElementById('board');
-
-          expect(board).to.be.an('object');
+          const dom = new JSDOM(res.text);
+          const board = dom.window.document.getElementById('board');
+          expect(typeof board).to.equal('object');
         })
         .end(done);
     });
@@ -44,8 +43,8 @@ describe('Server', () => {
       request(server)
         .get('/about')
         .expect((res) => {
-          const doc = jsdom(res.text);
-          const title = doc.getElementsByTagName('h2')[0];
+          const dom = new JSDOM(res.text);
+          const title = dom.window.document.getElementsByTagName('h2')[0];
 
           expect(title.innerHTML).to.be.equal('About me');
         })

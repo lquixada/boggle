@@ -2,7 +2,7 @@
   "lines": 85,
   "statements": 85,
   "functions": 80,
-  "branches": 70,
+  "branches": 60,
   "require": [
     "babel-core/register"
   ],
