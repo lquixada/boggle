@@ -25,12 +25,12 @@ export const addCheckedAttempt = word => (dispatch, getState) => {
     isOnBoard(state.matrix, word),
     isOnScoreList(state.attempts, word)
   ])
-  .then(([isOnBoard, isScoreList]) => {
-    if (isOnBoard && !isScoreList) {
-      return isOnDictionary(word);
-    }
+    .then(([isOnBoard, isScoreList]) => {
+      if (isOnBoard && !isScoreList) {
+        return isOnDictionary(word);
+      }
 
-    return false;
-  })
-  .then(isOnDictionary => dispatch(addAttempt(word, isOnDictionary)));
+      return false;
+    })
+    .then(isOnDictionary => dispatch(addAttempt(word, isOnDictionary)));
 };
