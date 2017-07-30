@@ -1,15 +1,9 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import shallowCompare from 'react-addons-shallow-compare';
 import Button from '../components/button';
 import * as actions from '../actions';
 
-
 class ButtonContainer extends React.Component {
-  shouldComponentUpdate(nextProps, nextState) {
-    return shallowCompare(this, nextProps, nextState);
-  }
-
   getText() {
     if (this.props.started) {
       return 'stop';
