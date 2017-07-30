@@ -12,7 +12,7 @@ module.exports = {
   devtool: 'source-map',
 
   module: {
-    loaders: [
+    rules: [
       {test: /\.js$/, exclude: /node_modules/, use: ['react-hot-loader', 'babel-loader']},
       {test: /\.scss$/, use: ['style-loader', 'css-loader', 'sass-loader']}
     ]

@@ -10,7 +10,7 @@ module.exports = {
   ],
 
   module: {
-    loaders: [
+    rules: [
       {test: /\.js$/, exclude: /node_modules/, use: 'babel-loader'},
       {test: /\.scss$/, use: ExtractTextPlugin.extract({fallback: 'style-loader', use: ['css-loader', 'sass-loader']})}
     ]
