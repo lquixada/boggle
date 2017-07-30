@@ -66,18 +66,14 @@ $ npm test
 
 ## Tasks
 
-* **npm test**: runs all the tests (it is automatically triggered before any push to the repository)
-* **npm run test:mocha**: tests files
-* **npm run test:lint**: lints files
+* **npm test**: runs all tests and lints
+* **npm run mocha**: tests files
+* **npm run lint**: lints files
 * **npm start**: shortcut for *npm run start:prod*
 * **npm run start:dev**: starts application in development mode
 * **npm run start:prod**: starts application in production mode
-* **npm run build**: shortcut for *npm run build:prod*
-* **npm run build:dev**: builds all development assets
-* **npm run build:prod**: builds all production assets
+* **npm run build**: builds all production assets
 * **npm run deploy**: deploys project to Heroku
-* **npm run outdated**: lists all outdated packages
-* **npm run update**: updates all outdated packages
 
 
 ## Stack
@@ -95,6 +91,7 @@ $ npm test
 ## TODO
 
 * Jest
+* Universal
 * Npm task for stress test
 * New Relic Lite
 * Docker image
