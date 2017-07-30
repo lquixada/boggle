@@ -1,13 +1,13 @@
 apps:
   - name     : boggle-dev
-    script   : app.js
-    watch    : ./server
+    script   : ./src/app.js
+    watch    : ./src/server
     instances: 1
     exec_mode: cluster
     env    :
       NODE_ENV: development
   - name     : boggle-prod
-    script   : app.js
+    script   : ./src/app.js
     instances: 4
     exec_mode: cluster
     env    :

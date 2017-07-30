@@ -1,9 +1,9 @@
 import React from 'react';
 import {bindActionCreators} from 'redux';
-import {mountConnected} from '../../helper';
-import configureStore from '../../../shared/store';
-import * as actionCreators from '../../../shared/actions';
-import BoardContainer from '../../../shared/containers/board';
+import {mountConnected} from '../../../__tests__/helper';
+import configureStore from '../../store';
+import * as actionCreators from '../../actions';
+import BoardContainer from '../board';
 
 describe('<BoardContainer />', () => {
   let actions;

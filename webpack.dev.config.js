@@ -6,7 +6,7 @@ const SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin');
 module.exports = {
   entry: [
     'webpack-hot-middleware/client',
-    './client'
+    './src/client'
   ],
 
   devtool: 'source-map',

@@ -1,5 +1,5 @@
 import {List, Map} from 'immutable';
-import {isOnScoreList} from '../../../shared/utils/helper';
+import {isOnScoreList} from '../helper';
 
 describe('Helpers', () => {
   let attempts;

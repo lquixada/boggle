@@ -1,10 +1,10 @@
 import React from 'react';
 import sinon from 'sinon';
 import {bindActionCreators} from 'redux';
-import {mountConnected} from '../../helper';
-import configureStore from '../../../shared/store';
-import * as actionCreators from '../../../shared/actions';
-import ClockContainer from '../../../shared/containers/clock';
+import {mountConnected} from '../../../__tests__/helper';
+import configureStore from '../../store';
+import * as actionCreators from '../../actions';
+import ClockContainer from '../clock';
 
 describe('<ClockContainer />', () => {
   let actions;

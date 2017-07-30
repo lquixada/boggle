@@ -6,7 +6,7 @@ const SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin');
 
 module.exports = {
   entry: [
-    './client'
+    './src/client'
   ],
 
   module: {
