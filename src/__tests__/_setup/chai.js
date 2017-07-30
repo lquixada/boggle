@@ -6,3 +6,6 @@ chai.use(chaiImmutable);
 chai.use(chaiEnzyme());
 
 global.expect = expect;
+global.jestExpect = global.expect;
+global.before = beforeAll;
+global.after = afterEach;

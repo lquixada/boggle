@@ -67,7 +67,7 @@ $ npm test
 ## Tasks
 
 * **npm test**: runs all tests and lints
-* **npm run mocha**: tests files
+* **npm run jest**: tests files
 * **npm run lint**: lints files
 * **npm start**: shortcut for *npm run start:prod*
 * **npm run start:dev**: starts application in development mode
@@ -80,7 +80,7 @@ $ npm test
 
 * **App**: react, redux, immutable.js
 * **Style**: sass
-* **Tests**: mocha, chai, enzyme, sinon
+* **Tests**: jest, chai, enzyme, sinon
 * **Lint**: eslint, sass-lint
 * **Utils**: npm, webpack, babel
 * **CI**: [TravisCI](https://travis-ci.org/lquixada/boggle)
@@ -90,7 +90,6 @@ $ npm test
 
 ## TODO
 
-* Jest
 * Universal
 * Npm task for stress test
 * New Relic Lite
