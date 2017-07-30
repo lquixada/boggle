@@ -1,7 +1,8 @@
 /* eslint-disable consistent-return */
 import React from 'react';
 import {renderToString} from 'react-dom/server';
-import {match, RouterContext} from 'react-router';
+import {matchRoutes, renderRoutes} from 'react-router-config';
+import {StaticRouter} from 'react-router-dom';
 import {Provider} from 'react-redux';
 
 import assets from '../../public/assets.json';
@@ -10,24 +11,18 @@ import routes from '../../shared/routes';
 import configureStore from '../../shared/store';
 
 export default (req, res) => {
-  match({routes, location: req.url}, (err, redirectLocation, renderProps) => {
-    if (err) {
-      console.error(err);
-      return res.status(500).end('Internal server error');
-    }
+  const match = matchRoutes(routes, req.url);
 
-    if (!renderProps) {
-      return res.status(404).end('Not found');
-    }
+  if (match.length === 0) {
+    return res.status(404).end('Not found');
+  }
 
-    const store = configureStore();
-    const routing = React.createElement(RouterContext, renderProps);
-    const provider = React.createElement(Provider, {store}, routing);
+  const store = configureStore();
+  const state = JSON.stringify(store.getState());
 
-    res.send(template({
-      state: JSON.stringify(store.getState()),
-      content: renderToString(provider),
-      assets
-    }));
-  });
+  const router = React.createElement(StaticRouter, {context: {}, location: req.url}, renderRoutes(routes));
+  const provider = React.createElement(Provider, {store}, router);
+  const content = renderToString(provider);
+
+  res.send(template({state, content, assets}));
 };

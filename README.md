@@ -94,6 +94,7 @@ $ npm test
 
 ## TODO
 
+* Jest
 * Npm task for stress test
 * New Relic Lite
 * Docker image

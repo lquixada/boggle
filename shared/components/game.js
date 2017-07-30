@@ -1,32 +1,34 @@
 import React from 'react';
-import {Link} from 'react-router';
-import InputContainer from '../containers/input';
-import BoardContainer from '../containers/board';
-import ButtonContainer from '../containers/button';
-import ClockContainer from '../containers/clock';
+import Input from '../containers/input';
+import Board from '../containers/board';
+import Button from '../containers/button';
+import Clock from '../containers/clock';
 import Copyright from './copyright';
 import Social from './social';
-import ScoreContainer from '../containers/score';
+import Score from '../containers/score';
 import Title from './title';
+import Ribbon from './ribbon';
 import '../../styles/game.scss';
 
 const Game = () => (
   <main>
+    <Ribbon />
+
     <header>
       <div className="container">
         <Title />
-        <InputContainer />
-        <ButtonContainer />
+        <Input />
+        <Button />
       </div>
     </header>
 
     <section>
       <div className="container">
         <aside>
-          <ClockContainer />
-          <ScoreContainer />
+          <Clock />
+          <Score />
         </aside>
-        <BoardContainer />
+        <Board />
       </div>
     </section>
 
