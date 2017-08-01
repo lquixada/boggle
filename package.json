@@ -4,6 +4,7 @@
   "description": "A web-based implementation of the Boggle game for React study purposes.",
   "scripts": {
     "deploy": "git push -f origin master:heroku",
+    "pretest": "npm run build",
     "prepush": "npm test",
     "prestart:prod": "npm rebuild node-sass && npm run build",
     "test": "run-p jest lint",
