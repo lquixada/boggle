@@ -4,11 +4,12 @@ apps:
     watch    : ./src/server
     instances: 1
     exec_mode: cluster
-    env    :
+    port     : 8000
+    env      :
       NODE_ENV: development
   - name     : boggle-prod
     script   : ./src/app.js
     instances: 4
     exec_mode: cluster
-    env    :
+    env      :
       NODE_ENV: production

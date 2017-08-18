@@ -1,13 +1,29 @@
 const path = require('path');
+const webpack = require('webpack');
 const AssetsPlugin = require('assets-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin');
 
 module.exports = {
-  entry: [
-    './src/client'
-  ],
+  entry: {
+    app: ['./src/client'],
+    vendor: [
+      'es6-promise',
+      'history',
+      'immutable',
+      'lodash',
+      'prop-types',
+      'react',
+      'react-dom',
+      'react-github-fork-ribbon',
+      'react-redux',
+      'react-router-config',
+      'react-router-redux',
+      'redux',
+      'redux-raven-middleware'
+    ]
+  },
 
   module: {
     rules: [
@@ -19,7 +35,7 @@ module.exports = {
   output: {
     path: path.join(__dirname, 'public'),
     publicPath: '/',
-    filename: 'scripts/bundle.[hash].js',
+    filename: 'scripts/app.[hash].js',
     chunkFilename: 'scripts/[id].[name].[chunkhash].js'
   },
 
@@ -28,6 +44,11 @@ module.exports = {
       // Without `root` CleanWebpackPlugin won't point to our
       // project and will fail to work.
       root: process.cwd()
+    }),
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'vendor',
+      filename: 'scripts/vendor.[hash].js',
+      minChunks: Infinity
     }),
     new ExtractTextPlugin('sheets/bundle.[contenthash].css'),
     new AssetsPlugin({

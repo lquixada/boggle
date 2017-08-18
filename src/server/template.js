@@ -8,7 +8,7 @@ export default ({state, content, assets, bundle}) => (`
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <title>Boggle</title>
 
-      <link href="${assets.main.css}" rel="stylesheet" />
+      <link href="${assets.app.css}" rel="stylesheet" />
       <script>
         window.__INITIAL_STATE__ = ${state};
       </script>
@@ -16,7 +16,8 @@ export default ({state, content, assets, bundle}) => (`
 
     <body>
       <div id="game">${content}</div>
-      <script async defer src="${assets.main.js}"></script>
+      <script async defer src="${assets.vendor.js}"></script>
+      <script async defer src="${assets.app.js}"></script>
       <script async defer>
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
         (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
