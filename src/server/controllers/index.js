@@ -19,10 +19,13 @@ export default (req, res) => {
 
   const store = configureStore();
   const state = JSON.stringify(store.getState());
-
-  const router = React.createElement(StaticRouter, {context: {}, location: req.url}, renderRoutes(routes));
-  const provider = React.createElement(Provider, {store}, router);
-  const content = renderToString(provider);
+  const content = renderToString(
+    <Provider store={store}>
+      <StaticRouter location={req.url} context={{}}>
+        {renderRoutes(routes)}
+      </StaticRouter>
+    </Provider>
+  );
 
   res.send(template({state, content, assets}));
 };
