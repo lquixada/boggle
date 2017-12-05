@@ -18,18 +18,18 @@ describe('<BoardContainer />', () => {
 
   it('is empty by default', () => {
     const text = component.find('table').text();
-    expect(text.trim()).to.be.empty;
+    expect(text.trim()).toHaveLength(0);
   });
 
   it('is filled when the game has started', () => {
     actions.startGame();
     const text = component.find('table').text();
-    expect(text.trim()).to.have.lengthOf(16);
+    expect(text.trim()).toHaveLength(16);
   });
 
   it('is empty when the game has stopped', () => {
     actions.stopGame();
     const text = component.find('table').text();
-    expect(text.trim()).to.be.empty;
+    expect(text.trim()).toHaveLength(0);
   });
 });

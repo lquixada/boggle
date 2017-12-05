@@ -17,16 +17,16 @@ describe('<InputContainer />', () => {
   });
 
   it('is disabled by default', () => {
-    expect(component.find('input').prop('disabled')).to.be.true;
+    expect(component.find('input').prop('disabled')).toBe(true);
   });
 
   it('is enabled when the game has started', () => {
     actions.startGame();
-    expect(component.find('input').prop('disabled')).to.be.false;
+    expect(component.find('input').prop('disabled')).toBe(false);
   });
 
   it('is disabled when the game has stopped', () => {
     actions.stopGame();
-    expect(component.find('input').prop('disabled')).to.be.true;
+    expect(component.find('input').prop('disabled')).toBe(true);
   });
 });

@@ -26,7 +26,7 @@ describe('Server', () => {
         .expect((res) => {
           const dom = new JSDOM(res.text);
           const board = dom.window.document.getElementById('board');
-          expect(typeof board).to.equal('object');
+          expect(typeof board).toBe('object');
         })
         .end(done);
     });
@@ -46,7 +46,7 @@ describe('Server', () => {
           const dom = new JSDOM(res.text);
           const title = dom.window.document.getElementsByTagName('h2')[0];
 
-          expect(title.innerHTML).to.be.equal('About me');
+          expect(title.innerHTML).toBe('About me');
         })
         .end(done);
     });
@@ -63,7 +63,7 @@ describe('Server', () => {
       request(server)
         .get('/unknownpage')
         .expect((res) => {
-          expect(res.text).to.be.equal('Not found');
+          expect(res.text).toBe('Not found');
         })
         .end(done);
     });

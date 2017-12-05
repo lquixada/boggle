@@ -11,7 +11,7 @@ describe('BoardChecker', () => {
     ]);
     const board = new BoardChecker(matrix);
 
-    expect(board.hasWord('norm')).to.be.equal(true);
+    expect(board.hasWord('norm')).toBe(true);
   });
 
   it('finds backwards word', () => {
@@ -23,7 +23,7 @@ describe('BoardChecker', () => {
     ]);
     const board = new BoardChecker(matrix);
 
-    expect(board.hasWord('norm')).to.be.equal(true);
+    expect(board.hasWord('norm')).toBe(true);
   });
 
   it('finds word on diagonal', () => {
@@ -35,7 +35,7 @@ describe('BoardChecker', () => {
     ]);
     const board = new BoardChecker(matrix);
 
-    expect(board.hasWord('norm')).to.be.equal(true);
+    expect(board.hasWord('norm')).toBe(true);
   });
 
   it('finds word on backwards diagonal', () => {
@@ -47,7 +47,7 @@ describe('BoardChecker', () => {
     ]);
     const board = new BoardChecker(matrix);
 
-    expect(board.hasWord('norm')).to.be.equal(true);
+    expect(board.hasWord('norm')).toBe(true);
   });
 
   it('finds circular word', () => {
@@ -59,6 +59,6 @@ describe('BoardChecker', () => {
     ]);
     const board = new BoardChecker(matrix);
 
-    expect(board.hasWord('norm')).to.be.equal(true);
+    expect(board.hasWord('norm')).toBe(true);
   });
 });
