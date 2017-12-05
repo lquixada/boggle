@@ -24,24 +24,24 @@ describe('<ClockContainer />', () => {
   });
 
   it('displays 60 by default', () => {
-    expect(component.find('text')).to.have.text('60');
+    expect(component.find('text').text()).to.equal('60');
   });
 
   it('decrements when the game starts', () => {
     actions.startGame();
-    expect(component.find('.counter')).to.have.text('59');
+    expect(component.find('.counter').text()).to.equal('59');
 
     clock.tick(1000);
-    expect(component.find('.counter')).to.have.text('58');
+    expect(component.find('.counter').text()).to.equal('58');
 
     clock.tick(1000);
-    expect(component.find('.counter')).to.have.text('57');
+    expect(component.find('.counter').text()).to.equal('57');
   });
 
   // TODO: timer is not resetting
   // it('displays 60 when the game stops', () => {
   //   actions.stopGame();
   //
-  //   expect(component.find('.counter')).to.have.text('60');
+  //   expect(component.find('.counter').text()).to.equal('60');
   // });
 });

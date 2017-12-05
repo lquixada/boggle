@@ -24,7 +24,6 @@ describe('<BoardContainer />', () => {
   it('is filled when the game has started', () => {
     actions.startGame();
     const text = component.find('table').text();
-    expect(text.trim()).to.not.be.empty;
     expect(text.trim()).to.have.lengthOf(16);
   });
 
