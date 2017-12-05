@@ -17,8 +17,7 @@ const Score = ({counter, attempts}) => (
       <table>
         <tbody>
           {attempts.map((attempt, i) =>
-            <Attempt key={i} attempt={attempt} />
-          )}
+            <Attempt key={i} attempt={attempt} />)}
         </tbody>
       </table>
     </section>

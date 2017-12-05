@@ -1,4 +1,6 @@
-export default ({state, content, assets, bundle}) => (`
+export default ({
+  state, content, assets, bundle
+}) => (`
   <!DOCTYPE html>
 
   <html>

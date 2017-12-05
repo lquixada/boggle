@@ -8,8 +8,7 @@ const Cell = ({letter}) => (
 const Row = ({letters}) => (
   <tr>
     {letters.map((letter, i) =>
-      <Cell key={i} letter={letter} />
-    )}
+      <Cell key={i} letter={letter} />)}
   </tr>
 );
 
@@ -18,8 +17,7 @@ const Board = ({matrix}) => (
     <table>
       <tbody>
         {matrix.map((letters, i) =>
-          <Row key={i} letters={letters} />
-        )}
+          <Row key={i} letters={letters} />)}
       </tbody>
     </table>
   </div>

@@ -10,8 +10,6 @@ export const createServer = () => {
 };
 
 export const mountConnected = (component, store) =>
-  mount(
-    <Provider store={store}>
-      {component}
-    </Provider>
-  );
+  mount(<Provider store={store}>
+    {component}
+  </Provider>);
