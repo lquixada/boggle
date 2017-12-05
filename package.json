@@ -82,7 +82,7 @@
     "url": "https://github.com/lquixada/boggle.git"
   },
   "engines": {
-    "node": "8.2.1"
+    "node": "8.9.0"
   },
   "author": "Leonardo Quixadá",
   "license": "UNLICENSED",
