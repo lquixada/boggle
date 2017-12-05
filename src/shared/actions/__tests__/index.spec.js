@@ -1,4 +1,3 @@
-import sinon from 'sinon';
 import {List, Map} from 'immutable';
 import {bindActionCreators} from 'redux';
 import configureStore from '../../store';
@@ -25,11 +24,7 @@ describe('addCheckedAttempt', () => {
 
     store = configureStore({attempts, matrix});
     actions = bindActionCreators(actionCreators, store.dispatch);
-    isOnDictionary = sinon.stub(helper, 'isOnDictionary').returns(true);
-  });
-
-  afterEach(() => {
-    isOnDictionary.restore();
+    helper.isOnDictionary = jest.fn().mockReturnValue(true);
   });
 
   it('validates correct word', () => {
@@ -61,7 +56,7 @@ describe('addCheckedAttempt', () => {
 
   it('invalidates word not on Dictionary', () => {
     const promise = actions.addCheckedAttempt('hey')
-      .then(() => isOnDictionary.returns(false))
+      .then(() => helper.isOnDictionary.mockReturnValue(false))
       .then(() => actions.addCheckedAttempt('smv'))
       .then(() => {
         const {attempts} = store.getState();

@@ -1,5 +1,4 @@
 import React from 'react';
-import sinon from 'sinon';
 import {bindActionCreators} from 'redux';
 import {mountConnected} from '../../../__tests__/helper';
 import configureStore from '../../store';
@@ -13,14 +12,10 @@ describe('<ClockContainer />', () => {
   let store;
 
   beforeEach(() => {
-    clock = sinon.useFakeTimers();
+    jest.useFakeTimers();
     store = configureStore();
     component = mountConnected(<ClockContainer />, store);
     actions = bindActionCreators(actionCreators, store.dispatch);
-  });
-
-  afterEach(() => {
-    clock.restore();
   });
 
   it('displays 60 by default', () => {
@@ -31,10 +26,10 @@ describe('<ClockContainer />', () => {
     actions.startGame();
     expect(component.find('.counter').text()).toBe('59');
 
-    clock.tick(1000);
+    jest.runTimersToTime(1000);
     expect(component.find('.counter').text()).toBe('58');
 
-    clock.tick(1000);
+    jest.runTimersToTime(1000);
     expect(component.find('.counter').text()).toBe('57');
   });
 
