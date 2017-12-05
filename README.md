@@ -80,7 +80,7 @@ $ npm test
 
 * **App**: react, redux, immutable.js
 * **Style**: sass
-* **Tests**: jest, chai, enzyme, sinon
+* **Tests**: jest
 * **Lint**: eslint, sass-lint
 * **Utils**: npm, webpack, babel
 * **CI**: [TravisCI](https://travis-ci.org/lquixada/boggle)
