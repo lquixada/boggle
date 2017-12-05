@@ -35,7 +35,7 @@ describe('addCheckedAttempt', () => {
   it('validates correct word', () => {
     const promise = actions.addCheckedAttempt('norm').then(() => {
       const {attempts} = store.getState();
-      expect(attempts).to.include(Map({word: 'NORM', score: 4}));
+      expect(attempts.includes(Map({word: 'NORM', score: 4}))).to.be.true;
     });
 
     return promise;
@@ -44,7 +44,7 @@ describe('addCheckedAttempt', () => {
   it('invalidates word which is not on Board', () => {
     const promise = actions.addCheckedAttempt('fake').then(() => {
       const {attempts} = store.getState();
-      expect(attempts).to.include(Map({word: 'FAKE', score: '✘'}));
+      expect(attempts.includes(Map({word: 'FAKE', score: '✘'}))).to.be.true;
     });
 
     return promise;
@@ -53,7 +53,7 @@ describe('addCheckedAttempt', () => {
   it('invalidates word which is already on ScoreList', () => {
     const promise = actions.addCheckedAttempt('hey').then(() => {
       const {attempts} = store.getState();
-      expect(attempts).to.include(Map({word: 'HEY', score: '✘'}));
+      expect(attempts.includes(Map({word: 'HEY', score: '✘'}))).to.be.true;
     });
 
     return promise;
@@ -65,7 +65,7 @@ describe('addCheckedAttempt', () => {
       .then(() => actions.addCheckedAttempt('smv'))
       .then(() => {
         const {attempts} = store.getState();
-        expect(attempts).to.include(Map({word: 'SMV', score: '✘'}));
+        expect(attempts.includes(Map({word: 'SMV', score: '✘'}))).to.be.true;
       });
 
     return promise;
