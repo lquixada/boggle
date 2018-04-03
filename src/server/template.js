@@ -18,9 +18,9 @@ export default ({
 
     <body>
       <div id="game">${content}</div>
-      <script async defer src="${assets.vendor.js}"></script>
-      <script async defer src="${assets.app.js}"></script>
-      <script async defer>
+      <script src="${assets.vendor.js}"></script>
+      <script src="${assets.app.js}"></script>
+      <script>
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
         (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
         m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
