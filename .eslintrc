@@ -11,6 +11,7 @@
   },
   "globals": {},
   "rules": {
+    "global-require": "off",
     "no-bitwise": "error",
     "camelcase": "error",
     "curly": ["error", "all"],
@@ -64,9 +65,10 @@
     "no-mixed-spaces-and-tabs": "error",
     "no-multiple-empty-lines": "error",
     "object-curly-spacing": ["error", "never"],
-    "import/no-extraneous-dependencies": ["error", {"devDependencies": true}],
     "no-underscore-dangle": "off",
     "no-param-reassign": "off",
-    "no-alert": "off"
+    "no-alert": "off",
+    "import/no-extraneous-dependencies": ["error", {"devDependencies": true}],
+    "import/prefer-default-export": "off"
   }
 }
