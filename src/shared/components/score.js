@@ -1,4 +1,5 @@
 import React from 'react';
+import {Map} from 'immutable';
 import '../../styles/score.scss';
 
 const Attempt = ({attempt}) => (
@@ -16,8 +17,8 @@ const Score = ({counter, attempts}) => (
     <section className="box">
       <table>
         <tbody>
-          {attempts.map((attempt, i) =>
-            <Attempt key={i} attempt={attempt} />)}
+          {attempts.toJS().map((attempt, i) =>
+            <Attempt key={1} attempt={attempts.get(0)} />)}
         </tbody>
       </table>
     </section>

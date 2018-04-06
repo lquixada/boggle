@@ -23,15 +23,15 @@ describe('<ScoreContainer />', () => {
   it('adds a valid attempt', () => {
     actions.addAttempt('someword', true);
 
-    expect(component.find('td').at(0).text()).toBe('someword');
-    expect(component.find('td').at(1).text()).toBe('8');
+    expect(component.update().find('td').at(0).text()).toBe('someword');
+    expect(component.update().find('td').at(1).text()).toBe('8');
   });
 
   it('adds an invalid attempt', () => {
     actions.addAttempt('someword', false);
 
-    expect(component.find('td').at(0).text()).toBe('someword');
-    expect(component.find('td').at(1).text()).toBe('✘');
+    expect(component.update().find('td').at(0).text()).toBe('someword');
+    expect(component.update().find('td').at(1).text()).toBe('✘');
   });
 
   it('must be empty when the game stops', () => {
