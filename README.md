@@ -87,13 +87,3 @@ $ npm test
 * **Hosting**: [Heroku](https://bogglejs.herokuapp.com/)
 * **SSL**: [Let's Encrypt](https://letsencrypt.org/)
 
-
-## TODO
-
-* Universal
-* Npm task for stress test
-* New Relic Lite
-* Docker image
-* Progressive web app: manifest
-* Progressive web app: update notification
-* HTTP/2
