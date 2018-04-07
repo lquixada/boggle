@@ -52,8 +52,7 @@ module.exports = {
   output: {
     path: path.join(__dirname, 'public'),
     publicPath: '/',
-    filename: `scripts/app${hash()}.js`,
-    chunkFilename: `scripts/chunk.[name]${hash('chunk')}.js`
+    filename: `scripts/app${hash()}.js`
   },
 
   plugins: [
