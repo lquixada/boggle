@@ -2,6 +2,8 @@
   "name": "boggle",
   "version": "0.0.1",
   "description": "A web-based implementation of the Boggle game for React study purposes.",
+  "author": "Leonardo Quixada <lquixada@gmail.com>",
+  "license": "MIT",
   "scripts": {
     "deploy": "git push -f origin master:heroku",
     "prepush": "npm test",
@@ -79,7 +81,5 @@
   },
   "engines": {
     "node": "8.9.0"
-  },
-  "author": "Leonardo Quixadá",
-  "license": "UNLICENSED"
+  }
 }
