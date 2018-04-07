@@ -1,5 +1,5 @@
 import {fromJS} from 'immutable';
-import fetchJsonp from 'fetch-jsonp';
+import fetch from 'cross-fetch';
 import BoardChecker from '../utils/board-checker';
 
 export const isOnScoreList = (attempts, word) => {
@@ -14,9 +14,9 @@ export const isOnBoard = (matrix, word) => {
 };
 
 export const isOnDictionary = (word) => {
-  const url = `https://en.wiktionary.org/w/api.php?action=query&format=json&callback=?&titles=${word.toLowerCase()}`;
+  const url = `https://en.wiktionary.org/w/api.php?action=query&format=json&origin=*&titles=${word.toLowerCase()}`;
 
-  return fetchJsonp(url)
+  return fetch(url)
     .then(response => response.json())
     .then(data => !data.query.pages[-1]);
 };
