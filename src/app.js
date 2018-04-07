@@ -1,5 +1,3 @@
-require('babel-core/register');
-
 require.extensions['.scss'] = () => {};
 
 const {PORT = 3000} = process.env;

@@ -3,15 +3,14 @@ apps:
     script   : ./src/app.js
     watch    : ./src/server
     instances: 1
-    exec_mode: cluster
+    interpreter: babel-node
+    exec_mode: fork
     port     : 3000
     env      :
       NODE_ENV: development
-      BABEL_ENV: dev
   - name     : boggle-prod
-    script   : ./src/app.js
+    script   : ./web/app.js
     instances: 4
     exec_mode: cluster
     env      :
       NODE_ENV: production
-      BABEL_ENV: prod

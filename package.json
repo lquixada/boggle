@@ -6,14 +6,15 @@
   "license": "MIT",
   "scripts": {
     "precommit": "lint-staged",
-    "prestart": "npm rebuild node-sass && npm run build",
-    "pretest:ci": "npm run build",
-    "build": "webpack -p",
+    "prestart": "npm rebuild node-sass && run-s build:bundle build:web",
+    "pretest:ci": "npm run build:bundle",
+    "build:bundle": "NODE_ENV=production webpack -p",
+    "build:web": "babel -D -q src -d web",
     "deploy": "git push -f origin master:heroku",
     "jest": "jest",
     "jest:ci": "jest --coverage",
     "lint": "run-p lint:js lint:sass",
-    "lint:js": "eslint --ignore-pattern public --ignore-pattern coverage .",
+    "lint:js": "eslint --ignore-pattern web --ignore-pattern .coverage .",
     "lint:sass": "sass-lint --no-exit --verbose",
     "start": "pm2 start process.yml --only boggle-prod --no-daemon",
     "test": "run-p jest lint",
@@ -22,6 +23,7 @@
   },
   "dependencies": {
     "assets-webpack-plugin": "3.5.1",
+    "babel-cli": "6.26.0",
     "babel-core": "6.26.0",
     "babel-loader": "7.1.4",
     "babel-preset-es2015": "6.24.1",
@@ -87,6 +89,9 @@
     "node": "8.9.0"
   },
   "lint-staged": {
-    "*.js": ["eslint --fix", "git add"]
+    "*.js": [
+      "eslint --fix",
+      "git add"
+    ]
   }
 }

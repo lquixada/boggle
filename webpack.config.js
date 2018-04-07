@@ -50,14 +50,14 @@ module.exports = {
   },
 
   output: {
-    path: path.join(__dirname, 'public'),
+    path: path.join(__dirname, 'web', 'assets'),
     publicPath: '/',
     filename: `scripts/app${hash()}.js`
   },
 
   plugins: [
     isProd()
-      ? new CleanWebpackPlugin(['./public/scripts', './public/sheets'], {
+      ? new CleanWebpackPlugin(['./web/assets/scripts', './web/assets/sheets'], {
         // Without `root` CleanWebpackPlugin won't point to our
         // project and will fail to work.
         root: process.cwd()
@@ -75,7 +75,7 @@ module.exports = {
     }),
     new AssetsPlugin({
       filename: 'assets.json',
-      path: path.join(__dirname, 'public'),
+      path: path.join(__dirname, 'web', 'assets'),
       prettyPrint: true,
       update: true
     }),
@@ -83,11 +83,11 @@ module.exports = {
       cacheId: 'boggle',
       filename: 'service-worker.js',
       staticFileGlobs: [
-        './public/images/**/*.{png,jpg,gif}',
-        './public/scripts/**/*.js',
-        './public/sheets/**/*.css'
+        './web/assets/images/**/*.{png,jpg,gif}',
+        './web/assets/scripts/**/*.js',
+        './web/assets/sheets/**/*.css'
       ],
-      stripPrefix: './public/'
+      stripPrefix: './web/assets/'
     })
   ],
 
