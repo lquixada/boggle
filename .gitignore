@@ -1,6 +1,4 @@
-dist/*
 public/*
-coverage/*
 !public/.gitkeep
 !public/images/
 
@@ -14,14 +12,12 @@ package-lock.json
 .tmp
 node_modules
 
-# Logs and databases #
-######################
+# Logs and databases
 *.log
 *.sql
 *.sqlite
 
-# OS generated files #
-######################
+# OS generated files
 .DS_Store
 .DS_Store?
 ._*
@@ -30,13 +26,8 @@ node_modules
 ehthumbs.db
 Thumbs.db
 
-
-# Visual Studio Code #
-######################
+# Visual Studio Code
 .vscode
 
-
-# Coverage reports   #
-######################
-.reports
-.nyc_output
+# Coverage reports
+.coverage
