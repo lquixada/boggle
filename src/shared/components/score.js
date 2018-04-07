@@ -17,8 +17,8 @@ const Score = ({counter, attempts}) => (
     <section className="box">
       <table>
         <tbody>
-          {attempts.toJS().map((attempt, i) =>
-            <Attempt key={1} attempt={attempts.get(0)} />)}
+          {attempts.map((attempt, i) =>
+            <Attempt key={i} attempt={attempt} />)}
         </tbody>
       </table>
     </section>
