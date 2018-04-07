@@ -8,7 +8,7 @@
     "precommit": "lint-staged",
     "prestart": "npm rebuild node-sass && npm run build",
     "pretest:ci": "npm run build",
-    "build": "webpack -p --config webpack.prod.config.js",
+    "build": "webpack -p",
     "deploy": "git push -f origin master:heroku",
     "jest": "jest",
     "jest:ci": "jest --coverage",

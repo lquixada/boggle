@@ -5,9 +5,15 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin');
 
+const {NODE_ENV} = process.env;
+const isProd = () => NODE_ENV === 'production';
+const hash = (type = '') => (isProd() ? `.[${type}hash]` : '');
+
 module.exports = {
   entry: {
-    app: ['./src/client'],
+    app: isProd()
+      ? ['./src/client']
+      : ['webpack-hot-middleware/client', './src/client'],
     vendor: [
       'es6-promise',
       'history',
@@ -34,7 +40,8 @@ module.exports = {
           loader: 'babel-loader',
           options: {
             babelrc: false,
-            presets: ['react', ['es2015', {modules: false}]]
+            presets: ['react', ['es2015', {modules: false}]],
+            plugins: ['react-hot-loader/babel']
           }
         }
       },
@@ -45,26 +52,33 @@ module.exports = {
   output: {
     path: path.join(__dirname, 'public'),
     publicPath: '/',
-    filename: 'scripts/app.[hash].js',
-    chunkFilename: 'scripts/[id].[name].[chunkhash].js'
+    filename: `scripts/app${hash()}.js`,
+    chunkFilename: `scripts/chunk.[name]${hash('chunk')}.js`
   },
 
   plugins: [
-    new CleanWebpackPlugin(['./public/scripts', './public/sheets'], {
-      // Without `root` CleanWebpackPlugin won't point to our
-      // project and will fail to work.
-      root: process.cwd()
-    }),
+    isProd()
+      ? new CleanWebpackPlugin(['./public/scripts', './public/sheets'], {
+        // Without `root` CleanWebpackPlugin won't point to our
+        // project and will fail to work.
+        root: process.cwd()
+      })
+      : new webpack.HotModuleReplacementPlugin(),
     new webpack.optimize.CommonsChunkPlugin({
       name: 'vendor',
-      filename: 'scripts/vendor.[hash].js',
+      filename: `scripts/vendor${hash()}.js`,
       minChunks: Infinity
     }),
-    new ExtractTextPlugin('sheets/bundle.[contenthash].css'),
+    new ExtractTextPlugin({
+      disable: !isProd(),
+      filename: `sheets/bundle${hash('content')}.css`,
+      allChunks: true
+    }),
     new AssetsPlugin({
       filename: 'assets.json',
       path: path.join(__dirname, 'public'),
-      prettyPrint: true
+      prettyPrint: true,
+      update: true
     }),
     new SWPrecacheWebpackPlugin({
       cacheId: 'boggle',
@@ -79,6 +93,6 @@ module.exports = {
   ],
 
   stats: {
-    children: false
+    children: !isProd()
   }
 };
