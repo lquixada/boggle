@@ -1,5 +1,6 @@
 dist/*
 public/*
+coverage/*
 !public/.gitkeep
 !public/images/
 
