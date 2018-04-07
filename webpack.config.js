@@ -86,7 +86,8 @@ module.exports = {
         './web/assets/scripts/**/*.js',
         './web/assets/sheets/**/*.css'
       ],
-      stripPrefix: './web/assets/'
+      stripPrefix: './web/assets/',
+      logger() {}
     })
   ],
 

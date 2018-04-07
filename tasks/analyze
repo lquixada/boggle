@@ -1,0 +1,11 @@
+#!/bin/bash
+set -e
+
+export NODE_ENV="production"
+export DIR=".reports/analyze"
+export STATS="${DIR}/stats.json"
+
+mkdir -p ${DIR} &&
+
+yarn -s webpack -p --profile --json > ${STATS} &&
+yarn webpack-bundle-analyzer ${STATS} ./web/assets -m static -r ${DIR}/report.html

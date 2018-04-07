@@ -8,6 +8,7 @@
     "precommit": "lint-staged",
     "prestart": "npm rebuild node-sass && run-s build:bundle build:web",
     "pretest:ci": "npm run build:bundle",
+    "analyze": "./tasks/analyze",
     "build:bundle": "NODE_ENV=production webpack -p",
     "build:web": "babel -D -q src -d web",
     "deploy": "git push -f origin master:heroku",
@@ -78,6 +79,7 @@
     "react-test-renderer": "16.3.1",
     "sass-lint": "1.12.1",
     "supertest": "3.0.0",
+    "webpack-bundle-analyzer": "2.11.1",
     "webpack-dev-middleware": "2.0.6",
     "webpack-hot-middleware": "2.21.2"
   },
