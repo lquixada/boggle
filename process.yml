@@ -7,9 +7,11 @@ apps:
     port     : 3000
     env      :
       NODE_ENV: development
+      BABEL_ENV: dev
   - name     : boggle-prod
     script   : ./src/app.js
     instances: 4
     exec_mode: cluster
     env      :
       NODE_ENV: production
+      BABEL_ENV: prod
