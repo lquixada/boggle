@@ -1,4 +1,4 @@
-import logger from '../../../logger';
+import logger from '../../server/logger';
 
 /* Disable logging */
 console.info = () => { /* SILENCE! I'LL KILL YA 💀 */ };
