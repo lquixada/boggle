@@ -4,6 +4,9 @@ coverage/*
 !public/.gitkeep
 !public/images/
 
+# Heroku has issues with having both package-lock.json and yarn.lock files,
+# we choose the later
+package-lock.json
 
 *.orig
 *.swo
