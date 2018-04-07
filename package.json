@@ -8,17 +8,17 @@
     "precommit": "lint-staged",
     "prestart": "npm rebuild node-sass && npm run build",
     "pretest:ci": "npm run build",
-    "build": "BABEL_ENV=prod webpack -p --config webpack.prod.config.js",
+    "build": "webpack -p --config webpack.prod.config.js",
     "deploy": "git push -f origin master:heroku",
-    "jest": "BABEL_ENV=dev jest",
-    "jest:ci": "BABEL_ENV=dev jest --coverage",
+    "jest": "jest",
+    "jest:ci": "jest --coverage",
     "lint": "run-p lint:js lint:sass",
     "lint:js": "eslint --ignore-pattern public --ignore-pattern coverage .",
     "lint:sass": "sass-lint --no-exit --verbose",
     "start": "pm2 start process.yml --only boggle-prod --no-daemon",
     "test": "run-p jest lint",
     "test:ci": "run-p jest:ci lint",
-    "dev": "BABEL_ENV=dev pm2 start process.yml --only boggle-dev --no-daemon"
+    "dev": "pm2 start process.yml --only boggle-dev --no-daemon"
   },
   "dependencies": {
     "assets-webpack-plugin": "3.5.1",

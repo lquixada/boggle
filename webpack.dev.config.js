@@ -27,7 +27,18 @@ module.exports = {
 
   module: {
     rules: [
-      {test: /\.js$/, exclude: /node_modules/, use: ['babel-loader']},
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            babelrc: false,
+            presets: ['react', ['es2015', {modules: false}]],
+            plugins: ['react-hot-loader/babel']
+          }
+        }
+      },
       {test: /\.scss$/, use: ['style-loader', 'css-loader', 'sass-loader']}
     ]
   },
