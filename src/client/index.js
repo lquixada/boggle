@@ -25,9 +25,9 @@ const renderApp = () => {
 
 if (module.hot) {
   module.hot.accept('../shared/routes', renderApp);
-} else {
-  renderApp();
 }
+
+renderApp();
 
 if (navigator.serviceWorker) {
   navigator.serviceWorker.register('/service-worker.js');
