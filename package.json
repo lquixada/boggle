@@ -5,19 +5,19 @@
   "author": "Leonardo Quixada <lquixada@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "deploy": "git push -f origin master:heroku",
-    "prepush": "npm test",
+    "precommit": "lint-staged",
     "prestart": "npm rebuild node-sass && npm run build",
     "pretest:ci": "npm run build",
-    "test": "run-p jest lint",
-    "test:ci": "run-p jest:ci lint",
+    "build": "webpack -p --config webpack.prod.config.js",
+    "deploy": "git push -f origin master:heroku",
     "jest": "jest",
     "jest:ci": "jest --coverage",
     "lint": "run-p lint:js lint:sass",
     "lint:js": "eslint --ignore-pattern public --ignore-pattern coverage .",
     "lint:sass": "sass-lint --no-exit --verbose",
-    "build": "webpack -p --config webpack.prod.config.js",
     "start": "pm2 start process.yml --only boggle-prod --no-daemon",
+    "test": "run-p jest lint",
+    "test:ci": "run-p jest:ci lint",
     "dev": "pm2 start process.yml --only boggle-dev --no-daemon"
   },
   "dependencies": {
@@ -71,6 +71,7 @@
     "identity-obj-proxy": "3.0.0",
     "jest": "22.4.3",
     "jsdom": "11.7.0",
+    "lint-staged": "7.0.4",
     "react-hot-loader": "4.0.1",
     "react-test-renderer": "16.3.1",
     "sass-lint": "1.12.1",
@@ -84,5 +85,8 @@
   },
   "engines": {
     "node": "8.9.0"
+  },
+  "lint-staged": {
+    "*.js": ["eslint --fix", "git add"]
   }
 }
