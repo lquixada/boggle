@@ -7,7 +7,7 @@
   "scripts": {
     "deploy": "git push -f origin master:heroku",
     "prepush": "npm test",
-    "prestart:prod": "npm rebuild node-sass && npm run build",
+    "prestart": "npm rebuild node-sass && npm run build",
     "test": "run-p jest lint",
     "jest": "jest",
     "lint": "run-p lint:js lint:sass",
