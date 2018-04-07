@@ -5,8 +5,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin');
 
-const {NODE_ENV} = process.env;
-const isProd = () => NODE_ENV === 'production';
+const isProd = () => process.env.NODE_ENV === 'production';
 const hash = (type = '') => (isProd() ? `.[${type}hash]` : '');
 
 module.exports = {
