@@ -11,7 +11,7 @@ router.get('/*', (req, res) => {
       throw err;
     }
 
-    res.send(`${data}`);
+    res.send(data);
   });
 });
 

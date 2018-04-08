@@ -1,38 +1,35 @@
+import fs from 'fs';
 import request from 'supertest';
-
-import {createServer} from '../../../__tests__/helper';
-
-jest.mock('fs');
-
-jest.mock('fs', () => ({
-  readFile: function(f, cb) {
-    cb(null, 's0m3k3y');
-  }
-}));
 
 describe('Certbot API', () => {
   let server;
 
   beforeEach(() => {
-    server = createServer();
+    server = require('../../../server');
+    server = server.default.listen(0);
   });
 
   afterEach((done) => {
     server.close((done));
   });
 
-  afterAll(() => {
-    jest.unmock('fs');
-  });
-
   describe('GET Challenge', () => {
+    beforeEach(() => {
+      jest.spyOn(fs, 'readFile')
+        .mockImplementation((file, cb) => cb(null, 's0m3k3y'));
+    });
+
+    afterEach(() => {
+      jest.resetAllMocks();
+    });
+
     it('is a valid path', (done) => {
       request(server)
         .get('/.well-known/acme-challenge/s0m3k3y')
         .expect(200, done);
     });
 
-    it.only('renders certbot challenge', (done) => {
+    it('renders certbot challenge', (done) => {
       request(server)
         .get('/.well-known/acme-challenge/s0m3k3y')
         .expect((res) => {
@@ -42,7 +39,16 @@ describe('Certbot API', () => {
     });
   });
 
-  describe.skip('POST Challenge', () => {
+  describe('POST Challenge', () => {
+    beforeEach(() => {
+      jest.spyOn(fs, 'writeFile')
+        .mockImplementation((file, content, cb) => cb(null, 's0m3k3y'));
+    });
+
+    afterEach(() => {
+      jest.resetAllMocks();
+    });
+
     it('is a valid path', (done) => {
       request(server)
         .post('/.well-known/acme-challenge/')
@@ -53,9 +59,10 @@ describe('Certbot API', () => {
     it('renders certbot challenge', (done) => {
       request(server)
         .post('/.well-known/acme-challenge/')
-        .field('key', 's0m3k3y')
+        .type('form')
+        .send({key: 's0m3k3y'})
         .expect((res) => {
-          expect(fs.writeFile).toHaveBeenCalled();
+          expect(res.text).toBe('Challenge set to: s0m3k3y');
         })
         .end(done);
     });
