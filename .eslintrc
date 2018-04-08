@@ -1,5 +1,12 @@
 {
-  "extends": "airbnb/base",
+  "extends": [
+    "eslint:recommended",
+    "google"
+  ],
+  "plugins": [
+    "react",
+    "import"
+  ],
   "parserOptions": {
     "sourceType": "module",
     "ecmaFeatures": {
@@ -27,7 +34,6 @@
     "no-plusplus": "off",
     "quotes": ["error", "single"],
     "no-undef": "off",
-    "no-unused-vars": "off",
     "strict": "off",
     "max-params": "off",
     "max-depth": ["error", 4],
@@ -68,6 +74,15 @@
     "no-underscore-dangle": "off",
     "no-param-reassign": "off",
     "no-alert": "off",
+    
+    "react/jsx-uses-react": "error",
+    "react/jsx-uses-vars": "error",
+    "react/self-closing-comp": "error",
+    "react/jsx-no-duplicate-props": "error",
+
+    "import/first": ["error"],
+    "import/newline-after-import": ["error"],
+    "import/order": ["error", {"groups": ["builtin", "external"]}],
     "import/no-extraneous-dependencies": ["error", {"devDependencies": true}],
     "import/prefer-default-export": "off"
   }
