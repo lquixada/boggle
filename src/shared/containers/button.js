@@ -3,7 +3,12 @@ import {connect} from 'react-redux';
 import Button from '../components/button';
 import * as actions from '../actions';
 
-class ButtonContainer extends React.Component {
+export class ButtonContainer extends React.Component {
+  constructor(props) {
+    super(props);
+    this.handleClick = this.handleClick.bind(this);
+  }
+
   getText() {
     if (this.props.started) {
       return 'stop';
@@ -22,7 +27,7 @@ class ButtonContainer extends React.Component {
 
   render() {
     return (
-      <Button onClick={this.handleClick.bind(this)} text={this.getText()} />
+      <Button onClick={this.handleClick} text={this.getText()} />
     );
   }
 }
