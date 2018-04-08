@@ -1,4 +1,3 @@
-import {JSDOM} from 'jsdom';
 import request from 'supertest';
 
 describe('Game API', () => {
@@ -24,8 +23,8 @@ describe('Game API', () => {
       request(server)
         .get('/')
         .expect((res) => {
-          const dom = new JSDOM(res.text);
-          const board = dom.window.document.getElementById('board');
+          document.writeln(res.text);
+          const board = document.getElementById('board');
           expect(typeof board).toBe('object');
         })
         .end(done);
@@ -43,9 +42,8 @@ describe('Game API', () => {
       request(server)
         .get('/about')
         .expect((res) => {
-          const dom = new JSDOM(res.text);
-          const title = dom.window.document.getElementsByTagName('h2')[0];
-
+          document.writeln(res.text);
+          const title = document.getElementsByTagName('h2')[0];
           expect(title.innerHTML).toBe('About me');
         })
         .end(done);
