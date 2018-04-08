@@ -1,5 +1,6 @@
 import React from 'react';
 import {bindActionCreators} from 'redux';
+
 import {mountConnected} from '../../../__tests__/helper';
 import configureStore from '../../store';
 import * as actionCreators from '../../actions';
@@ -7,7 +8,6 @@ import ClockContainer from '../clock';
 
 describe('<ClockContainer />', () => {
   let actions;
-  let clock;
   let component;
   let store;
 

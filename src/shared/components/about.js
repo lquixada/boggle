@@ -1,8 +1,10 @@
 import React from 'react';
+
 import Copyright from './copyright';
 import Social from './social';
 import Title from './title';
 import Ribbon from './ribbon';
+
 import '../../styles/about.scss';
 
 const About = () => (

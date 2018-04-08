@@ -1,9 +1,10 @@
 import {fromJS} from 'immutable';
 import fetch from 'cross-fetch';
+
 import BoardChecker from '../utils/board-checker';
 
 export const isOnScoreList = (attempts, word) => {
-  const found = attempts.find(attempt => attempt.get('word') === word);
+  const found = attempts.find((attempt) => attempt.get('word') === word);
 
   return Boolean(found);
 };
@@ -17,8 +18,8 @@ export const isOnDictionary = (word) => {
   const url = `https://en.wiktionary.org/w/api.php?action=query&format=json&origin=*&titles=${word.toLowerCase()}`;
 
   return fetch(url)
-    .then(response => response.json())
-    .then(data => !data.query.pages[-1]);
+    .then((response) => response.json())
+    .then((data) => !data.query.pages[-1]);
 };
 
 // Abstraction to handle pre-composed state received from server
@@ -26,7 +27,9 @@ export const isOnDictionary = (word) => {
 export const immutifyState = (obj) => {
   const objMut = {};
 
-  fromJS(obj).forEach((v, k) => { objMut[k] = v; });
+  fromJS(obj).forEach((v, k) => {
+    objMut[k] = v;
+  });
 
   return objMut;
 };

@@ -1,5 +1,5 @@
 import React from 'react';
-import {Map} from 'immutable';
+
 import '../../styles/score.scss';
 
 const Attempt = ({attempt}) => (

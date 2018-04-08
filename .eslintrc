@@ -23,6 +23,7 @@
     "camelcase": "error",
     "curly": ["error", "all"],
     "eqeqeq": "off",
+    "require-jsdoc": "off",
     "guard-for-in": "off",
     "wrap-iife": "error",
     "indent": ["error", 2, { "SwitchCase": 1 } ],

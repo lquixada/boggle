@@ -17,7 +17,7 @@ export const stopGame = () => ({
   type: 'STOP_GAME'
 });
 
-export const addCheckedAttempt = word => (dispatch, getState) => {
+export const addCheckedAttempt = (word) => (dispatch, getState) => {
   const state = getState();
   word = word.toUpperCase();
 
@@ -32,5 +32,5 @@ export const addCheckedAttempt = word => (dispatch, getState) => {
 
       return false;
     })
-    .then(isOnDictionary => dispatch(addAttempt(word, isOnDictionary)));
+    .then((isOnDictionary) => dispatch(addAttempt(word, isOnDictionary)));
 };

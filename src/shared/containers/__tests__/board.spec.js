@@ -1,5 +1,6 @@
 import React from 'react';
 import {bindActionCreators} from 'redux';
+
 import {mountConnected} from '../../../__tests__/helper';
 import configureStore from '../../store';
 import * as actionCreators from '../../actions';

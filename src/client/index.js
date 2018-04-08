@@ -6,7 +6,7 @@ import {ConnectedRouter} from 'react-router-redux';
 import {renderRoutes} from 'react-router-config';
 import {AppContainer} from 'react-hot-loader';
 
-import routes from '../shared/routes';
+import routes from '../shared/routes'; // eslint-disable-line no-unused-vars
 import store from './store';
 import history from './history';
 

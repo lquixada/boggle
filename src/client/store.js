@@ -5,7 +5,7 @@ import history from './history';
 import configureStore from '../shared/store';
 
 const state = window.__INITIAL_STATE__;
-const devTools = (window.devToolsExtension ? window.devToolsExtension() : f => f);
+const devTools = (window.devToolsExtension ? window.devToolsExtension() : (f) => f);
 const middlewares = [routerMiddleware(history)];
 
 if (process.env.NODE_ENV === 'production') {

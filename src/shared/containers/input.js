@@ -1,5 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
+
 import Input from '../components/input';
 import * as actions from '../actions';
 

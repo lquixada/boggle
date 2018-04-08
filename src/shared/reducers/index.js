@@ -1,4 +1,5 @@
 import {combineReducers} from 'redux';
+
 import routing from './routing';
 import attempts from './attempts';
 import matrix from './board';

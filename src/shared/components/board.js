@@ -1,4 +1,5 @@
 import React from 'react';
+
 import '../../styles/board.scss';
 
 const Cell = ({letter}) => (

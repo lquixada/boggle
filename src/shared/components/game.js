@@ -1,4 +1,5 @@
 import React from 'react';
+
 import Input from '../containers/input';
 import Board from '../containers/board';
 import Button from '../containers/button';
@@ -8,6 +9,7 @@ import Social from './social';
 import Score from '../containers/score';
 import Title from './title';
 import Ribbon from './ribbon';
+
 import '../../styles/game.scss';
 
 const Game = () => (

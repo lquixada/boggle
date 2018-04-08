@@ -2,7 +2,8 @@ import express from 'express';
 import compression from 'compression';
 import helmet from 'helmet';
 import bodyParser from 'body-parser';
-import secureMiddleware from './middlewares/secure';
+
+// import secureMiddleware from './middlewares/secure';
 import loggerMiddleware from './middlewares/logger';
 import staticMiddleware from './middlewares/static';
 import certbotController from './controllers/certbot';

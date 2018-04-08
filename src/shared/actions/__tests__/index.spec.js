@@ -1,14 +1,13 @@
-import {List, Map} from 'immutable';
+import {Map} from 'immutable';
 import {bindActionCreators} from 'redux';
+
 import configureStore from '../../store';
 import * as actionCreators from '../../actions';
 import * as helper from '../../utils/helper';
 
 describe('addCheckedAttempt', () => {
   let actions;
-  let isOnDictionary;
   let store;
-  let state;
 
   beforeEach(() => {
     const attempts = [

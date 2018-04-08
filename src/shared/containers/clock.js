@@ -1,5 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
+
 import Clock from '../components/clock';
 import * as actions from '../actions';
 import Timer from '../utils/timer';

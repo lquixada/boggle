@@ -1,5 +1,6 @@
 import {JSDOM} from 'jsdom';
 import request from 'supertest';
+
 import {createServer} from '../../__tests__/helper';
 
 describe('Server', () => {

@@ -1,4 +1,5 @@
 import {List, Map} from 'immutable';
+
 import {isOnScoreList} from '../helper';
 
 describe('Helpers', () => {
