@@ -1,42 +1,46 @@
 import React from 'react';
-import {bindActionCreators} from 'redux';
+import {mount} from 'enzyme';
+import {ClockContainer} from '../clock';
 
-import {mountConnected} from '../../../__tests__/helper';
-import configureStore from '../../store';
-import * as actionCreators from '../../actions';
-import ClockContainer from '../clock';
+jest.useFakeTimers();
 
 describe('<ClockContainer />', () => {
-  let actions;
   let component;
-  let store;
 
   beforeEach(() => {
-    jest.useFakeTimers();
-    store = configureStore();
-    component = mountConnected(<ClockContainer />, store);
-    actions = bindActionCreators(actionCreators, store.dispatch);
+    const stopGame = jest.fn();
+
+    component = mount(<ClockContainer stopGame={stopGame} />);
+    component.instance().alert = jest.fn();
   });
 
   it('displays 60 by default', () => {
-    expect(component.find('text').text()).toBe('60');
+    expect(component.update().find('Clock').prop('secs')).toBe(60);
   });
 
   it('decrements when the game starts', () => {
-    actions.startGame();
-    expect(component.find('.counter').text()).toBe('59');
+    component.setProps({started: true});
 
-    jest.runTimersToTime(1000);
-    expect(component.find('.counter').text()).toBe('58');
+    expect(component.update().find('Clock').prop('secs')).toBe(59);
 
-    jest.runTimersToTime(1000);
-    expect(component.find('.counter').text()).toBe('57');
+    jest.advanceTimersByTime(1000);
+    expect(component.update().find('Clock').prop('secs')).toBe(58);
+
+    jest.advanceTimersByTime(1000);
+    expect(component.update().find('Clock').prop('secs')).toBe(57);
   });
 
-  // TODO: timer is not resetting
-  // it('displays 60 when the game stops', () => {
-  //   actions.stopGame();
-  //
-  //   expect(component.find('.counter').text()).to.equal('60');
-  // });
+  it('stops when time have been elapsed', () => {
+    component.setProps({started: true});
+
+    jest.advanceTimersByTime(60000);
+    expect(component.props().stopGame).toHaveBeenCalled();
+  });
+
+  it('displays 60 when the game stops', () => {
+    component.setProps({started: true});
+
+    jest.advanceTimersByTime(60000);
+    expect(component.update().find('Clock').prop('secs')).toBe(0);
+  });
 });

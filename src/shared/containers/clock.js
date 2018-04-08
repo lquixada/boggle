@@ -7,7 +7,7 @@ import Timer from '../utils/timer';
 
 const timer = new Timer();
 
-class ClockContainer extends React.Component {
+export class ClockContainer extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -55,10 +55,14 @@ class ClockContainer extends React.Component {
         // and then stop the game.
         setTimeout(() => {
           this.props.stopGame();
-          alert('Game over!');
+          this.alert();
         }, 100);
       }
     });
+  }
+
+  alert() {
+    window.alert('Game over!');
   }
 
   render() {
