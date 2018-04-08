@@ -5,7 +5,7 @@ describe('Game API', () => {
 
   beforeEach(() => {
     server = require('../../../server');
-    server = server.default.listen(8001);
+    server = server.default.listen(0);
   });
 
   afterEach((done) => {
