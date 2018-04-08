@@ -19,6 +19,7 @@ export const isOnDictionary = (word) => {
 
   return fetch(url)
     .then((response) => response.json())
+    // The "-1" property means "word not found"
     .then((data) => !data.query.pages[-1]);
 };
 
