@@ -6,7 +6,7 @@ module.exports = {
   'testMatch': [
     '<rootDir>/src/**/*.spec.js'
   ],
-  'setupTestFrameworkScriptFile': '<rootDir>/src/__tests__/_setup/index.js',
+  'setupTestFrameworkScriptFile': '<rootDir>/src/__tests__/setup.js',
   'coverageDirectory': '<rootDir>/.coverage',
   'coverageThreshold': {
     'global': {

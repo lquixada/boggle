@@ -1,13 +1,12 @@
 import {JSDOM} from 'jsdom';
 import request from 'supertest';
 
-import {createServer} from '../../__tests__/helper';
-
-describe('Server', () => {
+describe('Game API', () => {
   let server;
 
   beforeEach(() => {
-    server = createServer();
+    server = require('../../../server');
+    server = server.default.listen(8001);
   });
 
   afterEach((done) => {
