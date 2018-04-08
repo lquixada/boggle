@@ -24,7 +24,7 @@ describe('<ButtonContainer />', () => {
     const component = shallow(<ButtonContainer started={false} startGame={startGame} />);
     component.simulate('click');
 
-    expect(startGame.mock.calls.length).toBe(1);
+    expect(startGame).toHaveBeenCalled();
   });
 
   it('toggles state from "stop" to "start" when clicked', () => {
@@ -32,6 +32,6 @@ describe('<ButtonContainer />', () => {
     const component = shallow(<ButtonContainer started={true} stopGame={stopGame} />);
     component.simulate('click');
 
-    expect(stopGame.mock.calls.length).toBe(1);
+    expect(stopGame).toHaveBeenCalled();
   });
 });
