@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import Input from '../components/input';
 import * as actions from '../actions';
 
-class InputContainer extends React.Component {
+export class InputContainer extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
