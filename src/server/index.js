@@ -3,7 +3,6 @@ import compression from 'compression';
 import helmet from 'helmet';
 import bodyParser from 'body-parser';
 
-// import secureMiddleware from './middlewares/secure';
 import loggerMiddleware from './middlewares/logger';
 import staticMiddleware from './middlewares/static';
 import certbotController from './controllers/certbot';
@@ -14,14 +13,11 @@ const server = express();
 
 /* Middlewares */
 if (process.env.NODE_ENV === 'development') {
-  // eslint-disable-next-line global-require
   const webpackMiddlewares = require('./middlewares/webpack').default;
-
   server.use(...webpackMiddlewares);
 }
 
 if (process.env.NODE_ENV === 'production') {
-  // server.use(secureMiddleware);
   server.use(compression());
   server.use(helmet());
 }
