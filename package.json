@@ -6,10 +6,11 @@
   "license": "MIT",
   "scripts": {
     "precommit": "lint-staged",
-    "prestart": "npm rebuild node-sass && run-s build:web build:bundle",
+    "prestart": "npm rebuild node-sass && npm run build",
     "pretest:ci": "npm run build:bundle",
     "analyze": "./tasks/analyze",
     "dev": "pm2 start process.yml --only boggle-dev --no-daemon",
+    "build": "run-s build:web build:bundle",
     "build:bundle": "NODE_ENV=production webpack-cli -p",
     "build:web": "babel -D -q src -d web",
     "deploy": "git push -f origin master:heroku",
