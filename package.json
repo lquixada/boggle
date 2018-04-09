@@ -6,7 +6,7 @@
   "license": "MIT",
   "scripts": {
     "precommit": "lint-staged",
-    "prestart": "npm rebuild node-sass && run-s build:bundle build:web",
+    "prestart": "npm rebuild node-sass && run-s build:web build:bundle",
     "pretest:ci": "npm run build:bundle",
     "analyze": "./tasks/analyze",
     "dev": "pm2 start process.yml --only boggle-dev --no-daemon",

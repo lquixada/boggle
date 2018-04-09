@@ -1,0 +1,9 @@
+{
+  "vendor": {
+    "js": "/scripts/vendor.js"
+  },
+  "app": {
+    "js": "/scripts/app.js",
+    "css": "/sheets/bundle.css"
+  }
+}

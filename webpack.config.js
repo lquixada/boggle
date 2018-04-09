@@ -53,7 +53,7 @@ module.exports = {
   output: {
     path: path.join(__dirname, 'web', 'assets'),
     publicPath: '/',
-    filename: `scripts/[name]${hash()}.js`
+    filename: `scripts/[name]${hash('chunk')}.js`
   },
 
   optimization: {
