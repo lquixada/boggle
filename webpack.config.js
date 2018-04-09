@@ -9,6 +9,8 @@ const isProd = () => process.env.NODE_ENV === 'production';
 const hash = (type = '') => (isProd() ? `.[${type}hash]` : '');
 
 module.exports = {
+  mode: isProd()? 'production' : 'development',
+
   entry: {
     app: isProd()
       ? ['./src/client']
@@ -51,7 +53,19 @@ module.exports = {
   output: {
     path: path.join(__dirname, 'web', 'assets'),
     publicPath: '/',
-    filename: `scripts/app${hash()}.js`
+    filename: `scripts/[name]${hash()}.js`
+  },
+
+  optimization: {
+    splitChunks: {
+      cacheGroups: {
+        commons: {
+          test: /[\\/]node_modules[\\/]/,
+          name: 'vendor',
+          chunks: 'all'
+        }
+      }
+    }
   },
 
   plugins: [
@@ -62,14 +76,9 @@ module.exports = {
         root: process.cwd()
       })
       : new webpack.HotModuleReplacementPlugin(),
-    new webpack.optimize.CommonsChunkPlugin({
-      name: 'vendor',
-      filename: `scripts/vendor${hash()}.js`,
-      minChunks: Infinity
-    }),
     new ExtractTextPlugin({
       disable: !isProd(),
-      filename: `sheets/bundle${hash('content')}.css`,
+      filename: `sheets/bundle${hash()}.css`,
       allChunks: true
     }),
     new AssetsPlugin({
