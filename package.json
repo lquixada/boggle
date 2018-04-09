@@ -25,7 +25,7 @@
     "lint:sass": "sass-lint --no-exit --verbose",
     "start": "pm2 start process.yml --only boggle-prod --no-daemon",
     "test": "run-p jest lint",
-    "test:ci": "run-p jest:ci lint"
+    "test:ci": "run-p jest:ci lint && codecov"
   },
   "dependencies": {
     "assets-webpack-plugin": "3.5.1",
@@ -71,6 +71,7 @@
     "winston": "2.4.1"
   },
   "devDependencies": {
+    "codecov": "3.0.0",
     "enzyme": "3.3.0",
     "enzyme-adapter-react-16": "1.1.1",
     "eslint": "4.19.1",
