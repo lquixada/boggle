@@ -6,8 +6,12 @@ import '../../styles/input.scss';
 class Input extends React.Component {
   componentDidUpdate() {
     if (this.props.started) {
-      this.refs.word.focus();
+      this.focus();
     }
+  }
+
+  focus() {
+    this.refs.word.focus();
   }
 
   render() {

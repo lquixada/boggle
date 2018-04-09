@@ -1,6 +1,6 @@
 import {Map, List} from 'immutable';
 
-const attempt = (state = Map(), action) => {
+export const attempt = (state = Map(), action) => {
   switch (action.type) {
     case 'ADD_ATTEMPT':
       return Map({
@@ -12,7 +12,7 @@ const attempt = (state = Map(), action) => {
   }
 };
 
-const attempts = (state = List(), action) => {
+export const attempts = (state = List(), action) => {
   switch (action.type) {
     case 'ADD_ATTEMPT':
       return state.push(attempt(undefined, action));

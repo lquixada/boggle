@@ -1,14 +1,14 @@
-import {List} from 'immutable';
+import {fromJS} from 'immutable';
 
 import BoardChecker from '../board-checker';
 
 describe('BoardChecker', () => {
   it('finds regular word', () => {
-    const matrix = List([
-      List(['O', 'D', 'E', 'E']),
-      List(['E', 'E', 'O', 'S']),
-      List(['N', 'O', 'R', 'M']),
-      List(['A', 'I', 'X', 'V'])
+    const matrix = fromJS([
+      ['O', 'D', 'E', 'E'],
+      ['E', 'E', 'O', 'S'],
+      ['N', 'O', 'R', 'M'],
+      ['A', 'I', 'X', 'V']
     ]);
     const board = new BoardChecker(matrix);
 
@@ -16,11 +16,11 @@ describe('BoardChecker', () => {
   });
 
   it('finds backwards word', () => {
-    const matrix = List([
-      List(['O', 'D', 'E', 'E']),
-      List(['E', 'E', 'O', 'S']),
-      List(['M', 'R', 'O', 'N']),
-      List(['A', 'I', 'X', 'V'])
+    const matrix = fromJS([
+      ['O', 'D', 'E', 'E'],
+      ['E', 'E', 'O', 'S'],
+      ['M', 'R', 'O', 'N'],
+      ['A', 'I', 'X', 'V']
     ]);
     const board = new BoardChecker(matrix);
 
@@ -28,11 +28,11 @@ describe('BoardChecker', () => {
   });
 
   it('finds word on diagonal', () => {
-    const matrix = List([
-      List(['N', 'D', 'E', 'E']),
-      List(['E', 'O', 'O', 'S']),
-      List(['M', 'R', 'R', 'N']),
-      List(['A', 'I', 'X', 'M'])
+    const matrix = fromJS([
+      ['N', 'D', 'E', 'E'],
+      ['E', 'O', 'O', 'S'],
+      ['M', 'R', 'R', 'N'],
+      ['A', 'I', 'X', 'M']
     ]);
     const board = new BoardChecker(matrix);
 
@@ -40,11 +40,11 @@ describe('BoardChecker', () => {
   });
 
   it('finds word on backwards diagonal', () => {
-    const matrix = List([
-      List(['O', 'D', 'E', 'N']),
-      List(['E', 'O', 'O', 'S']),
-      List(['T', 'R', 'R', 'N']),
-      List(['M', 'I', 'X', 'M'])
+    const matrix = fromJS([
+      ['O', 'D', 'E', 'N'],
+      ['E', 'O', 'O', 'S'],
+      ['T', 'R', 'R', 'N'],
+      ['M', 'I', 'X', 'M']
     ]);
     const board = new BoardChecker(matrix);
 
@@ -52,11 +52,11 @@ describe('BoardChecker', () => {
   });
 
   it('finds circular word', () => {
-    const matrix = List([
-      List(['O', 'D', 'E', 'N']),
-      List(['E', 'O', 'N', 'S']),
-      List(['T', 'R', 'M', 'N']),
-      List(['M', 'I', 'X', 'M'])
+    const matrix = fromJS([
+      ['O', 'D', 'E', 'N'],
+      ['E', 'O', 'N', 'S'],
+      ['T', 'R', 'M', 'N'],
+      ['M', 'I', 'X', 'M']
     ]);
     const board = new BoardChecker(matrix);
 
