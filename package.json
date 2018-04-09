@@ -37,6 +37,7 @@
     "body-parser": "1.18.2",
     "clean-webpack-plugin": "0.1.19",
     "compression": "1.7.2",
+    "copy-webpack-plugin": "4.5.1",
     "cross-fetch": "2.1.0",
     "css-loader": "0.28.11",
     "es6-promise": "4.2.4",

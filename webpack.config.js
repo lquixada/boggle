@@ -2,6 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 const AssetsPlugin = require('assets-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin');
 
@@ -84,6 +85,12 @@ module.exports = {
       filename: `sheets/bundle${hash()}.css`,
       allChunks: true
     }),
+    new CopyWebpackPlugin([
+      {
+        from: 'src/assets/images',
+        to: 'images'
+      }
+    ]),
     new AssetsPlugin({
       filename: 'assets.json',
       path: path.join(__dirname, 'web', 'assets'),
