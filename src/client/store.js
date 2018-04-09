@@ -3,13 +3,14 @@ import {routerMiddleware} from 'react-router-redux';
 
 import history from './history';
 import configureStore from '../shared/store';
+import config from '../config';
 
 const state = window.__INITIAL_STATE__;
 const devTools = (window.devToolsExtension ? window.devToolsExtension() : (f) => f);
 const middlewares = [routerMiddleware(history)];
 
 if (process.env.NODE_ENV === 'production') {
-  middlewares.push(ravenMiddleware('https://f42a178848284bf4ab21149d98b3768b@sentry.io/104332'));
+  middlewares.push(ravenMiddleware(config.url.sentry));
 }
 
 export default configureStore(state, middlewares, devTools);

@@ -1,6 +1,7 @@
 import {fromJS} from 'immutable';
 import fetch from 'cross-fetch';
 
+import config from '../../config';
 import BoardChecker from '../utils/board-checker';
 
 export const isOnScoreList = (attempts, word) => {
@@ -15,7 +16,7 @@ export const isOnBoard = (matrix, word) => {
 };
 
 export const isOnDictionary = (word) => {
-  const url = `https://en.wiktionary.org/w/api.php?action=query&format=json&origin=*&titles=${word.toLowerCase()}`;
+  const url = `${config.url.wiktionary}&titles=${word.toLowerCase()}`;
 
   return fetch(url)
     .then((response) => response.json())
