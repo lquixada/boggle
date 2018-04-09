@@ -5,7 +5,7 @@ import {matchRoutes, renderRoutes} from 'react-router-config';
 import {StaticRouter} from 'react-router-dom';
 import {Provider} from 'react-redux';
 
-import assets from '../../assets/assets.json';
+import assets from '../../public/assets.json';
 import template from '../template';
 import routes from '../../shared/routes';
 import configureStore from '../../shared/store';
