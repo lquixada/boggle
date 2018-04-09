@@ -9,7 +9,7 @@ import {startGame, stopGame} from '../';
 describe('startGame', () => {
   it('returns an action to start the game', () => {
     expect(startGame()).toEqual({
-      type: 'START_GAME'
+      type: 'START_GAME',
     });
   });
 });
@@ -17,7 +17,7 @@ describe('startGame', () => {
 describe('stopGame', () => {
   it('returns an action to stop the game', () => {
     expect(stopGame()).toEqual({
-      type: 'STOP_GAME'
+      type: 'STOP_GAME',
     });
   });
 });
@@ -28,14 +28,14 @@ describe('addCheckedAttempt', () => {
 
   beforeEach(() => {
     const attempts = [
-      {word: 'HEY', score: 3}
+      {word: 'HEY', score: 3},
     ];
 
     const matrix = [
       ['O', 'H', 'E', 'Y'],
       ['E', 'E', 'O', 'S'],
       ['N', 'O', 'R', 'M'],
-      ['A', 'I', 'X', 'V']
+      ['A', 'I', 'X', 'V'],
     ];
 
     store = configureStore({attempts, matrix});

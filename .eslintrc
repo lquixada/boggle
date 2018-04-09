@@ -68,7 +68,7 @@
     "consistent-this": ["error", "that"],
     "eol-last": "error",
     "brace-style": "error",
-    "comma-dangle": ["error", "never"],
+    "comma-dangle": "off",
     "no-mixed-spaces-and-tabs": "error",
     "no-multiple-empty-lines": "error",
     "object-curly-spacing": ["error", "never"],
