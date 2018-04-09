@@ -9,6 +9,7 @@
     "prestart": "npm rebuild node-sass && run-s build:bundle build:web",
     "pretest:ci": "npm run build:bundle",
     "analyze": "./tasks/analyze",
+    "dev": "pm2 start process.yml --only boggle-dev --no-daemon",
     "build:bundle": "NODE_ENV=production webpack-cli -p",
     "build:web": "babel -D -q src -d web",
     "deploy": "git push -f origin master:heroku",
@@ -23,8 +24,7 @@
     "lint:sass": "sass-lint --no-exit --verbose",
     "start": "pm2 start process.yml --only boggle-prod --no-daemon",
     "test": "run-p jest lint",
-    "test:ci": "run-p jest:ci lint",
-    "dev": "pm2 start process.yml --only boggle-dev --no-daemon"
+    "test:ci": "run-p jest:ci lint"
   },
   "dependencies": {
     "assets-webpack-plugin": "3.5.1",
