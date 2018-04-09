@@ -2,7 +2,7 @@ import {fromJS} from 'immutable';
 import fetch from 'cross-fetch';
 
 import config from '../../shared/config';
-import BoardChecker from '../utils/board-checker';
+import BoardChecker from './board-checker';
 
 export const isOnScoreList = (attempts, word) => {
   const found = attempts.find((attempt) => attempt.get('word') === word);

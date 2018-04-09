@@ -2,7 +2,7 @@ import {createStore, applyMiddleware, compose} from 'redux';
 import thunkMiddleware from 'redux-thunk';
 
 import reducers from '../reducers';
-import {immutifyState} from '../utils/helper';
+import {immutifyState} from '../helpers';
 
 const configureStore = (initialState = {}, middlewares = [], devTools = (f) => f) => {
   initialState = immutifyState(initialState);

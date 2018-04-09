@@ -1,5 +1,5 @@
 /* All actions must be FSA-compliant (https://github.com/acdlite/flux-standard-action). */
-import {isOnScoreList, isOnBoard, isOnDictionary} from '../utils/helper';
+import {isOnScoreList, isOnBoard, isOnDictionary} from '../helpers';
 
 export const addAttempt = (word, scored) => ({
   type: 'ADD_ATTEMPT',

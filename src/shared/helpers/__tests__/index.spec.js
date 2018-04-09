@@ -1,7 +1,7 @@
 import nock from 'nock';
 import {fromJS, List, Map} from 'immutable';
 
-import {isOnBoard, isOnDictionary, isOnScoreList, immutifyState} from '../helper';
+import {isOnBoard, isOnDictionary, isOnScoreList, immutifyState} from '..';
 
 describe('Helpers', () => {
   let attempts;

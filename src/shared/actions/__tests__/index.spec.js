@@ -3,7 +3,7 @@ import {bindActionCreators} from 'redux';
 
 import configureStore from '../../store';
 import * as actionCreators from '../../actions';
-import * as helper from '../../utils/helper';
+import * as helper from '../../helpers';
 import {startGame, stopGame} from '../';
 
 describe('actions', () => {
