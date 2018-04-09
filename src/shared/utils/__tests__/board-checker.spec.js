@@ -62,4 +62,28 @@ describe('BoardChecker', () => {
 
     expect(board.hasWord('norm')).toBe(true);
   });
+
+  describe('smaller board', () => {
+    it('finds word', () => {
+      const matrix = fromJS([
+        ['O', 'D', 'E'],
+        ['E', 'O', 'N'],
+        ['T', 'R', 'M']
+      ]);
+      const board = new BoardChecker(matrix);
+
+      expect(board.hasWord('dot')).toBe(true);
+    });
+
+    it('doesnt find word', () => {
+      const matrix = fromJS([
+        ['O', 'D', 'E'],
+        ['E', 'O', 'N'],
+        ['T', 'R', 'M']
+      ]);
+      const board = new BoardChecker(matrix);
+
+      expect(board.hasWord('word')).toBe(false);
+    });
+  });
 });
