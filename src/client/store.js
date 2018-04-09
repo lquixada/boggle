@@ -3,7 +3,7 @@ import {routerMiddleware} from 'react-router-redux';
 
 import history from './history';
 import configureStore from '../shared/store';
-import config from '../config';
+import config from '../shared/config';
 
 const state = window.__INITIAL_STATE__;
 const devTools = (window.devToolsExtension ? window.devToolsExtension() : (f) => f);
