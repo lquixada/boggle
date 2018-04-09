@@ -15,7 +15,7 @@
     "jest": "jest",
     "jest:ci": "jest --coverage",
     "lint": "run-p lint:js lint:sass",
-    "lint:js": "eslint --ignore-pattern web --ignore-pattern .coverage .",
+    "lint:js": "eslint --ignore-pattern web --ignore-pattern .reports .",
     "lint:sass": "sass-lint --no-exit --verbose",
     "start": "pm2 start process.yml --only boggle-prod --no-daemon",
     "test": "run-p jest lint",

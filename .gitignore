@@ -29,5 +29,5 @@ Thumbs.db
 # Visual Studio Code
 .vscode
 
-# Coverage reports
-.coverage
+# Reports such as coverage and bundle analyzer
+.reports
