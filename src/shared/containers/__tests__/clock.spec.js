@@ -33,6 +33,16 @@ describe('<ClockContainer />', () => {
   it('stops when time have been elapsed', () => {
     component.setProps({started: true});
 
+    jest.advanceTimersByTime(30000);
+
+    component.setProps({started: false});
+
+    expect(component.update().find('Clock').prop('secs')).toBe(60);
+  });
+
+  it('stops when time have been elapsed', () => {
+    component.setProps({started: true});
+
     jest.advanceTimersByTime(60000);
     expect(component.props().stopGame).toHaveBeenCalled();
   });
