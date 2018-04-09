@@ -40,5 +40,14 @@ describe('<InputContainer />', () => {
 
       expect(component.props().addCheckedAttempt).toHaveBeenCalled();
     });
+
+    it('is cleared when the game stops', () => {
+      const component = mount(<InputContainer started={true} />);
+
+      component.find('input').simulate('change', {target: {value: 'Hi'}});
+      component.setProps({started: false});
+
+      expect(component.state('value')).toBe('');
+    });
   });
 });
