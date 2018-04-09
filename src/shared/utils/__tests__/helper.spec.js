@@ -15,11 +15,11 @@ describe('Helpers', () => {
 
   describe('isOnScoreList', () => {
     it('checks word has been attempted', () => {
-      expect(isOnScoreList(attempts, 'word1')).toBeTruthy();
+      expect(isOnScoreList(attempts, 'word1')).toBe(true);
     });
 
     it('checks word has not been attempted', () => {
-      expect(isOnScoreList(attempts, 'word3')).toBeFalsy();
+      expect(isOnScoreList(attempts, 'word3')).toBe(false);
     });
   });
 
@@ -59,7 +59,7 @@ describe('Helpers', () => {
       });
 
       return isOnDictionary('word').then((result) => {
-        expect(result).toBeTruthy();
+        expect(result).toBe(true);
       });
     });
 
@@ -73,7 +73,7 @@ describe('Helpers', () => {
       });
 
       return isOnDictionary('n0tAw0rD').then((result) => {
-        expect(result).toBeFalsy();
+        expect(result).toBe(false);
       });
     });
   });
@@ -93,11 +93,11 @@ describe('Helpers', () => {
     });
 
     it('convert object property into Map', () => {
-      expect(Map.isMap(state.a)).toBeTruthy();
+      expect(Map.isMap(state.a)).toBe(true);
     });
 
     it('convert array property into List', () => {
-      expect(List.isList(state.b)).toBeTruthy();
+      expect(List.isList(state.b)).toBe(true);
     });
   });
 });
