@@ -1,4 +1,0 @@
-app:
-  image: lquixada/bogglejs
-  ports:
-    - 3000:3000
