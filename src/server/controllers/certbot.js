@@ -15,13 +15,18 @@ router.get('/*', (req, res) => {
   });
 });
 
+/**
+ * Here's a potential security flaw. Since this is a project created
+ * only for study purposes, we're ok to that.
+ */
 router.post('/', (req, res) => {
-  fs.writeFile(challenge, req.body.key, (err, data) => {
+  const key = req.body.key.substr(0, 90);
+  fs.writeFile(challenge, key, (err, data) => {
     if (err) {
       throw err;
     }
 
-    res.send(`Challenge set to: ${req.body.key}`);
+    res.send(`Challenge set to: ${key}`);
   });
 });
 

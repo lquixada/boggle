@@ -52,7 +52,8 @@ describe('Certbot API', () => {
     it('is a valid path', (done) => {
       request(server)
         .post('/.well-known/acme-challenge/')
-        .field('key', 's0m3k3y')
+        .type('form')
+        .send({key: 's0m3k3y'})
         .expect(200, done);
     });
 
