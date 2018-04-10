@@ -13,10 +13,11 @@ A web-based implementation of the Boggle game for study purposes. More info on h
 ```
 $ git clone https://github.com/lquixada/boggle.git
 $ cd boggle
-$ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.32.0/install.sh | bash
+$ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.8/install.sh | bash
 $ nvm install
 $ nvm use
 $ npm install
+$ npm run build
 ```
 
 ## Development
