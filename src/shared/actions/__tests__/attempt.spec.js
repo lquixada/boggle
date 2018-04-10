@@ -1,11 +1,16 @@
 import {Map} from 'immutable';
 import {bindActionCreators} from 'redux';
+import {isFSA} from 'flux-standard-action';
 
 import configureStore from '../../store';
 import * as actionCreators from '../../actions';
 import * as helper from '../../helpers';
 
 describe('addAttempt', () => {
+  it('is FSA-compliant', () => {
+    expect(isFSA(actionCreators.addAttempt('bite', 4))).toBe(true);
+  });
+
   it('returns an action to add an attempt', () => {
     expect(actionCreators.addAttempt('bite', 4)).toEqual({
       type: 'ADD_ATTEMPT',
