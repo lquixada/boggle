@@ -24,11 +24,12 @@ export const isOnDictionary = (word) => {
 // Abstraction to handle pre-composed state received from server
 // (ie, leave top level keys untouched)
 export const immutifyState = (obj) => {
-  const objMut = {};
+  const root = {};
+  const immutable = fromJS(obj);
 
-  fromJS(obj).forEach((v, k) => {
-    objMut[k] = v;
+  immutable.forEach((value, key) => {
+    root[key] = value;
   });
 
-  return objMut;
+  return root;
 };
