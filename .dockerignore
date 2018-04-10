@@ -3,3 +3,4 @@
 .gitignore
 Dockerfile
 node_modules
+*.log

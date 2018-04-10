@@ -14,7 +14,7 @@
     "build:bundle": "NODE_ENV=production webpack-cli -p",
     "build:web": "babel -D -q src -d web",
     "deploy": "git push -f origin master:heroku",
-    "docker:build": "docker build . -t lquixada/boggle",
+    "docker:build": "docker build -t lquixada/boggle .",
     "docker:pull": "docker pull lquixada/boggle",
     "docker:push": "docker push lquixada/boggle",
     "docker:run": "docker run -p 3000:3000 lquixada/boggle",
