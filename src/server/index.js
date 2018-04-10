@@ -15,8 +15,7 @@ const server = express();
 
 /* Middlewares */
 if (NODE_ENV === 'development') {
-  const webpackMiddlewares = require('./middlewares/webpack').default;
-  server.use(...webpackMiddlewares);
+  server.use(...require('./middlewares/webpack').default);
 }
 
 server.use(helmet());
