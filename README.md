@@ -17,8 +17,8 @@ $ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.8/install.sh |
 $ nvm install
 $ nvm use
 $ npm install
-$ npm run build
 ```
+
 
 ## Development
 
@@ -30,7 +30,7 @@ $ yarn dev
 
 And go to http://localhost:3000/.
 
-> Note that in dev mode bundle.js will be served from memory whereas in prod mode it will be served from disk. You might experience some flick on page load because of that. To fix it, just just `yarn build`
+> Note that in dev mode bundle.js will be served from memory whereas in prod mode it will be served from disk.
 
 To run all tests and lints, run:
 
