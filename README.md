@@ -13,72 +13,73 @@ A web-based implementation of the Boggle game for study purposes. More info on h
 ```
 $ git clone https://github.com/lquixada/boggle.git
 $ cd boggle
-$ npm install
 $ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.32.0/install.sh | bash
 $ nvm install
 $ nvm use
+$ npm install
 ```
 
-
-## Getting Started
+## Development
 
 To run the app in development mode, run:
 
 ```
-$ npm run start:dev
+$ yarn dev
 ```
 
-And go to http://localhost:9000/.
+And go to http://localhost:3000/.
 
-In order to run in production mode, run:
-
-```
-$ npm start
-```
-
-And go to http://localhost:9000/.
-
-> Note that in dev mode bundle.js will be served from memory whereas
-> in prod mode it will be served from disk.
+> Note that in dev mode bundle.js will be served from memory whereas in prod mode it will be served from disk. You might experience some flick on page load because of that. To fix it, just just `yarn build`
 
 To run all tests and lints, run:
 
 ```
-$ npm test
+$ yarn test
 ```
+
+> TravisCI will run a special version of this task: `yarn test:ci`. That includes code coverage report on the output and has integration with [codecov](https://codecov.io/).
+
+
+## Production
+
+The task used in production to run the app is:
+
+```
+$ yarn start
+```
+
+Boggle will be ready on http://localhost:3000/.
+
+
+## Docker
+
+There are also some docker tasks available.
+
+* **yarn docker:pull**: downloads boggle's image
+* **yarn docker:run**: runs a container with the app
+* **yarn docker:build**: builds a new image for boggle
+* **yarn docker:push**: updates boggle's image in the docker hub
 
 
 ## Features
 
 * Cross-browser (latest Firefox/Chrome and IE10)
-* Cross-device (from mobile to desktop)
+* Responsive layout (from mobile to desktop)
 * Isomorphic, renders on server and client
 * Secure connection with HTTPS
 * Custom domain: www.bogglejs.com
-* Cache management with Service Worker
+* Cache management with Service Worker (still ongoing)
 
 
 ## Pages
 
 * **/**: that's where the game is.
-* **/about**: a little about my professional thinking (it can be also accessed throught the footer link)
+* **/about**: a little about my professional thinking (it can be also accessed through the footer link)
 
 
 ## Architecture
 
 ![Architecture](./flowchart.png)
-
-
-## Tasks
-
-* **npm test**: runs all tests and lints
-* **npm run jest**: tests files
-* **npm run lint**: lints files
-* **npm start**: shortcut for *npm run start:prod*
-* **npm run start:dev**: starts application in development mode
-* **npm run start:prod**: starts application in production mode
-* **npm run build**: builds all production assets
-* **npm run deploy**: deploys project to Heroku
 
 
 ## Stack
