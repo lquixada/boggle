@@ -1,4 +1,3 @@
-/* eslint-disable consistent-return */
 import React from 'react';
 import {renderToString} from 'react-dom/server';
 import {matchRoutes, renderRoutes} from 'react-router-config';
