@@ -1,10 +1,12 @@
-FROM mhart/alpine-node:8
+FROM node:8
+
+RUN apt-get update
+
+RUN apt-get install htop
 
 WORKDIR /app
 
 COPY package*.json ./
-
-COPY yarn.lock ./
 
 RUN npm install --production
 
