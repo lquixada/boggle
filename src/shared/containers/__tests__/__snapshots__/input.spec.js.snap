@@ -1,0 +1,82 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<InputContainer /> is disabled by default 1`] = `
+<InputContainer
+  started={false}
+>
+  <Input
+    onChange={[Function]}
+    onEnter={[Function]}
+    started={false}
+    value=""
+  >
+    <div
+      id="input"
+    >
+      <input
+        className="box"
+        disabled={true}
+        onChange={[Function]}
+        onKeyUp={[Function]}
+        placeholder="Press start to begin..."
+        type="text"
+        value=""
+      />
+    </div>
+  </Input>
+</InputContainer>
+`;
+
+exports[`<InputContainer /> is disabled when the game has stopped 1`] = `
+<InputContainer
+  started={false}
+>
+  <Input
+    onChange={[Function]}
+    onEnter={[Function]}
+    started={false}
+    value=""
+  >
+    <div
+      id="input"
+    >
+      <input
+        className="box"
+        disabled={true}
+        onChange={[Function]}
+        onKeyUp={[Function]}
+        placeholder="Press start to begin..."
+        type="text"
+        value=""
+      />
+    </div>
+  </Input>
+</InputContainer>
+`;
+
+exports[`<InputContainer /> is enabled when the game has started 1`] = `
+<InputContainer
+  started={true}
+>
+  <Input
+    onChange={[Function]}
+    onEnter={[Function]}
+    started={true}
+    value=""
+  >
+    <div
+      id="input"
+    >
+      <input
+        className="box"
+        disabled={false}
+        onChange={[Function]}
+        onKeyUp={[Function]}
+        placeholder="Type the word and hit Enter!"
+        type="text"
+        value=""
+      />
+    </div>
+  </Input>
+</InputContainer>
+`;

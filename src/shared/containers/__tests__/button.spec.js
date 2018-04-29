@@ -6,17 +6,17 @@ import {ButtonContainer} from '../button';
 describe('<ButtonContainer />', () => {
   it('shows "start" by default', () => {
     const component = shallow(<ButtonContainer />);
-    expect(component.prop('text')).toBe('start');
+    expect(component).toMatchSnapshot();
   });
 
   it('shows "stop" when the game has started', () => {
     const component = shallow(<ButtonContainer started={true} />);
-    expect(component.prop('text')).toBe('stop');
+    expect(component).toMatchSnapshot();
   });
 
   it('shows "start" when the game has stopped', () => {
     const component = shallow(<ButtonContainer started={false} />);
-    expect(component.prop('text')).toBe('start');
+    expect(component).toMatchSnapshot();
   });
 
   it('toggles state from "start" to "stop" when clicked', () => {

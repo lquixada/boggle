@@ -1,0 +1,126 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Score /> adds a valid attempt 1`] = `
+<Score
+  attempts={
+    Immutable.List [
+      Immutable.Map {
+        "word": "someword",
+        "score": "8",
+      },
+    ]
+  }
+>
+  <div
+    id="score"
+  >
+    <header>
+      <h2>
+        Score: 
+      </h2>
+    </header>
+    <section
+      className="box"
+    >
+      <table>
+        <tbody>
+          <Attempt
+            attempt={
+              Immutable.Map {
+                "word": "someword",
+                "score": "8",
+              }
+            }
+            key="0"
+          >
+            <tr>
+              <td>
+                someword
+              </td>
+              <td>
+                8
+              </td>
+            </tr>
+          </Attempt>
+        </tbody>
+      </table>
+    </section>
+  </div>
+</Score>
+`;
+
+exports[`<Score /> adds an invalid attempt 1`] = `
+<Score
+  attempts={
+    Immutable.List [
+      Immutable.Map {
+        "word": "someword",
+        "score": "✘",
+      },
+    ]
+  }
+>
+  <div
+    id="score"
+  >
+    <header>
+      <h2>
+        Score: 
+      </h2>
+    </header>
+    <section
+      className="box"
+    >
+      <table>
+        <tbody>
+          <Attempt
+            attempt={
+              Immutable.Map {
+                "word": "someword",
+                "score": "✘",
+              }
+            }
+            key="0"
+          >
+            <tr>
+              <td>
+                someword
+              </td>
+              <td>
+                ✘
+              </td>
+            </tr>
+          </Attempt>
+        </tbody>
+      </table>
+    </section>
+  </div>
+</Score>
+`;
+
+exports[`<Score /> shows the score 1`] = `
+<Score
+  attempts={Immutable.List []}
+  counter={8}
+>
+  <div
+    id="score"
+  >
+    <header>
+      <h2>
+        Score: 
+        8
+      </h2>
+    </header>
+    <section
+      className="box"
+    >
+      <table>
+        <tbody>
+          <undefined />
+        </tbody>
+      </table>
+    </section>
+  </div>
+</Score>
+`;

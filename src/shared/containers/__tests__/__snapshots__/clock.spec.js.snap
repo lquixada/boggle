@@ -1,0 +1,330 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ClockContainer /> decrements when the game starts 1`] = `
+<ClockContainer
+  started={true}
+  stopGame={[MockFunction]}
+>
+  <Clock
+    secs={59}
+    total={60}
+  >
+    <div
+      id="clock"
+    >
+      <svg
+        viewBox="0 0 100 100"
+      >
+        <circle
+          className="clock clock-gray"
+          cx="50%"
+          cy="50%"
+          r="40"
+        />
+        <circle
+          className="clock clock-green"
+          cx="50%"
+          cy="50%"
+          r="40"
+          style={
+            Object {
+              "strokeDasharray": 251,
+              "strokeDashoffset": 246.81666666666666,
+            }
+          }
+          transform="rotate(-90 50 50)"
+        />
+        <text
+          className="counter"
+          textAnchor="middle"
+          x="50%"
+          y="60%"
+        >
+          59
+        </text>
+      </svg>
+      <span
+        className="micro-counter"
+      >
+        Time left: 00:
+        59
+      </span>
+    </div>
+  </Clock>
+</ClockContainer>
+`;
+
+exports[`<ClockContainer /> decrements when the game starts 2`] = `
+<ClockContainer
+  started={true}
+  stopGame={[MockFunction]}
+>
+  <Clock
+    secs={58}
+    total={60}
+  >
+    <div
+      id="clock"
+    >
+      <svg
+        viewBox="0 0 100 100"
+      >
+        <circle
+          className="clock clock-gray"
+          cx="50%"
+          cy="50%"
+          r="40"
+        />
+        <circle
+          className="clock clock-green"
+          cx="50%"
+          cy="50%"
+          r="40"
+          style={
+            Object {
+              "strokeDasharray": 251,
+              "strokeDashoffset": 242.63333333333333,
+            }
+          }
+          transform="rotate(-90 50 50)"
+        />
+        <text
+          className="counter"
+          textAnchor="middle"
+          x="50%"
+          y="60%"
+        >
+          58
+        </text>
+      </svg>
+      <span
+        className="micro-counter"
+      >
+        Time left: 00:
+        58
+      </span>
+    </div>
+  </Clock>
+</ClockContainer>
+`;
+
+exports[`<ClockContainer /> decrements when the game starts 3`] = `
+<ClockContainer
+  started={true}
+  stopGame={[MockFunction]}
+>
+  <Clock
+    secs={57}
+    total={60}
+  >
+    <div
+      id="clock"
+    >
+      <svg
+        viewBox="0 0 100 100"
+      >
+        <circle
+          className="clock clock-gray"
+          cx="50%"
+          cy="50%"
+          r="40"
+        />
+        <circle
+          className="clock clock-green"
+          cx="50%"
+          cy="50%"
+          r="40"
+          style={
+            Object {
+              "strokeDasharray": 251,
+              "strokeDashoffset": 238.45,
+            }
+          }
+          transform="rotate(-90 50 50)"
+        />
+        <text
+          className="counter"
+          textAnchor="middle"
+          x="50%"
+          y="60%"
+        >
+          57
+        </text>
+      </svg>
+      <span
+        className="micro-counter"
+      >
+        Time left: 00:
+        57
+      </span>
+    </div>
+  </Clock>
+</ClockContainer>
+`;
+
+exports[`<ClockContainer /> displays 60 by default 1`] = `
+<ClockContainer
+  stopGame={[MockFunction]}
+>
+  <Clock
+    secs={60}
+    total={60}
+  >
+    <div
+      id="clock"
+    >
+      <svg
+        viewBox="0 0 100 100"
+      >
+        <circle
+          className="clock clock-gray"
+          cx="50%"
+          cy="50%"
+          r="40"
+        />
+        <circle
+          className="clock clock-green"
+          cx="50%"
+          cy="50%"
+          r="40"
+          style={
+            Object {
+              "strokeDasharray": 251,
+              "strokeDashoffset": 251,
+            }
+          }
+          transform="rotate(-90 50 50)"
+        />
+        <text
+          className="counter"
+          textAnchor="middle"
+          x="50%"
+          y="60%"
+        >
+          60
+        </text>
+      </svg>
+      <span
+        className="micro-counter"
+      >
+        Time left: 00:
+        60
+      </span>
+    </div>
+  </Clock>
+</ClockContainer>
+`;
+
+exports[`<ClockContainer /> displays 60 when the game stops 1`] = `
+<ClockContainer
+  started={true}
+  stopGame={
+    [MockFunction] {
+      "calls": Array [
+        Array [],
+      ],
+    }
+  }
+>
+  <Clock
+    secs={0}
+    total={60}
+  >
+    <div
+      id="clock"
+    >
+      <svg
+        viewBox="0 0 100 100"
+      >
+        <circle
+          className="clock clock-gray"
+          cx="50%"
+          cy="50%"
+          r="40"
+        />
+        <circle
+          className="clock clock-green"
+          cx="50%"
+          cy="50%"
+          r="40"
+          style={
+            Object {
+              "strokeDasharray": 251,
+              "strokeDashoffset": 0,
+            }
+          }
+          transform="rotate(-90 50 50)"
+        />
+        <text
+          className="counter"
+          textAnchor="middle"
+          x="50%"
+          y="60%"
+        >
+          0
+        </text>
+      </svg>
+      <span
+        className="micro-counter"
+      >
+        Time left: 00:
+        00
+      </span>
+    </div>
+  </Clock>
+</ClockContainer>
+`;
+
+exports[`<ClockContainer /> stops when time have been elapsed 1`] = `
+<ClockContainer
+  started={false}
+  stopGame={[MockFunction]}
+>
+  <Clock
+    secs={60}
+    total={60}
+  >
+    <div
+      id="clock"
+    >
+      <svg
+        viewBox="0 0 100 100"
+      >
+        <circle
+          className="clock clock-gray"
+          cx="50%"
+          cy="50%"
+          r="40"
+        />
+        <circle
+          className="clock clock-green"
+          cx="50%"
+          cy="50%"
+          r="40"
+          style={
+            Object {
+              "strokeDasharray": 251,
+              "strokeDashoffset": 251,
+            }
+          }
+          transform="rotate(-90 50 50)"
+        />
+        <text
+          className="counter"
+          textAnchor="middle"
+          x="50%"
+          y="60%"
+        >
+          60
+        </text>
+      </svg>
+      <span
+        className="micro-counter"
+      >
+        Time left: 00:
+        60
+      </span>
+    </div>
+  </Clock>
+</ClockContainer>
+`;

@@ -8,42 +8,47 @@ describe('<ClockContainer />', () => {
   let component;
 
   beforeEach(() => {
-    const stopGame = jest.fn();
-
-    component = mount(<ClockContainer stopGame={stopGame} />);
+    component = mount(<ClockContainer stopGame={jest.fn()} />);
     component.instance().alert = jest.fn();
   });
 
   it('displays 60 by default', () => {
-    expect(component.update().find('Clock').prop('secs')).toBe(60);
+    expect(component).toMatchSnapshot();
   });
 
   it('decrements when the game starts', () => {
     component.setProps({started: true});
 
-    expect(component.update().find('Clock').prop('secs')).toBe(59);
+    expect(component).toMatchSnapshot();
 
     jest.advanceTimersByTime(1000);
-    expect(component.update().find('Clock').prop('secs')).toBe(58);
+    component.update();
+
+    expect(component).toMatchSnapshot();
 
     jest.advanceTimersByTime(1000);
-    expect(component.update().find('Clock').prop('secs')).toBe(57);
+    component.update();
+
+    expect(component).toMatchSnapshot();
   });
 
   it('stops when time have been elapsed', () => {
     component.setProps({started: true});
 
     jest.advanceTimersByTime(30000);
+    component.update();
 
     component.setProps({started: false});
 
-    expect(component.update().find('Clock').prop('secs')).toBe(60);
+    expect(component).toMatchSnapshot();
   });
 
   it('stops when time have been elapsed', () => {
     component.setProps({started: true});
 
     jest.advanceTimersByTime(60000);
+    component.update();
+
     expect(component.props().stopGame).toHaveBeenCalled();
   });
 
@@ -51,6 +56,8 @@ describe('<ClockContainer />', () => {
     component.setProps({started: true});
 
     jest.advanceTimersByTime(60000);
-    expect(component.update().find('Clock').prop('secs')).toBe(0);
+    component.update();
+
+    expect(component).toMatchSnapshot();
   });
 });

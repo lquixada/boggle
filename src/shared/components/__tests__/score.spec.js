@@ -15,21 +15,19 @@ describe('<Score />', () => {
     const attempts = fromJS([{word: 'someword', score: '8'}]);
     const component = mount(<Score attempts={attempts} />);
 
-    expect(component.find('td').at(0).text()).toBe('someword');
-    expect(component.find('td').at(1).text()).toBe('8');
+    expect(component).toMatchSnapshot();
   });
 
   it('adds an invalid attempt', () => {
     const attempts = fromJS([{word: 'someword', score: '✘'}]);
     const component = mount(<Score attempts={attempts} />);
 
-    expect(component.find('td').at(0).text()).toBe('someword');
-    expect(component.find('td').at(1).text()).toBe('✘');
+    expect(component).toMatchSnapshot();
   });
 
   it('shows the score', () => {
     const component = mount(<Score attempts={fromJS([])} counter={8} />);
 
-    expect(component.find('h2').text()).toBe('Score: 8');
+    expect(component).toMatchSnapshot();
   });
 });

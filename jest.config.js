@@ -1,4 +1,5 @@
 module.exports = {
+  'snapshotSerializers': ['enzyme-to-json/serializer'],
   'moduleNameMapper': {
     '\\.scss': 'identity-obj-proxy'
   },

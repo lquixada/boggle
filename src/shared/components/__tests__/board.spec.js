@@ -14,7 +14,7 @@ describe('<Board />', () => {
     ]);
     const component = mount(<Board matrix={matrix}/>);
 
-    expect(component.find('table').text().trim()).toHaveLength(0);
+    expect(component).toMatchSnapshot();
   });
 
   it('is filled when the game has started', () => {
@@ -26,6 +26,6 @@ describe('<Board />', () => {
     ]);
     const component = mount(<Board matrix={matrix}/>);
 
-    expect(component.find('table').text().trim()).toHaveLength(16);
+    expect(component).toMatchSnapshot();
   });
 });

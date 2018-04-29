@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ButtonContainer /> shows "start" by default 1`] = `
+<Button
+  onClick={[Function]}
+  text="start"
+/>
+`;
+
+exports[`<ButtonContainer /> shows "start" when the game has stopped 1`] = `
+<Button
+  onClick={[Function]}
+  text="start"
+/>
+`;
+
+exports[`<ButtonContainer /> shows "stop" when the game has started 1`] = `
+<Button
+  onClick={[Function]}
+  text="stop"
+/>
+`;
