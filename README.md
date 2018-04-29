@@ -5,6 +5,8 @@ Boggle JS<br>
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 ================
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/lquixada/boggle.svg)](https://greenkeeper.io/)
+
 A web-based implementation of the Boggle game for study purposes. More info on https://en.wikipedia.org/wiki/Boggle.
 
 
