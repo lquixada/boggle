@@ -1,8 +1,5 @@
 module.exports = {
   'snapshotSerializers': ['enzyme-to-json/serializer'],
-  'moduleNameMapper': {
-    '\\.scss': 'identity-obj-proxy'
-  },
   'testEnvironment': 'jsdom',
   'testMatch': [
     '<rootDir>/src/**/*.spec.js'

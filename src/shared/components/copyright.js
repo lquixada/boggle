@@ -1,13 +1,35 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import styled from 'styled-components';
+
+import {flex} from '../helpers/mixins';
 
 const Copyright = () => (
-  <div className="copyright">
+  <Wrapper>
     &copy; Copyright 2016 <Link to="/about">Leonardo Quixadá</Link>. All rights reserved.
     <a href="https://travis-ci.org/lquixada/boggle">
-      <img src="https://travis-ci.org/lquixada/boggle.svg?branch=master" className="build-status" />
+      <BuildStatus src="https://travis-ci.org/lquixada/boggle.svg?branch=master" />
     </a>
-  </div>
+  </Wrapper>
 );
+
+const Wrapper = styled.div`
+  ${flex('3 0')};
+  line-height: 2rem;
+`;
+
+const BuildStatus = styled.image`
+  opacity: .5;
+  vertical-align: middle;
+  height: 1.8rem;
+  margin-left: .5rem;
+  -webkit-filter: grayscale(100%);
+
+  &:hover {
+    opacity: 1;
+    filter: grayscale(0%);
+    -webkit-filter: grayscale(0%);
+  }
+`;
 
 export default Copyright;

@@ -1,6 +1,4 @@
 /* Reset */
-@import '_mixins';
-
 * {
   margin: 0;
   padding: 0;
@@ -25,37 +23,19 @@ img {
 
 #game {
   height: 100%;
+}
 
-  > div {
-    height: 100%;
-  }
+#game > div {
+  height: 100%;
 }
 
 /* Grid */
-
-.container {
-  @include flex-display;
-  @include flex-justify;
-  @include flex-top;
-  max-width: 54rem;
-  width: 100%;
-}
 
 @media (max-width: 800px) {
   .github-fork-ribbon-wrapper {
     display: none;
   }
 }
-
-/* Components */
-
-.box {
-  background-color: #404040;
-  border: .1rem solid;
-  border-radius: .5rem;
-  border-color: #303030 #505050 #505050 #303030;
-}
-
 
 /* Scrollbar */
 

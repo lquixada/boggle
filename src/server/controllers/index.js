@@ -1,5 +1,6 @@
 import React from 'react';
 import {renderToString} from 'react-dom/server';
+import {ServerStyleSheet, StyleSheetManager} from 'styled-components';
 import {matchRoutes, renderRoutes} from 'react-router-config';
 import {StaticRouter} from 'react-router-dom';
 import {Provider} from 'react-redux';
@@ -18,11 +19,18 @@ export default (req, res) => {
 
   const store = configureStore();
   const state = JSON.stringify(store.getState());
-  const content = renderToString(<Provider store={store}>
-    <StaticRouter location={req.url} context={{}}>
-      {renderRoutes(routes)}
-    </StaticRouter>
-  </Provider>);
 
-  res.send(template({state, content, assets}));
+  const sheet = new ServerStyleSheet();
+  const content = renderToString(
+    <StyleSheetManager sheet={sheet.instance}>
+      <Provider store={store}>
+        <StaticRouter location={req.url} context={{}}>
+          {renderRoutes(routes)}
+        </StaticRouter>
+      </Provider>
+    </StyleSheetManager>
+  );
+
+  const styleTags = sheet.getStyleTags();
+  res.send(template({state, styleTags, content, assets}));
 };

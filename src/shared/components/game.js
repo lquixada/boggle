@@ -1,4 +1,5 @@
 import React from 'react';
+import styled from 'styled-components';
 
 import Input from '../containers/input';
 import Board from '../containers/board';
@@ -9,38 +10,56 @@ import Social from './social';
 import Score from '../containers/score';
 import Title from './title';
 import Ribbon from './ribbon';
+import {Main, Container, Header, HeaderContainer, Section, SectionContainer, Footer} from './grid';
 
-import '../../styles/game.scss';
+import {flex} from '../helpers/mixins';
 
 const Game = () => (
-  <main>
+  <Main>
     <Ribbon />
 
-    <header>
-      <div className="container">
+    <Header>
+      <HeaderContainer>
         <Title />
         <Input />
         <Button />
-      </div>
-    </header>
+      </HeaderContainer>
+    </Header>
 
-    <section>
-      <div className="container">
-        <aside>
+    <Section>
+      <SectionContainer>
+        <Aside>
           <Clock />
           <Score />
-        </aside>
+        </Aside>
         <Board />
-      </div>
-    </section>
+      </SectionContainer>
+    </Section>
 
-    <footer>
-      <div className="container">
+    <Footer>
+      <Container>
         <Copyright />
         <Social />
-      </div>
-    </footer>
-  </main>
+      </Container>
+    </Footer>
+  </Main>
 );
+
+const Aside = styled.aside`
+  ${flex.display()}
+  ${flex.justify()}
+  ${flex.flow('column', 'nowrap')}
+  ${flex(1)}
+  height: 40rem;
+  vertical-align: top;
+
+  @media (max-width: 540px) {
+    ${flex('none')}
+    ${flex.dir('row')}
+    margin: 0;
+    width: 100%;
+    height: auto;
+  }
+`;
 
 export default Game;

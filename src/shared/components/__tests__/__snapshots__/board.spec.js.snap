@@ -31,199 +31,220 @@ exports[`<Board /> is empty by default 1`] = `
     ]
   }
 >
-  <div
-    className="box"
-    id="board"
-  >
-    <table>
-      <tbody>
-        <Row
-          key="0"
-          letters={
-            Immutable.List [
-              " ",
-              " ",
-              " ",
-              " ",
-            ]
-          }
+  <styled.div>
+    <div
+      className="sc-bdVaJa iOMCKQ"
+    >
+      <styled.table>
+        <table
+          className="sc-bwzfXH jwfMIB"
         >
-          <tr>
-            <Cell
+          <tbody>
+            <Row
               key="0"
-              letter=" "
+              letters={
+                Immutable.List [
+                  " ",
+                  " ",
+                  " ",
+                  " ",
+                ]
+              }
             >
-              <td>
-                 
-              </td>
-            </Cell>
-            <Cell
+              <tr>
+                <styled.td
+                  key="0"
+                >
+                  <td
+                    className="sc-htpNat kcMuME"
+                  >
+                     
+                  </td>
+                </styled.td>
+                <styled.td
+                  key="1"
+                >
+                  <td
+                    className="sc-htpNat kcMuME"
+                  >
+                     
+                  </td>
+                </styled.td>
+                <styled.td
+                  key="2"
+                >
+                  <td
+                    className="sc-htpNat kcMuME"
+                  >
+                     
+                  </td>
+                </styled.td>
+                <styled.td
+                  key="3"
+                >
+                  <td
+                    className="sc-htpNat kcMuME"
+                  >
+                     
+                  </td>
+                </styled.td>
+              </tr>
+            </Row>
+            <Row
               key="1"
-              letter=" "
+              letters={
+                Immutable.List [
+                  " ",
+                  " ",
+                  " ",
+                  " ",
+                ]
+              }
             >
-              <td>
-                 
-              </td>
-            </Cell>
-            <Cell
+              <tr>
+                <styled.td
+                  key="0"
+                >
+                  <td
+                    className="sc-htpNat kcMuME"
+                  >
+                     
+                  </td>
+                </styled.td>
+                <styled.td
+                  key="1"
+                >
+                  <td
+                    className="sc-htpNat kcMuME"
+                  >
+                     
+                  </td>
+                </styled.td>
+                <styled.td
+                  key="2"
+                >
+                  <td
+                    className="sc-htpNat kcMuME"
+                  >
+                     
+                  </td>
+                </styled.td>
+                <styled.td
+                  key="3"
+                >
+                  <td
+                    className="sc-htpNat kcMuME"
+                  >
+                     
+                  </td>
+                </styled.td>
+              </tr>
+            </Row>
+            <Row
               key="2"
-              letter=" "
+              letters={
+                Immutable.List [
+                  " ",
+                  " ",
+                  " ",
+                  " ",
+                ]
+              }
             >
-              <td>
-                 
-              </td>
-            </Cell>
-            <Cell
+              <tr>
+                <styled.td
+                  key="0"
+                >
+                  <td
+                    className="sc-htpNat kcMuME"
+                  >
+                     
+                  </td>
+                </styled.td>
+                <styled.td
+                  key="1"
+                >
+                  <td
+                    className="sc-htpNat kcMuME"
+                  >
+                     
+                  </td>
+                </styled.td>
+                <styled.td
+                  key="2"
+                >
+                  <td
+                    className="sc-htpNat kcMuME"
+                  >
+                     
+                  </td>
+                </styled.td>
+                <styled.td
+                  key="3"
+                >
+                  <td
+                    className="sc-htpNat kcMuME"
+                  >
+                     
+                  </td>
+                </styled.td>
+              </tr>
+            </Row>
+            <Row
               key="3"
-              letter=" "
+              letters={
+                Immutable.List [
+                  " ",
+                  " ",
+                  " ",
+                  " ",
+                ]
+              }
             >
-              <td>
-                 
-              </td>
-            </Cell>
-          </tr>
-        </Row>
-        <Row
-          key="1"
-          letters={
-            Immutable.List [
-              " ",
-              " ",
-              " ",
-              " ",
-            ]
-          }
-        >
-          <tr>
-            <Cell
-              key="0"
-              letter=" "
-            >
-              <td>
-                 
-              </td>
-            </Cell>
-            <Cell
-              key="1"
-              letter=" "
-            >
-              <td>
-                 
-              </td>
-            </Cell>
-            <Cell
-              key="2"
-              letter=" "
-            >
-              <td>
-                 
-              </td>
-            </Cell>
-            <Cell
-              key="3"
-              letter=" "
-            >
-              <td>
-                 
-              </td>
-            </Cell>
-          </tr>
-        </Row>
-        <Row
-          key="2"
-          letters={
-            Immutable.List [
-              " ",
-              " ",
-              " ",
-              " ",
-            ]
-          }
-        >
-          <tr>
-            <Cell
-              key="0"
-              letter=" "
-            >
-              <td>
-                 
-              </td>
-            </Cell>
-            <Cell
-              key="1"
-              letter=" "
-            >
-              <td>
-                 
-              </td>
-            </Cell>
-            <Cell
-              key="2"
-              letter=" "
-            >
-              <td>
-                 
-              </td>
-            </Cell>
-            <Cell
-              key="3"
-              letter=" "
-            >
-              <td>
-                 
-              </td>
-            </Cell>
-          </tr>
-        </Row>
-        <Row
-          key="3"
-          letters={
-            Immutable.List [
-              " ",
-              " ",
-              " ",
-              " ",
-            ]
-          }
-        >
-          <tr>
-            <Cell
-              key="0"
-              letter=" "
-            >
-              <td>
-                 
-              </td>
-            </Cell>
-            <Cell
-              key="1"
-              letter=" "
-            >
-              <td>
-                 
-              </td>
-            </Cell>
-            <Cell
-              key="2"
-              letter=" "
-            >
-              <td>
-                 
-              </td>
-            </Cell>
-            <Cell
-              key="3"
-              letter=" "
-            >
-              <td>
-                 
-              </td>
-            </Cell>
-          </tr>
-        </Row>
-      </tbody>
-    </table>
-  </div>
+              <tr>
+                <styled.td
+                  key="0"
+                >
+                  <td
+                    className="sc-htpNat kcMuME"
+                  >
+                     
+                  </td>
+                </styled.td>
+                <styled.td
+                  key="1"
+                >
+                  <td
+                    className="sc-htpNat kcMuME"
+                  >
+                     
+                  </td>
+                </styled.td>
+                <styled.td
+                  key="2"
+                >
+                  <td
+                    className="sc-htpNat kcMuME"
+                  >
+                     
+                  </td>
+                </styled.td>
+                <styled.td
+                  key="3"
+                >
+                  <td
+                    className="sc-htpNat kcMuME"
+                  >
+                     
+                  </td>
+                </styled.td>
+              </tr>
+            </Row>
+          </tbody>
+        </table>
+      </styled.table>
+    </div>
+  </styled.div>
 </Board>
 `;
 
@@ -258,198 +279,219 @@ exports[`<Board /> is filled when the game has started 1`] = `
     ]
   }
 >
-  <div
-    className="box"
-    id="board"
-  >
-    <table>
-      <tbody>
-        <Row
-          key="0"
-          letters={
-            Immutable.List [
-              "E",
-              "H",
-              "R",
-              "T",
-            ]
-          }
+  <styled.div>
+    <div
+      className="sc-bdVaJa iOMCKQ"
+    >
+      <styled.table>
+        <table
+          className="sc-bwzfXH jwfMIB"
         >
-          <tr>
-            <Cell
+          <tbody>
+            <Row
               key="0"
-              letter="E"
+              letters={
+                Immutable.List [
+                  "E",
+                  "H",
+                  "R",
+                  "T",
+                ]
+              }
             >
-              <td>
-                E
-              </td>
-            </Cell>
-            <Cell
+              <tr>
+                <styled.td
+                  key="0"
+                >
+                  <td
+                    className="sc-htpNat kcMuME"
+                  >
+                    E
+                  </td>
+                </styled.td>
+                <styled.td
+                  key="1"
+                >
+                  <td
+                    className="sc-htpNat kcMuME"
+                  >
+                    H
+                  </td>
+                </styled.td>
+                <styled.td
+                  key="2"
+                >
+                  <td
+                    className="sc-htpNat kcMuME"
+                  >
+                    R
+                  </td>
+                </styled.td>
+                <styled.td
+                  key="3"
+                >
+                  <td
+                    className="sc-htpNat kcMuME"
+                  >
+                    T
+                  </td>
+                </styled.td>
+              </tr>
+            </Row>
+            <Row
               key="1"
-              letter="H"
+              letters={
+                Immutable.List [
+                  "B",
+                  "I",
+                  "T",
+                  "E",
+                ]
+              }
             >
-              <td>
-                H
-              </td>
-            </Cell>
-            <Cell
+              <tr>
+                <styled.td
+                  key="0"
+                >
+                  <td
+                    className="sc-htpNat kcMuME"
+                  >
+                    B
+                  </td>
+                </styled.td>
+                <styled.td
+                  key="1"
+                >
+                  <td
+                    className="sc-htpNat kcMuME"
+                  >
+                    I
+                  </td>
+                </styled.td>
+                <styled.td
+                  key="2"
+                >
+                  <td
+                    className="sc-htpNat kcMuME"
+                  >
+                    T
+                  </td>
+                </styled.td>
+                <styled.td
+                  key="3"
+                >
+                  <td
+                    className="sc-htpNat kcMuME"
+                  >
+                    E
+                  </td>
+                </styled.td>
+              </tr>
+            </Row>
+            <Row
               key="2"
-              letter="R"
+              letters={
+                Immutable.List [
+                  "G",
+                  "I",
+                  "S",
+                  "F",
+                ]
+              }
             >
-              <td>
-                R
-              </td>
-            </Cell>
-            <Cell
+              <tr>
+                <styled.td
+                  key="0"
+                >
+                  <td
+                    className="sc-htpNat kcMuME"
+                  >
+                    G
+                  </td>
+                </styled.td>
+                <styled.td
+                  key="1"
+                >
+                  <td
+                    className="sc-htpNat kcMuME"
+                  >
+                    I
+                  </td>
+                </styled.td>
+                <styled.td
+                  key="2"
+                >
+                  <td
+                    className="sc-htpNat kcMuME"
+                  >
+                    S
+                  </td>
+                </styled.td>
+                <styled.td
+                  key="3"
+                >
+                  <td
+                    className="sc-htpNat kcMuME"
+                  >
+                    F
+                  </td>
+                </styled.td>
+              </tr>
+            </Row>
+            <Row
               key="3"
-              letter="T"
+              letters={
+                Immutable.List [
+                  "A",
+                  "M",
+                  "N",
+                  "O",
+                ]
+              }
             >
-              <td>
-                T
-              </td>
-            </Cell>
-          </tr>
-        </Row>
-        <Row
-          key="1"
-          letters={
-            Immutable.List [
-              "B",
-              "I",
-              "T",
-              "E",
-            ]
-          }
-        >
-          <tr>
-            <Cell
-              key="0"
-              letter="B"
-            >
-              <td>
-                B
-              </td>
-            </Cell>
-            <Cell
-              key="1"
-              letter="I"
-            >
-              <td>
-                I
-              </td>
-            </Cell>
-            <Cell
-              key="2"
-              letter="T"
-            >
-              <td>
-                T
-              </td>
-            </Cell>
-            <Cell
-              key="3"
-              letter="E"
-            >
-              <td>
-                E
-              </td>
-            </Cell>
-          </tr>
-        </Row>
-        <Row
-          key="2"
-          letters={
-            Immutable.List [
-              "G",
-              "I",
-              "S",
-              "F",
-            ]
-          }
-        >
-          <tr>
-            <Cell
-              key="0"
-              letter="G"
-            >
-              <td>
-                G
-              </td>
-            </Cell>
-            <Cell
-              key="1"
-              letter="I"
-            >
-              <td>
-                I
-              </td>
-            </Cell>
-            <Cell
-              key="2"
-              letter="S"
-            >
-              <td>
-                S
-              </td>
-            </Cell>
-            <Cell
-              key="3"
-              letter="F"
-            >
-              <td>
-                F
-              </td>
-            </Cell>
-          </tr>
-        </Row>
-        <Row
-          key="3"
-          letters={
-            Immutable.List [
-              "A",
-              "M",
-              "N",
-              "O",
-            ]
-          }
-        >
-          <tr>
-            <Cell
-              key="0"
-              letter="A"
-            >
-              <td>
-                A
-              </td>
-            </Cell>
-            <Cell
-              key="1"
-              letter="M"
-            >
-              <td>
-                M
-              </td>
-            </Cell>
-            <Cell
-              key="2"
-              letter="N"
-            >
-              <td>
-                N
-              </td>
-            </Cell>
-            <Cell
-              key="3"
-              letter="O"
-            >
-              <td>
-                O
-              </td>
-            </Cell>
-          </tr>
-        </Row>
-      </tbody>
-    </table>
-  </div>
+              <tr>
+                <styled.td
+                  key="0"
+                >
+                  <td
+                    className="sc-htpNat kcMuME"
+                  >
+                    A
+                  </td>
+                </styled.td>
+                <styled.td
+                  key="1"
+                >
+                  <td
+                    className="sc-htpNat kcMuME"
+                  >
+                    M
+                  </td>
+                </styled.td>
+                <styled.td
+                  key="2"
+                >
+                  <td
+                    className="sc-htpNat kcMuME"
+                  >
+                    N
+                  </td>
+                </styled.td>
+                <styled.td
+                  key="3"
+                >
+                  <td
+                    className="sc-htpNat kcMuME"
+                  >
+                    O
+                  </td>
+                </styled.td>
+              </tr>
+            </Row>
+          </tbody>
+        </table>
+      </styled.table>
+    </div>
+  </styled.div>
 </Board>
 `;

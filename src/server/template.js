@@ -1,5 +1,5 @@
 export default ({
-  state, content, assets, bundle
+  state, styleTags, content, assets, bundle
 }) => (`
   <!DOCTYPE html>
 
@@ -11,6 +11,8 @@ export default ({
       <title>Boggle</title>
 
       <link href="${assets.app.css}" rel="stylesheet" />
+      <link href="/styles/reset.css" rel="stylesheet" />
+      ${styleTags}
       <script>
         window.__INITIAL_STATE__ = ${state};
       </script>

@@ -13,16 +13,16 @@ describe('<Input />', () => {
       onChange={jest.fn()}
       onEnter={jest.fn()}
     />);
-    component.instance().refs.word.focus = jest.fn();
+    component.instance().word.focus = jest.fn();
   });
 
   it('is blurred by default', () => {
-    expect(component.instance().refs.word.focus).not.toHaveBeenCalled();
+    expect(component.instance().word.focus).not.toHaveBeenCalled();
   });
 
   it('is focused when game starts', () => {
     component.setProps({started: true});
 
-    expect(component.instance().refs.word.focus).toHaveBeenCalled();
+    expect(component.instance().word.focus).toHaveBeenCalled();
   });
 });

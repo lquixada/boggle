@@ -1,7 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
 const AssetsPlugin = require('assets-webpack-plugin');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin');
@@ -32,7 +31,8 @@ module.exports = {
       'react-router-config',
       'react-router-redux',
       'redux',
-      'redux-raven-middleware'
+      'redux-raven-middleware',
+      'styled-components'
     ]
   },
 
@@ -49,8 +49,7 @@ module.exports = {
             plugins: ['react-hot-loader/babel']
           }
         }
-      },
-      {test: /\.scss$/, use: ExtractTextPlugin.extract({fallback: 'style-loader', use: ['css-loader', 'sass-loader']})}
+      }
     ]
   },
 
@@ -80,15 +79,14 @@ module.exports = {
         root: process.cwd()
       })
       : new webpack.HotModuleReplacementPlugin(),
-    new ExtractTextPlugin({
-      disable: !isProd(),
-      filename: `sheets/bundle${hash()}.css`,
-      allChunks: true
-    }),
     new CopyWebpackPlugin([
       {
         from: 'src/public/images',
         to: 'images'
+      },
+      {
+        from: 'src/public/styles',
+        to: 'styles'
       }
     ]),
     new AssetsPlugin({
@@ -103,7 +101,7 @@ module.exports = {
       staticFileGlobs: [
         './web/public/images/**/*.{png,jpg,gif}',
         './web/public/scripts/**/*.js',
-        './web/public/sheets/**/*.css'
+        './web/public/styles/**/*.css'
       ],
       stripPrefix: './web/public/',
       logger() {}

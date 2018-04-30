@@ -1,13 +1,41 @@
 import React from 'react';
+import styled from 'styled-components';
+
+import {flex} from '../helpers/mixins';
 
 const Social = () => (
-  <div className="social">
-    <ul>
-      <li><a href="https://github.com/lquixada/"><img src="/images/logo-github.png" /></a></li>
-      <li><a href="https://facebook.com/lquixada/"><img src="/images/logo-facebook.png" /></a></li>
-      <li><a href="https://twitter.com/lquixada/"><img src="/images/logo-twitter.png" /></a></li>
-    </ul>
-  </div>
+  <Wrapper>
+    <List>
+      <Item><a href="https://github.com/lquixada/"><Image src="/images/logo-github.png" /></a></Item>
+      <Item><a href="https://facebook.com/lquixada/"><Image src="/images/logo-facebook.png" /></a></Item>
+      <Item><a href="https://twitter.com/lquixada/"><Image src="/images/logo-twitter.png" /></a></Item>
+    </List>
+  </Wrapper>
 );
+
+const Wrapper = styled.div`
+  ${flex('1 0')}
+`;
+
+const List = styled.ul`
+  ${flex.display()}
+  ${flex.right()}
+`;
+
+const Item = styled.li`
+  margin-left: 1rem;
+  list-style: none;
+`;
+
+const Image = styled.img`
+  width: 2rem;
+  height: 2rem;
+  opacity: .3;
+  vertical-align: middle;
+
+  &:hover {
+    opacity: .7;
+  }
+`;
 
 export default Social;

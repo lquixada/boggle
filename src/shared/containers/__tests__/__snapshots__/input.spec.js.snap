@@ -4,26 +4,38 @@ exports[`<InputContainer /> is disabled by default 1`] = `
 <InputContainer
   started={false}
 >
-  <Input
+  <InputArea
     onChange={[Function]}
     onEnter={[Function]}
     started={false}
     value=""
   >
-    <div
-      id="input"
-    >
-      <input
-        className="box"
-        disabled={true}
-        onChange={[Function]}
-        onKeyUp={[Function]}
-        placeholder="Press start to begin..."
-        type="text"
-        value=""
-      />
-    </div>
-  </Input>
+    <styled.div>
+      <div
+        className="sc-bdVaJa gwEsTk"
+      >
+        <styled.input
+          disabled={true}
+          innerRef={[Function]}
+          onChange={[Function]}
+          onKeyUp={[Function]}
+          placeholder="Press start to begin..."
+          type="text"
+          value=""
+        >
+          <input
+            className="sc-bwzfXH eptTMA"
+            disabled={true}
+            onChange={[Function]}
+            onKeyUp={[Function]}
+            placeholder="Press start to begin..."
+            type="text"
+            value=""
+          />
+        </styled.input>
+      </div>
+    </styled.div>
+  </InputArea>
 </InputContainer>
 `;
 
@@ -31,26 +43,38 @@ exports[`<InputContainer /> is disabled when the game has stopped 1`] = `
 <InputContainer
   started={false}
 >
-  <Input
+  <InputArea
     onChange={[Function]}
     onEnter={[Function]}
     started={false}
     value=""
   >
-    <div
-      id="input"
-    >
-      <input
-        className="box"
-        disabled={true}
-        onChange={[Function]}
-        onKeyUp={[Function]}
-        placeholder="Press start to begin..."
-        type="text"
-        value=""
-      />
-    </div>
-  </Input>
+    <styled.div>
+      <div
+        className="sc-bdVaJa gwEsTk"
+      >
+        <styled.input
+          disabled={true}
+          innerRef={[Function]}
+          onChange={[Function]}
+          onKeyUp={[Function]}
+          placeholder="Press start to begin..."
+          type="text"
+          value=""
+        >
+          <input
+            className="sc-bwzfXH eptTMA"
+            disabled={true}
+            onChange={[Function]}
+            onKeyUp={[Function]}
+            placeholder="Press start to begin..."
+            type="text"
+            value=""
+          />
+        </styled.input>
+      </div>
+    </styled.div>
+  </InputArea>
 </InputContainer>
 `;
 
@@ -58,25 +82,37 @@ exports[`<InputContainer /> is enabled when the game has started 1`] = `
 <InputContainer
   started={true}
 >
-  <Input
+  <InputArea
     onChange={[Function]}
     onEnter={[Function]}
     started={true}
     value=""
   >
-    <div
-      id="input"
-    >
-      <input
-        className="box"
-        disabled={false}
-        onChange={[Function]}
-        onKeyUp={[Function]}
-        placeholder="Type the word and hit Enter!"
-        type="text"
-        value=""
-      />
-    </div>
-  </Input>
+    <styled.div>
+      <div
+        className="sc-bdVaJa gwEsTk"
+      >
+        <styled.input
+          disabled={false}
+          innerRef={[Function]}
+          onChange={[Function]}
+          onKeyUp={[Function]}
+          placeholder="Type the word and hit Enter!"
+          type="text"
+          value=""
+        >
+          <input
+            className="sc-bwzfXH eptTMA"
+            disabled={false}
+            onChange={[Function]}
+            onKeyUp={[Function]}
+            placeholder="Type the word and hit Enter!"
+            type="text"
+            value=""
+          />
+        </styled.input>
+      </div>
+    </styled.div>
+  </InputArea>
 </InputContainer>
 `;
