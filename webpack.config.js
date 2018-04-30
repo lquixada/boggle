@@ -73,11 +73,7 @@ module.exports = {
 
   plugins: [
     isProd()
-      ? new CleanWebpackPlugin(['./web/public/scripts', './web/public/sheets'], {
-        // Without `root` CleanWebpackPlugin won't point to our
-        // project and will fail to work.
-        root: process.cwd()
-      })
+      ? new CleanWebpackPlugin(['./web/public/scripts'])
       : new webpack.HotModuleReplacementPlugin(),
     new CopyWebpackPlugin([
       {
