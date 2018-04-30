@@ -11,7 +11,6 @@ export default ({
       <title>Boggle</title>
 
       <link href="${assets.app.css}" rel="stylesheet" />
-      <link href="/styles/reset.css" rel="stylesheet" />
       ${styleTags}
       <script>
         window.__INITIAL_STATE__ = ${state};
