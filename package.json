@@ -13,7 +13,7 @@
     "build:web": "babel -D -q src -d web",
     "codecov": "codecov",
     "deploy": "git push -f origin master:heroku",
-    "dev": "pm2 start process.yml --only boggle-dev --no-daemon",
+    "dev": "pm2 start .process.yml --only boggle-dev --no-daemon",
     "docker:build": "docker build -t lquixada/boggle .",
     "docker:pull": "docker pull lquixada/boggle",
     "docker:push": "docker push lquixada/boggle",
@@ -21,7 +21,7 @@
     "jest": "jest",
     "jest:ci": "jest --coverage",
     "lint": "eslint --ignore-pattern web --ignore-pattern .reports .",
-    "start": "pm2 start process.yml --only boggle-prod --no-daemon",
+    "start": "pm2 start .process.yml --only boggle-prod --no-daemon",
     "test": "run-p jest lint"
   },
   "dependencies": {
