@@ -6,7 +6,6 @@
   "license": "MIT",
   "scripts": {
     "precommit": "lint-staged",
-    "pretest:ci": "npm run build:bundle",
     "prestart": "npm run build",
     "analyze": "./tasks/analyze",
     "build": "run-s build:web build:bundle",
