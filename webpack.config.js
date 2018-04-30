@@ -76,14 +76,8 @@ module.exports = {
       ? new CleanWebpackPlugin(['./web/public/scripts'])
       : new webpack.HotModuleReplacementPlugin(),
     new CopyWebpackPlugin([
-      {
-        from: 'src/public/images',
-        to: 'images'
-      },
-      {
-        from: 'src/public/styles',
-        to: 'styles'
-      }
+      'src/public/images',
+      'src/public/styles'
     ]),
     new AssetsPlugin({
       filename: 'assets.json',
