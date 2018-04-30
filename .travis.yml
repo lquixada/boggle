@@ -7,5 +7,3 @@ script:
 - npm run -s jest:ci
 - npm run -s lint
 - npm run -s codecov
-notifications:
-  email: false
