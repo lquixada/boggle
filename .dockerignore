@@ -1,6 +1,7 @@
 .git
 .DS_Store
 .gitignore
+.reports
 Dockerfile
 node_modules
 *.log
