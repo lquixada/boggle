@@ -14,26 +14,7 @@ module.exports = {
   entry: {
     app: isProd()
       ? ['./src/client']
-      : ['webpack-hot-middleware/client', './src/client'],
-    vendor: [
-      'es6-promise',
-      'history',
-      'immutable',
-      'lodash/groupBy',
-      'lodash/invokeMap',
-      'lodash/toArray',
-      'lodash/sample',
-      'prop-types',
-      'react',
-      'react-dom',
-      'react-github-fork-ribbon',
-      'react-redux',
-      'react-router-config',
-      'react-router-redux',
-      'redux',
-      'redux-raven-middleware',
-      'styled-components'
-    ]
+      : ['webpack-hot-middleware/client', './src/client']
   },
 
   module: {
