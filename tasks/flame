@@ -1,0 +1,12 @@
+#!/bin/bash
+set -e
+
+export NODE_ENV="benchmark"
+export DIR=".reports/flame/{pid}"
+
+npm run -s build &&
+npx clinic flame \
+  -D "${DIR}" \
+  -F "${DIR}/index.html" \
+  --on-port 'autocannon http://localhost:3000/' \
+  -- node web/app.js
