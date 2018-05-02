@@ -6,7 +6,6 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin');
 
 const isProd = () => process.env.NODE_ENV === 'production';
-const hash = (type = '') => (isProd() ? `.[${type}hash]` : '');
 
 module.exports = {
   mode: isProd()? 'production' : 'development',
@@ -37,7 +36,7 @@ module.exports = {
   output: {
     path: path.join(__dirname, 'web', 'public'),
     publicPath: '/',
-    filename: `scripts/[name]${hash('chunk')}.js`
+    filename: `scripts/[name]${isProd() ? '.[chunkhash]' : ''}.js`
   },
 
   performance: {
