@@ -18,7 +18,7 @@ const Wrapper = styled.div`
   line-height: 2rem;
 `;
 
-const BuildStatus = styled.image`
+const BuildStatus = styled.img`
   opacity: .5;
   vertical-align: middle;
   height: 1.8rem;

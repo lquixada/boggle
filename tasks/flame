@@ -4,7 +4,7 @@ set -e
 export NODE_ENV="benchmark"
 export DIR=".reports/flame/{pid}"
 
-npm run -s build &&
+npm run -s web:build &&
 npx clinic flame \
   -D "${DIR}" \
   -F "${DIR}/index.html" \

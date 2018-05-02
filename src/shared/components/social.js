@@ -2,13 +2,14 @@ import React from 'react';
 import styled from 'styled-components';
 
 import {flex} from '../helpers/mixins';
+import {img} from '../helpers';
 
 const Social = () => (
   <Wrapper>
     <List>
-      <Item><a href="https://github.com/lquixada/"><Image src="/images/logo-github.png" /></a></Item>
-      <Item><a href="https://facebook.com/lquixada/"><Image src="/images/logo-facebook.png" /></a></Item>
-      <Item><a href="https://twitter.com/lquixada/"><Image src="/images/logo-twitter.png" /></a></Item>
+      <Item><a href="https://github.com/lquixada/"><Image src={img('logo-github.png')} /></a></Item>
+      <Item><a href="https://facebook.com/lquixada/"><Image src={img('logo-facebook.png')} /></a></Item>
+      <Item><a href="https://twitter.com/lquixada/"><Image src={img('logo-twitter.png')} /></a></Item>
     </List>
   </Wrapper>
 );

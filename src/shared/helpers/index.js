@@ -4,6 +4,19 @@ import fetch from 'cross-fetch';
 import config from '../../shared/config';
 import BoardChecker from './board-checker';
 
+export const isElectron = () => {
+  const userAgent = navigator.userAgent.toLowerCase();
+  return userAgent.indexOf(' electron/') > -1;
+};
+
+export const publicPath = () => {
+  return isElectron()? './public/images/': '/images/';
+};
+
+export const img = (filename) => {
+  return `${publicPath()}${filename}`;
+};
+
 export const isOnScoreList = (attempts, word) =>
   attempts.some((attempt) => attempt.get('word') === word);
 

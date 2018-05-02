@@ -2,6 +2,10 @@ web/*
 !web/.gitkeep
 !web/images/
 
+desktop/*
+!desktop/.gitkeep
+!desktop/images/
+
 # Heroku has issues with having both package-lock.json and yarn.lock files,
 # we choose the later
 package-lock.json
