@@ -85,6 +85,6 @@ module.exports = {
   ],
 
   stats: {
-    children: !isProd()
+    modules: false,
   }
 };
