@@ -5,6 +5,7 @@
   "author": "Leonardo Quixada <lquixada@gmail.com>",
   "license": "MIT",
   "scripts": {
+    "preflameon": "npm run -s build",
     "precommit": "lint-staged",
     "analyze": "./tasks/analyze",
     "build": "npm run -s build:web && npm run -s build:bundle",
@@ -17,12 +18,19 @@
     "docker:pull": "docker pull lquixada/boggle",
     "docker:push": "docker push lquixada/boggle",
     "docker:run": "docker run -p 3000:3000 lquixada/boggle",
+    "flameon": "NODE_ENV=benchmark clinic flame -D '.reports/flame/{pid}/' -F '.reports/flame/{pid}/index.html' --on-port 'autocannon http://localhost:3000/' -- node web/app.js",
     "heroku-postbuild": "npm run build",
     "jest": "jest",
     "jest:ci": "jest --coverage",
     "lint": "eslint --ignore-pattern web --ignore-pattern .reports .",
     "start": "pm2 start .process.yml --only boggle-prod --no-daemon",
     "test": "npm run -s jest && npm run -s lint"
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix",
+      "git add"
+    ]
   },
   "dependencies": {
     "body-parser": "1.18.2",
@@ -53,12 +61,14 @@
   },
   "devDependencies": {
     "assets-webpack-plugin": "3.5.1",
+    "autocannon": "2.3.0",
     "babel-cli": "6.26.0",
     "babel-core": "6.26.0",
     "babel-loader": "7.1.4",
     "babel-preset-es2015": "6.24.1",
     "babel-preset-react": "6.24.1",
     "clean-webpack-plugin": "0.1.19",
+    "clinic": "0.8.1",
     "codecov": "3.0.1",
     "copy-webpack-plugin": "4.5.1",
     "enzyme": "3.3.0",
@@ -90,11 +100,5 @@
   },
   "engines": {
     "node": "9.11.1"
-  },
-  "lint-staged": {
-    "*.js": [
-      "eslint --fix",
-      "git add"
-    ]
   }
 }
