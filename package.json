@@ -17,7 +17,7 @@
     "docker:build": "docker build -t lquixada/boggle .",
     "docker:pull": "docker pull lquixada/boggle",
     "docker:push": "docker push lquixada/boggle",
-    "docker:run": "docker run -p 3000:3000 lquixada/boggle",
+    "docker:run": "docker run -t -i -p 3000:3000 lquixada/boggle",
     "flameon": "NODE_ENV=benchmark clinic flame -D '.reports/flame/{pid}/' -F '.reports/flame/{pid}/index.html' --on-port 'autocannon http://localhost:3000/' -- node web/app.js",
     "heroku-postbuild": "npm run build",
     "jest": "jest",
