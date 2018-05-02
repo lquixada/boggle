@@ -21,7 +21,7 @@
     "flameon": "NODE_ENV=benchmark clinic flame -D '.reports/flame/{pid}/' -F '.reports/flame/{pid}/index.html' --on-port 'autocannon http://localhost:3000/' -- node web/app.js",
     "heroku-postbuild": "npm run build",
     "jest": "jest",
-    "jest:ci": "jest --coverage",
+    "jest:cov": "jest --coverage",
     "lint": "eslint --ignore-pattern web --ignore-pattern .reports .",
     "start": "pm2 start .process.yml --only boggle-prod --no-daemon",
     "test": "npm run -s jest && npm run -s lint"
