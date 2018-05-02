@@ -86,9 +86,10 @@ There are also some docker tasks available.
 ## Stack
 
 * **App**: react, redux, immutable.js
-* **Style**: sass
-* **Tests**: jest
-* **Lint**: eslint, sass-lint
+* **Style**: styled-components
+* **Tests**: jest, codecov
+* **Lint**: eslint
+* **Benchmark**: clinic
 * **Utils**: npm, webpack, babel
 * **CI**: [TravisCI](https://travis-ci.org/lquixada/boggle)
 * **Hosting**: [Heroku](https://bogglejs.herokuapp.com/)
