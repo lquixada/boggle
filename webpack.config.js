@@ -40,6 +40,11 @@ module.exports = {
     filename: `scripts/[name]${hash('chunk')}.js`
   },
 
+  performance: {
+    maxEntrypointSize: 400000,
+    maxAssetSize: 400000
+  },
+
   optimization: {
     splitChunks: {
       cacheGroups: {
