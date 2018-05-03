@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import {flex} from '../helpers/mixins';
+import {flex} from '../helpers';
 
 export const Main = styled.main`
   ${flex.display()};

@@ -12,7 +12,7 @@ import Title from './title';
 import Ribbon from './ribbon';
 import {Main, Container, Header, HeaderContainer, Section, SectionContainer, Footer} from './grid';
 
-import {flex} from '../helpers/mixins';
+import {flex} from '../helpers';
 
 const Game = () => (
   <Main>

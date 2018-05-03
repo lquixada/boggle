@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import {flex} from '../helpers/mixins';
+import {flex} from '../helpers';
 import {img} from '../helpers';
 
 const Social = () => (

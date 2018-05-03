@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-import {flex} from '../helpers/mixins';
+import {flex} from '../helpers';
 
 const Clock = ({secs, total}) => {
   const strokeDasharray = 251;

@@ -3,13 +3,6 @@ import fetch from 'cross-fetch';
 import config from '../../shared/config';
 import BoardChecker from './board-checker';
 
-export * from './board-checker';
-export * from './mixins';
-export * from './platform';
-export * from './object';
-export * from './timer';
-export * from './url';
-
 export const isOnScoreList = (attempts, word) =>
   attempts.some((attempt) => attempt.get('word') === word);
 

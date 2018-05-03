@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import {box, flex} from '../helpers/mixins';
+import {box, flex} from '../helpers';
 
 const Attempt = ({attempt}) => (
   <tr>

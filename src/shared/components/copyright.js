@@ -2,7 +2,7 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import styled from 'styled-components';
 
-import {flex} from '../helpers/mixins';
+import {flex} from '../helpers';
 
 const Copyright = () => (
   <Wrapper>

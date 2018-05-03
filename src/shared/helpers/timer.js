@@ -1,6 +1,6 @@
 import events from 'events';
 
-class Timer extends events.EventEmitter {
+export class Timer extends events.EventEmitter {
   constructor() {
     super();
     this.frame = 60;
@@ -35,5 +35,3 @@ class Timer extends events.EventEmitter {
     this.emit('tick');
   }
 }
-
-export default Timer;

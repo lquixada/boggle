@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import {flex, box} from '../helpers/mixins';
+import {flex, box} from '../helpers';
 
 const Board = ({matrix}) => (
   <Wrapper>

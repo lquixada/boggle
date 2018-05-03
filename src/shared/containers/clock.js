@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 
 import Clock from '../components/clock';
 import * as actions from '../actions';
-import Timer from '../helpers/timer';
+import {Timer} from '../helpers';
 
 const timer = new Timer();
 

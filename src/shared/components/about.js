@@ -7,7 +7,7 @@ import Title from './title';
 import Ribbon from './ribbon';
 import {Main, Container, Header, HeaderContainer, Section, SectionContainer, Footer} from './grid';
 
-import {box} from '../helpers/mixins';
+import {box} from '../helpers';
 
 const About = () => (
   <Main>
