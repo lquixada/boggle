@@ -7,6 +7,7 @@
   "main": "src/main.js",
   "scripts": {
     "precommit": "lint-staged",
+    "predocker:build": "npm run -s web:build",
     "preelectron:package": "npm run electron:build",
     "analyze": "./tasks/analyze",
     "build": "npm run -s build:platform && npm run -s build:bundle",

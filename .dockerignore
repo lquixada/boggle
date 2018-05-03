@@ -3,5 +3,6 @@
 .gitignore
 .reports
 Dockerfile
+desktop
 node_modules
 *.log
