@@ -18,7 +18,7 @@
     "docker:build": "docker build -t lquixada/boggle .",
     "docker:pull": "docker pull lquixada/boggle",
     "docker:push": "docker push lquixada/boggle",
-    "docker:run": "docker run -t -i -p 3000:3000 lquixada/boggle",
+    "docker:start": "docker run -t -i -p 3000:3000 lquixada/boggle",
     "electron:build": "PLATFORM=desktop npm run -s build",
     "electron:package": "electron-packager . --overwrite --platform=darwin --arch=x64 --prune=true --out=desktop",
     "electron:start": "electron .",
