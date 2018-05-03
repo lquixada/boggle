@@ -1,7 +1,7 @@
 import nock from 'nock';
-import {fromJS, List, Map} from 'immutable';
+import {fromJS} from 'immutable';
 
-import {isOnBoard, isOnDictionary, isOnScoreList, immutifyState} from '..';
+import {isOnBoard, isOnDictionary, isOnScoreList} from '../word';
 
 describe('Helpers', () => {
   let attempts;
@@ -75,29 +75,6 @@ describe('Helpers', () => {
       return isOnDictionary('n0tAw0rD').then((result) => {
         expect(result).toBe(false);
       });
-    });
-  });
-
-  describe('immutifyState', () => {
-    let state;
-
-    beforeEach(() =>{
-      state = immutifyState({
-        a: {},
-        b: []
-      });
-    });
-
-    it('maintain root object as pure object', () => {
-      expect(state).toEqual(expect.any(Object));
-    });
-
-    it('convert object property into Map', () => {
-      expect(Map.isMap(state.a)).toBe(true);
-    });
-
-    it('convert array property into List', () => {
-      expect(List.isList(state.b)).toBe(true);
     });
   });
 });

@@ -4,7 +4,7 @@ import {isFSA} from 'flux-standard-action';
 
 import configureStore from '../../store';
 import * as actionCreators from '../../actions';
-import * as helper from '../../helpers';
+import * as helpers from '../../helpers/word';
 
 describe('addAttempt', () => {
   it('is FSA-compliant', () => {
@@ -40,7 +40,7 @@ describe('addCheckedAttempt', () => {
 
     store = configureStore({attempts, matrix});
     actions = bindActionCreators(actionCreators, store.dispatch);
-    helper.isOnDictionary = jest.fn().mockReturnValue(true);
+    helpers.isOnDictionary = jest.fn().mockReturnValue(true);
   });
 
   it('validates correct word', () => {
@@ -72,7 +72,7 @@ describe('addCheckedAttempt', () => {
 
   it('invalidates word not on Dictionary', () => {
     const promise = actions.addCheckedAttempt('hey')
-      .then(() => helper.isOnDictionary.mockReturnValue(false))
+      .then(() => helpers.isOnDictionary.mockReturnValue(false))
       .then(() => actions.addCheckedAttempt('smv'))
       .then(() => {
         const {attempts} = store.getState();
