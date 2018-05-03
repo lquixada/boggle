@@ -27,7 +27,7 @@
     "heroku:push": "docker tag lquixada/boggle registry.heroku.com/bogglejs/web && docker push registry.heroku.com/bogglejs/web",
     "jest": "jest",
     "jest:cov": "jest --coverage",
-    "lint": "eslint --ignore-pattern web --ignore-pattern .reports .",
+    "lint": "eslint --ignore-path .gitignore .",
     "start": "pm2 start .process.yml --only boggle-prod --no-daemon",
     "test": "npm run -s jest && npm run -s lint",
     "web:build": "PLATFORM=web npm run -s build"
