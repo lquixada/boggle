@@ -8,20 +8,19 @@ export const addAttempt = (word, scored) => ({
   }
 });
 
-export const addCheckedAttempt = (word) => (dispatch, getState) => {
+export const addCheckedAttempt = (word) => async (dispatch, getState) => {
+  let onDictionary = false;
   const state = getState();
   word = word.toUpperCase();
 
-  return Promise.all([
+  const [onBoard, onScoreList] = await Promise.all([
     isOnBoard(state.matrix, word),
     isOnScoreList(state.attempts, word)
-  ])
-    .then(([isOnBoard, isScoreList]) => {
-      if (isOnBoard && !isScoreList) {
-        return isOnDictionary(word);
-      }
+  ]);
 
-      return false;
-    })
-    .then((isOnDictionary) => dispatch(addAttempt(word, isOnDictionary)));
+  if (onBoard && !onScoreList) {
+    onDictionary = await isOnDictionary(word);
+  }
+
+  return dispatch(addAttempt(word, onDictionary));
 };
