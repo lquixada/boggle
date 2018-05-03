@@ -1,4 +1,6 @@
 export const isElectron = () => {
-  const userAgent = navigator.userAgent.toLowerCase();
-  return userAgent.indexOf(' electron/') > -1;
+  if (typeof navigator === 'undefined') {
+    return false;
+  }
+  return navigator.userAgent.toLowerCase().indexOf(' electron/') > -1;
 };
