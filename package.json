@@ -15,7 +15,7 @@
     "build:bundle": "NODE_ENV=production webpack-cli -p",
     "build:platform": "babel -D -q src -d $PLATFORM",
     "codecov": "codecov",
-    "dev": "pm2 start .process.yml --only boggle-dev --no-daemon",
+    "dev": "npm run -s web:dev",
     "docker:build": "docker build -t lquixada/boggle .",
     "docker:pull": "docker pull lquixada/boggle",
     "docker:push": "docker push lquixada/boggle",
@@ -29,9 +29,11 @@
     "jest": "jest",
     "jest:cov": "jest --coverage",
     "lint": "eslint --ignore-path .gitignore .",
-    "start": "pm2 start .process.yml --only boggle-prod --no-daemon",
+    "start": "npm run -s web:start",
     "test": "npm run -s jest && npm run -s lint",
-    "web:build": "PLATFORM=web npm run -s build"
+    "web:build": "PLATFORM=web npm run -s build",
+    "web:dev": "pm2 start .process.yml --only boggle-dev --no-daemon",
+    "web:start": "pm2 start .process.yml --only boggle-prod --no-daemon"
   },
   "lint-staged": {
     "*.js": [
