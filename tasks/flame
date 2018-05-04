@@ -2,11 +2,13 @@
 set -e
 
 export NODE_ENV="benchmark"
-export DIR=".reports/flame/{pid}"
+export DIR=".reports/flame"
+
+mkdir -p ${DIR} &&
 
 npm run -s web:build &&
 npx clinic flame \
-  -D "${DIR}" \
-  -F "${DIR}/index.html" \
+  -D "${DIR}/{pid}" \
+  -F "${DIR}/{pid}/index.html" \
   --on-port 'autocannon http://localhost:3000/' \
   -- node web/app.js
