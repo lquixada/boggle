@@ -8,6 +8,7 @@
   "scripts": {
     "precommit": "lint-staged",
     "predocker:build": "npm run -s web:build",
+    "preheroku:push": "heroku login && heroku container:login",
     "analyze": "./tasks/analyze",
     "build": "npm run -s build:platform && npm run -s build:bundle",
     "build:bundle": "NODE_ENV=production webpack-cli -p",
