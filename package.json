@@ -4,12 +4,11 @@
   "description": "A web-based implementation of the Boggle game for React study purposes.",
   "author": "Leonardo Quixada <lquixada@gmail.com>",
   "license": "MIT",
-  "main": "src/main.js",
+  "main": "src/desktop/index.js",
   "scripts": {
     "precommit": "lint-staged",
     "predocker:build": "npm run -s web:build",
     "preheroku:push": "npm run -s docker:build",
-    "preelectron:package": "npm run electron:build",
     "analyze": "./tasks/analyze",
     "build": "npm run -s build:platform && npm run -s build:bundle",
     "build:bundle": "NODE_ENV=production webpack-cli -p",
@@ -21,8 +20,9 @@
     "docker:push": "docker push lquixada/boggle",
     "docker:start": "docker run -t -i -p 3000:3000 lquixada/boggle",
     "electron:build": "PLATFORM=desktop npm run -s build",
-    "electron:package": "electron-packager . --overwrite --platform=darwin --arch=x64 --prune=true --out=desktop",
-    "electron:start": "electron .",
+    "electron:package": "electron-forge package --outDir=desktop",
+    "electron:make": "electron-forge make",
+    "electron:start": "electron-forge start",
     "flameon": "./tasks/flame",
     "heroku:update": "docker tag lquixada/boggle registry.heroku.com/bogglejs/web",
     "heroku:push": "npm run -s heroku:update && docker push registry.heroku.com/bogglejs/web",
@@ -45,6 +45,7 @@
     "body-parser": "1.18.2",
     "compression": "1.7.2",
     "cross-fetch": "2.1.1",
+    "electron-squirrel-startup": "1.0.0",
     "es6-promise": "4.2.4",
     "express": "4.16.3",
     "helmet": "3.12.0",
@@ -81,7 +82,10 @@
     "codecov": "3.0.1",
     "copy-webpack-plugin": "4.5.1",
     "electron": "2.0.0",
+    "electron-compile": "6.4.2",
+    "electron-forge": "5.2.0",
     "electron-packager": "12.0.2",
+    "electron-prebuilt-compile": "2.0.0",
     "enzyme": "3.3.0",
     "enzyme-adapter-react-16": "1.1.1",
     "enzyme-to-json": "3.3.3",
@@ -111,5 +115,34 @@
   },
   "engines": {
     "node": "9.11.1"
+  },
+  "config": {
+    "forge": {
+      "make_targets": {
+        "win32": [
+          "squirrel"
+        ],
+        "darwin": [
+          "zip"
+        ],
+        "linux": [
+          "deb",
+          "rpm"
+        ]
+      },
+      "electronPackagerConfig": {},
+      "electronWinstallerConfig": {
+        "name": ""
+      },
+      "electronInstallerDebian": {},
+      "electronInstallerRedhat": {},
+      "github_repository": {
+        "owner": "",
+        "name": ""
+      },
+      "windowsStoreConfig": {
+        "packageName": ""
+      }
+    }
   }
 }
