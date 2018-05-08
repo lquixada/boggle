@@ -13,11 +13,11 @@ exports[`<Score /> adds a valid attempt 1`] = `
 >
   <styled.div>
     <div
-      className="sc-bdVaJa eJrItC"
+      className="sc-htpNat bKmcEK"
     >
       <styled.header>
         <header
-          className="sc-bwzfXH cIaGHc"
+          className="sc-bxivhb gCIOfD"
         >
           <h2>
             Score: 
@@ -26,42 +26,45 @@ exports[`<Score /> adds a valid attempt 1`] = `
       </styled.header>
       <styled.section>
         <section
-          className="sc-htpNat bbFALC"
+          className="sc-ifAKCX gauuBQ"
         >
-          <styled.table>
-            <table
-              className="sc-bxivhb cYLiMQ"
-            >
-              <tbody>
-                <Attempt
-                  attempt={
-                    Immutable.Map {
-                      "word": "someword",
-                      "score": "8",
-                    }
-                  }
-                  key="0"
-                >
-                  <tr>
+          <Attempts
+            attempts={
+              Immutable.List [
+                Immutable.Map {
+                  "word": "someword",
+                  "score": "8",
+                },
+              ]
+            }
+          >
+            <styled.table>
+              <table
+                className="sc-bdVaJa hgWqJP"
+              >
+                <tbody>
+                  <tr
+                    key="0"
+                  >
                     <styled.td>
                       <td
-                        className="sc-ifAKCX fSZhoQ"
+                        className="sc-bwzfXH bveNbs"
                       >
                         someword
                       </td>
                     </styled.td>
                     <styled.td>
                       <td
-                        className="sc-ifAKCX fSZhoQ"
+                        className="sc-bwzfXH bveNbs"
                       >
                         8
                       </td>
                     </styled.td>
                   </tr>
-                </Attempt>
-              </tbody>
-            </table>
-          </styled.table>
+                </tbody>
+              </table>
+            </styled.table>
+          </Attempts>
         </section>
       </styled.section>
     </div>
@@ -82,11 +85,11 @@ exports[`<Score /> adds an invalid attempt 1`] = `
 >
   <styled.div>
     <div
-      className="sc-bdVaJa eJrItC"
+      className="sc-htpNat bKmcEK"
     >
       <styled.header>
         <header
-          className="sc-bwzfXH cIaGHc"
+          className="sc-bxivhb gCIOfD"
         >
           <h2>
             Score: 
@@ -95,42 +98,45 @@ exports[`<Score /> adds an invalid attempt 1`] = `
       </styled.header>
       <styled.section>
         <section
-          className="sc-htpNat bbFALC"
+          className="sc-ifAKCX gauuBQ"
         >
-          <styled.table>
-            <table
-              className="sc-bxivhb cYLiMQ"
-            >
-              <tbody>
-                <Attempt
-                  attempt={
-                    Immutable.Map {
-                      "word": "someword",
-                      "score": "✘",
-                    }
-                  }
-                  key="0"
-                >
-                  <tr>
+          <Attempts
+            attempts={
+              Immutable.List [
+                Immutable.Map {
+                  "word": "someword",
+                  "score": "✘",
+                },
+              ]
+            }
+          >
+            <styled.table>
+              <table
+                className="sc-bdVaJa hgWqJP"
+              >
+                <tbody>
+                  <tr
+                    key="0"
+                  >
                     <styled.td>
                       <td
-                        className="sc-ifAKCX fSZhoQ"
+                        className="sc-bwzfXH bveNbs"
                       >
                         someword
                       </td>
                     </styled.td>
                     <styled.td>
                       <td
-                        className="sc-ifAKCX fSZhoQ"
+                        className="sc-bwzfXH bveNbs"
                       >
                         ✘
                       </td>
                     </styled.td>
                   </tr>
-                </Attempt>
-              </tbody>
-            </table>
-          </styled.table>
+                </tbody>
+              </table>
+            </styled.table>
+          </Attempts>
         </section>
       </styled.section>
     </div>
@@ -145,11 +151,11 @@ exports[`<Score /> shows the score 1`] = `
 >
   <styled.div>
     <div
-      className="sc-bdVaJa eJrItC"
+      className="sc-htpNat bKmcEK"
     >
       <styled.header>
         <header
-          className="sc-bwzfXH cIaGHc"
+          className="sc-bxivhb gCIOfD"
         >
           <h2>
             Score: 
@@ -159,17 +165,21 @@ exports[`<Score /> shows the score 1`] = `
       </styled.header>
       <styled.section>
         <section
-          className="sc-htpNat bbFALC"
+          className="sc-ifAKCX gauuBQ"
         >
-          <styled.table>
-            <table
-              className="sc-bxivhb cYLiMQ"
-            >
-              <tbody>
-                <undefined />
-              </tbody>
-            </table>
-          </styled.table>
+          <Attempts
+            attempts={Immutable.List []}
+          >
+            <styled.table>
+              <table
+                className="sc-bdVaJa hgWqJP"
+              >
+                <tbody>
+                  <undefined />
+                </tbody>
+              </table>
+            </styled.table>
+          </Attempts>
         </section>
       </styled.section>
     </div>

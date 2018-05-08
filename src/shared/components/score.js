@@ -1,14 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import Attempts from './attempts';
 import {box, flex} from '../helpers';
-
-const Attempt = ({attempt}) => (
-  <tr>
-    <Cell>{attempt.get('word')}</Cell>
-    <Cell>{attempt.get('score')}</Cell>
-  </tr>
-);
 
 const Score = ({counter, attempts}) => (
   <Wrapper>
@@ -16,12 +10,7 @@ const Score = ({counter, attempts}) => (
       <h2>Score: {counter}</h2>
     </Header>
     <Section>
-      <Table>
-        <tbody>
-          {attempts.map((attempt, i) =>
-            <Attempt key={i} attempt={attempt} />)}
-        </tbody>
-      </Table>
+      <Attempts attempts={attempts} />
     </Section>
   </Wrapper>
 );
@@ -57,26 +46,6 @@ const Section = styled.section`
 
   @media (max-width: 540px) {
     display: none;
-  }
-`;
-
-const Table = styled.table`
-  margin: 1rem auto;
-  width: 100%;
-`;
-
-const Cell = styled.td`
-  color: #fff;
-  font-size: 1.2rem;
-
-  &:first-child {
-    padding-left: 1rem;
-    text-align: left;
-  }
-
-  &:last-child {
-    padding-right: 1rem;
-    text-align: right;
   }
 `;
 
