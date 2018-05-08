@@ -40,8 +40,6 @@ To run all tests and lints, run:
 $ yarn test
 ```
 
-> TravisCI will run a special version of this task: `yarn test:ci`. That includes code coverage report on the output and has integration with [codecov](https://codecov.io/).
-
 
 ## Production
 
@@ -54,21 +52,33 @@ $ yarn start
 Boggle will be ready on http://localhost:3000/.
 
 
+## iOS
+
+* **yarn ios:dev**: starts the bundler server
+* **yarn ios:eject**: re-create the iOS and Android folders and native code
+* **yarn ios:build**: builds iOS app and starts it on iOS simulator
+
+
+## Android
+
+* **yarn android:dev**: starts the bundler server
+* **yarn android:eject**: re-create the iOS and Android folders and native code
+* **yarn android:build**: builds Android app and starts it on iOS simulator
+
+
 ## Docker
 
-There are also some docker tasks available.
-
-* **yarn docker:pull**: downloads boggle's image
-* **yarn docker:run**: runs a container with the app
 * **yarn docker:build**: builds a new image for boggle
+* **yarn docker:pull**: downloads boggle's image
 * **yarn docker:push**: updates boggle's image in the docker hub
+* **yarn docker:start**: runs a container with the app
 
 
 ## Features
 
 * Cross-browser (latest Firefox/Chrome and IE10)
 * Responsive layout (from mobile to desktop)
-* Isomorphic, renders on server and client
+* Universal, renders on server, browsers, mobiles and desktops
 * Secure connection with HTTPS
 * Custom domain: www.bogglejs.com
 * Cache management with Service Worker (still ongoing)
