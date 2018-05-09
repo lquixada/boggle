@@ -1,6 +1,4 @@
 language: node_js
-install:
-- npm install # Using npm instead of yarn prevents coverage issue: https://github.com/facebook/jest/issues/5772
 script:
 - npm run -s test:lint
 - npm run -s test:jest:cov
