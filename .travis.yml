@@ -1,5 +1,9 @@
 sudo: required
 language: node_js
+branches:
+  only:
+  # Only run on tags like v1.0.0
+  - /^v\d+\.\d+(\.\d+)?(-\S*)?$/
 services:
 - docker
 script:
