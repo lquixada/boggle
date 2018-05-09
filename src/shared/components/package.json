@@ -2,5 +2,10 @@
   "name": "react-components",
   "version": "0.0.0",
   "main": "./index.js",
-  "react-native": "../../mobile/components/index.js"
+  "react-native": "../../mobile/components/index.js",
+  "eslintConfig": {
+    "rules": {
+      "import/no-extraneous-dependencies": "off"
+    }
+  }
 }
