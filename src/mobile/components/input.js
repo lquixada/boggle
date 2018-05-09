@@ -1,5 +1,5 @@
 import React from 'react';
-import {StyleSheet, TextInput} from 'react-native';
+import styled from 'styled-components';
 
 class Input extends React.Component {
   getPlaceholder() {
@@ -15,7 +15,6 @@ class Input extends React.Component {
         onChangeText={(evt) => this.props.onChange(evt)}
         onKeyPress={(evt) => this.props.onEnter(evt)}
         onSubmitEditing={(evt) => this.props.onSubmit(evt)}
-        style={styles.wrapper}
         autoCapitalize="none"
         placeholder={this.getPlaceholder()}
         placeholderTextColor="#999"
@@ -26,15 +25,13 @@ class Input extends React.Component {
   }
 }
 
-const styles = StyleSheet.create({
-  wrapper: {
-    padding: 10,
-    height: 40,
-    fontSize: 20,
-    color: '#fff',
-    borderRadius: 5,
-    backgroundColor: '#484848'
-  },
-});
+const TextInput = styled.TextInput`
+  padding: 10px;
+  height: 40px;
+  font-size: 20px;
+  color: #fff;
+  border-radius: 5px;
+  background-color: #484848;
+`;
 
 export default Input;

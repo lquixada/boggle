@@ -1,5 +1,5 @@
 import React from 'react';
-import {StyleSheet, View} from 'react-native';
+import styled from 'styled-components';
 
 import Board from '../containers/board';
 import Button from '../containers/button';
@@ -13,69 +13,73 @@ import Title from '../components/title';
 class Game extends React.Component {
   render() {
     return (
-      <View style={styles.wrapper}>
-        <View style={styles.header}>
-          <View style={styles.headerTop}>
+      <Grid>
+        <Header>
+          <HeaderTop>
             <Title />
             <Button />
-          </View>
-          <View style={styles.headerBottom}>
+          </HeaderTop>
+          <HeaderBottom>
             <Input />
-          </View>
-        </View>
-        <View style={styles.section}>
-          <View style={styles.sectionTop}>
+          </HeaderBottom>
+        </Header>
+        <Content>
+          <ContentTop>
             <Clock />
             <Score />
-          </View>
+          </ContentTop>
           <Board />
-        </View>
-        <View style={styles.footer}>
+        </Content>
+        <Footer>
           <Copyright />
           <Social />
-        </View>
-      </View>
+        </Footer>
+      </Grid>
     );
   }
 }
 
-const styles = StyleSheet.create({
-  wrapper: {
-    flex: 1,
-    display: 'flex',
-    backgroundColor: '#484848',
-  },
-  header: {
-    padding: 20,
-    paddingTop: 40,
-    height: 140,
-    backgroundColor: '#565656',
-  },
-  headerTop: {
-    marginBottom: 20,
-    flex: 1,
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center'
-  },
-  headerBottom: {
-    flex: 1
-  },
-  section: {
-    flex: 1,
-    padding: 20,
-    height: '100%',
-  },
-  sectionTop: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignContent: 'space-between',
-  },
-  footer: {
-    flexDirection: 'row',
-    padding: 20,
-    backgroundColor: '#565656',
-  },
-});
+const Grid = styled.View`
+  flex: 1;
+  display: flex;
+  background-color: #484848;
+`;
+
+const Header = styled.View`
+  padding: 20px;
+  padding-top: 40px;
+  height: 140px;
+  background-color: #565656;
+`;
+
+const HeaderTop = styled.View`
+  margin-bottom: 20px;
+  flex: 1;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+`;
+
+const HeaderBottom = styled.View`
+  flex: 1;
+`;
+
+const Content = styled.View`
+  flex: 1;
+  padding: 20px;
+  height: 100%;
+`;
+
+const ContentTop = styled.View`
+  flex-direction: row;
+  justify-content: space-between;
+  align-content: space-between;
+`;
+
+const Footer = styled.View`
+  flex-direction: row;
+  padding: 20px;
+  background-color: #565656;
+`;
 
 export default Game;

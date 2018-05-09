@@ -1,30 +1,21 @@
 import React from 'react';
-import {StyleSheet, Text} from 'react-native';
+import styled from 'styled-components';
 
 class Title extends React.Component {
   render() {
     return (
-      <Text style={styles.wrapper}>
-        BOGGLE
-      </Text>
+      <Label>BOGGLE</Label>
     );
   }
 }
 
-const styles = StyleSheet.create({
-  wrapper: {
-    color: '#fff',
-    fontSize: 30,
-    shadowColor: '#000',
-    shadowOffset: {
-      width: 2,
-      height: 2,
-    },
-    shadowOpacity: 1,
-    fontWeight: '900',
-    letterSpacing: -1,
-    textAlign: 'center'
-  },
-});
+const Label = styled.Text`
+  color: #fff;
+  font-size: 30;
+  font-weight: 900;
+  letter-spacing: -1;
+  text-align: center;
+  box-shadow: 2px 2px 5px #000;
+`;
 
 export default Title;

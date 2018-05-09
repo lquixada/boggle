@@ -1,21 +1,19 @@
 import React from 'react';
-import {StyleSheet, Text} from 'react-native';
+import styled from 'styled-components';
 
 class Copyright extends React.Component {
   render() {
     return (
-      <Text style={styles.wrapper}>
+      <Label>
         © Copyright 2016 Leonardo Quixadá. All rights reserved.
-      </Text>
+      </Label>
     );
   }
 }
 
-const styles = StyleSheet.create({
-  wrapper: {
-    color: '#999',
-    width: '60%'
-  },
-});
+const Label = styled.Text`
+  color: #999;
+  width: 60%;
+`;
 
 export default Copyright;

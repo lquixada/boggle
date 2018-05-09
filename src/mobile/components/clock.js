@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {StyleSheet, View, Text} from 'react-native';
+import {Text} from 'react-native';
+import styled from 'styled-components';
 
 class Clock extends React.Component {
   getSecs() {
@@ -13,23 +14,21 @@ class Clock extends React.Component {
 
   render() {
     return (
-      <View>
-        <Text style={styles.text}>
-          Time left:{' '}
-          <Text style={this.getTimeStyle()}>00:{this.getSecs()}</Text>
+      <Label>
+        Time left:{' '}
+        <Text style={this.getTimeStyle()}>
+          00:{this.getSecs()}
         </Text>
-      </View>
+      </Label>
     );
   }
 }
 
-const styles = StyleSheet.create({
-  text: {
-    color: '#fff',
-    fontSize: 15,
-    fontWeight: 'bold',
-  },
-});
+const Label = styled.Text`
+  color: #fff;
+  font-size: 15px;
+  font-weight: bold;
+`;
 
 Clock.propTypes = {
   secs: PropTypes.number.isRequired,

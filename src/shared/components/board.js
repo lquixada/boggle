@@ -8,17 +8,15 @@ const Board = ({matrix}) => (
     <Table>
       <tbody>
         {matrix.map((letters, i) =>
-          <Row key={i} letters={letters} />)}
+          <tr key={i}>
+            {letters.map((letter, i) =>
+              <Td key={i}>{letter}</Td>
+            )}
+          </tr>
+        )}
       </tbody>
     </Table>
   </Wrapper>
-);
-
-const Row = ({letters}) => (
-  <tr>
-    {letters.map((letter, i) =>
-      <Cell key={i}>{letter}</Cell>)}
-  </tr>
 );
 
 const Wrapper = styled.div`
@@ -39,7 +37,7 @@ const Table = styled.table`
   width: 100%;
 `;
 
-const Cell = styled.td`
+const Td = styled.td`
   width: 9rem;
   height: 9rem;
   color: #333;

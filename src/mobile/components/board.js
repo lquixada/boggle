@@ -1,47 +1,48 @@
 import React from 'react';
-import {StyleSheet, View, Text} from 'react-native';
+import styled from 'styled-components';
 
 class Board extends React.Component {
   render() {
     return (
-      <View style={styles.table}>
+      <Table>
         {this.props.matrix.map((letters, i) =>
-          <View key={i} style={styles.row}>
+          <Tr key={i}>
             {letters.map((letter, i) =>
-              <View key={i} style={styles.cell}>
-                <Text style={styles.letter}>{letter}</Text>
-              </View>
+              <Td key={i}>
+                <Letter>{letter}</Letter>
+              </Td>
             )}
-          </View>
+          </Tr>
         )}
-      </View>
+      </Table>
     );
   }
 }
 
-const styles = StyleSheet.create({
-  table: {
-    flex: 1,
-    marginTop: 10,
-  },
-  row: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignContent: 'space-between',
-  },
-  cell: {
-    marginBottom: 5,
-    width: 80,
-    height: 85,
-    backgroundColor: '#fff',
-    borderRadius: 4,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  letter: {
-    color: '#333',
-    fontSize: 40,
-  }
-});
+const Table = styled.View`
+  flex: 1;
+  margin-top: 10;
+`;
+
+const Tr = styled.View`
+  flex-direction: row;
+  justify-content: space-between;
+  align-content: space-between;
+`;
+
+const Td = styled.View`
+  margin-bottom: 5;
+  width: 80;
+  height: 85;
+  background-color: #fff;
+  border-radius: 4;
+  align-items: center;
+  justify-content: center;
+`;
+
+const Letter = styled.Text`
+  color: #333;
+  font-size: 40;
+`;
 
 export default Board;

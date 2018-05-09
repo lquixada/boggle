@@ -1,33 +1,31 @@
 import React from 'react';
-import {StyleSheet, Text, TouchableHighlight} from 'react-native';
+import styled from 'styled-components';
 
 class Button extends React.Component {
   render() {
     return (
-      <TouchableHighlight
+      <ButtonInput
         onPress={this.props.onClick}
-        style={styles.wrapper}
         underlayColor="#286f23"
       >
-        <Text style={styles.text}>{this.props.text}</Text>
-      </TouchableHighlight>
+        <Label>{this.props.text}</Label>
+      </ButtonInput>
     );
   }
 }
 
-const styles = StyleSheet.create({
-  wrapper: {
-    width: 100,
-    height: 44,
-    padding: 10,
-    alignItems: 'center',
-    borderRadius: 5,
-    backgroundColor: '#6c6',
-  },
-  text: {
-    color: '#fff',
-    fontSize: 20,
-  },
-});
+const ButtonInput = styled.TouchableHighlight`
+  width: 100px;
+  height: 44px;
+  padding: 10px;
+  align-items: center;
+  border-radius: 5px;
+  background-color: #6c6;
+`;
+
+const Label = styled.Text`
+  color: #fff;
+  font-size: 20px;
+`;
 
 export default Button;

@@ -1,24 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {StyleSheet, View, Text} from 'react-native';
+import styled from 'styled-components';
 
 class Score extends React.Component {
   render() {
     return (
-      <View>
-        <Text style={styles.text}>Score: {this.props.counter}</Text>
-      </View>
+      <Label>Score: {this.props.counter}</Label>
     );
   }
 }
 
-const styles = StyleSheet.create({
-  text: {
-    color: '#fff',
-    fontSize: 15,
-    fontWeight: 'bold',
-  },
-});
+const Label = styled.Text`
+  color: #fff;
+  font-size: 15px;
+  font-weight: bold;
+`;
 
 Score.propTypes = {
   counter: PropTypes.number.isRequired,
