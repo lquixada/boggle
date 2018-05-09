@@ -1,5 +1,16 @@
+sudo: required
 language: node_js
+services:
+- docker
 script:
 - npm run -s test:lint
 - npm run -s test:jest:cov
 - npm run -s test:codecov
+before_deploy:
+- npm run -s docker:build
+deploy:
+  provider: script
+  skip_cleanup: true
+  script: bash tasks/deploy
+  on:
+    tags: true
