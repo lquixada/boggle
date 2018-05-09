@@ -4,7 +4,7 @@ services:
 - docker
 script:
 - npm run -s test:lint
-- npm run -s test:jest:cov
+- npm run -s test:jest
 - npm run -s test:codecov
 before_deploy:
 - npm run -s docker:build

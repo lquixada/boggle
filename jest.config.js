@@ -5,6 +5,7 @@ module.exports = {
     '<rootDir>/src/**/*.spec.js'
   ],
   'setupTestFrameworkScriptFile': '<rootDir>/src/__tests__/setup.js',
+  'collectCoverage': true,
   'coverageDirectory': '<rootDir>/.reports/coverage',
   'coverageThreshold': {
     'global': {

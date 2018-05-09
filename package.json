@@ -33,7 +33,6 @@
     "start": "npm run -s web:start",
     "test": "npm run -s test:jest && npm run -s test:lint",
     "test:jest": "jest",
-    "test:jest:cov": "jest --coverage",
     "test:lint": "eslint --ignore-path .gitignore .",
     "test:codecov": "codecov",
     "web:build": "PLATFORM=web npm run -s build",
