@@ -1,15 +1,15 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import Board from '../../shared/containers/board';
-import Button from '../../shared/containers/button';
-import Clock from '../../shared/containers/clock';
-import Input from '../../shared/containers/input';
-import Score from '../../shared/containers/score';
+import Board from '../../containers/board';
+import Button from '../../containers/button';
+import Clock from '../../containers/clock';
+import Input from '../../containers/input';
+import Score from '../../containers/score';
 
-import {Copyright, Social, Title} from '../components';
+import {Copyright, Social, Title} from '..';
 
-class Game extends React.Component {
+export class Game extends React.Component {
   render() {
     return (
       <Grid>
@@ -80,5 +80,3 @@ const Footer = styled.View`
   padding: 20px;
   background-color: #565656;
 `;
-
-export default Game;

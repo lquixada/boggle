@@ -5,9 +5,9 @@ export class Social extends React.Component {
   render() {
     return (
       <List>
-        <Image source={require('../../public/images/logo-github.png')} />
-        <Image source={require('../../public/images/logo-facebook.png')} />
-        <Image source={require('../../public/images/logo-twitter.png')} />
+        <Image source={require('../../../public/images/logo-github.png')} />
+        <Image source={require('../../../public/images/logo-facebook.png')} />
+        <Image source={require('../../../public/images/logo-twitter.png')} />
       </List>
     );
   }

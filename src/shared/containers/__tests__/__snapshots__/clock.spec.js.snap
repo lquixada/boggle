@@ -11,13 +11,13 @@ exports[`<ClockContainer /> decrements when the game starts 1`] = `
   >
     <styled.div>
       <div
-        className="sc-gzVnrw eUkDfB"
+        className="sc-gqjmRU dPXKxW"
       >
         <styled.svg
           viewBox="0 0 100 100"
         >
           <svg
-            className="sc-dnqmqq hWCDIr"
+            className="sc-jTzLTM jFWEQC"
             viewBox="0 0 100 100"
           >
             <styled.circle
@@ -27,7 +27,7 @@ exports[`<ClockContainer /> decrements when the game starts 1`] = `
               r="40"
             >
               <circle
-                className="clock-gray sc-htoDjs htSUUL"
+                className="clock-gray sc-VigVT iMLRaJ"
                 cx="50%"
                 cy="50%"
                 r="40"
@@ -47,7 +47,7 @@ exports[`<ClockContainer /> decrements when the game starts 1`] = `
               transform="rotate(-90 50 50)"
             >
               <circle
-                className="clock-green sc-htoDjs htSUUL"
+                className="clock-green sc-VigVT iMLRaJ"
                 cx="50%"
                 cy="50%"
                 r="40"
@@ -66,7 +66,7 @@ exports[`<ClockContainer /> decrements when the game starts 1`] = `
               y="60%"
             >
               <text
-                className="sc-iwsKbI cFoErt"
+                className="sc-fjdhpX kwMnmn"
                 textAnchor="middle"
                 x="50%"
                 y="60%"
@@ -78,7 +78,7 @@ exports[`<ClockContainer /> decrements when the game starts 1`] = `
         </styled.svg>
         <styled.span>
           <span
-            className="sc-gZMcBi hJdxgJ"
+            className="sc-jzJRlG bfEpLC"
           >
             Time left: 00:
             59
@@ -101,13 +101,13 @@ exports[`<ClockContainer /> decrements when the game starts 2`] = `
   >
     <styled.div>
       <div
-        className="sc-gzVnrw eUkDfB"
+        className="sc-gqjmRU dPXKxW"
       >
         <styled.svg
           viewBox="0 0 100 100"
         >
           <svg
-            className="sc-dnqmqq hWCDIr"
+            className="sc-jTzLTM jFWEQC"
             viewBox="0 0 100 100"
           >
             <styled.circle
@@ -117,7 +117,7 @@ exports[`<ClockContainer /> decrements when the game starts 2`] = `
               r="40"
             >
               <circle
-                className="clock-gray sc-htoDjs htSUUL"
+                className="clock-gray sc-VigVT iMLRaJ"
                 cx="50%"
                 cy="50%"
                 r="40"
@@ -137,7 +137,7 @@ exports[`<ClockContainer /> decrements when the game starts 2`] = `
               transform="rotate(-90 50 50)"
             >
               <circle
-                className="clock-green sc-htoDjs htSUUL"
+                className="clock-green sc-VigVT iMLRaJ"
                 cx="50%"
                 cy="50%"
                 r="40"
@@ -156,7 +156,7 @@ exports[`<ClockContainer /> decrements when the game starts 2`] = `
               y="60%"
             >
               <text
-                className="sc-iwsKbI cFoErt"
+                className="sc-fjdhpX kwMnmn"
                 textAnchor="middle"
                 x="50%"
                 y="60%"
@@ -168,7 +168,7 @@ exports[`<ClockContainer /> decrements when the game starts 2`] = `
         </styled.svg>
         <styled.span>
           <span
-            className="sc-gZMcBi hJdxgJ"
+            className="sc-jzJRlG bfEpLC"
           >
             Time left: 00:
             58
@@ -191,13 +191,13 @@ exports[`<ClockContainer /> decrements when the game starts 3`] = `
   >
     <styled.div>
       <div
-        className="sc-gzVnrw eUkDfB"
+        className="sc-gqjmRU dPXKxW"
       >
         <styled.svg
           viewBox="0 0 100 100"
         >
           <svg
-            className="sc-dnqmqq hWCDIr"
+            className="sc-jTzLTM jFWEQC"
             viewBox="0 0 100 100"
           >
             <styled.circle
@@ -207,7 +207,7 @@ exports[`<ClockContainer /> decrements when the game starts 3`] = `
               r="40"
             >
               <circle
-                className="clock-gray sc-htoDjs htSUUL"
+                className="clock-gray sc-VigVT iMLRaJ"
                 cx="50%"
                 cy="50%"
                 r="40"
@@ -227,7 +227,7 @@ exports[`<ClockContainer /> decrements when the game starts 3`] = `
               transform="rotate(-90 50 50)"
             >
               <circle
-                className="clock-green sc-htoDjs htSUUL"
+                className="clock-green sc-VigVT iMLRaJ"
                 cx="50%"
                 cy="50%"
                 r="40"
@@ -246,7 +246,7 @@ exports[`<ClockContainer /> decrements when the game starts 3`] = `
               y="60%"
             >
               <text
-                className="sc-iwsKbI cFoErt"
+                className="sc-fjdhpX kwMnmn"
                 textAnchor="middle"
                 x="50%"
                 y="60%"
@@ -258,7 +258,7 @@ exports[`<ClockContainer /> decrements when the game starts 3`] = `
         </styled.svg>
         <styled.span>
           <span
-            className="sc-gZMcBi hJdxgJ"
+            className="sc-jzJRlG bfEpLC"
           >
             Time left: 00:
             57
@@ -280,13 +280,13 @@ exports[`<ClockContainer /> displays 60 by default 1`] = `
   >
     <styled.div>
       <div
-        className="sc-gzVnrw eUkDfB"
+        className="sc-gqjmRU dPXKxW"
       >
         <styled.svg
           viewBox="0 0 100 100"
         >
           <svg
-            className="sc-dnqmqq hWCDIr"
+            className="sc-jTzLTM jFWEQC"
             viewBox="0 0 100 100"
           >
             <styled.circle
@@ -296,7 +296,7 @@ exports[`<ClockContainer /> displays 60 by default 1`] = `
               r="40"
             >
               <circle
-                className="clock-gray sc-htoDjs htSUUL"
+                className="clock-gray sc-VigVT iMLRaJ"
                 cx="50%"
                 cy="50%"
                 r="40"
@@ -316,7 +316,7 @@ exports[`<ClockContainer /> displays 60 by default 1`] = `
               transform="rotate(-90 50 50)"
             >
               <circle
-                className="clock-green sc-htoDjs htSUUL"
+                className="clock-green sc-VigVT iMLRaJ"
                 cx="50%"
                 cy="50%"
                 r="40"
@@ -335,7 +335,7 @@ exports[`<ClockContainer /> displays 60 by default 1`] = `
               y="60%"
             >
               <text
-                className="sc-iwsKbI cFoErt"
+                className="sc-fjdhpX kwMnmn"
                 textAnchor="middle"
                 x="50%"
                 y="60%"
@@ -347,7 +347,7 @@ exports[`<ClockContainer /> displays 60 by default 1`] = `
         </styled.svg>
         <styled.span>
           <span
-            className="sc-gZMcBi hJdxgJ"
+            className="sc-jzJRlG bfEpLC"
           >
             Time left: 00:
             60
@@ -376,13 +376,13 @@ exports[`<ClockContainer /> displays 60 when the game stops 1`] = `
   >
     <styled.div>
       <div
-        className="sc-gzVnrw eUkDfB"
+        className="sc-gqjmRU dPXKxW"
       >
         <styled.svg
           viewBox="0 0 100 100"
         >
           <svg
-            className="sc-dnqmqq hWCDIr"
+            className="sc-jTzLTM jFWEQC"
             viewBox="0 0 100 100"
           >
             <styled.circle
@@ -392,7 +392,7 @@ exports[`<ClockContainer /> displays 60 when the game stops 1`] = `
               r="40"
             >
               <circle
-                className="clock-gray sc-htoDjs htSUUL"
+                className="clock-gray sc-VigVT iMLRaJ"
                 cx="50%"
                 cy="50%"
                 r="40"
@@ -412,7 +412,7 @@ exports[`<ClockContainer /> displays 60 when the game stops 1`] = `
               transform="rotate(-90 50 50)"
             >
               <circle
-                className="clock-green sc-htoDjs htSUUL"
+                className="clock-green sc-VigVT iMLRaJ"
                 cx="50%"
                 cy="50%"
                 r="40"
@@ -431,7 +431,7 @@ exports[`<ClockContainer /> displays 60 when the game stops 1`] = `
               y="60%"
             >
               <text
-                className="sc-iwsKbI cFoErt"
+                className="sc-fjdhpX kwMnmn"
                 textAnchor="middle"
                 x="50%"
                 y="60%"
@@ -443,7 +443,7 @@ exports[`<ClockContainer /> displays 60 when the game stops 1`] = `
         </styled.svg>
         <styled.span>
           <span
-            className="sc-gZMcBi hJdxgJ"
+            className="sc-jzJRlG bfEpLC"
           >
             Time left: 00:
             00
@@ -466,13 +466,13 @@ exports[`<ClockContainer /> stops when time have been elapsed 1`] = `
   >
     <styled.div>
       <div
-        className="sc-gzVnrw eUkDfB"
+        className="sc-gqjmRU dPXKxW"
       >
         <styled.svg
           viewBox="0 0 100 100"
         >
           <svg
-            className="sc-dnqmqq hWCDIr"
+            className="sc-jTzLTM jFWEQC"
             viewBox="0 0 100 100"
           >
             <styled.circle
@@ -482,7 +482,7 @@ exports[`<ClockContainer /> stops when time have been elapsed 1`] = `
               r="40"
             >
               <circle
-                className="clock-gray sc-htoDjs htSUUL"
+                className="clock-gray sc-VigVT iMLRaJ"
                 cx="50%"
                 cy="50%"
                 r="40"
@@ -502,7 +502,7 @@ exports[`<ClockContainer /> stops when time have been elapsed 1`] = `
               transform="rotate(-90 50 50)"
             >
               <circle
-                className="clock-green sc-htoDjs htSUUL"
+                className="clock-green sc-VigVT iMLRaJ"
                 cx="50%"
                 cy="50%"
                 r="40"
@@ -521,7 +521,7 @@ exports[`<ClockContainer /> stops when time have been elapsed 1`] = `
               y="60%"
             >
               <text
-                className="sc-iwsKbI cFoErt"
+                className="sc-fjdhpX kwMnmn"
                 textAnchor="middle"
                 x="50%"
                 y="60%"
@@ -533,7 +533,7 @@ exports[`<ClockContainer /> stops when time have been elapsed 1`] = `
         </styled.svg>
         <styled.span>
           <span
-            className="sc-gZMcBi hJdxgJ"
+            className="sc-jzJRlG bfEpLC"
           >
             Time left: 00:
             60

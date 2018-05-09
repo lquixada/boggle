@@ -1,19 +1,19 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import Input from '../containers/input';
-import Board from '../containers/board';
-import Button from '../containers/button';
-import Clock from '../containers/clock';
-import Score from '../containers/score';
+import Input from '../../containers/input';
+import Board from '../../containers/board';
+import Button from '../../containers/button';
+import Clock from '../../containers/clock';
+import Score from '../../containers/score';
 
 import {
   Copyright, Ribbon, Social, Title, Main, Container, Header, HeaderContainer, Section, SectionContainer, Footer
-} from '.';
+} from '..';
 
-import {flex} from '../helpers';
+import {flex} from '../../helpers';
 
-const Game = () => (
+export const Game = () => (
   <Main>
     <Ribbon />
 
@@ -60,5 +60,3 @@ const Aside = styled.aside`
     height: auto;
   }
 `;
-
-export default Game;

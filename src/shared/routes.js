@@ -1,5 +1,4 @@
-import About from './components/about';
-import Game from './components/game';
+import {Game, About} from './components';
 
 export default [
   {

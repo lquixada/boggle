@@ -68,7 +68,8 @@ export class InputContainer extends React.Component {
         started={this.props.started}
         onChange={this.handleChange}
         onEnter={this.handleEnter}
-        onSubmit={this.handleSubmit} />
+        onSubmit={this.handleSubmit}
+      />
     );
   }
 }

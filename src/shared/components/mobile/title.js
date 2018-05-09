@@ -15,5 +15,5 @@ const Label = styled.Text`
   font-weight: 900;
   letter-spacing: -1;
   text-align: center;
-  box-shadow: 2px 2px 5px #000;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, .5);
 `;

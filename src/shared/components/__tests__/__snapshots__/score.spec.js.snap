@@ -13,11 +13,11 @@ exports[`<Score /> adds a valid attempt 1`] = `
 >
   <styled.div>
     <div
-      className="sc-ckVGcZ deNXbv"
+      className="sc-kkGfuU iBheBa"
     >
       <styled.header>
         <header
-          className="sc-jKJlTe llqPuH"
+          className="sc-iAyFgw ezbAcA"
         >
           <h2>
             Score: 
@@ -26,7 +26,7 @@ exports[`<Score /> adds a valid attempt 1`] = `
       </styled.header>
       <styled.section>
         <section
-          className="sc-eNQAEJ dpyPWj"
+          className="sc-hSdWYo czwlDt"
         >
           <Attempts
             attempts={
@@ -40,7 +40,7 @@ exports[`<Score /> adds a valid attempt 1`] = `
           >
             <styled.table>
               <table
-                className="sc-bdVaJa hgWqJP"
+                className="sc-EHOje iwJDRz"
               >
                 <tbody>
                   <tr
@@ -48,14 +48,14 @@ exports[`<Score /> adds a valid attempt 1`] = `
                   >
                     <styled.td>
                       <td
-                        className="sc-bwzfXH bveNbs"
+                        className="sc-bZQynM gAUXow"
                       >
                         someword
                       </td>
                     </styled.td>
                     <styled.td>
                       <td
-                        className="sc-bwzfXH bveNbs"
+                        className="sc-bZQynM gAUXow"
                       >
                         8
                       </td>
@@ -85,11 +85,11 @@ exports[`<Score /> adds an invalid attempt 1`] = `
 >
   <styled.div>
     <div
-      className="sc-ckVGcZ deNXbv"
+      className="sc-kkGfuU iBheBa"
     >
       <styled.header>
         <header
-          className="sc-jKJlTe llqPuH"
+          className="sc-iAyFgw ezbAcA"
         >
           <h2>
             Score: 
@@ -98,7 +98,7 @@ exports[`<Score /> adds an invalid attempt 1`] = `
       </styled.header>
       <styled.section>
         <section
-          className="sc-eNQAEJ dpyPWj"
+          className="sc-hSdWYo czwlDt"
         >
           <Attempts
             attempts={
@@ -112,7 +112,7 @@ exports[`<Score /> adds an invalid attempt 1`] = `
           >
             <styled.table>
               <table
-                className="sc-bdVaJa hgWqJP"
+                className="sc-EHOje iwJDRz"
               >
                 <tbody>
                   <tr
@@ -120,14 +120,14 @@ exports[`<Score /> adds an invalid attempt 1`] = `
                   >
                     <styled.td>
                       <td
-                        className="sc-bwzfXH bveNbs"
+                        className="sc-bZQynM gAUXow"
                       >
                         someword
                       </td>
                     </styled.td>
                     <styled.td>
                       <td
-                        className="sc-bwzfXH bveNbs"
+                        className="sc-bZQynM gAUXow"
                       >
                         ✘
                       </td>
@@ -151,11 +151,11 @@ exports[`<Score /> shows the score 1`] = `
 >
   <styled.div>
     <div
-      className="sc-ckVGcZ deNXbv"
+      className="sc-kkGfuU iBheBa"
     >
       <styled.header>
         <header
-          className="sc-jKJlTe llqPuH"
+          className="sc-iAyFgw ezbAcA"
         >
           <h2>
             Score: 
@@ -165,14 +165,14 @@ exports[`<Score /> shows the score 1`] = `
       </styled.header>
       <styled.section>
         <section
-          className="sc-eNQAEJ dpyPWj"
+          className="sc-hSdWYo czwlDt"
         >
           <Attempts
             attempts={Immutable.List []}
           >
             <styled.table>
               <table
-                className="sc-bdVaJa hgWqJP"
+                className="sc-EHOje iwJDRz"
               >
                 <tbody>
                   <undefined />

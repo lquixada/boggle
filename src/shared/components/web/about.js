@@ -3,11 +3,11 @@ import styled from 'styled-components';
 
 import {
   Main, Container, Header, HeaderContainer, Section, SectionContainer, Footer, Copyright, Ribbon, Social, Title
-} from '.';
+} from '..';
 
-import {box} from '../helpers';
+import {box} from '../../helpers';
 
-const About = () => (
+export const About = () => (
   <Main>
     <Ribbon />
 
@@ -80,5 +80,3 @@ const Image = styled.img`
   width: 10rem;
   height: 10rem;
 `;
-
-export default About;

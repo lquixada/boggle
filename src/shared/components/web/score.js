@@ -2,18 +2,22 @@ import React from 'react';
 import styled from 'styled-components';
 
 import {Attempts} from '.';
-import {box, flex} from '../helpers';
+import {box, flex} from '../../helpers';
 
-export const Score = ({counter, attempts}) => (
-  <Wrapper>
-    <Header>
-      <h2>Score: {counter}</h2>
-    </Header>
-    <Section>
-      <Attempts attempts={attempts} />
-    </Section>
-  </Wrapper>
-);
+export class Score extends React.Component {
+  render() {
+    return (
+      <Wrapper>
+        <Header>
+          <h2>Score: {this.props.counter}</h2>
+        </Header>
+        <Section>
+          <Attempts attempts={this.props.attempts} />
+        </Section>
+      </Wrapper>
+    );
+  }
+}
 
 const Wrapper = styled.div`
   ${flex.display()}
