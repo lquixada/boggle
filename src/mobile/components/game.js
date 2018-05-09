@@ -1,11 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import Board from '../containers/board';
-import Button from '../containers/button';
-import Clock from '../containers/clock';
-import Input from '../containers/input';
-import Score from '../containers/score';
+import Board from '../../shared/containers/board';
+import Button from '../../shared/containers/button';
+import Clock from '../../shared/containers/clock';
+import Input from '../../shared/containers/input';
+import Score from '../../shared/containers/score';
 
 import {Copyright, Social, Title} from '../components';
 

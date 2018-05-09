@@ -7,6 +7,7 @@ exports[`<InputContainer /> is disabled by default 1`] = `
   <Input
     onChange={[Function]}
     onEnter={[Function]}
+    onSubmit={[Function]}
     started={false}
     value=""
   >
@@ -46,6 +47,7 @@ exports[`<InputContainer /> is disabled when the game has stopped 1`] = `
   <Input
     onChange={[Function]}
     onEnter={[Function]}
+    onSubmit={[Function]}
     started={false}
     value=""
   >
@@ -85,6 +87,7 @@ exports[`<InputContainer /> is enabled when the game has started 1`] = `
   <Input
     onChange={[Function]}
     onEnter={[Function]}
+    onSubmit={[Function]}
     started={true}
     value=""
   >

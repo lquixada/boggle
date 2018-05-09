@@ -2,7 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 
 import {Input} from '../components';
-import * as actions from '../actions';
+import * as actions from '../../shared/actions';
 
 export class InputContainer extends React.Component {
   constructor(props) {
@@ -14,6 +14,7 @@ export class InputContainer extends React.Component {
 
     this.handleChange = this.handleChange.bind(this);
     this.handleEnter = this.handleEnter.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   componentWillReceiveProps(nextProps) {
@@ -22,8 +23,9 @@ export class InputContainer extends React.Component {
     }
   }
 
-  handleChange({target}) {
-    this.setValue(target.value);
+  handleChange(evt) {
+    const value = evt.target? evt.target.value : evt;
+    this.setValue(value);
   }
 
   handleEnter(evt) {
@@ -32,9 +34,23 @@ export class InputContainer extends React.Component {
     }
 
     if (evt.which === 13) {
-      this.props.addCheckedAttempt(this.state.value);
-      this.reset();
-      evt.target.focus();
+      this.handleSubmit(evt);
+    }
+  }
+
+  handleSubmit(evt) {
+    if (this.state.value.length < this.state.minLength) {
+      return;
+    }
+
+    this.props.addCheckedAttempt(this.state.value);
+    this.reset();
+    this.focus(evt.target);
+  }
+
+  focus(element) {
+    if (element && element.focus) {
+      element.focus();
     }
   }
 
@@ -51,7 +67,8 @@ export class InputContainer extends React.Component {
       <Input value={this.state.value}
         started={this.props.started}
         onChange={this.handleChange}
-        onEnter={this.handleEnter} />
+        onEnter={this.handleEnter}
+        onSubmit={this.handleSubmit} />
     );
   }
 }
