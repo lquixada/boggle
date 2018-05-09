@@ -7,7 +7,33 @@ Boggle JS<br>
 
 [![Greenkeeper badge](https://badges.greenkeeper.io/lquixada/boggle.svg)](https://greenkeeper.io/)
 
-A web-based implementation of the Boggle game for study purposes. More info on https://en.wikipedia.org/wiki/Boggle.
+A multi-platform implementation of the Boggle game (only for study purposes). More info on https://en.wikipedia.org/wiki/Boggle.
+
+* * *
+
+## Table of Contents
+
+-   [Features](#features)
+-   [Installation](#installation)
+-   [Getting Started](#getting-started)
+-   [Pages](#pages)
+-   [Platforms](#platforms)
+-   [Architecture](#architecture)
+-   [Stack](#stack)
+-   [Other Projects](#other-projects)
+-   [License](#license)
+-   [Author](#author)
+
+* * *
+
+## Features
+
+* Cross-browser (latest Firefox/Chrome and IE10)
+* Cross-platform (works on server, browsers, mobiles and desktops)
+* Responsive layout (from mobile to desktop)
+* Secure connection with HTTPS
+* Custom domain: www.bogglejs.com
+* Cache management with Service Worker (still ongoing)
 
 
 ## Installation
@@ -15,16 +41,16 @@ A web-based implementation of the Boggle game for study purposes. More info on h
 ```
 $ git clone https://github.com/lquixada/boggle.git
 $ cd boggle
-$ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.8/install.sh | bash
+$ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
 $ nvm install
 $ nvm use
-$ npm install
+$ yarn # or npm install
 ```
 
 
-## Development
+## Getting Started
 
-To run the app in development mode, run:
+The best way to start with Boggle is with its web version. In order to run the app in development mode, run:
 
 ```
 $ yarn dev
@@ -40,9 +66,6 @@ To run all tests and lints, run:
 $ yarn test
 ```
 
-
-## Production
-
 The task used in production to run the app is:
 
 ```
@@ -52,42 +75,51 @@ $ yarn start
 Boggle will be ready on http://localhost:3000/.
 
 
-## iOS
+## Pages
+
+* **/**: that's where the game is.
+* **/about**: a little about my professional thinking (it can be also accessed through the footer link)
+
+
+## Platforms
+
+### Web
+
+* **yarn web:build**: builds files and assets for server and client
+* **yarn web:dev**: starts a webserver aimed for development (alias `yarn dev`)
+* **yarn web:start**: starts a production ready webserver (alias `yarn start`)
+
+To get started, run `yarn web:dev` or just `yarn dev`.
+
+
+### iOS
 
 * **yarn ios:dev**: starts the bundler server
 * **yarn ios:eject**: re-create the iOS and Android folders and native code
 * **yarn ios:build**: builds iOS app and starts it on iOS simulator
 
+To get started, run `yarn ios:build`.
 
-## Android
+> You'll have to get your system properly configured in order for this to work. Go to the React Native's [Getting Started page](https://facebook.github.io/react-native/docs/getting-started.html), click on "Building Projects with Native Code", select your "Development OS", then "iOS" for "Target OS" and follow the instructions in the "Installing dependencies" section.
+
+
+### Android
 
 * **yarn android:dev**: starts the bundler server
 * **yarn android:eject**: re-create the iOS and Android folders and native code
 * **yarn android:build**: builds Android app and starts it on iOS simulator
 
+To get started, run `yarn android:build`.
 
-## Docker
-
-* **yarn docker:build**: builds a new image for boggle
-* **yarn docker:pull**: downloads boggle's image
-* **yarn docker:push**: updates boggle's image in the docker hub
-* **yarn docker:start**: runs a container with the app
+> You'll have to get your system properly configured in order for this to work. Go to the React Native's [Getting Started page](https://facebook.github.io/react-native/docs/getting-started.html), click on "Building Projects with Native Code", select your "Development OS", then "Android" for "Target OS" and follow the instructions in the "Installing dependencies" section.
 
 
-## Features
+### Desktop
 
-* Cross-browser (latest Firefox/Chrome and IE10)
-* Responsive layout (from mobile to desktop)
-* Universal, renders on server, browsers, mobiles and desktops
-* Secure connection with HTTPS
-* Custom domain: www.bogglejs.com
-* Cache management with Service Worker (still ongoing)
+* **yarn electron:build**: builds a new binary for the current operating system
+* **yarn electron:start**: starts an electron app for development purposes
 
-
-## Pages
-
-* **/**: that's where the game is.
-* **/about**: a little about my professional thinking (it can be also accessed through the footer link)
+To get started, run `yarn electron:start`.
 
 
 ## Architecture
@@ -103,7 +135,25 @@ Boggle will be ready on http://localhost:3000/.
 * **Lint**: eslint
 * **Benchmark**: clinic
 * **Utils**: npm, webpack, babel
+* **Mobile**: react-native
+* **Desktop**: electron
 * **CI**: [TravisCI](https://travis-ci.org/lquixada/boggle)
-* **Hosting**: [Heroku](https://bogglejs.herokuapp.com/)
+* **Infra**: [Heroku](https://bogglejs.herokuapp.com/), docker
 * **SSL**: [Let's Encrypt](https://letsencrypt.org/)
 
+
+## Other projects
+
+This project relies on my other project called [cross-fetch](https://github.com/lquixada/cross-fetch), a universal WHATWG-compliant Fetch api for multiple platforms.
+
+
+## License
+
+boggle is licensed under the [MIT license](https://github.com/lquixada/boggle/blob/master/LICENSE) © [Leonardo Quixadá](https://twitter.com/lquixada/)
+
+
+## Author
+
+|[![@lquixada](https://avatars0.githubusercontent.com/u/195494?v=4&s=96)](https://github.com/lquixada)|
+|:---:|
+|[@lquixada](http://www.github.com/lquixada)|
