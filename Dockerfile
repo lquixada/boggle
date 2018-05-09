@@ -10,7 +10,11 @@ COPY package*.json ./
 
 RUN npm install --production
 
-COPY . .
+COPY web ./web
+
+COPY .process.yml .
+
+COPY logs ./logs
 
 EXPOSE 3000
 
