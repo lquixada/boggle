@@ -4,7 +4,7 @@ exports[`<InputContainer /> is disabled by default 1`] = `
 <InputContainer
   started={false}
 >
-  <InputArea
+  <Input
     onChange={[Function]}
     onEnter={[Function]}
     started={false}
@@ -12,7 +12,7 @@ exports[`<InputContainer /> is disabled by default 1`] = `
   >
     <styled.div>
       <div
-        className="sc-bdVaJa gwEsTk"
+        className="sc-kpOJdX eWIdmE"
       >
         <styled.input
           disabled={true}
@@ -24,7 +24,7 @@ exports[`<InputContainer /> is disabled by default 1`] = `
           value=""
         >
           <input
-            className="sc-bwzfXH eptTMA"
+            className="sc-dxgOiQ hpcKVB"
             disabled={true}
             onChange={[Function]}
             onKeyUp={[Function]}
@@ -35,7 +35,7 @@ exports[`<InputContainer /> is disabled by default 1`] = `
         </styled.input>
       </div>
     </styled.div>
-  </InputArea>
+  </Input>
 </InputContainer>
 `;
 
@@ -43,7 +43,7 @@ exports[`<InputContainer /> is disabled when the game has stopped 1`] = `
 <InputContainer
   started={false}
 >
-  <InputArea
+  <Input
     onChange={[Function]}
     onEnter={[Function]}
     started={false}
@@ -51,7 +51,7 @@ exports[`<InputContainer /> is disabled when the game has stopped 1`] = `
   >
     <styled.div>
       <div
-        className="sc-bdVaJa gwEsTk"
+        className="sc-kpOJdX eWIdmE"
       >
         <styled.input
           disabled={true}
@@ -63,7 +63,7 @@ exports[`<InputContainer /> is disabled when the game has stopped 1`] = `
           value=""
         >
           <input
-            className="sc-bwzfXH eptTMA"
+            className="sc-dxgOiQ hpcKVB"
             disabled={true}
             onChange={[Function]}
             onKeyUp={[Function]}
@@ -74,7 +74,7 @@ exports[`<InputContainer /> is disabled when the game has stopped 1`] = `
         </styled.input>
       </div>
     </styled.div>
-  </InputArea>
+  </Input>
 </InputContainer>
 `;
 
@@ -82,7 +82,7 @@ exports[`<InputContainer /> is enabled when the game has started 1`] = `
 <InputContainer
   started={true}
 >
-  <InputArea
+  <Input
     onChange={[Function]}
     onEnter={[Function]}
     started={true}
@@ -90,7 +90,7 @@ exports[`<InputContainer /> is enabled when the game has started 1`] = `
   >
     <styled.div>
       <div
-        className="sc-bdVaJa gwEsTk"
+        className="sc-kpOJdX eWIdmE"
       >
         <styled.input
           disabled={false}
@@ -102,7 +102,7 @@ exports[`<InputContainer /> is enabled when the game has started 1`] = `
           value=""
         >
           <input
-            className="sc-bwzfXH eptTMA"
+            className="sc-dxgOiQ hpcKVB"
             disabled={false}
             onChange={[Function]}
             onKeyUp={[Function]}
@@ -113,6 +113,6 @@ exports[`<InputContainer /> is enabled when the game has started 1`] = `
         </styled.input>
       </div>
     </styled.div>
-  </InputArea>
+  </Input>
 </InputContainer>
 `;

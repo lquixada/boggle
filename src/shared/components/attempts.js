@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Attempts = ({attempts}) => (
+export const Attempts = ({attempts}) => (
   <Table>
     <tbody>
       {attempts.map((attempt, i) =>
@@ -33,5 +33,3 @@ const Td = styled.td`
     text-align: right;
   }
 `;
-
-export default Attempts;

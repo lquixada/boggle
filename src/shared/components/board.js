@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 import {flex, box} from '../helpers';
 
-const Board = ({matrix}) => (
+export const Board = ({matrix}) => (
   <Wrapper>
     <Table>
       <tbody>
@@ -47,5 +47,3 @@ const Td = styled.td`
   text-transform: uppercase;
   border-radius: .4rem;
 `;
-
-export default Board;

@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 import {box, flex} from '../helpers';
 
-class InputArea extends React.Component {
+export class Input extends React.Component {
   componentDidUpdate() {
     if (this.props.started) {
       this.focus();
@@ -18,7 +18,7 @@ class InputArea extends React.Component {
   render() {
     return (
       <Wrapper>
-        <Input type="text"
+        <TextInput type="text"
           innerRef={(word) => this.word = word}
           value={this.props.value}
           onChange={(evt) => this.props.onChange(evt)}
@@ -41,7 +41,7 @@ const Wrapper = styled.div`
   }
 `;
 
-const Input = styled.input`
+const TextInput = styled.input`
   ${box()}
   width: 100%;
   padding: 1rem;
@@ -54,11 +54,9 @@ const Input = styled.input`
   }
 `;
 
-InputArea.propTypes = {
+Input.propTypes = {
   onChange: PropTypes.func.isRequired,
   onEnter: PropTypes.func.isRequired,
   started: PropTypes.bool.isRequired,
   value: PropTypes.string.isRequired
 };
-
-export default InputArea;

@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 
-import Clock from '../components/clock';
+import {Clock} from '../components';
 import * as actions from '../../shared/actions';
 import {Timer} from '../../shared/helpers';
 

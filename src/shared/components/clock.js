@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 import {flex} from '../helpers';
 
-const Clock = ({secs, total}) => {
+export const Clock = ({secs, total}) => {
   const strokeDasharray = 251;
   const strokeDashoffset = ((secs / total) * strokeDasharray);
   const style = {strokeDashoffset, strokeDasharray};
@@ -77,5 +77,3 @@ Clock.propTypes = {
   secs: PropTypes.number.isRequired,
   total: PropTypes.number.isRequired
 };
-
-export default Clock;

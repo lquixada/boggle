@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-class Input extends React.Component {
+export class Input extends React.Component {
   getPlaceholder() {
     return !this.props.started ? 'Press start to begin...' : '';
   }
@@ -33,5 +33,3 @@ const TextInput = styled.TextInput`
   border-radius: 5px;
   background-color: #484848;
 `;
-
-export default Input;

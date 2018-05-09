@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import {Text} from 'react-native';
 import styled from 'styled-components';
 
-class Clock extends React.Component {
+export class Clock extends React.Component {
   getSecs() {
     return this.props.secs < 10 ? `0${this.props.secs}` : this.props.secs;
   }
@@ -33,5 +33,3 @@ const Label = styled.Text`
 Clock.propTypes = {
   secs: PropTypes.number.isRequired,
 };
-
-export default Clock;

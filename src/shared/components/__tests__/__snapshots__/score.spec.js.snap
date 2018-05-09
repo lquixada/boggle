@@ -13,11 +13,11 @@ exports[`<Score /> adds a valid attempt 1`] = `
 >
   <styled.div>
     <div
-      className="sc-htpNat bKmcEK"
+      className="sc-ckVGcZ deNXbv"
     >
       <styled.header>
         <header
-          className="sc-bxivhb gCIOfD"
+          className="sc-jKJlTe llqPuH"
         >
           <h2>
             Score: 
@@ -26,7 +26,7 @@ exports[`<Score /> adds a valid attempt 1`] = `
       </styled.header>
       <styled.section>
         <section
-          className="sc-ifAKCX gauuBQ"
+          className="sc-eNQAEJ dpyPWj"
         >
           <Attempts
             attempts={
@@ -85,11 +85,11 @@ exports[`<Score /> adds an invalid attempt 1`] = `
 >
   <styled.div>
     <div
-      className="sc-htpNat bKmcEK"
+      className="sc-ckVGcZ deNXbv"
     >
       <styled.header>
         <header
-          className="sc-bxivhb gCIOfD"
+          className="sc-jKJlTe llqPuH"
         >
           <h2>
             Score: 
@@ -98,7 +98,7 @@ exports[`<Score /> adds an invalid attempt 1`] = `
       </styled.header>
       <styled.section>
         <section
-          className="sc-ifAKCX gauuBQ"
+          className="sc-eNQAEJ dpyPWj"
         >
           <Attempts
             attempts={
@@ -151,11 +151,11 @@ exports[`<Score /> shows the score 1`] = `
 >
   <styled.div>
     <div
-      className="sc-htpNat bKmcEK"
+      className="sc-ckVGcZ deNXbv"
     >
       <styled.header>
         <header
-          className="sc-bxivhb gCIOfD"
+          className="sc-jKJlTe llqPuH"
         >
           <h2>
             Score: 
@@ -165,7 +165,7 @@ exports[`<Score /> shows the score 1`] = `
       </styled.header>
       <styled.section>
         <section
-          className="sc-ifAKCX gauuBQ"
+          className="sc-eNQAEJ dpyPWj"
         >
           <Attempts
             attempts={Immutable.List []}

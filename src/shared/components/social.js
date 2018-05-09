@@ -1,10 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import {flex} from '../helpers';
-import {img} from '../helpers';
+import {flex, img} from '../helpers';
 
-const Social = () => (
+export const Social = () => (
   <Wrapper>
     <List>
       <Item><a href="https://github.com/lquixada/"><Image src={img('logo-github.png')} /></a></Item>
@@ -38,5 +37,3 @@ const Image = styled.img`
     opacity: .7;
   }
 `;
-
-export default Social;

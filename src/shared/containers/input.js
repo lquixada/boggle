@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 
-import Input from '../components/input';
+import {Input} from '../components';
 import * as actions from '../actions';
 
 export class InputContainer extends React.Component {

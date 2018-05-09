@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-class Score extends React.Component {
+export class Score extends React.Component {
   render() {
     return (
       <Label>Score: {this.props.counter}</Label>
@@ -19,5 +19,3 @@ const Label = styled.Text`
 Score.propTypes = {
   counter: PropTypes.number.isRequired,
 };
-
-export default Score;

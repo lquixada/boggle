@@ -2,9 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-const ButtonArea = ({onClick, text}) => (
+export const Button = ({onClick, text}) => (
   <Wrapper>
-    <Button type="button" onClick={onClick}>{text}</Button>
+    <ButtonInput type="button" onClick={onClick}>{text}</ButtonInput>
   </Wrapper>
 );
 
@@ -12,7 +12,7 @@ const Wrapper = styled.div`
   margin-left: 2rem;
 `;
 
-const Button = styled.button`
+const ButtonInput = styled.button`
   padding: 1rem;
   min-width: 10rem;
   border: 0;
@@ -34,9 +34,7 @@ const Button = styled.button`
   }
 `;
 
-ButtonArea.propTypes = {
+Button.propTypes = {
   onClick: PropTypes.func.isRequired,
   text: PropTypes.string.isRequired
 };
-
-export default ButtonArea;

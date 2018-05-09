@@ -5,12 +5,11 @@ import Input from '../containers/input';
 import Board from '../containers/board';
 import Button from '../containers/button';
 import Clock from '../containers/clock';
-import Copyright from './copyright';
-import Social from './social';
 import Score from '../containers/score';
-import Title from './title';
-import Ribbon from './ribbon';
-import {Main, Container, Header, HeaderContainer, Section, SectionContainer, Footer} from './grid';
+
+import {
+  Copyright, Ribbon, Social, Title, Main, Container, Header, HeaderContainer, Section, SectionContainer, Footer
+} from '.';
 
 import {flex} from '../helpers';
 

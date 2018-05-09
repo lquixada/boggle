@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 import {flex} from '../helpers';
 
-const Copyright = () => (
+export const Copyright = () => (
   <Wrapper>
     &copy; Copyright 2016 <Link to="/about">Leonardo Quixadá</Link>. All rights reserved.
     <a href="https://travis-ci.org/lquixada/boggle">
@@ -31,5 +31,3 @@ const BuildStatus = styled.img`
     -webkit-filter: grayscale(0%);
   }
 `;
-
-export default Copyright;

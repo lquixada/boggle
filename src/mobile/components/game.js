@@ -3,12 +3,11 @@ import styled from 'styled-components';
 
 import Board from '../containers/board';
 import Button from '../containers/button';
-import Copyright from '../components/copyright';
 import Clock from '../containers/clock';
 import Input from '../containers/input';
 import Score from '../containers/score';
-import Social from '../components/social';
-import Title from '../components/title';
+
+import {Copyright, Social, Title} from '../components';
 
 class Game extends React.Component {
   render() {

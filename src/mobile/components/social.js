@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-class Social extends React.Component {
+export class Social extends React.Component {
   render() {
     return (
       <List>
@@ -21,5 +21,3 @@ const Image = styled.Image`
   margin-left: 15px;
   opacity: .3;
 `;
-
-export default Social;

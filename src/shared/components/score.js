@@ -1,10 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import Attempts from './attempts';
+import {Attempts} from '.';
 import {box, flex} from '../helpers';
 
-const Score = ({counter, attempts}) => (
+export const Score = ({counter, attempts}) => (
   <Wrapper>
     <Header>
       <h2>Score: {counter}</h2>
@@ -48,5 +48,3 @@ const Section = styled.section`
     display: none;
   }
 `;
-
-export default Score;

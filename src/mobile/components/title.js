@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-class Title extends React.Component {
+export class Title extends React.Component {
   render() {
     return (
       <Label>BOGGLE</Label>
@@ -17,5 +17,3 @@ const Label = styled.Text`
   text-align: center;
   box-shadow: 2px 2px 5px #000;
 `;
-
-export default Title;

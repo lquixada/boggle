@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 
-import Button from '../components/button';
+import {Button} from '../components';
 import * as actions from '../../shared/actions';
 
 export class ButtonContainer extends React.Component {

@@ -1,11 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import Copyright from './copyright';
-import Social from './social';
-import Title from './title';
-import Ribbon from './ribbon';
-import {Main, Container, Header, HeaderContainer, Section, SectionContainer, Footer} from './grid';
+import {
+  Main, Container, Header, HeaderContainer, Section, SectionContainer, Footer, Copyright, Ribbon, Social, Title
+} from '.';
 
 import {box} from '../helpers';
 

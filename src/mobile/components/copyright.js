@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-class Copyright extends React.Component {
+export class Copyright extends React.Component {
   render() {
     return (
       <Label>
@@ -15,5 +15,3 @@ const Label = styled.Text`
   color: #999;
   width: 60%;
 `;
-
-export default Copyright;

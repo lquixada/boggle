@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-class Board extends React.Component {
+export class Board extends React.Component {
   render() {
     return (
       <Table>
@@ -44,5 +44,3 @@ const Letter = styled.Text`
   color: #333;
   font-size: 40;
 `;
-
-export default Board;

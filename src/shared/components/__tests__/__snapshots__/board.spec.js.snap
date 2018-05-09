@@ -33,11 +33,11 @@ exports[`<Board /> is empty by default 1`] = `
 >
   <styled.div>
     <div
-      className="sc-bdVaJa iOMCKQ"
+      className="sc-htpNat eybErZ"
     >
       <styled.table>
         <table
-          className="sc-bwzfXH jwfMIB"
+          className="sc-bxivhb jcNPuI"
         >
           <tbody>
             <tr
@@ -47,7 +47,7 @@ exports[`<Board /> is empty by default 1`] = `
                 key="0"
               >
                 <td
-                  className="sc-htpNat kcMuME"
+                  className="sc-ifAKCX eVSfyP"
                 >
                    
                 </td>
@@ -56,7 +56,7 @@ exports[`<Board /> is empty by default 1`] = `
                 key="1"
               >
                 <td
-                  className="sc-htpNat kcMuME"
+                  className="sc-ifAKCX eVSfyP"
                 >
                    
                 </td>
@@ -65,7 +65,7 @@ exports[`<Board /> is empty by default 1`] = `
                 key="2"
               >
                 <td
-                  className="sc-htpNat kcMuME"
+                  className="sc-ifAKCX eVSfyP"
                 >
                    
                 </td>
@@ -74,7 +74,7 @@ exports[`<Board /> is empty by default 1`] = `
                 key="3"
               >
                 <td
-                  className="sc-htpNat kcMuME"
+                  className="sc-ifAKCX eVSfyP"
                 >
                    
                 </td>
@@ -87,7 +87,7 @@ exports[`<Board /> is empty by default 1`] = `
                 key="0"
               >
                 <td
-                  className="sc-htpNat kcMuME"
+                  className="sc-ifAKCX eVSfyP"
                 >
                    
                 </td>
@@ -96,7 +96,7 @@ exports[`<Board /> is empty by default 1`] = `
                 key="1"
               >
                 <td
-                  className="sc-htpNat kcMuME"
+                  className="sc-ifAKCX eVSfyP"
                 >
                    
                 </td>
@@ -105,7 +105,7 @@ exports[`<Board /> is empty by default 1`] = `
                 key="2"
               >
                 <td
-                  className="sc-htpNat kcMuME"
+                  className="sc-ifAKCX eVSfyP"
                 >
                    
                 </td>
@@ -114,7 +114,7 @@ exports[`<Board /> is empty by default 1`] = `
                 key="3"
               >
                 <td
-                  className="sc-htpNat kcMuME"
+                  className="sc-ifAKCX eVSfyP"
                 >
                    
                 </td>
@@ -127,7 +127,7 @@ exports[`<Board /> is empty by default 1`] = `
                 key="0"
               >
                 <td
-                  className="sc-htpNat kcMuME"
+                  className="sc-ifAKCX eVSfyP"
                 >
                    
                 </td>
@@ -136,7 +136,7 @@ exports[`<Board /> is empty by default 1`] = `
                 key="1"
               >
                 <td
-                  className="sc-htpNat kcMuME"
+                  className="sc-ifAKCX eVSfyP"
                 >
                    
                 </td>
@@ -145,7 +145,7 @@ exports[`<Board /> is empty by default 1`] = `
                 key="2"
               >
                 <td
-                  className="sc-htpNat kcMuME"
+                  className="sc-ifAKCX eVSfyP"
                 >
                    
                 </td>
@@ -154,7 +154,7 @@ exports[`<Board /> is empty by default 1`] = `
                 key="3"
               >
                 <td
-                  className="sc-htpNat kcMuME"
+                  className="sc-ifAKCX eVSfyP"
                 >
                    
                 </td>
@@ -167,7 +167,7 @@ exports[`<Board /> is empty by default 1`] = `
                 key="0"
               >
                 <td
-                  className="sc-htpNat kcMuME"
+                  className="sc-ifAKCX eVSfyP"
                 >
                    
                 </td>
@@ -176,7 +176,7 @@ exports[`<Board /> is empty by default 1`] = `
                 key="1"
               >
                 <td
-                  className="sc-htpNat kcMuME"
+                  className="sc-ifAKCX eVSfyP"
                 >
                    
                 </td>
@@ -185,7 +185,7 @@ exports[`<Board /> is empty by default 1`] = `
                 key="2"
               >
                 <td
-                  className="sc-htpNat kcMuME"
+                  className="sc-ifAKCX eVSfyP"
                 >
                    
                 </td>
@@ -194,7 +194,7 @@ exports[`<Board /> is empty by default 1`] = `
                 key="3"
               >
                 <td
-                  className="sc-htpNat kcMuME"
+                  className="sc-ifAKCX eVSfyP"
                 >
                    
                 </td>
@@ -241,11 +241,11 @@ exports[`<Board /> is filled when the game has started 1`] = `
 >
   <styled.div>
     <div
-      className="sc-bdVaJa iOMCKQ"
+      className="sc-htpNat eybErZ"
     >
       <styled.table>
         <table
-          className="sc-bwzfXH jwfMIB"
+          className="sc-bxivhb jcNPuI"
         >
           <tbody>
             <tr
@@ -255,7 +255,7 @@ exports[`<Board /> is filled when the game has started 1`] = `
                 key="0"
               >
                 <td
-                  className="sc-htpNat kcMuME"
+                  className="sc-ifAKCX eVSfyP"
                 >
                   E
                 </td>
@@ -264,7 +264,7 @@ exports[`<Board /> is filled when the game has started 1`] = `
                 key="1"
               >
                 <td
-                  className="sc-htpNat kcMuME"
+                  className="sc-ifAKCX eVSfyP"
                 >
                   H
                 </td>
@@ -273,7 +273,7 @@ exports[`<Board /> is filled when the game has started 1`] = `
                 key="2"
               >
                 <td
-                  className="sc-htpNat kcMuME"
+                  className="sc-ifAKCX eVSfyP"
                 >
                   R
                 </td>
@@ -282,7 +282,7 @@ exports[`<Board /> is filled when the game has started 1`] = `
                 key="3"
               >
                 <td
-                  className="sc-htpNat kcMuME"
+                  className="sc-ifAKCX eVSfyP"
                 >
                   T
                 </td>
@@ -295,7 +295,7 @@ exports[`<Board /> is filled when the game has started 1`] = `
                 key="0"
               >
                 <td
-                  className="sc-htpNat kcMuME"
+                  className="sc-ifAKCX eVSfyP"
                 >
                   B
                 </td>
@@ -304,7 +304,7 @@ exports[`<Board /> is filled when the game has started 1`] = `
                 key="1"
               >
                 <td
-                  className="sc-htpNat kcMuME"
+                  className="sc-ifAKCX eVSfyP"
                 >
                   I
                 </td>
@@ -313,7 +313,7 @@ exports[`<Board /> is filled when the game has started 1`] = `
                 key="2"
               >
                 <td
-                  className="sc-htpNat kcMuME"
+                  className="sc-ifAKCX eVSfyP"
                 >
                   T
                 </td>
@@ -322,7 +322,7 @@ exports[`<Board /> is filled when the game has started 1`] = `
                 key="3"
               >
                 <td
-                  className="sc-htpNat kcMuME"
+                  className="sc-ifAKCX eVSfyP"
                 >
                   E
                 </td>
@@ -335,7 +335,7 @@ exports[`<Board /> is filled when the game has started 1`] = `
                 key="0"
               >
                 <td
-                  className="sc-htpNat kcMuME"
+                  className="sc-ifAKCX eVSfyP"
                 >
                   G
                 </td>
@@ -344,7 +344,7 @@ exports[`<Board /> is filled when the game has started 1`] = `
                 key="1"
               >
                 <td
-                  className="sc-htpNat kcMuME"
+                  className="sc-ifAKCX eVSfyP"
                 >
                   I
                 </td>
@@ -353,7 +353,7 @@ exports[`<Board /> is filled when the game has started 1`] = `
                 key="2"
               >
                 <td
-                  className="sc-htpNat kcMuME"
+                  className="sc-ifAKCX eVSfyP"
                 >
                   S
                 </td>
@@ -362,7 +362,7 @@ exports[`<Board /> is filled when the game has started 1`] = `
                 key="3"
               >
                 <td
-                  className="sc-htpNat kcMuME"
+                  className="sc-ifAKCX eVSfyP"
                 >
                   F
                 </td>
@@ -375,7 +375,7 @@ exports[`<Board /> is filled when the game has started 1`] = `
                 key="0"
               >
                 <td
-                  className="sc-htpNat kcMuME"
+                  className="sc-ifAKCX eVSfyP"
                 >
                   A
                 </td>
@@ -384,7 +384,7 @@ exports[`<Board /> is filled when the game has started 1`] = `
                 key="1"
               >
                 <td
-                  className="sc-htpNat kcMuME"
+                  className="sc-ifAKCX eVSfyP"
                 >
                   M
                 </td>
@@ -393,7 +393,7 @@ exports[`<Board /> is filled when the game has started 1`] = `
                 key="2"
               >
                 <td
-                  className="sc-htpNat kcMuME"
+                  className="sc-ifAKCX eVSfyP"
                 >
                   N
                 </td>
@@ -402,7 +402,7 @@ exports[`<Board /> is filled when the game has started 1`] = `
                 key="3"
               >
                 <td
-                  className="sc-htpNat kcMuME"
+                  className="sc-ifAKCX eVSfyP"
                 >
                   O
                 </td>

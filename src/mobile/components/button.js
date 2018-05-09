@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-class Button extends React.Component {
+export class Button extends React.Component {
   render() {
     return (
       <ButtonInput
@@ -27,5 +27,3 @@ const Label = styled.Text`
   color: #fff;
   font-size: 20px;
 `;
-
-export default Button;

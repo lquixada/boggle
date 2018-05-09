@@ -2,7 +2,7 @@ import React from 'react';
 import {mount} from 'enzyme';
 import {fromJS} from 'immutable';
 
-import Score from '../score';
+import {Score} from '..';
 
 describe('<Score />', () => {
   it('is empty by default', () => {

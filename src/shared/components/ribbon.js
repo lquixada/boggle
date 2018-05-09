@@ -1,7 +1,7 @@
 import React from 'react';
 import GitHubForkRibbon from 'react-github-fork-ribbon';
 
-const Ribbon = () => (
+export const Ribbon = () => (
   <GitHubForkRibbon position="right"
     color="red"
     href="https://github.com/lquixada/boggle"
@@ -9,5 +9,3 @@ const Ribbon = () => (
       Fork me on GitHub
   </GitHubForkRibbon>
 );
-
-export default Ribbon;
