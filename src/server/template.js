@@ -1,3 +1,6 @@
+import pkg from '../../package.json';
+
+
 export default ({
   state, styleTags, content, assets, bundle
 }) => (`
@@ -8,6 +11,7 @@ export default ({
       <meta charset="utf-8">
       <meta http-equiv="x-ua-compatible" content="ie=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="version" content="${pkg.version}">
       <title>Boggle</title>
 
       <link href="${assets.app.css}" rel="stylesheet" />
