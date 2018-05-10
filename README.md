@@ -124,7 +124,7 @@ To get started, run `yarn electron:start`.
 
 ## Architecture
 
-![Architecture](./flowchart.png)
+![Architecture](./docs/architecture.png)
 
 
 ## Stack
