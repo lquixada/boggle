@@ -37,8 +37,8 @@
     "test:lint": "eslint --ignore-path .gitignore .",
     "test:codecov": "codecov",
     "web:build": "PLATFORM=web npm run -s build",
-    "web:dev": "pm2 start .process.yml --only boggle-dev --no-daemon",
-    "web:start": "pm2 start .process.yml --only boggle-prod --no-daemon"
+    "web:dev": "nodemon src/app",
+    "web:start": "pm2 start .process.yml --no-daemon"
   },
   "lint-staged": {
     "*.js": [
@@ -101,6 +101,7 @@
     "jest": "22.4.3",
     "lint-staged": "7.1.0",
     "nock": "9.2.5",
+    "nodemon": "1.17.4",
     "react-test-renderer": "16.3.2",
     "supertest": "3.0.0",
     "sw-precache-webpack-plugin": "0.11.5",

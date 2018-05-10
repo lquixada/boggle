@@ -1,13 +1,4 @@
 apps:
-  - name     : boggle-dev
-    script   : ./src/app.js
-    watch    : ./src/server
-    instances: 1
-    interpreter: babel-node
-    exec_mode: fork
-    port     : 3000
-    env      :
-      NODE_ENV: development
   - name     : boggle-prod
     script   : ./web/app.js
     instances: 4
