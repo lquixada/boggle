@@ -5,8 +5,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin');
 
-const platform = process.env.PLATFORM || 'web';
-const outputPath = path.join(__dirname, platform, 'public');
+const webPath = path.join(__dirname, 'web', 'public');
 const isProd = () => process.env.NODE_ENV === 'production';
 
 module.exports = {
@@ -36,7 +35,7 @@ module.exports = {
   },
 
   output: {
-    path: outputPath,
+    path: webPath,
     publicPath: '/',
     filename: `scripts/[name]${isProd() ? '.[chunkhash]' : ''}.js`
   },
@@ -60,7 +59,7 @@ module.exports = {
 
   plugins: [
     isProd()
-      ? new CleanWebpackPlugin(path.join(outputPath, 'scripts'))
+      ? new CleanWebpackPlugin(path.join(webPath, 'scripts'))
       : new webpack.HotModuleReplacementPlugin(),
     new CopyWebpackPlugin([
       'src/public/images',
@@ -68,7 +67,7 @@ module.exports = {
     ]),
     new AssetsPlugin({
       filename: 'assets.json',
-      path: outputPath,
+      path: webPath,
       prettyPrint: true,
       update: true
     }),
@@ -76,11 +75,11 @@ module.exports = {
       cacheId: 'boggle',
       filename: 'service-worker.js',
       staticFileGlobs: [
-        `${outputPath}/images/**/*.{png,jpg,gif}`,
-        `${outputPath}/scripts/**/*.js`,
-        `${outputPath}/styles/**/*.css`
+        `${webPath}/images/**/*.{png,jpg,gif}`,
+        `${webPath}/scripts/**/*.js`,
+        `${webPath}/styles/**/*.css`
       ],
-      stripPrefix: outputPath,
+      stripPrefix: webPath,
       logger() {}
     })
   ],
