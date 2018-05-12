@@ -25,7 +25,7 @@
     "docker:push": "docker push lquixada/boggle",
     "docker:start": "docker run -t -i -p 3000:3000 lquixada/boggle",
     "electron:build": "./tasks/electron-build",
-    "electron:start": "NODE_ENV=development electron .",
+    "electron:dev": "NODE_ENV=development electron .",
     "flameon": "./tasks/flame",
     "ios:build": "react-native run-ios",
     "ios:dev": "react-native start --config ../../../../rn-cli.config.js",
