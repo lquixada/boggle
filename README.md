@@ -19,6 +19,7 @@ A multi-platform implementation of the Boggle game (only for study purposes). Mo
 -   [Pages](#pages)
 -   [Platforms](#platforms)
 -   [Architecture](#architecture)
+-   [Folder Structure](#folder-structure)
 -   [Stack](#stack)
 -   [Other Projects](#other-projects)
 -   [License](#license)
@@ -125,6 +126,25 @@ To get started, run `yarn electron:start`.
 ## Architecture
 
 ![Architecture](./docs/architecture.png)
+
+
+## Folder Structure
+
+* **android/**: distributable files for Android systems created through `yarn android:build`
+* **desktop/**: distributable files for desktop systems created through `yarn electron:build`
+* **docs/**: project's documentation files
+* **ios/**: distributable files for iOS systems created through `yarn ios:build`
+* **logs/**: all generated log files will be placed here
+* **src/**: all source files
+  * **client/**: entry point for the browser app (SPA)
+  * **desktop/**: entry point for the desktop app
+  * **mobile/**: entry point for the mobile app (iOS/Android)
+  * **public/**: assets files used on all platforms such as images and reset.css
+  * **server/**: entry point for the node app
+  * **shared/**: common codebase for all platforms (95% of the code is here)
+  * **app/**: well, this is actually entry point for the node app (sorry for that!)
+* **tasks/**: shell tasks that complex enough to not be a npm task
+* **web/**: distributable files for the web (server and client) created through `yarn web:build`
 
 
 ## Stack
