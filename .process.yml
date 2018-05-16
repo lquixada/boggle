@@ -1,6 +1,5 @@
 apps:
-  - name     : boggle-prod
-    script   : ./web/app.js
+  - script   : ./web/app.js
     instances: 4
     exec_mode: cluster
     env      :
