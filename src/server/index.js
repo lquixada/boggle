@@ -5,7 +5,6 @@ import bodyParser from 'body-parser';
 
 import loggerMiddleware from './middlewares/logger';
 import staticMiddleware from './middlewares/static';
-import certbotController from './controllers/certbot';
 import indexController from './controllers/index';
 
 const {NODE_ENV} = process.env;
@@ -25,7 +24,6 @@ server.use(staticMiddleware);
 server.use(bodyParser.urlencoded({extended: true}));
 
 /* Controllers */
-server.use('/.well-known/acme-challenge/', certbotController);
 server.use('/', indexController);
 
 export default server;
