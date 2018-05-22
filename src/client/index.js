@@ -24,7 +24,7 @@ const renderApp = () => {
         </App>
       </Provider>
     </AppContainer>
-    , document.getElementById('game')
+    , document.getElementById('app')
   );
 };
 

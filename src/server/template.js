@@ -17,7 +17,7 @@ export default ({
     </head>
 
     <body>
-      <div id="game">${content}</div>
+      <div id="app">${content}</div>
       <script>
         window.__INITIAL_STATE__ = ${state};
       </script>

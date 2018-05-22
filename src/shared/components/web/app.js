@@ -28,11 +28,11 @@ const resetStyles = () => injectGlobal`
     border: 0;
   }
 
-  #game {
+  #app {
     height: 100%;
   }
 
-  #game > div {
+  #app > div {
     height: 100%;
   }
 
