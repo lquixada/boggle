@@ -1,7 +1,7 @@
 import assets from '../public/assets.json';
 
 export default ({
-  helmet, styleTags, content, state
+  helmet, styles, content, state
 }) => (`
   <!DOCTYPE html>
 
@@ -9,7 +9,7 @@ export default ({
     <head>
       ${helmet.meta.toString()}
       ${helmet.title.toString()}
-      ${styleTags}
+      ${styles}
     </head>
 
     <body>

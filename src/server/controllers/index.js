@@ -38,7 +38,7 @@ export default (req, res) => {
 
   const state = JSON.stringify(store.getState());
   const helmet = Helmet.renderStatic();
-  const styleTags = sheet.getStyleTags();
+  const styles = sheet.getStyleTags();
 
-  res.send(template({state, helmet, styleTags, content}));
+  res.send(template({state, helmet, styles, content}));
 };
