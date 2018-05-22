@@ -6,6 +6,7 @@ import {BrowserRouter} from 'react-router-dom';
 import {renderRoutes} from 'react-router-config';
 import {AppContainer} from 'react-hot-loader';
 
+import './service-worker';
 import routes from '../shared/routes'; // eslint-disable-line no-unused-vars
 import store from './store';
 
@@ -28,8 +29,4 @@ renderApp();
 
 if (module.hot) {
   module.hot.accept('../shared/routes', renderApp);
-}
-
-if (navigator.serviceWorker) {
-  navigator.serviceWorker.register('/service-worker.js');
 }
