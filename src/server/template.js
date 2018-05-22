@@ -1,5 +1,7 @@
+import assets from '../public/assets.json';
+
 export default ({
-  helmet, styleTags, content, state, assets
+  helmet, styleTags, content, state
 }) => (`
   <!DOCTYPE html>
 
