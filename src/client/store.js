@@ -1,12 +1,10 @@
 import ravenMiddleware from 'redux-raven-middleware';
-import {routerMiddleware} from 'react-router-redux';
 
-import history from './history';
 import configureStore from '../shared/store';
 import config from '../shared/config';
 
 const state = window.__INITIAL_STATE__;
-const middlewares = [routerMiddleware(history)];
+const middlewares = [];
 const devTools = window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__();
 
 if (process.env.NODE_ENV === 'production') {
