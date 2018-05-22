@@ -1,18 +1,12 @@
-import pkg from '../../package.json';
-
-
 export default ({
-  state, styleTags, content, assets, bundle
+  helmet, styleTags, content, state, assets
 }) => (`
   <!DOCTYPE html>
 
   <html>
     <head>
-      <meta charset="utf-8">
-      <meta http-equiv="x-ua-compatible" content="ie=edge">
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <meta name="version" content="${pkg.version}">
-      <title>Boggle</title>
+      ${helmet.meta.toString()}
+      ${helmet.title.toString()}
       ${styleTags}
     </head>
 

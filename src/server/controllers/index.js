@@ -4,6 +4,7 @@ import {ServerStyleSheet, StyleSheetManager} from 'styled-components';
 import {matchRoutes, renderRoutes} from 'react-router-config';
 import {StaticRouter} from 'react-router-dom';
 import {Provider} from 'react-redux';
+import {Helmet} from 'react-helmet';
 
 import assets from '../../public/assets.json';
 import template from '../template';
@@ -19,14 +20,13 @@ export default (req, res) => {
   }
 
   const store = configureStore();
-  const state = JSON.stringify(store.getState());
-
   const sheet = new ServerStyleSheet();
   const content = renderToString(
     /* Provides "sheet" to styled components */
     <StyleSheetManager sheet={sheet.instance}>
       {/* Provides "store" to redux containers */}
       <Provider store={store}>
+        {/* Provides "head" data reset styles */}
         <App>
           {/* Provides "router" to router components */}
           <StaticRouter location={req.url} context={{}}>
@@ -37,6 +37,9 @@ export default (req, res) => {
     </StyleSheetManager>
   );
 
+  const state = JSON.stringify(store.getState());
+  const helmet = Helmet.renderStatic();
   const styleTags = sheet.getStyleTags();
-  res.send(template({state, styleTags, content, assets}));
+
+  res.send(template({state, helmet, styleTags, content, assets}));
 };

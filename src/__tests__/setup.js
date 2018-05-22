@@ -1,4 +1,5 @@
 import './enzyme';
+import './helmet';
 import './logger';
 
 // Nasty hack in order to fix a bug that styled-component throws exception
