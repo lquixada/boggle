@@ -13,16 +13,14 @@ export default ({
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <meta name="version" content="${pkg.version}">
       <title>Boggle</title>
-
-      <link href="${assets.app.css}" rel="stylesheet" />
       ${styleTags}
-      <script>
-        window.__INITIAL_STATE__ = ${state};
-      </script>
     </head>
 
     <body>
       <div id="game">${content}</div>
+      <script>
+        window.__INITIAL_STATE__ = ${state};
+      </script>
       <script src="${assets.vendor.js}"></script>
       <script src="${assets.app.js}"></script>
       <script>

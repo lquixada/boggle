@@ -3,7 +3,6 @@
     "js": "/scripts/vendor.js"
   },
   "app": {
-    "js": "/scripts/app.js",
-    "css": "/styles/reset.css"
+    "js": "/scripts/app.js"
   }
 }

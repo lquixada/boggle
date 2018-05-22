@@ -9,6 +9,7 @@ import assets from '../../public/assets.json';
 import template from '../template';
 import routes from '../../shared/routes';
 import configureStore from '../../shared/store';
+import {App} from '../../shared/components';
 
 export default (req, res) => {
   const match = matchRoutes(routes, req.url);
@@ -24,9 +25,11 @@ export default (req, res) => {
   const content = renderToString(
     <StyleSheetManager sheet={sheet.instance}>
       <Provider store={store}>
-        <StaticRouter location={req.url} context={{}}>
-          {renderRoutes(routes)}
-        </StaticRouter>
+        <App>
+          <StaticRouter location={req.url} context={{}}>
+            {renderRoutes(routes)}
+          </StaticRouter>
+        </App>
       </Provider>
     </StyleSheetManager>
   );

@@ -65,10 +65,6 @@ module.exports = {
       {
         from: 'src/public/images',
         to: path.join(webPath, 'images')
-      },
-      {
-        from: 'src/public/styles',
-        to: path.join(webPath, 'styles')
       }
     ]),
     new AssetsPlugin({

@@ -11,4 +11,5 @@ export * from './score';
 export * from './social';
 export * from './title';
 
+export * from './app';
 export * from './game';
