@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Fragment} from 'react';
 import {Helmet} from 'react-helmet';
 import {injectGlobal} from 'styled-components';
 
@@ -10,16 +10,18 @@ export class App extends React.Component {
   }
 
   render() {
-    return [
-      <Helmet>
-        <meta charset="utf-8" />
-        <meta http-equiv="x-ua-compatible" content="ie=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="version" content={pkg.version} />
-        <title>Boggle</title>
-      </Helmet>,
-      this.props.children
-    ];
+    return (
+      <Fragment>
+        <Helmet>
+          <meta charset="utf-8" />
+          <meta http-equiv="x-ua-compatible" content="ie=edge" />
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
+          <meta name="version" content={pkg.version} />
+          <title>Boggle</title>
+        </Helmet>
+        {this.props.children}
+      </Fragment>
+    );
   }
 }
 
