@@ -1,7 +1,7 @@
 import assets from '../public/assets.json';
 
 export default ({
-  helmet, styles, content, state
+  helmet, styles, html, state
 }) => (`
   <!DOCTYPE html>
 
@@ -13,7 +13,7 @@ export default ({
     </head>
 
     <body>
-      <div id="app">${content}</div>
+      <div id="app">${html}</div>
       <script>
         window.__INITIAL_STATE__ = ${state};
       </script>

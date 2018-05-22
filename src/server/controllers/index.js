@@ -20,7 +20,7 @@ export default (req, res) => {
 
   const store = configureStore();
   const sheet = new ServerStyleSheet();
-  const content = renderToString(
+  const html = renderToString(
     /* Provides "sheet" to styled components */
     <StyleSheetManager sheet={sheet.instance}>
       {/* Provides "store" to redux containers */}
@@ -40,5 +40,5 @@ export default (req, res) => {
   const helmet = Helmet.renderStatic();
   const styles = sheet.getStyleTags();
 
-  res.send(template({state, helmet, styles, content}));
+  res.send(template({state, helmet, styles, html}));
 };
