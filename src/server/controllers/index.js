@@ -23,9 +23,12 @@ export default (req, res) => {
 
   const sheet = new ServerStyleSheet();
   const content = renderToString(
+    /* Provides "sheet" to styled components */
     <StyleSheetManager sheet={sheet.instance}>
+      {/* Provides "store" to redux containers */}
       <Provider store={store}>
         <App>
+          {/* Provides "router" to router components */}
           <StaticRouter location={req.url} context={{}}>
             {renderRoutes(routes)}
           </StaticRouter>
