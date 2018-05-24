@@ -60,7 +60,7 @@
     "pm2": "2.10.3",
     "prop-types": "15.6.1",
     "react": "16.3.2",
-    "react-dom": "16.3.2",
+    "react-dom": "16.4.0",
     "react-github-fork-ribbon": "0.5.1",
     "react-helmet": "5.2.0",
     "react-hot-loader": "4.1.3",
