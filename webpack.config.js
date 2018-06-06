@@ -6,13 +6,13 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin');
 
 const webPath = path.join(__dirname, 'web', 'public');
-const isProd = () => process.env.NODE_ENV === 'production';
+const isProd = process.env.NODE_ENV === 'production';
 
 module.exports = {
-  mode: isProd()? 'production' : 'development',
+  mode: isProd? 'production' : 'development',
 
   entry: {
-    app: isProd()
+    app: isProd
       ? ['./src/client']
       : ['webpack-hot-middleware/client', './src/client']
   },
@@ -37,7 +37,7 @@ module.exports = {
   output: {
     path: webPath,
     publicPath: '/',
-    filename: `scripts/[name]${isProd() ? '.[chunkhash]' : ''}.js`
+    filename: `scripts/[name]${isProd ? '.[chunkhash]' : ''}.js`
   },
 
   performance: {
@@ -58,7 +58,7 @@ module.exports = {
   },
 
   plugins: [
-    isProd()
+    isProd
       ? new CleanWebpackPlugin(path.join(webPath, 'scripts'))
       : new webpack.HotModuleReplacementPlugin(),
     new CopyWebpackPlugin([
