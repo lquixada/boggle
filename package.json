@@ -49,7 +49,7 @@
   "dependencies": {
     "body-parser": "1.18.3",
     "compression": "1.7.2",
-    "cross-fetch": "2.2.0",
+    "cross-fetch": "2.2.1",
     "es6-promise": "4.2.4",
     "express": "4.16.3",
     "helmet": "3.12.1",
@@ -63,16 +63,16 @@
     "react-dom": "16.4.0",
     "react-github-fork-ribbon": "0.5.1",
     "react-helmet": "5.2.0",
-    "react-hot-loader": "4.2.0",
+    "react-hot-loader": "4.3.0",
     "react-native": "0.55.4",
     "react-redux": "5.0.7",
     "react-router-config": "1.0.0-beta.4",
-    "react-router-dom": "4.2.2",
+    "react-router-dom": "4.3.1",
     "react-router-redux": "5.0.0-alpha.6",
     "redux": "4.0.0",
     "redux-raven-middleware": "1.2.0",
     "redux-thunk": "2.3.0",
-    "styled-components": "3.3.0",
+    "styled-components": "3.3.2",
     "winston": "2.4.2"
   },
   "devDependencies": {
