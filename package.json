@@ -118,8 +118,5 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/lquixada/boggle.git"
-  },
-  "engines": {
-    "node": "8.11.1"
   }
 }
