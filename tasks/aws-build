@@ -1,0 +1,20 @@
+#!/usr/bin/env node
+const path = require('path');
+const fs = require('fs');
+const pkg = require('../package.json');
+
+const zip = new require('node-zip')();
+
+zip.file('Dockerfile', `
+FROM lquixada/${pkg.name}:${pkg.version}
+
+EXPOSE 3000
+
+CMD ["npm", "start"]
+`);
+
+const fileName = `${pkg.name}-${pkg.version}.zip`;
+const file = path.join(__dirname, '..', 'web', fileName);
+const data = zip.generate({base64: false, compression: 'DEFLATE'});
+
+fs.writeFileSync(file, data, 'binary');

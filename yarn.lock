@@ -7041,6 +7041,12 @@ jsx-ast-utils@^2.0.1:
   dependencies:
     array-includes "^3.0.3"
 
+jszip@2.5.0:
+  version "2.5.0"
+  resolved "https://registry.yarnpkg.com/jszip/-/jszip-2.5.0.tgz#7444fd8551ddf3e5da7198fea0c91bc8308cc274"
+  dependencies:
+    pako "~0.2.5"
+
 kind-of@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/kind-of/-/kind-of-1.1.0.tgz#140a3d2d41a36d2efcfa9377b62c24f8495a5c44"
@@ -8260,6 +8266,12 @@ node-pre-gyp@^0.9.0:
     semver "^5.3.0"
     tar "^4"
 
+node-zip@1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/node-zip/-/node-zip-1.1.1.tgz#94d1ad674a3cd46a1588dd736f4a9a78c757eb62"
+  dependencies:
+    jszip "2.5.0"
+
 nodeify@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/nodeify/-/nodeify-1.0.1.tgz#64ab69a7bdbaf03ce107b4f0335c87c0b9e91b1d"
@@ -8667,7 +8679,7 @@ pako@^1.0.3, pako@~1.0.5:
   version "1.0.6"
   resolved "https://registry.yarnpkg.com/pako/-/pako-1.0.6.tgz#0101211baa70c4bca4a0f63f2206e97b7dfaf258"
 
-pako@~0.2.0:
+pako@~0.2.0, pako@~0.2.5:
   version "0.2.9"
   resolved "https://registry.yarnpkg.com/pako/-/pako-0.2.9.tgz#f3f7522f4ef782348da8161bad9ecfd51bf83a75"
 
