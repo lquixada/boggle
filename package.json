@@ -25,7 +25,7 @@
     "docker:clean": "docker rmi $(docker images lquixada/boggle -q -f 'dangling=true')",
     "docker:pull": "docker pull lquixada/boggle",
     "docker:push": "docker push lquixada/boggle:$npm_package_version",
-    "docker:start": "docker run -t -i -p 3000:3000 lquixada/boggle:$npm_package_version",
+    "docker:start": "docker run -it --rm -p 3000:3000 lquixada/boggle:$npm_package_version",
     "electron:build": "./tasks/electron-build",
     "electron:dev": "NODE_ENV=development electron .",
     "flameon": "./tasks/flame",
