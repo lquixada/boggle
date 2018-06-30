@@ -8,7 +8,9 @@ WORKDIR /app
 
 COPY package*.json ./
 
-RUN npm install --production
+COPY yarn.lock ./
+
+RUN yarn --production
 
 COPY web ./web
 
