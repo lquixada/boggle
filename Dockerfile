@@ -22,4 +22,4 @@ COPY .process.yml .
 
 EXPOSE 3000
 
-CMD ["./node_modules/.bin/pm2", "start", ".process.yml", "--no-daemon"]
+CMD ["npm", "start"]
