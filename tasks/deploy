@@ -1,7 +1,0 @@
-#!/bin/bash
-
-# For some reason TravisCI warns that using --password via the CLI is insecure,
-# --password-stdin is used insteead.
-echo "$HEROKU_KEY" | docker login -u "$HEROKU_USER" --password-stdin $HEROKU_REGISTRY &&
-docker tag lquixada/boggle $HEROKU_REGISTRY/bogglejs/web &&
-docker push $HEROKU_REGISTRY/bogglejs/web

@@ -23,6 +23,7 @@
     "dev": "npm run -s web:dev",
     "docker:build": "docker build -t lquixada/boggle:$npm_package_version .",
     "docker:clean": "docker rmi $(docker images lquixada/boggle -q -f 'dangling=true')",
+    "docker:login": "echo $DOCKER_PASSWORD | docker login -u $DOCKER_USERNAME --password-stdin",
     "docker:pull": "docker pull lquixada/boggle",
     "docker:push": "docker push lquixada/boggle:$npm_package_version",
     "docker:start": "docker run -it --rm -p 3000:3000 lquixada/boggle:$npm_package_version",

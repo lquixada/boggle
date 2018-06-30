@@ -13,8 +13,7 @@ EXPOSE 3000
 CMD ["npm", "start"]
 `);
 
-const fileName = `${pkg.name}-${pkg.version}.zip`;
-const file = path.join(__dirname, '..', 'web', fileName);
+const file = path.join(__dirname, '..', 'web', 'build.zip');
 const data = zip.generate({base64: false, compression: 'DEFLATE'});
 
 fs.writeFileSync(file, data, 'binary');

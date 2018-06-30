@@ -2,19 +2,29 @@ sudo: required
 language: node_js
 branches:
   only:
-  # Only run on tags like v1.0.0
-  - /^v\d+\.\d+(\.\d+)?(-\S*)?$/
+  - "/^v\\d+\\.\\d+(\\.\\d+)?(-\\S*)?$/"
 services:
 - docker
 script:
-- npm run -s test:lint
-- npm run -s test:jest
-- npm run -s test:codecov
+- yarn -s test:lint
+- yarn -s test:jest
+- yarn -s test:codecov
 before_deploy:
-- npm run -s docker:build
+- yarn -s docker:build
+- yarn -s docker:login
+- yarn -s docker:push
+- yarn -s aws:build
 deploy:
-  provider: script
+  provider: elasticbeanstalk
   skip_cleanup: true
-  script: bash tasks/deploy
+  access_key_id:
+    secure: J2Ai+SRTQQK3I7GXuYycFROk+oJqDvpCdWMJKq5J9HrGYpIrq2MYv2wK9EOMC1dEd70rVeafQ+l0EbURpfWWXja8oO5OyM6KiK+nC/TpqptwOLuVXYSV+HZSsaCiS3Ja3OMMUyY/ZkEgqFirQ0hJmSDsXOTZIA2Ejn6FLJWOn+2gP/J37DtRnLftfYMBUfPiP/+oKIP+29A9PsJx5/XQDoiBK6yyZvCFyXTJE9PjiMo4SD3l0DwyEmXjDAhsVjyBbcydddBVFQtDmTSsj5sjjQvtLT92vV6RVAOH6RafAjfhwyEa8T+8XsQKuqbysLroK5BczqztxNXY5VBr/O9yyp1x0jKbEfvSPKSVuke5GUccdyEir/P4DAKXvX5+G95k2vRc/CfJrjHmEauql2jQ0HIov7Uy8JQvDuhg+OzxGez6o8ZjZfVJpBN5C/NWvM1NXbGChC6bRVcVN16yROqF8XUvDbJkHe+wZLnlAYnHoRQZdEyc5LtyafcAM9yxqez5XNVX8u2g/kFYdFPZxAkjq/V5f/xtDfcdjFtuoYyBGodlDmCSdR0Z+3+jWK9HM4i5ZLxc13CxYempzzbzqoU5J3LjvHiMBL4dAbbcrzltGmtgGOdeshnVktj8H6ZKpd2+LMbJoQ75j2Oq5mRRxGg0tuxNoMZyIsIeR5Y+5k3tlCY=
+  secret_access_key:
+    secure: mQZLZCJ/x11PUctyOCphWjKMj97eewhW+xBwdCAdYH6YJXucPxu6Q+jhkTnpVZBhaUTXqeHbEoL574cHTeqP15P14vnBT0h4GSvTGTNJUqPuR7U79vj/m2nC95n9QkbAqfCHR2xa43ls163xS+9MYVbyxyo9WsmhgYzLEiAIJ6sozRI8jl3MKw9Y+LIh1Vury3e+KHktPCAgArAxUWlO3gmLP7+DLNhPwlanwbpZdwVnX3EJi6rB3q++O56fc6Ao+0bqePQnIzJaPe6zgS675HaTRWFBGizB7bMP5PqKeTzyOrqDzJTOSEo/u3Z+DJMeDxc8y7Ne9aTeVNKhxUCWd/+X8/VSy/xfyVLMwDM5kFYMUT6ercz9FvBcxtfDCbMz8IQCQQTNJcoJf1y43vDyZEYwtirM3A7CieXGa0VrbnIZWlLuNtLHfzcYDF8Teegzp5a2u+nnCTFGX7pZQn+mKZY62wfEueXTBySbKOZznMmwPmF+Zbm4tj/Qpbv6cz/CZ5Clg7m2LO1sjlSMIL/g2vaH+AJawM37Kmzpr/xtRJvD7oPKGUIW/NeoPv/eZhWB5IV8MKrilCWzLckV8KkCE/e12BrtwE3/KYujE8rJweGvML38X2pxaoBywvKBEGsBygZMpK8chMuP8B5h9yUsfl6JV3AvmjLcnVgklVyFr8E=
+  region: us-east-1
+  app: Boggle
+  env: boggle-prod
+  bucket_name: elasticbeanstalk-us-east-1-328217091811
+  zip_file: web/build.zip
   on:
     tags: true
