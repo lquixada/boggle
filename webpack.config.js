@@ -3,7 +3,6 @@ const webpack = require('webpack')
 const AssetsPlugin = require('assets-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
-const SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin')
 
 const webPath = path.join(__dirname, 'web', 'public')
 const isProd = process.env.NODE_ENV === 'production'
@@ -72,17 +71,6 @@ module.exports = {
       path: webPath,
       prettyPrint: true,
       update: true
-    }),
-    new SWPrecacheWebpackPlugin({
-      cacheId: 'boggle',
-      filename: 'service-worker.js',
-      staticFileGlobs: [
-        `${webPath}/images/**/*.{png,jpg,gif}`,
-        `${webPath}/scripts/**/*.js`,
-        `${webPath}/styles/**/*.css`
-      ],
-      stripPrefix: webPath,
-      logger () {}
     })
   ],
 

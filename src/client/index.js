@@ -6,7 +6,6 @@ import {BrowserRouter} from 'react-router-dom'
 import {renderRoutes} from 'react-router-config'
 import {AppContainer} from 'react-hot-loader'
 
-// import './service-worker';
 import routes from '../shared/routes' // eslint-disable-line no-unused-vars
 import {App} from '../shared/components'
 import store from './store'
