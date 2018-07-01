@@ -1,5 +1,5 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from 'react'
+import styled from 'styled-components'
 
 export const Attempts = ({attempts}) => (
   <Table>
@@ -12,12 +12,12 @@ export const Attempts = ({attempts}) => (
       )}
     </tbody>
   </Table>
-);
+)
 
 const Table = styled.table`
   margin: 1rem auto;
   width: 100%;
-`;
+`
 
 const Td = styled.td`
   color: #fff;
@@ -32,4 +32,4 @@ const Td = styled.td`
     padding-right: 1rem;
     text-align: right;
   }
-`;
+`

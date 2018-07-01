@@ -1,16 +1,16 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from 'react'
+import styled from 'styled-components'
 
 export class Button extends React.Component {
-  render() {
+  render () {
     return (
       <ButtonInput
         onPress={this.props.onClick}
-        underlayColor="#286f23"
+        underlayColor='#286f23'
       >
         <Label>{this.props.text}</Label>
       </ButtonInput>
-    );
+    )
   }
 }
 
@@ -21,9 +21,9 @@ const ButtonInput = styled.TouchableHighlight`
   align-items: center;
   border-radius: 5px;
   background-color: #6c6;
-`;
+`
 
 const Label = styled.Text`
   color: #fff;
   font-size: 20px;
-`;
+`

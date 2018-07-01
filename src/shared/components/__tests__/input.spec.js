@@ -1,10 +1,10 @@
-import React from 'react';
-import {mount} from 'enzyme';
+import React from 'react'
+import {mount} from 'enzyme'
 
-import {Input} from '..';
+import {Input} from '..'
 
 describe('<Input />', () => {
-  let component;
+  let component
 
   beforeEach(() => {
     component = mount(<Input
@@ -12,17 +12,17 @@ describe('<Input />', () => {
       started={false}
       onChange={jest.fn()}
       onEnter={jest.fn()}
-    />);
-    component.instance().word.focus = jest.fn();
-  });
+    />)
+    component.instance().word.focus = jest.fn()
+  })
 
   it('is blurred by default', () => {
-    expect(component.instance().word.focus).not.toHaveBeenCalled();
-  });
+    expect(component.instance().word.focus).not.toHaveBeenCalled()
+  })
 
   it('is focused when game starts', () => {
-    component.setProps({started: true});
+    component.setProps({started: true})
 
-    expect(component.instance().word.focus).toHaveBeenCalled();
-  });
-});
+    expect(component.instance().word.focus).toHaveBeenCalled()
+  })
+})

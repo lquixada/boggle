@@ -1,4 +1,4 @@
-import {Map, List} from 'immutable';
+import {Map, List} from 'immutable'
 
 export const attempt = (state = Map(), action) => {
   switch (action.type) {
@@ -6,21 +6,21 @@ export const attempt = (state = Map(), action) => {
       return Map({
         word: action.payload.word,
         score: (action.payload.scored ? action.payload.word.length : '✘')
-      });
+      })
     default:
-      return state;
+      return state
   }
-};
+}
 
 export const attempts = (state = List(), action) => {
   switch (action.type) {
     case 'ADD_ATTEMPT':
-      return state.push(attempt(undefined, action));
+      return state.push(attempt(undefined, action))
     case 'STOP_GAME':
-      return List();
+      return List()
     default:
-      return state;
+      return state
   }
-};
+}
 
-export default attempts;
+export default attempts

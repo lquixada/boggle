@@ -1,8 +1,8 @@
-import React from 'react';
-import {mount} from 'enzyme';
-import {fromJS} from 'immutable';
+import React from 'react'
+import {mount} from 'enzyme'
+import {fromJS} from 'immutable'
 
-import {Board} from '..';
+import {Board} from '..'
 
 describe('<Board />', () => {
   it('is empty by default', () => {
@@ -11,11 +11,11 @@ describe('<Board />', () => {
       [' ', ' ', ' ', ' '],
       [' ', ' ', ' ', ' '],
       [' ', ' ', ' ', ' ']
-    ]);
-    const component = mount(<Board matrix={matrix}/>);
+    ])
+    const component = mount(<Board matrix={matrix} />)
 
-    expect(component).toMatchSnapshot();
-  });
+    expect(component).toMatchSnapshot()
+  })
 
   it('is filled when the game has started', () => {
     const matrix = fromJS([
@@ -23,9 +23,9 @@ describe('<Board />', () => {
       ['B', 'I', 'T', 'E'],
       ['G', 'I', 'S', 'F'],
       ['A', 'M', 'N', 'O']
-    ]);
-    const component = mount(<Board matrix={matrix}/>);
+    ])
+    const component = mount(<Board matrix={matrix} />)
 
-    expect(component).toMatchSnapshot();
-  });
-});
+    expect(component).toMatchSnapshot()
+  })
+})

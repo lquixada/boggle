@@ -1,11 +1,11 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from 'react'
+import styled from 'styled-components'
 
 import {
   Main, Container, Header, HeaderContainer, Section, SectionContainer, Footer, Copyright, Ribbon, Social, Title
-} from '..';
+} from '..'
 
-import {box} from '../../helpers';
+import {box} from '../../helpers'
 
 export const About = () => (
   <Main>
@@ -21,7 +21,7 @@ export const About = () => (
       <SectionContainer>
         <Body>
           <Box>
-            <Image src="https://s.gravatar.com/avatar/a0ac79788f87ca12cda519b3a1bb2a7c?s=100" />
+            <Image src='https://s.gravatar.com/avatar/a0ac79788f87ca12cda519b3a1bb2a7c?s=100' />
           </Box>
 
           <Subtitle>About me</Subtitle>
@@ -52,31 +52,31 @@ export const About = () => (
       </Container>
     </Footer>
   </Main>
-);
+)
 
 const Body = styled.div`
   width: 100%;
   font-size: 1.3rem;
   color: #999;
-`;
+`
 
 const Box = styled.span`
   ${box()}
   margin: 0 1rem .5rem 0;
   float: left;
-`;
+`
 
 const Subtitle = styled.h2`
   margin-bottom: 1rem;
   color: #ddd;
-`;
+`
 
 const P = styled.p`
   margin-bottom: 1rem;
-`;
+`
 
 const Image = styled.img`
   margin: 1rem;
   width: 10rem;
   height: 10rem;
-`;
+`

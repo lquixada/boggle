@@ -1,16 +1,16 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from 'react'
+import styled from 'styled-components'
 
-import Board from '../../containers/board';
-import Button from '../../containers/button';
-import Clock from '../../containers/clock';
-import Input from '../../containers/input';
-import Score from '../../containers/score';
+import Board from '../../containers/board'
+import Button from '../../containers/button'
+import Clock from '../../containers/clock'
+import Input from '../../containers/input'
+import Score from '../../containers/score'
 
-import {Copyright, Social, Title} from '..';
+import {Copyright, Social, Title} from '..'
 
 export class Game extends React.Component {
-  render() {
+  render () {
     return (
       <Grid>
         <Header>
@@ -34,7 +34,7 @@ export class Game extends React.Component {
           <Social />
         </Footer>
       </Grid>
-    );
+    )
   }
 }
 
@@ -42,14 +42,14 @@ const Grid = styled.View`
   flex: 1;
   display: flex;
   background-color: #484848;
-`;
+`
 
 const Header = styled.View`
   padding: 20px;
   padding-top: 40px;
   height: 140px;
   background-color: #565656;
-`;
+`
 
 const HeaderTop = styled.View`
   margin-bottom: 20px;
@@ -57,26 +57,26 @@ const HeaderTop = styled.View`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-`;
+`
 
 const HeaderBottom = styled.View`
   flex: 1;
-`;
+`
 
 const Content = styled.View`
   flex: 1;
   padding: 20px;
   height: 100%;
-`;
+`
 
 const ContentTop = styled.View`
   flex-direction: row;
   justify-content: space-between;
   align-content: space-between;
-`;
+`
 
 const Footer = styled.View`
   flex-direction: row;
   padding: 20px;
   background-color: #565656;
-`;
+`

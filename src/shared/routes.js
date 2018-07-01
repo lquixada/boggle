@@ -1,4 +1,4 @@
-import {Game, About} from './components';
+import {Game, About} from './components'
 
 export default [
   {
@@ -10,4 +10,4 @@ export default [
     path: '/about',
     component: About
   }
-];
+]

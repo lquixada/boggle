@@ -1,11 +1,11 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from 'react'
+import styled from 'styled-components'
 
-import {Attempts} from '.';
-import {box, flex} from '../../helpers';
+import {Attempts} from '.'
+import {box, flex} from '../../helpers'
 
 export class Score extends React.Component {
-  render() {
+  render () {
     return (
       <Wrapper>
         <Header>
@@ -15,7 +15,7 @@ export class Score extends React.Component {
           <Attempts attempts={this.props.attempts} />
         </Section>
       </Wrapper>
-    );
+    )
   }
 }
 
@@ -28,11 +28,11 @@ const Wrapper = styled.div`
   @media (max-width: 540px) {
     ${flex('none')}
   }
-`;
+`
 
 const Header = styled.header`
   margin-bottom: 1rem;
-`;
+`
 
 const Section = styled.section`
   ${flex(1)}
@@ -51,4 +51,4 @@ const Section = styled.section`
   @media (max-width: 540px) {
     display: none;
   }
-`;
+`

@@ -1,10 +1,10 @@
 
-import counter from '../counter';
+import counter from '../counter'
 
 describe('counter', () => {
   it('starts on zero', () => {
-    expect(counter(undefined, {})).toBe(0);
-  });
+    expect(counter(undefined, {})).toBe(0)
+  })
 
   it('increments', () => {
     const state = counter(undefined, {
@@ -13,10 +13,10 @@ describe('counter', () => {
         word: 'bite',
         scored: true
       }
-    });
+    })
 
-    expect(state).toBe(4);
-  });
+    expect(state).toBe(4)
+  })
 
   it('resets when game ends', () => {
     let state = counter(undefined, {
@@ -25,12 +25,12 @@ describe('counter', () => {
         word: 'bite',
         scored: true
       }
-    });
+    })
 
     state = counter(state, {
       type: 'STOP_GAME'
-    });
+    })
 
-    expect(state).toBe(0);
-  });
-});
+    expect(state).toBe(0)
+  })
+})

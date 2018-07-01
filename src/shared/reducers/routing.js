@@ -1,14 +1,14 @@
-import {Map} from 'immutable';
+import {Map} from 'immutable'
 
 /*
  * This action type will be dispatched when your history
  * receives a location change.
  */
-export const LOCATION_CHANGE = '@@router/LOCATION_CHANGE';
+export const LOCATION_CHANGE = '@@router/LOCATION_CHANGE'
 
 const initialState = Map({
   locationBeforeTransitions: null
-});
+})
 
 /*
  * This reducer will update the state with the most recent location history
@@ -18,8 +18,8 @@ const initialState = Map({
  */
 export default (state = initialState, {type, payload} = {}) => {
   if (type === LOCATION_CHANGE) {
-    return state.mergeDeep({locationBeforeTransitions: payload});
+    return state.mergeDeep({locationBeforeTransitions: payload})
   }
 
-  return state;
-};
+  return state
+}

@@ -1,16 +1,16 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import styled from 'styled-components';
+import React from 'react'
+import PropTypes from 'prop-types'
+import styled from 'styled-components'
 
 export const Button = ({onClick, text}) => (
   <Wrapper>
-    <ButtonInput type="button" onClick={onClick}>{text}</ButtonInput>
+    <ButtonInput type='button' onClick={onClick}>{text}</ButtonInput>
   </Wrapper>
-);
+)
 
 const Wrapper = styled.div`
   margin-left: 2rem;
-`;
+`
 
 const ButtonInput = styled.button`
   padding: 1rem;
@@ -32,9 +32,9 @@ const ButtonInput = styled.button`
     -moz-box-shadow: inset 0 .2rem .2rem rgba(0, 0, 0, .2);
     box-shadow: inset 0 .2rem .2rem rgba(0, 0, 0, .2);
   }
-`;
+`
 
 Button.propTypes = {
   onClick: PropTypes.func.isRequired,
   text: PropTypes.string.isRequired
-};
+}

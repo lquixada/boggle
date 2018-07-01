@@ -1,6 +1,6 @@
-import path from 'path';
-import express from 'express';
+import path from 'path'
+import express from 'express'
 
-const dir = path.join(__dirname, '..', '..', '..', 'web', 'public');
+const dir = path.join(__dirname, '..', '..', '..', 'web', 'public')
 
-export default express.static(dir);
+export default express.static(dir)

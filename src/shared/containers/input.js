@@ -1,68 +1,68 @@
-import React from 'react';
-import {connect} from 'react-redux';
+import React from 'react'
+import {connect} from 'react-redux'
 
-import {Input} from '../components';
-import * as actions from '../../shared/actions';
+import {Input} from '../components'
+import * as actions from '../../shared/actions'
 
 export class InputContainer extends React.Component {
-  constructor(props) {
-    super(props);
+  constructor (props) {
+    super(props)
     this.state = {
       value: '',
       minLength: 2
-    };
+    }
 
-    this.handleChange = this.handleChange.bind(this);
-    this.handleEnter = this.handleEnter.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleChange = this.handleChange.bind(this)
+    this.handleEnter = this.handleEnter.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this)
   }
 
-  componentWillReceiveProps(nextProps) {
+  componentWillReceiveProps (nextProps) {
     if (!nextProps.started) {
-      this.reset();
+      this.reset()
     }
   }
 
-  handleChange(evt) {
-    const value = evt.target? evt.target.value : evt;
-    this.setValue(value);
+  handleChange (evt) {
+    const value = evt.target ? evt.target.value : evt
+    this.setValue(value)
   }
 
-  handleEnter(evt) {
+  handleEnter (evt) {
     if (this.state.value.length < this.state.minLength) {
-      return;
+      return
     }
 
     if (evt.which === 13) {
-      this.handleSubmit(evt);
+      this.handleSubmit(evt)
     }
   }
 
-  handleSubmit(evt) {
+  handleSubmit (evt) {
     if (this.state.value.length < this.state.minLength) {
-      return;
+      return
     }
 
-    this.props.addCheckedAttempt(this.state.value);
-    this.reset();
-    this.focus(evt.target);
+    this.props.addCheckedAttempt(this.state.value)
+    this.reset()
+    this.focus(evt.target)
   }
 
-  focus(element) {
+  focus (element) {
     if (element && element.focus) {
-      element.focus();
+      element.focus()
     }
   }
 
-  setValue(value) {
-    this.setState({value: value.trim()});
+  setValue (value) {
+    this.setState({value: value.trim()})
   }
 
-  reset() {
-    this.setValue('');
+  reset () {
+    this.setValue('')
   }
 
-  render() {
+  render () {
     return (
       <Input value={this.state.value}
         started={this.props.started}
@@ -70,9 +70,9 @@ export class InputContainer extends React.Component {
         onEnter={this.handleEnter}
         onSubmit={this.handleSubmit}
       />
-    );
+    )
   }
 }
 
-const mapStateToProps = ({started}) => ({started});
-export default connect(mapStateToProps, actions)(InputContainer);
+const mapStateToProps = ({started}) => ({started})
+export default connect(mapStateToProps, actions)(InputContainer)

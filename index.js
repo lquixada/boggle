@@ -1,4 +1,4 @@
-import {AppRegistry} from 'react-native';
-import App from './src/mobile';
+import {AppRegistry} from 'react-native'
+import App from './src/mobile'
 
-AppRegistry.registerComponent('Boggle', () => App);
+AppRegistry.registerComponent('Boggle', () => App)

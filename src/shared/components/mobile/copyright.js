@@ -1,17 +1,17 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from 'react'
+import styled from 'styled-components'
 
 export class Copyright extends React.Component {
-  render() {
+  render () {
     return (
       <Label>
         © Copyright 2016 Leonardo Quixadá. All rights reserved.
       </Label>
-    );
+    )
   }
 }
 
 const Label = styled.Text`
   color: #999;
   width: 60%;
-`;
+`

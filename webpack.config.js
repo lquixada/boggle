@@ -1,15 +1,15 @@
-const path = require('path');
-const webpack = require('webpack');
-const AssetsPlugin = require('assets-webpack-plugin');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
-const SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin');
+const path = require('path')
+const webpack = require('webpack')
+const AssetsPlugin = require('assets-webpack-plugin')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
+const CleanWebpackPlugin = require('clean-webpack-plugin')
+const SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin')
 
-const webPath = path.join(__dirname, 'web', 'public');
-const isProd = process.env.NODE_ENV === 'production';
+const webPath = path.join(__dirname, 'web', 'public')
+const isProd = process.env.NODE_ENV === 'production'
 
 module.exports = {
-  mode: isProd? 'production' : 'development',
+  mode: isProd ? 'production' : 'development',
 
   entry: {
     app: isProd
@@ -82,11 +82,11 @@ module.exports = {
         `${webPath}/styles/**/*.css`
       ],
       stripPrefix: webPath,
-      logger() {}
+      logger () {}
     })
   ],
 
   stats: {
-    modules: false,
+    modules: false
   }
-};
+}

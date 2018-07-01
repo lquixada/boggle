@@ -1,12 +1,12 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import styled from 'styled-components';
+import React from 'react'
+import PropTypes from 'prop-types'
+import styled from 'styled-components'
 
 export class Score extends React.Component {
-  render() {
+  render () {
     return (
       <Label>Score: {this.props.counter}</Label>
-    );
+    )
   }
 }
 
@@ -14,8 +14,8 @@ const Label = styled.Text`
   color: #fff;
   font-size: 15px;
   font-weight: bold;
-`;
+`
 
 Score.propTypes = {
-  counter: PropTypes.number.isRequired,
-};
+  counter: PropTypes.number.isRequired
+}

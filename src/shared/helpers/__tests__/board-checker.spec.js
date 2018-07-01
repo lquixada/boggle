@@ -1,6 +1,6 @@
-import {fromJS} from 'immutable';
+import {fromJS} from 'immutable'
 
-import BoardChecker from '../board-checker';
+import {BoardChecker} from '../board-checker'
 
 describe('BoardChecker', () => {
   it('finds regular word', () => {
@@ -9,11 +9,11 @@ describe('BoardChecker', () => {
       ['E', 'E', 'O', 'S'],
       ['N', 'O', 'R', 'M'],
       ['A', 'I', 'X', 'V']
-    ]);
-    const board = new BoardChecker(matrix);
+    ])
+    const board = new BoardChecker(matrix)
 
-    expect(board.hasWord('norm')).toBe(true);
-  });
+    expect(board.hasWord('norm')).toBe(true)
+  })
 
   it('finds backwards word', () => {
     const matrix = fromJS([
@@ -21,11 +21,11 @@ describe('BoardChecker', () => {
       ['E', 'E', 'O', 'S'],
       ['M', 'R', 'O', 'N'],
       ['A', 'I', 'X', 'V']
-    ]);
-    const board = new BoardChecker(matrix);
+    ])
+    const board = new BoardChecker(matrix)
 
-    expect(board.hasWord('norm')).toBe(true);
-  });
+    expect(board.hasWord('norm')).toBe(true)
+  })
 
   it('finds word on diagonal', () => {
     const matrix = fromJS([
@@ -33,11 +33,11 @@ describe('BoardChecker', () => {
       ['E', 'O', 'O', 'S'],
       ['M', 'R', 'R', 'N'],
       ['A', 'I', 'X', 'M']
-    ]);
-    const board = new BoardChecker(matrix);
+    ])
+    const board = new BoardChecker(matrix)
 
-    expect(board.hasWord('norm')).toBe(true);
-  });
+    expect(board.hasWord('norm')).toBe(true)
+  })
 
   it('finds word on backwards diagonal', () => {
     const matrix = fromJS([
@@ -45,11 +45,11 @@ describe('BoardChecker', () => {
       ['E', 'O', 'O', 'S'],
       ['T', 'R', 'R', 'N'],
       ['M', 'I', 'X', 'M']
-    ]);
-    const board = new BoardChecker(matrix);
+    ])
+    const board = new BoardChecker(matrix)
 
-    expect(board.hasWord('norm')).toBe(true);
-  });
+    expect(board.hasWord('norm')).toBe(true)
+  })
 
   it('finds circular word', () => {
     const matrix = fromJS([
@@ -57,11 +57,11 @@ describe('BoardChecker', () => {
       ['E', 'O', 'N', 'S'],
       ['T', 'R', 'M', 'N'],
       ['M', 'I', 'X', 'M']
-    ]);
-    const board = new BoardChecker(matrix);
+    ])
+    const board = new BoardChecker(matrix)
 
-    expect(board.hasWord('norm')).toBe(true);
-  });
+    expect(board.hasWord('norm')).toBe(true)
+  })
 
   describe('smaller board', () => {
     it('finds word', () => {
@@ -69,21 +69,21 @@ describe('BoardChecker', () => {
         ['O', 'D', 'E'],
         ['E', 'O', 'N'],
         ['T', 'R', 'M']
-      ]);
-      const board = new BoardChecker(matrix);
+      ])
+      const board = new BoardChecker(matrix)
 
-      expect(board.hasWord('dot')).toBe(true);
-    });
+      expect(board.hasWord('dot')).toBe(true)
+    })
 
     it('doesnt find word', () => {
       const matrix = fromJS([
         ['O', 'D', 'E'],
         ['E', 'O', 'N'],
         ['T', 'R', 'M']
-      ]);
-      const board = new BoardChecker(matrix);
+      ])
+      const board = new BoardChecker(matrix)
 
-      expect(board.hasWord('word')).toBe(false);
-    });
-  });
-});
+      expect(board.hasWord('word')).toBe(false)
+    })
+  })
+})

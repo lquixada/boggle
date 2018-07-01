@@ -1,17 +1,17 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from 'react'
+import styled from 'styled-components'
 
-import Input from '../../containers/input';
-import Board from '../../containers/board';
-import Button from '../../containers/button';
-import Clock from '../../containers/clock';
-import Score from '../../containers/score';
+import Input from '../../containers/input'
+import Board from '../../containers/board'
+import Button from '../../containers/button'
+import Clock from '../../containers/clock'
+import Score from '../../containers/score'
 
 import {
   Copyright, Ribbon, Social, Title, Main, Container, Header, HeaderContainer, Section, SectionContainer, Footer
-} from '..';
+} from '..'
 
-import {flex} from '../../helpers';
+import {flex} from '../../helpers'
 
 export const Game = () => (
   <Main>
@@ -42,7 +42,7 @@ export const Game = () => (
       </Container>
     </Footer>
   </Main>
-);
+)
 
 const Aside = styled.aside`
   ${flex.display()}
@@ -59,4 +59,4 @@ const Aside = styled.aside`
     width: 100%;
     height: auto;
   }
-`;
+`

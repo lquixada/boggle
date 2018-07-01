@@ -1,27 +1,27 @@
-import React, {Fragment} from 'react';
-import {Helmet} from 'react-helmet';
-import {injectGlobal} from 'styled-components';
+import React, {Fragment} from 'react'
+import {Helmet} from 'react-helmet'
+import {injectGlobal} from 'styled-components'
 
-import pkg from '../../../../package';
+import pkg from '../../../../package'
 
 export class App extends React.Component {
-  componentWillMount() {
-    resetStyles();
+  componentWillMount () {
+    resetStyles()
   }
 
-  render() {
+  render () {
     return (
       <Fragment>
         <Helmet>
-          <meta charset="utf-8" />
-          <meta http-equiv="x-ua-compatible" content="ie=edge" />
-          <meta name="viewport" content="width=device-width, initial-scale=1" />
-          <meta name="version" content={pkg.version} />
+          <meta charset='utf-8' />
+          <meta http-equiv='x-ua-compatible' content='ie=edge' />
+          <meta name='viewport' content='width=device-width, initial-scale=1' />
+          <meta name='version' content={pkg.version} />
           <title>Boggle</title>
         </Helmet>
         {this.props.children}
       </Fragment>
-    );
+    )
   }
 }
 
@@ -89,4 +89,4 @@ const resetStyles = () => injectGlobal`
   ::-webkit-scrollbar-corner {
     background-color: #000;
   }
-`;
+`

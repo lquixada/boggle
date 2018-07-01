@@ -1,7 +1,7 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from 'react'
+import styled from 'styled-components'
 
-import {flex, box} from '../../helpers';
+import {flex, box} from '../../helpers'
 
 export const Board = ({matrix}) => (
   <Wrapper>
@@ -17,7 +17,7 @@ export const Board = ({matrix}) => (
       </tbody>
     </Table>
   </Wrapper>
-);
+)
 
 const Wrapper = styled.div`
   ${flex('3.3')};
@@ -31,11 +31,11 @@ const Wrapper = styled.div`
     margin: 0;
     width: 100%;
   }
-`;
+`
 
 const Table = styled.table`
   width: 100%;
-`;
+`
 
 const Td = styled.td`
   width: 9rem;
@@ -46,4 +46,4 @@ const Td = styled.td`
   text-align: center;
   text-transform: uppercase;
   border-radius: .4rem;
-`;
+`

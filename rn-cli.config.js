@@ -1,11 +1,11 @@
-const blacklist = require('metro/src/blacklist');
+const blacklist = require('metro/src/blacklist')
 
 const config = {
-  getBlacklistRE() {
+  getBlacklistRE () {
     return blacklist([
-      /(desktop|web)\/.*/,
-    ]);
-  },
-};
+      /(desktop|web)\/.*/
+    ])
+  }
+}
 
-module.exports = config;
+module.exports = config

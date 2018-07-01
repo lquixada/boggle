@@ -1,10 +1,10 @@
-import React from 'react';
-import {Link} from 'react-router-dom';
-import styled from 'styled-components';
+import React from 'react'
+import {Link} from 'react-router-dom'
+import styled from 'styled-components'
 
 export const Title = () => (
-  <Wrapper><Link to="/">BOGGLE</Link></Wrapper>
-);
+  <Wrapper><Link to='/'>BOGGLE</Link></Wrapper>
+)
 
 const Wrapper = styled.h1`
   color: #fff;
@@ -18,4 +18,4 @@ const Wrapper = styled.h1`
     color: inherit;
     text-decoration: none;
   }
-`;
+`

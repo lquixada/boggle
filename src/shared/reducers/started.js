@@ -1,10 +1,10 @@
-export default function started(state = false, action) {
+export default function started (state = false, action) {
   switch (action.type) {
     case 'START_GAME':
-      return true;
+      return true
     case 'STOP_GAME':
-      return false;
+      return false
     default:
-      return state;
+      return state
   }
 }
