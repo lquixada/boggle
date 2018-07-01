@@ -1,20 +1,25 @@
 #!/usr/bin/env node
 const path = require('path')
 const fs = require('fs')
-const pkg = require('../package.json')
 const NodeZip = require('node-zip')
+const pkg = require('../package.json')
 
 const zip = new NodeZip()
 
-zip.file('Dockerfile', `
-FROM lquixada/${pkg.name}:${pkg.version}
+zip.file('Dockerrun.aws.json', JSON.stringify({
+  AWSEBDockerrunVersion: '1',
+  Image: {
+    Name: `lquixada/${pkg.name}:${pkg.version}`,
+    Update: 'true'
+  },
+  Ports: [
+    {
+      ContainerPort: '3000'
+    }
+  ]
+}))
 
-EXPOSE 3000
-
-CMD ["./node_modules/.bin/pm2", "start", ".process.yml", "--no-daemon"]
-`)
-
-const file = path.join(__dirname, '..', 'web', 'build.zip')
+const file = path.join(__dirname, '..', 'web', 'aws.dockerrun.zip')
 const data = zip.generate({base64: false, compression: 'DEFLATE'})
 
 fs.writeFileSync(file, data, 'binary')

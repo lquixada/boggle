@@ -6,7 +6,9 @@ WORKDIR /app
 
 RUN apt-get update
 
-RUN apt-get install htop
+RUN apt-get install -y htop vim
+
+RUN yarn global add pm2
 
 RUN mkdir -p ./logs
 
@@ -22,4 +24,4 @@ COPY .process.yml .
 
 EXPOSE 3000
 
-CMD ["npm", "start"]
+CMD ["pm2", "start", ".process.yml", "--no-daemon"]

@@ -26,7 +26,7 @@ deploy:
     env: boggle-prod
     bucket_name: elasticbeanstalk-us-east-1-328217091811
     bucket_path: boggle
-    zip_file: web/build.zip
+    zip_file: web/aws.dockerrun.zip
     on:
       tags: true
   - provider: s3
