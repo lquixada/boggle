@@ -25,6 +25,7 @@ deploy:
   app: Boggle
   env: boggle-prod
   bucket_name: elasticbeanstalk-us-east-1-328217091811
+  bucket_path: boggle
   zip_file: web/build.zip
   on:
     tags: true
