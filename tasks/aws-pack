@@ -9,7 +9,7 @@ const zip = new NodeZip()
 zip.file('Dockerrun.aws.json', JSON.stringify({
   AWSEBDockerrunVersion: '1',
   Image: {
-    Name: `lquixada/${pkg.name}:${pkg.version}`,
+    Name: `${pkg.docker.registry}/${pkg.name}:${pkg.version}`,
     Update: 'true'
   },
   Ports: [

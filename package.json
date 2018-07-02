@@ -7,12 +7,17 @@
   "license": "MIT",
   "main": "src/desktop/index.js",
   "scripts": {
+    "env": "echo $npm_package_docker_registry",
     "precommit": "lint-staged",
+    "preaws:build": "npm run -s web:build",
     "predocker:build": "npm run -s web:build",
     "android:build": "react-native run-android",
     "android:dev": "react-native start --config ../../../../rn-cli.config.js",
     "android:eject": "react-native eject",
-    "aws:build": "./tasks/aws-build",
+    "aws:build": "docker build -t $npm_package_docker_registry/boggle:$npm_package_version .",
+    "aws:pack": "./tasks/aws-pack",
+    "aws:login": "eval $(aws ecr get-login --no-include-email --region us-east-1)",
+    "aws:push": "docker push $npm_package_docker_registry/boggle:$npm_package_version",
     "build": "npm run -s web:build",
     "build:analyze": "./tasks/analyze",
     "build:client": "NODE_ENV=production webpack-cli -p",
@@ -49,6 +54,9 @@
   },
   "standard": {
     "env": "jest"
+  },
+  "docker": {
+    "registry": "328217091811.dkr.ecr.us-east-1.amazonaws.com"
   },
   "dependencies": {
     "body-parser": "1.18.3",

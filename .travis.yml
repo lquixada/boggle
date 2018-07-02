@@ -5,21 +5,21 @@ branches:
   - "/^v\\d+\\.\\d+(\\.\\d+)?(-\\S*)?$/"
 services:
 - docker
+install:
+- pip install --user awscli
+- export PATH=$PATH:$HOME/.local/bin
+- yarn
 script:
 - yarn -s test:lint
 - yarn -s test:jest
 - yarn -s test:codecov
-- yarn -s docker:build
-- yarn -s docker:login
-- yarn -s docker:push
+- yarn -s aws:login
 - yarn -s aws:build
+- yarn -s aws:push
+- yarn -s aws:pack
 deploy:
   - provider: elasticbeanstalk
     skip_cleanup: true
-    access_key_id:
-      secure: bH+vEkNsbZyPhG0o0kyqsuvJIGBkuK9WdL0PA3E8DMPM0k3IVtlv0TS51HscZubF54lYEsNGN1AnCjySyBnjhHIbSNuwjrCeTF2GjMiWDUQ9Mlc6linnL+z0hjW4809rQqyuOaS84UgptRRRnwSmTVkG/5CeMo19Ez/6OFBZSwxR679NulQIzWymI3fdPNXYGQSpJOd3+Si9AZ7bXNG7u4i1p7cjWvouqmtdbEwlNjknU8LE/KZQVYpd+XDY++U4uuJqbkBUc8UwHZNV6zw1kF2gIJ6P3q9g7/8E/1SaghwJiIVVlh1iz3MSQqyLJzL9JWb3JTLp95XN/Rp9lTz1IhoTQf8d2HM/AdISbGlNh7iAoS4d99INFFn2fAMPolFf0wmDHI1KhhnuNkQXKWvS2A7B+nRPdeurxqiirEMuO5y2xWM6ikym3b8btnmMZrDoS6ChqTUlY9Gc/nhKHNTgkJCd+ZK8ebIAJ+ugeFhaf19+oUQMZaylb53UmEnyD7b36xCKNDcCzRyPXEb7U1GhPZ5BVf5rpmoeT+ldICBCCzIrWCg2HoPthX4bmWLdeEajEEIGjk14SULZsFs9YZJulRf7L5fMlwJ4JSZ971mY8ej7UFDOU7KK4Ap+Iqw0LUGgdOf1yudIHnRyTW1M/QQXfiTkKCmuPsBAgYVqnW3Msbc=
-    secret_access_key:
-      secure: DnKTllUQJTgXBBZxKfaEbeu1fRt9+x8LL68bY9KYanygTgHS5vorFXNXbeDs7UMrmVSZzUOB8OCSUJHaZB06UgHo85YlNYaj2L1p7YkNN2nw3KsJi1hJF4w6QGxEMKXZswqCMXFPuWqrenabpyL9e00PY3f9ZjwyJ1d95/r1nmNQJpw6AgX5zlOo8nyMJRoGGttab2p0fkpBzdVfvt8JVPHEVEt2eHkPjFrgklQ3XeX+Gt2ILSPV4ScNBtgdsjKkTFgOEhxCt8jF+ozA/Lv4X7fad/hanuDCJB7aCQbqK+zHmY30zeu9niB1B4Y10rdzq3ODsd4QRuTNeZokH56n6myU7egULq0QxNgugbGw2CSmcJ9bEvofTzabW1SvcQEpaGQZR8JZBl9ynmgRD5DDr6GaHzsiBcx1/6vW5REuiuY/128Gi8O7ba/xJOcMS5GxGlp7AdA/UbFAFARnV04JUSo4VNemDDtsV6Ph9Idf9tYzasPgixpKn4omCFOM8TjERbdB6Uq85OP5nYioQwgOWd5Ku9mZxGKR+AwSPYSECZlza8fzWQkl8HB+nlaqS3+k6ccOm+KiNArwf9UIrDMcFxuLCFjb2YTUDTp/+ril9h3gia1dJlJxSAV7r0Y7U9X1UvlYImZSujooHgDFCLq+2uvsBpMvzkcOx5GHoo1jWJw=
     region: us-east-1
     app: Boggle
     env: boggle-prod
@@ -30,10 +30,6 @@ deploy:
       tags: true
   - provider: s3
     skip_cleanup: true
-    access_key_id:
-      secure: bH+vEkNsbZyPhG0o0kyqsuvJIGBkuK9WdL0PA3E8DMPM0k3IVtlv0TS51HscZubF54lYEsNGN1AnCjySyBnjhHIbSNuwjrCeTF2GjMiWDUQ9Mlc6linnL+z0hjW4809rQqyuOaS84UgptRRRnwSmTVkG/5CeMo19Ez/6OFBZSwxR679NulQIzWymI3fdPNXYGQSpJOd3+Si9AZ7bXNG7u4i1p7cjWvouqmtdbEwlNjknU8LE/KZQVYpd+XDY++U4uuJqbkBUc8UwHZNV6zw1kF2gIJ6P3q9g7/8E/1SaghwJiIVVlh1iz3MSQqyLJzL9JWb3JTLp95XN/Rp9lTz1IhoTQf8d2HM/AdISbGlNh7iAoS4d99INFFn2fAMPolFf0wmDHI1KhhnuNkQXKWvS2A7B+nRPdeurxqiirEMuO5y2xWM6ikym3b8btnmMZrDoS6ChqTUlY9Gc/nhKHNTgkJCd+ZK8ebIAJ+ugeFhaf19+oUQMZaylb53UmEnyD7b36xCKNDcCzRyPXEb7U1GhPZ5BVf5rpmoeT+ldICBCCzIrWCg2HoPthX4bmWLdeEajEEIGjk14SULZsFs9YZJulRf7L5fMlwJ4JSZ971mY8ej7UFDOU7KK4Ap+Iqw0LUGgdOf1yudIHnRyTW1M/QQXfiTkKCmuPsBAgYVqnW3Msbc=
-    secret_access_key:
-      secure: DnKTllUQJTgXBBZxKfaEbeu1fRt9+x8LL68bY9KYanygTgHS5vorFXNXbeDs7UMrmVSZzUOB8OCSUJHaZB06UgHo85YlNYaj2L1p7YkNN2nw3KsJi1hJF4w6QGxEMKXZswqCMXFPuWqrenabpyL9e00PY3f9ZjwyJ1d95/r1nmNQJpw6AgX5zlOo8nyMJRoGGttab2p0fkpBzdVfvt8JVPHEVEt2eHkPjFrgklQ3XeX+Gt2ILSPV4ScNBtgdsjKkTFgOEhxCt8jF+ozA/Lv4X7fad/hanuDCJB7aCQbqK+zHmY30zeu9niB1B4Y10rdzq3ODsd4QRuTNeZokH56n6myU7egULq0QxNgugbGw2CSmcJ9bEvofTzabW1SvcQEpaGQZR8JZBl9ynmgRD5DDr6GaHzsiBcx1/6vW5REuiuY/128Gi8O7ba/xJOcMS5GxGlp7AdA/UbFAFARnV04JUSo4VNemDDtsV6Ph9Idf9tYzasPgixpKn4omCFOM8TjERbdB6Uq85OP5nYioQwgOWd5Ku9mZxGKR+AwSPYSECZlza8fzWQkl8HB+nlaqS3+k6ccOm+KiNArwf9UIrDMcFxuLCFjb2YTUDTp/+ril9h3gia1dJlJxSAV7r0Y7U9X1UvlYImZSujooHgDFCLq+2uvsBpMvzkcOx5GHoo1jWJw=
     bucket: boggle.lquixada.com
     local_dir: web/public
     on:
