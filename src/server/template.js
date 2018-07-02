@@ -1,4 +1,5 @@
 import assets from '../public/assets.json'
+import config from '../shared/config'
 
 export default ({
   helmet, styles, html, state
@@ -17,8 +18,8 @@ export default ({
       <script>
         window.__INITIAL_STATE__ = ${state};
       </script>
-      <script src="${assets.vendor.js}"></script>
-      <script src="${assets.app.js}"></script>
+      <script src="${config.url.cloudfront}${assets.vendor.js}"></script>
+      <script src="${config.url.cloudfront}${assets.app.js}"></script>
       <script>
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
         (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
