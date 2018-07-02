@@ -11,6 +11,7 @@
     "precommit": "lint-staged",
     "preaws:build": "npm run -s web:build",
     "predocker:build": "npm run -s web:build",
+    "preweb:start": "npm run -s web:build",
     "android:build": "react-native run-android",
     "android:dev": "react-native start --config ../../../../rn-cli.config.js",
     "android:eject": "react-native eject",
@@ -21,7 +22,7 @@
     "build": "npm run -s web:build",
     "build:analyze": "./tasks/analyze",
     "build:client": "NODE_ENV=production webpack-cli -p",
-    "build:server": "babel -D -q src -d web",
+    "build:server": "NODE_ENV=production babel -D -q src -d web",
     "deploy:major": "npm version major && git push --follow-tags",
     "deploy:minor": "npm version minor && git push --follow-tags",
     "deploy:patch": "npm version patch && git push --follow-tags",
@@ -43,7 +44,7 @@
     "test:codecov": "codecov",
     "web:build": "npm run -s build:server && npm run -s build:client",
     "web:dev": "nodemon src/app",
-    "web:start": "pm2 start .process.yml --no-daemon"
+    "web:start": "NODE_ENV=production pm2 start .process.yml --no-daemon"
   },
   "lint-staged": {
     "*.js": [
