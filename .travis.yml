@@ -9,7 +9,6 @@ script:
 - yarn -s test:lint
 - yarn -s test:jest
 - yarn -s test:codecov
-before_deploy:
 - yarn -s docker:build
 - yarn -s docker:login
 - yarn -s docker:push
