@@ -35,7 +35,7 @@ module.exports = {
 
   output: {
     path: webPath,
-    publicPath: '/',
+    publicPath: isProd ? 'https://d2f4abhdzx92bs.cloudfront.net/' : '/',
     filename: `scripts/[name]${isProd ? '.[chunkhash]' : ''}.js`
   },
 
@@ -69,6 +69,7 @@ module.exports = {
     new AssetsPlugin({
       filename: 'assets.json',
       path: webPath,
+      fullPath: false,
       prettyPrint: true,
       update: true
     })
