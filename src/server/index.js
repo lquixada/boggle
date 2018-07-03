@@ -20,7 +20,7 @@ if (NODE_ENV === 'development') {
 server.use(helmet())
 server.use(compression(NODE_ENV === 'production' ? -1 : 0))
 server.use(loggerMiddleware)
-server.use(staticMiddleware)
+server.use('/assets', staticMiddleware)
 server.use(bodyParser.urlencoded({extended: true}))
 
 /* Controllers */
