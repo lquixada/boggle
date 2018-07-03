@@ -9,6 +9,7 @@
   "scripts": {
     "env": "echo $npm_package_docker_registry",
     "precommit": "lint-staged",
+    "prelambda:deploy": "npm run -s web:build",
     "preaws:build": "npm run -s web:build",
     "predocker:build": "npm run -s web:build",
     "preweb:start": "npm run -s web:build",
@@ -37,6 +38,7 @@
     "ios:build": "react-native run-ios",
     "ios:dev": "react-native start --config ../../../../rn-cli.config.js",
     "ios:eject": "react-native eject",
+    "lambda:deploy": "serverless deploy -v",
     "start": "npm run -s web:start",
     "test": "npm run -s test:jest && npm run -s test:lint",
     "test:jest": "jest",
@@ -59,6 +61,7 @@
     "registry": "328217091811.dkr.ecr.us-east-1.amazonaws.com"
   },
   "dependencies": {
+    "aws-serverless-express": "3.2.0",
     "body-parser": "1.18.3",
     "compression": "1.7.2",
     "cross-fetch": "2.2.2",
@@ -116,6 +119,9 @@
     "node-zip": "1.1.1",
     "nodemon": "1.17.5",
     "react-test-renderer": "16.4.1",
+    "serverless": "1.27.3",
+    "serverless-offline": "3.25.5",
+    "serverless-plugin-webpack": "1.5.1",
     "standard": "11.0.1",
     "supertest": "3.1.0",
     "webpack": "4.14.0",

@@ -64,3 +64,6 @@ local.properties
 
 # expo
 .expo
+
+# Serverless directories
+.serverless

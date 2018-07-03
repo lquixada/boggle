@@ -1,0 +1,31 @@
+service: boggle
+
+custom:
+  webpack:
+    config: ./webpack.config.lambda.js
+    series: true
+
+provider:
+  name: aws
+  runtime: nodejs8.10
+  memorySize: 128
+  timeout: 5
+  stage: prod
+  region: us-east-1
+
+functions:
+  app:
+    handler: web/lambda.handler
+    events:
+      - http:
+          path: /
+          method: get
+      - http:
+          path: /{proxy+}
+          method: get
+    environment:
+      NODE_ENV: production
+
+plugins:
+- serverless-offline
+- serverless-plugin-webpack
