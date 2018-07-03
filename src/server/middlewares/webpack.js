@@ -9,7 +9,8 @@ const compiler = webpack(config)
 export default [
   webpackDevMiddleware(compiler, {
     noInfo: true,
-    publicPath: config.output.publicPath
+    publicPath: config.output.publicPath,
+    stats: config.stats
   }),
   webpackHotMiddleware(compiler)
 ]
