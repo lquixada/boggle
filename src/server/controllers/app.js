@@ -6,7 +6,7 @@ import {StaticRouter} from 'react-router-dom'
 import {Provider} from 'react-redux'
 import {Helmet} from 'react-helmet'
 
-import template from '../template'
+import template from '../templates/app'
 import routes from '../../shared/routes'
 import configureStore from '../../shared/store'
 import {App} from '../../shared/components'

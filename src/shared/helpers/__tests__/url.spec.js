@@ -14,7 +14,7 @@ describe('Helpers', () => {
 
     it('returns public path on web environment', () => {
       jest.spyOn(platform, 'isElectron').mockReturnValue(false)
-      expect(publicPath()).toBe('/images/')
+      expect(publicPath()).toBe('/assets/images/')
     })
   })
 
@@ -26,7 +26,7 @@ describe('Helpers', () => {
 
     it('returns public path on web environment', () => {
       jest.spyOn(platform, 'isElectron').mockReturnValue(false)
-      expect(img('logo.png')).toBe('/images/logo.png')
+      expect(img('logo.png')).toBe('/assets/images/logo.png')
     })
   })
 })

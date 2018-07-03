@@ -5,7 +5,7 @@ import bodyParser from 'body-parser'
 
 import loggerMiddleware from './middlewares/logger'
 import staticMiddleware from './middlewares/static'
-import indexController from './controllers/index'
+import appController from './controllers/app'
 
 const {NODE_ENV} = process.env
 
@@ -24,6 +24,6 @@ server.use('/assets', staticMiddleware)
 server.use(bodyParser.urlencoded({extended: true}))
 
 /* Controllers */
-server.use('/', indexController)
+server.use('/', appController)
 
 export default server
