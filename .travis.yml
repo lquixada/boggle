@@ -9,15 +9,8 @@ script:
 - yarn -s test:codecov
 - yarn -s web:build
 deploy:
-  - provider: s3
-    skip_cleanup: true
-    bucket: static.lquixada.com
-    local_dir: web/public
-    upload-dir: boggle
-    on:
-      tags: true
-  - provider: script
-    skip_cleanup: true
-    script: ./node_modules/.bin/serverless deploy -v
-    on:
-      tags: true
+  provider: script
+  skip_cleanup: true
+  script: ./node_modules/.bin/serverless deploy -v
+  on:
+    tags: true

@@ -4,6 +4,14 @@ custom:
   webpack:
     config: ./webpack.config.lambda.js
     series: true
+  assets:
+    auto: true
+    targets:
+      - bucket: static.lquixada.com
+        prefix: boggle
+        files:
+        - source: web/public
+          globs: '**/*'
 
 provider:
   name: aws
@@ -29,3 +37,4 @@ functions:
 plugins:
 - serverless-offline
 - serverless-plugin-webpack
+- serverless-s3-deploy
