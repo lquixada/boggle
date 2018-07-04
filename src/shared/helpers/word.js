@@ -12,7 +12,7 @@ export const isOnBoard = (matrix, word) => {
 }
 
 export const isOnDictionary = (word) => {
-  const url = `${config.wiktionary}&titles=${word.toLowerCase()}`
+  const url = `${config.wiktionaryUrl}&titles=${word.toLowerCase()}`
 
   return fetch(url)
     .then((response) => response.json())
