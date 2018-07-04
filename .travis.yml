@@ -11,8 +11,9 @@ script:
 deploy:
   - provider: s3
     skip_cleanup: true
-    bucket: boggle.lquixada.com
+    bucket: static.lquixada.com
     local_dir: web/public
+    upload-dir: boggle
     on:
       tags: true
   - provider: script
