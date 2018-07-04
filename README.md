@@ -30,11 +30,10 @@ A multi-platform implementation of the Boggle game (only for study purposes). Mo
 ## Features
 
 * Cross-browser (latest Firefox/Chrome and IE10)
-* Cross-platform (works on server, browsers, mobiles and desktops)
 * Responsive layout (from mobile to desktop)
+* Cross-platform (works on server, browsers, mobiles and desktops)
+* Serverless
 * Secure connection with HTTPS
-* Custom domain: www.bogglejs.com
-* Cache management with Service Worker (still ongoing)
 
 
 ## Installation
@@ -54,7 +53,7 @@ $ yarn # or npm install
 The best way to start with Boggle is with its web version. In order to run the app in development mode, run:
 
 ```
-$ yarn dev
+$ yarn start
 ```
 
 And go to http://localhost:3000/.
@@ -67,14 +66,6 @@ To run all tests and lints, run:
 $ yarn test
 ```
 
-The task used in production to run the app is:
-
-```
-$ yarn start
-```
-
-Boggle will be ready on http://localhost:3000/.
-
 
 ## Pages
 
@@ -86,11 +77,8 @@ Boggle will be ready on http://localhost:3000/.
 
 ### Web
 
-* **yarn web:build**: builds files and assets for server and client
-* **yarn web:dev**: starts a webserver aimed for development (alias `yarn dev`)
-* **yarn web:start**: starts a production ready webserver (alias `yarn start`)
-
-To get started, run `yarn web:dev` or just `yarn dev`.
+* **yarn build**: builds files and assets for server and client (alias for `yarn web:build`)
+* **yarn start**: starts a webserver aimed for development (alias for `yarn web:start`)
 
 
 ### iOS
@@ -144,7 +132,7 @@ To get started, run `yarn electron:start`.
   * **shared/**: common codebase for all platforms (95% of the code is here)
   * **app/**: well, this is actually entry point for the node app (sorry for that!)
 * **tasks/**: shell tasks that complex enough to not be a npm task
-* **web/**: distributable files for the web (server and client) created through `yarn web:build`
+* **web/**: distributable files for the web (server and client) created through `yarn build`
 
 
 ## Stack
@@ -152,14 +140,13 @@ To get started, run `yarn electron:start`.
 * **App**: react, redux, immutable.js
 * **Style**: styled-components
 * **Tests**: jest, codecov
-* **Lint**: eslint
+* **Lint**: standard
 * **Benchmark**: clinic
 * **Utils**: npm, webpack, babel
 * **Mobile**: react-native
 * **Desktop**: electron
-* **CI**: [TravisCI](https://travis-ci.org/lquixada/boggle)
-* **Infra**: [Heroku](https://bogglejs.herokuapp.com/)
-* **SSL**: [Let's Encrypt](https://letsencrypt.org/)
+* **CI**: [TravisCI](https://travis-ci.org/lquixada/boggle/)
+* **Infra**: [AWS Lambda](https://aws.amazon.com/serverless/)
 
 
 ## Other projects
