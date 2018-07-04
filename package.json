@@ -7,19 +7,12 @@
   "license": "MIT",
   "main": "src/desktop/index.js",
   "scripts": {
-    "env": "echo $npm_package_docker_registry",
     "precommit": "lint-staged",
     "prelambda:deploy": "npm run -s web:build",
-    "preaws:build": "npm run -s web:build",
-    "predocker:build": "npm run -s web:build",
     "preweb:start": "npm run -s web:build",
     "android:build": "react-native run-android",
     "android:dev": "react-native start --config ../../../../rn-cli.config.js",
     "android:eject": "react-native eject",
-    "aws:build": "docker build -t $npm_package_docker_registry/boggle:$npm_package_version .",
-    "aws:pack": "./tasks/aws-pack",
-    "aws:login": "eval $(aws ecr get-login --no-include-email --region us-east-1)",
-    "aws:push": "docker push $npm_package_docker_registry/boggle:$npm_package_version",
     "build": "npm run -s web:build",
     "build:analyze": "./tasks/analyze",
     "build:client": "NODE_ENV=production webpack-cli -p",
@@ -27,11 +20,6 @@
     "deploy:major": "npm version major && git push --follow-tags",
     "deploy:minor": "npm version minor && git push --follow-tags",
     "deploy:patch": "npm version patch && git push --follow-tags",
-    "dev": "npm run -s web:dev",
-    "docker:build": "docker build -t lquixada/boggle:$npm_package_version .",
-    "docker:pull": "docker pull lquixada/boggle:$npm_package_version",
-    "docker:push": "docker push lquixada/boggle:$npm_package_version",
-    "docker:start": "docker run -it --rm -p 3000:3000 lquixada/boggle:$npm_package_version",
     "electron:build": "./tasks/electron-build",
     "electron:dev": "NODE_ENV=development electron .",
     "flameon": "./tasks/flame",
@@ -39,14 +27,13 @@
     "ios:dev": "react-native start --config ../../../../rn-cli.config.js",
     "ios:eject": "react-native eject",
     "lambda:deploy": "serverless deploy -v",
-    "start": "npm run -s web:start",
+    "start": "nodemon src/app",
     "test": "npm run -s test:jest && npm run -s test:lint",
     "test:jest": "jest",
     "test:lint": "standard",
     "test:codecov": "codecov",
     "web:build": "npm run -s build:server && npm run -s build:client",
-    "web:dev": "nodemon src/app",
-    "web:start": "NODE_ENV=production pm2 start .process.yml --no-daemon"
+    "web:start": "nodemon src/app"
   },
   "lint-staged": {
     "*.js": [
@@ -56,9 +43,6 @@
   },
   "standard": {
     "env": "jest"
-  },
-  "docker": {
-    "registry": "328217091811.dkr.ecr.us-east-1.amazonaws.com"
   },
   "dependencies": {
     "aws-serverless-express": "3.2.0",
@@ -72,7 +56,6 @@
     "immutable": "3.8.2",
     "lodash": "4.17.10",
     "morgan": "1.9.0",
-    "pm2": "2.10.4",
     "prop-types": "15.6.2",
     "react": "16.4.1",
     "react-dom": "16.4.1",

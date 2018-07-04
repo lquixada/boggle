@@ -3,34 +3,20 @@ language: node_js
 branches:
   only:
   - "/^v\\d+\\.\\d+(\\.\\d+)?(-\\S*)?$/"
-services:
-- docker
-install:
-- pip install --user awscli
-- export PATH=$PATH:$HOME/.local/bin
-- yarn
 script:
 - yarn -s test:lint
 - yarn -s test:jest
 - yarn -s test:codecov
-- yarn -s aws:login
-- yarn -s aws:build
-- yarn -s aws:push
-- yarn -s aws:pack
+- yarn -s web:build
 deploy:
-  - provider: elasticbeanstalk
-    skip_cleanup: true
-    region: us-east-1
-    app: Boggle
-    env: boggle-prod
-    bucket_name: elasticbeanstalk-us-east-1-328217091811
-    bucket_path: boggle
-    zip_file: web/aws.dockerrun.zip
-    on:
-      tags: true
   - provider: s3
     skip_cleanup: true
     bucket: boggle.lquixada.com
     local_dir: web/public
+    on:
+      tags: true
+  - provider: script
+    skip_cleanup: true
+    script: ./node_modules/.bin/serverless deploy -v
     on:
       tags: true

@@ -1,6 +1,0 @@
-apps:
-  - script   : ./web/app.js
-    instances: max
-    exec_mode: cluster
-    env      :
-      NODE_ENV: production

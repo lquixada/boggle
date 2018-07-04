@@ -158,7 +158,7 @@ To get started, run `yarn electron:start`.
 * **Mobile**: react-native
 * **Desktop**: electron
 * **CI**: [TravisCI](https://travis-ci.org/lquixada/boggle)
-* **Infra**: [Heroku](https://bogglejs.herokuapp.com/), docker
+* **Infra**: [Heroku](https://bogglejs.herokuapp.com/)
 * **SSL**: [Let's Encrypt](https://letsencrypt.org/)
 
 
