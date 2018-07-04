@@ -1,6 +1,6 @@
 {
   "name": "boggle",
-  "version": "1.0.15",
+  "version": "1.0.16",
   "private": true,
   "description": "A web-based implementation of the Boggle game for React study purposes.",
   "author": "Leonardo Quixada <lquixada@gmail.com>",
