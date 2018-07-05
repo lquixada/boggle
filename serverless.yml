@@ -2,8 +2,7 @@ service: boggle
 
 custom:
   webpack:
-    config: ./webpack.config.lambda.js
-    series: true
+    webpackConfig: ./webpack.config.lambda.js
   assets:
     auto: true
     targets:
@@ -36,5 +35,5 @@ functions:
 
 plugins:
 - serverless-offline
-- serverless-plugin-webpack
+- serverless-webpack
 - serverless-s3-deploy
