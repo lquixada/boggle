@@ -1,10 +1,9 @@
 import path from 'path'
 import winston from 'winston'
 
-import {isLambdaEnv} from './helpers'
-
 const {combine, colorize, simple} = winston.format
-const format = isLambdaEnv ? simple() : combine(colorize(), simple())
+const isProd = process.env.NODE_ENV === 'production'
+const format = isProd ? simple() : combine(colorize(), simple())
 
 const transports = [
   new winston.transports.Console({
@@ -14,7 +13,7 @@ const transports = [
   })
 ]
 
-if (!isLambdaEnv) {
+if (!isProd) {
   transports.push(
     new winston.transports.File({
       level: 'info',
