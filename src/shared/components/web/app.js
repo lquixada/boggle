@@ -17,6 +17,8 @@ export class App extends React.Component {
           <meta http-equiv='x-ua-compatible' content='ie=edge' />
           <meta name='viewport' content='width=device-width, initial-scale=1' />
           <meta name='version' content={pkg.version} />
+          {/* Disabled favicon for now, it is hitting the appController. */}
+          <link rel='icon' href='data:,' />
           <title>Boggle</title>
         </Helmet>
         {this.props.children}
