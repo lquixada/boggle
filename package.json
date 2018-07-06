@@ -46,6 +46,7 @@
   },
   "dependencies": {
     "aws-serverless-express": "3.2.0",
+    "aws-xray-sdk": "1.2.0",
     "body-parser": "1.18.3",
     "compression": "1.7.2",
     "cross-fetch": "2.2.2",
