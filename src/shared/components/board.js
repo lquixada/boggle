@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import {flex, box} from '../../helpers'
+import {flex, box} from '../helpers'
 
 export const Board = ({matrix}) => (
   <Wrapper>

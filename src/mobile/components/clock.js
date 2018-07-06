@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import {Text} from 'react-native'
-import styled from 'styled-components'
+import styled from 'styled-components/native'
 
 export class Clock extends React.Component {
   getSecs () {

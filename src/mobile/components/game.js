@@ -1,13 +1,13 @@
 import React from 'react'
-import styled from 'styled-components'
+import styled from 'styled-components/native'
 
-import Board from '../../containers/board'
-import Button from '../../containers/button'
-import Clock from '../../containers/clock'
-import Input from '../../containers/input'
-import Score from '../../containers/score'
+import Board from '../containers/board'
+import Button from '../containers/button'
+import Clock from '../containers/clock'
+import Input from '../containers/input'
+import Score from '../containers/score'
 
-import {Copyright, Social, Title} from '..'
+import {Copyright, Social, Title} from '../components'
 
 export class Game extends React.Component {
   render () {

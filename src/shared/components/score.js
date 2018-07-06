@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 import {Attempts} from '.'
-import {box, flex} from '../../helpers'
+import {box, flex} from '../helpers'
 
 export class Score extends React.Component {
   render () {

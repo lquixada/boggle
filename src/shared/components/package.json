@@ -1,6 +1,0 @@
-{
-  "name": "react-components",
-  "version": "0.0.0",
-  "main": "./web/index.js",
-  "react-native": "./mobile/index.js"
-}
