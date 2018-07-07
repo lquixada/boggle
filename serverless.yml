@@ -2,7 +2,7 @@ service: boggle
 
 custom:
   webpack:
-    webpackConfig: ./webpack.config.lambda.js
+    webpackConfig: ./webpack.config.server.js
   assets:
     auto: true
     targets:

@@ -5,15 +5,12 @@ const CopyWebpackPlugin = require('copy-webpack-plugin')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
 
 const webPath = path.join(__dirname, 'web', 'public')
-const isProd = process.env.NODE_ENV === 'production'
 
-module.exports = {
-  mode: isProd ? 'production' : 'development',
+module.exports = (env) => ({
+  mode: env.prod ? 'production' : 'development',
 
   entry: {
-    app: isProd
-      ? ['./src/client']
-      : ['webpack-hot-middleware/client', './src/client']
+    app: env.prod ? ['./src/client'] : ['webpack-hot-middleware/client', './src/client']
   },
 
   module: {
@@ -24,9 +21,15 @@ module.exports = {
         use: {
           loader: 'babel-loader',
           options: {
-            babelrc: false,
-            presets: ['@babel/env', '@babel/react'],
-            plugins: ['react-hot-loader/babel']
+            presets: [
+              ['@babel/env', {
+                targets: {
+                  browsers: ['last 2 versions', 'not ie > 0']
+                },
+                modules: false
+              }]
+            ],
+            plugins: env.prod ? [] : ['react-hot-loader/babel']
           }
         }
       }
@@ -35,8 +38,8 @@ module.exports = {
 
   output: {
     path: webPath,
-    publicPath: isProd ? 'https://static.lquixada.com/boggle/' : '/assets/',
-    filename: `scripts/[name]${isProd ? '.[chunkhash:6]' : ''}.js`
+    publicPath: env.prod ? 'https://static.lquixada.com/boggle/' : '/assets/',
+    filename: env.prod ? 'scripts/[name].[chunkhash:6].js' : 'scripts/[name].js'
   },
 
   performance: {
@@ -57,7 +60,7 @@ module.exports = {
   },
 
   plugins: [
-    isProd
+    env.prod
       ? new CleanWebpackPlugin(path.join(webPath, 'scripts'))
       : new webpack.HotModuleReplacementPlugin(),
     new CopyWebpackPlugin([
@@ -78,4 +81,4 @@ module.exports = {
   stats: {
     modules: false
   }
-}
+})

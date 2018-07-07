@@ -1,6 +1,17 @@
 const path = require('path')
 const slsw = require('serverless-webpack')
 
+const babelOptions = {
+  presets: [
+    ['@babel/env',
+      {
+        targets: {
+          node: 'current'
+        }
+      }]
+  ]
+}
+
 module.exports = {
   entry: slsw.lib.entries,
 
@@ -19,7 +30,10 @@ module.exports = {
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        loader: 'babel-loader'
+        use: {
+          loader: 'babel-loader',
+          options: babelOptions
+        }
       }
     ]
   },

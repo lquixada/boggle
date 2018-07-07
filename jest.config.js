@@ -6,7 +6,7 @@ module.exports = {
     '<rootDir>/src/**/*.spec.js'
   ],
   transform: {
-    '^.+\\.js$': '<rootDir>/jest-preprocess.js'
+    '^.+\\.js$': '<rootDir>/jest.preprocess.js'
   },
   setupTestFrameworkScriptFile: '<rootDir>/src/__tests__/setup.js',
   collectCoverage: false,
