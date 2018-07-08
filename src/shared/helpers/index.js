@@ -1,4 +1,6 @@
 export * from './board-checker'
+export * from './board'
+export * from './die'
 export * from './mixins'
 export * from './platform'
 export * from './object'
