@@ -49,7 +49,7 @@ describe('Helpers', () => {
       nock.cleanAll()
     })
 
-    it('checks word has been attempted', () => {
+    it('checks word has been attempted', async () => {
       nock('https://en.wiktionary.org/').get(/w\/api.php/).reply(200, {
         'query': {
           'pages': {
@@ -58,12 +58,11 @@ describe('Helpers', () => {
         }
       })
 
-      return isOnDictionary('word').then((result) => {
-        expect(result).toBe(true)
-      })
+      const result = await isOnDictionary('word')
+      expect(result).toBe(true)
     })
 
-    it('checks word has been attempted', () => {
+    it('checks word has been attempted', async () => {
       nock('https://en.wiktionary.org/').get(/w\/api.php/).reply(200, {
         'query': {
           'pages': {
@@ -72,9 +71,8 @@ describe('Helpers', () => {
         }
       })
 
-      return isOnDictionary('n0tAw0rD').then((result) => {
-        expect(result).toBe(false)
-      })
+      const result = await isOnDictionary('n0tAw0rD')
+      expect(result).toBe(false)
     })
   })
 })

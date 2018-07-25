@@ -47,42 +47,32 @@ describe('addCheckedAttempt', () => {
     jest.clearAllMocks()
   })
 
-  it('validates correct word', () => {
-    const promise = actions.addCheckedAttempt('norm').then(() => {
-      const {attempts} = store.getState()
-      expect(attempts.includes(Map({word: 'NORM', score: 4}))).toBe(true)
-    })
-
-    return promise
+  it('validates correct word', async () => {
+    await actions.addCheckedAttempt('norm')
+    const {attempts} = store.getState()
+    expect(attempts.includes(Map({word: 'NORM', score: 4}))).toBe(true)
   })
 
-  it('invalidates word which is not on Board', () => {
-    const promise = actions.addCheckedAttempt('fake').then(() => {
-      const {attempts} = store.getState()
-      expect(attempts.includes(Map({word: 'FAKE', score: '✘'}))).toBe(true)
-    })
-
-    return promise
+  it('invalidates word which is not on Board', async () => {
+    await actions.addCheckedAttempt('fake')
+    const {attempts} = store.getState()
+    expect(attempts.includes(Map({word: 'FAKE', score: '✘'}))).toBe(true)
   })
 
-  it('invalidates word which is already on ScoreList', () => {
-    const promise = actions.addCheckedAttempt('hey').then(() => {
-      const {attempts} = store.getState()
-      expect(attempts.includes(Map({word: 'HEY', score: '✘'}))).toBe(true)
-    })
-
-    return promise
+  it('invalidates word which is already on ScoreList', async () => {
+    await actions.addCheckedAttempt('hey')
+    const {attempts} = store.getState()
+    expect(attempts.includes(Map({word: 'HEY', score: '✘'}))).toBe(true)
   })
 
-  it('invalidates word not on Dictionary', () => {
-    const promise = actions.addCheckedAttempt('hey')
-      .then(() => helpers.isOnDictionary.mockReturnValue(false))
-      .then(() => actions.addCheckedAttempt('smv'))
-      .then(() => {
-        const {attempts} = store.getState()
-        expect(attempts.includes(Map({word: 'SMV', score: '✘'}))).toBe(true)
-      })
+  it('invalidates word not on Dictionary', async () => {
+    await actions.addCheckedAttempt('hey')
 
-    return promise
+    helpers.isOnDictionary.mockReturnValue(false)
+
+    await actions.addCheckedAttempt('smv')
+
+    const {attempts} = store.getState()
+    expect(attempts.includes(Map({word: 'SMV', score: '✘'}))).toBe(true)
   })
 })
