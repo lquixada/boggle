@@ -23,8 +23,7 @@ describe('<InputContainer />', () => {
     let component
 
     beforeEach(() => {
-      const addCheckedAttempt = jest.fn()
-      component = mount(<InputContainer addCheckedAttempt={addCheckedAttempt} started={false} />)
+      component = mount(<InputContainer addCheckedAttempt={jest.fn()} started={false} />)
     })
 
     it('doesnt check word when input text is less than 2 characters', () => {

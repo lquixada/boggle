@@ -1,26 +1,23 @@
-import request from 'supertest'
+import supertest from 'supertest'
+
+import server from '../../../server'
 
 describe('Game API', () => {
-  let server
+  let request
 
   beforeEach(() => {
-    server = require('../../../server')
-    server = server.default.listen(0)
-  })
-
-  afterEach((done) => {
-    server.close((done))
+    request = supertest(server)
   })
 
   describe('/', () => {
-    it.only('is a valid path', (done) => {
-      request(server)
+    it('is a valid path', (done) => {
+      request
         .get('/')
         .expect(200, done)
     })
 
     it('renders the game page', (done) => {
-      request(server)
+      request
         .get('/')
         .expect((res) => {
           document.writeln(res.text)
@@ -33,13 +30,13 @@ describe('Game API', () => {
 
   describe('/about', () => {
     it('is a valid path', (done) => {
-      request(server)
+      request
         .get('/about')
         .expect(200, done)
     })
 
     it('renders the "About me" page', (done) => {
-      request(server)
+      request
         .get('/about')
         .expect((res) => {
           document.writeln(res.text)
@@ -52,13 +49,13 @@ describe('Game API', () => {
 
   describe('/unknownpage', () => {
     it('is not a valid page', (done) => {
-      request(server)
+      request
         .get('/unknownpage')
         .expect(404, done)
     })
 
     it('renders the "Not found" page', (done) => {
-      request(server)
+      request
         .get('/unknownpage')
         .expect((res) => {
           expect(res.text).toBe('Not found')

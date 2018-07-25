@@ -40,7 +40,11 @@ describe('addCheckedAttempt', () => {
 
     store = configureStore({attempts, matrix})
     actions = bindActionCreators(actionCreators, store.dispatch)
-    helpers.isOnDictionary = jest.fn().mockReturnValue(true)
+    jest.spyOn(helpers, 'isOnDictionary').mockReturnValue(true)
+  })
+
+  afterEach(() => {
+    jest.clearAllMocks()
   })
 
   it('validates correct word', () => {
