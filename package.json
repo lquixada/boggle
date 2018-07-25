@@ -102,6 +102,7 @@
     "node-zip": "1.1.1",
     "nodemon": "1.17.5",
     "react-test-renderer": "16.4.1",
+    "regenerator-runtime": "0.12.0",
     "serverless": "1.27.3",
     "serverless-offline": "3.25.5",
     "serverless-s3-deploy": "0.7.0",
