@@ -1,5 +1,5 @@
 
-import routing, {LOCATION_CHANGE} from '../routing'
+import routing, { LOCATION_CHANGE } from '../routing'
 
 describe('routing', () => {
   it('starts with null location', () => {

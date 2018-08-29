@@ -1,7 +1,7 @@
 import path from 'path'
 import winston from 'winston'
 
-const {combine, colorize, simple} = winston.format
+const { combine, colorize, simple } = winston.format
 const isProd = process.env.NODE_ENV === 'production'
 const format = isProd ? simple() : combine(colorize(), simple())
 

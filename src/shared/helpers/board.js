@@ -1,9 +1,9 @@
-import {List} from 'immutable'
+import { List } from 'immutable'
 import groupBy from 'lodash/groupBy'
 import invokeMap from 'lodash/invokeMap'
 import toArray from 'lodash/toArray'
 
-import {Die} from './die'
+import { Die } from './die'
 
 export class Board {
   constructor () {

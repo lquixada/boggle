@@ -1,5 +1,5 @@
 import * as platform from '../platform'
-import {publicPath, img} from '../url'
+import { publicPath, img } from '../url'
 
 describe('Helpers', () => {
   afterEach(() => {

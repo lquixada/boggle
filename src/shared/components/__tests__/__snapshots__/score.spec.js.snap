@@ -175,7 +175,7 @@ exports[`<Score /> shows the score 1`] = `
                 className="sc-EHOje iwJDRz"
               >
                 <tbody>
-                  <undefined />
+                  <Component />
                 </tbody>
               </table>
             </styled.table>

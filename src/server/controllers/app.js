@@ -1,15 +1,15 @@
 import React from 'react'
-import {renderToString} from 'react-dom/server'
-import {ServerStyleSheet, StyleSheetManager} from 'styled-components'
-import {matchRoutes, renderRoutes} from 'react-router-config'
-import {StaticRouter} from 'react-router-dom'
-import {Provider} from 'react-redux'
-import {Helmet} from 'react-helmet'
+import { renderToString } from 'react-dom/server'
+import { ServerStyleSheet, StyleSheetManager } from 'styled-components'
+import { matchRoutes, renderRoutes } from 'react-router-config'
+import { StaticRouter } from 'react-router-dom'
+import { Provider } from 'react-redux'
+import { Helmet } from 'react-helmet'
 
 import template from '../templates/app'
 import routes from '../../shared/routes'
 import configureStore from '../../shared/store'
-import {App} from '../../shared/components'
+import { App } from '../../shared/components'
 
 export default (req, res) => {
   const match = matchRoutes(routes, req.url)
@@ -40,5 +40,5 @@ export default (req, res) => {
   const helmet = Helmet.renderStatic()
   const styles = sheet.getStyleTags()
 
-  res.send(template({state, helmet, styles, html}))
+  res.send(template({ state, helmet, styles, html }))
 }

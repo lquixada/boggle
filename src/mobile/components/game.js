@@ -7,7 +7,7 @@ import Clock from '../containers/clock'
 import Input from '../containers/input'
 import Score from '../containers/score'
 
-import {Copyright, Social, Title} from '../components'
+import { Copyright, Social, Title } from '../components'
 
 export class Game extends React.Component {
   render () {

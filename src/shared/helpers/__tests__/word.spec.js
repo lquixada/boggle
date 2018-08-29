@@ -1,15 +1,15 @@
 import nock from 'nock'
-import {fromJS} from 'immutable'
+import { fromJS } from 'immutable'
 
-import {isOnBoard, isOnDictionary, isOnScoreList} from '../word'
+import { isOnBoard, isOnDictionary, isOnScoreList } from '../word'
 
 describe('Helpers', () => {
   let attempts
 
   beforeEach(() => {
     attempts = fromJS([
-      {word: 'word1'},
-      {word: 'word2'}
+      { word: 'word1' },
+      { word: 'word2' }
     ])
   })
 

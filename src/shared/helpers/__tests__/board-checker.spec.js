@@ -1,6 +1,6 @@
-import {fromJS} from 'immutable'
+import { fromJS } from 'immutable'
 
-import {BoardChecker} from '../board-checker'
+import { BoardChecker } from '../board-checker'
 
 describe('BoardChecker', () => {
   it('finds regular word', () => {

@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-export const Attempts = ({attempts}) => (
+export const Attempts = ({ attempts }) => (
   <Table>
     <tbody>
       {attempts.map((attempt, i) =>

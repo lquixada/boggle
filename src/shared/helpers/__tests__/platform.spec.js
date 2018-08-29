@@ -1,5 +1,5 @@
 
-import {isElectron} from '..'
+import { isElectron } from '..'
 
 describe('Helpers', () => {
   describe('isElectron', () => {
@@ -19,12 +19,12 @@ describe('Helpers', () => {
     })
 
     it('detects when it is Electron', () => {
-      global.navigator = {userAgent: ' Electron/2'}
+      global.navigator = { userAgent: ' Electron/2' }
       expect(isElectron()).toBe(true)
     })
 
     it('detects when it is not Electron', () => {
-      global.navigator = {userAgent: ' Chrome/66'}
+      global.navigator = { userAgent: ' Chrome/66' }
       expect(isElectron()).toBe(false)
     })
   })

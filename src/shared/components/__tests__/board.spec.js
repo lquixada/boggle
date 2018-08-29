@@ -1,8 +1,8 @@
 import React from 'react'
-import {mount} from 'enzyme'
-import {fromJS} from 'immutable'
+import { mount } from 'enzyme'
+import { fromJS } from 'immutable'
 
-import {Board} from '..'
+import { Board } from '..'
 
 describe('<Board />', () => {
   it('is empty by default', () => {

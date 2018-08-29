@@ -1,4 +1,4 @@
-import {combineReducers} from 'redux'
+import { combineReducers } from 'redux'
 
 import routing from './routing'
 import attempts from './attempts'

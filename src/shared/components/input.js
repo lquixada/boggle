@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
-import {box, flex} from '../helpers'
+import { box, flex } from '../helpers'
 
 export class Input extends React.Component {
   componentDidUpdate () {

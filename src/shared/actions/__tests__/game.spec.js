@@ -1,6 +1,6 @@
-import {isFSA} from 'flux-standard-action'
+import { isFSA } from 'flux-standard-action'
 
-import {startGame, stopGame} from '../game'
+import { startGame, stopGame } from '../game'
 
 describe('startGame', () => {
   it('is FSA-compliant', () => {

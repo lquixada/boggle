@@ -1,9 +1,9 @@
 import React from 'react'
-import {connect} from 'react-redux'
+import { connect } from 'react-redux'
 
-import {Clock} from '../components'
+import { Clock } from '../components'
 import * as actions from '../actions'
-import {Timer} from '../helpers'
+import { Timer } from '../helpers'
 
 const timer = new Timer()
 
@@ -45,11 +45,11 @@ export class ClockContainer extends React.Component {
 
   stop () {
     timer.stop()
-    this.setState({secs: timer.frame})
+    this.setState({ secs: timer.frame })
   }
 
   handleChange () {
-    this.setState({secs: timer.remaining}, () => {
+    this.setState({ secs: timer.remaining }, () => {
       if (this.state.secs === 0) {
         // Give some time for React to render the 0-state clock
         // and then stop the game.
@@ -72,5 +72,5 @@ export class ClockContainer extends React.Component {
   }
 }
 
-const mapStateToProps = ({started}) => ({started})
+const mapStateToProps = ({ started }) => ({ started })
 export default connect(mapStateToProps, actions)(ClockContainer)

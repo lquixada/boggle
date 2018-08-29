@@ -1,6 +1,6 @@
-import {Map} from 'immutable'
-import {bindActionCreators} from 'redux'
-import {isFSA} from 'flux-standard-action'
+import { Map } from 'immutable'
+import { bindActionCreators } from 'redux'
+import { isFSA } from 'flux-standard-action'
 
 import configureStore from '../../store'
 import * as actionCreators from '../../actions'
@@ -28,7 +28,7 @@ describe('addCheckedAttempt', () => {
 
   beforeEach(() => {
     const attempts = [
-      {word: 'HEY', score: 3}
+      { word: 'HEY', score: 3 }
     ]
 
     const matrix = [
@@ -38,7 +38,7 @@ describe('addCheckedAttempt', () => {
       ['A', 'I', 'X', 'V']
     ]
 
-    store = configureStore({attempts, matrix})
+    store = configureStore({ attempts, matrix })
     actions = bindActionCreators(actionCreators, store.dispatch)
     jest.spyOn(helpers, 'isOnDictionary').mockReturnValue(true)
   })
@@ -49,20 +49,20 @@ describe('addCheckedAttempt', () => {
 
   it('validates correct word', async () => {
     await actions.addCheckedAttempt('norm')
-    const {attempts} = store.getState()
-    expect(attempts.includes(Map({word: 'NORM', score: 4}))).toBe(true)
+    const { attempts } = store.getState()
+    expect(attempts.includes(Map({ word: 'NORM', score: 4 }))).toBe(true)
   })
 
   it('invalidates word which is not on Board', async () => {
     await actions.addCheckedAttempt('fake')
-    const {attempts} = store.getState()
-    expect(attempts.includes(Map({word: 'FAKE', score: '✘'}))).toBe(true)
+    const { attempts } = store.getState()
+    expect(attempts.includes(Map({ word: 'FAKE', score: '✘' }))).toBe(true)
   })
 
   it('invalidates word which is already on ScoreList', async () => {
     await actions.addCheckedAttempt('hey')
-    const {attempts} = store.getState()
-    expect(attempts.includes(Map({word: 'HEY', score: '✘'}))).toBe(true)
+    const { attempts } = store.getState()
+    expect(attempts.includes(Map({ word: 'HEY', score: '✘' }))).toBe(true)
   })
 
   it('invalidates word not on Dictionary', async () => {
@@ -72,7 +72,7 @@ describe('addCheckedAttempt', () => {
 
     await actions.addCheckedAttempt('smv')
 
-    const {attempts} = store.getState()
-    expect(attempts.includes(Map({word: 'SMV', score: '✘'}))).toBe(true)
+    const { attempts } = store.getState()
+    expect(attempts.includes(Map({ word: 'SMV', score: '✘' }))).toBe(true)
   })
 })

@@ -1,6 +1,6 @@
 import React from 'react'
-import {mount} from 'enzyme'
-import {ClockContainer} from '../clock'
+import { mount } from 'enzyme'
+import { ClockContainer } from '../clock'
 
 jest.useFakeTimers()
 
@@ -17,7 +17,7 @@ describe('<ClockContainer />', () => {
   })
 
   it('decrements when the game starts', () => {
-    component.setProps({started: true})
+    component.setProps({ started: true })
 
     expect(component).toMatchSnapshot()
 
@@ -33,18 +33,18 @@ describe('<ClockContainer />', () => {
   })
 
   it('stops when time have been elapsed', () => {
-    component.setProps({started: true})
+    component.setProps({ started: true })
 
     jest.advanceTimersByTime(30000)
     component.update()
 
-    component.setProps({started: false})
+    component.setProps({ started: false })
 
     expect(component).toMatchSnapshot()
   })
 
   it('stops when time have been elapsed', () => {
-    component.setProps({started: true})
+    component.setProps({ started: true })
 
     jest.advanceTimersByTime(60000)
     component.update()
@@ -53,7 +53,7 @@ describe('<ClockContainer />', () => {
   })
 
   it('displays 60 when the game stops', () => {
-    component.setProps({started: true})
+    component.setProps({ started: true })
 
     jest.advanceTimersByTime(60000)
     component.update()

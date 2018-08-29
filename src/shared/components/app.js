@@ -1,6 +1,6 @@
-import React, {Fragment} from 'react'
-import {Helmet} from 'react-helmet'
-import {injectGlobal} from 'styled-components'
+import React, { Fragment } from 'react'
+import { Helmet } from 'react-helmet'
+import { injectGlobal } from 'styled-components'
 
 import pkg from '../../../package'
 

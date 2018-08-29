@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import {flex, img} from '../helpers'
+import { flex, img } from '../helpers'
 
 export const Social = () => (
   <Wrapper>

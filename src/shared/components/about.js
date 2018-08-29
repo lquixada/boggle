@@ -5,7 +5,7 @@ import {
   Main, Container, Header, HeaderContainer, Section, SectionContainer, Footer, Copyright, Ribbon, Social, Title
 } from '.'
 
-import {box} from '../helpers'
+import { box } from '../helpers'
 
 export const About = () => (
   <Main>

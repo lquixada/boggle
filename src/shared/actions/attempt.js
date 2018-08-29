@@ -1,4 +1,4 @@
-import {isOnScoreList, isOnBoard, isOnDictionary} from '../helpers'
+import { isOnScoreList, isOnBoard, isOnDictionary } from '../helpers'
 
 export const addAttempt = (word, scored) => ({
   type: 'ADD_ATTEMPT',

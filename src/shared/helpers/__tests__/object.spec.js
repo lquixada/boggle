@@ -1,6 +1,6 @@
-import {List, Map} from 'immutable'
+import { List, Map } from 'immutable'
 
-import {immutifyState} from '../object'
+import { immutifyState } from '../object'
 
 describe('Helpers', () => {
   describe('immutifyState', () => {

@@ -4,7 +4,7 @@ import webpackHotMiddleware from 'webpack-hot-middleware'
 
 import config from '../../../webpack.config.client'
 
-const options = config({prod: false})
+const options = config({ prod: false })
 const compiler = webpack(options)
 
 export default [

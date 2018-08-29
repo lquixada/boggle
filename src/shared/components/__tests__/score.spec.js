@@ -1,8 +1,8 @@
 import React from 'react'
-import {mount} from 'enzyme'
-import {fromJS} from 'immutable'
+import { mount } from 'enzyme'
+import { fromJS } from 'immutable'
 
-import {Score} from '..'
+import { Score } from '..'
 
 describe('<Score />', () => {
   it('is empty by default', () => {
@@ -12,14 +12,14 @@ describe('<Score />', () => {
   })
 
   it('adds a valid attempt', () => {
-    const attempts = fromJS([{word: 'someword', score: '8'}])
+    const attempts = fromJS([{ word: 'someword', score: '8' }])
     const component = mount(<Score attempts={attempts} />)
 
     expect(component).toMatchSnapshot()
   })
 
   it('adds an invalid attempt', () => {
-    const attempts = fromJS([{word: 'someword', score: '✘'}])
+    const attempts = fromJS([{ word: 'someword', score: '✘' }])
     const component = mount(<Score attempts={attempts} />)
 
     expect(component).toMatchSnapshot()

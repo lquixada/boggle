@@ -1,4 +1,4 @@
-import {fromJS} from 'immutable'
+import { fromJS } from 'immutable'
 
 // Abstraction to handle pre-composed state received from server
 // (ie, leave top level keys untouched)

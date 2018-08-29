@@ -1,7 +1,7 @@
 import React from 'react'
-import {mount} from 'enzyme'
+import { mount } from 'enzyme'
 
-import {Input} from '..'
+import { Input } from '..'
 
 describe('<Input />', () => {
   let component
@@ -21,7 +21,7 @@ describe('<Input />', () => {
   })
 
   it('is focused when game starts', () => {
-    component.setProps({started: true})
+    component.setProps({ started: true })
 
     expect(component.instance().word.focus).toHaveBeenCalled()
   })

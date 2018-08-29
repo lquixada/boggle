@@ -1,5 +1,5 @@
 
-import {attempt, attempts} from '../attempts'
+import { attempt, attempts } from '../attempts'
 
 describe('attempt', () => {
   it('starts empty', () => {

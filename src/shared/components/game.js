@@ -11,7 +11,7 @@ import {
   Copyright, Ribbon, Social, Title, Main, Container, Header, HeaderContainer, Section, SectionContainer, Footer
 } from '.'
 
-import {flex} from '../helpers'
+import { flex } from '../helpers'
 
 export const Game = () => (
   <Main>

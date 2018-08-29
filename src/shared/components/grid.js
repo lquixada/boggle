@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-import {flex} from '../helpers'
+import { flex } from '../helpers'
 
 export const Main = styled.main`
   ${flex.display()};
@@ -32,7 +32,7 @@ export const Header = styled.header`
   background-color: #565656;
 `
 
-export const HeaderContainer = Container.extend`
+export const HeaderContainer = styled(Container)`
   @media (max-width: 540px) {
     ${flex.wrap('wrap')}
   }
@@ -45,7 +45,7 @@ export const Section = styled.section`
   padding: 2rem;
 `
 
-export const SectionContainer = Container.extend`
+export const SectionContainer = styled(Container)`
   @media (max-width: 540px) {
     ${flex.left()}
     ${flex.dir('column')}

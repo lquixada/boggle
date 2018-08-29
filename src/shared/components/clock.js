@@ -2,12 +2,12 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
-import {flex} from '../helpers'
+import { flex } from '../helpers'
 
-export const Clock = ({secs, total}) => {
+export const Clock = ({ secs, total }) => {
   const strokeDasharray = 251
   const strokeDashoffset = ((secs / total) * strokeDasharray)
-  const style = {strokeDashoffset, strokeDasharray}
+  const style = { strokeDashoffset, strokeDasharray }
 
   return (
     <Wrapper>

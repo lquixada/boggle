@@ -1,7 +1,7 @@
 import React from 'react'
-import {connect} from 'react-redux'
+import { connect } from 'react-redux'
 
-import {Button} from '../components'
+import { Button } from '../components'
 import * as actions from '../../shared/actions'
 
 export class ButtonContainer extends React.Component {
@@ -33,5 +33,5 @@ export class ButtonContainer extends React.Component {
   }
 }
 
-const mapStateToProps = ({started}) => ({started})
+const mapStateToProps = ({ started }) => ({ started })
 export default connect(mapStateToProps, actions)(ButtonContainer)

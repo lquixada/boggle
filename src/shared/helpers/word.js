@@ -1,7 +1,7 @@
 import fetch from 'cross-fetch'
 
 import config from '../../shared/config'
-import {BoardChecker} from './board-checker'
+import { BoardChecker } from './board-checker'
 
 export const isOnScoreList = (attempts, word) =>
   attempts.some((attempt) => attempt.get('word') === word)

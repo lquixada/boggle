@@ -1,8 +1,8 @@
 import React from 'react'
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
-import {flex} from '../helpers'
+import { flex } from '../helpers'
 
 export const Copyright = () => (
   <Wrapper>

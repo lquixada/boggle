@@ -7,7 +7,7 @@ import loggerMiddleware from './middlewares/logger'
 import staticMiddleware from './middlewares/static'
 import appController from './controllers/app'
 
-const {NODE_ENV} = process.env
+const { NODE_ENV } = process.env
 
 // For semantic purposes, app is equivalent to server.
 const server = express()
@@ -21,7 +21,7 @@ server.use(helmet())
 server.use(compression(NODE_ENV === 'production' ? -1 : 0))
 server.use(loggerMiddleware)
 server.use('/assets', staticMiddleware)
-server.use(bodyParser.urlencoded({extended: true}))
+server.use(bodyParser.urlencoded({ extended: true }))
 
 /* Controllers */
 server.use('/', appController)

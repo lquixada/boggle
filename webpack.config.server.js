@@ -1,5 +1,5 @@
 const path = require('path')
-const {entries} = require('serverless-webpack').lib
+const { entries } = require('serverless-webpack').lib
 
 module.exports = {
   entry: entries,

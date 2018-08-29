@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import {Text} from 'react-native'
+import { Text } from 'react-native'
 import styled from 'styled-components/native'
 
 export class Clock extends React.Component {
@@ -9,7 +9,7 @@ export class Clock extends React.Component {
   }
 
   getTimeStyle () {
-    return this.props.secs < 10 ? {color: 'red'} : {}
+    return this.props.secs < 10 ? { color: 'red' } : {}
   }
 
   render () {

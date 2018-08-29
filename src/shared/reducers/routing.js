@@ -1,4 +1,4 @@
-import {Map} from 'immutable'
+import { Map } from 'immutable'
 
 /*
  * This action type will be dispatched when your history
@@ -16,9 +16,9 @@ const initialState = Map({
  * if you have asynchronously-loaded routes, so reading from and relying on
  * this state is discouraged.
  */
-export default (state = initialState, {type, payload} = {}) => {
+export default (state = initialState, { type, payload } = {}) => {
   if (type === LOCATION_CHANGE) {
-    return state.mergeDeep({locationBeforeTransitions: payload})
+    return state.mergeDeep({ locationBeforeTransitions: payload })
   }
 
   return state

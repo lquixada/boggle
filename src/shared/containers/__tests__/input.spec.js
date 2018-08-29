@@ -1,7 +1,7 @@
 import React from 'react'
-import {mount} from 'enzyme'
+import { mount } from 'enzyme'
 
-import {InputContainer} from '../input'
+import { InputContainer } from '../input'
 
 describe('<InputContainer />', () => {
   it('is disabled by default', () => {
@@ -27,15 +27,15 @@ describe('<InputContainer />', () => {
     })
 
     it('doesnt check word when input text is less than 2 characters', () => {
-      component.find('input').simulate('change', {target: {value: 'H'}})
-      component.find('input').simulate('keyup', {which: 13}) // Enter
+      component.find('input').simulate('change', { target: { value: 'H' } })
+      component.find('input').simulate('keyup', { which: 13 }) // Enter
 
       expect(component.props().addCheckedAttempt).not.toHaveBeenCalled()
     })
 
     it('checks word when input text is greater than or equal to 2 characters', () => {
-      component.find('input').simulate('change', {target: {value: 'Hi'}})
-      component.find('input').simulate('keyup', {which: 13}) // Enter
+      component.find('input').simulate('change', { target: { value: 'Hi' } })
+      component.find('input').simulate('keyup', { which: 13 }) // Enter
 
       expect(component.props().addCheckedAttempt).toHaveBeenCalled()
     })
@@ -43,8 +43,8 @@ describe('<InputContainer />', () => {
     it('is cleared when the game stops', () => {
       const component = mount(<InputContainer started />)
 
-      component.find('input').simulate('change', {target: {value: 'Hi'}})
-      component.setProps({started: false})
+      component.find('input').simulate('change', { target: { value: 'Hi' } })
+      component.setProps({ started: false })
 
       expect(component.state('value')).toBe('')
     })

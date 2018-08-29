@@ -1,7 +1,7 @@
 import React from 'react'
-import {connect} from 'react-redux'
+import { connect } from 'react-redux'
 
-import {Input} from '../components'
+import { Input } from '../components'
 import * as actions from '../../shared/actions'
 
 export class InputContainer extends React.Component {
@@ -55,7 +55,7 @@ export class InputContainer extends React.Component {
   }
 
   setValue (value) {
-    this.setState({value: value.trim()})
+    this.setState({ value: value.trim() })
   }
 
   reset () {
@@ -74,5 +74,5 @@ export class InputContainer extends React.Component {
   }
 }
 
-const mapStateToProps = ({started}) => ({started})
+const mapStateToProps = ({ started }) => ({ started })
 export default connect(mapStateToProps, actions)(InputContainer)

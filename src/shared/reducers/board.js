@@ -1,4 +1,4 @@
-import {Board} from '../helpers'
+import { Board } from '../helpers'
 
 let board = new Board()
 board.clear()
