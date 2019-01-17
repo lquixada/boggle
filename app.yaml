@@ -17,3 +17,4 @@ runtime: nodejs10
 #
 env_variables:
   PORT: 8080
+  ASSETS_DOMAIN: '/assets/'
