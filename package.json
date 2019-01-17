@@ -25,13 +25,14 @@
     "ios:eject": "react-native eject",
     "ios:start": "react-native start --config ../../../../rn-cli.config.js",
     "lambda:deploy": "serverless deploy -v",
-    "start": "npm run -s web:start",
+    "start": "npm run web:prod",
     "test": "npm run -s test:jest && npm run -s test:lint",
     "test:jest": "jest --coverage",
     "test:lint": "standard",
     "test:codecov": "codecov",
     "web:build": "npm run -s build:server && npm run -s build:client",
-    "web:start": "nodemon src/app.js"
+    "web:dev": "nodemon --config nodemon.dev.json src/app.js",
+    "web:prod": "nodemon web/app.js"
   },
   "husky": {
     "hooks": {
