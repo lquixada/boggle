@@ -31,8 +31,8 @@
     "test:lint": "standard",
     "test:codecov": "codecov",
     "web:build": "npm run -s build:server && npm run -s build:client",
-    "web:dev": "nodemon --config nodemon.dev.json src/app.js",
-    "web:prod": "nodemon web/app.js"
+    "web:dev": "nodemon --config nodemon.dev.json ./src/app.js",
+    "web:prod": "nodemon ./web/app.js"
   },
   "husky": {
     "hooks": {
