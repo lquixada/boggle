@@ -7,5 +7,5 @@ export STATS="${DIR}/stats.json"
 
 mkdir -p ${DIR} &&
 
-yarn -s webpack-cli -p --profile --json > ${STATS} &&
+yarn -s webpack-cli -p --env.prod --profile --json --config webpack.config.client.js > ${STATS} &&
 yarn webpack-bundle-analyzer ${STATS} ./web/public -m static -r ${DIR}/report.html
