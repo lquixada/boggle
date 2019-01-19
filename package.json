@@ -6,38 +6,9 @@
   "author": "Leonardo Quixada <lquixada@gmail.com>",
   "license": "MIT",
   "main": "src/desktop/index.js",
-  "scripts": {
-    "prelambda:deploy": "npm run -s web:build",
-    "android:build": "react-native run-android",
-    "android:eject": "react-native eject",
-    "android:start": "react-native start --config ../../../../rn-cli.config.js",
-    "build": "npm run -s web:build",
-    "build:analyze": "./tasks/analyze",
-    "build:client": "webpack-cli -p --env.prod --config webpack.config.client.js",
-    "build:server": "babel -D src -d web",
-    "deploy:major": "npm version major && git push --follow-tags",
-    "deploy:minor": "npm version minor && git push --follow-tags",
-    "deploy:patch": "npm version patch && git push --follow-tags",
-    "electron:build": "./tasks/electron-build",
-    "electron:start": "NODE_ENV=development electron .",
-    "flameon": "./tasks/flame",
-    "ios:build": "react-native run-ios",
-    "ios:eject": "react-native eject",
-    "ios:start": "react-native start --config ../../../../rn-cli.config.js",
-    "lambda:deploy": "serverless deploy -v",
-    "lambda:start": "serverless offline",
-    "start": "npm run web:prod",
-    "test": "npm run -s test:jest && npm run -s test:lint",
-    "test:jest": "jest --coverage",
-    "test:lint": "standard",
-    "test:codecov": "codecov",
-    "web:build": "npm run -s build:server && npm run -s build:client",
-    "web:dev": "nodemon --config nodemon.dev.json ./src/app.js",
-    "web:prod": "nodemon ./web/app.js"
-  },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "make lint-staged"
     }
   },
   "lint-staged": {
