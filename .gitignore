@@ -68,3 +68,6 @@ local.properties
 # Serverless directories
 .serverless
 .webpack
+
+# Electron
+out

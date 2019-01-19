@@ -35,7 +35,7 @@ electron-build:
 	./tasks/electron-build
 
 electron-start:
-	NODE_ENV=development npx electron .
+	NODE_ENV=development npx electron-forge start
 
 flameon:
 	./tasks/flame

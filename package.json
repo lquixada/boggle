@@ -20,6 +20,9 @@
   "standard": {
     "env": "jest"
   },
+  "config": {
+    "forge": "./forge.config.js"
+  },
   "dependencies": {
     "aws-serverless-express": "3.3.5",
     "body-parser": "1.18.3",
@@ -66,8 +69,10 @@
     "codecov": "3.1.0",
     "copy-webpack-plugin": "4.6.0",
     "electron": "4.0.1",
+    "electron-forge": "5.2.4",
     "electron-installer-dmg": "2.0.0",
     "electron-packager": "13.0.1",
+    "electron-prebuilt-compile": "4.0.0",
     "enzyme": "3.8.0",
     "enzyme-adapter-react-16": "1.7.1",
     "enzyme-to-json": "3.3.5",
