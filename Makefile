@@ -1,6 +1,6 @@
 .PHONY: android-build android-eject android-start build build-analyze build-client build-server deploy-major deploy-minor deploy-patch electron-build electron-start flameon ios-build ios-eject ios-start lambda-deploy lambda-start lint-staged start test test-jest test-lint test-codecov web-build web-dev web-prod
 
-all: web-prod
+all: web-dev
 
 android-build:
 	react-native run-android

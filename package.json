@@ -41,15 +41,15 @@
     "react-helmet": "5.2.0",
     "react-hot-loader": "4.6.3",
     "react-native": "0.57.8",
-    "react-redux": "5.0.7",
+    "react-redux": "6.0.0",
     "react-router": "4.3.1",
-    "react-router-config": "1.0.0-beta.4",
+    "react-router-config": "4.4.0-beta.6",
     "react-router-dom": "4.3.1",
     "react-router-redux": "5.0.0-alpha.6",
     "redux": "4.0.1",
     "redux-raven-middleware": "1.2.0",
     "redux-thunk": "2.3.0",
-    "styled-components": "3.4.5",
+    "styled-components": "4.1.3",
     "winston": "3.1.0"
   },
   "devDependencies": {
