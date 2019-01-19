@@ -5,7 +5,7 @@
   "description": "A web-based implementation of the Boggle game for React study purposes.",
   "author": "Leonardo Quixada <lquixada@gmail.com>",
   "license": "MIT",
-  "main": "src/desktop/index.js",
+  "main": "src/desktop/app.js",
   "husky": {
     "hooks": {
       "pre-commit": "make lint-staged"
@@ -65,9 +65,9 @@
     "clean-webpack-plugin": "1.0.0",
     "codecov": "3.1.0",
     "copy-webpack-plugin": "4.6.0",
-    "electron": "2.0.8",
+    "electron": "4.0.1",
     "electron-installer-dmg": "2.0.0",
-    "electron-packager": "12.1.1",
+    "electron-packager": "13.0.1",
     "enzyme": "3.8.0",
     "enzyme-adapter-react-16": "1.7.1",
     "enzyme-to-json": "3.3.5",
