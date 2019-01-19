@@ -12,7 +12,7 @@ module.exports = {
     ]
   },
   electronPackagerConfig: {
-    packageManager: 'yarn'
+    packageManager: 'npm'
   },
   electronWinstallerConfig: {
     name: 'boggle'

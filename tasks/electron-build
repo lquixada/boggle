@@ -7,19 +7,18 @@ export DIR="./desktop"
 export BUILD_DIR="${DIR}/build"
 
 # Build assets
-yarn babel -D -q src -d $DIR/src &&
+npx babel -D -q src -d $DIR/src &&
 
 cp package*.json $DIR &&
-cp yarn.lock $DIR &&
 
 cd $DIR &&
 
-yarn --prod &&
+npm install --prod &&
 
 cd .. &&
 
 # Build .app
-yarn electron-packager $DIR $APP_NAME --overwrite --out=$BUILD_DIR &&
+npx electron-packager $DIR $APP_NAME --overwrite --out=$BUILD_DIR &&
 
 # Build .dmg
-yarn electron-installer-dmg $BUILD_DIR/$APP_NAME-darwin-x64/$APP_NAME.app --out=$BUILD_DIR/$APP_NAME-darwin-x64 $APP_NAME
+npx electron-installer-dmg $BUILD_DIR/$APP_NAME-darwin-x64/$APP_NAME.app --out=$BUILD_DIR/$APP_NAME-darwin-x64 $APP_NAME

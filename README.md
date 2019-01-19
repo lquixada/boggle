@@ -42,7 +42,7 @@ $ cd boggle
 $ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
 $ nvm install
 $ nvm use
-$ yarn # or npm install
+$ npm install
 ```
 
 
@@ -51,7 +51,7 @@ $ yarn # or npm install
 The best way to start with Boggle is with its web version. In order to run the app in development mode, run:
 
 ```
-$ yarn start
+$ make start
 ```
 
 And go to http://localhost:3000/.
@@ -61,7 +61,7 @@ And go to http://localhost:3000/.
 To run all tests and lints, run:
 
 ```
-$ yarn test
+$ make test
 ```
 
 
@@ -75,38 +75,38 @@ $ yarn test
 
 ### Web
 
-* **yarn build**: builds files and assets for server and client (alias for `yarn web:build`)
-* **yarn start**: starts a webserver aimed for development (alias for `yarn web:start`)
+* **make build**: builds files and assets for server and client (alias for `make web-build`)
+* **make start**: starts a webserver aimed for development (alias for `make web-start`)
 
 
 ### iOS
 
-* **yarn ios:dev**: starts the bundler server
-* **yarn ios:eject**: re-create the iOS and Android folders and native code
-* **yarn ios:build**: builds iOS app and starts it on iOS simulator
+* **make ios-dev**: starts the bundler server
+* **make ios-eject**: re-create the iOS and Android folders and native code
+* **make ios-build**: builds iOS app and starts it on iOS simulator
 
-To get started, run `yarn ios:build`.
+To get started, run `make ios-build`.
 
 > You'll have to get your system properly configured in order for this to work. Go to the React Native's [Getting Started page](https://facebook.github.io/react-native/docs/getting-started.html), click on "Building Projects with Native Code", select your "Development OS", then "iOS" for "Target OS" and follow the instructions in the "Installing dependencies" section.
 
 
 ### Android
 
-* **yarn android:dev**: starts the bundler server
-* **yarn android:eject**: re-create the iOS and Android folders and native code
-* **yarn android:build**: builds Android app and starts it on iOS simulator
+* **make android-dev**: starts the bundler server
+* **make android-eject**: re-create the iOS and Android folders and native code
+* **make android-build**: builds Android app and starts it on iOS simulator
 
-To get started, run `yarn android:build`.
+To get started, run `make android-build`.
 
 > You'll have to get your system properly configured in order for this to work. Go to the React Native's [Getting Started page](https://facebook.github.io/react-native/docs/getting-started.html), click on "Building Projects with Native Code", select your "Development OS", then "Android" for "Target OS" and follow the instructions in the "Installing dependencies" section.
 
 
 ### Desktop
 
-* **yarn electron:build**: builds a new binary for the current operating system
-* **yarn electron:start**: starts an electron app for development purposes
+* **make electron-build**: builds a new binary for the current operating system
+* **make electron-start**: starts an electron app for development purposes
 
-To get started, run `yarn electron:start`.
+To get started, run `make electron-start`.
 
 
 ## Architecture
@@ -116,10 +116,10 @@ To get started, run `yarn electron:start`.
 
 ## Folder Structure
 
-* **android/**: distributable files for Android systems created through `yarn android:build`
-* **desktop/**: distributable files for desktop systems created through `yarn electron:build`
+* **android/**: distributable files for Android systems created through `make android-build`
+* **desktop/**: distributable files for desktop systems created through `make electron-build`
 * **docs/**: project's documentation files
-* **ios/**: distributable files for iOS systems created through `yarn ios:build`
+* **ios/**: distributable files for iOS systems created through `make ios-build`
 * **logs/**: all generated log files will be placed here
 * **src/**: all source files
   * **client/**: entry point for the browser app (SPA)
@@ -130,7 +130,7 @@ To get started, run `yarn electron:start`.
   * **shared/**: common codebase for all platforms (95% of the code is here)
   * **app/**: well, this is actually entry point for the node app (sorry for that!)
 * **tasks/**: shell tasks that complex enough to not be a npm task
-* **web/**: distributable files for the web (server and client) created through `yarn build`
+* **web/**: distributable files for the web (server and client) created through `make build`
 
 
 ## Stack
