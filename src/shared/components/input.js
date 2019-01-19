@@ -5,6 +5,11 @@ import styled from 'styled-components'
 import { box, flex } from '../helpers'
 
 export class Input extends React.Component {
+  constructor (props) {
+    super(props)
+    this.inputRef = React.createRef()
+  }
+
   componentDidUpdate () {
     if (this.props.started) {
       this.focus()
@@ -12,18 +17,14 @@ export class Input extends React.Component {
   }
 
   focus () {
-    this.word.focus()
-  }
-
-  setRef (word) {
-    this.word = word
+    this.inputRef.current.focus()
   }
 
   render () {
     return (
       <Wrapper>
         <TextInput type='text'
-          innerRef={this.setRef.bind(this)}
+          ref={this.inputRef}
           value={this.props.value}
           onChange={(evt) => this.props.onChange(evt)}
           onKeyUp={(evt) => this.props.onEnter(evt)}

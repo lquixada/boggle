@@ -1,33 +1,26 @@
 import React, { Fragment } from 'react'
 import { Helmet } from 'react-helmet'
-import { injectGlobal } from 'styled-components'
+import { createGlobalStyle } from 'styled-components'
 
 import pkg from '../../../package'
 
-export class App extends React.Component {
-  componentWillMount () {
-    resetStyles()
-  }
+export const App = ({ children }) => (
+  <Fragment>
+    <GlobalStyles />
+    <Helmet>
+      <meta charset='utf-8' />
+      <meta http-equiv='x-ua-compatible' content='ie=edge' />
+      <meta name='viewport' content='width=device-width, initial-scale=1' />
+      <meta name='version' content={pkg.version} />
+      {/* Disabled favicon for now, it is hitting the appController. */}
+      <link rel='icon' href='data:,' />
+      <title>Boggle</title>
+    </Helmet>
+    {children}
+  </Fragment>
+)
 
-  render () {
-    return (
-      <Fragment>
-        <Helmet>
-          <meta charset='utf-8' />
-          <meta http-equiv='x-ua-compatible' content='ie=edge' />
-          <meta name='viewport' content='width=device-width, initial-scale=1' />
-          <meta name='version' content={pkg.version} />
-          {/* Disabled favicon for now, it is hitting the appController. */}
-          <link rel='icon' href='data:,' />
-          <title>Boggle</title>
-        </Helmet>
-        {this.props.children}
-      </Fragment>
-    )
-  }
-}
-
-const resetStyles = () => injectGlobal`
+const GlobalStyles = createGlobalStyle`
   * {
     margin: 0;
     padding: 0;
