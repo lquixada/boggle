@@ -41,14 +41,14 @@ flameon:
 ## Native
 
 native-eject:
-	react-native eject
+	npx react-native eject
 
 native-start:
 	npx react-native start --config ../../../../rn-cli.config.js
 
 ### Android
 android-build:
-	react-native run-android
+	npx react-native run-android
 
 android-start: native-start
 
