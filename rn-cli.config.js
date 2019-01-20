@@ -1,4 +1,4 @@
-const blacklist = require('metro/src/blacklist')
+const blacklist = require('metro-config/src/defaults/blacklist')
 
 const config = {
   getBlacklistRE () {
