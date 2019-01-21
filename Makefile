@@ -60,7 +60,7 @@ ios-start: native-start
 
 ## Web
 web-build:
-	npx webpack-cli -p --env.prod --config webpack.config.client.js &&
+	npx webpack-cli -p --env.prod --config webpack.config.client.js && \
 	npx babel -D src -d web
 
 web-build-analyze:
@@ -80,7 +80,7 @@ electron-start:
 	NODE_ENV=development npx electron-forge start
 
 ## Docker
-docker-build:
+docker-build: web-build
 	docker build -t boggle .
 
 docker-start:
