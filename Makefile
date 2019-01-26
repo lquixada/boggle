@@ -7,6 +7,8 @@ build: web-build
 
 eject: native-eject
 
+lint: test-lint
+
 start: web-prod
 
 test: test-jest test-lint
