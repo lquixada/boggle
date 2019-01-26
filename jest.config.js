@@ -8,7 +8,9 @@ module.exports = {
   transform: {
     '^.+\\.js$': '<rootDir>/node_modules/react-native/jest/preprocessor.js'
   },
-  setupTestFrameworkScriptFile: '<rootDir>/src/__tests__/setup.js',
+  setupFilesAfterEnv: [
+    '<rootDir>/src/__tests__/setup.js'
+  ],
   collectCoverage: false,
   coverageDirectory: '<rootDir>/.reports/coverage',
   coverageThreshold: {

@@ -1317,7 +1317,7 @@ exports[`<ClockContainer /> displays 60 when the game stops 1`] = `
       ],
       "results": Array [
         Object {
-          "isThrow": false,
+          "type": "return",
           "value": undefined,
         },
       ],
