@@ -6,9 +6,6 @@
   "author": "Leonardo Quixada <lquixada@gmail.com>",
   "license": "MIT",
   "main": "src/desktop/app.js",
-  "scripts": {
-    "start": "nodemon ./web/app.js # GCP doesnt support make command"
-  },
   "husky": {
     "hooks": {
       "pre-commit": "make lint-staged"

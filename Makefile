@@ -67,7 +67,7 @@ web-build-analyze:
 	./tasks/analyze
 
 web-dev:
-	npx nodemon --config nodemon.dev.json ./src/app.js
+	npx nodemon ./src/app.js
 
 web-prod:
 	npx nodemon ./web/app.js

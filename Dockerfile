@@ -18,4 +18,4 @@ COPY web ./web
 
 EXPOSE 3000
 
-CMD ["npm", "start"]
+CMD ["node", "./web/app.js"]
