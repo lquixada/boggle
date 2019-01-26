@@ -12,62 +12,313 @@ exports[`<Score /> adds a valid attempt 1`] = `
   }
 >
   <styled.div>
-    <div
-      className="sc-kkGfuU iBheBa"
+    <StyledComponent
+      forwardedComponent={
+        Object {
+          "$$typeof": Symbol(react.forward_ref),
+          "attrs": Array [],
+          "componentStyle": ComponentStyle {
+            "componentId": "sc-kkGfuU",
+            "isStatic": true,
+            "lastClassName": "iBheBa",
+            "rules": Array [
+              "
+  ",
+              "
+  display: flex;
+  display: -ms-flexbox;
+",
+              "
+  ",
+              "
+  
+  flex-direction: column;
+  -ms-flex-direction: column;
+
+  
+  flex-wrap: nowrap;
+  -ms-flex-wrap: ;
+
+",
+              "
+  ",
+              "
+  flex: 3;
+  -ms-flex: 3;
+",
+              "
+  color: #fff;
+
+  @media (max-width: 540px) {
+    ",
+              "
+  flex: none;
+  -ms-flex: none;
+",
+              "
+  }
+",
+            ],
+          },
+          "displayName": "styled.div",
+          "foldedComponentIds": Array [],
+          "render": [Function],
+          "styledComponentId": "sc-kkGfuU",
+          "target": "div",
+          "toString": [Function],
+          "warnTooManyClasses": [Function],
+          "withComponent": [Function],
+        }
+      }
+      forwardedRef={null}
     >
-      <styled.header>
-        <header
-          className="sc-iAyFgw ezbAcA"
-        >
-          <h2>
-            Score: 
-          </h2>
-        </header>
-      </styled.header>
-      <styled.section>
-        <section
-          className="sc-hSdWYo czwlDt"
-        >
-          <Attempts
-            attempts={
-              Immutable.List [
-                Immutable.Map {
-                  "word": "someword",
-                  "score": "8",
+      <div
+        className="sc-kkGfuU iBheBa"
+      >
+        <styled.header>
+          <StyledComponent
+            forwardedComponent={
+              Object {
+                "$$typeof": Symbol(react.forward_ref),
+                "attrs": Array [],
+                "componentStyle": ComponentStyle {
+                  "componentId": "sc-iAyFgw",
+                  "isStatic": true,
+                  "lastClassName": "ezbAcA",
+                  "rules": Array [
+                    "
+  margin-bottom: 1rem;
+",
+                  ],
                 },
-              ]
+                "displayName": "styled.header",
+                "foldedComponentIds": Array [],
+                "render": [Function],
+                "styledComponentId": "sc-iAyFgw",
+                "target": "header",
+                "toString": [Function],
+                "warnTooManyClasses": [Function],
+                "withComponent": [Function],
+              }
             }
+            forwardedRef={null}
           >
-            <styled.table>
-              <table
-                className="sc-EHOje iwJDRz"
+            <header
+              className="sc-iAyFgw ezbAcA"
+            >
+              <h2>
+                Score: 
+              </h2>
+            </header>
+          </StyledComponent>
+        </styled.header>
+        <styled.section>
+          <StyledComponent
+            forwardedComponent={
+              Object {
+                "$$typeof": Symbol(react.forward_ref),
+                "attrs": Array [],
+                "componentStyle": ComponentStyle {
+                  "componentId": "sc-hSdWYo",
+                  "isStatic": true,
+                  "lastClassName": "czwlDt",
+                  "rules": Array [
+                    "
+  ",
+                    "
+  flex: 1;
+  -ms-flex: 1;
+",
+                    "
+  ",
+                    "
+  background-color: #404040;
+  border: .1rem solid;
+  border-radius: .5rem;
+  border-color: #303030 #505050 #505050 #303030;
+",
+                    "
+  width: 100%;
+  overflow-x: hidden;
+  overflow-y: visible;
+  scrollbar-face-color: #2b2b2b;
+  scrollbar-shadow-color: #404040;
+  scrollbar-highlight-color: #404040;
+  scrollbar-3dlight-color: #404040;
+  scrollbar-darkshadow-color: #2d2c4d;
+  scrollbar-track-color: #404040;
+  scrollbar-arrow-color: #2b2b2b;
+
+  @media (max-width: 540px) {
+    display: none;
+  }
+",
+                  ],
+                },
+                "displayName": "styled.section",
+                "foldedComponentIds": Array [],
+                "render": [Function],
+                "styledComponentId": "sc-hSdWYo",
+                "target": "section",
+                "toString": [Function],
+                "warnTooManyClasses": [Function],
+                "withComponent": [Function],
+              }
+            }
+            forwardedRef={null}
+          >
+            <section
+              className="sc-hSdWYo czwlDt"
+            >
+              <Attempts
+                attempts={
+                  Immutable.List [
+                    Immutable.Map {
+                      "word": "someword",
+                      "score": "8",
+                    },
+                  ]
+                }
               >
-                <tbody>
-                  <tr
-                    key="0"
+                <styled.table>
+                  <StyledComponent
+                    forwardedComponent={
+                      Object {
+                        "$$typeof": Symbol(react.forward_ref),
+                        "attrs": Array [],
+                        "componentStyle": ComponentStyle {
+                          "componentId": "sc-EHOje",
+                          "isStatic": true,
+                          "lastClassName": "iwJDRz",
+                          "rules": Array [
+                            "
+  margin: 1rem auto;
+  width: 100%;
+",
+                          ],
+                        },
+                        "displayName": "styled.table",
+                        "foldedComponentIds": Array [],
+                        "render": [Function],
+                        "styledComponentId": "sc-EHOje",
+                        "target": "table",
+                        "toString": [Function],
+                        "warnTooManyClasses": [Function],
+                        "withComponent": [Function],
+                      }
+                    }
+                    forwardedRef={null}
                   >
-                    <styled.td>
-                      <td
-                        className="sc-bZQynM gAUXow"
-                      >
-                        someword
-                      </td>
-                    </styled.td>
-                    <styled.td>
-                      <td
-                        className="sc-bZQynM gAUXow"
-                      >
-                        8
-                      </td>
-                    </styled.td>
-                  </tr>
-                </tbody>
-              </table>
-            </styled.table>
-          </Attempts>
-        </section>
-      </styled.section>
-    </div>
+                    <table
+                      className="sc-EHOje iwJDRz"
+                    >
+                      <tbody>
+                        <tr
+                          key="0"
+                        >
+                          <styled.td>
+                            <StyledComponent
+                              forwardedComponent={
+                                Object {
+                                  "$$typeof": Symbol(react.forward_ref),
+                                  "attrs": Array [],
+                                  "componentStyle": ComponentStyle {
+                                    "componentId": "sc-bZQynM",
+                                    "isStatic": true,
+                                    "lastClassName": "gAUXow",
+                                    "rules": Array [
+                                      "
+  color: #fff;
+  font-size: 1.2rem;
+
+  &:first-child {
+    padding-left: 1rem;
+    text-align: left;
+  }
+
+  &:last-child {
+    padding-right: 1rem;
+    text-align: right;
+  }
+",
+                                    ],
+                                  },
+                                  "displayName": "styled.td",
+                                  "foldedComponentIds": Array [],
+                                  "render": [Function],
+                                  "styledComponentId": "sc-bZQynM",
+                                  "target": "td",
+                                  "toString": [Function],
+                                  "warnTooManyClasses": [Function],
+                                  "withComponent": [Function],
+                                }
+                              }
+                              forwardedRef={null}
+                            >
+                              <td
+                                className="sc-bZQynM gAUXow"
+                              >
+                                someword
+                              </td>
+                            </StyledComponent>
+                          </styled.td>
+                          <styled.td>
+                            <StyledComponent
+                              forwardedComponent={
+                                Object {
+                                  "$$typeof": Symbol(react.forward_ref),
+                                  "attrs": Array [],
+                                  "componentStyle": ComponentStyle {
+                                    "componentId": "sc-bZQynM",
+                                    "isStatic": true,
+                                    "lastClassName": "gAUXow",
+                                    "rules": Array [
+                                      "
+  color: #fff;
+  font-size: 1.2rem;
+
+  &:first-child {
+    padding-left: 1rem;
+    text-align: left;
+  }
+
+  &:last-child {
+    padding-right: 1rem;
+    text-align: right;
+  }
+",
+                                    ],
+                                  },
+                                  "displayName": "styled.td",
+                                  "foldedComponentIds": Array [],
+                                  "render": [Function],
+                                  "styledComponentId": "sc-bZQynM",
+                                  "target": "td",
+                                  "toString": [Function],
+                                  "warnTooManyClasses": [Function],
+                                  "withComponent": [Function],
+                                }
+                              }
+                              forwardedRef={null}
+                            >
+                              <td
+                                className="sc-bZQynM gAUXow"
+                              >
+                                8
+                              </td>
+                            </StyledComponent>
+                          </styled.td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </StyledComponent>
+                </styled.table>
+              </Attempts>
+            </section>
+          </StyledComponent>
+        </styled.section>
+      </div>
+    </StyledComponent>
   </styled.div>
 </Score>
 `;
@@ -84,62 +335,313 @@ exports[`<Score /> adds an invalid attempt 1`] = `
   }
 >
   <styled.div>
-    <div
-      className="sc-kkGfuU iBheBa"
+    <StyledComponent
+      forwardedComponent={
+        Object {
+          "$$typeof": Symbol(react.forward_ref),
+          "attrs": Array [],
+          "componentStyle": ComponentStyle {
+            "componentId": "sc-kkGfuU",
+            "isStatic": true,
+            "lastClassName": "iBheBa",
+            "rules": Array [
+              "
+  ",
+              "
+  display: flex;
+  display: -ms-flexbox;
+",
+              "
+  ",
+              "
+  
+  flex-direction: column;
+  -ms-flex-direction: column;
+
+  
+  flex-wrap: nowrap;
+  -ms-flex-wrap: ;
+
+",
+              "
+  ",
+              "
+  flex: 3;
+  -ms-flex: 3;
+",
+              "
+  color: #fff;
+
+  @media (max-width: 540px) {
+    ",
+              "
+  flex: none;
+  -ms-flex: none;
+",
+              "
+  }
+",
+            ],
+          },
+          "displayName": "styled.div",
+          "foldedComponentIds": Array [],
+          "render": [Function],
+          "styledComponentId": "sc-kkGfuU",
+          "target": "div",
+          "toString": [Function],
+          "warnTooManyClasses": [Function],
+          "withComponent": [Function],
+        }
+      }
+      forwardedRef={null}
     >
-      <styled.header>
-        <header
-          className="sc-iAyFgw ezbAcA"
-        >
-          <h2>
-            Score: 
-          </h2>
-        </header>
-      </styled.header>
-      <styled.section>
-        <section
-          className="sc-hSdWYo czwlDt"
-        >
-          <Attempts
-            attempts={
-              Immutable.List [
-                Immutable.Map {
-                  "word": "someword",
-                  "score": "✘",
+      <div
+        className="sc-kkGfuU iBheBa"
+      >
+        <styled.header>
+          <StyledComponent
+            forwardedComponent={
+              Object {
+                "$$typeof": Symbol(react.forward_ref),
+                "attrs": Array [],
+                "componentStyle": ComponentStyle {
+                  "componentId": "sc-iAyFgw",
+                  "isStatic": true,
+                  "lastClassName": "ezbAcA",
+                  "rules": Array [
+                    "
+  margin-bottom: 1rem;
+",
+                  ],
                 },
-              ]
+                "displayName": "styled.header",
+                "foldedComponentIds": Array [],
+                "render": [Function],
+                "styledComponentId": "sc-iAyFgw",
+                "target": "header",
+                "toString": [Function],
+                "warnTooManyClasses": [Function],
+                "withComponent": [Function],
+              }
             }
+            forwardedRef={null}
           >
-            <styled.table>
-              <table
-                className="sc-EHOje iwJDRz"
+            <header
+              className="sc-iAyFgw ezbAcA"
+            >
+              <h2>
+                Score: 
+              </h2>
+            </header>
+          </StyledComponent>
+        </styled.header>
+        <styled.section>
+          <StyledComponent
+            forwardedComponent={
+              Object {
+                "$$typeof": Symbol(react.forward_ref),
+                "attrs": Array [],
+                "componentStyle": ComponentStyle {
+                  "componentId": "sc-hSdWYo",
+                  "isStatic": true,
+                  "lastClassName": "czwlDt",
+                  "rules": Array [
+                    "
+  ",
+                    "
+  flex: 1;
+  -ms-flex: 1;
+",
+                    "
+  ",
+                    "
+  background-color: #404040;
+  border: .1rem solid;
+  border-radius: .5rem;
+  border-color: #303030 #505050 #505050 #303030;
+",
+                    "
+  width: 100%;
+  overflow-x: hidden;
+  overflow-y: visible;
+  scrollbar-face-color: #2b2b2b;
+  scrollbar-shadow-color: #404040;
+  scrollbar-highlight-color: #404040;
+  scrollbar-3dlight-color: #404040;
+  scrollbar-darkshadow-color: #2d2c4d;
+  scrollbar-track-color: #404040;
+  scrollbar-arrow-color: #2b2b2b;
+
+  @media (max-width: 540px) {
+    display: none;
+  }
+",
+                  ],
+                },
+                "displayName": "styled.section",
+                "foldedComponentIds": Array [],
+                "render": [Function],
+                "styledComponentId": "sc-hSdWYo",
+                "target": "section",
+                "toString": [Function],
+                "warnTooManyClasses": [Function],
+                "withComponent": [Function],
+              }
+            }
+            forwardedRef={null}
+          >
+            <section
+              className="sc-hSdWYo czwlDt"
+            >
+              <Attempts
+                attempts={
+                  Immutable.List [
+                    Immutable.Map {
+                      "word": "someword",
+                      "score": "✘",
+                    },
+                  ]
+                }
               >
-                <tbody>
-                  <tr
-                    key="0"
+                <styled.table>
+                  <StyledComponent
+                    forwardedComponent={
+                      Object {
+                        "$$typeof": Symbol(react.forward_ref),
+                        "attrs": Array [],
+                        "componentStyle": ComponentStyle {
+                          "componentId": "sc-EHOje",
+                          "isStatic": true,
+                          "lastClassName": "iwJDRz",
+                          "rules": Array [
+                            "
+  margin: 1rem auto;
+  width: 100%;
+",
+                          ],
+                        },
+                        "displayName": "styled.table",
+                        "foldedComponentIds": Array [],
+                        "render": [Function],
+                        "styledComponentId": "sc-EHOje",
+                        "target": "table",
+                        "toString": [Function],
+                        "warnTooManyClasses": [Function],
+                        "withComponent": [Function],
+                      }
+                    }
+                    forwardedRef={null}
                   >
-                    <styled.td>
-                      <td
-                        className="sc-bZQynM gAUXow"
-                      >
-                        someword
-                      </td>
-                    </styled.td>
-                    <styled.td>
-                      <td
-                        className="sc-bZQynM gAUXow"
-                      >
-                        ✘
-                      </td>
-                    </styled.td>
-                  </tr>
-                </tbody>
-              </table>
-            </styled.table>
-          </Attempts>
-        </section>
-      </styled.section>
-    </div>
+                    <table
+                      className="sc-EHOje iwJDRz"
+                    >
+                      <tbody>
+                        <tr
+                          key="0"
+                        >
+                          <styled.td>
+                            <StyledComponent
+                              forwardedComponent={
+                                Object {
+                                  "$$typeof": Symbol(react.forward_ref),
+                                  "attrs": Array [],
+                                  "componentStyle": ComponentStyle {
+                                    "componentId": "sc-bZQynM",
+                                    "isStatic": true,
+                                    "lastClassName": "gAUXow",
+                                    "rules": Array [
+                                      "
+  color: #fff;
+  font-size: 1.2rem;
+
+  &:first-child {
+    padding-left: 1rem;
+    text-align: left;
+  }
+
+  &:last-child {
+    padding-right: 1rem;
+    text-align: right;
+  }
+",
+                                    ],
+                                  },
+                                  "displayName": "styled.td",
+                                  "foldedComponentIds": Array [],
+                                  "render": [Function],
+                                  "styledComponentId": "sc-bZQynM",
+                                  "target": "td",
+                                  "toString": [Function],
+                                  "warnTooManyClasses": [Function],
+                                  "withComponent": [Function],
+                                }
+                              }
+                              forwardedRef={null}
+                            >
+                              <td
+                                className="sc-bZQynM gAUXow"
+                              >
+                                someword
+                              </td>
+                            </StyledComponent>
+                          </styled.td>
+                          <styled.td>
+                            <StyledComponent
+                              forwardedComponent={
+                                Object {
+                                  "$$typeof": Symbol(react.forward_ref),
+                                  "attrs": Array [],
+                                  "componentStyle": ComponentStyle {
+                                    "componentId": "sc-bZQynM",
+                                    "isStatic": true,
+                                    "lastClassName": "gAUXow",
+                                    "rules": Array [
+                                      "
+  color: #fff;
+  font-size: 1.2rem;
+
+  &:first-child {
+    padding-left: 1rem;
+    text-align: left;
+  }
+
+  &:last-child {
+    padding-right: 1rem;
+    text-align: right;
+  }
+",
+                                    ],
+                                  },
+                                  "displayName": "styled.td",
+                                  "foldedComponentIds": Array [],
+                                  "render": [Function],
+                                  "styledComponentId": "sc-bZQynM",
+                                  "target": "td",
+                                  "toString": [Function],
+                                  "warnTooManyClasses": [Function],
+                                  "withComponent": [Function],
+                                }
+                              }
+                              forwardedRef={null}
+                            >
+                              <td
+                                className="sc-bZQynM gAUXow"
+                              >
+                                ✘
+                              </td>
+                            </StyledComponent>
+                          </styled.td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </StyledComponent>
+                </styled.table>
+              </Attempts>
+            </section>
+          </StyledComponent>
+        </styled.section>
+      </div>
+    </StyledComponent>
   </styled.div>
 </Score>
 `;
@@ -150,39 +652,212 @@ exports[`<Score /> shows the score 1`] = `
   counter={8}
 >
   <styled.div>
-    <div
-      className="sc-kkGfuU iBheBa"
+    <StyledComponent
+      forwardedComponent={
+        Object {
+          "$$typeof": Symbol(react.forward_ref),
+          "attrs": Array [],
+          "componentStyle": ComponentStyle {
+            "componentId": "sc-kkGfuU",
+            "isStatic": true,
+            "lastClassName": "iBheBa",
+            "rules": Array [
+              "
+  ",
+              "
+  display: flex;
+  display: -ms-flexbox;
+",
+              "
+  ",
+              "
+  
+  flex-direction: column;
+  -ms-flex-direction: column;
+
+  
+  flex-wrap: nowrap;
+  -ms-flex-wrap: ;
+
+",
+              "
+  ",
+              "
+  flex: 3;
+  -ms-flex: 3;
+",
+              "
+  color: #fff;
+
+  @media (max-width: 540px) {
+    ",
+              "
+  flex: none;
+  -ms-flex: none;
+",
+              "
+  }
+",
+            ],
+          },
+          "displayName": "styled.div",
+          "foldedComponentIds": Array [],
+          "render": [Function],
+          "styledComponentId": "sc-kkGfuU",
+          "target": "div",
+          "toString": [Function],
+          "warnTooManyClasses": [Function],
+          "withComponent": [Function],
+        }
+      }
+      forwardedRef={null}
     >
-      <styled.header>
-        <header
-          className="sc-iAyFgw ezbAcA"
-        >
-          <h2>
-            Score: 
-            8
-          </h2>
-        </header>
-      </styled.header>
-      <styled.section>
-        <section
-          className="sc-hSdWYo czwlDt"
-        >
-          <Attempts
-            attempts={Immutable.List []}
+      <div
+        className="sc-kkGfuU iBheBa"
+      >
+        <styled.header>
+          <StyledComponent
+            forwardedComponent={
+              Object {
+                "$$typeof": Symbol(react.forward_ref),
+                "attrs": Array [],
+                "componentStyle": ComponentStyle {
+                  "componentId": "sc-iAyFgw",
+                  "isStatic": true,
+                  "lastClassName": "ezbAcA",
+                  "rules": Array [
+                    "
+  margin-bottom: 1rem;
+",
+                  ],
+                },
+                "displayName": "styled.header",
+                "foldedComponentIds": Array [],
+                "render": [Function],
+                "styledComponentId": "sc-iAyFgw",
+                "target": "header",
+                "toString": [Function],
+                "warnTooManyClasses": [Function],
+                "withComponent": [Function],
+              }
+            }
+            forwardedRef={null}
           >
-            <styled.table>
-              <table
-                className="sc-EHOje iwJDRz"
+            <header
+              className="sc-iAyFgw ezbAcA"
+            >
+              <h2>
+                Score: 
+                8
+              </h2>
+            </header>
+          </StyledComponent>
+        </styled.header>
+        <styled.section>
+          <StyledComponent
+            forwardedComponent={
+              Object {
+                "$$typeof": Symbol(react.forward_ref),
+                "attrs": Array [],
+                "componentStyle": ComponentStyle {
+                  "componentId": "sc-hSdWYo",
+                  "isStatic": true,
+                  "lastClassName": "czwlDt",
+                  "rules": Array [
+                    "
+  ",
+                    "
+  flex: 1;
+  -ms-flex: 1;
+",
+                    "
+  ",
+                    "
+  background-color: #404040;
+  border: .1rem solid;
+  border-radius: .5rem;
+  border-color: #303030 #505050 #505050 #303030;
+",
+                    "
+  width: 100%;
+  overflow-x: hidden;
+  overflow-y: visible;
+  scrollbar-face-color: #2b2b2b;
+  scrollbar-shadow-color: #404040;
+  scrollbar-highlight-color: #404040;
+  scrollbar-3dlight-color: #404040;
+  scrollbar-darkshadow-color: #2d2c4d;
+  scrollbar-track-color: #404040;
+  scrollbar-arrow-color: #2b2b2b;
+
+  @media (max-width: 540px) {
+    display: none;
+  }
+",
+                  ],
+                },
+                "displayName": "styled.section",
+                "foldedComponentIds": Array [],
+                "render": [Function],
+                "styledComponentId": "sc-hSdWYo",
+                "target": "section",
+                "toString": [Function],
+                "warnTooManyClasses": [Function],
+                "withComponent": [Function],
+              }
+            }
+            forwardedRef={null}
+          >
+            <section
+              className="sc-hSdWYo czwlDt"
+            >
+              <Attempts
+                attempts={Immutable.List []}
               >
-                <tbody>
-                  <Component />
-                </tbody>
-              </table>
-            </styled.table>
-          </Attempts>
-        </section>
-      </styled.section>
-    </div>
+                <styled.table>
+                  <StyledComponent
+                    forwardedComponent={
+                      Object {
+                        "$$typeof": Symbol(react.forward_ref),
+                        "attrs": Array [],
+                        "componentStyle": ComponentStyle {
+                          "componentId": "sc-EHOje",
+                          "isStatic": true,
+                          "lastClassName": "iwJDRz",
+                          "rules": Array [
+                            "
+  margin: 1rem auto;
+  width: 100%;
+",
+                          ],
+                        },
+                        "displayName": "styled.table",
+                        "foldedComponentIds": Array [],
+                        "render": [Function],
+                        "styledComponentId": "sc-EHOje",
+                        "target": "table",
+                        "toString": [Function],
+                        "warnTooManyClasses": [Function],
+                        "withComponent": [Function],
+                      }
+                    }
+                    forwardedRef={null}
+                  >
+                    <table
+                      className="sc-EHOje iwJDRz"
+                    >
+                      <tbody>
+                        <Component />
+                      </tbody>
+                    </table>
+                  </StyledComponent>
+                </styled.table>
+              </Attempts>
+            </section>
+          </StyledComponent>
+        </styled.section>
+      </div>
+    </StyledComponent>
   </styled.div>
 </Score>
 `;

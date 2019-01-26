@@ -10,81 +10,318 @@ exports[`<ClockContainer /> decrements when the game starts 1`] = `
     total={60}
   >
     <styled.div>
-      <div
-        className="sc-gqjmRU dPXKxW"
+      <StyledComponent
+        forwardedComponent={
+          Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "attrs": Array [],
+            "componentStyle": ComponentStyle {
+              "componentId": "sc-gqjmRU",
+              "isStatic": true,
+              "lastClassName": "dPXKxW",
+              "rules": Array [
+                "
+  ",
+                "
+  flex: 1;
+  -ms-flex: 1;
+",
+                ";
+  margin-bottom: 2rem;
+
+  @media (max-width: 540px) {
+    ",
+                "
+  flex: none;
+  -ms-flex: none;
+",
+                ";
+    margin-bottom: auto;
+  }
+",
+              ],
+            },
+            "displayName": "styled.div",
+            "foldedComponentIds": Array [],
+            "render": [Function],
+            "styledComponentId": "sc-gqjmRU",
+            "target": "div",
+            "toString": [Function],
+            "warnTooManyClasses": [Function],
+            "withComponent": [Function],
+          }
+        }
+        forwardedRef={null}
       >
-        <styled.svg
-          viewBox="0 0 100 100"
+        <div
+          className="sc-gqjmRU dPXKxW"
         >
-          <svg
-            className="sc-jTzLTM jFWEQC"
+          <styled.svg
             viewBox="0 0 100 100"
           >
-            <styled.circle
-              className="clock-gray"
-              cx="50%"
-              cy="50%"
-              r="40"
-            >
-              <circle
-                className="clock-gray sc-VigVT iMLRaJ"
-                cx="50%"
-                cy="50%"
-                r="40"
-              />
-            </styled.circle>
-            <styled.circle
-              className="clock-green"
-              cx="50%"
-              cy="50%"
-              r="40"
-              style={
+            <StyledComponent
+              forwardedComponent={
                 Object {
-                  "strokeDasharray": 251,
-                  "strokeDashoffset": 246.81666666666666,
+                  "$$typeof": Symbol(react.forward_ref),
+                  "attrs": Array [],
+                  "componentStyle": ComponentStyle {
+                    "componentId": "sc-jTzLTM",
+                    "isStatic": true,
+                    "lastClassName": "jFWEQC",
+                    "rules": Array [
+                      "
+  width: 100%;
+  height: auto;
+
+  @media (max-width: 540px) {
+    display: none !important;
+  }
+",
+                    ],
+                  },
+                  "displayName": "styled.svg",
+                  "foldedComponentIds": Array [],
+                  "render": [Function],
+                  "styledComponentId": "sc-jTzLTM",
+                  "target": "svg",
+                  "toString": [Function],
+                  "warnTooManyClasses": [Function],
+                  "withComponent": [Function],
                 }
               }
-              transform="rotate(-90 50 50)"
+              forwardedRef={null}
+              viewBox="0 0 100 100"
             >
-              <circle
-                className="clock-green sc-VigVT iMLRaJ"
-                cx="50%"
-                cy="50%"
-                r="40"
-                style={
-                  Object {
-                    "strokeDasharray": 251,
-                    "strokeDashoffset": 246.81666666666666,
-                  }
-                }
-                transform="rotate(-90 50 50)"
-              />
-            </styled.circle>
-            <styled.text
-              textAnchor="middle"
-              x="50%"
-              y="60%"
-            >
-              <text
-                className="sc-fjdhpX kwMnmn"
-                textAnchor="middle"
-                x="50%"
-                y="60%"
+              <svg
+                className="sc-jTzLTM jFWEQC"
+                viewBox="0 0 100 100"
               >
+                <styled.circle
+                  className="clock-gray"
+                  cx="50%"
+                  cy="50%"
+                  r="40"
+                >
+                  <StyledComponent
+                    className="clock-gray"
+                    cx="50%"
+                    cy="50%"
+                    forwardedComponent={
+                      Object {
+                        "$$typeof": Symbol(react.forward_ref),
+                        "attrs": Array [],
+                        "componentStyle": ComponentStyle {
+                          "componentId": "sc-VigVT",
+                          "isStatic": true,
+                          "lastClassName": "iMLRaJ",
+                          "rules": Array [
+                            "
+  fill: transparent;
+  stroke-width: 15;
+
+  &.clock-gray {
+    stroke: #666;
+  }
+
+  &.clock-green {
+    stroke: #6c6;
+    stroke-dasharray: 251;
+  }
+",
+                          ],
+                        },
+                        "displayName": "styled.circle",
+                        "foldedComponentIds": Array [],
+                        "render": [Function],
+                        "styledComponentId": "sc-VigVT",
+                        "target": "circle",
+                        "toString": [Function],
+                        "warnTooManyClasses": [Function],
+                        "withComponent": [Function],
+                      }
+                    }
+                    forwardedRef={null}
+                    r="40"
+                  >
+                    <circle
+                      className="clock-gray sc-VigVT iMLRaJ"
+                      cx="50%"
+                      cy="50%"
+                      r="40"
+                    />
+                  </StyledComponent>
+                </styled.circle>
+                <styled.circle
+                  className="clock-green"
+                  cx="50%"
+                  cy="50%"
+                  r="40"
+                  style={
+                    Object {
+                      "strokeDasharray": 251,
+                      "strokeDashoffset": 246.81666666666666,
+                    }
+                  }
+                  transform="rotate(-90 50 50)"
+                >
+                  <StyledComponent
+                    className="clock-green"
+                    cx="50%"
+                    cy="50%"
+                    forwardedComponent={
+                      Object {
+                        "$$typeof": Symbol(react.forward_ref),
+                        "attrs": Array [],
+                        "componentStyle": ComponentStyle {
+                          "componentId": "sc-VigVT",
+                          "isStatic": true,
+                          "lastClassName": "iMLRaJ",
+                          "rules": Array [
+                            "
+  fill: transparent;
+  stroke-width: 15;
+
+  &.clock-gray {
+    stroke: #666;
+  }
+
+  &.clock-green {
+    stroke: #6c6;
+    stroke-dasharray: 251;
+  }
+",
+                          ],
+                        },
+                        "displayName": "styled.circle",
+                        "foldedComponentIds": Array [],
+                        "render": [Function],
+                        "styledComponentId": "sc-VigVT",
+                        "target": "circle",
+                        "toString": [Function],
+                        "warnTooManyClasses": [Function],
+                        "withComponent": [Function],
+                      }
+                    }
+                    forwardedRef={null}
+                    r="40"
+                    style={
+                      Object {
+                        "strokeDasharray": 251,
+                        "strokeDashoffset": 246.81666666666666,
+                      }
+                    }
+                    transform="rotate(-90 50 50)"
+                  >
+                    <circle
+                      className="clock-green sc-VigVT iMLRaJ"
+                      cx="50%"
+                      cy="50%"
+                      r="40"
+                      style={
+                        Object {
+                          "strokeDasharray": 251,
+                          "strokeDashoffset": 246.81666666666666,
+                        }
+                      }
+                      transform="rotate(-90 50 50)"
+                    />
+                  </StyledComponent>
+                </styled.circle>
+                <styled.text
+                  textAnchor="middle"
+                  x="50%"
+                  y="60%"
+                >
+                  <StyledComponent
+                    forwardedComponent={
+                      Object {
+                        "$$typeof": Symbol(react.forward_ref),
+                        "attrs": Array [],
+                        "componentStyle": ComponentStyle {
+                          "componentId": "sc-fjdhpX",
+                          "isStatic": true,
+                          "lastClassName": "kwMnmn",
+                          "rules": Array [
+                            "
+  fill: #fff;
+  font-family: Arial, sans-serif;
+  font-size: 2.5rem;
+  font-weight: bold;
+",
+                          ],
+                        },
+                        "displayName": "styled.text",
+                        "foldedComponentIds": Array [],
+                        "render": [Function],
+                        "styledComponentId": "sc-fjdhpX",
+                        "target": "text",
+                        "toString": [Function],
+                        "warnTooManyClasses": [Function],
+                        "withComponent": [Function],
+                      }
+                    }
+                    forwardedRef={null}
+                    textAnchor="middle"
+                    x="50%"
+                    y="60%"
+                  >
+                    <text
+                      className="sc-fjdhpX kwMnmn"
+                      textAnchor="middle"
+                      x="50%"
+                      y="60%"
+                    >
+                      59
+                    </text>
+                  </StyledComponent>
+                </styled.text>
+              </svg>
+            </StyledComponent>
+          </styled.svg>
+          <styled.span>
+            <StyledComponent
+              forwardedComponent={
+                Object {
+                  "$$typeof": Symbol(react.forward_ref),
+                  "attrs": Array [],
+                  "componentStyle": ComponentStyle {
+                    "componentId": "sc-jzJRlG",
+                    "isStatic": true,
+                    "lastClassName": "bfEpLC",
+                    "rules": Array [
+                      "
+  display: none;
+  font-size: 1.5rem;
+  font-weight: bold;
+
+  @media (max-width: 540px) {
+    display: block;
+  }
+",
+                    ],
+                  },
+                  "displayName": "styled.span",
+                  "foldedComponentIds": Array [],
+                  "render": [Function],
+                  "styledComponentId": "sc-jzJRlG",
+                  "target": "span",
+                  "toString": [Function],
+                  "warnTooManyClasses": [Function],
+                  "withComponent": [Function],
+                }
+              }
+              forwardedRef={null}
+            >
+              <span
+                className="sc-jzJRlG bfEpLC"
+              >
+                Time left: 00:
                 59
-              </text>
-            </styled.text>
-          </svg>
-        </styled.svg>
-        <styled.span>
-          <span
-            className="sc-jzJRlG bfEpLC"
-          >
-            Time left: 00:
-            59
-          </span>
-        </styled.span>
-      </div>
+              </span>
+            </StyledComponent>
+          </styled.span>
+        </div>
+      </StyledComponent>
     </styled.div>
   </Clock>
 </ClockContainer>
@@ -100,81 +337,318 @@ exports[`<ClockContainer /> decrements when the game starts 2`] = `
     total={60}
   >
     <styled.div>
-      <div
-        className="sc-gqjmRU dPXKxW"
+      <StyledComponent
+        forwardedComponent={
+          Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "attrs": Array [],
+            "componentStyle": ComponentStyle {
+              "componentId": "sc-gqjmRU",
+              "isStatic": true,
+              "lastClassName": "dPXKxW",
+              "rules": Array [
+                "
+  ",
+                "
+  flex: 1;
+  -ms-flex: 1;
+",
+                ";
+  margin-bottom: 2rem;
+
+  @media (max-width: 540px) {
+    ",
+                "
+  flex: none;
+  -ms-flex: none;
+",
+                ";
+    margin-bottom: auto;
+  }
+",
+              ],
+            },
+            "displayName": "styled.div",
+            "foldedComponentIds": Array [],
+            "render": [Function],
+            "styledComponentId": "sc-gqjmRU",
+            "target": "div",
+            "toString": [Function],
+            "warnTooManyClasses": [Function],
+            "withComponent": [Function],
+          }
+        }
+        forwardedRef={null}
       >
-        <styled.svg
-          viewBox="0 0 100 100"
+        <div
+          className="sc-gqjmRU dPXKxW"
         >
-          <svg
-            className="sc-jTzLTM jFWEQC"
+          <styled.svg
             viewBox="0 0 100 100"
           >
-            <styled.circle
-              className="clock-gray"
-              cx="50%"
-              cy="50%"
-              r="40"
-            >
-              <circle
-                className="clock-gray sc-VigVT iMLRaJ"
-                cx="50%"
-                cy="50%"
-                r="40"
-              />
-            </styled.circle>
-            <styled.circle
-              className="clock-green"
-              cx="50%"
-              cy="50%"
-              r="40"
-              style={
+            <StyledComponent
+              forwardedComponent={
                 Object {
-                  "strokeDasharray": 251,
-                  "strokeDashoffset": 242.63333333333333,
+                  "$$typeof": Symbol(react.forward_ref),
+                  "attrs": Array [],
+                  "componentStyle": ComponentStyle {
+                    "componentId": "sc-jTzLTM",
+                    "isStatic": true,
+                    "lastClassName": "jFWEQC",
+                    "rules": Array [
+                      "
+  width: 100%;
+  height: auto;
+
+  @media (max-width: 540px) {
+    display: none !important;
+  }
+",
+                    ],
+                  },
+                  "displayName": "styled.svg",
+                  "foldedComponentIds": Array [],
+                  "render": [Function],
+                  "styledComponentId": "sc-jTzLTM",
+                  "target": "svg",
+                  "toString": [Function],
+                  "warnTooManyClasses": [Function],
+                  "withComponent": [Function],
                 }
               }
-              transform="rotate(-90 50 50)"
+              forwardedRef={null}
+              viewBox="0 0 100 100"
             >
-              <circle
-                className="clock-green sc-VigVT iMLRaJ"
-                cx="50%"
-                cy="50%"
-                r="40"
-                style={
-                  Object {
-                    "strokeDasharray": 251,
-                    "strokeDashoffset": 242.63333333333333,
-                  }
-                }
-                transform="rotate(-90 50 50)"
-              />
-            </styled.circle>
-            <styled.text
-              textAnchor="middle"
-              x="50%"
-              y="60%"
-            >
-              <text
-                className="sc-fjdhpX kwMnmn"
-                textAnchor="middle"
-                x="50%"
-                y="60%"
+              <svg
+                className="sc-jTzLTM jFWEQC"
+                viewBox="0 0 100 100"
               >
+                <styled.circle
+                  className="clock-gray"
+                  cx="50%"
+                  cy="50%"
+                  r="40"
+                >
+                  <StyledComponent
+                    className="clock-gray"
+                    cx="50%"
+                    cy="50%"
+                    forwardedComponent={
+                      Object {
+                        "$$typeof": Symbol(react.forward_ref),
+                        "attrs": Array [],
+                        "componentStyle": ComponentStyle {
+                          "componentId": "sc-VigVT",
+                          "isStatic": true,
+                          "lastClassName": "iMLRaJ",
+                          "rules": Array [
+                            "
+  fill: transparent;
+  stroke-width: 15;
+
+  &.clock-gray {
+    stroke: #666;
+  }
+
+  &.clock-green {
+    stroke: #6c6;
+    stroke-dasharray: 251;
+  }
+",
+                          ],
+                        },
+                        "displayName": "styled.circle",
+                        "foldedComponentIds": Array [],
+                        "render": [Function],
+                        "styledComponentId": "sc-VigVT",
+                        "target": "circle",
+                        "toString": [Function],
+                        "warnTooManyClasses": [Function],
+                        "withComponent": [Function],
+                      }
+                    }
+                    forwardedRef={null}
+                    r="40"
+                  >
+                    <circle
+                      className="clock-gray sc-VigVT iMLRaJ"
+                      cx="50%"
+                      cy="50%"
+                      r="40"
+                    />
+                  </StyledComponent>
+                </styled.circle>
+                <styled.circle
+                  className="clock-green"
+                  cx="50%"
+                  cy="50%"
+                  r="40"
+                  style={
+                    Object {
+                      "strokeDasharray": 251,
+                      "strokeDashoffset": 242.63333333333333,
+                    }
+                  }
+                  transform="rotate(-90 50 50)"
+                >
+                  <StyledComponent
+                    className="clock-green"
+                    cx="50%"
+                    cy="50%"
+                    forwardedComponent={
+                      Object {
+                        "$$typeof": Symbol(react.forward_ref),
+                        "attrs": Array [],
+                        "componentStyle": ComponentStyle {
+                          "componentId": "sc-VigVT",
+                          "isStatic": true,
+                          "lastClassName": "iMLRaJ",
+                          "rules": Array [
+                            "
+  fill: transparent;
+  stroke-width: 15;
+
+  &.clock-gray {
+    stroke: #666;
+  }
+
+  &.clock-green {
+    stroke: #6c6;
+    stroke-dasharray: 251;
+  }
+",
+                          ],
+                        },
+                        "displayName": "styled.circle",
+                        "foldedComponentIds": Array [],
+                        "render": [Function],
+                        "styledComponentId": "sc-VigVT",
+                        "target": "circle",
+                        "toString": [Function],
+                        "warnTooManyClasses": [Function],
+                        "withComponent": [Function],
+                      }
+                    }
+                    forwardedRef={null}
+                    r="40"
+                    style={
+                      Object {
+                        "strokeDasharray": 251,
+                        "strokeDashoffset": 242.63333333333333,
+                      }
+                    }
+                    transform="rotate(-90 50 50)"
+                  >
+                    <circle
+                      className="clock-green sc-VigVT iMLRaJ"
+                      cx="50%"
+                      cy="50%"
+                      r="40"
+                      style={
+                        Object {
+                          "strokeDasharray": 251,
+                          "strokeDashoffset": 242.63333333333333,
+                        }
+                      }
+                      transform="rotate(-90 50 50)"
+                    />
+                  </StyledComponent>
+                </styled.circle>
+                <styled.text
+                  textAnchor="middle"
+                  x="50%"
+                  y="60%"
+                >
+                  <StyledComponent
+                    forwardedComponent={
+                      Object {
+                        "$$typeof": Symbol(react.forward_ref),
+                        "attrs": Array [],
+                        "componentStyle": ComponentStyle {
+                          "componentId": "sc-fjdhpX",
+                          "isStatic": true,
+                          "lastClassName": "kwMnmn",
+                          "rules": Array [
+                            "
+  fill: #fff;
+  font-family: Arial, sans-serif;
+  font-size: 2.5rem;
+  font-weight: bold;
+",
+                          ],
+                        },
+                        "displayName": "styled.text",
+                        "foldedComponentIds": Array [],
+                        "render": [Function],
+                        "styledComponentId": "sc-fjdhpX",
+                        "target": "text",
+                        "toString": [Function],
+                        "warnTooManyClasses": [Function],
+                        "withComponent": [Function],
+                      }
+                    }
+                    forwardedRef={null}
+                    textAnchor="middle"
+                    x="50%"
+                    y="60%"
+                  >
+                    <text
+                      className="sc-fjdhpX kwMnmn"
+                      textAnchor="middle"
+                      x="50%"
+                      y="60%"
+                    >
+                      58
+                    </text>
+                  </StyledComponent>
+                </styled.text>
+              </svg>
+            </StyledComponent>
+          </styled.svg>
+          <styled.span>
+            <StyledComponent
+              forwardedComponent={
+                Object {
+                  "$$typeof": Symbol(react.forward_ref),
+                  "attrs": Array [],
+                  "componentStyle": ComponentStyle {
+                    "componentId": "sc-jzJRlG",
+                    "isStatic": true,
+                    "lastClassName": "bfEpLC",
+                    "rules": Array [
+                      "
+  display: none;
+  font-size: 1.5rem;
+  font-weight: bold;
+
+  @media (max-width: 540px) {
+    display: block;
+  }
+",
+                    ],
+                  },
+                  "displayName": "styled.span",
+                  "foldedComponentIds": Array [],
+                  "render": [Function],
+                  "styledComponentId": "sc-jzJRlG",
+                  "target": "span",
+                  "toString": [Function],
+                  "warnTooManyClasses": [Function],
+                  "withComponent": [Function],
+                }
+              }
+              forwardedRef={null}
+            >
+              <span
+                className="sc-jzJRlG bfEpLC"
+              >
+                Time left: 00:
                 58
-              </text>
-            </styled.text>
-          </svg>
-        </styled.svg>
-        <styled.span>
-          <span
-            className="sc-jzJRlG bfEpLC"
-          >
-            Time left: 00:
-            58
-          </span>
-        </styled.span>
-      </div>
+              </span>
+            </StyledComponent>
+          </styled.span>
+        </div>
+      </StyledComponent>
     </styled.div>
   </Clock>
 </ClockContainer>
@@ -190,81 +664,318 @@ exports[`<ClockContainer /> decrements when the game starts 3`] = `
     total={60}
   >
     <styled.div>
-      <div
-        className="sc-gqjmRU dPXKxW"
+      <StyledComponent
+        forwardedComponent={
+          Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "attrs": Array [],
+            "componentStyle": ComponentStyle {
+              "componentId": "sc-gqjmRU",
+              "isStatic": true,
+              "lastClassName": "dPXKxW",
+              "rules": Array [
+                "
+  ",
+                "
+  flex: 1;
+  -ms-flex: 1;
+",
+                ";
+  margin-bottom: 2rem;
+
+  @media (max-width: 540px) {
+    ",
+                "
+  flex: none;
+  -ms-flex: none;
+",
+                ";
+    margin-bottom: auto;
+  }
+",
+              ],
+            },
+            "displayName": "styled.div",
+            "foldedComponentIds": Array [],
+            "render": [Function],
+            "styledComponentId": "sc-gqjmRU",
+            "target": "div",
+            "toString": [Function],
+            "warnTooManyClasses": [Function],
+            "withComponent": [Function],
+          }
+        }
+        forwardedRef={null}
       >
-        <styled.svg
-          viewBox="0 0 100 100"
+        <div
+          className="sc-gqjmRU dPXKxW"
         >
-          <svg
-            className="sc-jTzLTM jFWEQC"
+          <styled.svg
             viewBox="0 0 100 100"
           >
-            <styled.circle
-              className="clock-gray"
-              cx="50%"
-              cy="50%"
-              r="40"
-            >
-              <circle
-                className="clock-gray sc-VigVT iMLRaJ"
-                cx="50%"
-                cy="50%"
-                r="40"
-              />
-            </styled.circle>
-            <styled.circle
-              className="clock-green"
-              cx="50%"
-              cy="50%"
-              r="40"
-              style={
+            <StyledComponent
+              forwardedComponent={
                 Object {
-                  "strokeDasharray": 251,
-                  "strokeDashoffset": 238.45,
+                  "$$typeof": Symbol(react.forward_ref),
+                  "attrs": Array [],
+                  "componentStyle": ComponentStyle {
+                    "componentId": "sc-jTzLTM",
+                    "isStatic": true,
+                    "lastClassName": "jFWEQC",
+                    "rules": Array [
+                      "
+  width: 100%;
+  height: auto;
+
+  @media (max-width: 540px) {
+    display: none !important;
+  }
+",
+                    ],
+                  },
+                  "displayName": "styled.svg",
+                  "foldedComponentIds": Array [],
+                  "render": [Function],
+                  "styledComponentId": "sc-jTzLTM",
+                  "target": "svg",
+                  "toString": [Function],
+                  "warnTooManyClasses": [Function],
+                  "withComponent": [Function],
                 }
               }
-              transform="rotate(-90 50 50)"
+              forwardedRef={null}
+              viewBox="0 0 100 100"
             >
-              <circle
-                className="clock-green sc-VigVT iMLRaJ"
-                cx="50%"
-                cy="50%"
-                r="40"
-                style={
-                  Object {
-                    "strokeDasharray": 251,
-                    "strokeDashoffset": 238.45,
-                  }
-                }
-                transform="rotate(-90 50 50)"
-              />
-            </styled.circle>
-            <styled.text
-              textAnchor="middle"
-              x="50%"
-              y="60%"
-            >
-              <text
-                className="sc-fjdhpX kwMnmn"
-                textAnchor="middle"
-                x="50%"
-                y="60%"
+              <svg
+                className="sc-jTzLTM jFWEQC"
+                viewBox="0 0 100 100"
               >
+                <styled.circle
+                  className="clock-gray"
+                  cx="50%"
+                  cy="50%"
+                  r="40"
+                >
+                  <StyledComponent
+                    className="clock-gray"
+                    cx="50%"
+                    cy="50%"
+                    forwardedComponent={
+                      Object {
+                        "$$typeof": Symbol(react.forward_ref),
+                        "attrs": Array [],
+                        "componentStyle": ComponentStyle {
+                          "componentId": "sc-VigVT",
+                          "isStatic": true,
+                          "lastClassName": "iMLRaJ",
+                          "rules": Array [
+                            "
+  fill: transparent;
+  stroke-width: 15;
+
+  &.clock-gray {
+    stroke: #666;
+  }
+
+  &.clock-green {
+    stroke: #6c6;
+    stroke-dasharray: 251;
+  }
+",
+                          ],
+                        },
+                        "displayName": "styled.circle",
+                        "foldedComponentIds": Array [],
+                        "render": [Function],
+                        "styledComponentId": "sc-VigVT",
+                        "target": "circle",
+                        "toString": [Function],
+                        "warnTooManyClasses": [Function],
+                        "withComponent": [Function],
+                      }
+                    }
+                    forwardedRef={null}
+                    r="40"
+                  >
+                    <circle
+                      className="clock-gray sc-VigVT iMLRaJ"
+                      cx="50%"
+                      cy="50%"
+                      r="40"
+                    />
+                  </StyledComponent>
+                </styled.circle>
+                <styled.circle
+                  className="clock-green"
+                  cx="50%"
+                  cy="50%"
+                  r="40"
+                  style={
+                    Object {
+                      "strokeDasharray": 251,
+                      "strokeDashoffset": 238.45,
+                    }
+                  }
+                  transform="rotate(-90 50 50)"
+                >
+                  <StyledComponent
+                    className="clock-green"
+                    cx="50%"
+                    cy="50%"
+                    forwardedComponent={
+                      Object {
+                        "$$typeof": Symbol(react.forward_ref),
+                        "attrs": Array [],
+                        "componentStyle": ComponentStyle {
+                          "componentId": "sc-VigVT",
+                          "isStatic": true,
+                          "lastClassName": "iMLRaJ",
+                          "rules": Array [
+                            "
+  fill: transparent;
+  stroke-width: 15;
+
+  &.clock-gray {
+    stroke: #666;
+  }
+
+  &.clock-green {
+    stroke: #6c6;
+    stroke-dasharray: 251;
+  }
+",
+                          ],
+                        },
+                        "displayName": "styled.circle",
+                        "foldedComponentIds": Array [],
+                        "render": [Function],
+                        "styledComponentId": "sc-VigVT",
+                        "target": "circle",
+                        "toString": [Function],
+                        "warnTooManyClasses": [Function],
+                        "withComponent": [Function],
+                      }
+                    }
+                    forwardedRef={null}
+                    r="40"
+                    style={
+                      Object {
+                        "strokeDasharray": 251,
+                        "strokeDashoffset": 238.45,
+                      }
+                    }
+                    transform="rotate(-90 50 50)"
+                  >
+                    <circle
+                      className="clock-green sc-VigVT iMLRaJ"
+                      cx="50%"
+                      cy="50%"
+                      r="40"
+                      style={
+                        Object {
+                          "strokeDasharray": 251,
+                          "strokeDashoffset": 238.45,
+                        }
+                      }
+                      transform="rotate(-90 50 50)"
+                    />
+                  </StyledComponent>
+                </styled.circle>
+                <styled.text
+                  textAnchor="middle"
+                  x="50%"
+                  y="60%"
+                >
+                  <StyledComponent
+                    forwardedComponent={
+                      Object {
+                        "$$typeof": Symbol(react.forward_ref),
+                        "attrs": Array [],
+                        "componentStyle": ComponentStyle {
+                          "componentId": "sc-fjdhpX",
+                          "isStatic": true,
+                          "lastClassName": "kwMnmn",
+                          "rules": Array [
+                            "
+  fill: #fff;
+  font-family: Arial, sans-serif;
+  font-size: 2.5rem;
+  font-weight: bold;
+",
+                          ],
+                        },
+                        "displayName": "styled.text",
+                        "foldedComponentIds": Array [],
+                        "render": [Function],
+                        "styledComponentId": "sc-fjdhpX",
+                        "target": "text",
+                        "toString": [Function],
+                        "warnTooManyClasses": [Function],
+                        "withComponent": [Function],
+                      }
+                    }
+                    forwardedRef={null}
+                    textAnchor="middle"
+                    x="50%"
+                    y="60%"
+                  >
+                    <text
+                      className="sc-fjdhpX kwMnmn"
+                      textAnchor="middle"
+                      x="50%"
+                      y="60%"
+                    >
+                      57
+                    </text>
+                  </StyledComponent>
+                </styled.text>
+              </svg>
+            </StyledComponent>
+          </styled.svg>
+          <styled.span>
+            <StyledComponent
+              forwardedComponent={
+                Object {
+                  "$$typeof": Symbol(react.forward_ref),
+                  "attrs": Array [],
+                  "componentStyle": ComponentStyle {
+                    "componentId": "sc-jzJRlG",
+                    "isStatic": true,
+                    "lastClassName": "bfEpLC",
+                    "rules": Array [
+                      "
+  display: none;
+  font-size: 1.5rem;
+  font-weight: bold;
+
+  @media (max-width: 540px) {
+    display: block;
+  }
+",
+                    ],
+                  },
+                  "displayName": "styled.span",
+                  "foldedComponentIds": Array [],
+                  "render": [Function],
+                  "styledComponentId": "sc-jzJRlG",
+                  "target": "span",
+                  "toString": [Function],
+                  "warnTooManyClasses": [Function],
+                  "withComponent": [Function],
+                }
+              }
+              forwardedRef={null}
+            >
+              <span
+                className="sc-jzJRlG bfEpLC"
+              >
+                Time left: 00:
                 57
-              </text>
-            </styled.text>
-          </svg>
-        </styled.svg>
-        <styled.span>
-          <span
-            className="sc-jzJRlG bfEpLC"
-          >
-            Time left: 00:
-            57
-          </span>
-        </styled.span>
-      </div>
+              </span>
+            </StyledComponent>
+          </styled.span>
+        </div>
+      </StyledComponent>
     </styled.div>
   </Clock>
 </ClockContainer>
@@ -279,81 +990,318 @@ exports[`<ClockContainer /> displays 60 by default 1`] = `
     total={60}
   >
     <styled.div>
-      <div
-        className="sc-gqjmRU dPXKxW"
+      <StyledComponent
+        forwardedComponent={
+          Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "attrs": Array [],
+            "componentStyle": ComponentStyle {
+              "componentId": "sc-gqjmRU",
+              "isStatic": true,
+              "lastClassName": "dPXKxW",
+              "rules": Array [
+                "
+  ",
+                "
+  flex: 1;
+  -ms-flex: 1;
+",
+                ";
+  margin-bottom: 2rem;
+
+  @media (max-width: 540px) {
+    ",
+                "
+  flex: none;
+  -ms-flex: none;
+",
+                ";
+    margin-bottom: auto;
+  }
+",
+              ],
+            },
+            "displayName": "styled.div",
+            "foldedComponentIds": Array [],
+            "render": [Function],
+            "styledComponentId": "sc-gqjmRU",
+            "target": "div",
+            "toString": [Function],
+            "warnTooManyClasses": [Function],
+            "withComponent": [Function],
+          }
+        }
+        forwardedRef={null}
       >
-        <styled.svg
-          viewBox="0 0 100 100"
+        <div
+          className="sc-gqjmRU dPXKxW"
         >
-          <svg
-            className="sc-jTzLTM jFWEQC"
+          <styled.svg
             viewBox="0 0 100 100"
           >
-            <styled.circle
-              className="clock-gray"
-              cx="50%"
-              cy="50%"
-              r="40"
-            >
-              <circle
-                className="clock-gray sc-VigVT iMLRaJ"
-                cx="50%"
-                cy="50%"
-                r="40"
-              />
-            </styled.circle>
-            <styled.circle
-              className="clock-green"
-              cx="50%"
-              cy="50%"
-              r="40"
-              style={
+            <StyledComponent
+              forwardedComponent={
                 Object {
-                  "strokeDasharray": 251,
-                  "strokeDashoffset": 251,
+                  "$$typeof": Symbol(react.forward_ref),
+                  "attrs": Array [],
+                  "componentStyle": ComponentStyle {
+                    "componentId": "sc-jTzLTM",
+                    "isStatic": true,
+                    "lastClassName": "jFWEQC",
+                    "rules": Array [
+                      "
+  width: 100%;
+  height: auto;
+
+  @media (max-width: 540px) {
+    display: none !important;
+  }
+",
+                    ],
+                  },
+                  "displayName": "styled.svg",
+                  "foldedComponentIds": Array [],
+                  "render": [Function],
+                  "styledComponentId": "sc-jTzLTM",
+                  "target": "svg",
+                  "toString": [Function],
+                  "warnTooManyClasses": [Function],
+                  "withComponent": [Function],
                 }
               }
-              transform="rotate(-90 50 50)"
+              forwardedRef={null}
+              viewBox="0 0 100 100"
             >
-              <circle
-                className="clock-green sc-VigVT iMLRaJ"
-                cx="50%"
-                cy="50%"
-                r="40"
-                style={
-                  Object {
-                    "strokeDasharray": 251,
-                    "strokeDashoffset": 251,
-                  }
-                }
-                transform="rotate(-90 50 50)"
-              />
-            </styled.circle>
-            <styled.text
-              textAnchor="middle"
-              x="50%"
-              y="60%"
-            >
-              <text
-                className="sc-fjdhpX kwMnmn"
-                textAnchor="middle"
-                x="50%"
-                y="60%"
+              <svg
+                className="sc-jTzLTM jFWEQC"
+                viewBox="0 0 100 100"
               >
+                <styled.circle
+                  className="clock-gray"
+                  cx="50%"
+                  cy="50%"
+                  r="40"
+                >
+                  <StyledComponent
+                    className="clock-gray"
+                    cx="50%"
+                    cy="50%"
+                    forwardedComponent={
+                      Object {
+                        "$$typeof": Symbol(react.forward_ref),
+                        "attrs": Array [],
+                        "componentStyle": ComponentStyle {
+                          "componentId": "sc-VigVT",
+                          "isStatic": true,
+                          "lastClassName": "iMLRaJ",
+                          "rules": Array [
+                            "
+  fill: transparent;
+  stroke-width: 15;
+
+  &.clock-gray {
+    stroke: #666;
+  }
+
+  &.clock-green {
+    stroke: #6c6;
+    stroke-dasharray: 251;
+  }
+",
+                          ],
+                        },
+                        "displayName": "styled.circle",
+                        "foldedComponentIds": Array [],
+                        "render": [Function],
+                        "styledComponentId": "sc-VigVT",
+                        "target": "circle",
+                        "toString": [Function],
+                        "warnTooManyClasses": [Function],
+                        "withComponent": [Function],
+                      }
+                    }
+                    forwardedRef={null}
+                    r="40"
+                  >
+                    <circle
+                      className="clock-gray sc-VigVT iMLRaJ"
+                      cx="50%"
+                      cy="50%"
+                      r="40"
+                    />
+                  </StyledComponent>
+                </styled.circle>
+                <styled.circle
+                  className="clock-green"
+                  cx="50%"
+                  cy="50%"
+                  r="40"
+                  style={
+                    Object {
+                      "strokeDasharray": 251,
+                      "strokeDashoffset": 251,
+                    }
+                  }
+                  transform="rotate(-90 50 50)"
+                >
+                  <StyledComponent
+                    className="clock-green"
+                    cx="50%"
+                    cy="50%"
+                    forwardedComponent={
+                      Object {
+                        "$$typeof": Symbol(react.forward_ref),
+                        "attrs": Array [],
+                        "componentStyle": ComponentStyle {
+                          "componentId": "sc-VigVT",
+                          "isStatic": true,
+                          "lastClassName": "iMLRaJ",
+                          "rules": Array [
+                            "
+  fill: transparent;
+  stroke-width: 15;
+
+  &.clock-gray {
+    stroke: #666;
+  }
+
+  &.clock-green {
+    stroke: #6c6;
+    stroke-dasharray: 251;
+  }
+",
+                          ],
+                        },
+                        "displayName": "styled.circle",
+                        "foldedComponentIds": Array [],
+                        "render": [Function],
+                        "styledComponentId": "sc-VigVT",
+                        "target": "circle",
+                        "toString": [Function],
+                        "warnTooManyClasses": [Function],
+                        "withComponent": [Function],
+                      }
+                    }
+                    forwardedRef={null}
+                    r="40"
+                    style={
+                      Object {
+                        "strokeDasharray": 251,
+                        "strokeDashoffset": 251,
+                      }
+                    }
+                    transform="rotate(-90 50 50)"
+                  >
+                    <circle
+                      className="clock-green sc-VigVT iMLRaJ"
+                      cx="50%"
+                      cy="50%"
+                      r="40"
+                      style={
+                        Object {
+                          "strokeDasharray": 251,
+                          "strokeDashoffset": 251,
+                        }
+                      }
+                      transform="rotate(-90 50 50)"
+                    />
+                  </StyledComponent>
+                </styled.circle>
+                <styled.text
+                  textAnchor="middle"
+                  x="50%"
+                  y="60%"
+                >
+                  <StyledComponent
+                    forwardedComponent={
+                      Object {
+                        "$$typeof": Symbol(react.forward_ref),
+                        "attrs": Array [],
+                        "componentStyle": ComponentStyle {
+                          "componentId": "sc-fjdhpX",
+                          "isStatic": true,
+                          "lastClassName": "kwMnmn",
+                          "rules": Array [
+                            "
+  fill: #fff;
+  font-family: Arial, sans-serif;
+  font-size: 2.5rem;
+  font-weight: bold;
+",
+                          ],
+                        },
+                        "displayName": "styled.text",
+                        "foldedComponentIds": Array [],
+                        "render": [Function],
+                        "styledComponentId": "sc-fjdhpX",
+                        "target": "text",
+                        "toString": [Function],
+                        "warnTooManyClasses": [Function],
+                        "withComponent": [Function],
+                      }
+                    }
+                    forwardedRef={null}
+                    textAnchor="middle"
+                    x="50%"
+                    y="60%"
+                  >
+                    <text
+                      className="sc-fjdhpX kwMnmn"
+                      textAnchor="middle"
+                      x="50%"
+                      y="60%"
+                    >
+                      60
+                    </text>
+                  </StyledComponent>
+                </styled.text>
+              </svg>
+            </StyledComponent>
+          </styled.svg>
+          <styled.span>
+            <StyledComponent
+              forwardedComponent={
+                Object {
+                  "$$typeof": Symbol(react.forward_ref),
+                  "attrs": Array [],
+                  "componentStyle": ComponentStyle {
+                    "componentId": "sc-jzJRlG",
+                    "isStatic": true,
+                    "lastClassName": "bfEpLC",
+                    "rules": Array [
+                      "
+  display: none;
+  font-size: 1.5rem;
+  font-weight: bold;
+
+  @media (max-width: 540px) {
+    display: block;
+  }
+",
+                    ],
+                  },
+                  "displayName": "styled.span",
+                  "foldedComponentIds": Array [],
+                  "render": [Function],
+                  "styledComponentId": "sc-jzJRlG",
+                  "target": "span",
+                  "toString": [Function],
+                  "warnTooManyClasses": [Function],
+                  "withComponent": [Function],
+                }
+              }
+              forwardedRef={null}
+            >
+              <span
+                className="sc-jzJRlG bfEpLC"
+              >
+                Time left: 00:
                 60
-              </text>
-            </styled.text>
-          </svg>
-        </styled.svg>
-        <styled.span>
-          <span
-            className="sc-jzJRlG bfEpLC"
-          >
-            Time left: 00:
-            60
-          </span>
-        </styled.span>
-      </div>
+              </span>
+            </StyledComponent>
+          </styled.span>
+        </div>
+      </StyledComponent>
     </styled.div>
   </Clock>
 </ClockContainer>
@@ -381,81 +1329,318 @@ exports[`<ClockContainer /> displays 60 when the game stops 1`] = `
     total={60}
   >
     <styled.div>
-      <div
-        className="sc-gqjmRU dPXKxW"
+      <StyledComponent
+        forwardedComponent={
+          Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "attrs": Array [],
+            "componentStyle": ComponentStyle {
+              "componentId": "sc-gqjmRU",
+              "isStatic": true,
+              "lastClassName": "dPXKxW",
+              "rules": Array [
+                "
+  ",
+                "
+  flex: 1;
+  -ms-flex: 1;
+",
+                ";
+  margin-bottom: 2rem;
+
+  @media (max-width: 540px) {
+    ",
+                "
+  flex: none;
+  -ms-flex: none;
+",
+                ";
+    margin-bottom: auto;
+  }
+",
+              ],
+            },
+            "displayName": "styled.div",
+            "foldedComponentIds": Array [],
+            "render": [Function],
+            "styledComponentId": "sc-gqjmRU",
+            "target": "div",
+            "toString": [Function],
+            "warnTooManyClasses": [Function],
+            "withComponent": [Function],
+          }
+        }
+        forwardedRef={null}
       >
-        <styled.svg
-          viewBox="0 0 100 100"
+        <div
+          className="sc-gqjmRU dPXKxW"
         >
-          <svg
-            className="sc-jTzLTM jFWEQC"
+          <styled.svg
             viewBox="0 0 100 100"
           >
-            <styled.circle
-              className="clock-gray"
-              cx="50%"
-              cy="50%"
-              r="40"
-            >
-              <circle
-                className="clock-gray sc-VigVT iMLRaJ"
-                cx="50%"
-                cy="50%"
-                r="40"
-              />
-            </styled.circle>
-            <styled.circle
-              className="clock-green"
-              cx="50%"
-              cy="50%"
-              r="40"
-              style={
+            <StyledComponent
+              forwardedComponent={
                 Object {
-                  "strokeDasharray": 251,
-                  "strokeDashoffset": 0,
+                  "$$typeof": Symbol(react.forward_ref),
+                  "attrs": Array [],
+                  "componentStyle": ComponentStyle {
+                    "componentId": "sc-jTzLTM",
+                    "isStatic": true,
+                    "lastClassName": "jFWEQC",
+                    "rules": Array [
+                      "
+  width: 100%;
+  height: auto;
+
+  @media (max-width: 540px) {
+    display: none !important;
+  }
+",
+                    ],
+                  },
+                  "displayName": "styled.svg",
+                  "foldedComponentIds": Array [],
+                  "render": [Function],
+                  "styledComponentId": "sc-jTzLTM",
+                  "target": "svg",
+                  "toString": [Function],
+                  "warnTooManyClasses": [Function],
+                  "withComponent": [Function],
                 }
               }
-              transform="rotate(-90 50 50)"
+              forwardedRef={null}
+              viewBox="0 0 100 100"
             >
-              <circle
-                className="clock-green sc-VigVT iMLRaJ"
-                cx="50%"
-                cy="50%"
-                r="40"
-                style={
-                  Object {
-                    "strokeDasharray": 251,
-                    "strokeDashoffset": 0,
-                  }
-                }
-                transform="rotate(-90 50 50)"
-              />
-            </styled.circle>
-            <styled.text
-              textAnchor="middle"
-              x="50%"
-              y="60%"
-            >
-              <text
-                className="sc-fjdhpX kwMnmn"
-                textAnchor="middle"
-                x="50%"
-                y="60%"
+              <svg
+                className="sc-jTzLTM jFWEQC"
+                viewBox="0 0 100 100"
               >
-                0
-              </text>
-            </styled.text>
-          </svg>
-        </styled.svg>
-        <styled.span>
-          <span
-            className="sc-jzJRlG bfEpLC"
-          >
-            Time left: 00:
-            00
-          </span>
-        </styled.span>
-      </div>
+                <styled.circle
+                  className="clock-gray"
+                  cx="50%"
+                  cy="50%"
+                  r="40"
+                >
+                  <StyledComponent
+                    className="clock-gray"
+                    cx="50%"
+                    cy="50%"
+                    forwardedComponent={
+                      Object {
+                        "$$typeof": Symbol(react.forward_ref),
+                        "attrs": Array [],
+                        "componentStyle": ComponentStyle {
+                          "componentId": "sc-VigVT",
+                          "isStatic": true,
+                          "lastClassName": "iMLRaJ",
+                          "rules": Array [
+                            "
+  fill: transparent;
+  stroke-width: 15;
+
+  &.clock-gray {
+    stroke: #666;
+  }
+
+  &.clock-green {
+    stroke: #6c6;
+    stroke-dasharray: 251;
+  }
+",
+                          ],
+                        },
+                        "displayName": "styled.circle",
+                        "foldedComponentIds": Array [],
+                        "render": [Function],
+                        "styledComponentId": "sc-VigVT",
+                        "target": "circle",
+                        "toString": [Function],
+                        "warnTooManyClasses": [Function],
+                        "withComponent": [Function],
+                      }
+                    }
+                    forwardedRef={null}
+                    r="40"
+                  >
+                    <circle
+                      className="clock-gray sc-VigVT iMLRaJ"
+                      cx="50%"
+                      cy="50%"
+                      r="40"
+                    />
+                  </StyledComponent>
+                </styled.circle>
+                <styled.circle
+                  className="clock-green"
+                  cx="50%"
+                  cy="50%"
+                  r="40"
+                  style={
+                    Object {
+                      "strokeDasharray": 251,
+                      "strokeDashoffset": 0,
+                    }
+                  }
+                  transform="rotate(-90 50 50)"
+                >
+                  <StyledComponent
+                    className="clock-green"
+                    cx="50%"
+                    cy="50%"
+                    forwardedComponent={
+                      Object {
+                        "$$typeof": Symbol(react.forward_ref),
+                        "attrs": Array [],
+                        "componentStyle": ComponentStyle {
+                          "componentId": "sc-VigVT",
+                          "isStatic": true,
+                          "lastClassName": "iMLRaJ",
+                          "rules": Array [
+                            "
+  fill: transparent;
+  stroke-width: 15;
+
+  &.clock-gray {
+    stroke: #666;
+  }
+
+  &.clock-green {
+    stroke: #6c6;
+    stroke-dasharray: 251;
+  }
+",
+                          ],
+                        },
+                        "displayName": "styled.circle",
+                        "foldedComponentIds": Array [],
+                        "render": [Function],
+                        "styledComponentId": "sc-VigVT",
+                        "target": "circle",
+                        "toString": [Function],
+                        "warnTooManyClasses": [Function],
+                        "withComponent": [Function],
+                      }
+                    }
+                    forwardedRef={null}
+                    r="40"
+                    style={
+                      Object {
+                        "strokeDasharray": 251,
+                        "strokeDashoffset": 0,
+                      }
+                    }
+                    transform="rotate(-90 50 50)"
+                  >
+                    <circle
+                      className="clock-green sc-VigVT iMLRaJ"
+                      cx="50%"
+                      cy="50%"
+                      r="40"
+                      style={
+                        Object {
+                          "strokeDasharray": 251,
+                          "strokeDashoffset": 0,
+                        }
+                      }
+                      transform="rotate(-90 50 50)"
+                    />
+                  </StyledComponent>
+                </styled.circle>
+                <styled.text
+                  textAnchor="middle"
+                  x="50%"
+                  y="60%"
+                >
+                  <StyledComponent
+                    forwardedComponent={
+                      Object {
+                        "$$typeof": Symbol(react.forward_ref),
+                        "attrs": Array [],
+                        "componentStyle": ComponentStyle {
+                          "componentId": "sc-fjdhpX",
+                          "isStatic": true,
+                          "lastClassName": "kwMnmn",
+                          "rules": Array [
+                            "
+  fill: #fff;
+  font-family: Arial, sans-serif;
+  font-size: 2.5rem;
+  font-weight: bold;
+",
+                          ],
+                        },
+                        "displayName": "styled.text",
+                        "foldedComponentIds": Array [],
+                        "render": [Function],
+                        "styledComponentId": "sc-fjdhpX",
+                        "target": "text",
+                        "toString": [Function],
+                        "warnTooManyClasses": [Function],
+                        "withComponent": [Function],
+                      }
+                    }
+                    forwardedRef={null}
+                    textAnchor="middle"
+                    x="50%"
+                    y="60%"
+                  >
+                    <text
+                      className="sc-fjdhpX kwMnmn"
+                      textAnchor="middle"
+                      x="50%"
+                      y="60%"
+                    >
+                      0
+                    </text>
+                  </StyledComponent>
+                </styled.text>
+              </svg>
+            </StyledComponent>
+          </styled.svg>
+          <styled.span>
+            <StyledComponent
+              forwardedComponent={
+                Object {
+                  "$$typeof": Symbol(react.forward_ref),
+                  "attrs": Array [],
+                  "componentStyle": ComponentStyle {
+                    "componentId": "sc-jzJRlG",
+                    "isStatic": true,
+                    "lastClassName": "bfEpLC",
+                    "rules": Array [
+                      "
+  display: none;
+  font-size: 1.5rem;
+  font-weight: bold;
+
+  @media (max-width: 540px) {
+    display: block;
+  }
+",
+                    ],
+                  },
+                  "displayName": "styled.span",
+                  "foldedComponentIds": Array [],
+                  "render": [Function],
+                  "styledComponentId": "sc-jzJRlG",
+                  "target": "span",
+                  "toString": [Function],
+                  "warnTooManyClasses": [Function],
+                  "withComponent": [Function],
+                }
+              }
+              forwardedRef={null}
+            >
+              <span
+                className="sc-jzJRlG bfEpLC"
+              >
+                Time left: 00:
+                00
+              </span>
+            </StyledComponent>
+          </styled.span>
+        </div>
+      </StyledComponent>
     </styled.div>
   </Clock>
 </ClockContainer>
@@ -471,81 +1656,318 @@ exports[`<ClockContainer /> stops when time have been elapsed 1`] = `
     total={60}
   >
     <styled.div>
-      <div
-        className="sc-gqjmRU dPXKxW"
+      <StyledComponent
+        forwardedComponent={
+          Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "attrs": Array [],
+            "componentStyle": ComponentStyle {
+              "componentId": "sc-gqjmRU",
+              "isStatic": true,
+              "lastClassName": "dPXKxW",
+              "rules": Array [
+                "
+  ",
+                "
+  flex: 1;
+  -ms-flex: 1;
+",
+                ";
+  margin-bottom: 2rem;
+
+  @media (max-width: 540px) {
+    ",
+                "
+  flex: none;
+  -ms-flex: none;
+",
+                ";
+    margin-bottom: auto;
+  }
+",
+              ],
+            },
+            "displayName": "styled.div",
+            "foldedComponentIds": Array [],
+            "render": [Function],
+            "styledComponentId": "sc-gqjmRU",
+            "target": "div",
+            "toString": [Function],
+            "warnTooManyClasses": [Function],
+            "withComponent": [Function],
+          }
+        }
+        forwardedRef={null}
       >
-        <styled.svg
-          viewBox="0 0 100 100"
+        <div
+          className="sc-gqjmRU dPXKxW"
         >
-          <svg
-            className="sc-jTzLTM jFWEQC"
+          <styled.svg
             viewBox="0 0 100 100"
           >
-            <styled.circle
-              className="clock-gray"
-              cx="50%"
-              cy="50%"
-              r="40"
-            >
-              <circle
-                className="clock-gray sc-VigVT iMLRaJ"
-                cx="50%"
-                cy="50%"
-                r="40"
-              />
-            </styled.circle>
-            <styled.circle
-              className="clock-green"
-              cx="50%"
-              cy="50%"
-              r="40"
-              style={
+            <StyledComponent
+              forwardedComponent={
                 Object {
-                  "strokeDasharray": 251,
-                  "strokeDashoffset": 251,
+                  "$$typeof": Symbol(react.forward_ref),
+                  "attrs": Array [],
+                  "componentStyle": ComponentStyle {
+                    "componentId": "sc-jTzLTM",
+                    "isStatic": true,
+                    "lastClassName": "jFWEQC",
+                    "rules": Array [
+                      "
+  width: 100%;
+  height: auto;
+
+  @media (max-width: 540px) {
+    display: none !important;
+  }
+",
+                    ],
+                  },
+                  "displayName": "styled.svg",
+                  "foldedComponentIds": Array [],
+                  "render": [Function],
+                  "styledComponentId": "sc-jTzLTM",
+                  "target": "svg",
+                  "toString": [Function],
+                  "warnTooManyClasses": [Function],
+                  "withComponent": [Function],
                 }
               }
-              transform="rotate(-90 50 50)"
+              forwardedRef={null}
+              viewBox="0 0 100 100"
             >
-              <circle
-                className="clock-green sc-VigVT iMLRaJ"
-                cx="50%"
-                cy="50%"
-                r="40"
-                style={
-                  Object {
-                    "strokeDasharray": 251,
-                    "strokeDashoffset": 251,
-                  }
-                }
-                transform="rotate(-90 50 50)"
-              />
-            </styled.circle>
-            <styled.text
-              textAnchor="middle"
-              x="50%"
-              y="60%"
-            >
-              <text
-                className="sc-fjdhpX kwMnmn"
-                textAnchor="middle"
-                x="50%"
-                y="60%"
+              <svg
+                className="sc-jTzLTM jFWEQC"
+                viewBox="0 0 100 100"
               >
+                <styled.circle
+                  className="clock-gray"
+                  cx="50%"
+                  cy="50%"
+                  r="40"
+                >
+                  <StyledComponent
+                    className="clock-gray"
+                    cx="50%"
+                    cy="50%"
+                    forwardedComponent={
+                      Object {
+                        "$$typeof": Symbol(react.forward_ref),
+                        "attrs": Array [],
+                        "componentStyle": ComponentStyle {
+                          "componentId": "sc-VigVT",
+                          "isStatic": true,
+                          "lastClassName": "iMLRaJ",
+                          "rules": Array [
+                            "
+  fill: transparent;
+  stroke-width: 15;
+
+  &.clock-gray {
+    stroke: #666;
+  }
+
+  &.clock-green {
+    stroke: #6c6;
+    stroke-dasharray: 251;
+  }
+",
+                          ],
+                        },
+                        "displayName": "styled.circle",
+                        "foldedComponentIds": Array [],
+                        "render": [Function],
+                        "styledComponentId": "sc-VigVT",
+                        "target": "circle",
+                        "toString": [Function],
+                        "warnTooManyClasses": [Function],
+                        "withComponent": [Function],
+                      }
+                    }
+                    forwardedRef={null}
+                    r="40"
+                  >
+                    <circle
+                      className="clock-gray sc-VigVT iMLRaJ"
+                      cx="50%"
+                      cy="50%"
+                      r="40"
+                    />
+                  </StyledComponent>
+                </styled.circle>
+                <styled.circle
+                  className="clock-green"
+                  cx="50%"
+                  cy="50%"
+                  r="40"
+                  style={
+                    Object {
+                      "strokeDasharray": 251,
+                      "strokeDashoffset": 251,
+                    }
+                  }
+                  transform="rotate(-90 50 50)"
+                >
+                  <StyledComponent
+                    className="clock-green"
+                    cx="50%"
+                    cy="50%"
+                    forwardedComponent={
+                      Object {
+                        "$$typeof": Symbol(react.forward_ref),
+                        "attrs": Array [],
+                        "componentStyle": ComponentStyle {
+                          "componentId": "sc-VigVT",
+                          "isStatic": true,
+                          "lastClassName": "iMLRaJ",
+                          "rules": Array [
+                            "
+  fill: transparent;
+  stroke-width: 15;
+
+  &.clock-gray {
+    stroke: #666;
+  }
+
+  &.clock-green {
+    stroke: #6c6;
+    stroke-dasharray: 251;
+  }
+",
+                          ],
+                        },
+                        "displayName": "styled.circle",
+                        "foldedComponentIds": Array [],
+                        "render": [Function],
+                        "styledComponentId": "sc-VigVT",
+                        "target": "circle",
+                        "toString": [Function],
+                        "warnTooManyClasses": [Function],
+                        "withComponent": [Function],
+                      }
+                    }
+                    forwardedRef={null}
+                    r="40"
+                    style={
+                      Object {
+                        "strokeDasharray": 251,
+                        "strokeDashoffset": 251,
+                      }
+                    }
+                    transform="rotate(-90 50 50)"
+                  >
+                    <circle
+                      className="clock-green sc-VigVT iMLRaJ"
+                      cx="50%"
+                      cy="50%"
+                      r="40"
+                      style={
+                        Object {
+                          "strokeDasharray": 251,
+                          "strokeDashoffset": 251,
+                        }
+                      }
+                      transform="rotate(-90 50 50)"
+                    />
+                  </StyledComponent>
+                </styled.circle>
+                <styled.text
+                  textAnchor="middle"
+                  x="50%"
+                  y="60%"
+                >
+                  <StyledComponent
+                    forwardedComponent={
+                      Object {
+                        "$$typeof": Symbol(react.forward_ref),
+                        "attrs": Array [],
+                        "componentStyle": ComponentStyle {
+                          "componentId": "sc-fjdhpX",
+                          "isStatic": true,
+                          "lastClassName": "kwMnmn",
+                          "rules": Array [
+                            "
+  fill: #fff;
+  font-family: Arial, sans-serif;
+  font-size: 2.5rem;
+  font-weight: bold;
+",
+                          ],
+                        },
+                        "displayName": "styled.text",
+                        "foldedComponentIds": Array [],
+                        "render": [Function],
+                        "styledComponentId": "sc-fjdhpX",
+                        "target": "text",
+                        "toString": [Function],
+                        "warnTooManyClasses": [Function],
+                        "withComponent": [Function],
+                      }
+                    }
+                    forwardedRef={null}
+                    textAnchor="middle"
+                    x="50%"
+                    y="60%"
+                  >
+                    <text
+                      className="sc-fjdhpX kwMnmn"
+                      textAnchor="middle"
+                      x="50%"
+                      y="60%"
+                    >
+                      60
+                    </text>
+                  </StyledComponent>
+                </styled.text>
+              </svg>
+            </StyledComponent>
+          </styled.svg>
+          <styled.span>
+            <StyledComponent
+              forwardedComponent={
+                Object {
+                  "$$typeof": Symbol(react.forward_ref),
+                  "attrs": Array [],
+                  "componentStyle": ComponentStyle {
+                    "componentId": "sc-jzJRlG",
+                    "isStatic": true,
+                    "lastClassName": "bfEpLC",
+                    "rules": Array [
+                      "
+  display: none;
+  font-size: 1.5rem;
+  font-weight: bold;
+
+  @media (max-width: 540px) {
+    display: block;
+  }
+",
+                    ],
+                  },
+                  "displayName": "styled.span",
+                  "foldedComponentIds": Array [],
+                  "render": [Function],
+                  "styledComponentId": "sc-jzJRlG",
+                  "target": "span",
+                  "toString": [Function],
+                  "warnTooManyClasses": [Function],
+                  "withComponent": [Function],
+                }
+              }
+              forwardedRef={null}
+            >
+              <span
+                className="sc-jzJRlG bfEpLC"
+              >
+                Time left: 00:
                 60
-              </text>
-            </styled.text>
-          </svg>
-        </styled.svg>
-        <styled.span>
-          <span
-            className="sc-jzJRlG bfEpLC"
-          >
-            Time left: 00:
-            60
-          </span>
-        </styled.span>
-      </div>
+              </span>
+            </StyledComponent>
+          </styled.span>
+        </div>
+      </StyledComponent>
     </styled.div>
   </Clock>
 </ClockContainer>

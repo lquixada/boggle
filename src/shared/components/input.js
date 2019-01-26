@@ -23,7 +23,8 @@ export class Input extends React.Component {
   render () {
     return (
       <Wrapper>
-        <TextInput type='text'
+        <TextInput
+          type='text'
           ref={this.inputRef}
           value={this.props.value}
           onChange={(evt) => this.props.onChange(evt)}

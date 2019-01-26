@@ -32,178 +32,821 @@ exports[`<Board /> is empty by default 1`] = `
   }
 >
   <styled.div>
-    <div
-      className="sc-gzVnrw kdeHEh"
+    <StyledComponent
+      forwardedComponent={
+        Object {
+          "$$typeof": Symbol(react.forward_ref),
+          "attrs": Array [],
+          "componentStyle": ComponentStyle {
+            "componentId": "sc-gzVnrw",
+            "isStatic": true,
+            "lastClassName": "kdeHEh",
+            "rules": Array [
+              "
+  ",
+              "
+  flex: 3.3;
+  -ms-flex: 3.3;
+",
+              ";
+  ",
+              "
+  background-color: #404040;
+  border: .1rem solid;
+  border-radius: .5rem;
+  border-color: #303030 #505050 #505050 #303030;
+",
+              ";
+  margin-left: 2rem;
+  padding: 1rem;
+  height: 40rem;
+
+  @media (max-width: 540px) {
+    ",
+              "
+  flex: none;
+  -ms-flex: none;
+",
+              ";
+    margin: 0;
+    width: 100%;
+  }
+",
+            ],
+          },
+          "displayName": "styled.div",
+          "foldedComponentIds": Array [],
+          "render": [Function],
+          "styledComponentId": "sc-gzVnrw",
+          "target": "div",
+          "toString": [Function],
+          "warnTooManyClasses": [Function],
+          "withComponent": [Function],
+        }
+      }
+      forwardedRef={null}
     >
-      <styled.table>
-        <table
-          className="sc-htoDjs kKCJWi"
-        >
-          <tbody>
-            <tr
-              key="0"
+      <div
+        className="sc-gzVnrw kdeHEh"
+      >
+        <styled.table>
+          <StyledComponent
+            forwardedComponent={
+              Object {
+                "$$typeof": Symbol(react.forward_ref),
+                "attrs": Array [],
+                "componentStyle": ComponentStyle {
+                  "componentId": "sc-htoDjs",
+                  "isStatic": true,
+                  "lastClassName": "kKCJWi",
+                  "rules": Array [
+                    "
+  width: 100%;
+",
+                  ],
+                },
+                "displayName": "styled.table",
+                "foldedComponentIds": Array [],
+                "render": [Function],
+                "styledComponentId": "sc-htoDjs",
+                "target": "table",
+                "toString": [Function],
+                "warnTooManyClasses": [Function],
+                "withComponent": [Function],
+              }
+            }
+            forwardedRef={null}
+          >
+            <table
+              className="sc-htoDjs kKCJWi"
             >
-              <styled.td
-                key="0"
-              >
-                <td
-                  className="sc-dnqmqq gqowcB"
+              <tbody>
+                <tr
+                  key="0"
                 >
-                   
-                </td>
-              </styled.td>
-              <styled.td
-                key="1"
-              >
-                <td
-                  className="sc-dnqmqq gqowcB"
+                  <styled.td
+                    key="0"
+                  >
+                    <StyledComponent
+                      forwardedComponent={
+                        Object {
+                          "$$typeof": Symbol(react.forward_ref),
+                          "attrs": Array [],
+                          "componentStyle": ComponentStyle {
+                            "componentId": "sc-dnqmqq",
+                            "isStatic": true,
+                            "lastClassName": "gqowcB",
+                            "rules": Array [
+                              "
+  width: 9rem;
+  height: 9rem;
+  color: #333;
+  font-size: 4rem;
+  background-color: #fff;
+  text-align: center;
+  text-transform: uppercase;
+  border-radius: .4rem;
+",
+                            ],
+                          },
+                          "displayName": "styled.td",
+                          "foldedComponentIds": Array [],
+                          "render": [Function],
+                          "styledComponentId": "sc-dnqmqq",
+                          "target": "td",
+                          "toString": [Function],
+                          "warnTooManyClasses": [Function],
+                          "withComponent": [Function],
+                        }
+                      }
+                      forwardedRef={null}
+                    >
+                      <td
+                        className="sc-dnqmqq gqowcB"
+                      >
+                         
+                      </td>
+                    </StyledComponent>
+                  </styled.td>
+                  <styled.td
+                    key="1"
+                  >
+                    <StyledComponent
+                      forwardedComponent={
+                        Object {
+                          "$$typeof": Symbol(react.forward_ref),
+                          "attrs": Array [],
+                          "componentStyle": ComponentStyle {
+                            "componentId": "sc-dnqmqq",
+                            "isStatic": true,
+                            "lastClassName": "gqowcB",
+                            "rules": Array [
+                              "
+  width: 9rem;
+  height: 9rem;
+  color: #333;
+  font-size: 4rem;
+  background-color: #fff;
+  text-align: center;
+  text-transform: uppercase;
+  border-radius: .4rem;
+",
+                            ],
+                          },
+                          "displayName": "styled.td",
+                          "foldedComponentIds": Array [],
+                          "render": [Function],
+                          "styledComponentId": "sc-dnqmqq",
+                          "target": "td",
+                          "toString": [Function],
+                          "warnTooManyClasses": [Function],
+                          "withComponent": [Function],
+                        }
+                      }
+                      forwardedRef={null}
+                    >
+                      <td
+                        className="sc-dnqmqq gqowcB"
+                      >
+                         
+                      </td>
+                    </StyledComponent>
+                  </styled.td>
+                  <styled.td
+                    key="2"
+                  >
+                    <StyledComponent
+                      forwardedComponent={
+                        Object {
+                          "$$typeof": Symbol(react.forward_ref),
+                          "attrs": Array [],
+                          "componentStyle": ComponentStyle {
+                            "componentId": "sc-dnqmqq",
+                            "isStatic": true,
+                            "lastClassName": "gqowcB",
+                            "rules": Array [
+                              "
+  width: 9rem;
+  height: 9rem;
+  color: #333;
+  font-size: 4rem;
+  background-color: #fff;
+  text-align: center;
+  text-transform: uppercase;
+  border-radius: .4rem;
+",
+                            ],
+                          },
+                          "displayName": "styled.td",
+                          "foldedComponentIds": Array [],
+                          "render": [Function],
+                          "styledComponentId": "sc-dnqmqq",
+                          "target": "td",
+                          "toString": [Function],
+                          "warnTooManyClasses": [Function],
+                          "withComponent": [Function],
+                        }
+                      }
+                      forwardedRef={null}
+                    >
+                      <td
+                        className="sc-dnqmqq gqowcB"
+                      >
+                         
+                      </td>
+                    </StyledComponent>
+                  </styled.td>
+                  <styled.td
+                    key="3"
+                  >
+                    <StyledComponent
+                      forwardedComponent={
+                        Object {
+                          "$$typeof": Symbol(react.forward_ref),
+                          "attrs": Array [],
+                          "componentStyle": ComponentStyle {
+                            "componentId": "sc-dnqmqq",
+                            "isStatic": true,
+                            "lastClassName": "gqowcB",
+                            "rules": Array [
+                              "
+  width: 9rem;
+  height: 9rem;
+  color: #333;
+  font-size: 4rem;
+  background-color: #fff;
+  text-align: center;
+  text-transform: uppercase;
+  border-radius: .4rem;
+",
+                            ],
+                          },
+                          "displayName": "styled.td",
+                          "foldedComponentIds": Array [],
+                          "render": [Function],
+                          "styledComponentId": "sc-dnqmqq",
+                          "target": "td",
+                          "toString": [Function],
+                          "warnTooManyClasses": [Function],
+                          "withComponent": [Function],
+                        }
+                      }
+                      forwardedRef={null}
+                    >
+                      <td
+                        className="sc-dnqmqq gqowcB"
+                      >
+                         
+                      </td>
+                    </StyledComponent>
+                  </styled.td>
+                </tr>
+                <tr
+                  key="1"
                 >
-                   
-                </td>
-              </styled.td>
-              <styled.td
-                key="2"
-              >
-                <td
-                  className="sc-dnqmqq gqowcB"
+                  <styled.td
+                    key="0"
+                  >
+                    <StyledComponent
+                      forwardedComponent={
+                        Object {
+                          "$$typeof": Symbol(react.forward_ref),
+                          "attrs": Array [],
+                          "componentStyle": ComponentStyle {
+                            "componentId": "sc-dnqmqq",
+                            "isStatic": true,
+                            "lastClassName": "gqowcB",
+                            "rules": Array [
+                              "
+  width: 9rem;
+  height: 9rem;
+  color: #333;
+  font-size: 4rem;
+  background-color: #fff;
+  text-align: center;
+  text-transform: uppercase;
+  border-radius: .4rem;
+",
+                            ],
+                          },
+                          "displayName": "styled.td",
+                          "foldedComponentIds": Array [],
+                          "render": [Function],
+                          "styledComponentId": "sc-dnqmqq",
+                          "target": "td",
+                          "toString": [Function],
+                          "warnTooManyClasses": [Function],
+                          "withComponent": [Function],
+                        }
+                      }
+                      forwardedRef={null}
+                    >
+                      <td
+                        className="sc-dnqmqq gqowcB"
+                      >
+                         
+                      </td>
+                    </StyledComponent>
+                  </styled.td>
+                  <styled.td
+                    key="1"
+                  >
+                    <StyledComponent
+                      forwardedComponent={
+                        Object {
+                          "$$typeof": Symbol(react.forward_ref),
+                          "attrs": Array [],
+                          "componentStyle": ComponentStyle {
+                            "componentId": "sc-dnqmqq",
+                            "isStatic": true,
+                            "lastClassName": "gqowcB",
+                            "rules": Array [
+                              "
+  width: 9rem;
+  height: 9rem;
+  color: #333;
+  font-size: 4rem;
+  background-color: #fff;
+  text-align: center;
+  text-transform: uppercase;
+  border-radius: .4rem;
+",
+                            ],
+                          },
+                          "displayName": "styled.td",
+                          "foldedComponentIds": Array [],
+                          "render": [Function],
+                          "styledComponentId": "sc-dnqmqq",
+                          "target": "td",
+                          "toString": [Function],
+                          "warnTooManyClasses": [Function],
+                          "withComponent": [Function],
+                        }
+                      }
+                      forwardedRef={null}
+                    >
+                      <td
+                        className="sc-dnqmqq gqowcB"
+                      >
+                         
+                      </td>
+                    </StyledComponent>
+                  </styled.td>
+                  <styled.td
+                    key="2"
+                  >
+                    <StyledComponent
+                      forwardedComponent={
+                        Object {
+                          "$$typeof": Symbol(react.forward_ref),
+                          "attrs": Array [],
+                          "componentStyle": ComponentStyle {
+                            "componentId": "sc-dnqmqq",
+                            "isStatic": true,
+                            "lastClassName": "gqowcB",
+                            "rules": Array [
+                              "
+  width: 9rem;
+  height: 9rem;
+  color: #333;
+  font-size: 4rem;
+  background-color: #fff;
+  text-align: center;
+  text-transform: uppercase;
+  border-radius: .4rem;
+",
+                            ],
+                          },
+                          "displayName": "styled.td",
+                          "foldedComponentIds": Array [],
+                          "render": [Function],
+                          "styledComponentId": "sc-dnqmqq",
+                          "target": "td",
+                          "toString": [Function],
+                          "warnTooManyClasses": [Function],
+                          "withComponent": [Function],
+                        }
+                      }
+                      forwardedRef={null}
+                    >
+                      <td
+                        className="sc-dnqmqq gqowcB"
+                      >
+                         
+                      </td>
+                    </StyledComponent>
+                  </styled.td>
+                  <styled.td
+                    key="3"
+                  >
+                    <StyledComponent
+                      forwardedComponent={
+                        Object {
+                          "$$typeof": Symbol(react.forward_ref),
+                          "attrs": Array [],
+                          "componentStyle": ComponentStyle {
+                            "componentId": "sc-dnqmqq",
+                            "isStatic": true,
+                            "lastClassName": "gqowcB",
+                            "rules": Array [
+                              "
+  width: 9rem;
+  height: 9rem;
+  color: #333;
+  font-size: 4rem;
+  background-color: #fff;
+  text-align: center;
+  text-transform: uppercase;
+  border-radius: .4rem;
+",
+                            ],
+                          },
+                          "displayName": "styled.td",
+                          "foldedComponentIds": Array [],
+                          "render": [Function],
+                          "styledComponentId": "sc-dnqmqq",
+                          "target": "td",
+                          "toString": [Function],
+                          "warnTooManyClasses": [Function],
+                          "withComponent": [Function],
+                        }
+                      }
+                      forwardedRef={null}
+                    >
+                      <td
+                        className="sc-dnqmqq gqowcB"
+                      >
+                         
+                      </td>
+                    </StyledComponent>
+                  </styled.td>
+                </tr>
+                <tr
+                  key="2"
                 >
-                   
-                </td>
-              </styled.td>
-              <styled.td
-                key="3"
-              >
-                <td
-                  className="sc-dnqmqq gqowcB"
+                  <styled.td
+                    key="0"
+                  >
+                    <StyledComponent
+                      forwardedComponent={
+                        Object {
+                          "$$typeof": Symbol(react.forward_ref),
+                          "attrs": Array [],
+                          "componentStyle": ComponentStyle {
+                            "componentId": "sc-dnqmqq",
+                            "isStatic": true,
+                            "lastClassName": "gqowcB",
+                            "rules": Array [
+                              "
+  width: 9rem;
+  height: 9rem;
+  color: #333;
+  font-size: 4rem;
+  background-color: #fff;
+  text-align: center;
+  text-transform: uppercase;
+  border-radius: .4rem;
+",
+                            ],
+                          },
+                          "displayName": "styled.td",
+                          "foldedComponentIds": Array [],
+                          "render": [Function],
+                          "styledComponentId": "sc-dnqmqq",
+                          "target": "td",
+                          "toString": [Function],
+                          "warnTooManyClasses": [Function],
+                          "withComponent": [Function],
+                        }
+                      }
+                      forwardedRef={null}
+                    >
+                      <td
+                        className="sc-dnqmqq gqowcB"
+                      >
+                         
+                      </td>
+                    </StyledComponent>
+                  </styled.td>
+                  <styled.td
+                    key="1"
+                  >
+                    <StyledComponent
+                      forwardedComponent={
+                        Object {
+                          "$$typeof": Symbol(react.forward_ref),
+                          "attrs": Array [],
+                          "componentStyle": ComponentStyle {
+                            "componentId": "sc-dnqmqq",
+                            "isStatic": true,
+                            "lastClassName": "gqowcB",
+                            "rules": Array [
+                              "
+  width: 9rem;
+  height: 9rem;
+  color: #333;
+  font-size: 4rem;
+  background-color: #fff;
+  text-align: center;
+  text-transform: uppercase;
+  border-radius: .4rem;
+",
+                            ],
+                          },
+                          "displayName": "styled.td",
+                          "foldedComponentIds": Array [],
+                          "render": [Function],
+                          "styledComponentId": "sc-dnqmqq",
+                          "target": "td",
+                          "toString": [Function],
+                          "warnTooManyClasses": [Function],
+                          "withComponent": [Function],
+                        }
+                      }
+                      forwardedRef={null}
+                    >
+                      <td
+                        className="sc-dnqmqq gqowcB"
+                      >
+                         
+                      </td>
+                    </StyledComponent>
+                  </styled.td>
+                  <styled.td
+                    key="2"
+                  >
+                    <StyledComponent
+                      forwardedComponent={
+                        Object {
+                          "$$typeof": Symbol(react.forward_ref),
+                          "attrs": Array [],
+                          "componentStyle": ComponentStyle {
+                            "componentId": "sc-dnqmqq",
+                            "isStatic": true,
+                            "lastClassName": "gqowcB",
+                            "rules": Array [
+                              "
+  width: 9rem;
+  height: 9rem;
+  color: #333;
+  font-size: 4rem;
+  background-color: #fff;
+  text-align: center;
+  text-transform: uppercase;
+  border-radius: .4rem;
+",
+                            ],
+                          },
+                          "displayName": "styled.td",
+                          "foldedComponentIds": Array [],
+                          "render": [Function],
+                          "styledComponentId": "sc-dnqmqq",
+                          "target": "td",
+                          "toString": [Function],
+                          "warnTooManyClasses": [Function],
+                          "withComponent": [Function],
+                        }
+                      }
+                      forwardedRef={null}
+                    >
+                      <td
+                        className="sc-dnqmqq gqowcB"
+                      >
+                         
+                      </td>
+                    </StyledComponent>
+                  </styled.td>
+                  <styled.td
+                    key="3"
+                  >
+                    <StyledComponent
+                      forwardedComponent={
+                        Object {
+                          "$$typeof": Symbol(react.forward_ref),
+                          "attrs": Array [],
+                          "componentStyle": ComponentStyle {
+                            "componentId": "sc-dnqmqq",
+                            "isStatic": true,
+                            "lastClassName": "gqowcB",
+                            "rules": Array [
+                              "
+  width: 9rem;
+  height: 9rem;
+  color: #333;
+  font-size: 4rem;
+  background-color: #fff;
+  text-align: center;
+  text-transform: uppercase;
+  border-radius: .4rem;
+",
+                            ],
+                          },
+                          "displayName": "styled.td",
+                          "foldedComponentIds": Array [],
+                          "render": [Function],
+                          "styledComponentId": "sc-dnqmqq",
+                          "target": "td",
+                          "toString": [Function],
+                          "warnTooManyClasses": [Function],
+                          "withComponent": [Function],
+                        }
+                      }
+                      forwardedRef={null}
+                    >
+                      <td
+                        className="sc-dnqmqq gqowcB"
+                      >
+                         
+                      </td>
+                    </StyledComponent>
+                  </styled.td>
+                </tr>
+                <tr
+                  key="3"
                 >
-                   
-                </td>
-              </styled.td>
-            </tr>
-            <tr
-              key="1"
-            >
-              <styled.td
-                key="0"
-              >
-                <td
-                  className="sc-dnqmqq gqowcB"
-                >
-                   
-                </td>
-              </styled.td>
-              <styled.td
-                key="1"
-              >
-                <td
-                  className="sc-dnqmqq gqowcB"
-                >
-                   
-                </td>
-              </styled.td>
-              <styled.td
-                key="2"
-              >
-                <td
-                  className="sc-dnqmqq gqowcB"
-                >
-                   
-                </td>
-              </styled.td>
-              <styled.td
-                key="3"
-              >
-                <td
-                  className="sc-dnqmqq gqowcB"
-                >
-                   
-                </td>
-              </styled.td>
-            </tr>
-            <tr
-              key="2"
-            >
-              <styled.td
-                key="0"
-              >
-                <td
-                  className="sc-dnqmqq gqowcB"
-                >
-                   
-                </td>
-              </styled.td>
-              <styled.td
-                key="1"
-              >
-                <td
-                  className="sc-dnqmqq gqowcB"
-                >
-                   
-                </td>
-              </styled.td>
-              <styled.td
-                key="2"
-              >
-                <td
-                  className="sc-dnqmqq gqowcB"
-                >
-                   
-                </td>
-              </styled.td>
-              <styled.td
-                key="3"
-              >
-                <td
-                  className="sc-dnqmqq gqowcB"
-                >
-                   
-                </td>
-              </styled.td>
-            </tr>
-            <tr
-              key="3"
-            >
-              <styled.td
-                key="0"
-              >
-                <td
-                  className="sc-dnqmqq gqowcB"
-                >
-                   
-                </td>
-              </styled.td>
-              <styled.td
-                key="1"
-              >
-                <td
-                  className="sc-dnqmqq gqowcB"
-                >
-                   
-                </td>
-              </styled.td>
-              <styled.td
-                key="2"
-              >
-                <td
-                  className="sc-dnqmqq gqowcB"
-                >
-                   
-                </td>
-              </styled.td>
-              <styled.td
-                key="3"
-              >
-                <td
-                  className="sc-dnqmqq gqowcB"
-                >
-                   
-                </td>
-              </styled.td>
-            </tr>
-          </tbody>
-        </table>
-      </styled.table>
-    </div>
+                  <styled.td
+                    key="0"
+                  >
+                    <StyledComponent
+                      forwardedComponent={
+                        Object {
+                          "$$typeof": Symbol(react.forward_ref),
+                          "attrs": Array [],
+                          "componentStyle": ComponentStyle {
+                            "componentId": "sc-dnqmqq",
+                            "isStatic": true,
+                            "lastClassName": "gqowcB",
+                            "rules": Array [
+                              "
+  width: 9rem;
+  height: 9rem;
+  color: #333;
+  font-size: 4rem;
+  background-color: #fff;
+  text-align: center;
+  text-transform: uppercase;
+  border-radius: .4rem;
+",
+                            ],
+                          },
+                          "displayName": "styled.td",
+                          "foldedComponentIds": Array [],
+                          "render": [Function],
+                          "styledComponentId": "sc-dnqmqq",
+                          "target": "td",
+                          "toString": [Function],
+                          "warnTooManyClasses": [Function],
+                          "withComponent": [Function],
+                        }
+                      }
+                      forwardedRef={null}
+                    >
+                      <td
+                        className="sc-dnqmqq gqowcB"
+                      >
+                         
+                      </td>
+                    </StyledComponent>
+                  </styled.td>
+                  <styled.td
+                    key="1"
+                  >
+                    <StyledComponent
+                      forwardedComponent={
+                        Object {
+                          "$$typeof": Symbol(react.forward_ref),
+                          "attrs": Array [],
+                          "componentStyle": ComponentStyle {
+                            "componentId": "sc-dnqmqq",
+                            "isStatic": true,
+                            "lastClassName": "gqowcB",
+                            "rules": Array [
+                              "
+  width: 9rem;
+  height: 9rem;
+  color: #333;
+  font-size: 4rem;
+  background-color: #fff;
+  text-align: center;
+  text-transform: uppercase;
+  border-radius: .4rem;
+",
+                            ],
+                          },
+                          "displayName": "styled.td",
+                          "foldedComponentIds": Array [],
+                          "render": [Function],
+                          "styledComponentId": "sc-dnqmqq",
+                          "target": "td",
+                          "toString": [Function],
+                          "warnTooManyClasses": [Function],
+                          "withComponent": [Function],
+                        }
+                      }
+                      forwardedRef={null}
+                    >
+                      <td
+                        className="sc-dnqmqq gqowcB"
+                      >
+                         
+                      </td>
+                    </StyledComponent>
+                  </styled.td>
+                  <styled.td
+                    key="2"
+                  >
+                    <StyledComponent
+                      forwardedComponent={
+                        Object {
+                          "$$typeof": Symbol(react.forward_ref),
+                          "attrs": Array [],
+                          "componentStyle": ComponentStyle {
+                            "componentId": "sc-dnqmqq",
+                            "isStatic": true,
+                            "lastClassName": "gqowcB",
+                            "rules": Array [
+                              "
+  width: 9rem;
+  height: 9rem;
+  color: #333;
+  font-size: 4rem;
+  background-color: #fff;
+  text-align: center;
+  text-transform: uppercase;
+  border-radius: .4rem;
+",
+                            ],
+                          },
+                          "displayName": "styled.td",
+                          "foldedComponentIds": Array [],
+                          "render": [Function],
+                          "styledComponentId": "sc-dnqmqq",
+                          "target": "td",
+                          "toString": [Function],
+                          "warnTooManyClasses": [Function],
+                          "withComponent": [Function],
+                        }
+                      }
+                      forwardedRef={null}
+                    >
+                      <td
+                        className="sc-dnqmqq gqowcB"
+                      >
+                         
+                      </td>
+                    </StyledComponent>
+                  </styled.td>
+                  <styled.td
+                    key="3"
+                  >
+                    <StyledComponent
+                      forwardedComponent={
+                        Object {
+                          "$$typeof": Symbol(react.forward_ref),
+                          "attrs": Array [],
+                          "componentStyle": ComponentStyle {
+                            "componentId": "sc-dnqmqq",
+                            "isStatic": true,
+                            "lastClassName": "gqowcB",
+                            "rules": Array [
+                              "
+  width: 9rem;
+  height: 9rem;
+  color: #333;
+  font-size: 4rem;
+  background-color: #fff;
+  text-align: center;
+  text-transform: uppercase;
+  border-radius: .4rem;
+",
+                            ],
+                          },
+                          "displayName": "styled.td",
+                          "foldedComponentIds": Array [],
+                          "render": [Function],
+                          "styledComponentId": "sc-dnqmqq",
+                          "target": "td",
+                          "toString": [Function],
+                          "warnTooManyClasses": [Function],
+                          "withComponent": [Function],
+                        }
+                      }
+                      forwardedRef={null}
+                    >
+                      <td
+                        className="sc-dnqmqq gqowcB"
+                      >
+                         
+                      </td>
+                    </StyledComponent>
+                  </styled.td>
+                </tr>
+              </tbody>
+            </table>
+          </StyledComponent>
+        </styled.table>
+      </div>
+    </StyledComponent>
   </styled.div>
 </Board>
 `;
@@ -240,178 +883,821 @@ exports[`<Board /> is filled when the game has started 1`] = `
   }
 >
   <styled.div>
-    <div
-      className="sc-gzVnrw kdeHEh"
+    <StyledComponent
+      forwardedComponent={
+        Object {
+          "$$typeof": Symbol(react.forward_ref),
+          "attrs": Array [],
+          "componentStyle": ComponentStyle {
+            "componentId": "sc-gzVnrw",
+            "isStatic": true,
+            "lastClassName": "kdeHEh",
+            "rules": Array [
+              "
+  ",
+              "
+  flex: 3.3;
+  -ms-flex: 3.3;
+",
+              ";
+  ",
+              "
+  background-color: #404040;
+  border: .1rem solid;
+  border-radius: .5rem;
+  border-color: #303030 #505050 #505050 #303030;
+",
+              ";
+  margin-left: 2rem;
+  padding: 1rem;
+  height: 40rem;
+
+  @media (max-width: 540px) {
+    ",
+              "
+  flex: none;
+  -ms-flex: none;
+",
+              ";
+    margin: 0;
+    width: 100%;
+  }
+",
+            ],
+          },
+          "displayName": "styled.div",
+          "foldedComponentIds": Array [],
+          "render": [Function],
+          "styledComponentId": "sc-gzVnrw",
+          "target": "div",
+          "toString": [Function],
+          "warnTooManyClasses": [Function],
+          "withComponent": [Function],
+        }
+      }
+      forwardedRef={null}
     >
-      <styled.table>
-        <table
-          className="sc-htoDjs kKCJWi"
-        >
-          <tbody>
-            <tr
-              key="0"
+      <div
+        className="sc-gzVnrw kdeHEh"
+      >
+        <styled.table>
+          <StyledComponent
+            forwardedComponent={
+              Object {
+                "$$typeof": Symbol(react.forward_ref),
+                "attrs": Array [],
+                "componentStyle": ComponentStyle {
+                  "componentId": "sc-htoDjs",
+                  "isStatic": true,
+                  "lastClassName": "kKCJWi",
+                  "rules": Array [
+                    "
+  width: 100%;
+",
+                  ],
+                },
+                "displayName": "styled.table",
+                "foldedComponentIds": Array [],
+                "render": [Function],
+                "styledComponentId": "sc-htoDjs",
+                "target": "table",
+                "toString": [Function],
+                "warnTooManyClasses": [Function],
+                "withComponent": [Function],
+              }
+            }
+            forwardedRef={null}
+          >
+            <table
+              className="sc-htoDjs kKCJWi"
             >
-              <styled.td
-                key="0"
-              >
-                <td
-                  className="sc-dnqmqq gqowcB"
+              <tbody>
+                <tr
+                  key="0"
                 >
-                  E
-                </td>
-              </styled.td>
-              <styled.td
-                key="1"
-              >
-                <td
-                  className="sc-dnqmqq gqowcB"
+                  <styled.td
+                    key="0"
+                  >
+                    <StyledComponent
+                      forwardedComponent={
+                        Object {
+                          "$$typeof": Symbol(react.forward_ref),
+                          "attrs": Array [],
+                          "componentStyle": ComponentStyle {
+                            "componentId": "sc-dnqmqq",
+                            "isStatic": true,
+                            "lastClassName": "gqowcB",
+                            "rules": Array [
+                              "
+  width: 9rem;
+  height: 9rem;
+  color: #333;
+  font-size: 4rem;
+  background-color: #fff;
+  text-align: center;
+  text-transform: uppercase;
+  border-radius: .4rem;
+",
+                            ],
+                          },
+                          "displayName": "styled.td",
+                          "foldedComponentIds": Array [],
+                          "render": [Function],
+                          "styledComponentId": "sc-dnqmqq",
+                          "target": "td",
+                          "toString": [Function],
+                          "warnTooManyClasses": [Function],
+                          "withComponent": [Function],
+                        }
+                      }
+                      forwardedRef={null}
+                    >
+                      <td
+                        className="sc-dnqmqq gqowcB"
+                      >
+                        E
+                      </td>
+                    </StyledComponent>
+                  </styled.td>
+                  <styled.td
+                    key="1"
+                  >
+                    <StyledComponent
+                      forwardedComponent={
+                        Object {
+                          "$$typeof": Symbol(react.forward_ref),
+                          "attrs": Array [],
+                          "componentStyle": ComponentStyle {
+                            "componentId": "sc-dnqmqq",
+                            "isStatic": true,
+                            "lastClassName": "gqowcB",
+                            "rules": Array [
+                              "
+  width: 9rem;
+  height: 9rem;
+  color: #333;
+  font-size: 4rem;
+  background-color: #fff;
+  text-align: center;
+  text-transform: uppercase;
+  border-radius: .4rem;
+",
+                            ],
+                          },
+                          "displayName": "styled.td",
+                          "foldedComponentIds": Array [],
+                          "render": [Function],
+                          "styledComponentId": "sc-dnqmqq",
+                          "target": "td",
+                          "toString": [Function],
+                          "warnTooManyClasses": [Function],
+                          "withComponent": [Function],
+                        }
+                      }
+                      forwardedRef={null}
+                    >
+                      <td
+                        className="sc-dnqmqq gqowcB"
+                      >
+                        H
+                      </td>
+                    </StyledComponent>
+                  </styled.td>
+                  <styled.td
+                    key="2"
+                  >
+                    <StyledComponent
+                      forwardedComponent={
+                        Object {
+                          "$$typeof": Symbol(react.forward_ref),
+                          "attrs": Array [],
+                          "componentStyle": ComponentStyle {
+                            "componentId": "sc-dnqmqq",
+                            "isStatic": true,
+                            "lastClassName": "gqowcB",
+                            "rules": Array [
+                              "
+  width: 9rem;
+  height: 9rem;
+  color: #333;
+  font-size: 4rem;
+  background-color: #fff;
+  text-align: center;
+  text-transform: uppercase;
+  border-radius: .4rem;
+",
+                            ],
+                          },
+                          "displayName": "styled.td",
+                          "foldedComponentIds": Array [],
+                          "render": [Function],
+                          "styledComponentId": "sc-dnqmqq",
+                          "target": "td",
+                          "toString": [Function],
+                          "warnTooManyClasses": [Function],
+                          "withComponent": [Function],
+                        }
+                      }
+                      forwardedRef={null}
+                    >
+                      <td
+                        className="sc-dnqmqq gqowcB"
+                      >
+                        R
+                      </td>
+                    </StyledComponent>
+                  </styled.td>
+                  <styled.td
+                    key="3"
+                  >
+                    <StyledComponent
+                      forwardedComponent={
+                        Object {
+                          "$$typeof": Symbol(react.forward_ref),
+                          "attrs": Array [],
+                          "componentStyle": ComponentStyle {
+                            "componentId": "sc-dnqmqq",
+                            "isStatic": true,
+                            "lastClassName": "gqowcB",
+                            "rules": Array [
+                              "
+  width: 9rem;
+  height: 9rem;
+  color: #333;
+  font-size: 4rem;
+  background-color: #fff;
+  text-align: center;
+  text-transform: uppercase;
+  border-radius: .4rem;
+",
+                            ],
+                          },
+                          "displayName": "styled.td",
+                          "foldedComponentIds": Array [],
+                          "render": [Function],
+                          "styledComponentId": "sc-dnqmqq",
+                          "target": "td",
+                          "toString": [Function],
+                          "warnTooManyClasses": [Function],
+                          "withComponent": [Function],
+                        }
+                      }
+                      forwardedRef={null}
+                    >
+                      <td
+                        className="sc-dnqmqq gqowcB"
+                      >
+                        T
+                      </td>
+                    </StyledComponent>
+                  </styled.td>
+                </tr>
+                <tr
+                  key="1"
                 >
-                  H
-                </td>
-              </styled.td>
-              <styled.td
-                key="2"
-              >
-                <td
-                  className="sc-dnqmqq gqowcB"
+                  <styled.td
+                    key="0"
+                  >
+                    <StyledComponent
+                      forwardedComponent={
+                        Object {
+                          "$$typeof": Symbol(react.forward_ref),
+                          "attrs": Array [],
+                          "componentStyle": ComponentStyle {
+                            "componentId": "sc-dnqmqq",
+                            "isStatic": true,
+                            "lastClassName": "gqowcB",
+                            "rules": Array [
+                              "
+  width: 9rem;
+  height: 9rem;
+  color: #333;
+  font-size: 4rem;
+  background-color: #fff;
+  text-align: center;
+  text-transform: uppercase;
+  border-radius: .4rem;
+",
+                            ],
+                          },
+                          "displayName": "styled.td",
+                          "foldedComponentIds": Array [],
+                          "render": [Function],
+                          "styledComponentId": "sc-dnqmqq",
+                          "target": "td",
+                          "toString": [Function],
+                          "warnTooManyClasses": [Function],
+                          "withComponent": [Function],
+                        }
+                      }
+                      forwardedRef={null}
+                    >
+                      <td
+                        className="sc-dnqmqq gqowcB"
+                      >
+                        B
+                      </td>
+                    </StyledComponent>
+                  </styled.td>
+                  <styled.td
+                    key="1"
+                  >
+                    <StyledComponent
+                      forwardedComponent={
+                        Object {
+                          "$$typeof": Symbol(react.forward_ref),
+                          "attrs": Array [],
+                          "componentStyle": ComponentStyle {
+                            "componentId": "sc-dnqmqq",
+                            "isStatic": true,
+                            "lastClassName": "gqowcB",
+                            "rules": Array [
+                              "
+  width: 9rem;
+  height: 9rem;
+  color: #333;
+  font-size: 4rem;
+  background-color: #fff;
+  text-align: center;
+  text-transform: uppercase;
+  border-radius: .4rem;
+",
+                            ],
+                          },
+                          "displayName": "styled.td",
+                          "foldedComponentIds": Array [],
+                          "render": [Function],
+                          "styledComponentId": "sc-dnqmqq",
+                          "target": "td",
+                          "toString": [Function],
+                          "warnTooManyClasses": [Function],
+                          "withComponent": [Function],
+                        }
+                      }
+                      forwardedRef={null}
+                    >
+                      <td
+                        className="sc-dnqmqq gqowcB"
+                      >
+                        I
+                      </td>
+                    </StyledComponent>
+                  </styled.td>
+                  <styled.td
+                    key="2"
+                  >
+                    <StyledComponent
+                      forwardedComponent={
+                        Object {
+                          "$$typeof": Symbol(react.forward_ref),
+                          "attrs": Array [],
+                          "componentStyle": ComponentStyle {
+                            "componentId": "sc-dnqmqq",
+                            "isStatic": true,
+                            "lastClassName": "gqowcB",
+                            "rules": Array [
+                              "
+  width: 9rem;
+  height: 9rem;
+  color: #333;
+  font-size: 4rem;
+  background-color: #fff;
+  text-align: center;
+  text-transform: uppercase;
+  border-radius: .4rem;
+",
+                            ],
+                          },
+                          "displayName": "styled.td",
+                          "foldedComponentIds": Array [],
+                          "render": [Function],
+                          "styledComponentId": "sc-dnqmqq",
+                          "target": "td",
+                          "toString": [Function],
+                          "warnTooManyClasses": [Function],
+                          "withComponent": [Function],
+                        }
+                      }
+                      forwardedRef={null}
+                    >
+                      <td
+                        className="sc-dnqmqq gqowcB"
+                      >
+                        T
+                      </td>
+                    </StyledComponent>
+                  </styled.td>
+                  <styled.td
+                    key="3"
+                  >
+                    <StyledComponent
+                      forwardedComponent={
+                        Object {
+                          "$$typeof": Symbol(react.forward_ref),
+                          "attrs": Array [],
+                          "componentStyle": ComponentStyle {
+                            "componentId": "sc-dnqmqq",
+                            "isStatic": true,
+                            "lastClassName": "gqowcB",
+                            "rules": Array [
+                              "
+  width: 9rem;
+  height: 9rem;
+  color: #333;
+  font-size: 4rem;
+  background-color: #fff;
+  text-align: center;
+  text-transform: uppercase;
+  border-radius: .4rem;
+",
+                            ],
+                          },
+                          "displayName": "styled.td",
+                          "foldedComponentIds": Array [],
+                          "render": [Function],
+                          "styledComponentId": "sc-dnqmqq",
+                          "target": "td",
+                          "toString": [Function],
+                          "warnTooManyClasses": [Function],
+                          "withComponent": [Function],
+                        }
+                      }
+                      forwardedRef={null}
+                    >
+                      <td
+                        className="sc-dnqmqq gqowcB"
+                      >
+                        E
+                      </td>
+                    </StyledComponent>
+                  </styled.td>
+                </tr>
+                <tr
+                  key="2"
                 >
-                  R
-                </td>
-              </styled.td>
-              <styled.td
-                key="3"
-              >
-                <td
-                  className="sc-dnqmqq gqowcB"
+                  <styled.td
+                    key="0"
+                  >
+                    <StyledComponent
+                      forwardedComponent={
+                        Object {
+                          "$$typeof": Symbol(react.forward_ref),
+                          "attrs": Array [],
+                          "componentStyle": ComponentStyle {
+                            "componentId": "sc-dnqmqq",
+                            "isStatic": true,
+                            "lastClassName": "gqowcB",
+                            "rules": Array [
+                              "
+  width: 9rem;
+  height: 9rem;
+  color: #333;
+  font-size: 4rem;
+  background-color: #fff;
+  text-align: center;
+  text-transform: uppercase;
+  border-radius: .4rem;
+",
+                            ],
+                          },
+                          "displayName": "styled.td",
+                          "foldedComponentIds": Array [],
+                          "render": [Function],
+                          "styledComponentId": "sc-dnqmqq",
+                          "target": "td",
+                          "toString": [Function],
+                          "warnTooManyClasses": [Function],
+                          "withComponent": [Function],
+                        }
+                      }
+                      forwardedRef={null}
+                    >
+                      <td
+                        className="sc-dnqmqq gqowcB"
+                      >
+                        G
+                      </td>
+                    </StyledComponent>
+                  </styled.td>
+                  <styled.td
+                    key="1"
+                  >
+                    <StyledComponent
+                      forwardedComponent={
+                        Object {
+                          "$$typeof": Symbol(react.forward_ref),
+                          "attrs": Array [],
+                          "componentStyle": ComponentStyle {
+                            "componentId": "sc-dnqmqq",
+                            "isStatic": true,
+                            "lastClassName": "gqowcB",
+                            "rules": Array [
+                              "
+  width: 9rem;
+  height: 9rem;
+  color: #333;
+  font-size: 4rem;
+  background-color: #fff;
+  text-align: center;
+  text-transform: uppercase;
+  border-radius: .4rem;
+",
+                            ],
+                          },
+                          "displayName": "styled.td",
+                          "foldedComponentIds": Array [],
+                          "render": [Function],
+                          "styledComponentId": "sc-dnqmqq",
+                          "target": "td",
+                          "toString": [Function],
+                          "warnTooManyClasses": [Function],
+                          "withComponent": [Function],
+                        }
+                      }
+                      forwardedRef={null}
+                    >
+                      <td
+                        className="sc-dnqmqq gqowcB"
+                      >
+                        I
+                      </td>
+                    </StyledComponent>
+                  </styled.td>
+                  <styled.td
+                    key="2"
+                  >
+                    <StyledComponent
+                      forwardedComponent={
+                        Object {
+                          "$$typeof": Symbol(react.forward_ref),
+                          "attrs": Array [],
+                          "componentStyle": ComponentStyle {
+                            "componentId": "sc-dnqmqq",
+                            "isStatic": true,
+                            "lastClassName": "gqowcB",
+                            "rules": Array [
+                              "
+  width: 9rem;
+  height: 9rem;
+  color: #333;
+  font-size: 4rem;
+  background-color: #fff;
+  text-align: center;
+  text-transform: uppercase;
+  border-radius: .4rem;
+",
+                            ],
+                          },
+                          "displayName": "styled.td",
+                          "foldedComponentIds": Array [],
+                          "render": [Function],
+                          "styledComponentId": "sc-dnqmqq",
+                          "target": "td",
+                          "toString": [Function],
+                          "warnTooManyClasses": [Function],
+                          "withComponent": [Function],
+                        }
+                      }
+                      forwardedRef={null}
+                    >
+                      <td
+                        className="sc-dnqmqq gqowcB"
+                      >
+                        S
+                      </td>
+                    </StyledComponent>
+                  </styled.td>
+                  <styled.td
+                    key="3"
+                  >
+                    <StyledComponent
+                      forwardedComponent={
+                        Object {
+                          "$$typeof": Symbol(react.forward_ref),
+                          "attrs": Array [],
+                          "componentStyle": ComponentStyle {
+                            "componentId": "sc-dnqmqq",
+                            "isStatic": true,
+                            "lastClassName": "gqowcB",
+                            "rules": Array [
+                              "
+  width: 9rem;
+  height: 9rem;
+  color: #333;
+  font-size: 4rem;
+  background-color: #fff;
+  text-align: center;
+  text-transform: uppercase;
+  border-radius: .4rem;
+",
+                            ],
+                          },
+                          "displayName": "styled.td",
+                          "foldedComponentIds": Array [],
+                          "render": [Function],
+                          "styledComponentId": "sc-dnqmqq",
+                          "target": "td",
+                          "toString": [Function],
+                          "warnTooManyClasses": [Function],
+                          "withComponent": [Function],
+                        }
+                      }
+                      forwardedRef={null}
+                    >
+                      <td
+                        className="sc-dnqmqq gqowcB"
+                      >
+                        F
+                      </td>
+                    </StyledComponent>
+                  </styled.td>
+                </tr>
+                <tr
+                  key="3"
                 >
-                  T
-                </td>
-              </styled.td>
-            </tr>
-            <tr
-              key="1"
-            >
-              <styled.td
-                key="0"
-              >
-                <td
-                  className="sc-dnqmqq gqowcB"
-                >
-                  B
-                </td>
-              </styled.td>
-              <styled.td
-                key="1"
-              >
-                <td
-                  className="sc-dnqmqq gqowcB"
-                >
-                  I
-                </td>
-              </styled.td>
-              <styled.td
-                key="2"
-              >
-                <td
-                  className="sc-dnqmqq gqowcB"
-                >
-                  T
-                </td>
-              </styled.td>
-              <styled.td
-                key="3"
-              >
-                <td
-                  className="sc-dnqmqq gqowcB"
-                >
-                  E
-                </td>
-              </styled.td>
-            </tr>
-            <tr
-              key="2"
-            >
-              <styled.td
-                key="0"
-              >
-                <td
-                  className="sc-dnqmqq gqowcB"
-                >
-                  G
-                </td>
-              </styled.td>
-              <styled.td
-                key="1"
-              >
-                <td
-                  className="sc-dnqmqq gqowcB"
-                >
-                  I
-                </td>
-              </styled.td>
-              <styled.td
-                key="2"
-              >
-                <td
-                  className="sc-dnqmqq gqowcB"
-                >
-                  S
-                </td>
-              </styled.td>
-              <styled.td
-                key="3"
-              >
-                <td
-                  className="sc-dnqmqq gqowcB"
-                >
-                  F
-                </td>
-              </styled.td>
-            </tr>
-            <tr
-              key="3"
-            >
-              <styled.td
-                key="0"
-              >
-                <td
-                  className="sc-dnqmqq gqowcB"
-                >
-                  A
-                </td>
-              </styled.td>
-              <styled.td
-                key="1"
-              >
-                <td
-                  className="sc-dnqmqq gqowcB"
-                >
-                  M
-                </td>
-              </styled.td>
-              <styled.td
-                key="2"
-              >
-                <td
-                  className="sc-dnqmqq gqowcB"
-                >
-                  N
-                </td>
-              </styled.td>
-              <styled.td
-                key="3"
-              >
-                <td
-                  className="sc-dnqmqq gqowcB"
-                >
-                  O
-                </td>
-              </styled.td>
-            </tr>
-          </tbody>
-        </table>
-      </styled.table>
-    </div>
+                  <styled.td
+                    key="0"
+                  >
+                    <StyledComponent
+                      forwardedComponent={
+                        Object {
+                          "$$typeof": Symbol(react.forward_ref),
+                          "attrs": Array [],
+                          "componentStyle": ComponentStyle {
+                            "componentId": "sc-dnqmqq",
+                            "isStatic": true,
+                            "lastClassName": "gqowcB",
+                            "rules": Array [
+                              "
+  width: 9rem;
+  height: 9rem;
+  color: #333;
+  font-size: 4rem;
+  background-color: #fff;
+  text-align: center;
+  text-transform: uppercase;
+  border-radius: .4rem;
+",
+                            ],
+                          },
+                          "displayName": "styled.td",
+                          "foldedComponentIds": Array [],
+                          "render": [Function],
+                          "styledComponentId": "sc-dnqmqq",
+                          "target": "td",
+                          "toString": [Function],
+                          "warnTooManyClasses": [Function],
+                          "withComponent": [Function],
+                        }
+                      }
+                      forwardedRef={null}
+                    >
+                      <td
+                        className="sc-dnqmqq gqowcB"
+                      >
+                        A
+                      </td>
+                    </StyledComponent>
+                  </styled.td>
+                  <styled.td
+                    key="1"
+                  >
+                    <StyledComponent
+                      forwardedComponent={
+                        Object {
+                          "$$typeof": Symbol(react.forward_ref),
+                          "attrs": Array [],
+                          "componentStyle": ComponentStyle {
+                            "componentId": "sc-dnqmqq",
+                            "isStatic": true,
+                            "lastClassName": "gqowcB",
+                            "rules": Array [
+                              "
+  width: 9rem;
+  height: 9rem;
+  color: #333;
+  font-size: 4rem;
+  background-color: #fff;
+  text-align: center;
+  text-transform: uppercase;
+  border-radius: .4rem;
+",
+                            ],
+                          },
+                          "displayName": "styled.td",
+                          "foldedComponentIds": Array [],
+                          "render": [Function],
+                          "styledComponentId": "sc-dnqmqq",
+                          "target": "td",
+                          "toString": [Function],
+                          "warnTooManyClasses": [Function],
+                          "withComponent": [Function],
+                        }
+                      }
+                      forwardedRef={null}
+                    >
+                      <td
+                        className="sc-dnqmqq gqowcB"
+                      >
+                        M
+                      </td>
+                    </StyledComponent>
+                  </styled.td>
+                  <styled.td
+                    key="2"
+                  >
+                    <StyledComponent
+                      forwardedComponent={
+                        Object {
+                          "$$typeof": Symbol(react.forward_ref),
+                          "attrs": Array [],
+                          "componentStyle": ComponentStyle {
+                            "componentId": "sc-dnqmqq",
+                            "isStatic": true,
+                            "lastClassName": "gqowcB",
+                            "rules": Array [
+                              "
+  width: 9rem;
+  height: 9rem;
+  color: #333;
+  font-size: 4rem;
+  background-color: #fff;
+  text-align: center;
+  text-transform: uppercase;
+  border-radius: .4rem;
+",
+                            ],
+                          },
+                          "displayName": "styled.td",
+                          "foldedComponentIds": Array [],
+                          "render": [Function],
+                          "styledComponentId": "sc-dnqmqq",
+                          "target": "td",
+                          "toString": [Function],
+                          "warnTooManyClasses": [Function],
+                          "withComponent": [Function],
+                        }
+                      }
+                      forwardedRef={null}
+                    >
+                      <td
+                        className="sc-dnqmqq gqowcB"
+                      >
+                        N
+                      </td>
+                    </StyledComponent>
+                  </styled.td>
+                  <styled.td
+                    key="3"
+                  >
+                    <StyledComponent
+                      forwardedComponent={
+                        Object {
+                          "$$typeof": Symbol(react.forward_ref),
+                          "attrs": Array [],
+                          "componentStyle": ComponentStyle {
+                            "componentId": "sc-dnqmqq",
+                            "isStatic": true,
+                            "lastClassName": "gqowcB",
+                            "rules": Array [
+                              "
+  width: 9rem;
+  height: 9rem;
+  color: #333;
+  font-size: 4rem;
+  background-color: #fff;
+  text-align: center;
+  text-transform: uppercase;
+  border-radius: .4rem;
+",
+                            ],
+                          },
+                          "displayName": "styled.td",
+                          "foldedComponentIds": Array [],
+                          "render": [Function],
+                          "styledComponentId": "sc-dnqmqq",
+                          "target": "td",
+                          "toString": [Function],
+                          "warnTooManyClasses": [Function],
+                          "withComponent": [Function],
+                        }
+                      }
+                      forwardedRef={null}
+                    >
+                      <td
+                        className="sc-dnqmqq gqowcB"
+                      >
+                        O
+                      </td>
+                    </StyledComponent>
+                  </styled.td>
+                </tr>
+              </tbody>
+            </table>
+          </StyledComponent>
+        </styled.table>
+      </div>
+    </StyledComponent>
   </styled.div>
 </Board>
 `;

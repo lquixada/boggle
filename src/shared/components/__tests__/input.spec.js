@@ -8,21 +8,21 @@ describe('<Input />', () => {
 
   beforeEach(() => {
     component = mount(<Input
-      value={'word'}
+      value='word'
       started={false}
       onChange={jest.fn()}
       onEnter={jest.fn()}
     />)
-    component.instance().word.focus = jest.fn()
+    component.instance().inputRef.current.focus = jest.fn()
   })
 
   it('is blurred by default', () => {
-    expect(component.instance().word.focus).not.toHaveBeenCalled()
+    expect(component.instance().inputRef.current.focus).not.toHaveBeenCalled()
   })
 
   it('is focused when game starts', () => {
     component.setProps({ started: true })
 
-    expect(component.instance().word.focus).toHaveBeenCalled()
+    expect(component.instance().inputRef.current.focus).toHaveBeenCalled()
   })
 })

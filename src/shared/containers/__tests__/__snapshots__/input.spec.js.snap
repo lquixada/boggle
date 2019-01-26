@@ -12,29 +12,138 @@ exports[`<InputContainer /> is disabled by default 1`] = `
     value=""
   >
     <styled.div>
-      <div
-        className="sc-hMqMXs bcPEYZ"
+      <StyledComponent
+        forwardedComponent={
+          Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "attrs": Array [],
+            "componentStyle": ComponentStyle {
+              "componentId": "sc-hMqMXs",
+              "isStatic": true,
+              "lastClassName": "bcPEYZ",
+              "rules": Array [
+                "
+  ",
+                "
+  flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+",
+                "
+  margin-left: 2rem;
+
+  @media (max-width: 540px) {
+    ",
+                "
+  flex: 1 1 100%;
+  -ms-flex: 1 1 100%;
+",
+                "
+    ",
+                "
+  order: 2;
+  -ms-flex-order: 2;
+",
+                "
+    margin: 1rem 0 0;
+  }
+",
+              ],
+            },
+            "displayName": "styled.div",
+            "foldedComponentIds": Array [],
+            "render": [Function],
+            "styledComponentId": "sc-hMqMXs",
+            "target": "div",
+            "toString": [Function],
+            "warnTooManyClasses": [Function],
+            "withComponent": [Function],
+          }
+        }
+        forwardedRef={null}
       >
-        <styled.input
-          disabled={true}
-          innerRef={[Function]}
-          onChange={[Function]}
-          onKeyUp={[Function]}
-          placeholder="Press start to begin..."
-          type="text"
-          value=""
+        <div
+          className="sc-hMqMXs bcPEYZ"
         >
-          <input
-            className="sc-kEYyzF dcKvZB"
+          <styled.input
             disabled={true}
             onChange={[Function]}
             onKeyUp={[Function]}
             placeholder="Press start to begin..."
             type="text"
             value=""
-          />
-        </styled.input>
-      </div>
+          >
+            <StyledComponent
+              disabled={true}
+              forwardedComponent={
+                Object {
+                  "$$typeof": Symbol(react.forward_ref),
+                  "attrs": Array [],
+                  "componentStyle": ComponentStyle {
+                    "componentId": "sc-kEYyzF",
+                    "isStatic": true,
+                    "lastClassName": "dcKvZB",
+                    "rules": Array [
+                      "
+  ",
+                      "
+  background-color: #404040;
+  border: .1rem solid;
+  border-radius: .5rem;
+  border-color: #303030 #505050 #505050 #303030;
+",
+                      "
+  width: 100%;
+  padding: 1rem;
+  color: #fff;
+  font-size: 2rem;
+  border-radius: .4rem;
+
+  &:disabled {
+    opacity: .5;
+  }
+",
+                    ],
+                  },
+                  "displayName": "styled.input",
+                  "foldedComponentIds": Array [],
+                  "render": [Function],
+                  "styledComponentId": "sc-kEYyzF",
+                  "target": "input",
+                  "toString": [Function],
+                  "warnTooManyClasses": [Function],
+                  "withComponent": [Function],
+                }
+              }
+              forwardedRef={
+                Object {
+                  "current": <input
+                    class="sc-kEYyzF dcKvZB"
+                    disabled=""
+                    placeholder="Press start to begin..."
+                    type="text"
+                    value=""
+                  />,
+                }
+              }
+              onChange={[Function]}
+              onKeyUp={[Function]}
+              placeholder="Press start to begin..."
+              type="text"
+              value=""
+            >
+              <input
+                className="sc-kEYyzF dcKvZB"
+                disabled={true}
+                onChange={[Function]}
+                onKeyUp={[Function]}
+                placeholder="Press start to begin..."
+                type="text"
+                value=""
+              />
+            </StyledComponent>
+          </styled.input>
+        </div>
+      </StyledComponent>
     </styled.div>
   </Input>
 </InputContainer>
@@ -52,29 +161,138 @@ exports[`<InputContainer /> is disabled when the game has stopped 1`] = `
     value=""
   >
     <styled.div>
-      <div
-        className="sc-hMqMXs bcPEYZ"
+      <StyledComponent
+        forwardedComponent={
+          Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "attrs": Array [],
+            "componentStyle": ComponentStyle {
+              "componentId": "sc-hMqMXs",
+              "isStatic": true,
+              "lastClassName": "bcPEYZ",
+              "rules": Array [
+                "
+  ",
+                "
+  flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+",
+                "
+  margin-left: 2rem;
+
+  @media (max-width: 540px) {
+    ",
+                "
+  flex: 1 1 100%;
+  -ms-flex: 1 1 100%;
+",
+                "
+    ",
+                "
+  order: 2;
+  -ms-flex-order: 2;
+",
+                "
+    margin: 1rem 0 0;
+  }
+",
+              ],
+            },
+            "displayName": "styled.div",
+            "foldedComponentIds": Array [],
+            "render": [Function],
+            "styledComponentId": "sc-hMqMXs",
+            "target": "div",
+            "toString": [Function],
+            "warnTooManyClasses": [Function],
+            "withComponent": [Function],
+          }
+        }
+        forwardedRef={null}
       >
-        <styled.input
-          disabled={true}
-          innerRef={[Function]}
-          onChange={[Function]}
-          onKeyUp={[Function]}
-          placeholder="Press start to begin..."
-          type="text"
-          value=""
+        <div
+          className="sc-hMqMXs bcPEYZ"
         >
-          <input
-            className="sc-kEYyzF dcKvZB"
+          <styled.input
             disabled={true}
             onChange={[Function]}
             onKeyUp={[Function]}
             placeholder="Press start to begin..."
             type="text"
             value=""
-          />
-        </styled.input>
-      </div>
+          >
+            <StyledComponent
+              disabled={true}
+              forwardedComponent={
+                Object {
+                  "$$typeof": Symbol(react.forward_ref),
+                  "attrs": Array [],
+                  "componentStyle": ComponentStyle {
+                    "componentId": "sc-kEYyzF",
+                    "isStatic": true,
+                    "lastClassName": "dcKvZB",
+                    "rules": Array [
+                      "
+  ",
+                      "
+  background-color: #404040;
+  border: .1rem solid;
+  border-radius: .5rem;
+  border-color: #303030 #505050 #505050 #303030;
+",
+                      "
+  width: 100%;
+  padding: 1rem;
+  color: #fff;
+  font-size: 2rem;
+  border-radius: .4rem;
+
+  &:disabled {
+    opacity: .5;
+  }
+",
+                    ],
+                  },
+                  "displayName": "styled.input",
+                  "foldedComponentIds": Array [],
+                  "render": [Function],
+                  "styledComponentId": "sc-kEYyzF",
+                  "target": "input",
+                  "toString": [Function],
+                  "warnTooManyClasses": [Function],
+                  "withComponent": [Function],
+                }
+              }
+              forwardedRef={
+                Object {
+                  "current": <input
+                    class="sc-kEYyzF dcKvZB"
+                    disabled=""
+                    placeholder="Press start to begin..."
+                    type="text"
+                    value=""
+                  />,
+                }
+              }
+              onChange={[Function]}
+              onKeyUp={[Function]}
+              placeholder="Press start to begin..."
+              type="text"
+              value=""
+            >
+              <input
+                className="sc-kEYyzF dcKvZB"
+                disabled={true}
+                onChange={[Function]}
+                onKeyUp={[Function]}
+                placeholder="Press start to begin..."
+                type="text"
+                value=""
+              />
+            </StyledComponent>
+          </styled.input>
+        </div>
+      </StyledComponent>
     </styled.div>
   </Input>
 </InputContainer>
@@ -92,29 +310,137 @@ exports[`<InputContainer /> is enabled when the game has started 1`] = `
     value=""
   >
     <styled.div>
-      <div
-        className="sc-hMqMXs bcPEYZ"
+      <StyledComponent
+        forwardedComponent={
+          Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "attrs": Array [],
+            "componentStyle": ComponentStyle {
+              "componentId": "sc-hMqMXs",
+              "isStatic": true,
+              "lastClassName": "bcPEYZ",
+              "rules": Array [
+                "
+  ",
+                "
+  flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+",
+                "
+  margin-left: 2rem;
+
+  @media (max-width: 540px) {
+    ",
+                "
+  flex: 1 1 100%;
+  -ms-flex: 1 1 100%;
+",
+                "
+    ",
+                "
+  order: 2;
+  -ms-flex-order: 2;
+",
+                "
+    margin: 1rem 0 0;
+  }
+",
+              ],
+            },
+            "displayName": "styled.div",
+            "foldedComponentIds": Array [],
+            "render": [Function],
+            "styledComponentId": "sc-hMqMXs",
+            "target": "div",
+            "toString": [Function],
+            "warnTooManyClasses": [Function],
+            "withComponent": [Function],
+          }
+        }
+        forwardedRef={null}
       >
-        <styled.input
-          disabled={false}
-          innerRef={[Function]}
-          onChange={[Function]}
-          onKeyUp={[Function]}
-          placeholder="Type the word and hit Enter!"
-          type="text"
-          value=""
+        <div
+          className="sc-hMqMXs bcPEYZ"
         >
-          <input
-            className="sc-kEYyzF dcKvZB"
+          <styled.input
             disabled={false}
             onChange={[Function]}
             onKeyUp={[Function]}
             placeholder="Type the word and hit Enter!"
             type="text"
             value=""
-          />
-        </styled.input>
-      </div>
+          >
+            <StyledComponent
+              disabled={false}
+              forwardedComponent={
+                Object {
+                  "$$typeof": Symbol(react.forward_ref),
+                  "attrs": Array [],
+                  "componentStyle": ComponentStyle {
+                    "componentId": "sc-kEYyzF",
+                    "isStatic": true,
+                    "lastClassName": "dcKvZB",
+                    "rules": Array [
+                      "
+  ",
+                      "
+  background-color: #404040;
+  border: .1rem solid;
+  border-radius: .5rem;
+  border-color: #303030 #505050 #505050 #303030;
+",
+                      "
+  width: 100%;
+  padding: 1rem;
+  color: #fff;
+  font-size: 2rem;
+  border-radius: .4rem;
+
+  &:disabled {
+    opacity: .5;
+  }
+",
+                    ],
+                  },
+                  "displayName": "styled.input",
+                  "foldedComponentIds": Array [],
+                  "render": [Function],
+                  "styledComponentId": "sc-kEYyzF",
+                  "target": "input",
+                  "toString": [Function],
+                  "warnTooManyClasses": [Function],
+                  "withComponent": [Function],
+                }
+              }
+              forwardedRef={
+                Object {
+                  "current": <input
+                    class="sc-kEYyzF dcKvZB"
+                    placeholder="Type the word and hit Enter!"
+                    type="text"
+                    value=""
+                  />,
+                }
+              }
+              onChange={[Function]}
+              onKeyUp={[Function]}
+              placeholder="Type the word and hit Enter!"
+              type="text"
+              value=""
+            >
+              <input
+                className="sc-kEYyzF dcKvZB"
+                disabled={false}
+                onChange={[Function]}
+                onKeyUp={[Function]}
+                placeholder="Type the word and hit Enter!"
+                type="text"
+                value=""
+              />
+            </StyledComponent>
+          </styled.input>
+        </div>
+      </StyledComponent>
     </styled.div>
   </Input>
 </InputContainer>
