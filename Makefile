@@ -61,17 +61,21 @@ ios-build:
 ios-start: native-start
 
 ## Web
-web-build:
+
+node_modules: package.json
+	npm install
+
+web-build: node_modules
 	npx webpack-cli -p --env.prod --config webpack.config.client.js && \
 	npx babel -D src -d web
 
 web-build-analyze:
 	./tasks/analyze
 
-web-dev:
+web-dev: node_modules
 	npx nodemon ./src/app.js
 
-web-prod:
+web-prod: web-build
 	npx nodemon ./web/app.js
 
 ## Desktop
