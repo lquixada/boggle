@@ -67,7 +67,7 @@
     "babel-jest": "24.0.0",
     "babel-loader": "8.0.5",
     "clean-webpack-plugin": "1.0.1",
-    "codecov": "3.1.0",
+    "codecov": "3.6.5",
     "copy-webpack-plugin": "4.6.0",
     "electron": "4.0.2",
     "electron-forge": "5.2.4",
