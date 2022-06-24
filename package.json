@@ -36,7 +36,7 @@
     "immutable": "3.8.2",
     "lodash": "4.17.11",
     "morgan": "1.9.1",
-    "nodemon": "1.18.9",
+    "nodemon": "2.0.17",
     "prop-types": "15.6.2",
     "react": "16.7.0",
     "react-component-octicons": "1.8.0",
