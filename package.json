@@ -30,7 +30,7 @@
     "compression": "1.7.3",
     "cross-fetch": "3.0.0",
     "es6-promise": "4.2.5",
-    "express": "4.16.4",
+    "express": "4.19.2",
     "helmet": "3.15.0",
     "history": "4.7.2",
     "immutable": "3.8.2",
