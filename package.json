@@ -34,7 +34,7 @@
     "helmet": "3.15.0",
     "history": "4.7.2",
     "immutable": "3.8.2",
-    "lodash": "4.17.11",
+    "lodash": "4.17.17",
     "morgan": "1.9.1",
     "nodemon": "1.18.9",
     "prop-types": "15.6.2",
